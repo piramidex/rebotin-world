@@ -1,0 +1,1 @@
+To modify the grammar, change the rules src/edu.upb.lp.Rebotinol.xtext, and then run GenerateRebotinol.mew2 to generate the editor/parser code

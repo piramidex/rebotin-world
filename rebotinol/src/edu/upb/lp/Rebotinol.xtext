@@ -1,0 +1,60 @@
+/**
+ * @author: Alexis Marechal
+ */
+grammar edu.upb.lp.Rebotinol with org.eclipse.xtext.common.Terminals
+
+generate rebotinol "http://lp.upb.org/Rebotinol"
+
+RebotinolProgram:
+	(instructions+=Instruction)+
+;
+
+Instruction:
+	EmptyInstruction | NonEmptyInstruction;
+
+EmptyInstruction:
+	type = EmptyInstructionType;
+
+enum EmptyInstructionType:
+	der="DER" | izq="IZQ" | arr="ARR" | aba="ABA" | memo="MEMO" | escri="ESCRI" | 
+	suma="SUMA" | signo="SIGNO" | Mult="MULT" |	Inver="INVER" |
+	Enviar="ENVIAR" | EnviarCinta="ENVIAR CINTA" | EnviarMatriz="ENVIAR MATRIZ";
+
+NonEmptyInstruction:
+	Sumak | Multk | ComplexInstruction;
+	
+ComplexInstruction:
+	Igual | Igualk | Difer| Diferk | Mayor | Mayork | Menor | Menork | Repetirn;
+
+Sumak:
+	"SUMA" val=INT;
+	
+Multk:
+	"MULT" val=INT;
+	
+Igual:
+	"IGUAL" "{" (subInstructions+=Instruction)+ "}";
+	
+Igualk:
+	"IGUAL" val=INT "{" (subInstructions+=Instruction)+ "}";
+	
+Difer:
+	"DIFER" "{" (subInstructions+=Instruction)+ "}";
+	
+Diferk:
+	"DIFER" val=INT "{" (subInstructions+=Instruction)+ "}";
+	
+Mayor:
+	"MAYOR" "{" (subInstructions+=Instruction)+ "}";
+	
+Mayork:
+	"MAYOR" val=INT "{" (subInstructions+=Instruction)+ "}";
+	
+Menor:
+	"MENOR" "{" (subInstructions+=Instruction)+ "}";
+	
+Menork:
+	"MENOR" val=INT "{" (subInstructions+=Instruction)+ "}";
+	
+Repetirn:
+	"REP" val=INT "{" (subInstructions+=Instruction)+ "}";

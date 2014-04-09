@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/rebotinol/src-gen" editDirectory="/rebotinol.edit/src"
+    editorDirectory="/rebotinol.editor/src" modelPluginID="rebotinol" forceOverwrite="true"
+    modelName="Rebotinol" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="rebotinol.edit" editorPluginID="rebotinol.editor"
+    runtimeVersion="2.9">
+  <genPackages prefix="Rebotinol" basePackage="edu.upb.lp" disposableProviderFactory="true"
+      fileExtensions="rebo" ecorePackage="Rebotinol.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Rebotinol.ecore#//EmptyInstructionType">
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/der"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/izq"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/arr"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/aba"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/memo"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/escri"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/suma"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/signo"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/Mult"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/Inver"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/Enviar"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/EnviarCinta"/>
+      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/EnviarMatriz"/>
+    </genEnums>
+    <genClasses ecoreClass="Rebotinol.ecore#//RebotinolProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//RebotinolProgram/instructions"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Instruction"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//EmptyInstruction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//EmptyInstruction/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//NonEmptyInstruction"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//ComplexInstruction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//ComplexInstruction/subInstructions"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Sumak">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Sumak/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Multk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Multk/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Igual"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//Igualk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Igualk/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Difer"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//Diferk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Diferk/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Mayor"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//Mayork">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Mayork/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Menor"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//Menork">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Menork/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Repetirn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Repetirn/val"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
