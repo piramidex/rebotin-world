@@ -14,7 +14,7 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
  */
 public abstract class FixedConditionalExecution extends ConditionalExecution {
 
-    private Double _fixedValue;
+    private int _fixedValue;
 
     /**
      * 
@@ -24,7 +24,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
      *            The fixed value on which this {@link ConditionalExecution}
      *            will evaluate its condition
      */
-    public FixedConditionalExecution(List<RebotinolInstructionExecution> subExecutions, Double fixedValue) {
+    public FixedConditionalExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
         super(subExecutions);
         _fixedValue = fixedValue;
     }
@@ -39,7 +39,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
             throw new RebotinolExecutionException(
                     "Cannot evaluate a conditional instruction while the memory is empty!");
         }
-        return evalCondition(mem, _fixedValue);
+        return evalCondition(mem);
     }
 
     /**
@@ -55,6 +55,12 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
      *             If the evaluation condition met an error (e.g., empty memory
      *             or empty matrix value)
      */
-    protected abstract boolean evalCondition(Double memory, Double fixedValue) throws RebotinolExecutionException;
+    protected abstract boolean evalCondition(Double memory) throws RebotinolExecutionException;
 
+    /**
+     * @return the fixed value in this conditional execution
+     */
+    protected int getFixedValue() {
+    	return _fixedValue;
+    }
 }

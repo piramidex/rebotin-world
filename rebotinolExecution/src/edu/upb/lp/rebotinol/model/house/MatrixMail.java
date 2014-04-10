@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.model.house;
 
+import edu.upb.lp.rebotinol.controller.MatrixCloner;
+
 /**
  * A mail containing a matrix of Doubles.
  * @author Alexis Marechal
@@ -19,11 +21,8 @@ public class MatrixMail implements Mail {
 		if (content == null || content.length == 0 || content[0].length == 0) {
 			throw new IllegalArgumentException("Cannot create a mail with an empty matrix");
 		}
-		_content = new Double[content.length][];
 		// Clone the matrix
-		for (int i = 0; i < content.length; i++) {
-			_content[i] = content[i].clone();
-		}
+		_content = MatrixCloner.cloneMatrix(content);
 	}
 
 	/**
@@ -31,10 +30,6 @@ public class MatrixMail implements Mail {
 	 *         returning it.
 	 */
 	public Double[][] getContent() {
-		Double[][] clone = new Double[_content.length][];
-		for (int i = 0; i < clone.length; i++) {
-			clone[i] = _content[i].clone();
-		}
-		return clone;
+		return MatrixCloner.cloneMatrix(_content);
 	}
 }

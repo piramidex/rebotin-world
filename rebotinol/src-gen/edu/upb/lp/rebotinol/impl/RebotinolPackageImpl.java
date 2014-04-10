@@ -666,7 +666,6 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
     addEEnumLiteral(emptyInstructionTypeEEnum, EmptyInstructionType.MULT);
     addEEnumLiteral(emptyInstructionTypeEEnum, EmptyInstructionType.INVER);
     addEEnumLiteral(emptyInstructionTypeEEnum, EmptyInstructionType.ENVIAR);
-    addEEnumLiteral(emptyInstructionTypeEEnum, EmptyInstructionType.ENVIAR_CINTA);
     addEEnumLiteral(emptyInstructionTypeEEnum, EmptyInstructionType.ENVIAR_MATRIZ);
 
     // Create resource

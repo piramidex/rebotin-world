@@ -130,16 +130,6 @@ public enum EmptyInstructionType implements Enumerator
   ENVIAR(10, "Enviar", "ENVIAR"),
 
   /**
-   * The '<em><b>Enviar Cinta</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #ENVIAR_CINTA_VALUE
-   * @generated
-   * @ordered
-   */
-  ENVIAR_CINTA(11, "EnviarCinta", "ENVIAR CINTA"),
-
-  /**
    * The '<em><b>Enviar Matriz</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,7 +137,7 @@ public enum EmptyInstructionType implements Enumerator
    * @generated
    * @ordered
    */
-  ENVIAR_MATRIZ(12, "EnviarMatriz", "ENVIAR MATRIZ");
+  ENVIAR_MATRIZ(11, "EnviarMatriz", "ENVIAR MATRIZ");
 
   /**
    * The '<em><b>Der</b></em>' literal value.
@@ -315,21 +305,6 @@ public enum EmptyInstructionType implements Enumerator
   public static final int ENVIAR_VALUE = 10;
 
   /**
-   * The '<em><b>Enviar Cinta</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>Enviar Cinta</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #ENVIAR_CINTA
-   * @model name="EnviarCinta" literal="ENVIAR CINTA"
-   * @generated
-   * @ordered
-   */
-  public static final int ENVIAR_CINTA_VALUE = 11;
-
-  /**
    * The '<em><b>Enviar Matriz</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
@@ -342,7 +317,7 @@ public enum EmptyInstructionType implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int ENVIAR_MATRIZ_VALUE = 12;
+  public static final int ENVIAR_MATRIZ_VALUE = 11;
 
   /**
    * An array of all the '<em><b>Empty Instruction Type</b></em>' enumerators.
@@ -364,7 +339,6 @@ public enum EmptyInstructionType implements Enumerator
       MULT,
       INVER,
       ENVIAR,
-      ENVIAR_CINTA,
       ENVIAR_MATRIZ,
     };
 
@@ -435,7 +409,6 @@ public enum EmptyInstructionType implements Enumerator
       case MULT_VALUE: return MULT;
       case INVER_VALUE: return INVER;
       case ENVIAR_VALUE: return ENVIAR;
-      case ENVIAR_CINTA_VALUE: return ENVIAR_CINTA;
       case ENVIAR_MATRIZ_VALUE: return ENVIAR_MATRIZ;
     }
     return null;

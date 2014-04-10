@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SUMA'", "'MULT'", "'IGUAL'", "'{'", "'}'", "'DIFER'", "'MAYOR'", "'MENOR'", "'REP'", "'DER'", "'IZQ'", "'ARR'", "'ABA'", "'MEMO'", "'ESCRI'", "'SIGNO'", "'INVER'", "'ENVIAR'", "'ENVIAR CINTA'", "'ENVIAR MATRIZ'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SUMA'", "'MULT'", "'IGUAL'", "'{'", "'}'", "'DIFER'", "'MAYOR'", "'MENOR'", "'REP'", "'DER'", "'IZQ'", "'ARR'", "'ABA'", "'MEMO'", "'ESCRI'", "'SIGNO'", "'INVER'", "'ENVIAR'", "'ENVIAR MATRIZ'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -39,7 +39,6 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
@@ -148,7 +147,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=11 && LA1_0<=13)||(LA1_0>=16 && LA1_0<=30)) ) {
+                if ( ((LA1_0>=11 && LA1_0<=13)||(LA1_0>=16 && LA1_0<=29)) ) {
                     alt1=1;
                 }
 
@@ -277,7 +276,6 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
             case 27:
             case 28:
             case 29:
-            case 30:
                 {
                 alt2=1;
                 }
@@ -289,7 +287,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 if ( (LA2_2==RULE_INT) ) {
                     alt2=2;
                 }
-                else if ( (LA2_2==EOF||(LA2_2>=11 && LA2_2<=13)||(LA2_2>=15 && LA2_2<=30)) ) {
+                else if ( (LA2_2==EOF||(LA2_2>=11 && LA2_2<=13)||(LA2_2>=15 && LA2_2<=29)) ) {
                     alt2=1;
                 }
                 else {
@@ -304,7 +302,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 {
                 int LA2_3 = input.LA(2);
 
-                if ( (LA2_3==EOF||(LA2_3>=11 && LA2_3<=13)||(LA2_3>=15 && LA2_3<=30)) ) {
+                if ( (LA2_3==EOF||(LA2_3>=11 && LA2_3<=13)||(LA2_3>=15 && LA2_3<=29)) ) {
                     alt2=1;
                 }
                 else if ( (LA2_3==RULE_INT) ) {
@@ -1176,7 +1174,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( ((LA5_0>=11 && LA5_0<=13)||(LA5_0>=16 && LA5_0<=30)) ) {
+                if ( ((LA5_0>=11 && LA5_0<=13)||(LA5_0>=16 && LA5_0<=29)) ) {
                     alt5=1;
                 }
 
@@ -1345,7 +1343,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=11 && LA6_0<=13)||(LA6_0>=16 && LA6_0<=30)) ) {
+                if ( ((LA6_0>=11 && LA6_0<=13)||(LA6_0>=16 && LA6_0<=29)) ) {
                     alt6=1;
                 }
 
@@ -1487,7 +1485,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( ((LA7_0>=11 && LA7_0<=13)||(LA7_0>=16 && LA7_0<=30)) ) {
+                if ( ((LA7_0>=11 && LA7_0<=13)||(LA7_0>=16 && LA7_0<=29)) ) {
                     alt7=1;
                 }
 
@@ -1656,7 +1654,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( ((LA8_0>=11 && LA8_0<=13)||(LA8_0>=16 && LA8_0<=30)) ) {
+                if ( ((LA8_0>=11 && LA8_0<=13)||(LA8_0>=16 && LA8_0<=29)) ) {
                     alt8=1;
                 }
 
@@ -1798,7 +1796,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( ((LA9_0>=11 && LA9_0<=13)||(LA9_0>=16 && LA9_0<=30)) ) {
+                if ( ((LA9_0>=11 && LA9_0<=13)||(LA9_0>=16 && LA9_0<=29)) ) {
                     alt9=1;
                 }
 
@@ -1967,7 +1965,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>=11 && LA10_0<=13)||(LA10_0>=16 && LA10_0<=30)) ) {
+                if ( ((LA10_0>=11 && LA10_0<=13)||(LA10_0>=16 && LA10_0<=29)) ) {
                     alt10=1;
                 }
 
@@ -2109,7 +2107,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0>=11 && LA11_0<=13)||(LA11_0>=16 && LA11_0<=30)) ) {
+                if ( ((LA11_0>=11 && LA11_0<=13)||(LA11_0>=16 && LA11_0<=29)) ) {
                     alt11=1;
                 }
 
@@ -2278,7 +2276,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>=11 && LA12_0<=13)||(LA12_0>=16 && LA12_0<=30)) ) {
+                if ( ((LA12_0>=11 && LA12_0<=13)||(LA12_0>=16 && LA12_0<=29)) ) {
                     alt12=1;
                 }
 
@@ -2447,7 +2445,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( ((LA13_0>=11 && LA13_0<=13)||(LA13_0>=16 && LA13_0<=30)) ) {
+                if ( ((LA13_0>=11 && LA13_0<=13)||(LA13_0>=16 && LA13_0<=29)) ) {
                     alt13=1;
                 }
 
@@ -2519,7 +2517,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmptyInstructionType"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:981:1: ruleEmptyInstructionType returns [Enumerator current=null] : ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR CINTA' ) | (enumLiteral_12= 'ENVIAR MATRIZ' ) ) ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:981:1: ruleEmptyInstructionType returns [Enumerator current=null] : ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) ) ;
     public final Enumerator ruleEmptyInstructionType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2535,15 +2533,14 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         Token enumLiteral_9=null;
         Token enumLiteral_10=null;
         Token enumLiteral_11=null;
-        Token enumLiteral_12=null;
 
          enterRule(); 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:983:28: ( ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR CINTA' ) | (enumLiteral_12= 'ENVIAR MATRIZ' ) ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR CINTA' ) | (enumLiteral_12= 'ENVIAR MATRIZ' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:983:28: ( ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR CINTA' ) | (enumLiteral_12= 'ENVIAR MATRIZ' ) )
-            int alt14=13;
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) )
+            int alt14=12;
             switch ( input.LA(1) ) {
             case 20:
                 {
@@ -2603,11 +2600,6 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
             case 29:
                 {
                 alt14=12;
-                }
-                break;
-            case 30:
-                {
-                alt14=13;
                 }
                 break;
             default:
@@ -2806,32 +2798,15 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:6: (enumLiteral_11= 'ENVIAR CINTA' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:6: (enumLiteral_11= 'ENVIAR MATRIZ' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:6: (enumLiteral_11= 'ENVIAR CINTA' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:8: enumLiteral_11= 'ENVIAR CINTA'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:6: (enumLiteral_11= 'ENVIAR MATRIZ' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:8: enumLiteral_11= 'ENVIAR MATRIZ'
                     {
                     enumLiteral_11=(Token)match(input,29,FOLLOW_29_in_ruleEmptyInstructionType2511); 
 
-                            current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_11, grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11()); 
-                        
-
-                    }
-
-
-                    }
-                    break;
-                case 13 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1056:6: (enumLiteral_12= 'ENVIAR MATRIZ' )
-                    {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1056:6: (enumLiteral_12= 'ENVIAR MATRIZ' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1056:8: enumLiteral_12= 'ENVIAR MATRIZ'
-                    {
-                    enumLiteral_12=(Token)match(input,30,FOLLOW_30_in_ruleEmptyInstructionType2528); 
-
-                            current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_12, grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12()); 
+                            current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_11, grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); 
                         
 
                     }
@@ -2928,7 +2903,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleRebotinolProgram_in_entryRuleRebotinolProgram75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRebotinolProgram85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleRebotinolProgram130 = new BitSet(new long[]{0x000000007FFF3802L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleRebotinolProgram130 = new BitSet(new long[]{0x000000003FFF3802L});
     public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction166 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstruction176 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEmptyInstruction_in_ruleInstruction223 = new BitSet(new long[]{0x0000000000000002L});
@@ -2963,61 +2938,61 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleIgual_in_entryRuleIgual1039 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIgual1049 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_13_in_ruleIgual1086 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleIgual1098 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgual1119 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleIgual1098 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgual1119 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleIgual1132 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIgualk_in_entryRuleIgualk1168 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIgualk1178 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_13_in_ruleIgualk1215 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleIgualk1232 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleIgualk1249 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgualk1270 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleIgualk1249 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgualk1270 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleIgualk1283 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDifer_in_entryRuleDifer1319 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDifer1329 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_ruleDifer1366 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleDifer1378 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleDifer1399 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleDifer1378 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleDifer1399 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleDifer1412 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDiferk_in_entryRuleDiferk1448 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDiferk1458 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_ruleDiferk1495 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleDiferk1512 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleDiferk1529 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiferk1550 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleDiferk1529 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiferk1550 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleDiferk1563 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMayor_in_entryRuleMayor1599 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMayor1609 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_ruleMayor1646 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMayor1658 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayor1679 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleMayor1658 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayor1679 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleMayor1692 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMayork_in_entryRuleMayork1728 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMayork1738 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_ruleMayork1775 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleMayork1792 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMayork1809 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayork1830 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleMayork1809 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayork1830 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleMayork1843 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMenor_in_entryRuleMenor1879 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMenor1889 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_ruleMenor1926 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMenor1938 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenor1959 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleMenor1938 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenor1959 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleMenor1972 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMenork_in_entryRuleMenork2008 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMenork2018 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_ruleMenork2055 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleMenork2072 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMenork2089 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenork2110 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleMenork2089 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenork2110 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleMenork2123 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRepetirn_in_entryRuleRepetirn2159 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRepetirn2169 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_ruleRepetirn2206 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleRepetirn2223 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleRepetirn2240 = new BitSet(new long[]{0x000000007FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleRepetirn2261 = new BitSet(new long[]{0x000000007FFFB800L});
+    public static final BitSet FOLLOW_14_in_ruleRepetirn2240 = new BitSet(new long[]{0x000000003FFFB800L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleRepetirn2261 = new BitSet(new long[]{0x000000003FFFB800L});
     public static final BitSet FOLLOW_15_in_ruleRepetirn2274 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_20_in_ruleEmptyInstructionType2324 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_ruleEmptyInstructionType2341 = new BitSet(new long[]{0x0000000000000002L});
@@ -3031,6 +3006,5 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_27_in_ruleEmptyInstructionType2477 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_28_in_ruleEmptyInstructionType2494 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_ruleEmptyInstructionType2511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleEmptyInstructionType2528 = new BitSet(new long[]{0x0000000000000002L});
 
 }

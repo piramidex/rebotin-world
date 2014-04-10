@@ -15,6 +15,7 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
  * @author Alexis Marechal
  * 
  */
+//TODO override stepOver and stepBackOver!!!
 public class SequentialInstructionExecution extends RebotinolInstructionExecution {
 
     private List<RebotinolInstructionExecution> _subExecutions;
@@ -50,7 +51,7 @@ public class SequentialInstructionExecution extends RebotinolInstructionExecutio
      * {@inheritDoc}
      */
     @Override
-    protected void doStepBack(RebotinolHouse house) {
+    protected void doStepBack(RebotinolHouse house) throws RebotinolFlowException {
         RebotinolInstructionExecution current = _subExecutions.get(_currentExecution);
         if (current.isStarted()) {
             current.stepBack(house);

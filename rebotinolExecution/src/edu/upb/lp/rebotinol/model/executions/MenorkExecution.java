@@ -10,7 +10,7 @@ public class MenorkExecution extends FixedConditionalExecution {
      * Constructor
      * @param value The value in this instruction
      */
-    public MenorkExecution(List<RebotinolInstructionExecution> subExecutions, Double fixedValue) {
+    public MenorkExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
         super(subExecutions, fixedValue);
     }
 
@@ -18,8 +18,8 @@ public class MenorkExecution extends FixedConditionalExecution {
      * {@inheritDoc}
      */
     @Override
-    protected boolean evalCondition(Double memory, Double fixedValue) throws RebotinolExecutionException {
-        return memory <= fixedValue;
+    protected boolean evalCondition(Double memory) throws RebotinolExecutionException {
+        return memory <= getFixedValue();
     }
 
 }

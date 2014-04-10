@@ -544,18 +544,16 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInverINVERKeyword_9_0 = (Keyword)cInverEnumLiteralDeclaration_9.eContents().get(0);
 		private final EnumLiteralDeclaration cEnviarEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
 		private final Keyword cEnviarENVIARKeyword_10_0 = (Keyword)cEnviarEnumLiteralDeclaration_10.eContents().get(0);
-		private final EnumLiteralDeclaration cEnviarCintaEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
-		private final Keyword cEnviarCintaENVIARCINTAKeyword_11_0 = (Keyword)cEnviarCintaEnumLiteralDeclaration_11.eContents().get(0);
-		private final EnumLiteralDeclaration cEnviarMatrizEnumLiteralDeclaration_12 = (EnumLiteralDeclaration)cAlternatives.eContents().get(12);
-		private final Keyword cEnviarMatrizENVIARMATRIZKeyword_12_0 = (Keyword)cEnviarMatrizEnumLiteralDeclaration_12.eContents().get(0);
+		private final EnumLiteralDeclaration cEnviarMatrizEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cEnviarMatrizENVIARMATRIZKeyword_11_0 = (Keyword)cEnviarMatrizEnumLiteralDeclaration_11.eContents().get(0);
 		
 		//enum EmptyInstructionType:
 		//	der="DER" | izq="IZQ" | arr="ARR" | aba="ABA" | memo="MEMO" | escri="ESCRI" | suma="SUMA" | signo="SIGNO" |
-		//	Mult="MULT" | Inver="INVER" | Enviar="ENVIAR" | EnviarCinta="ENVIAR CINTA" | EnviarMatriz="ENVIAR MATRIZ";
+		//	Mult="MULT" | Inver="INVER" | Enviar="ENVIAR" | EnviarMatriz="ENVIAR MATRIZ";
 		public EnumRule getRule() { return rule; }
 
 		//der="DER" | izq="IZQ" | arr="ARR" | aba="ABA" | memo="MEMO" | escri="ESCRI" | suma="SUMA" | signo="SIGNO" | Mult="MULT"
-		//| Inver="INVER" | Enviar="ENVIAR" | EnviarCinta="ENVIAR CINTA" | EnviarMatriz="ENVIAR MATRIZ"
+		//| Inver="INVER" | Enviar="ENVIAR" | EnviarMatriz="ENVIAR MATRIZ"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//der="DER"
@@ -624,17 +622,11 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		//"ENVIAR"
 		public Keyword getEnviarENVIARKeyword_10_0() { return cEnviarENVIARKeyword_10_0; }
 
-		//EnviarCinta="ENVIAR CINTA"
-		public EnumLiteralDeclaration getEnviarCintaEnumLiteralDeclaration_11() { return cEnviarCintaEnumLiteralDeclaration_11; }
-
-		//"ENVIAR CINTA"
-		public Keyword getEnviarCintaENVIARCINTAKeyword_11_0() { return cEnviarCintaENVIARCINTAKeyword_11_0; }
-
 		//EnviarMatriz="ENVIAR MATRIZ"
-		public EnumLiteralDeclaration getEnviarMatrizEnumLiteralDeclaration_12() { return cEnviarMatrizEnumLiteralDeclaration_12; }
+		public EnumLiteralDeclaration getEnviarMatrizEnumLiteralDeclaration_11() { return cEnviarMatrizEnumLiteralDeclaration_11; }
 
 		//"ENVIAR MATRIZ"
-		public Keyword getEnviarMatrizENVIARMATRIZKeyword_12_0() { return cEnviarMatrizENVIARMATRIZKeyword_12_0; }
+		public Keyword getEnviarMatrizENVIARMATRIZKeyword_11_0() { return cEnviarMatrizENVIARMATRIZKeyword_11_0; }
 	}
 	
 	private RebotinolProgramElements pRebotinolProgram;
@@ -725,7 +717,7 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 
 	//enum EmptyInstructionType:
 	//	der="DER" | izq="IZQ" | arr="ARR" | aba="ABA" | memo="MEMO" | escri="ESCRI" | suma="SUMA" | signo="SIGNO" |
-	//	Mult="MULT" | Inver="INVER" | Enviar="ENVIAR" | EnviarCinta="ENVIAR CINTA" | EnviarMatriz="ENVIAR MATRIZ";
+	//	Mult="MULT" | Inver="INVER" | Enviar="ENVIAR" | EnviarMatriz="ENVIAR MATRIZ";
 	public EmptyInstructionTypeElements getEmptyInstructionTypeAccess() {
 		return (unknownRuleEmptyInstructionType != null) ? unknownRuleEmptyInstructionType : (unknownRuleEmptyInstructionType = new EmptyInstructionTypeElements());
 	}

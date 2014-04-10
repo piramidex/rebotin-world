@@ -18,14 +18,10 @@ Require-Bundle: rebotinol;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: edu.upb.lp.ui.quickfix,
  edu.upb.lp.ui.contentassist,
  edu.upb.lp.ui.contentassist.antlr,
  edu.upb.lp.ui.internal
 Bundle-Activator: edu.upb.lp.ui.internal.RebotinolActivator
-Bundle-ClassPath: .,
- resources/icons/,
- resources/dataSets/2012/,
- resources/dataSets/2013/,
- resources/dataSets/20130/
+Bundle-ClassPath: .

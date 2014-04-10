@@ -18,7 +18,7 @@ EmptyInstruction:
 enum EmptyInstructionType:
 	der="DER" | izq="IZQ" | arr="ARR" | aba="ABA" | memo="MEMO" | escri="ESCRI" | 
 	suma="SUMA" | signo="SIGNO" | Mult="MULT" |	Inver="INVER" |
-	Enviar="ENVIAR" | EnviarCinta="ENVIAR CINTA" | EnviarMatriz="ENVIAR MATRIZ";
+	Enviar="ENVIAR" | EnviarMatriz="ENVIAR MATRIZ";
 
 NonEmptyInstruction:
 	Sumak | Multk | ComplexInstruction;

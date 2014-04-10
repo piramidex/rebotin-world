@@ -10,13 +10,13 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
  * 
  */
 public class MultkExecution extends ChangeMemoryExecution {
-	private Double _valueToAdd;
+	private int _valueToAdd;
 	
 	/**
      * Constructor
      * @param value The value in this instruction
      */
-	public MultkExecution(Double value) {
+	public MultkExecution(int value) {
 		_valueToAdd = value;
 	}
 

@@ -9,14 +9,14 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
  * @author Alexis Marechal
  * 
  */
-public class SumaKExecution extends ChangeMemoryExecution {
-	private Double _valueToAdd;
+public class SumakExecution extends ChangeMemoryExecution {
+	private int _valueToAdd;
 	
 	/**
 	 * Constructor
 	 * @param value The value in this instruction
 	 */
-	public SumaKExecution(Double value) {
+	public SumakExecution(int value) {
 		_valueToAdd = value;
 	}
 

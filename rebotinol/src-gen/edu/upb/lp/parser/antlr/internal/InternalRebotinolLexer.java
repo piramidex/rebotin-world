@@ -27,7 +27,6 @@ public class InternalRebotinolLexer extends Lexer {
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
@@ -435,29 +434,8 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:29:7: ( 'ENVIAR CINTA' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:29:9: 'ENVIAR CINTA'
-            {
-            match("ENVIAR CINTA"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__29"
-
-    // $ANTLR start "T__30"
-    public final void mT__30() throws RecognitionException {
-        try {
-            int _type = T__30;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:30:7: ( 'ENVIAR MATRIZ' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:30:9: 'ENVIAR MATRIZ'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:29:7: ( 'ENVIAR MATRIZ' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:29:9: 'ENVIAR MATRIZ'
             {
             match("ENVIAR MATRIZ"); 
 
@@ -470,17 +448,17 @@ public class InternalRebotinolLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__30"
+    // $ANTLR end "T__29"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1059:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1059:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:11: ( '^' )?
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1059:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -489,7 +467,7 @@ public class InternalRebotinolLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:11: '^'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1059:11: '^'
                     {
                     match('^'); 
 
@@ -507,7 +485,7 @@ public class InternalRebotinolLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1059:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -556,10 +534,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:10: ( ( '0' .. '9' )+ )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:12: ( '0' .. '9' )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1061:10: ( ( '0' .. '9' )+ )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1061:12: ( '0' .. '9' )+
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:12: ( '0' .. '9' )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1061:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -573,7 +551,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:13: '0' .. '9'
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1061:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -605,10 +583,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -626,10 +604,10 @@ public class InternalRebotinolLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -645,7 +623,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -661,7 +639,7 @@ public class InternalRebotinolLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -686,10 +664,10 @@ public class InternalRebotinolLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -705,7 +683,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -721,7 +699,7 @@ public class InternalRebotinolLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -764,12 +742,12 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1071:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1071:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1071:24: ( options {greedy=false; } : . )*
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -794,7 +772,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1071:52: .
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1065:52: .
             	    {
             	    matchAny(); 
 
@@ -824,12 +802,12 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -842,7 +820,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -862,7 +840,7 @@ public class InternalRebotinolLexer extends Lexer {
                 }
             } while (true);
 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:40: ( ( '\\r' )? '\\n' )?
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -871,9 +849,9 @@ public class InternalRebotinolLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:41: ( '\\r' )? '\\n'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:41: ( '\\r' )? '\\n'
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:41: ( '\\r' )?
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -882,7 +860,7 @@ public class InternalRebotinolLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1073:41: '\\r'
+                            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1067:41: '\\r'
                             {
                             match('\r'); 
 
@@ -914,10 +892,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1075:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1075:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1075:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1069:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -971,8 +949,8 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1077:16: ( . )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1077:18: .
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1071:16: ( . )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1071:18: .
             {
             matchAny(); 
 
@@ -987,8 +965,8 @@ public class InternalRebotinolLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=27;
+        // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=26;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1125,56 +1103,49 @@ public class InternalRebotinolLexer extends Lexer {
                 }
                 break;
             case 20 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:124: T__30
-                {
-                mT__30(); 
-
-                }
-                break;
-            case 21 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:130: RULE_ID
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:124: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 22 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:138: RULE_INT
+            case 21 :
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:132: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 23 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:147: RULE_STRING
+            case 22 :
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:141: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 24 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:159: RULE_ML_COMMENT
+            case 23 :
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:153: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 25 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:175: RULE_SL_COMMENT
+            case 24 :
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:169: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 26 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:191: RULE_WS
+            case 25 :
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:185: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 27 :
-                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:199: RULE_ANY_OTHER
+            case 26 :
+                // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1:193: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1192,17 +1163,16 @@ public class InternalRebotinolLexer extends Lexer {
         "\6\24\2\uffff\7\24\5\uffff\7\24\1\100\2\24\1\103\1\104\1\105\1\106"+
         "\2\24\1\111\1\24\1\113\2\24\1\116\1\24\1\uffff\2\24\4\uffff\2\24"+
         "\1\uffff\1\124\1\uffff\1\125\1\126\1\uffff\1\127\1\130\1\131\1\132"+
-        "\1\24\7\uffff\1\135\4\uffff";
+        "\1\24\7\uffff\1\135\2\uffff";
     static final String DFA12_eofS =
-        "\140\uffff";
+        "\136\uffff";
     static final String DFA12_minS =
         "\1\0\1\111\1\101\1\107\2\uffff\2\105\1\102\1\116\1\101\2\uffff\2"+
         "\0\1\52\2\uffff\1\115\1\107\1\uffff\1\114\1\131\1\115\1\125\1\121"+
         "\1\126\2\uffff\1\106\1\122\1\120\1\122\1\101\1\103\1\126\5\uffff"+
         "\1\101\1\116\1\124\3\117\1\101\1\60\2\105\4\60\1\122\1\111\1\60"+
         "\1\117\1\60\2\122\1\60\1\114\1\uffff\2\122\4\uffff\1\111\1\101\1"+
-        "\uffff\1\60\1\uffff\2\60\1\uffff\4\60\1\122\7\uffff\1\40\1\103\3"+
-        "\uffff";
+        "\uffff\1\60\1\uffff\2\60\1\uffff\4\60\1\122\7\uffff\1\40\2\uffff";
     static final String DFA12_maxS =
         "\1\uffff\2\125\1\132\2\uffff\1\111\1\105\1\122\1\123\1\172\2\uffff"+
         "\2\uffff\1\57\2\uffff\1\115\1\107\1\uffff\1\114\1\131\1\116\1\125"+
@@ -1210,14 +1180,14 @@ public class InternalRebotinolLexer extends Lexer {
         "\uffff\1\101\1\116\1\124\3\117\1\101\1\172\2\105\4\172\1\122\1\111"+
         "\1\172\1\117\1\172\2\122\1\172\1\114\1\uffff\2\122\4\uffff\1\111"+
         "\1\101\1\uffff\1\172\1\uffff\2\172\1\uffff\4\172\1\122\7\uffff\1"+
-        "\172\1\115\3\uffff";
+        "\172\2\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\4\1\5\5\uffff\1\25\1\26\3\uffff\1\32\1\33\2\uffff\1\25"+
-        "\6\uffff\1\4\1\5\7\uffff\1\26\1\27\1\30\1\31\1\32\27\uffff\1\13"+
+        "\4\uffff\1\4\1\5\5\uffff\1\24\1\25\3\uffff\1\31\1\32\2\uffff\1\24"+
+        "\6\uffff\1\4\1\5\7\uffff\1\25\1\26\1\27\1\30\1\31\27\uffff\1\13"+
         "\2\uffff\1\12\1\11\1\14\1\15\2\uffff\1\1\1\uffff\1\2\2\uffff\1\16"+
-        "\5\uffff\1\20\1\7\1\10\1\3\1\21\1\6\1\17\2\uffff\1\22\1\23\1\24";
+        "\5\uffff\1\20\1\7\1\10\1\3\1\21\1\6\1\17\1\uffff\1\23\1\22";
     static final String DFA12_specialS =
-        "\1\2\14\uffff\1\0\1\1\121\uffff}>";
+        "\1\2\14\uffff\1\1\1\0\117\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\21\2\20\2\21\1\20\22\21\1\20\1\21\1\15\4\21\1\16\7\21\1"+
             "\17\12\14\7\21\1\10\2\13\1\6\1\11\3\13\1\3\3\13\1\2\4\13\1\7"+
@@ -1314,8 +1284,6 @@ public class InternalRebotinolLexer extends Lexer {
             "",
             "\1\134\17\uffff\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32"+
             "\24",
-            "\1\136\11\uffff\1\137",
-            "",
             "",
             ""
     };
@@ -1350,27 +1318,27 @@ public class InternalRebotinolLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_13 = input.LA(1);
+                        int LA12_14 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 37;}
+                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 37;}
 
                         else s = 17;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_14 = input.LA(1);
+                        int LA12_13 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 37;}
+                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 37;}
 
                         else s = 17;
 

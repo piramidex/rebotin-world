@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRebotinolParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DER'", "'IZQ'", "'ARR'", "'ABA'", "'MEMO'", "'ESCRI'", "'SUMA'", "'SIGNO'", "'MULT'", "'INVER'", "'ENVIAR'", "'ENVIAR CINTA'", "'ENVIAR MATRIZ'", "'IGUAL'", "'{'", "'}'", "'DIFER'", "'MAYOR'", "'MENOR'", "'REP'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'DER'", "'IZQ'", "'ARR'", "'ABA'", "'MEMO'", "'ESCRI'", "'SUMA'", "'SIGNO'", "'MULT'", "'INVER'", "'ENVIAR'", "'ENVIAR MATRIZ'", "'IGUAL'", "'{'", "'}'", "'DIFER'", "'MAYOR'", "'MENOR'", "'REP'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -39,7 +39,6 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
     public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
@@ -162,7 +161,7 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=11 && LA1_0<=23)||LA1_0==24||(LA1_0>=27 && LA1_0<=30)) ) {
+                if ( ((LA1_0>=11 && LA1_0<=22)||LA1_0==23||(LA1_0>=26 && LA1_0<=29)) ) {
                     alt1=1;
                 }
 
@@ -1432,7 +1431,6 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
             case 20:
             case 21:
             case 22:
-            case 23:
                 {
                 alt2=1;
                 }
@@ -1441,7 +1439,7 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
                 {
                 int LA2_2 = input.LA(2);
 
-                if ( (LA2_2==EOF||(LA2_2>=11 && LA2_2<=24)||(LA2_2>=26 && LA2_2<=30)) ) {
+                if ( (LA2_2==EOF||(LA2_2>=11 && LA2_2<=23)||(LA2_2>=25 && LA2_2<=29)) ) {
                     alt2=1;
                 }
                 else if ( (LA2_2==RULE_INT) ) {
@@ -1462,7 +1460,7 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
                 if ( (LA2_3==RULE_INT) ) {
                     alt2=2;
                 }
-                else if ( (LA2_3==EOF||(LA2_3>=11 && LA2_3<=24)||(LA2_3>=26 && LA2_3<=30)) ) {
+                else if ( (LA2_3==EOF||(LA2_3>=11 && LA2_3<=23)||(LA2_3>=25 && LA2_3<=29)) ) {
                     alt2=1;
                 }
                 else {
@@ -1473,11 +1471,11 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
                 }
                 }
                 break;
-            case 24:
+            case 23:
+            case 26:
             case 27:
             case 28:
             case 29:
-            case 30:
                 {
                 alt2=2;
                 }
@@ -1565,11 +1563,11 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
                 alt3=2;
                 }
                 break;
-            case 24:
+            case 23:
+            case 26:
             case 27:
             case 28:
             case 29:
-            case 30:
                 {
                 alt3=3;
                 }
@@ -1856,14 +1854,14 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EmptyInstructionType__Alternatives"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:648:1: rule__EmptyInstructionType__Alternatives : ( ( ( 'DER' ) ) | ( ( 'IZQ' ) ) | ( ( 'ARR' ) ) | ( ( 'ABA' ) ) | ( ( 'MEMO' ) ) | ( ( 'ESCRI' ) ) | ( ( 'SUMA' ) ) | ( ( 'SIGNO' ) ) | ( ( 'MULT' ) ) | ( ( 'INVER' ) ) | ( ( 'ENVIAR' ) ) | ( ( 'ENVIAR CINTA' ) ) | ( ( 'ENVIAR MATRIZ' ) ) );
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:648:1: rule__EmptyInstructionType__Alternatives : ( ( ( 'DER' ) ) | ( ( 'IZQ' ) ) | ( ( 'ARR' ) ) | ( ( 'ABA' ) ) | ( ( 'MEMO' ) ) | ( ( 'ESCRI' ) ) | ( ( 'SUMA' ) ) | ( ( 'SIGNO' ) ) | ( ( 'MULT' ) ) | ( ( 'INVER' ) ) | ( ( 'ENVIAR' ) ) | ( ( 'ENVIAR MATRIZ' ) ) );
     public final void rule__EmptyInstructionType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:652:1: ( ( ( 'DER' ) ) | ( ( 'IZQ' ) ) | ( ( 'ARR' ) ) | ( ( 'ABA' ) ) | ( ( 'MEMO' ) ) | ( ( 'ESCRI' ) ) | ( ( 'SUMA' ) ) | ( ( 'SIGNO' ) ) | ( ( 'MULT' ) ) | ( ( 'INVER' ) ) | ( ( 'ENVIAR' ) ) | ( ( 'ENVIAR CINTA' ) ) | ( ( 'ENVIAR MATRIZ' ) ) )
-            int alt5=13;
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:652:1: ( ( ( 'DER' ) ) | ( ( 'IZQ' ) ) | ( ( 'ARR' ) ) | ( ( 'ABA' ) ) | ( ( 'MEMO' ) ) | ( ( 'ESCRI' ) ) | ( ( 'SUMA' ) ) | ( ( 'SIGNO' ) ) | ( ( 'MULT' ) ) | ( ( 'INVER' ) ) | ( ( 'ENVIAR' ) ) | ( ( 'ENVIAR MATRIZ' ) ) )
+            int alt5=12;
             switch ( input.LA(1) ) {
             case 11:
                 {
@@ -1923,11 +1921,6 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
             case 22:
                 {
                 alt5=12;
-                }
-                break;
-            case 23:
-                {
-                alt5=13;
                 }
                 break;
             default:
@@ -2170,41 +2163,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 12 :
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:730:6: ( ( 'ENVIAR CINTA' ) )
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:730:6: ( ( 'ENVIAR MATRIZ' ) )
                     {
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:730:6: ( ( 'ENVIAR CINTA' ) )
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:731:1: ( 'ENVIAR CINTA' )
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:730:6: ( ( 'ENVIAR MATRIZ' ) )
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:731:1: ( 'ENVIAR MATRIZ' )
                     {
-                     before(grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11()); 
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:732:1: ( 'ENVIAR CINTA' )
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:732:3: 'ENVIAR CINTA'
+                     before(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); 
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:732:1: ( 'ENVIAR MATRIZ' )
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:732:3: 'ENVIAR MATRIZ'
                     {
                     match(input,22,FOLLOW_22_in_rule__EmptyInstructionType__Alternatives1598); 
 
                     }
 
-                     after(grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 13 :
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:737:6: ( ( 'ENVIAR MATRIZ' ) )
-                    {
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:737:6: ( ( 'ENVIAR MATRIZ' ) )
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:738:1: ( 'ENVIAR MATRIZ' )
-                    {
-                     before(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12()); 
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:739:1: ( 'ENVIAR MATRIZ' )
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:739:3: 'ENVIAR MATRIZ'
-                    {
-                    match(input,23,FOLLOW_23_in_rule__EmptyInstructionType__Alternatives1619); 
-
-                    }
-
-                     after(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12()); 
+                     after(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); 
 
                     }
 
@@ -2229,21 +2201,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sumak__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:751:1: rule__Sumak__Group__0 : rule__Sumak__Group__0__Impl rule__Sumak__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:744:1: rule__Sumak__Group__0 : rule__Sumak__Group__0__Impl rule__Sumak__Group__1 ;
     public final void rule__Sumak__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:755:1: ( rule__Sumak__Group__0__Impl rule__Sumak__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:756:2: rule__Sumak__Group__0__Impl rule__Sumak__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:748:1: ( rule__Sumak__Group__0__Impl rule__Sumak__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:749:2: rule__Sumak__Group__0__Impl rule__Sumak__Group__1
             {
-            pushFollow(FOLLOW_rule__Sumak__Group__0__Impl_in_rule__Sumak__Group__01652);
+            pushFollow(FOLLOW_rule__Sumak__Group__0__Impl_in_rule__Sumak__Group__01631);
             rule__Sumak__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Sumak__Group__1_in_rule__Sumak__Group__01655);
+            pushFollow(FOLLOW_rule__Sumak__Group__1_in_rule__Sumak__Group__01634);
             rule__Sumak__Group__1();
 
             state._fsp--;
@@ -2267,20 +2239,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sumak__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:763:1: rule__Sumak__Group__0__Impl : ( 'SUMA' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:756:1: rule__Sumak__Group__0__Impl : ( 'SUMA' ) ;
     public final void rule__Sumak__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:767:1: ( ( 'SUMA' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:768:1: ( 'SUMA' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:760:1: ( ( 'SUMA' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:761:1: ( 'SUMA' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:768:1: ( 'SUMA' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:769:1: 'SUMA'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:761:1: ( 'SUMA' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:762:1: 'SUMA'
             {
              before(grammarAccess.getSumakAccess().getSUMAKeyword_0()); 
-            match(input,17,FOLLOW_17_in_rule__Sumak__Group__0__Impl1683); 
+            match(input,17,FOLLOW_17_in_rule__Sumak__Group__0__Impl1662); 
              after(grammarAccess.getSumakAccess().getSUMAKeyword_0()); 
 
             }
@@ -2304,16 +2276,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sumak__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:782:1: rule__Sumak__Group__1 : rule__Sumak__Group__1__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:775:1: rule__Sumak__Group__1 : rule__Sumak__Group__1__Impl ;
     public final void rule__Sumak__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:786:1: ( rule__Sumak__Group__1__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:787:2: rule__Sumak__Group__1__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:779:1: ( rule__Sumak__Group__1__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:780:2: rule__Sumak__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Sumak__Group__1__Impl_in_rule__Sumak__Group__11714);
+            pushFollow(FOLLOW_rule__Sumak__Group__1__Impl_in_rule__Sumak__Group__11693);
             rule__Sumak__Group__1__Impl();
 
             state._fsp--;
@@ -2337,23 +2309,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sumak__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:793:1: rule__Sumak__Group__1__Impl : ( ( rule__Sumak__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:786:1: rule__Sumak__Group__1__Impl : ( ( rule__Sumak__ValAssignment_1 ) ) ;
     public final void rule__Sumak__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:797:1: ( ( ( rule__Sumak__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:798:1: ( ( rule__Sumak__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:790:1: ( ( ( rule__Sumak__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:791:1: ( ( rule__Sumak__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:798:1: ( ( rule__Sumak__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:799:1: ( rule__Sumak__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:791:1: ( ( rule__Sumak__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:792:1: ( rule__Sumak__ValAssignment_1 )
             {
              before(grammarAccess.getSumakAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:800:1: ( rule__Sumak__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:800:2: rule__Sumak__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:793:1: ( rule__Sumak__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:793:2: rule__Sumak__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Sumak__ValAssignment_1_in_rule__Sumak__Group__1__Impl1741);
+            pushFollow(FOLLOW_rule__Sumak__ValAssignment_1_in_rule__Sumak__Group__1__Impl1720);
             rule__Sumak__ValAssignment_1();
 
             state._fsp--;
@@ -2384,21 +2356,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Multk__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:814:1: rule__Multk__Group__0 : rule__Multk__Group__0__Impl rule__Multk__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:807:1: rule__Multk__Group__0 : rule__Multk__Group__0__Impl rule__Multk__Group__1 ;
     public final void rule__Multk__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:818:1: ( rule__Multk__Group__0__Impl rule__Multk__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:819:2: rule__Multk__Group__0__Impl rule__Multk__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:811:1: ( rule__Multk__Group__0__Impl rule__Multk__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:812:2: rule__Multk__Group__0__Impl rule__Multk__Group__1
             {
-            pushFollow(FOLLOW_rule__Multk__Group__0__Impl_in_rule__Multk__Group__01775);
+            pushFollow(FOLLOW_rule__Multk__Group__0__Impl_in_rule__Multk__Group__01754);
             rule__Multk__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Multk__Group__1_in_rule__Multk__Group__01778);
+            pushFollow(FOLLOW_rule__Multk__Group__1_in_rule__Multk__Group__01757);
             rule__Multk__Group__1();
 
             state._fsp--;
@@ -2422,20 +2394,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Multk__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:826:1: rule__Multk__Group__0__Impl : ( 'MULT' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:819:1: rule__Multk__Group__0__Impl : ( 'MULT' ) ;
     public final void rule__Multk__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:830:1: ( ( 'MULT' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:831:1: ( 'MULT' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:823:1: ( ( 'MULT' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:824:1: ( 'MULT' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:831:1: ( 'MULT' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:832:1: 'MULT'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:824:1: ( 'MULT' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:825:1: 'MULT'
             {
              before(grammarAccess.getMultkAccess().getMULTKeyword_0()); 
-            match(input,19,FOLLOW_19_in_rule__Multk__Group__0__Impl1806); 
+            match(input,19,FOLLOW_19_in_rule__Multk__Group__0__Impl1785); 
              after(grammarAccess.getMultkAccess().getMULTKeyword_0()); 
 
             }
@@ -2459,16 +2431,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Multk__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:845:1: rule__Multk__Group__1 : rule__Multk__Group__1__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:838:1: rule__Multk__Group__1 : rule__Multk__Group__1__Impl ;
     public final void rule__Multk__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:849:1: ( rule__Multk__Group__1__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:850:2: rule__Multk__Group__1__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:842:1: ( rule__Multk__Group__1__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:843:2: rule__Multk__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Multk__Group__1__Impl_in_rule__Multk__Group__11837);
+            pushFollow(FOLLOW_rule__Multk__Group__1__Impl_in_rule__Multk__Group__11816);
             rule__Multk__Group__1__Impl();
 
             state._fsp--;
@@ -2492,23 +2464,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Multk__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:856:1: rule__Multk__Group__1__Impl : ( ( rule__Multk__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:849:1: rule__Multk__Group__1__Impl : ( ( rule__Multk__ValAssignment_1 ) ) ;
     public final void rule__Multk__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:860:1: ( ( ( rule__Multk__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:861:1: ( ( rule__Multk__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:853:1: ( ( ( rule__Multk__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:854:1: ( ( rule__Multk__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:861:1: ( ( rule__Multk__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:862:1: ( rule__Multk__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:854:1: ( ( rule__Multk__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:855:1: ( rule__Multk__ValAssignment_1 )
             {
              before(grammarAccess.getMultkAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:863:1: ( rule__Multk__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:863:2: rule__Multk__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:856:1: ( rule__Multk__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:856:2: rule__Multk__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Multk__ValAssignment_1_in_rule__Multk__Group__1__Impl1864);
+            pushFollow(FOLLOW_rule__Multk__ValAssignment_1_in_rule__Multk__Group__1__Impl1843);
             rule__Multk__ValAssignment_1();
 
             state._fsp--;
@@ -2539,21 +2511,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:877:1: rule__Igual__Group__0 : rule__Igual__Group__0__Impl rule__Igual__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:870:1: rule__Igual__Group__0 : rule__Igual__Group__0__Impl rule__Igual__Group__1 ;
     public final void rule__Igual__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:881:1: ( rule__Igual__Group__0__Impl rule__Igual__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:882:2: rule__Igual__Group__0__Impl rule__Igual__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:874:1: ( rule__Igual__Group__0__Impl rule__Igual__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:875:2: rule__Igual__Group__0__Impl rule__Igual__Group__1
             {
-            pushFollow(FOLLOW_rule__Igual__Group__0__Impl_in_rule__Igual__Group__01898);
+            pushFollow(FOLLOW_rule__Igual__Group__0__Impl_in_rule__Igual__Group__01877);
             rule__Igual__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igual__Group__1_in_rule__Igual__Group__01901);
+            pushFollow(FOLLOW_rule__Igual__Group__1_in_rule__Igual__Group__01880);
             rule__Igual__Group__1();
 
             state._fsp--;
@@ -2577,20 +2549,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:889:1: rule__Igual__Group__0__Impl : ( 'IGUAL' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:882:1: rule__Igual__Group__0__Impl : ( 'IGUAL' ) ;
     public final void rule__Igual__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:893:1: ( ( 'IGUAL' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:894:1: ( 'IGUAL' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:886:1: ( ( 'IGUAL' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:887:1: ( 'IGUAL' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:894:1: ( 'IGUAL' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:895:1: 'IGUAL'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:887:1: ( 'IGUAL' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:888:1: 'IGUAL'
             {
              before(grammarAccess.getIgualAccess().getIGUALKeyword_0()); 
-            match(input,24,FOLLOW_24_in_rule__Igual__Group__0__Impl1929); 
+            match(input,23,FOLLOW_23_in_rule__Igual__Group__0__Impl1908); 
              after(grammarAccess.getIgualAccess().getIGUALKeyword_0()); 
 
             }
@@ -2614,21 +2586,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:908:1: rule__Igual__Group__1 : rule__Igual__Group__1__Impl rule__Igual__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:901:1: rule__Igual__Group__1 : rule__Igual__Group__1__Impl rule__Igual__Group__2 ;
     public final void rule__Igual__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:912:1: ( rule__Igual__Group__1__Impl rule__Igual__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:913:2: rule__Igual__Group__1__Impl rule__Igual__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:905:1: ( rule__Igual__Group__1__Impl rule__Igual__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:906:2: rule__Igual__Group__1__Impl rule__Igual__Group__2
             {
-            pushFollow(FOLLOW_rule__Igual__Group__1__Impl_in_rule__Igual__Group__11960);
+            pushFollow(FOLLOW_rule__Igual__Group__1__Impl_in_rule__Igual__Group__11939);
             rule__Igual__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igual__Group__2_in_rule__Igual__Group__11963);
+            pushFollow(FOLLOW_rule__Igual__Group__2_in_rule__Igual__Group__11942);
             rule__Igual__Group__2();
 
             state._fsp--;
@@ -2652,20 +2624,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:920:1: rule__Igual__Group__1__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:913:1: rule__Igual__Group__1__Impl : ( '{' ) ;
     public final void rule__Igual__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:924:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:925:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:917:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:918:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:925:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:926:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:918:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:919:1: '{'
             {
              before(grammarAccess.getIgualAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_25_in_rule__Igual__Group__1__Impl1991); 
+            match(input,24,FOLLOW_24_in_rule__Igual__Group__1__Impl1970); 
              after(grammarAccess.getIgualAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -2689,21 +2661,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:939:1: rule__Igual__Group__2 : rule__Igual__Group__2__Impl rule__Igual__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:932:1: rule__Igual__Group__2 : rule__Igual__Group__2__Impl rule__Igual__Group__3 ;
     public final void rule__Igual__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:943:1: ( rule__Igual__Group__2__Impl rule__Igual__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:944:2: rule__Igual__Group__2__Impl rule__Igual__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:936:1: ( rule__Igual__Group__2__Impl rule__Igual__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:937:2: rule__Igual__Group__2__Impl rule__Igual__Group__3
             {
-            pushFollow(FOLLOW_rule__Igual__Group__2__Impl_in_rule__Igual__Group__22022);
+            pushFollow(FOLLOW_rule__Igual__Group__2__Impl_in_rule__Igual__Group__22001);
             rule__Igual__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igual__Group__3_in_rule__Igual__Group__22025);
+            pushFollow(FOLLOW_rule__Igual__Group__3_in_rule__Igual__Group__22004);
             rule__Igual__Group__3();
 
             state._fsp--;
@@ -2727,26 +2699,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:951:1: rule__Igual__Group__2__Impl : ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:944:1: rule__Igual__Group__2__Impl : ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) ) ;
     public final void rule__Igual__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:955:1: ( ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:956:1: ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:948:1: ( ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:949:1: ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:956:1: ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:957:1: ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:949:1: ( ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:950:1: ( ( rule__Igual__SubInstructionsAssignment_2 ) ) ( ( rule__Igual__SubInstructionsAssignment_2 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:957:1: ( ( rule__Igual__SubInstructionsAssignment_2 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:958:1: ( rule__Igual__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:950:1: ( ( rule__Igual__SubInstructionsAssignment_2 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:951:1: ( rule__Igual__SubInstructionsAssignment_2 )
             {
              before(grammarAccess.getIgualAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:959:1: ( rule__Igual__SubInstructionsAssignment_2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:959:2: rule__Igual__SubInstructionsAssignment_2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:952:1: ( rule__Igual__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:952:2: rule__Igual__SubInstructionsAssignment_2
             {
-            pushFollow(FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2054);
+            pushFollow(FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2033);
             rule__Igual__SubInstructionsAssignment_2();
 
             state._fsp--;
@@ -2758,26 +2730,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:962:1: ( ( rule__Igual__SubInstructionsAssignment_2 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:963:1: ( rule__Igual__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:955:1: ( ( rule__Igual__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:956:1: ( rule__Igual__SubInstructionsAssignment_2 )*
             {
              before(grammarAccess.getIgualAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:964:1: ( rule__Igual__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:957:1: ( rule__Igual__SubInstructionsAssignment_2 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=11 && LA6_0<=23)||LA6_0==24||(LA6_0>=27 && LA6_0<=30)) ) {
+                if ( ((LA6_0>=11 && LA6_0<=22)||LA6_0==23||(LA6_0>=26 && LA6_0<=29)) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:964:2: rule__Igual__SubInstructionsAssignment_2
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:957:2: rule__Igual__SubInstructionsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2066);
+            	    pushFollow(FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2045);
             	    rule__Igual__SubInstructionsAssignment_2();
 
             	    state._fsp--;
@@ -2817,16 +2789,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:975:1: rule__Igual__Group__3 : rule__Igual__Group__3__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:968:1: rule__Igual__Group__3 : rule__Igual__Group__3__Impl ;
     public final void rule__Igual__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:979:1: ( rule__Igual__Group__3__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:980:2: rule__Igual__Group__3__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:972:1: ( rule__Igual__Group__3__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:973:2: rule__Igual__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Igual__Group__3__Impl_in_rule__Igual__Group__32099);
+            pushFollow(FOLLOW_rule__Igual__Group__3__Impl_in_rule__Igual__Group__32078);
             rule__Igual__Group__3__Impl();
 
             state._fsp--;
@@ -2850,20 +2822,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:986:1: rule__Igual__Group__3__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:979:1: rule__Igual__Group__3__Impl : ( '}' ) ;
     public final void rule__Igual__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:990:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:991:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:983:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:984:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:991:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:992:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:984:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:985:1: '}'
             {
              before(grammarAccess.getIgualAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__Igual__Group__3__Impl2127); 
+            match(input,25,FOLLOW_25_in_rule__Igual__Group__3__Impl2106); 
              after(grammarAccess.getIgualAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -2887,21 +2859,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1013:1: rule__Igualk__Group__0 : rule__Igualk__Group__0__Impl rule__Igualk__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1006:1: rule__Igualk__Group__0 : rule__Igualk__Group__0__Impl rule__Igualk__Group__1 ;
     public final void rule__Igualk__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1017:1: ( rule__Igualk__Group__0__Impl rule__Igualk__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1018:2: rule__Igualk__Group__0__Impl rule__Igualk__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1010:1: ( rule__Igualk__Group__0__Impl rule__Igualk__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1011:2: rule__Igualk__Group__0__Impl rule__Igualk__Group__1
             {
-            pushFollow(FOLLOW_rule__Igualk__Group__0__Impl_in_rule__Igualk__Group__02166);
+            pushFollow(FOLLOW_rule__Igualk__Group__0__Impl_in_rule__Igualk__Group__02145);
             rule__Igualk__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igualk__Group__1_in_rule__Igualk__Group__02169);
+            pushFollow(FOLLOW_rule__Igualk__Group__1_in_rule__Igualk__Group__02148);
             rule__Igualk__Group__1();
 
             state._fsp--;
@@ -2925,20 +2897,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1025:1: rule__Igualk__Group__0__Impl : ( 'IGUAL' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1018:1: rule__Igualk__Group__0__Impl : ( 'IGUAL' ) ;
     public final void rule__Igualk__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1029:1: ( ( 'IGUAL' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1030:1: ( 'IGUAL' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1022:1: ( ( 'IGUAL' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1023:1: ( 'IGUAL' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1030:1: ( 'IGUAL' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1031:1: 'IGUAL'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1023:1: ( 'IGUAL' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1024:1: 'IGUAL'
             {
              before(grammarAccess.getIgualkAccess().getIGUALKeyword_0()); 
-            match(input,24,FOLLOW_24_in_rule__Igualk__Group__0__Impl2197); 
+            match(input,23,FOLLOW_23_in_rule__Igualk__Group__0__Impl2176); 
              after(grammarAccess.getIgualkAccess().getIGUALKeyword_0()); 
 
             }
@@ -2962,21 +2934,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1044:1: rule__Igualk__Group__1 : rule__Igualk__Group__1__Impl rule__Igualk__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1037:1: rule__Igualk__Group__1 : rule__Igualk__Group__1__Impl rule__Igualk__Group__2 ;
     public final void rule__Igualk__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1048:1: ( rule__Igualk__Group__1__Impl rule__Igualk__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1049:2: rule__Igualk__Group__1__Impl rule__Igualk__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1041:1: ( rule__Igualk__Group__1__Impl rule__Igualk__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1042:2: rule__Igualk__Group__1__Impl rule__Igualk__Group__2
             {
-            pushFollow(FOLLOW_rule__Igualk__Group__1__Impl_in_rule__Igualk__Group__12228);
+            pushFollow(FOLLOW_rule__Igualk__Group__1__Impl_in_rule__Igualk__Group__12207);
             rule__Igualk__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igualk__Group__2_in_rule__Igualk__Group__12231);
+            pushFollow(FOLLOW_rule__Igualk__Group__2_in_rule__Igualk__Group__12210);
             rule__Igualk__Group__2();
 
             state._fsp--;
@@ -3000,23 +2972,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1056:1: rule__Igualk__Group__1__Impl : ( ( rule__Igualk__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1049:1: rule__Igualk__Group__1__Impl : ( ( rule__Igualk__ValAssignment_1 ) ) ;
     public final void rule__Igualk__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1060:1: ( ( ( rule__Igualk__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1061:1: ( ( rule__Igualk__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1053:1: ( ( ( rule__Igualk__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1054:1: ( ( rule__Igualk__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1061:1: ( ( rule__Igualk__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1062:1: ( rule__Igualk__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1054:1: ( ( rule__Igualk__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1055:1: ( rule__Igualk__ValAssignment_1 )
             {
              before(grammarAccess.getIgualkAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1063:1: ( rule__Igualk__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1063:2: rule__Igualk__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1056:1: ( rule__Igualk__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1056:2: rule__Igualk__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Igualk__ValAssignment_1_in_rule__Igualk__Group__1__Impl2258);
+            pushFollow(FOLLOW_rule__Igualk__ValAssignment_1_in_rule__Igualk__Group__1__Impl2237);
             rule__Igualk__ValAssignment_1();
 
             state._fsp--;
@@ -3047,21 +3019,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1073:1: rule__Igualk__Group__2 : rule__Igualk__Group__2__Impl rule__Igualk__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1066:1: rule__Igualk__Group__2 : rule__Igualk__Group__2__Impl rule__Igualk__Group__3 ;
     public final void rule__Igualk__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1077:1: ( rule__Igualk__Group__2__Impl rule__Igualk__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1078:2: rule__Igualk__Group__2__Impl rule__Igualk__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1070:1: ( rule__Igualk__Group__2__Impl rule__Igualk__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1071:2: rule__Igualk__Group__2__Impl rule__Igualk__Group__3
             {
-            pushFollow(FOLLOW_rule__Igualk__Group__2__Impl_in_rule__Igualk__Group__22288);
+            pushFollow(FOLLOW_rule__Igualk__Group__2__Impl_in_rule__Igualk__Group__22267);
             rule__Igualk__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igualk__Group__3_in_rule__Igualk__Group__22291);
+            pushFollow(FOLLOW_rule__Igualk__Group__3_in_rule__Igualk__Group__22270);
             rule__Igualk__Group__3();
 
             state._fsp--;
@@ -3085,20 +3057,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1085:1: rule__Igualk__Group__2__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1078:1: rule__Igualk__Group__2__Impl : ( '{' ) ;
     public final void rule__Igualk__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1089:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1090:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1082:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1083:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1090:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1091:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1083:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1084:1: '{'
             {
              before(grammarAccess.getIgualkAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,25,FOLLOW_25_in_rule__Igualk__Group__2__Impl2319); 
+            match(input,24,FOLLOW_24_in_rule__Igualk__Group__2__Impl2298); 
              after(grammarAccess.getIgualkAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -3122,21 +3094,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1104:1: rule__Igualk__Group__3 : rule__Igualk__Group__3__Impl rule__Igualk__Group__4 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1097:1: rule__Igualk__Group__3 : rule__Igualk__Group__3__Impl rule__Igualk__Group__4 ;
     public final void rule__Igualk__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1108:1: ( rule__Igualk__Group__3__Impl rule__Igualk__Group__4 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1109:2: rule__Igualk__Group__3__Impl rule__Igualk__Group__4
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1101:1: ( rule__Igualk__Group__3__Impl rule__Igualk__Group__4 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1102:2: rule__Igualk__Group__3__Impl rule__Igualk__Group__4
             {
-            pushFollow(FOLLOW_rule__Igualk__Group__3__Impl_in_rule__Igualk__Group__32350);
+            pushFollow(FOLLOW_rule__Igualk__Group__3__Impl_in_rule__Igualk__Group__32329);
             rule__Igualk__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Igualk__Group__4_in_rule__Igualk__Group__32353);
+            pushFollow(FOLLOW_rule__Igualk__Group__4_in_rule__Igualk__Group__32332);
             rule__Igualk__Group__4();
 
             state._fsp--;
@@ -3160,26 +3132,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1116:1: rule__Igualk__Group__3__Impl : ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1109:1: rule__Igualk__Group__3__Impl : ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) ) ;
     public final void rule__Igualk__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1120:1: ( ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1121:1: ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1113:1: ( ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1114:1: ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1121:1: ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1122:1: ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1114:1: ( ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1115:1: ( ( rule__Igualk__SubInstructionsAssignment_3 ) ) ( ( rule__Igualk__SubInstructionsAssignment_3 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1122:1: ( ( rule__Igualk__SubInstructionsAssignment_3 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1123:1: ( rule__Igualk__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1115:1: ( ( rule__Igualk__SubInstructionsAssignment_3 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1116:1: ( rule__Igualk__SubInstructionsAssignment_3 )
             {
              before(grammarAccess.getIgualkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1124:1: ( rule__Igualk__SubInstructionsAssignment_3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1124:2: rule__Igualk__SubInstructionsAssignment_3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1117:1: ( rule__Igualk__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1117:2: rule__Igualk__SubInstructionsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2382);
+            pushFollow(FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2361);
             rule__Igualk__SubInstructionsAssignment_3();
 
             state._fsp--;
@@ -3191,26 +3163,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1127:1: ( ( rule__Igualk__SubInstructionsAssignment_3 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1128:1: ( rule__Igualk__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1120:1: ( ( rule__Igualk__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1121:1: ( rule__Igualk__SubInstructionsAssignment_3 )*
             {
              before(grammarAccess.getIgualkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1129:1: ( rule__Igualk__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1122:1: ( rule__Igualk__SubInstructionsAssignment_3 )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( ((LA7_0>=11 && LA7_0<=23)||LA7_0==24||(LA7_0>=27 && LA7_0<=30)) ) {
+                if ( ((LA7_0>=11 && LA7_0<=22)||LA7_0==23||(LA7_0>=26 && LA7_0<=29)) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1129:2: rule__Igualk__SubInstructionsAssignment_3
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1122:2: rule__Igualk__SubInstructionsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2394);
+            	    pushFollow(FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2373);
             	    rule__Igualk__SubInstructionsAssignment_3();
 
             	    state._fsp--;
@@ -3250,16 +3222,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__4"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1140:1: rule__Igualk__Group__4 : rule__Igualk__Group__4__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1133:1: rule__Igualk__Group__4 : rule__Igualk__Group__4__Impl ;
     public final void rule__Igualk__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1144:1: ( rule__Igualk__Group__4__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1145:2: rule__Igualk__Group__4__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1137:1: ( rule__Igualk__Group__4__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1138:2: rule__Igualk__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Igualk__Group__4__Impl_in_rule__Igualk__Group__42427);
+            pushFollow(FOLLOW_rule__Igualk__Group__4__Impl_in_rule__Igualk__Group__42406);
             rule__Igualk__Group__4__Impl();
 
             state._fsp--;
@@ -3283,20 +3255,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__Group__4__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1151:1: rule__Igualk__Group__4__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1144:1: rule__Igualk__Group__4__Impl : ( '}' ) ;
     public final void rule__Igualk__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1155:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1156:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1148:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1149:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1156:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1157:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1149:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1150:1: '}'
             {
              before(grammarAccess.getIgualkAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__Igualk__Group__4__Impl2455); 
+            match(input,25,FOLLOW_25_in_rule__Igualk__Group__4__Impl2434); 
              after(grammarAccess.getIgualkAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -3320,21 +3292,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1180:1: rule__Difer__Group__0 : rule__Difer__Group__0__Impl rule__Difer__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1173:1: rule__Difer__Group__0 : rule__Difer__Group__0__Impl rule__Difer__Group__1 ;
     public final void rule__Difer__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1184:1: ( rule__Difer__Group__0__Impl rule__Difer__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1185:2: rule__Difer__Group__0__Impl rule__Difer__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1177:1: ( rule__Difer__Group__0__Impl rule__Difer__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1178:2: rule__Difer__Group__0__Impl rule__Difer__Group__1
             {
-            pushFollow(FOLLOW_rule__Difer__Group__0__Impl_in_rule__Difer__Group__02496);
+            pushFollow(FOLLOW_rule__Difer__Group__0__Impl_in_rule__Difer__Group__02475);
             rule__Difer__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Difer__Group__1_in_rule__Difer__Group__02499);
+            pushFollow(FOLLOW_rule__Difer__Group__1_in_rule__Difer__Group__02478);
             rule__Difer__Group__1();
 
             state._fsp--;
@@ -3358,20 +3330,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1192:1: rule__Difer__Group__0__Impl : ( 'DIFER' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1185:1: rule__Difer__Group__0__Impl : ( 'DIFER' ) ;
     public final void rule__Difer__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1196:1: ( ( 'DIFER' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1197:1: ( 'DIFER' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1189:1: ( ( 'DIFER' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1190:1: ( 'DIFER' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1197:1: ( 'DIFER' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1198:1: 'DIFER'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1190:1: ( 'DIFER' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1191:1: 'DIFER'
             {
              before(grammarAccess.getDiferAccess().getDIFERKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__Difer__Group__0__Impl2527); 
+            match(input,26,FOLLOW_26_in_rule__Difer__Group__0__Impl2506); 
              after(grammarAccess.getDiferAccess().getDIFERKeyword_0()); 
 
             }
@@ -3395,21 +3367,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1211:1: rule__Difer__Group__1 : rule__Difer__Group__1__Impl rule__Difer__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1204:1: rule__Difer__Group__1 : rule__Difer__Group__1__Impl rule__Difer__Group__2 ;
     public final void rule__Difer__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1215:1: ( rule__Difer__Group__1__Impl rule__Difer__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1216:2: rule__Difer__Group__1__Impl rule__Difer__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1208:1: ( rule__Difer__Group__1__Impl rule__Difer__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1209:2: rule__Difer__Group__1__Impl rule__Difer__Group__2
             {
-            pushFollow(FOLLOW_rule__Difer__Group__1__Impl_in_rule__Difer__Group__12558);
+            pushFollow(FOLLOW_rule__Difer__Group__1__Impl_in_rule__Difer__Group__12537);
             rule__Difer__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Difer__Group__2_in_rule__Difer__Group__12561);
+            pushFollow(FOLLOW_rule__Difer__Group__2_in_rule__Difer__Group__12540);
             rule__Difer__Group__2();
 
             state._fsp--;
@@ -3433,20 +3405,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1223:1: rule__Difer__Group__1__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1216:1: rule__Difer__Group__1__Impl : ( '{' ) ;
     public final void rule__Difer__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1227:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1228:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1220:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1221:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1228:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1229:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1221:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1222:1: '{'
             {
              before(grammarAccess.getDiferAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_25_in_rule__Difer__Group__1__Impl2589); 
+            match(input,24,FOLLOW_24_in_rule__Difer__Group__1__Impl2568); 
              after(grammarAccess.getDiferAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -3470,21 +3442,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1242:1: rule__Difer__Group__2 : rule__Difer__Group__2__Impl rule__Difer__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1235:1: rule__Difer__Group__2 : rule__Difer__Group__2__Impl rule__Difer__Group__3 ;
     public final void rule__Difer__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1246:1: ( rule__Difer__Group__2__Impl rule__Difer__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1247:2: rule__Difer__Group__2__Impl rule__Difer__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1239:1: ( rule__Difer__Group__2__Impl rule__Difer__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1240:2: rule__Difer__Group__2__Impl rule__Difer__Group__3
             {
-            pushFollow(FOLLOW_rule__Difer__Group__2__Impl_in_rule__Difer__Group__22620);
+            pushFollow(FOLLOW_rule__Difer__Group__2__Impl_in_rule__Difer__Group__22599);
             rule__Difer__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Difer__Group__3_in_rule__Difer__Group__22623);
+            pushFollow(FOLLOW_rule__Difer__Group__3_in_rule__Difer__Group__22602);
             rule__Difer__Group__3();
 
             state._fsp--;
@@ -3508,26 +3480,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1254:1: rule__Difer__Group__2__Impl : ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1247:1: rule__Difer__Group__2__Impl : ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) ) ;
     public final void rule__Difer__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1258:1: ( ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1259:1: ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1251:1: ( ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1252:1: ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1259:1: ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1260:1: ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1252:1: ( ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1253:1: ( ( rule__Difer__SubInstructionsAssignment_2 ) ) ( ( rule__Difer__SubInstructionsAssignment_2 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1260:1: ( ( rule__Difer__SubInstructionsAssignment_2 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1261:1: ( rule__Difer__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1253:1: ( ( rule__Difer__SubInstructionsAssignment_2 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1254:1: ( rule__Difer__SubInstructionsAssignment_2 )
             {
              before(grammarAccess.getDiferAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1262:1: ( rule__Difer__SubInstructionsAssignment_2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1262:2: rule__Difer__SubInstructionsAssignment_2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1255:1: ( rule__Difer__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1255:2: rule__Difer__SubInstructionsAssignment_2
             {
-            pushFollow(FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2652);
+            pushFollow(FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2631);
             rule__Difer__SubInstructionsAssignment_2();
 
             state._fsp--;
@@ -3539,26 +3511,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1265:1: ( ( rule__Difer__SubInstructionsAssignment_2 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1266:1: ( rule__Difer__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1258:1: ( ( rule__Difer__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1259:1: ( rule__Difer__SubInstructionsAssignment_2 )*
             {
              before(grammarAccess.getDiferAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1267:1: ( rule__Difer__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1260:1: ( rule__Difer__SubInstructionsAssignment_2 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( ((LA8_0>=11 && LA8_0<=23)||LA8_0==24||(LA8_0>=27 && LA8_0<=30)) ) {
+                if ( ((LA8_0>=11 && LA8_0<=22)||LA8_0==23||(LA8_0>=26 && LA8_0<=29)) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1267:2: rule__Difer__SubInstructionsAssignment_2
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1260:2: rule__Difer__SubInstructionsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2664);
+            	    pushFollow(FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2643);
             	    rule__Difer__SubInstructionsAssignment_2();
 
             	    state._fsp--;
@@ -3598,16 +3570,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1278:1: rule__Difer__Group__3 : rule__Difer__Group__3__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1271:1: rule__Difer__Group__3 : rule__Difer__Group__3__Impl ;
     public final void rule__Difer__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1282:1: ( rule__Difer__Group__3__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1283:2: rule__Difer__Group__3__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1275:1: ( rule__Difer__Group__3__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1276:2: rule__Difer__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Difer__Group__3__Impl_in_rule__Difer__Group__32697);
+            pushFollow(FOLLOW_rule__Difer__Group__3__Impl_in_rule__Difer__Group__32676);
             rule__Difer__Group__3__Impl();
 
             state._fsp--;
@@ -3631,20 +3603,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1289:1: rule__Difer__Group__3__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1282:1: rule__Difer__Group__3__Impl : ( '}' ) ;
     public final void rule__Difer__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1293:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1294:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1286:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1287:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1294:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1295:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1287:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1288:1: '}'
             {
              before(grammarAccess.getDiferAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__Difer__Group__3__Impl2725); 
+            match(input,25,FOLLOW_25_in_rule__Difer__Group__3__Impl2704); 
              after(grammarAccess.getDiferAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -3668,21 +3640,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1316:1: rule__Diferk__Group__0 : rule__Diferk__Group__0__Impl rule__Diferk__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1309:1: rule__Diferk__Group__0 : rule__Diferk__Group__0__Impl rule__Diferk__Group__1 ;
     public final void rule__Diferk__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1320:1: ( rule__Diferk__Group__0__Impl rule__Diferk__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1321:2: rule__Diferk__Group__0__Impl rule__Diferk__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1313:1: ( rule__Diferk__Group__0__Impl rule__Diferk__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1314:2: rule__Diferk__Group__0__Impl rule__Diferk__Group__1
             {
-            pushFollow(FOLLOW_rule__Diferk__Group__0__Impl_in_rule__Diferk__Group__02764);
+            pushFollow(FOLLOW_rule__Diferk__Group__0__Impl_in_rule__Diferk__Group__02743);
             rule__Diferk__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Diferk__Group__1_in_rule__Diferk__Group__02767);
+            pushFollow(FOLLOW_rule__Diferk__Group__1_in_rule__Diferk__Group__02746);
             rule__Diferk__Group__1();
 
             state._fsp--;
@@ -3706,20 +3678,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1328:1: rule__Diferk__Group__0__Impl : ( 'DIFER' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1321:1: rule__Diferk__Group__0__Impl : ( 'DIFER' ) ;
     public final void rule__Diferk__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1332:1: ( ( 'DIFER' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1333:1: ( 'DIFER' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1325:1: ( ( 'DIFER' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1326:1: ( 'DIFER' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1333:1: ( 'DIFER' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1334:1: 'DIFER'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1326:1: ( 'DIFER' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1327:1: 'DIFER'
             {
              before(grammarAccess.getDiferkAccess().getDIFERKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__Diferk__Group__0__Impl2795); 
+            match(input,26,FOLLOW_26_in_rule__Diferk__Group__0__Impl2774); 
              after(grammarAccess.getDiferkAccess().getDIFERKeyword_0()); 
 
             }
@@ -3743,21 +3715,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1347:1: rule__Diferk__Group__1 : rule__Diferk__Group__1__Impl rule__Diferk__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1340:1: rule__Diferk__Group__1 : rule__Diferk__Group__1__Impl rule__Diferk__Group__2 ;
     public final void rule__Diferk__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1351:1: ( rule__Diferk__Group__1__Impl rule__Diferk__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1352:2: rule__Diferk__Group__1__Impl rule__Diferk__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1344:1: ( rule__Diferk__Group__1__Impl rule__Diferk__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1345:2: rule__Diferk__Group__1__Impl rule__Diferk__Group__2
             {
-            pushFollow(FOLLOW_rule__Diferk__Group__1__Impl_in_rule__Diferk__Group__12826);
+            pushFollow(FOLLOW_rule__Diferk__Group__1__Impl_in_rule__Diferk__Group__12805);
             rule__Diferk__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Diferk__Group__2_in_rule__Diferk__Group__12829);
+            pushFollow(FOLLOW_rule__Diferk__Group__2_in_rule__Diferk__Group__12808);
             rule__Diferk__Group__2();
 
             state._fsp--;
@@ -3781,23 +3753,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1359:1: rule__Diferk__Group__1__Impl : ( ( rule__Diferk__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1352:1: rule__Diferk__Group__1__Impl : ( ( rule__Diferk__ValAssignment_1 ) ) ;
     public final void rule__Diferk__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1363:1: ( ( ( rule__Diferk__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1364:1: ( ( rule__Diferk__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1356:1: ( ( ( rule__Diferk__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1357:1: ( ( rule__Diferk__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1364:1: ( ( rule__Diferk__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1365:1: ( rule__Diferk__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1357:1: ( ( rule__Diferk__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1358:1: ( rule__Diferk__ValAssignment_1 )
             {
              before(grammarAccess.getDiferkAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1366:1: ( rule__Diferk__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1366:2: rule__Diferk__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1359:1: ( rule__Diferk__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1359:2: rule__Diferk__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Diferk__ValAssignment_1_in_rule__Diferk__Group__1__Impl2856);
+            pushFollow(FOLLOW_rule__Diferk__ValAssignment_1_in_rule__Diferk__Group__1__Impl2835);
             rule__Diferk__ValAssignment_1();
 
             state._fsp--;
@@ -3828,21 +3800,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1376:1: rule__Diferk__Group__2 : rule__Diferk__Group__2__Impl rule__Diferk__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1369:1: rule__Diferk__Group__2 : rule__Diferk__Group__2__Impl rule__Diferk__Group__3 ;
     public final void rule__Diferk__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1380:1: ( rule__Diferk__Group__2__Impl rule__Diferk__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1381:2: rule__Diferk__Group__2__Impl rule__Diferk__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1373:1: ( rule__Diferk__Group__2__Impl rule__Diferk__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1374:2: rule__Diferk__Group__2__Impl rule__Diferk__Group__3
             {
-            pushFollow(FOLLOW_rule__Diferk__Group__2__Impl_in_rule__Diferk__Group__22886);
+            pushFollow(FOLLOW_rule__Diferk__Group__2__Impl_in_rule__Diferk__Group__22865);
             rule__Diferk__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Diferk__Group__3_in_rule__Diferk__Group__22889);
+            pushFollow(FOLLOW_rule__Diferk__Group__3_in_rule__Diferk__Group__22868);
             rule__Diferk__Group__3();
 
             state._fsp--;
@@ -3866,20 +3838,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1388:1: rule__Diferk__Group__2__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1381:1: rule__Diferk__Group__2__Impl : ( '{' ) ;
     public final void rule__Diferk__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1392:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1393:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1385:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1386:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1393:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1394:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1386:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1387:1: '{'
             {
              before(grammarAccess.getDiferkAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,25,FOLLOW_25_in_rule__Diferk__Group__2__Impl2917); 
+            match(input,24,FOLLOW_24_in_rule__Diferk__Group__2__Impl2896); 
              after(grammarAccess.getDiferkAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -3903,21 +3875,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1407:1: rule__Diferk__Group__3 : rule__Diferk__Group__3__Impl rule__Diferk__Group__4 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1400:1: rule__Diferk__Group__3 : rule__Diferk__Group__3__Impl rule__Diferk__Group__4 ;
     public final void rule__Diferk__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1411:1: ( rule__Diferk__Group__3__Impl rule__Diferk__Group__4 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1412:2: rule__Diferk__Group__3__Impl rule__Diferk__Group__4
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1404:1: ( rule__Diferk__Group__3__Impl rule__Diferk__Group__4 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1405:2: rule__Diferk__Group__3__Impl rule__Diferk__Group__4
             {
-            pushFollow(FOLLOW_rule__Diferk__Group__3__Impl_in_rule__Diferk__Group__32948);
+            pushFollow(FOLLOW_rule__Diferk__Group__3__Impl_in_rule__Diferk__Group__32927);
             rule__Diferk__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Diferk__Group__4_in_rule__Diferk__Group__32951);
+            pushFollow(FOLLOW_rule__Diferk__Group__4_in_rule__Diferk__Group__32930);
             rule__Diferk__Group__4();
 
             state._fsp--;
@@ -3941,26 +3913,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1419:1: rule__Diferk__Group__3__Impl : ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1412:1: rule__Diferk__Group__3__Impl : ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) ) ;
     public final void rule__Diferk__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1423:1: ( ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1424:1: ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1416:1: ( ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1417:1: ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1424:1: ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1425:1: ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1417:1: ( ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1418:1: ( ( rule__Diferk__SubInstructionsAssignment_3 ) ) ( ( rule__Diferk__SubInstructionsAssignment_3 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1425:1: ( ( rule__Diferk__SubInstructionsAssignment_3 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1426:1: ( rule__Diferk__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1418:1: ( ( rule__Diferk__SubInstructionsAssignment_3 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1419:1: ( rule__Diferk__SubInstructionsAssignment_3 )
             {
              before(grammarAccess.getDiferkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1427:1: ( rule__Diferk__SubInstructionsAssignment_3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1427:2: rule__Diferk__SubInstructionsAssignment_3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1420:1: ( rule__Diferk__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1420:2: rule__Diferk__SubInstructionsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2980);
+            pushFollow(FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2959);
             rule__Diferk__SubInstructionsAssignment_3();
 
             state._fsp--;
@@ -3972,26 +3944,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1430:1: ( ( rule__Diferk__SubInstructionsAssignment_3 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1431:1: ( rule__Diferk__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1423:1: ( ( rule__Diferk__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1424:1: ( rule__Diferk__SubInstructionsAssignment_3 )*
             {
              before(grammarAccess.getDiferkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1432:1: ( rule__Diferk__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1425:1: ( rule__Diferk__SubInstructionsAssignment_3 )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( ((LA9_0>=11 && LA9_0<=23)||LA9_0==24||(LA9_0>=27 && LA9_0<=30)) ) {
+                if ( ((LA9_0>=11 && LA9_0<=22)||LA9_0==23||(LA9_0>=26 && LA9_0<=29)) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1432:2: rule__Diferk__SubInstructionsAssignment_3
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1425:2: rule__Diferk__SubInstructionsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2992);
+            	    pushFollow(FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2971);
             	    rule__Diferk__SubInstructionsAssignment_3();
 
             	    state._fsp--;
@@ -4031,16 +4003,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__4"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1443:1: rule__Diferk__Group__4 : rule__Diferk__Group__4__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1436:1: rule__Diferk__Group__4 : rule__Diferk__Group__4__Impl ;
     public final void rule__Diferk__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1447:1: ( rule__Diferk__Group__4__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1448:2: rule__Diferk__Group__4__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1440:1: ( rule__Diferk__Group__4__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1441:2: rule__Diferk__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Diferk__Group__4__Impl_in_rule__Diferk__Group__43025);
+            pushFollow(FOLLOW_rule__Diferk__Group__4__Impl_in_rule__Diferk__Group__43004);
             rule__Diferk__Group__4__Impl();
 
             state._fsp--;
@@ -4064,20 +4036,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__Group__4__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1454:1: rule__Diferk__Group__4__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1447:1: rule__Diferk__Group__4__Impl : ( '}' ) ;
     public final void rule__Diferk__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1458:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1459:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1451:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1452:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1459:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1460:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1452:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1453:1: '}'
             {
              before(grammarAccess.getDiferkAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__Diferk__Group__4__Impl3053); 
+            match(input,25,FOLLOW_25_in_rule__Diferk__Group__4__Impl3032); 
              after(grammarAccess.getDiferkAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -4101,21 +4073,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1483:1: rule__Mayor__Group__0 : rule__Mayor__Group__0__Impl rule__Mayor__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1476:1: rule__Mayor__Group__0 : rule__Mayor__Group__0__Impl rule__Mayor__Group__1 ;
     public final void rule__Mayor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1487:1: ( rule__Mayor__Group__0__Impl rule__Mayor__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1488:2: rule__Mayor__Group__0__Impl rule__Mayor__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1480:1: ( rule__Mayor__Group__0__Impl rule__Mayor__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1481:2: rule__Mayor__Group__0__Impl rule__Mayor__Group__1
             {
-            pushFollow(FOLLOW_rule__Mayor__Group__0__Impl_in_rule__Mayor__Group__03094);
+            pushFollow(FOLLOW_rule__Mayor__Group__0__Impl_in_rule__Mayor__Group__03073);
             rule__Mayor__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayor__Group__1_in_rule__Mayor__Group__03097);
+            pushFollow(FOLLOW_rule__Mayor__Group__1_in_rule__Mayor__Group__03076);
             rule__Mayor__Group__1();
 
             state._fsp--;
@@ -4139,20 +4111,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1495:1: rule__Mayor__Group__0__Impl : ( 'MAYOR' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1488:1: rule__Mayor__Group__0__Impl : ( 'MAYOR' ) ;
     public final void rule__Mayor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1499:1: ( ( 'MAYOR' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1500:1: ( 'MAYOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1492:1: ( ( 'MAYOR' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1493:1: ( 'MAYOR' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1500:1: ( 'MAYOR' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1501:1: 'MAYOR'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1493:1: ( 'MAYOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1494:1: 'MAYOR'
             {
              before(grammarAccess.getMayorAccess().getMAYORKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__Mayor__Group__0__Impl3125); 
+            match(input,27,FOLLOW_27_in_rule__Mayor__Group__0__Impl3104); 
              after(grammarAccess.getMayorAccess().getMAYORKeyword_0()); 
 
             }
@@ -4176,21 +4148,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1514:1: rule__Mayor__Group__1 : rule__Mayor__Group__1__Impl rule__Mayor__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1507:1: rule__Mayor__Group__1 : rule__Mayor__Group__1__Impl rule__Mayor__Group__2 ;
     public final void rule__Mayor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1518:1: ( rule__Mayor__Group__1__Impl rule__Mayor__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1519:2: rule__Mayor__Group__1__Impl rule__Mayor__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1511:1: ( rule__Mayor__Group__1__Impl rule__Mayor__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1512:2: rule__Mayor__Group__1__Impl rule__Mayor__Group__2
             {
-            pushFollow(FOLLOW_rule__Mayor__Group__1__Impl_in_rule__Mayor__Group__13156);
+            pushFollow(FOLLOW_rule__Mayor__Group__1__Impl_in_rule__Mayor__Group__13135);
             rule__Mayor__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayor__Group__2_in_rule__Mayor__Group__13159);
+            pushFollow(FOLLOW_rule__Mayor__Group__2_in_rule__Mayor__Group__13138);
             rule__Mayor__Group__2();
 
             state._fsp--;
@@ -4214,20 +4186,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1526:1: rule__Mayor__Group__1__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1519:1: rule__Mayor__Group__1__Impl : ( '{' ) ;
     public final void rule__Mayor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1530:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1531:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1523:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1524:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1531:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1532:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1524:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1525:1: '{'
             {
              before(grammarAccess.getMayorAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_25_in_rule__Mayor__Group__1__Impl3187); 
+            match(input,24,FOLLOW_24_in_rule__Mayor__Group__1__Impl3166); 
              after(grammarAccess.getMayorAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -4251,21 +4223,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1545:1: rule__Mayor__Group__2 : rule__Mayor__Group__2__Impl rule__Mayor__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1538:1: rule__Mayor__Group__2 : rule__Mayor__Group__2__Impl rule__Mayor__Group__3 ;
     public final void rule__Mayor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1549:1: ( rule__Mayor__Group__2__Impl rule__Mayor__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1550:2: rule__Mayor__Group__2__Impl rule__Mayor__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1542:1: ( rule__Mayor__Group__2__Impl rule__Mayor__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1543:2: rule__Mayor__Group__2__Impl rule__Mayor__Group__3
             {
-            pushFollow(FOLLOW_rule__Mayor__Group__2__Impl_in_rule__Mayor__Group__23218);
+            pushFollow(FOLLOW_rule__Mayor__Group__2__Impl_in_rule__Mayor__Group__23197);
             rule__Mayor__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayor__Group__3_in_rule__Mayor__Group__23221);
+            pushFollow(FOLLOW_rule__Mayor__Group__3_in_rule__Mayor__Group__23200);
             rule__Mayor__Group__3();
 
             state._fsp--;
@@ -4289,26 +4261,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1557:1: rule__Mayor__Group__2__Impl : ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1550:1: rule__Mayor__Group__2__Impl : ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) ) ;
     public final void rule__Mayor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1561:1: ( ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1562:1: ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1554:1: ( ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1555:1: ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1562:1: ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1563:1: ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1555:1: ( ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1556:1: ( ( rule__Mayor__SubInstructionsAssignment_2 ) ) ( ( rule__Mayor__SubInstructionsAssignment_2 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1563:1: ( ( rule__Mayor__SubInstructionsAssignment_2 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1564:1: ( rule__Mayor__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1556:1: ( ( rule__Mayor__SubInstructionsAssignment_2 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1557:1: ( rule__Mayor__SubInstructionsAssignment_2 )
             {
              before(grammarAccess.getMayorAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1565:1: ( rule__Mayor__SubInstructionsAssignment_2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1565:2: rule__Mayor__SubInstructionsAssignment_2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1558:1: ( rule__Mayor__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1558:2: rule__Mayor__SubInstructionsAssignment_2
             {
-            pushFollow(FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3250);
+            pushFollow(FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3229);
             rule__Mayor__SubInstructionsAssignment_2();
 
             state._fsp--;
@@ -4320,26 +4292,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1568:1: ( ( rule__Mayor__SubInstructionsAssignment_2 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1569:1: ( rule__Mayor__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1561:1: ( ( rule__Mayor__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1562:1: ( rule__Mayor__SubInstructionsAssignment_2 )*
             {
              before(grammarAccess.getMayorAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1570:1: ( rule__Mayor__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1563:1: ( rule__Mayor__SubInstructionsAssignment_2 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>=11 && LA10_0<=23)||LA10_0==24||(LA10_0>=27 && LA10_0<=30)) ) {
+                if ( ((LA10_0>=11 && LA10_0<=22)||LA10_0==23||(LA10_0>=26 && LA10_0<=29)) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1570:2: rule__Mayor__SubInstructionsAssignment_2
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1563:2: rule__Mayor__SubInstructionsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3262);
+            	    pushFollow(FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3241);
             	    rule__Mayor__SubInstructionsAssignment_2();
 
             	    state._fsp--;
@@ -4379,16 +4351,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1581:1: rule__Mayor__Group__3 : rule__Mayor__Group__3__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1574:1: rule__Mayor__Group__3 : rule__Mayor__Group__3__Impl ;
     public final void rule__Mayor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1585:1: ( rule__Mayor__Group__3__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1586:2: rule__Mayor__Group__3__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1578:1: ( rule__Mayor__Group__3__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1579:2: rule__Mayor__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Mayor__Group__3__Impl_in_rule__Mayor__Group__33295);
+            pushFollow(FOLLOW_rule__Mayor__Group__3__Impl_in_rule__Mayor__Group__33274);
             rule__Mayor__Group__3__Impl();
 
             state._fsp--;
@@ -4412,20 +4384,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1592:1: rule__Mayor__Group__3__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1585:1: rule__Mayor__Group__3__Impl : ( '}' ) ;
     public final void rule__Mayor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1596:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1597:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1589:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1590:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1597:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1598:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1590:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1591:1: '}'
             {
              before(grammarAccess.getMayorAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__Mayor__Group__3__Impl3323); 
+            match(input,25,FOLLOW_25_in_rule__Mayor__Group__3__Impl3302); 
              after(grammarAccess.getMayorAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -4449,21 +4421,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1619:1: rule__Mayork__Group__0 : rule__Mayork__Group__0__Impl rule__Mayork__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1612:1: rule__Mayork__Group__0 : rule__Mayork__Group__0__Impl rule__Mayork__Group__1 ;
     public final void rule__Mayork__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1623:1: ( rule__Mayork__Group__0__Impl rule__Mayork__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1624:2: rule__Mayork__Group__0__Impl rule__Mayork__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1616:1: ( rule__Mayork__Group__0__Impl rule__Mayork__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1617:2: rule__Mayork__Group__0__Impl rule__Mayork__Group__1
             {
-            pushFollow(FOLLOW_rule__Mayork__Group__0__Impl_in_rule__Mayork__Group__03362);
+            pushFollow(FOLLOW_rule__Mayork__Group__0__Impl_in_rule__Mayork__Group__03341);
             rule__Mayork__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayork__Group__1_in_rule__Mayork__Group__03365);
+            pushFollow(FOLLOW_rule__Mayork__Group__1_in_rule__Mayork__Group__03344);
             rule__Mayork__Group__1();
 
             state._fsp--;
@@ -4487,20 +4459,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1631:1: rule__Mayork__Group__0__Impl : ( 'MAYOR' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1624:1: rule__Mayork__Group__0__Impl : ( 'MAYOR' ) ;
     public final void rule__Mayork__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1635:1: ( ( 'MAYOR' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1636:1: ( 'MAYOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1628:1: ( ( 'MAYOR' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1629:1: ( 'MAYOR' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1636:1: ( 'MAYOR' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1637:1: 'MAYOR'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1629:1: ( 'MAYOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1630:1: 'MAYOR'
             {
              before(grammarAccess.getMayorkAccess().getMAYORKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__Mayork__Group__0__Impl3393); 
+            match(input,27,FOLLOW_27_in_rule__Mayork__Group__0__Impl3372); 
              after(grammarAccess.getMayorkAccess().getMAYORKeyword_0()); 
 
             }
@@ -4524,21 +4496,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1650:1: rule__Mayork__Group__1 : rule__Mayork__Group__1__Impl rule__Mayork__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1643:1: rule__Mayork__Group__1 : rule__Mayork__Group__1__Impl rule__Mayork__Group__2 ;
     public final void rule__Mayork__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1654:1: ( rule__Mayork__Group__1__Impl rule__Mayork__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1655:2: rule__Mayork__Group__1__Impl rule__Mayork__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1647:1: ( rule__Mayork__Group__1__Impl rule__Mayork__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1648:2: rule__Mayork__Group__1__Impl rule__Mayork__Group__2
             {
-            pushFollow(FOLLOW_rule__Mayork__Group__1__Impl_in_rule__Mayork__Group__13424);
+            pushFollow(FOLLOW_rule__Mayork__Group__1__Impl_in_rule__Mayork__Group__13403);
             rule__Mayork__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayork__Group__2_in_rule__Mayork__Group__13427);
+            pushFollow(FOLLOW_rule__Mayork__Group__2_in_rule__Mayork__Group__13406);
             rule__Mayork__Group__2();
 
             state._fsp--;
@@ -4562,23 +4534,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1662:1: rule__Mayork__Group__1__Impl : ( ( rule__Mayork__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1655:1: rule__Mayork__Group__1__Impl : ( ( rule__Mayork__ValAssignment_1 ) ) ;
     public final void rule__Mayork__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1666:1: ( ( ( rule__Mayork__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1667:1: ( ( rule__Mayork__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1659:1: ( ( ( rule__Mayork__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1660:1: ( ( rule__Mayork__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1667:1: ( ( rule__Mayork__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1668:1: ( rule__Mayork__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1660:1: ( ( rule__Mayork__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1661:1: ( rule__Mayork__ValAssignment_1 )
             {
              before(grammarAccess.getMayorkAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1669:1: ( rule__Mayork__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1669:2: rule__Mayork__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1662:1: ( rule__Mayork__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1662:2: rule__Mayork__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Mayork__ValAssignment_1_in_rule__Mayork__Group__1__Impl3454);
+            pushFollow(FOLLOW_rule__Mayork__ValAssignment_1_in_rule__Mayork__Group__1__Impl3433);
             rule__Mayork__ValAssignment_1();
 
             state._fsp--;
@@ -4609,21 +4581,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1679:1: rule__Mayork__Group__2 : rule__Mayork__Group__2__Impl rule__Mayork__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1672:1: rule__Mayork__Group__2 : rule__Mayork__Group__2__Impl rule__Mayork__Group__3 ;
     public final void rule__Mayork__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1683:1: ( rule__Mayork__Group__2__Impl rule__Mayork__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1684:2: rule__Mayork__Group__2__Impl rule__Mayork__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1676:1: ( rule__Mayork__Group__2__Impl rule__Mayork__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1677:2: rule__Mayork__Group__2__Impl rule__Mayork__Group__3
             {
-            pushFollow(FOLLOW_rule__Mayork__Group__2__Impl_in_rule__Mayork__Group__23484);
+            pushFollow(FOLLOW_rule__Mayork__Group__2__Impl_in_rule__Mayork__Group__23463);
             rule__Mayork__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayork__Group__3_in_rule__Mayork__Group__23487);
+            pushFollow(FOLLOW_rule__Mayork__Group__3_in_rule__Mayork__Group__23466);
             rule__Mayork__Group__3();
 
             state._fsp--;
@@ -4647,20 +4619,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1691:1: rule__Mayork__Group__2__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1684:1: rule__Mayork__Group__2__Impl : ( '{' ) ;
     public final void rule__Mayork__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1695:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1696:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1688:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1689:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1696:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1697:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1689:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1690:1: '{'
             {
              before(grammarAccess.getMayorkAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,25,FOLLOW_25_in_rule__Mayork__Group__2__Impl3515); 
+            match(input,24,FOLLOW_24_in_rule__Mayork__Group__2__Impl3494); 
              after(grammarAccess.getMayorkAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4684,21 +4656,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1710:1: rule__Mayork__Group__3 : rule__Mayork__Group__3__Impl rule__Mayork__Group__4 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1703:1: rule__Mayork__Group__3 : rule__Mayork__Group__3__Impl rule__Mayork__Group__4 ;
     public final void rule__Mayork__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1714:1: ( rule__Mayork__Group__3__Impl rule__Mayork__Group__4 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1715:2: rule__Mayork__Group__3__Impl rule__Mayork__Group__4
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1707:1: ( rule__Mayork__Group__3__Impl rule__Mayork__Group__4 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1708:2: rule__Mayork__Group__3__Impl rule__Mayork__Group__4
             {
-            pushFollow(FOLLOW_rule__Mayork__Group__3__Impl_in_rule__Mayork__Group__33546);
+            pushFollow(FOLLOW_rule__Mayork__Group__3__Impl_in_rule__Mayork__Group__33525);
             rule__Mayork__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mayork__Group__4_in_rule__Mayork__Group__33549);
+            pushFollow(FOLLOW_rule__Mayork__Group__4_in_rule__Mayork__Group__33528);
             rule__Mayork__Group__4();
 
             state._fsp--;
@@ -4722,26 +4694,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1722:1: rule__Mayork__Group__3__Impl : ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1715:1: rule__Mayork__Group__3__Impl : ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) ) ;
     public final void rule__Mayork__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1726:1: ( ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1727:1: ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1719:1: ( ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1720:1: ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1727:1: ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1728:1: ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1720:1: ( ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1721:1: ( ( rule__Mayork__SubInstructionsAssignment_3 ) ) ( ( rule__Mayork__SubInstructionsAssignment_3 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1728:1: ( ( rule__Mayork__SubInstructionsAssignment_3 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1729:1: ( rule__Mayork__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1721:1: ( ( rule__Mayork__SubInstructionsAssignment_3 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1722:1: ( rule__Mayork__SubInstructionsAssignment_3 )
             {
              before(grammarAccess.getMayorkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1730:1: ( rule__Mayork__SubInstructionsAssignment_3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1730:2: rule__Mayork__SubInstructionsAssignment_3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1723:1: ( rule__Mayork__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1723:2: rule__Mayork__SubInstructionsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3578);
+            pushFollow(FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3557);
             rule__Mayork__SubInstructionsAssignment_3();
 
             state._fsp--;
@@ -4753,26 +4725,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1733:1: ( ( rule__Mayork__SubInstructionsAssignment_3 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1734:1: ( rule__Mayork__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1726:1: ( ( rule__Mayork__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1727:1: ( rule__Mayork__SubInstructionsAssignment_3 )*
             {
              before(grammarAccess.getMayorkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1735:1: ( rule__Mayork__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1728:1: ( rule__Mayork__SubInstructionsAssignment_3 )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0>=11 && LA11_0<=23)||LA11_0==24||(LA11_0>=27 && LA11_0<=30)) ) {
+                if ( ((LA11_0>=11 && LA11_0<=22)||LA11_0==23||(LA11_0>=26 && LA11_0<=29)) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1735:2: rule__Mayork__SubInstructionsAssignment_3
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1728:2: rule__Mayork__SubInstructionsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3590);
+            	    pushFollow(FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3569);
             	    rule__Mayork__SubInstructionsAssignment_3();
 
             	    state._fsp--;
@@ -4812,16 +4784,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__4"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1746:1: rule__Mayork__Group__4 : rule__Mayork__Group__4__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1739:1: rule__Mayork__Group__4 : rule__Mayork__Group__4__Impl ;
     public final void rule__Mayork__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1750:1: ( rule__Mayork__Group__4__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1751:2: rule__Mayork__Group__4__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1743:1: ( rule__Mayork__Group__4__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1744:2: rule__Mayork__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Mayork__Group__4__Impl_in_rule__Mayork__Group__43623);
+            pushFollow(FOLLOW_rule__Mayork__Group__4__Impl_in_rule__Mayork__Group__43602);
             rule__Mayork__Group__4__Impl();
 
             state._fsp--;
@@ -4845,20 +4817,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__Group__4__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1757:1: rule__Mayork__Group__4__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1750:1: rule__Mayork__Group__4__Impl : ( '}' ) ;
     public final void rule__Mayork__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1761:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1762:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1754:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1755:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1762:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1763:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1755:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1756:1: '}'
             {
              before(grammarAccess.getMayorkAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__Mayork__Group__4__Impl3651); 
+            match(input,25,FOLLOW_25_in_rule__Mayork__Group__4__Impl3630); 
              after(grammarAccess.getMayorkAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -4882,21 +4854,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1786:1: rule__Menor__Group__0 : rule__Menor__Group__0__Impl rule__Menor__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1779:1: rule__Menor__Group__0 : rule__Menor__Group__0__Impl rule__Menor__Group__1 ;
     public final void rule__Menor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1790:1: ( rule__Menor__Group__0__Impl rule__Menor__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1791:2: rule__Menor__Group__0__Impl rule__Menor__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1783:1: ( rule__Menor__Group__0__Impl rule__Menor__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1784:2: rule__Menor__Group__0__Impl rule__Menor__Group__1
             {
-            pushFollow(FOLLOW_rule__Menor__Group__0__Impl_in_rule__Menor__Group__03692);
+            pushFollow(FOLLOW_rule__Menor__Group__0__Impl_in_rule__Menor__Group__03671);
             rule__Menor__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menor__Group__1_in_rule__Menor__Group__03695);
+            pushFollow(FOLLOW_rule__Menor__Group__1_in_rule__Menor__Group__03674);
             rule__Menor__Group__1();
 
             state._fsp--;
@@ -4920,20 +4892,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1798:1: rule__Menor__Group__0__Impl : ( 'MENOR' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1791:1: rule__Menor__Group__0__Impl : ( 'MENOR' ) ;
     public final void rule__Menor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1802:1: ( ( 'MENOR' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1803:1: ( 'MENOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1795:1: ( ( 'MENOR' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1796:1: ( 'MENOR' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1803:1: ( 'MENOR' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1804:1: 'MENOR'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1796:1: ( 'MENOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1797:1: 'MENOR'
             {
              before(grammarAccess.getMenorAccess().getMENORKeyword_0()); 
-            match(input,29,FOLLOW_29_in_rule__Menor__Group__0__Impl3723); 
+            match(input,28,FOLLOW_28_in_rule__Menor__Group__0__Impl3702); 
              after(grammarAccess.getMenorAccess().getMENORKeyword_0()); 
 
             }
@@ -4957,21 +4929,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1817:1: rule__Menor__Group__1 : rule__Menor__Group__1__Impl rule__Menor__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1810:1: rule__Menor__Group__1 : rule__Menor__Group__1__Impl rule__Menor__Group__2 ;
     public final void rule__Menor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1821:1: ( rule__Menor__Group__1__Impl rule__Menor__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1822:2: rule__Menor__Group__1__Impl rule__Menor__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1814:1: ( rule__Menor__Group__1__Impl rule__Menor__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1815:2: rule__Menor__Group__1__Impl rule__Menor__Group__2
             {
-            pushFollow(FOLLOW_rule__Menor__Group__1__Impl_in_rule__Menor__Group__13754);
+            pushFollow(FOLLOW_rule__Menor__Group__1__Impl_in_rule__Menor__Group__13733);
             rule__Menor__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menor__Group__2_in_rule__Menor__Group__13757);
+            pushFollow(FOLLOW_rule__Menor__Group__2_in_rule__Menor__Group__13736);
             rule__Menor__Group__2();
 
             state._fsp--;
@@ -4995,20 +4967,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1829:1: rule__Menor__Group__1__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1822:1: rule__Menor__Group__1__Impl : ( '{' ) ;
     public final void rule__Menor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1833:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1834:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1826:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1827:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1834:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1835:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1827:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1828:1: '{'
             {
              before(grammarAccess.getMenorAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_25_in_rule__Menor__Group__1__Impl3785); 
+            match(input,24,FOLLOW_24_in_rule__Menor__Group__1__Impl3764); 
              after(grammarAccess.getMenorAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -5032,21 +5004,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1848:1: rule__Menor__Group__2 : rule__Menor__Group__2__Impl rule__Menor__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1841:1: rule__Menor__Group__2 : rule__Menor__Group__2__Impl rule__Menor__Group__3 ;
     public final void rule__Menor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1852:1: ( rule__Menor__Group__2__Impl rule__Menor__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1853:2: rule__Menor__Group__2__Impl rule__Menor__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1845:1: ( rule__Menor__Group__2__Impl rule__Menor__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1846:2: rule__Menor__Group__2__Impl rule__Menor__Group__3
             {
-            pushFollow(FOLLOW_rule__Menor__Group__2__Impl_in_rule__Menor__Group__23816);
+            pushFollow(FOLLOW_rule__Menor__Group__2__Impl_in_rule__Menor__Group__23795);
             rule__Menor__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menor__Group__3_in_rule__Menor__Group__23819);
+            pushFollow(FOLLOW_rule__Menor__Group__3_in_rule__Menor__Group__23798);
             rule__Menor__Group__3();
 
             state._fsp--;
@@ -5070,26 +5042,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1860:1: rule__Menor__Group__2__Impl : ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1853:1: rule__Menor__Group__2__Impl : ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) ) ;
     public final void rule__Menor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1864:1: ( ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1865:1: ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1857:1: ( ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1858:1: ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1865:1: ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1866:1: ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1858:1: ( ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1859:1: ( ( rule__Menor__SubInstructionsAssignment_2 ) ) ( ( rule__Menor__SubInstructionsAssignment_2 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1866:1: ( ( rule__Menor__SubInstructionsAssignment_2 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1867:1: ( rule__Menor__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1859:1: ( ( rule__Menor__SubInstructionsAssignment_2 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1860:1: ( rule__Menor__SubInstructionsAssignment_2 )
             {
              before(grammarAccess.getMenorAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1868:1: ( rule__Menor__SubInstructionsAssignment_2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1868:2: rule__Menor__SubInstructionsAssignment_2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1861:1: ( rule__Menor__SubInstructionsAssignment_2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1861:2: rule__Menor__SubInstructionsAssignment_2
             {
-            pushFollow(FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3848);
+            pushFollow(FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3827);
             rule__Menor__SubInstructionsAssignment_2();
 
             state._fsp--;
@@ -5101,26 +5073,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1871:1: ( ( rule__Menor__SubInstructionsAssignment_2 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1872:1: ( rule__Menor__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1864:1: ( ( rule__Menor__SubInstructionsAssignment_2 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1865:1: ( rule__Menor__SubInstructionsAssignment_2 )*
             {
              before(grammarAccess.getMenorAccess().getSubInstructionsAssignment_2()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1873:1: ( rule__Menor__SubInstructionsAssignment_2 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1866:1: ( rule__Menor__SubInstructionsAssignment_2 )*
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>=11 && LA12_0<=23)||LA12_0==24||(LA12_0>=27 && LA12_0<=30)) ) {
+                if ( ((LA12_0>=11 && LA12_0<=22)||LA12_0==23||(LA12_0>=26 && LA12_0<=29)) ) {
                     alt12=1;
                 }
 
 
                 switch (alt12) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1873:2: rule__Menor__SubInstructionsAssignment_2
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1866:2: rule__Menor__SubInstructionsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3860);
+            	    pushFollow(FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3839);
             	    rule__Menor__SubInstructionsAssignment_2();
 
             	    state._fsp--;
@@ -5160,16 +5132,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1884:1: rule__Menor__Group__3 : rule__Menor__Group__3__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1877:1: rule__Menor__Group__3 : rule__Menor__Group__3__Impl ;
     public final void rule__Menor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1888:1: ( rule__Menor__Group__3__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1889:2: rule__Menor__Group__3__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1881:1: ( rule__Menor__Group__3__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1882:2: rule__Menor__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Menor__Group__3__Impl_in_rule__Menor__Group__33893);
+            pushFollow(FOLLOW_rule__Menor__Group__3__Impl_in_rule__Menor__Group__33872);
             rule__Menor__Group__3__Impl();
 
             state._fsp--;
@@ -5193,20 +5165,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1895:1: rule__Menor__Group__3__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1888:1: rule__Menor__Group__3__Impl : ( '}' ) ;
     public final void rule__Menor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1899:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1900:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1892:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1893:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1900:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1901:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1893:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1894:1: '}'
             {
              before(grammarAccess.getMenorAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__Menor__Group__3__Impl3921); 
+            match(input,25,FOLLOW_25_in_rule__Menor__Group__3__Impl3900); 
              after(grammarAccess.getMenorAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -5230,21 +5202,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1922:1: rule__Menork__Group__0 : rule__Menork__Group__0__Impl rule__Menork__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1915:1: rule__Menork__Group__0 : rule__Menork__Group__0__Impl rule__Menork__Group__1 ;
     public final void rule__Menork__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1926:1: ( rule__Menork__Group__0__Impl rule__Menork__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1927:2: rule__Menork__Group__0__Impl rule__Menork__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1919:1: ( rule__Menork__Group__0__Impl rule__Menork__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1920:2: rule__Menork__Group__0__Impl rule__Menork__Group__1
             {
-            pushFollow(FOLLOW_rule__Menork__Group__0__Impl_in_rule__Menork__Group__03960);
+            pushFollow(FOLLOW_rule__Menork__Group__0__Impl_in_rule__Menork__Group__03939);
             rule__Menork__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menork__Group__1_in_rule__Menork__Group__03963);
+            pushFollow(FOLLOW_rule__Menork__Group__1_in_rule__Menork__Group__03942);
             rule__Menork__Group__1();
 
             state._fsp--;
@@ -5268,20 +5240,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1934:1: rule__Menork__Group__0__Impl : ( 'MENOR' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1927:1: rule__Menork__Group__0__Impl : ( 'MENOR' ) ;
     public final void rule__Menork__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1938:1: ( ( 'MENOR' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1939:1: ( 'MENOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1931:1: ( ( 'MENOR' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1932:1: ( 'MENOR' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1939:1: ( 'MENOR' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1940:1: 'MENOR'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1932:1: ( 'MENOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1933:1: 'MENOR'
             {
              before(grammarAccess.getMenorkAccess().getMENORKeyword_0()); 
-            match(input,29,FOLLOW_29_in_rule__Menork__Group__0__Impl3991); 
+            match(input,28,FOLLOW_28_in_rule__Menork__Group__0__Impl3970); 
              after(grammarAccess.getMenorkAccess().getMENORKeyword_0()); 
 
             }
@@ -5305,21 +5277,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1953:1: rule__Menork__Group__1 : rule__Menork__Group__1__Impl rule__Menork__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1946:1: rule__Menork__Group__1 : rule__Menork__Group__1__Impl rule__Menork__Group__2 ;
     public final void rule__Menork__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1957:1: ( rule__Menork__Group__1__Impl rule__Menork__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1958:2: rule__Menork__Group__1__Impl rule__Menork__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1950:1: ( rule__Menork__Group__1__Impl rule__Menork__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1951:2: rule__Menork__Group__1__Impl rule__Menork__Group__2
             {
-            pushFollow(FOLLOW_rule__Menork__Group__1__Impl_in_rule__Menork__Group__14022);
+            pushFollow(FOLLOW_rule__Menork__Group__1__Impl_in_rule__Menork__Group__14001);
             rule__Menork__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menork__Group__2_in_rule__Menork__Group__14025);
+            pushFollow(FOLLOW_rule__Menork__Group__2_in_rule__Menork__Group__14004);
             rule__Menork__Group__2();
 
             state._fsp--;
@@ -5343,23 +5315,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1965:1: rule__Menork__Group__1__Impl : ( ( rule__Menork__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1958:1: rule__Menork__Group__1__Impl : ( ( rule__Menork__ValAssignment_1 ) ) ;
     public final void rule__Menork__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1969:1: ( ( ( rule__Menork__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1970:1: ( ( rule__Menork__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1962:1: ( ( ( rule__Menork__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1963:1: ( ( rule__Menork__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1970:1: ( ( rule__Menork__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1971:1: ( rule__Menork__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1963:1: ( ( rule__Menork__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1964:1: ( rule__Menork__ValAssignment_1 )
             {
              before(grammarAccess.getMenorkAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1972:1: ( rule__Menork__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1972:2: rule__Menork__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1965:1: ( rule__Menork__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1965:2: rule__Menork__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Menork__ValAssignment_1_in_rule__Menork__Group__1__Impl4052);
+            pushFollow(FOLLOW_rule__Menork__ValAssignment_1_in_rule__Menork__Group__1__Impl4031);
             rule__Menork__ValAssignment_1();
 
             state._fsp--;
@@ -5390,21 +5362,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1982:1: rule__Menork__Group__2 : rule__Menork__Group__2__Impl rule__Menork__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1975:1: rule__Menork__Group__2 : rule__Menork__Group__2__Impl rule__Menork__Group__3 ;
     public final void rule__Menork__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1986:1: ( rule__Menork__Group__2__Impl rule__Menork__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1987:2: rule__Menork__Group__2__Impl rule__Menork__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1979:1: ( rule__Menork__Group__2__Impl rule__Menork__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1980:2: rule__Menork__Group__2__Impl rule__Menork__Group__3
             {
-            pushFollow(FOLLOW_rule__Menork__Group__2__Impl_in_rule__Menork__Group__24082);
+            pushFollow(FOLLOW_rule__Menork__Group__2__Impl_in_rule__Menork__Group__24061);
             rule__Menork__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menork__Group__3_in_rule__Menork__Group__24085);
+            pushFollow(FOLLOW_rule__Menork__Group__3_in_rule__Menork__Group__24064);
             rule__Menork__Group__3();
 
             state._fsp--;
@@ -5428,20 +5400,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1994:1: rule__Menork__Group__2__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1987:1: rule__Menork__Group__2__Impl : ( '{' ) ;
     public final void rule__Menork__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1998:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1999:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1991:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1992:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1999:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2000:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1992:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1993:1: '{'
             {
              before(grammarAccess.getMenorkAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,25,FOLLOW_25_in_rule__Menork__Group__2__Impl4113); 
+            match(input,24,FOLLOW_24_in_rule__Menork__Group__2__Impl4092); 
              after(grammarAccess.getMenorkAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -5465,21 +5437,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2013:1: rule__Menork__Group__3 : rule__Menork__Group__3__Impl rule__Menork__Group__4 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2006:1: rule__Menork__Group__3 : rule__Menork__Group__3__Impl rule__Menork__Group__4 ;
     public final void rule__Menork__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2017:1: ( rule__Menork__Group__3__Impl rule__Menork__Group__4 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2018:2: rule__Menork__Group__3__Impl rule__Menork__Group__4
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2010:1: ( rule__Menork__Group__3__Impl rule__Menork__Group__4 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2011:2: rule__Menork__Group__3__Impl rule__Menork__Group__4
             {
-            pushFollow(FOLLOW_rule__Menork__Group__3__Impl_in_rule__Menork__Group__34144);
+            pushFollow(FOLLOW_rule__Menork__Group__3__Impl_in_rule__Menork__Group__34123);
             rule__Menork__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Menork__Group__4_in_rule__Menork__Group__34147);
+            pushFollow(FOLLOW_rule__Menork__Group__4_in_rule__Menork__Group__34126);
             rule__Menork__Group__4();
 
             state._fsp--;
@@ -5503,26 +5475,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2025:1: rule__Menork__Group__3__Impl : ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2018:1: rule__Menork__Group__3__Impl : ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) ) ;
     public final void rule__Menork__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2029:1: ( ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2030:1: ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2022:1: ( ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2023:1: ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2030:1: ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2031:1: ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2023:1: ( ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2024:1: ( ( rule__Menork__SubInstructionsAssignment_3 ) ) ( ( rule__Menork__SubInstructionsAssignment_3 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2031:1: ( ( rule__Menork__SubInstructionsAssignment_3 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2032:1: ( rule__Menork__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2024:1: ( ( rule__Menork__SubInstructionsAssignment_3 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2025:1: ( rule__Menork__SubInstructionsAssignment_3 )
             {
              before(grammarAccess.getMenorkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2033:1: ( rule__Menork__SubInstructionsAssignment_3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2033:2: rule__Menork__SubInstructionsAssignment_3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2026:1: ( rule__Menork__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2026:2: rule__Menork__SubInstructionsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4176);
+            pushFollow(FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4155);
             rule__Menork__SubInstructionsAssignment_3();
 
             state._fsp--;
@@ -5534,26 +5506,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2036:1: ( ( rule__Menork__SubInstructionsAssignment_3 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2037:1: ( rule__Menork__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2029:1: ( ( rule__Menork__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2030:1: ( rule__Menork__SubInstructionsAssignment_3 )*
             {
              before(grammarAccess.getMenorkAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2038:1: ( rule__Menork__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2031:1: ( rule__Menork__SubInstructionsAssignment_3 )*
             loop13:
             do {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( ((LA13_0>=11 && LA13_0<=23)||LA13_0==24||(LA13_0>=27 && LA13_0<=30)) ) {
+                if ( ((LA13_0>=11 && LA13_0<=22)||LA13_0==23||(LA13_0>=26 && LA13_0<=29)) ) {
                     alt13=1;
                 }
 
 
                 switch (alt13) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2038:2: rule__Menork__SubInstructionsAssignment_3
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2031:2: rule__Menork__SubInstructionsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4188);
+            	    pushFollow(FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4167);
             	    rule__Menork__SubInstructionsAssignment_3();
 
             	    state._fsp--;
@@ -5593,16 +5565,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__4"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2049:1: rule__Menork__Group__4 : rule__Menork__Group__4__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2042:1: rule__Menork__Group__4 : rule__Menork__Group__4__Impl ;
     public final void rule__Menork__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2053:1: ( rule__Menork__Group__4__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2054:2: rule__Menork__Group__4__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2046:1: ( rule__Menork__Group__4__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2047:2: rule__Menork__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Menork__Group__4__Impl_in_rule__Menork__Group__44221);
+            pushFollow(FOLLOW_rule__Menork__Group__4__Impl_in_rule__Menork__Group__44200);
             rule__Menork__Group__4__Impl();
 
             state._fsp--;
@@ -5626,20 +5598,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__Group__4__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2060:1: rule__Menork__Group__4__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2053:1: rule__Menork__Group__4__Impl : ( '}' ) ;
     public final void rule__Menork__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2064:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2065:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2057:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2058:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2065:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2066:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2058:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2059:1: '}'
             {
              before(grammarAccess.getMenorkAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__Menork__Group__4__Impl4249); 
+            match(input,25,FOLLOW_25_in_rule__Menork__Group__4__Impl4228); 
              after(grammarAccess.getMenorkAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -5663,21 +5635,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__0"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2089:1: rule__Repetirn__Group__0 : rule__Repetirn__Group__0__Impl rule__Repetirn__Group__1 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2082:1: rule__Repetirn__Group__0 : rule__Repetirn__Group__0__Impl rule__Repetirn__Group__1 ;
     public final void rule__Repetirn__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2093:1: ( rule__Repetirn__Group__0__Impl rule__Repetirn__Group__1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2094:2: rule__Repetirn__Group__0__Impl rule__Repetirn__Group__1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2086:1: ( rule__Repetirn__Group__0__Impl rule__Repetirn__Group__1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2087:2: rule__Repetirn__Group__0__Impl rule__Repetirn__Group__1
             {
-            pushFollow(FOLLOW_rule__Repetirn__Group__0__Impl_in_rule__Repetirn__Group__04290);
+            pushFollow(FOLLOW_rule__Repetirn__Group__0__Impl_in_rule__Repetirn__Group__04269);
             rule__Repetirn__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Repetirn__Group__1_in_rule__Repetirn__Group__04293);
+            pushFollow(FOLLOW_rule__Repetirn__Group__1_in_rule__Repetirn__Group__04272);
             rule__Repetirn__Group__1();
 
             state._fsp--;
@@ -5701,20 +5673,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__0__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2101:1: rule__Repetirn__Group__0__Impl : ( 'REP' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2094:1: rule__Repetirn__Group__0__Impl : ( 'REP' ) ;
     public final void rule__Repetirn__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2105:1: ( ( 'REP' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2106:1: ( 'REP' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2098:1: ( ( 'REP' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2099:1: ( 'REP' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2106:1: ( 'REP' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2107:1: 'REP'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2099:1: ( 'REP' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2100:1: 'REP'
             {
              before(grammarAccess.getRepetirnAccess().getREPKeyword_0()); 
-            match(input,30,FOLLOW_30_in_rule__Repetirn__Group__0__Impl4321); 
+            match(input,29,FOLLOW_29_in_rule__Repetirn__Group__0__Impl4300); 
              after(grammarAccess.getRepetirnAccess().getREPKeyword_0()); 
 
             }
@@ -5738,21 +5710,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2120:1: rule__Repetirn__Group__1 : rule__Repetirn__Group__1__Impl rule__Repetirn__Group__2 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2113:1: rule__Repetirn__Group__1 : rule__Repetirn__Group__1__Impl rule__Repetirn__Group__2 ;
     public final void rule__Repetirn__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2124:1: ( rule__Repetirn__Group__1__Impl rule__Repetirn__Group__2 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2125:2: rule__Repetirn__Group__1__Impl rule__Repetirn__Group__2
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2117:1: ( rule__Repetirn__Group__1__Impl rule__Repetirn__Group__2 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2118:2: rule__Repetirn__Group__1__Impl rule__Repetirn__Group__2
             {
-            pushFollow(FOLLOW_rule__Repetirn__Group__1__Impl_in_rule__Repetirn__Group__14352);
+            pushFollow(FOLLOW_rule__Repetirn__Group__1__Impl_in_rule__Repetirn__Group__14331);
             rule__Repetirn__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Repetirn__Group__2_in_rule__Repetirn__Group__14355);
+            pushFollow(FOLLOW_rule__Repetirn__Group__2_in_rule__Repetirn__Group__14334);
             rule__Repetirn__Group__2();
 
             state._fsp--;
@@ -5776,23 +5748,23 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__1__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2132:1: rule__Repetirn__Group__1__Impl : ( ( rule__Repetirn__ValAssignment_1 ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2125:1: rule__Repetirn__Group__1__Impl : ( ( rule__Repetirn__ValAssignment_1 ) ) ;
     public final void rule__Repetirn__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2136:1: ( ( ( rule__Repetirn__ValAssignment_1 ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2137:1: ( ( rule__Repetirn__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2129:1: ( ( ( rule__Repetirn__ValAssignment_1 ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2130:1: ( ( rule__Repetirn__ValAssignment_1 ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2137:1: ( ( rule__Repetirn__ValAssignment_1 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2138:1: ( rule__Repetirn__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2130:1: ( ( rule__Repetirn__ValAssignment_1 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2131:1: ( rule__Repetirn__ValAssignment_1 )
             {
              before(grammarAccess.getRepetirnAccess().getValAssignment_1()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2139:1: ( rule__Repetirn__ValAssignment_1 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2139:2: rule__Repetirn__ValAssignment_1
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2132:1: ( rule__Repetirn__ValAssignment_1 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2132:2: rule__Repetirn__ValAssignment_1
             {
-            pushFollow(FOLLOW_rule__Repetirn__ValAssignment_1_in_rule__Repetirn__Group__1__Impl4382);
+            pushFollow(FOLLOW_rule__Repetirn__ValAssignment_1_in_rule__Repetirn__Group__1__Impl4361);
             rule__Repetirn__ValAssignment_1();
 
             state._fsp--;
@@ -5823,21 +5795,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2149:1: rule__Repetirn__Group__2 : rule__Repetirn__Group__2__Impl rule__Repetirn__Group__3 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2142:1: rule__Repetirn__Group__2 : rule__Repetirn__Group__2__Impl rule__Repetirn__Group__3 ;
     public final void rule__Repetirn__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2153:1: ( rule__Repetirn__Group__2__Impl rule__Repetirn__Group__3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2154:2: rule__Repetirn__Group__2__Impl rule__Repetirn__Group__3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2146:1: ( rule__Repetirn__Group__2__Impl rule__Repetirn__Group__3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2147:2: rule__Repetirn__Group__2__Impl rule__Repetirn__Group__3
             {
-            pushFollow(FOLLOW_rule__Repetirn__Group__2__Impl_in_rule__Repetirn__Group__24412);
+            pushFollow(FOLLOW_rule__Repetirn__Group__2__Impl_in_rule__Repetirn__Group__24391);
             rule__Repetirn__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Repetirn__Group__3_in_rule__Repetirn__Group__24415);
+            pushFollow(FOLLOW_rule__Repetirn__Group__3_in_rule__Repetirn__Group__24394);
             rule__Repetirn__Group__3();
 
             state._fsp--;
@@ -5861,20 +5833,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__2__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2161:1: rule__Repetirn__Group__2__Impl : ( '{' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2154:1: rule__Repetirn__Group__2__Impl : ( '{' ) ;
     public final void rule__Repetirn__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2165:1: ( ( '{' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2166:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2158:1: ( ( '{' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2159:1: ( '{' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2166:1: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2167:1: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2159:1: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2160:1: '{'
             {
              before(grammarAccess.getRepetirnAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,25,FOLLOW_25_in_rule__Repetirn__Group__2__Impl4443); 
+            match(input,24,FOLLOW_24_in_rule__Repetirn__Group__2__Impl4422); 
              after(grammarAccess.getRepetirnAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -5898,21 +5870,21 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2180:1: rule__Repetirn__Group__3 : rule__Repetirn__Group__3__Impl rule__Repetirn__Group__4 ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2173:1: rule__Repetirn__Group__3 : rule__Repetirn__Group__3__Impl rule__Repetirn__Group__4 ;
     public final void rule__Repetirn__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2184:1: ( rule__Repetirn__Group__3__Impl rule__Repetirn__Group__4 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2185:2: rule__Repetirn__Group__3__Impl rule__Repetirn__Group__4
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2177:1: ( rule__Repetirn__Group__3__Impl rule__Repetirn__Group__4 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2178:2: rule__Repetirn__Group__3__Impl rule__Repetirn__Group__4
             {
-            pushFollow(FOLLOW_rule__Repetirn__Group__3__Impl_in_rule__Repetirn__Group__34474);
+            pushFollow(FOLLOW_rule__Repetirn__Group__3__Impl_in_rule__Repetirn__Group__34453);
             rule__Repetirn__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Repetirn__Group__4_in_rule__Repetirn__Group__34477);
+            pushFollow(FOLLOW_rule__Repetirn__Group__4_in_rule__Repetirn__Group__34456);
             rule__Repetirn__Group__4();
 
             state._fsp--;
@@ -5936,26 +5908,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__3__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2192:1: rule__Repetirn__Group__3__Impl : ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2185:1: rule__Repetirn__Group__3__Impl : ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) ) ;
     public final void rule__Repetirn__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2196:1: ( ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2197:1: ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2189:1: ( ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2190:1: ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2197:1: ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2198:1: ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2190:1: ( ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2191:1: ( ( rule__Repetirn__SubInstructionsAssignment_3 ) ) ( ( rule__Repetirn__SubInstructionsAssignment_3 )* )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2198:1: ( ( rule__Repetirn__SubInstructionsAssignment_3 ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2199:1: ( rule__Repetirn__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2191:1: ( ( rule__Repetirn__SubInstructionsAssignment_3 ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2192:1: ( rule__Repetirn__SubInstructionsAssignment_3 )
             {
              before(grammarAccess.getRepetirnAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2200:1: ( rule__Repetirn__SubInstructionsAssignment_3 )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2200:2: rule__Repetirn__SubInstructionsAssignment_3
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2193:1: ( rule__Repetirn__SubInstructionsAssignment_3 )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2193:2: rule__Repetirn__SubInstructionsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4506);
+            pushFollow(FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4485);
             rule__Repetirn__SubInstructionsAssignment_3();
 
             state._fsp--;
@@ -5967,26 +5939,26 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
             }
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2203:1: ( ( rule__Repetirn__SubInstructionsAssignment_3 )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2204:1: ( rule__Repetirn__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2196:1: ( ( rule__Repetirn__SubInstructionsAssignment_3 )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2197:1: ( rule__Repetirn__SubInstructionsAssignment_3 )*
             {
              before(grammarAccess.getRepetirnAccess().getSubInstructionsAssignment_3()); 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2205:1: ( rule__Repetirn__SubInstructionsAssignment_3 )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2198:1: ( rule__Repetirn__SubInstructionsAssignment_3 )*
             loop14:
             do {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( ((LA14_0>=11 && LA14_0<=23)||LA14_0==24||(LA14_0>=27 && LA14_0<=30)) ) {
+                if ( ((LA14_0>=11 && LA14_0<=22)||LA14_0==23||(LA14_0>=26 && LA14_0<=29)) ) {
                     alt14=1;
                 }
 
 
                 switch (alt14) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2205:2: rule__Repetirn__SubInstructionsAssignment_3
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2198:2: rule__Repetirn__SubInstructionsAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4518);
+            	    pushFollow(FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4497);
             	    rule__Repetirn__SubInstructionsAssignment_3();
 
             	    state._fsp--;
@@ -6026,16 +5998,16 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__4"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2216:1: rule__Repetirn__Group__4 : rule__Repetirn__Group__4__Impl ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2209:1: rule__Repetirn__Group__4 : rule__Repetirn__Group__4__Impl ;
     public final void rule__Repetirn__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2220:1: ( rule__Repetirn__Group__4__Impl )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2221:2: rule__Repetirn__Group__4__Impl
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2213:1: ( rule__Repetirn__Group__4__Impl )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2214:2: rule__Repetirn__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Repetirn__Group__4__Impl_in_rule__Repetirn__Group__44551);
+            pushFollow(FOLLOW_rule__Repetirn__Group__4__Impl_in_rule__Repetirn__Group__44530);
             rule__Repetirn__Group__4__Impl();
 
             state._fsp--;
@@ -6059,20 +6031,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__Group__4__Impl"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2227:1: rule__Repetirn__Group__4__Impl : ( '}' ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2220:1: rule__Repetirn__Group__4__Impl : ( '}' ) ;
     public final void rule__Repetirn__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2231:1: ( ( '}' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2232:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2224:1: ( ( '}' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2225:1: ( '}' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2232:1: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2233:1: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2225:1: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2226:1: '}'
             {
              before(grammarAccess.getRepetirnAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__Repetirn__Group__4__Impl4579); 
+            match(input,25,FOLLOW_25_in_rule__Repetirn__Group__4__Impl4558); 
              after(grammarAccess.getRepetirnAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -6096,20 +6068,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__RebotinolProgram__InstructionsAssignment"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2257:1: rule__RebotinolProgram__InstructionsAssignment : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2250:1: rule__RebotinolProgram__InstructionsAssignment : ( ruleInstruction ) ;
     public final void rule__RebotinolProgram__InstructionsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2261:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2262:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2254:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2255:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2262:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2263:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2255:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2256:1: ruleInstruction
             {
              before(grammarAccess.getRebotinolProgramAccess().getInstructionsInstructionParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__RebotinolProgram__InstructionsAssignment4625);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__RebotinolProgram__InstructionsAssignment4604);
             ruleInstruction();
 
             state._fsp--;
@@ -6137,20 +6109,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EmptyInstruction__TypeAssignment"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2272:1: rule__EmptyInstruction__TypeAssignment : ( ruleEmptyInstructionType ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2265:1: rule__EmptyInstruction__TypeAssignment : ( ruleEmptyInstructionType ) ;
     public final void rule__EmptyInstruction__TypeAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2276:1: ( ( ruleEmptyInstructionType ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2277:1: ( ruleEmptyInstructionType )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2269:1: ( ( ruleEmptyInstructionType ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2270:1: ( ruleEmptyInstructionType )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2277:1: ( ruleEmptyInstructionType )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2278:1: ruleEmptyInstructionType
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2270:1: ( ruleEmptyInstructionType )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2271:1: ruleEmptyInstructionType
             {
              before(grammarAccess.getEmptyInstructionAccess().getTypeEmptyInstructionTypeEnumRuleCall_0()); 
-            pushFollow(FOLLOW_ruleEmptyInstructionType_in_rule__EmptyInstruction__TypeAssignment4656);
+            pushFollow(FOLLOW_ruleEmptyInstructionType_in_rule__EmptyInstruction__TypeAssignment4635);
             ruleEmptyInstructionType();
 
             state._fsp--;
@@ -6178,20 +6150,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sumak__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2287:1: rule__Sumak__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2280:1: rule__Sumak__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Sumak__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2291:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2292:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2284:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2285:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2292:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2293:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2285:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2286:1: RULE_INT
             {
              before(grammarAccess.getSumakAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Sumak__ValAssignment_14687); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Sumak__ValAssignment_14666); 
              after(grammarAccess.getSumakAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6215,20 +6187,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Multk__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2302:1: rule__Multk__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2295:1: rule__Multk__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Multk__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2306:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2307:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2299:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2300:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2307:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2308:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2300:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2301:1: RULE_INT
             {
              before(grammarAccess.getMultkAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Multk__ValAssignment_14718); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Multk__ValAssignment_14697); 
              after(grammarAccess.getMultkAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6252,20 +6224,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igual__SubInstructionsAssignment_2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2317:1: rule__Igual__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2310:1: rule__Igual__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
     public final void rule__Igual__SubInstructionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2321:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2322:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2314:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2315:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2322:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2323:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2315:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2316:1: ruleInstruction
             {
              before(grammarAccess.getIgualAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Igual__SubInstructionsAssignment_24749);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Igual__SubInstructionsAssignment_24728);
             ruleInstruction();
 
             state._fsp--;
@@ -6293,20 +6265,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2332:1: rule__Igualk__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2325:1: rule__Igualk__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Igualk__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2336:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2337:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2329:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2330:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2337:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2338:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2330:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2331:1: RULE_INT
             {
              before(grammarAccess.getIgualkAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Igualk__ValAssignment_14780); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Igualk__ValAssignment_14759); 
              after(grammarAccess.getIgualkAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6330,20 +6302,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Igualk__SubInstructionsAssignment_3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2347:1: rule__Igualk__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2340:1: rule__Igualk__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
     public final void rule__Igualk__SubInstructionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2351:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2352:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2344:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2345:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2352:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2353:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2345:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2346:1: ruleInstruction
             {
              before(grammarAccess.getIgualkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Igualk__SubInstructionsAssignment_34811);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Igualk__SubInstructionsAssignment_34790);
             ruleInstruction();
 
             state._fsp--;
@@ -6371,20 +6343,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Difer__SubInstructionsAssignment_2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2362:1: rule__Difer__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2355:1: rule__Difer__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
     public final void rule__Difer__SubInstructionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2366:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2367:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2359:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2360:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2367:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2368:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2360:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2361:1: ruleInstruction
             {
              before(grammarAccess.getDiferAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Difer__SubInstructionsAssignment_24842);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Difer__SubInstructionsAssignment_24821);
             ruleInstruction();
 
             state._fsp--;
@@ -6412,20 +6384,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2377:1: rule__Diferk__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2370:1: rule__Diferk__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Diferk__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2381:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2382:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2374:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2375:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2382:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2383:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2375:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2376:1: RULE_INT
             {
              before(grammarAccess.getDiferkAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Diferk__ValAssignment_14873); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Diferk__ValAssignment_14852); 
              after(grammarAccess.getDiferkAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6449,20 +6421,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Diferk__SubInstructionsAssignment_3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2392:1: rule__Diferk__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2385:1: rule__Diferk__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
     public final void rule__Diferk__SubInstructionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2396:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2397:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2389:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2390:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2397:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2398:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2390:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2391:1: ruleInstruction
             {
              before(grammarAccess.getDiferkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Diferk__SubInstructionsAssignment_34904);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Diferk__SubInstructionsAssignment_34883);
             ruleInstruction();
 
             state._fsp--;
@@ -6490,20 +6462,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayor__SubInstructionsAssignment_2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2407:1: rule__Mayor__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2400:1: rule__Mayor__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
     public final void rule__Mayor__SubInstructionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2411:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2412:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2404:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2405:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2412:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2413:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2405:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2406:1: ruleInstruction
             {
              before(grammarAccess.getMayorAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Mayor__SubInstructionsAssignment_24935);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Mayor__SubInstructionsAssignment_24914);
             ruleInstruction();
 
             state._fsp--;
@@ -6531,20 +6503,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2422:1: rule__Mayork__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2415:1: rule__Mayork__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Mayork__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2426:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2427:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2419:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2420:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2427:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2428:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2420:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2421:1: RULE_INT
             {
              before(grammarAccess.getMayorkAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Mayork__ValAssignment_14966); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Mayork__ValAssignment_14945); 
              after(grammarAccess.getMayorkAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6568,20 +6540,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Mayork__SubInstructionsAssignment_3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2437:1: rule__Mayork__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2430:1: rule__Mayork__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
     public final void rule__Mayork__SubInstructionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2441:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2442:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2434:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2435:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2442:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2443:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2435:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2436:1: ruleInstruction
             {
              before(grammarAccess.getMayorkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Mayork__SubInstructionsAssignment_34997);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Mayork__SubInstructionsAssignment_34976);
             ruleInstruction();
 
             state._fsp--;
@@ -6609,20 +6581,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menor__SubInstructionsAssignment_2"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2452:1: rule__Menor__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2445:1: rule__Menor__SubInstructionsAssignment_2 : ( ruleInstruction ) ;
     public final void rule__Menor__SubInstructionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2456:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2457:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2449:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2450:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2457:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2458:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2450:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2451:1: ruleInstruction
             {
              before(grammarAccess.getMenorAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Menor__SubInstructionsAssignment_25028);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Menor__SubInstructionsAssignment_25007);
             ruleInstruction();
 
             state._fsp--;
@@ -6650,20 +6622,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2467:1: rule__Menork__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2460:1: rule__Menork__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Menork__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2471:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2472:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2464:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2465:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2472:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2473:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2465:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2466:1: RULE_INT
             {
              before(grammarAccess.getMenorkAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Menork__ValAssignment_15059); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Menork__ValAssignment_15038); 
              after(grammarAccess.getMenorkAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6687,20 +6659,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Menork__SubInstructionsAssignment_3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2482:1: rule__Menork__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2475:1: rule__Menork__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
     public final void rule__Menork__SubInstructionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2486:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2487:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2479:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2480:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2487:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2488:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2480:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2481:1: ruleInstruction
             {
              before(grammarAccess.getMenorkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Menork__SubInstructionsAssignment_35090);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Menork__SubInstructionsAssignment_35069);
             ruleInstruction();
 
             state._fsp--;
@@ -6728,20 +6700,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__ValAssignment_1"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2497:1: rule__Repetirn__ValAssignment_1 : ( RULE_INT ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2490:1: rule__Repetirn__ValAssignment_1 : ( RULE_INT ) ;
     public final void rule__Repetirn__ValAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2501:1: ( ( RULE_INT ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2502:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2494:1: ( ( RULE_INT ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2495:1: ( RULE_INT )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2502:1: ( RULE_INT )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2503:1: RULE_INT
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2495:1: ( RULE_INT )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2496:1: RULE_INT
             {
              before(grammarAccess.getRepetirnAccess().getValINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Repetirn__ValAssignment_15121); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Repetirn__ValAssignment_15100); 
              after(grammarAccess.getRepetirnAccess().getValINTTerminalRuleCall_1_0()); 
 
             }
@@ -6765,20 +6737,20 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Repetirn__SubInstructionsAssignment_3"
-    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2512:1: rule__Repetirn__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
+    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2505:1: rule__Repetirn__SubInstructionsAssignment_3 : ( ruleInstruction ) ;
     public final void rule__Repetirn__SubInstructionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2516:1: ( ( ruleInstruction ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2517:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2509:1: ( ( ruleInstruction ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2510:1: ( ruleInstruction )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2517:1: ( ruleInstruction )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2518:1: ruleInstruction
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2510:1: ( ruleInstruction )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2511:1: ruleInstruction
             {
              before(grammarAccess.getRepetirnAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInstruction_in_rule__Repetirn__SubInstructionsAssignment_35152);
+            pushFollow(FOLLOW_ruleInstruction_in_rule__Repetirn__SubInstructionsAssignment_35131);
             ruleInstruction();
 
             state._fsp--;
@@ -6813,19 +6785,19 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
     static final String DFA4_eofS =
         "\16\uffff";
     static final String DFA4_minS =
-        "\1\30\4\4\11\uffff";
+        "\1\27\4\4\11\uffff";
     static final String DFA4_maxS =
-        "\1\36\4\31\11\uffff";
+        "\1\35\4\30\11\uffff";
     static final String DFA4_acceptS =
-        "\5\uffff\1\11\1\1\1\2\1\3\1\4\1\5\1\6\1\10\1\7";
+        "\5\uffff\1\11\1\2\1\1\1\3\1\4\1\5\1\6\1\7\1\10";
     static final String DFA4_specialS =
         "\16\uffff}>";
     static final String[] DFA4_transitionS = {
             "\1\1\2\uffff\1\2\1\3\1\4\1\5",
-            "\1\7\24\uffff\1\6",
-            "\1\11\24\uffff\1\10",
-            "\1\13\24\uffff\1\12",
-            "\1\14\24\uffff\1\15",
+            "\1\6\23\uffff\1\7",
+            "\1\11\23\uffff\1\10",
+            "\1\13\23\uffff\1\12",
+            "\1\15\23\uffff\1\14",
             "",
             "",
             "",
@@ -6874,8 +6846,8 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
 
     public static final BitSet FOLLOW_ruleRebotinolProgram_in_entryRuleRebotinolProgram61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRebotinolProgram68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RebotinolProgram__InstructionsAssignment_in_ruleRebotinolProgram96 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__RebotinolProgram__InstructionsAssignment_in_ruleRebotinolProgram108 = new BitSet(new long[]{0x0000000079FFF802L});
+    public static final BitSet FOLLOW_rule__RebotinolProgram__InstructionsAssignment_in_ruleRebotinolProgram96 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__RebotinolProgram__InstructionsAssignment_in_ruleRebotinolProgram108 = new BitSet(new long[]{0x000000003CFFF802L});
     public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction138 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstruction145 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Instruction__Alternatives_in_ruleInstruction171 = new BitSet(new long[]{0x0000000000000002L});
@@ -6948,157 +6920,156 @@ public class InternalRebotinolParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_20_in_rule__EmptyInstructionType__Alternatives1556 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_rule__EmptyInstructionType__Alternatives1577 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__EmptyInstructionType__Alternatives1598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__EmptyInstructionType__Alternatives1619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sumak__Group__0__Impl_in_rule__Sumak__Group__01652 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Sumak__Group__1_in_rule__Sumak__Group__01655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Sumak__Group__0__Impl1683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sumak__Group__1__Impl_in_rule__Sumak__Group__11714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Sumak__ValAssignment_1_in_rule__Sumak__Group__1__Impl1741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Multk__Group__0__Impl_in_rule__Multk__Group__01775 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Multk__Group__1_in_rule__Multk__Group__01778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Multk__Group__0__Impl1806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Multk__Group__1__Impl_in_rule__Multk__Group__11837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Multk__ValAssignment_1_in_rule__Multk__Group__1__Impl1864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igual__Group__0__Impl_in_rule__Igual__Group__01898 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Igual__Group__1_in_rule__Igual__Group__01901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Igual__Group__0__Impl1929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igual__Group__1__Impl_in_rule__Igual__Group__11960 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Igual__Group__2_in_rule__Igual__Group__11963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Igual__Group__1__Impl1991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igual__Group__2__Impl_in_rule__Igual__Group__22022 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Igual__Group__3_in_rule__Igual__Group__22025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2054 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2066 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Igual__Group__3__Impl_in_rule__Igual__Group__32099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Igual__Group__3__Impl2127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__0__Impl_in_rule__Igualk__Group__02166 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__1_in_rule__Igualk__Group__02169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Igualk__Group__0__Impl2197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__1__Impl_in_rule__Igualk__Group__12228 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__2_in_rule__Igualk__Group__12231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igualk__ValAssignment_1_in_rule__Igualk__Group__1__Impl2258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__2__Impl_in_rule__Igualk__Group__22288 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__3_in_rule__Igualk__Group__22291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Igualk__Group__2__Impl2319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__3__Impl_in_rule__Igualk__Group__32350 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__4_in_rule__Igualk__Group__32353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2382 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2394 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Igualk__Group__4__Impl_in_rule__Igualk__Group__42427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Igualk__Group__4__Impl2455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Difer__Group__0__Impl_in_rule__Difer__Group__02496 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Difer__Group__1_in_rule__Difer__Group__02499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Difer__Group__0__Impl2527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Difer__Group__1__Impl_in_rule__Difer__Group__12558 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Difer__Group__2_in_rule__Difer__Group__12561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Difer__Group__1__Impl2589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Difer__Group__2__Impl_in_rule__Difer__Group__22620 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Difer__Group__3_in_rule__Difer__Group__22623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2652 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2664 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Difer__Group__3__Impl_in_rule__Difer__Group__32697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Difer__Group__3__Impl2725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__0__Impl_in_rule__Diferk__Group__02764 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__1_in_rule__Diferk__Group__02767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Diferk__Group__0__Impl2795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__1__Impl_in_rule__Diferk__Group__12826 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__2_in_rule__Diferk__Group__12829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diferk__ValAssignment_1_in_rule__Diferk__Group__1__Impl2856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__2__Impl_in_rule__Diferk__Group__22886 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__3_in_rule__Diferk__Group__22889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Diferk__Group__2__Impl2917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__3__Impl_in_rule__Diferk__Group__32948 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__4_in_rule__Diferk__Group__32951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2980 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2992 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Diferk__Group__4__Impl_in_rule__Diferk__Group__43025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Diferk__Group__4__Impl3053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__0__Impl_in_rule__Mayor__Group__03094 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__1_in_rule__Mayor__Group__03097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Mayor__Group__0__Impl3125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__1__Impl_in_rule__Mayor__Group__13156 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__2_in_rule__Mayor__Group__13159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Mayor__Group__1__Impl3187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__2__Impl_in_rule__Mayor__Group__23218 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__3_in_rule__Mayor__Group__23221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3250 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3262 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Mayor__Group__3__Impl_in_rule__Mayor__Group__33295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Mayor__Group__3__Impl3323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__0__Impl_in_rule__Mayork__Group__03362 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__1_in_rule__Mayork__Group__03365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Mayork__Group__0__Impl3393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__1__Impl_in_rule__Mayork__Group__13424 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__2_in_rule__Mayork__Group__13427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayork__ValAssignment_1_in_rule__Mayork__Group__1__Impl3454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__2__Impl_in_rule__Mayork__Group__23484 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__3_in_rule__Mayork__Group__23487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Mayork__Group__2__Impl3515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__3__Impl_in_rule__Mayork__Group__33546 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__4_in_rule__Mayork__Group__33549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3578 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3590 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Mayork__Group__4__Impl_in_rule__Mayork__Group__43623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Mayork__Group__4__Impl3651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menor__Group__0__Impl_in_rule__Menor__Group__03692 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Menor__Group__1_in_rule__Menor__Group__03695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Menor__Group__0__Impl3723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menor__Group__1__Impl_in_rule__Menor__Group__13754 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Menor__Group__2_in_rule__Menor__Group__13757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Menor__Group__1__Impl3785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menor__Group__2__Impl_in_rule__Menor__Group__23816 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Menor__Group__3_in_rule__Menor__Group__23819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3848 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3860 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Menor__Group__3__Impl_in_rule__Menor__Group__33893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Menor__Group__3__Impl3921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menork__Group__0__Impl_in_rule__Menork__Group__03960 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Menork__Group__1_in_rule__Menork__Group__03963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Menork__Group__0__Impl3991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menork__Group__1__Impl_in_rule__Menork__Group__14022 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Menork__Group__2_in_rule__Menork__Group__14025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menork__ValAssignment_1_in_rule__Menork__Group__1__Impl4052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menork__Group__2__Impl_in_rule__Menork__Group__24082 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Menork__Group__3_in_rule__Menork__Group__24085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Menork__Group__2__Impl4113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menork__Group__3__Impl_in_rule__Menork__Group__34144 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Menork__Group__4_in_rule__Menork__Group__34147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4176 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4188 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Menork__Group__4__Impl_in_rule__Menork__Group__44221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Menork__Group__4__Impl4249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__0__Impl_in_rule__Repetirn__Group__04290 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__1_in_rule__Repetirn__Group__04293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Repetirn__Group__0__Impl4321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__1__Impl_in_rule__Repetirn__Group__14352 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__2_in_rule__Repetirn__Group__14355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Repetirn__ValAssignment_1_in_rule__Repetirn__Group__1__Impl4382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__2__Impl_in_rule__Repetirn__Group__24412 = new BitSet(new long[]{0x0000000079FFF800L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__3_in_rule__Repetirn__Group__24415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Repetirn__Group__2__Impl4443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__3__Impl_in_rule__Repetirn__Group__34474 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__4_in_rule__Repetirn__Group__34477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4506 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4518 = new BitSet(new long[]{0x0000000079FFF802L});
-    public static final BitSet FOLLOW_rule__Repetirn__Group__4__Impl_in_rule__Repetirn__Group__44551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Repetirn__Group__4__Impl4579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__RebotinolProgram__InstructionsAssignment4625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEmptyInstructionType_in_rule__EmptyInstruction__TypeAssignment4656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Sumak__ValAssignment_14687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Multk__ValAssignment_14718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Igual__SubInstructionsAssignment_24749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Igualk__ValAssignment_14780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Igualk__SubInstructionsAssignment_34811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Difer__SubInstructionsAssignment_24842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Diferk__ValAssignment_14873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Diferk__SubInstructionsAssignment_34904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Mayor__SubInstructionsAssignment_24935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Mayork__ValAssignment_14966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Mayork__SubInstructionsAssignment_34997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Menor__SubInstructionsAssignment_25028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Menork__ValAssignment_15059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Menork__SubInstructionsAssignment_35090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Repetirn__ValAssignment_15121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_rule__Repetirn__SubInstructionsAssignment_35152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sumak__Group__0__Impl_in_rule__Sumak__Group__01631 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Sumak__Group__1_in_rule__Sumak__Group__01634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Sumak__Group__0__Impl1662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sumak__Group__1__Impl_in_rule__Sumak__Group__11693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Sumak__ValAssignment_1_in_rule__Sumak__Group__1__Impl1720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Multk__Group__0__Impl_in_rule__Multk__Group__01754 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Multk__Group__1_in_rule__Multk__Group__01757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Multk__Group__0__Impl1785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Multk__Group__1__Impl_in_rule__Multk__Group__11816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Multk__ValAssignment_1_in_rule__Multk__Group__1__Impl1843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igual__Group__0__Impl_in_rule__Igual__Group__01877 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Igual__Group__1_in_rule__Igual__Group__01880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Igual__Group__0__Impl1908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igual__Group__1__Impl_in_rule__Igual__Group__11939 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Igual__Group__2_in_rule__Igual__Group__11942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Igual__Group__1__Impl1970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igual__Group__2__Impl_in_rule__Igual__Group__22001 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Igual__Group__3_in_rule__Igual__Group__22004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2033 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Igual__SubInstructionsAssignment_2_in_rule__Igual__Group__2__Impl2045 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Igual__Group__3__Impl_in_rule__Igual__Group__32078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Igual__Group__3__Impl2106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__0__Impl_in_rule__Igualk__Group__02145 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__1_in_rule__Igualk__Group__02148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Igualk__Group__0__Impl2176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__1__Impl_in_rule__Igualk__Group__12207 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__2_in_rule__Igualk__Group__12210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igualk__ValAssignment_1_in_rule__Igualk__Group__1__Impl2237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__2__Impl_in_rule__Igualk__Group__22267 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__3_in_rule__Igualk__Group__22270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Igualk__Group__2__Impl2298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__3__Impl_in_rule__Igualk__Group__32329 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__4_in_rule__Igualk__Group__32332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2361 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Igualk__SubInstructionsAssignment_3_in_rule__Igualk__Group__3__Impl2373 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Igualk__Group__4__Impl_in_rule__Igualk__Group__42406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Igualk__Group__4__Impl2434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Difer__Group__0__Impl_in_rule__Difer__Group__02475 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Difer__Group__1_in_rule__Difer__Group__02478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Difer__Group__0__Impl2506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Difer__Group__1__Impl_in_rule__Difer__Group__12537 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Difer__Group__2_in_rule__Difer__Group__12540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Difer__Group__1__Impl2568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Difer__Group__2__Impl_in_rule__Difer__Group__22599 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Difer__Group__3_in_rule__Difer__Group__22602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2631 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Difer__SubInstructionsAssignment_2_in_rule__Difer__Group__2__Impl2643 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Difer__Group__3__Impl_in_rule__Difer__Group__32676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Difer__Group__3__Impl2704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__0__Impl_in_rule__Diferk__Group__02743 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__1_in_rule__Diferk__Group__02746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Diferk__Group__0__Impl2774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__1__Impl_in_rule__Diferk__Group__12805 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__2_in_rule__Diferk__Group__12808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diferk__ValAssignment_1_in_rule__Diferk__Group__1__Impl2835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__2__Impl_in_rule__Diferk__Group__22865 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__3_in_rule__Diferk__Group__22868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Diferk__Group__2__Impl2896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__3__Impl_in_rule__Diferk__Group__32927 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__4_in_rule__Diferk__Group__32930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2959 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Diferk__SubInstructionsAssignment_3_in_rule__Diferk__Group__3__Impl2971 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Diferk__Group__4__Impl_in_rule__Diferk__Group__43004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Diferk__Group__4__Impl3032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__0__Impl_in_rule__Mayor__Group__03073 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__1_in_rule__Mayor__Group__03076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Mayor__Group__0__Impl3104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__1__Impl_in_rule__Mayor__Group__13135 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__2_in_rule__Mayor__Group__13138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Mayor__Group__1__Impl3166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__2__Impl_in_rule__Mayor__Group__23197 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__3_in_rule__Mayor__Group__23200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3229 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Mayor__SubInstructionsAssignment_2_in_rule__Mayor__Group__2__Impl3241 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Mayor__Group__3__Impl_in_rule__Mayor__Group__33274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Mayor__Group__3__Impl3302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__0__Impl_in_rule__Mayork__Group__03341 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__1_in_rule__Mayork__Group__03344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Mayork__Group__0__Impl3372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__1__Impl_in_rule__Mayork__Group__13403 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__2_in_rule__Mayork__Group__13406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayork__ValAssignment_1_in_rule__Mayork__Group__1__Impl3433 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__2__Impl_in_rule__Mayork__Group__23463 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__3_in_rule__Mayork__Group__23466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Mayork__Group__2__Impl3494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__3__Impl_in_rule__Mayork__Group__33525 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__4_in_rule__Mayork__Group__33528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3557 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Mayork__SubInstructionsAssignment_3_in_rule__Mayork__Group__3__Impl3569 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Mayork__Group__4__Impl_in_rule__Mayork__Group__43602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Mayork__Group__4__Impl3630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menor__Group__0__Impl_in_rule__Menor__Group__03671 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Menor__Group__1_in_rule__Menor__Group__03674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Menor__Group__0__Impl3702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menor__Group__1__Impl_in_rule__Menor__Group__13733 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Menor__Group__2_in_rule__Menor__Group__13736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Menor__Group__1__Impl3764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menor__Group__2__Impl_in_rule__Menor__Group__23795 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Menor__Group__3_in_rule__Menor__Group__23798 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3827 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Menor__SubInstructionsAssignment_2_in_rule__Menor__Group__2__Impl3839 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Menor__Group__3__Impl_in_rule__Menor__Group__33872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Menor__Group__3__Impl3900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menork__Group__0__Impl_in_rule__Menork__Group__03939 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Menork__Group__1_in_rule__Menork__Group__03942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Menork__Group__0__Impl3970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menork__Group__1__Impl_in_rule__Menork__Group__14001 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Menork__Group__2_in_rule__Menork__Group__14004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menork__ValAssignment_1_in_rule__Menork__Group__1__Impl4031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menork__Group__2__Impl_in_rule__Menork__Group__24061 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Menork__Group__3_in_rule__Menork__Group__24064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Menork__Group__2__Impl4092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menork__Group__3__Impl_in_rule__Menork__Group__34123 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Menork__Group__4_in_rule__Menork__Group__34126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4155 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Menork__SubInstructionsAssignment_3_in_rule__Menork__Group__3__Impl4167 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Menork__Group__4__Impl_in_rule__Menork__Group__44200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Menork__Group__4__Impl4228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__0__Impl_in_rule__Repetirn__Group__04269 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__1_in_rule__Repetirn__Group__04272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Repetirn__Group__0__Impl4300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__1__Impl_in_rule__Repetirn__Group__14331 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__2_in_rule__Repetirn__Group__14334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Repetirn__ValAssignment_1_in_rule__Repetirn__Group__1__Impl4361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__2__Impl_in_rule__Repetirn__Group__24391 = new BitSet(new long[]{0x000000003CFFF800L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__3_in_rule__Repetirn__Group__24394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Repetirn__Group__2__Impl4422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__3__Impl_in_rule__Repetirn__Group__34453 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__4_in_rule__Repetirn__Group__34456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4485 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Repetirn__SubInstructionsAssignment_3_in_rule__Repetirn__Group__3__Impl4497 = new BitSet(new long[]{0x000000003CFFF802L});
+    public static final BitSet FOLLOW_rule__Repetirn__Group__4__Impl_in_rule__Repetirn__Group__44530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Repetirn__Group__4__Impl4558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__RebotinolProgram__InstructionsAssignment4604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEmptyInstructionType_in_rule__EmptyInstruction__TypeAssignment4635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Sumak__ValAssignment_14666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Multk__ValAssignment_14697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Igual__SubInstructionsAssignment_24728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Igualk__ValAssignment_14759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Igualk__SubInstructionsAssignment_34790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Difer__SubInstructionsAssignment_24821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Diferk__ValAssignment_14852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Diferk__SubInstructionsAssignment_34883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Mayor__SubInstructionsAssignment_24914 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Mayork__ValAssignment_14945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Mayork__SubInstructionsAssignment_34976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Menor__SubInstructionsAssignment_25007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Menork__ValAssignment_15038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Menork__SubInstructionsAssignment_35069 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Repetirn__ValAssignment_15100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstruction_in_rule__Repetirn__SubInstructionsAssignment_35131 = new BitSet(new long[]{0x0000000000000002L});
 
 }

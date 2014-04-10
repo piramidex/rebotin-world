@@ -1047,16 +1047,10 @@ ruleEmptyInstructionType returns [Enumerator current=null]
         newLeafNode(enumLiteral_10, grammarAccess.getEmptyInstructionTypeAccess().getEnviarEnumLiteralDeclaration_10()); 
     }
 )
-    |(	enumLiteral_11='ENVIAR CINTA' 
+    |(	enumLiteral_11='ENVIAR MATRIZ' 
 	{
-        $current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_11, grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11()); 
-    }
-)
-    |(	enumLiteral_12='ENVIAR MATRIZ' 
-	{
-        $current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_12, grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12()); 
+        $current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_11, grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); 
     }
 ));
 

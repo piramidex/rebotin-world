@@ -19,7 +19,6 @@
       <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/Mult"/>
       <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/Inver"/>
       <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/Enviar"/>
-      <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/EnviarCinta"/>
       <genEnumLiterals ecoreEnumLiteral="Rebotinol.ecore#//EmptyInstructionType/EnviarMatriz"/>
     </genEnums>
     <genClasses ecoreClass="Rebotinol.ecore#//RebotinolProgram">

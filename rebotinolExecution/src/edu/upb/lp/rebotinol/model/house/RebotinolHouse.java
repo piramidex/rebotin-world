@@ -3,6 +3,7 @@ package edu.upb.lp.rebotinol.model.house;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.upb.lp.rebotinol.controller.MatrixCloner;
 import edu.upb.lp.rebotinol.view.RebotinolHouseObserver;
 
 /**
@@ -31,21 +32,15 @@ public class RebotinolHouse {
      * @param sizeH The horizontal size of the matrix (must be > 0)
      * @param sizeV The vertical size of the matrix (must be > 0)
      */
-    public RebotinolHouse(Double[][] matrix, int sizeH, int sizeV) {
+    public RebotinolHouse(Double[][] matrix) {
         // Check input
-        if (sizeH <= 0 || sizeV <= 0) {
-            throw new IllegalArgumentException("Cannot create a rebotinol house with 0 sized matrix");
-        }
-        if (matrix == null || matrix.length != sizeV || matrix[0].length != sizeH) {
+    	if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             throw new IllegalArgumentException("Passed an invalid matrix as parameter when creating the house");
         }
-        _sizeH = sizeH;
-        _sizeV = sizeV;
-        _matrix = new Double[_sizeV][_sizeH];
         // Clone the parameter matrix
-        for (int i = 0; i < matrix.length; i++) {
-            _matrix[i] = matrix[i].clone();
-        }
+    	_sizeH = matrix[0].length;
+        _sizeV = matrix.length;
+        _matrix = MatrixCloner.cloneMatrix(matrix);
         _memory = null;
         _positionH = 0;
         _positionV = 0;
@@ -132,6 +127,7 @@ public class RebotinolHouse {
      */
     public void setMail(Mail mail) {
         _mail = mail;
+        setMessageNotification(mail != null);
         for (RebotinolHouseObserver observer : _observers) {
             observer.mailChanged(mail);
         }
@@ -144,12 +140,7 @@ public class RebotinolHouse {
         return _message;
     }
 
-    /**
-     * Turns on or off the message notification.
-     * 
-     * @param notif
-     */
-    public void setMessageNotification(boolean notif) {
+    private void setMessageNotification(boolean notif) {
         _message = notif;
         for (RebotinolHouseObserver observer : _observers) {
             observer.messageNotificationChanged(_message);
@@ -193,11 +184,7 @@ public class RebotinolHouse {
      * @return The matrix in the house. Note that this content is cloned before returning it.
      */
     public Double[][] getMatrix() {
-        Double[][] clone = new Double[_sizeV][_sizeH];
-        for (int i = 0; i < clone.length; i++) {
-            clone[i] = _matrix[i].clone();
-        }
-        return clone;
+        return MatrixCloner.cloneMatrix(_matrix);
     }
 
     /**

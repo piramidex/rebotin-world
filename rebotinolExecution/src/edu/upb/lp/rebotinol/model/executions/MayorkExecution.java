@@ -17,7 +17,7 @@ public class MayorkExecution extends FixedConditionalExecution {
      * @param subExecutions
      *            The subExecutions of this sequential instruction execution
      */
-    public MayorkExecution(List<RebotinolInstructionExecution> subExecutions, Double fixedValue) {
+    public MayorkExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
         super(subExecutions, fixedValue);
     }
 
@@ -25,8 +25,8 @@ public class MayorkExecution extends FixedConditionalExecution {
      * {@inheritDoc}
      */
     @Override
-    protected boolean evalCondition(Double memory, Double fixedValue) throws RebotinolExecutionException {
-        return memory >= fixedValue;
+    protected boolean evalCondition(Double memory) throws RebotinolExecutionException {
+        return memory >= getFixedValue();
     }
 
 }

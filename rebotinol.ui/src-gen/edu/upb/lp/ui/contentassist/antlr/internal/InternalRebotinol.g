@@ -728,17 +728,10 @@ rule__EmptyInstructionType__Alternatives
 )
 
     |(
-{ before(grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11()); }
-(	'ENVIAR CINTA' 
-)
-{ after(grammarAccess.getEmptyInstructionTypeAccess().getEnviarCintaEnumLiteralDeclaration_11()); }
-)
-
-    |(
-{ before(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12()); }
+{ before(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); }
 (	'ENVIAR MATRIZ' 
 )
-{ after(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_12()); }
+{ after(grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); }
 )
 
 ;
