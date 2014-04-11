@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.exceptions;
+package edu.upb.lp.rebotinol.util;
 
 /**
  * This exception is thrown if there was an error during the execution in the

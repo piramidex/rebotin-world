@@ -1,9 +1,9 @@
 package edu.upb.lp.rebotinol.model.executions;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.exceptions.RebotinolFlowException;
 import edu.upb.lp.rebotinol.model.house.MatrixMail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
  * An instruction to send the current matrix through the mail.

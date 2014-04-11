@@ -1,9 +1,10 @@
 package edu.upb.lp.rebotinol.controller;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.exceptions.RebotinolFlowException;
+import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
  * A rebotinol controller follows the MVC pattern for the rebotinol world. It
@@ -54,24 +55,6 @@ public interface RebotinolController {
 			RebotinolFlowException;
 
 	/**
-	 * Execute fully the current instruction. If the current instruction is not
-	 * a complex instruction (i.e., it does not have sub-Instructions), this
-	 * method is equivalent to {@link #step()}
-	 * 
-	 * @throws RebotinolExecutionException
-	 *             If the program was incorrect (i.e., it asked to memorize a
-	 *             number from an empty cell). This exception is to be expected
-	 *             often, as it indicates an error made by the rebotinol
-	 *             programmer.
-	 * @throws RebotinolFlowException
-	 *             If the program tried to execute some illegal instruction,
-	 *             like an instruction that was already finished. This exception
-	 *             indicates a severe bug in the execution platform.
-	 */
-	public abstract void stepOver() throws RebotinolExecutionException,
-			RebotinolFlowException;
-
-	/**
 	 * Go a single step back. This method undoes the last {@link #step()}
 	 * 
 	 * @throws RebotinolExecutionException
@@ -88,20 +71,15 @@ public interface RebotinolController {
 			RebotinolFlowException;
 
 	/**
-	 * Step back fully the current instruction. This method undoes the last
-	 * {@link #stepOver()}
+	 * Set or remove a breakpoint from a given execution.
 	 * 
-	 * @throws RebotinolExecutionException
-	 *             If the program was incorrect (i.e., it asked to memorize a
-	 *             number from an empty cell). This exception is to be expected
-	 *             often, as it indicates an error made by the rebotinol
-	 *             programmer.
-	 * @throws RebotinolFlowException
-	 *             If the program tried to execute some illegal instruction,
-	 *             like an instruction that was already finished. This exception
-	 *             indicates a severe bug in the execution platform.
+	 * @param execution
+	 *            The execution on which we are trying to set or remove a
+	 *            breakpoint.
+	 * @param breakpoint
+	 *            true if we want to set a breakpoint on the execution, false if
+	 *            we want to remove it
 	 */
-	public abstract void stepBackOver() throws RebotinolExecutionException,
-			RebotinolFlowException;
-
+	public void setBreakpoint(RebotinolInstructionExecution execution,
+			boolean breakpoint);
 }

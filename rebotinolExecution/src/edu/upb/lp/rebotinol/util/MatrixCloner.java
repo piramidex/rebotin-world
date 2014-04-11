@@ -1,7 +1,16 @@
-package edu.upb.lp.rebotinol.controller;
+package edu.upb.lp.rebotinol.util;
 
-//TODO javadoc
+/**
+ * This simple class allows to safely clone a matrix.
+ * @author Alexis Marechal
+ *
+ */
 public class MatrixCloner {
+	/**
+	 * Clone a matrix
+	 * @param param The parameter matrix
+	 * @return An exact copy of the matrix parameter
+	 */
 	public static Double[][] cloneMatrix(Double[][] param) {
 		if (param == null || param.length == 0) {
 			return param;

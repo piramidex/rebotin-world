@@ -2,7 +2,7 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
 /**
  * A conditional execution whose condition is that the memory value is greater than the current matrix value

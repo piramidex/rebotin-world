@@ -1,10 +1,12 @@
 package edu.upb.lp.rebotinol.controller;
 
 import edu.upb.lp.rebotinol.RebotinolProgram;
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.exceptions.RebotinolFlowException;
+import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.MatrixCloner;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
  * A rebotinol controller meant to be built after parsing a rebotinol program
@@ -119,23 +121,15 @@ public class RebotinolXtextController implements RebotinolController {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void stepOver() throws RebotinolExecutionException, RebotinolFlowException {
-		_program.stepOver(_house);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
 	public void stepBack() throws RebotinolExecutionException, RebotinolFlowException {
 		_program.stepBack(_house);
 	}
-
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void stepBackOver() throws RebotinolExecutionException, RebotinolFlowException {
-		_program.stepBackOver(_house);
+	public void setBreakpoint(RebotinolInstructionExecution exec, boolean breakpoint) {
+		exec.setBreakpoint(breakpoint);
 	}
 }

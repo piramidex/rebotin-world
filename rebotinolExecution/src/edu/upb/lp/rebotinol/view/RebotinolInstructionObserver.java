@@ -2,28 +2,32 @@ package edu.upb.lp.rebotinol.view;
 
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 
-public interface RebotinolInstructionObserver {
-    public void initialise(RebotinolInstructionExecution exec);
+//TODO javadoc
+/**
+ * 
+ * @author Alexis Marechal
+ *
+ */
+public abstract class RebotinolInstructionObserver {
+    public void initialise(RebotinolInstructionExecution exec) {}
 
-    public void stepPerformed();
+    public void stepPerformed() {}
 
-    public void stepsChanged(int _steps);
+    public void stepsChanged(int _steps) {}
 
-    public void stepBackPerformed();
+    public void stepBackPerformed() {}
 
-    public void executedFully();
+    public void finished() {}
 
-    public void reinitialised();
+    public void unfinished() {}
 
-    public void finished();
+    public void setCurrent() {}
 
-    public void unfinished();
+    public void unsetCurrent() {}
 
-    public void setCurrent();
+    public void skipped() {}
 
-    public void unsetCurrent();
-
-    public void skipped();
-
-    public void unskipped();
+    public void unskipped() {}
+    
+    public void breakpointMet() {}
 }

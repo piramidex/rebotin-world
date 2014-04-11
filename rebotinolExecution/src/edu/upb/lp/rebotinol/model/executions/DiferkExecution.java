@@ -2,7 +2,7 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
 public class DiferkExecution extends FixedConditionalExecution {
 

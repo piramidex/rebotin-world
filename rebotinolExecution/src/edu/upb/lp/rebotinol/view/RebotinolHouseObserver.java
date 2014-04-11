@@ -8,18 +8,18 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
  * @author Alexis Marechal
  *
  */
-public interface RebotinolHouseObserver {
-
-    public void initialise(RebotinolHouse house);
+public abstract class RebotinolHouseObserver {
+//TODO javadoc
+    public void initialise(RebotinolHouse house) {}
     
-	public void memoryChanged(Double memory);
+	public void memoryChanged(Double memory) {}
 
-	public void positionChanged(int h, int v);
+	public void positionChanged(int h, int v) {}
 
-	public void mailChanged(Mail mail);
+	public void mailChanged(Mail mail) {}
 
-	public void messageNotificationChanged(boolean message);
+	public void messageNotificationChanged(boolean message) {}
 
-    public void errorNotificationChanged(boolean _error);
+    public void errorNotificationChanged(boolean _error) {}
 
 }

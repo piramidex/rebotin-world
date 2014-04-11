@@ -3,7 +3,7 @@ package edu.upb.lp.rebotinol.model.house;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.upb.lp.rebotinol.controller.MatrixCloner;
+import edu.upb.lp.rebotinol.util.MatrixCloner;
 import edu.upb.lp.rebotinol.view.RebotinolHouseObserver;
 
 /**

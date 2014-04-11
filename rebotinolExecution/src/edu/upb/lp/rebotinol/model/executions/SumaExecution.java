@@ -1,7 +1,7 @@
 package edu.upb.lp.rebotinol.model.executions;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
 /**
  * Instruction to add the current number on the matrix to the memorized number.

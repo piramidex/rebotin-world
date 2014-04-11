@@ -1,6 +1,6 @@
 package edu.upb.lp.rebotinol.model.house;
 
-import edu.upb.lp.rebotinol.controller.MatrixCloner;
+import edu.upb.lp.rebotinol.util.MatrixCloner;
 
 /**
  * A mail containing a matrix of Doubles.

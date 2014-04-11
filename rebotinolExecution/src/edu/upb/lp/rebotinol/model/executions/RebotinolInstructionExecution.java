@@ -1,8 +1,8 @@
 package edu.upb.lp.rebotinol.model.executions;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.exceptions.RebotinolFlowException;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 import edu.upb.lp.rebotinol.view.RebotinolInstructionObserver;
 
 /**
@@ -18,14 +18,13 @@ public abstract class RebotinolInstructionExecution {
 	private boolean _finished = false;
 	private boolean _current = false;
 	private boolean _skipped = false;
+	private boolean _breakpoint = false;
 
 	/**
 	 * Execute a step in this instruction.
 	 * 
 	 * @param house
 	 *            The house in which this instruction should be executed.
-	 * @return true if the instruction has been completely executed, or false if
-	 *         some steps can still be executed on it.
 	 * @throws RebotinolExecutionException
 	 *             If there was an error met by Rebotin while executing this
 	 *             instruction.
@@ -33,8 +32,8 @@ public abstract class RebotinolInstructionExecution {
 	 *             If the instruction was completely executed before calling
 	 *             this method.
 	 */
-	public boolean step(RebotinolHouse house)
-			throws RebotinolExecutionException, RebotinolFlowException {
+	public void step(RebotinolHouse house) throws RebotinolExecutionException,
+			RebotinolFlowException {
 		if (_finished) {
 			throw new RebotinolFlowException(
 					"Tried to execute an instruction that was already executed");
@@ -42,7 +41,6 @@ public abstract class RebotinolInstructionExecution {
 			incSteps();
 			doStep(house);
 			_observer.stepPerformed();
-			return _finished;
 		}
 	}
 
@@ -108,54 +106,8 @@ public abstract class RebotinolInstructionExecution {
 	 *             If no steps in the instruction was executed before calling
 	 *             this method.
 	 */
-	protected abstract void doStepBack(RebotinolHouse house) throws RebotinolFlowException;
-
-	// TODO javadoc
-	public boolean stepOver(RebotinolHouse house)
-			throws RebotinolExecutionException, RebotinolFlowException {
-		return step(house);
-	}
-
-	// TODO javadoc
-	public boolean stepBackOver(RebotinolHouse house)
-			throws RebotinolFlowException {
-		return stepBack(house);
-	}
-
-	/**
-	 * Execute completely this instruction, executing one step at a time until
-	 * it is finished.
-	 * 
-	 * @param house
-	 *            The house on which we are working.
-	 * @throws RebotinolExecutionException
-	 *             If there was an error met by Rebotin while executing this
-	 *             instruction.
-	 * @throws RebotinolFlowException
-	 *             If there was a problem in the execution flow
-	 */
-	public void executeFully(RebotinolHouse house)
-			throws RebotinolExecutionException, RebotinolFlowException {
-		while (!step(house)) {
-		}
-		_observer.executedFully();
-	}
-
-	/**
-	 * Completely reinitialise this instruction, stepping back step by step.
-	 * 
-	 * @param house
-	 *            The house on which this instruction is supposed to work.
-	 * @throws RebotinolFlowException
-	 *             If there was a problem in the execution flow
-	 */
-	public void reinitialise(RebotinolHouse house)
-			throws RebotinolFlowException {
-		while (_steps > 0) {
-			stepBack(house);
-		}
-		_observer.reinitialised();
-	}
+	protected abstract void doStepBack(RebotinolHouse house)
+			throws RebotinolFlowException;
 
 	/**
 	 * @return The number of steps that have been executed in this instruction
@@ -240,5 +192,30 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	public boolean isSkipped() {
 		return _skipped;
+	}
+
+	/**
+	 * Set or remove a breakpoint in this execution
+	 * 
+	 * @param breakpoint
+	 *            true if we want to set a breakpoint, false otherwise
+	 */
+	public void setBreakpoint(boolean breakpoint) {
+		_breakpoint = breakpoint;
+	}
+
+	/**
+	 * @return true if this execution has a breakpoint, false otherwise
+	 */
+	protected boolean isBreakpoint() {
+		return _breakpoint;
+	}
+
+	/**
+	 * @return true if we can execute an automatic step in this isntruction,
+	 *         i.e., if there is no breakpoint to stop the execution
+	 */
+	public boolean automaticStep() {
+		return _breakpoint;
 	}
 }

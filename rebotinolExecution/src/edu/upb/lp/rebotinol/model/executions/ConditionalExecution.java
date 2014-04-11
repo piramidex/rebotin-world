@@ -2,9 +2,9 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.exceptions.RebotinolFlowException;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
  * A conditional execution is a sequential execution that may or may not be

@@ -3,9 +3,9 @@ package edu.upb.lp.rebotinol.model.executions;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.upb.lp.rebotinol.exceptions.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.exceptions.RebotinolFlowException;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
  * A complex instruction has a sequence of sub-instruction. This includes the
@@ -15,7 +15,6 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
  * @author Alexis Marechal
  * 
  */
-//TODO override stepOver and stepBackOver!!!
 public class SequentialInstructionExecution extends RebotinolInstructionExecution {
 
     private List<RebotinolInstructionExecution> _subExecutions;
@@ -138,9 +137,17 @@ public class SequentialInstructionExecution extends RebotinolInstructionExecutio
      * from the protected getter {@link #getCurrentExecution()} when this is a
      * REP instruction.
      * 
-     * @return
+     * @return the computed execution index
      */
     public int getCurrentExecutionIndex() {
         return _currentExecution;
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean automaticStep() {
+    	return false;
     }
 }
