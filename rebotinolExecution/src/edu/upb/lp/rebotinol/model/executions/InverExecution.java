@@ -9,32 +9,15 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
  * @author Alexis Marechal
  * 
  */
-public class InverExecution extends RebotinolInstructionExecution {	
-	private Double _oldValue;
-
+public class InverExecution extends ChangeMemoryExecution {	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected void doStep(RebotinolHouse house)
+	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
-		Double val = house.getMemory();
-		if (val == null) {
-			throw new RebotinolExecutionException(
-					"Tried to invert while the memory was empty!");
-		}
-		_oldValue = val;
-		house.setMemory(1/val);
-		finish();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected void doStepBack(RebotinolHouse house) {
-		house.setMemory(_oldValue);
-		_oldValue = null;
-		unfinish();
+		//TODO check division by 0
+		house.setMemory(getOldValue().reciprocal());
+		
 	}
 }

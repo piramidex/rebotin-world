@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.view;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 
@@ -12,7 +14,7 @@ public abstract class RebotinolHouseObserver {
 //TODO javadoc
     public void initialise(RebotinolHouse house) {}
     
-	public void memoryChanged(Double memory) {}
+	public void memoryChanged(Fraction memory) {}
 
 	public void positionChanged(int h, int v) {}
 

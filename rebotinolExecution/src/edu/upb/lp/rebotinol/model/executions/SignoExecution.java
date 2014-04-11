@@ -16,6 +16,6 @@ public class SignoExecution extends ChangeMemoryExecution {
 	@Override
 	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
-		house.setMemory(-getOldValue());
+		house.setMemory(getOldValue().negate());
 	}
 }

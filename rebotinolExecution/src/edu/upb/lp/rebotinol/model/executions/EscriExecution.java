@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.model.executions;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
@@ -10,7 +12,7 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
  * 
  */
 public class EscriExecution extends RebotinolInstructionExecution {
-	private Double _oldValue;
+	private Fraction _oldValue;
 
 	/**
 	 * {@inheritDoc}
@@ -18,7 +20,7 @@ public class EscriExecution extends RebotinolInstructionExecution {
 	@Override
 	protected void doStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
-		Double val = house.getMemory();
+		Fraction val = house.getMemory();
 		if (val == null) {
 			throw new RebotinolExecutionException(
 					"Tried to write on the matrix while the memory was empty!");

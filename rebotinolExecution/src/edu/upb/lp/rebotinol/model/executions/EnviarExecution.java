@@ -1,6 +1,6 @@
 package edu.upb.lp.rebotinol.model.executions;
 
-import edu.upb.lp.rebotinol.model.house.DoubleMail;
+import edu.upb.lp.rebotinol.model.house.FractionMail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
@@ -15,7 +15,7 @@ public class EnviarExecution extends RebotinolInstructionExecution {
 	@Override
 	protected void doStep(RebotinolHouse house)
 			throws RebotinolExecutionException, RebotinolFlowException {
-		DoubleMail mail = new DoubleMail(house.getMemory());
+		FractionMail mail = new FractionMail(house.getMemory());
 		house.setMail(mail);
 	}
 

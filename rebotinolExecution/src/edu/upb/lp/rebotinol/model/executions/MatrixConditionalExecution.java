@@ -2,6 +2,8 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
@@ -29,12 +31,12 @@ public abstract class MatrixConditionalExecution extends ConditionalExecution {
      */
     @Override
     protected boolean evalCondition(RebotinolHouse house) throws RebotinolExecutionException {
-        Double mem = house.getMemory();
+    	Fraction mem = house.getMemory();
         if (mem == null) {
             throw new RebotinolExecutionException(
                     "Cannot evaluate a conditional instruction while the memory is empty!");
         }
-        Double curr = house.getCurrentMatrixValue();
+        Fraction curr = house.getCurrentMatrixValue();
         if (curr == null) {
             throw new RebotinolExecutionException(
                     "Cannot evaluate a conditional instruction while watching an empty position in the matrix!");
@@ -55,6 +57,6 @@ public abstract class MatrixConditionalExecution extends ConditionalExecution {
      *             If the evaluation condition met an error (e.g., empty memory
      *             or empty matrix value)
      */
-    protected abstract boolean evalCondition(Double memory, Double currentValue) throws RebotinolExecutionException;
+    protected abstract boolean evalCondition(Fraction memory, Fraction currentValue) throws RebotinolExecutionException;
 
 }

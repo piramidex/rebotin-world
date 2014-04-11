@@ -26,6 +26,6 @@ public class SumakExecution extends ChangeMemoryExecution {
 	@Override
 	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
-		house.setMemory(getOldValue() + _valueToAdd);
+		house.setMemory(getOldValue().add(_valueToAdd));
 	}
 }

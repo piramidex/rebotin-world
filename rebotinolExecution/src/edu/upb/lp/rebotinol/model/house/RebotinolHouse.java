@@ -3,12 +3,14 @@ package edu.upb.lp.rebotinol.model.house;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.util.MatrixCloner;
 import edu.upb.lp.rebotinol.view.RebotinolHouseObserver;
 
 /**
- * Rebotin's house. It contains a matrix of Doubles, a memory that stores a
- * Double, a possibly empty mailbox and two boolean indicators, one for the
+ * Rebotin's house. It contains a matrix of Fractions, a memory that stores a
+ * Fraction, a possibly empty mailbox and two boolean indicators, one for the
  * messages and one for the errors.
  * 
  * @author Alexis Marechal
@@ -18,8 +20,8 @@ public class RebotinolHouse {
     private final List<RebotinolHouseObserver> _observers = new ArrayList<RebotinolHouseObserver>();
     private final int _sizeH;
     private final int _sizeV;
-    private final Double[][] _matrix;
-    private Double _memory;
+    private final Fraction[][] _matrix;
+    private Fraction _memory;
     private int _positionH;
     private int _positionV;
     private Mail _mail;
@@ -32,7 +34,7 @@ public class RebotinolHouse {
      * @param sizeH The horizontal size of the matrix (must be > 0)
      * @param sizeV The vertical size of the matrix (must be > 0)
      */
-    public RebotinolHouse(Double[][] matrix) {
+    public RebotinolHouse(Fraction[][] matrix) {
         // Check input
     	if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             throw new IllegalArgumentException("Passed an invalid matrix as parameter when creating the house");
@@ -63,7 +65,7 @@ public class RebotinolHouse {
      * @param value
      *            the new value to be memorized by Rebotin
      */
-    public void setMemory(Double value) {
+    public void setMemory(Fraction value) {
         _memory = value;
         for (RebotinolHouseObserver observer : _observers) {
             observer.memoryChanged(_memory);
@@ -93,7 +95,7 @@ public class RebotinolHouse {
     /**
      * @return The value memorized by Rebotin
      */
-    public Double getMemory() {
+    public Fraction getMemory() {
         return _memory;
     }
 
@@ -183,14 +185,14 @@ public class RebotinolHouse {
     /**
      * @return The matrix in the house. Note that this content is cloned before returning it.
      */
-    public Double[][] getMatrix() {
+    public Fraction[][] getMatrix() {
         return MatrixCloner.cloneMatrix(_matrix);
     }
 
     /**
      * @return The current value shown in the window.
      */
-    public Double getCurrentMatrixValue() {
+    public Fraction getCurrentMatrixValue() {
         return _matrix[_positionV][_positionH];
     }
 
@@ -200,7 +202,7 @@ public class RebotinolHouse {
      * @param val
      *            The value to be written in the matrix.
      */
-    public void writeInMatrix(Double val) {
+    public void writeInMatrix(Fraction val) {
         _matrix[_positionV][_positionH] = val;
     }
 }

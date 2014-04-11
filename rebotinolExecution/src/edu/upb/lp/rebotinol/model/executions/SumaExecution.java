@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.model.executions;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
@@ -16,11 +18,11 @@ public class SumaExecution extends ChangeMemoryExecution {
 	@Override
 	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
-		Double val2 = house.getCurrentMatrixValue();
+		Fraction val2 = house.getCurrentMatrixValue();
 		if (val2 == null) {
 			throw new RebotinolExecutionException(
 					"Tried to add while the matrix was empty in the current position!");
 		}
-		house.setMemory(getOldValue() + val2);
+		house.setMemory(getOldValue().add(val2));
 	}
 }

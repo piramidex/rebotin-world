@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.controller;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
@@ -25,13 +27,13 @@ public interface RebotinolController {
 	 * @return The initial matrix. This attribute does not change while the
 	 *         program is executed
 	 */
-	public abstract Double[][] get_initialMatrix();
+	public abstract Fraction[][] get_initialMatrix();
 
 	/**
 	 * @return The expected matrix after the execution of the program. This
 	 *         attribute is optional
 	 */
-	public abstract Double[][] get_expectedMatrix();
+	public abstract Fraction[][] get_expectedMatrix();
 
 	/**
 	 * @return The program that was defined by the rebotinol programmer

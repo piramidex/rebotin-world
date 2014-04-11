@@ -2,6 +2,8 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
 /**
@@ -24,8 +26,8 @@ public class MenorExecution extends MatrixConditionalExecution {
      * {@inheritDoc}
      */
     @Override
-    protected boolean evalCondition(Double memory, Double matrixValue) throws RebotinolExecutionException {
-        return memory <= matrixValue;
+    protected boolean evalCondition(Fraction memory, Fraction matrixValue) throws RebotinolExecutionException {
+        return memory.compareTo(matrixValue) != 1;
     }
 
 }

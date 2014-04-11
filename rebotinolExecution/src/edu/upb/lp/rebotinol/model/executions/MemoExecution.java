@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.model.executions;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
@@ -9,35 +11,18 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
  * @author Alexis Marechal
  *
  */
-public class MemoExecution extends RebotinolInstructionExecution {
-
-	private Double _oldValue;
-
+public class MemoExecution extends ChangeMemoryExecution {
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected void doStep(RebotinolHouse house)
+	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
-		Double val = house.getCurrentMatrixValue();
+		Fraction val = house.getCurrentMatrixValue();
 		if (val == null) {
 			throw new RebotinolExecutionException("Tried to memorize an empty cell");
 		} else {
-			_oldValue = house.getMemory();
 			house.setMemory(val);
-			finish();
 		}
-		
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected void doStepBack(RebotinolHouse house) {
-		house.setMemory(_oldValue);
-		_oldValue = null;
-		unfinish();
-	}
-
 }

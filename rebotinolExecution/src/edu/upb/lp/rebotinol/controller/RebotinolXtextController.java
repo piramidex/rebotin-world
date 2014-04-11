@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.controller;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
@@ -17,8 +19,8 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  */
 public class RebotinolXtextController implements RebotinolController {
 	private RebotinolHouse _house;
-	private Double[][] _initialMatrix;
-	private Double[][] _expectedMatrix;
+	private Fraction[][] _initialMatrix;
+	private Fraction[][] _expectedMatrix;
 	private SequentialInstructionExecution _program;
 
 	/**
@@ -32,7 +34,7 @@ public class RebotinolXtextController implements RebotinolController {
 	 *            An optional expected matrix as the result of the computation
 	 */
 	public RebotinolXtextController(RebotinolProgram program,
-			Double[][] initialMatrix, Double[][] expectedMatrix) {
+			Fraction[][] initialMatrix, Fraction[][] expectedMatrix) {
 		// Check the input
 		if (program == null || program.getInstructions().isEmpty()) {
 			throw new IllegalArgumentException(
@@ -73,7 +75,7 @@ public class RebotinolXtextController implements RebotinolController {
 	 *            The initial matrix for executing the program
 	 */
 	public RebotinolXtextController(RebotinolProgram program,
-			Double[][] initialMatrix) {
+			Fraction[][] initialMatrix) {
 		this(program, initialMatrix, null);
 	}
 
@@ -89,7 +91,7 @@ public class RebotinolXtextController implements RebotinolController {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Double[][] get_initialMatrix() {
+	public Fraction[][] get_initialMatrix() {
 		return MatrixCloner.cloneMatrix(_initialMatrix);
 	}
 
@@ -97,7 +99,7 @@ public class RebotinolXtextController implements RebotinolController {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Double[][] get_expectedMatrix() {
+	public Fraction[][] get_expectedMatrix() {
 		return MatrixCloner.cloneMatrix(_expectedMatrix);
 	}
 

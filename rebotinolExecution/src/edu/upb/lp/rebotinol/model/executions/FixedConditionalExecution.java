@@ -2,6 +2,8 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
@@ -34,7 +36,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
      */
     @Override
     protected boolean evalCondition(RebotinolHouse house) throws RebotinolExecutionException {
-        Double mem = house.getMemory();
+    	Fraction mem = house.getMemory();
         if (mem == null) {
             throw new RebotinolExecutionException(
                     "Cannot evaluate a conditional instruction while the memory is empty!");
@@ -55,7 +57,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
      *             If the evaluation condition met an error (e.g., empty memory
      *             or empty matrix value)
      */
-    protected abstract boolean evalCondition(Double memory) throws RebotinolExecutionException;
+    protected abstract boolean evalCondition(Fraction memory) throws RebotinolExecutionException;
 
     /**
      * @return the fixed value in this conditional execution
