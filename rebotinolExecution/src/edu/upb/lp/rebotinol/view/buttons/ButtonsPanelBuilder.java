@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 //TODO javadoc
 public class ButtonsPanelBuilder {
 	public static JPanel buildPanel() {
-		//TODO Rudi? Jorge & Mauricio?
+		//TODO Jorge & Mauricio
 		return null;
 	}
 }
