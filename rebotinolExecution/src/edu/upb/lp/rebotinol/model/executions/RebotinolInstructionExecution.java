@@ -3,7 +3,6 @@ package edu.upb.lp.rebotinol.model.executions;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
-import edu.upb.lp.rebotinol.view.RebotinolInstructionObserver;
 
 /**
  * The execution of a Rebotinol instruction.
@@ -12,7 +11,7 @@ import edu.upb.lp.rebotinol.view.RebotinolInstructionObserver;
  * 
  */
 public abstract class RebotinolInstructionExecution {
-	RebotinolInstructionObserver _observer;
+	RebotinolExecutionObserver _observer;
 
 	private int _steps = 0;
 	private boolean _finished = false;

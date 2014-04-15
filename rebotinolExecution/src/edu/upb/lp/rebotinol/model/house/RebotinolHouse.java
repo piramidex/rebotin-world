@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.util.MatrixCloner;
-import edu.upb.lp.rebotinol.view.RebotinolHouseObserver;
 
 /**
  * Rebotin's house. It contains a matrix of Fractions, a memory that stores a

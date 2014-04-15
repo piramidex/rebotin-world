@@ -1,6 +1,5 @@
-package edu.upb.lp.rebotinol.view;
+package edu.upb.lp.rebotinol.model.executions;
 
-import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 
 //TODO javadoc
 /**
@@ -8,7 +7,7 @@ import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
  * @author Alexis Marechal
  *
  */
-public abstract class RebotinolInstructionObserver {
+public abstract class RebotinolExecutionObserver {
     public void initialise(RebotinolInstructionExecution exec) {}
 
     public void stepPerformed() {}
@@ -28,6 +27,6 @@ public abstract class RebotinolInstructionObserver {
     public void skipped() {}
 
     public void unskipped() {}
-    
+
     public void breakpointMet() {}
 }

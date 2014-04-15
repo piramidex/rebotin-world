@@ -1,9 +1,6 @@
-package edu.upb.lp.rebotinol.view;
+package edu.upb.lp.rebotinol.model.house;
 
 import org.apache.commons.math3.fraction.Fraction;
-
-import edu.upb.lp.rebotinol.model.house.Mail;
-import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 
 /**
  * 
