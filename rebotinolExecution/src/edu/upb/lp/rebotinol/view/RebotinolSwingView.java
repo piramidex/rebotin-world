@@ -51,6 +51,7 @@ public class RebotinolSwingView {
 	 */
 	private void initialiseMainFrame() {
 		// TODO Alexis
+		//init
 		
 	}
 }
