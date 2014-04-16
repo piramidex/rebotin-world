@@ -15,6 +15,7 @@ import edu.upb.lp.rebotinol.util.MatrixCloner;
  * @author Alexis Marechal
  * 
  */
+//TODO manage errors
 public class RebotinolHouse {
     private final List<RebotinolHouseObserver> _observers = new ArrayList<RebotinolHouseObserver>();
     private final int _sizeH;
@@ -24,7 +25,6 @@ public class RebotinolHouse {
     private int _positionH;
     private int _positionV;
     private Mail _mail;
-    private boolean _message;
     private boolean _error;
 
     /**
@@ -46,7 +46,6 @@ public class RebotinolHouse {
         _positionH = 0;
         _positionV = 0;
         _mail = null;
-        _message = false;
         _error = false;
     }
 
@@ -54,7 +53,7 @@ public class RebotinolHouse {
      * Adds an observer to this house
      * @param observer The observer to be added
      */
-    public void addObserver(RebotinolHouseObserver observer) {
+    public void registerObserver(RebotinolHouseObserver observer) {
         _observers.add(observer);
     }
 
@@ -128,23 +127,8 @@ public class RebotinolHouse {
      */
     public void setMail(Mail mail) {
         _mail = mail;
-        setMessageNotification(mail != null);
         for (RebotinolHouseObserver observer : _observers) {
             observer.mailChanged(mail);
-        }
-    }
-
-    /**
-     * @return true if the message notification is on, false otherwise.
-     */
-    public boolean isMessageNotificationOn() {
-        return _message;
-    }
-
-    private void setMessageNotification(boolean notif) {
-        _message = notif;
-        for (RebotinolHouseObserver observer : _observers) {
-            observer.messageNotificationChanged(_message);
         }
     }
 
@@ -153,18 +137,6 @@ public class RebotinolHouse {
      */
     public boolean isErrorNotificationOn() {
         return _error;
-    }
-
-    /**
-     * Turns on or off the error notification.
-     * 
-     * @param notif
-     */
-    public void setErrorNotification(boolean notif) {
-        _error = notif;
-        for (RebotinolHouseObserver observer : _observers) {
-            observer.errorNotificationChanged(_error);
-        }
     }
 
     /**

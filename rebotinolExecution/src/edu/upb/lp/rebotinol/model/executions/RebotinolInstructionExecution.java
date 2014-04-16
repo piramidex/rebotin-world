@@ -1,5 +1,8 @@
 package edu.upb.lp.rebotinol.model.executions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
@@ -11,13 +14,17 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * 
  */
 public abstract class RebotinolInstructionExecution {
-	RebotinolExecutionObserver _observer;
+	List<RebotinolExecutionObserver> _observers = new ArrayList<RebotinolExecutionObserver>();
 
 	private int _steps = 0;
 	private boolean _finished = false;
 	private boolean _current = false;
 	private boolean _skipped = false;
 	private boolean _breakpoint = false;
+
+	public void registerObserver(RebotinolExecutionObserver observer) {
+		_observers.add(observer);
+	}
 
 	/**
 	 * Execute a step in this instruction.
@@ -39,7 +46,9 @@ public abstract class RebotinolInstructionExecution {
 		} else {
 			incSteps();
 			doStep(house);
-			_observer.stepPerformed();
+			for (RebotinolExecutionObserver obs : _observers) {
+				obs.stepPerformed();
+			}
 		}
 	}
 
@@ -48,7 +57,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	private void incSteps() {
 		_steps++;
-		_observer.stepsChanged(_steps);
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.stepsChanged(_steps);
+		}
 	}
 
 	/**
@@ -56,7 +67,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	private void decSteps() {
 		_steps--;
-		_observer.stepsChanged(_steps);
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.stepsChanged(_steps);
+		}
 	}
 
 	/**
@@ -90,7 +103,9 @@ public abstract class RebotinolInstructionExecution {
 		} else {
 			decSteps();
 			doStepBack(house);
-			_observer.stepBackPerformed();
+			for (RebotinolExecutionObserver obs : _observers) {
+				obs.stepBackPerformed();
+			}
 			return _steps == 0;
 		}
 	}
@@ -136,7 +151,9 @@ public abstract class RebotinolInstructionExecution {
 	protected void finish() {
 		_finished = true;
 		unsetCurrent();
-		_observer.finished();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.finished();
+		}
 	}
 
 	/**
@@ -144,7 +161,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	protected void unfinish() {
 		_finished = false;
-		_observer.unfinished();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.unfinished();
+		}
 	}
 
 	/**
@@ -152,7 +171,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	protected void setCurrent() {
 		_current = true;
-		_observer.setCurrent();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.setCurrent();
+		}
 	}
 
 	/**
@@ -160,7 +181,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	protected void unsetCurrent() {
 		_current = false;
-		_observer.unsetCurrent();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.unsetCurrent();
+		}
 	}
 
 	/**
@@ -175,7 +198,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	protected void skip() {
 		_skipped = true;
-		_observer.skipped();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.skipped();
+		}
 	}
 
 	/**
@@ -183,7 +208,9 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	protected void unskip() {
 		_skipped = false;
-		_observer.unskipped();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.unskipped();
+		}
 	}
 
 	/**
