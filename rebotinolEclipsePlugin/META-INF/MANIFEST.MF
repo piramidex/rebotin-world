@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RebotinolEclipsePlugin
+Bundle-SymbolicName: rebotinolEclipsePlugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Universidad Privada Boliviana
+Require-Bundle: org.eclipse.ui,
+ rebotinol;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

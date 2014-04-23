@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.controller;
+package edu.upb.lp.rebotinol.xtextToSwing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +55,7 @@ import edu.upb.lp.rebotinol.util.RebotinolSwitch;
  * @author Alexis Marechal
  * 
  */
-public class ExecutionBuilder {
+public class ExecutionBuilderFromXtext {
 	private static InnerBuilder builder = new InnerBuilder();
 
 	/**

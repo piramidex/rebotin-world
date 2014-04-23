@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="rebotinol.ui/src"/>
+	<classpathentry kind="src" path="rebotinol.ui/src-gen"/>
+	<classpathentry kind="src" path="rebotinol.ui/xtend-gen"/>
+	<classpathentry kind="src" path="rebotinol/src"/>
+	<classpathentry kind="src" path="rebotinol/src-gen"/>
+	<classpathentry kind="src" path="rebotinol/xtend-gen"/>
+	<classpathentry kind="src" path="rebotinolExecution/src"/>
+	<classpathentry kind="lib" path="rebotinol/.antlr-generator-3.2.0.jar"/>
+	<classpathentry kind="lib" path="rebotinolExecution/lib/commons-math3-3.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="rebotinolExecution/bin"/>
+</classpath>

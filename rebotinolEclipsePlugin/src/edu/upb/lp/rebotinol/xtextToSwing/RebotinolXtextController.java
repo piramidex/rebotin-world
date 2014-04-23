@@ -1,8 +1,9 @@
-package edu.upb.lp.rebotinol.controller;
+package edu.upb.lp.rebotinol.xtextToSwing;
 
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.RebotinolProgram;
+import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
@@ -63,7 +64,7 @@ public class RebotinolXtextController implements RebotinolController {
 			_expectedMatrix = null;
 		}
 		// Build the program
-		_program = ExecutionBuilder.buildExecution(program);
+		_program = ExecutionBuilderFromXtext.buildExecution(program);
 	}
 
 	/**
