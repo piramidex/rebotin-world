@@ -11,5 +11,7 @@ public class HousePanelBuilder {
 	public static JPanel buildPanel(RebotinolHouse house, Fraction[][] initialMatrix) {
 		//TODO Jorge & Mauricio
 		return null;
+		
+		
 	}
 }
