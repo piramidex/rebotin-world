@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/reboConf/src-gen" editDirectory="/reboConf.edit/src"
+    editorDirectory="/reboConf.editor/src" modelPluginID="reboConf" forceOverwrite="true"
+    modelName="ReboConf" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="reboConf.edit" editorPluginID="reboConf.editor"
+    runtimeVersion="2.9">
+  <genPackages prefix="ReboConf" basePackage="edu.upb.lp" disposableProviderFactory="true"
+      fileExtensions="rconf" ecorePackage="ReboConf.ecore#/">
+    <genClasses ecoreClass="ReboConf.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Configuration/initial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Configuration/expected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Configuration/mail"/>
+    </genClasses>
+    <genClasses ecoreClass="ReboConf.ecore#//Matrix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//Matrix/filas"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//Matrix/columnas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Matrix/lines"/>
+    </genClasses>
+    <genClasses ecoreClass="ReboConf.ecore#//Line">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Line/els"/>
+    </genClasses>
+    <genClasses ecoreClass="ReboConf.ecore#//Element"/>
+    <genClasses ecoreClass="ReboConf.ecore#//Empty"/>
+    <genClasses ecoreClass="ReboConf.ecore#//Number"/>
+    <genClasses ecoreClass="ReboConf.ecore#//PositiveNumber"/>
+    <genClasses ecoreClass="ReboConf.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//Integer/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ReboConf.ecore#//NegativeNumber"/>
+    <genClasses ecoreClass="ReboConf.ecore#//Fraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Fraction/numerator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Fraction/denominator"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

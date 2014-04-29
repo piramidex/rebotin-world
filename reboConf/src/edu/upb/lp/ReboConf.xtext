@@ -1,0 +1,35 @@
+/**
+ * Author: Alexis Marechal
+ */
+grammar edu.upb.lp.ReboConf with org.eclipse.xtext.common.Terminals
+
+generate reboConf "http://www.upb.edu/lp/ReboConf"
+
+Configuration:
+	"Matriz inicial:" initial=Matrix
+	(("Matriz esperada: " expected=Matrix) | ("Correo esperado: " mail=Number));
+
+Matrix:
+	filas = INT "x" columnas = INT
+	(lines+=Line)*;
+
+Line:
+	els+=Element ("," els+=Element)*;
+
+Element:
+	Number | Empty;
+	
+Empty:
+	{Empty} "_";
+	
+Number:
+	PositiveNumber | NegativeNumber;
+
+PositiveNumber:
+	Integer ({Fraction.numerator = current} "/" denominator=Integer)?;
+
+Integer:
+	value = INT;
+
+NegativeNumber:
+	"-" PositiveNumber;
