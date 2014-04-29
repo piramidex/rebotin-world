@@ -5,7 +5,8 @@ import java.util.List;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-import edu.upb.lp.rebotinol.util.MatrixCloner;
+import edu.upb.lp.rebotinol.util.MatrixUtil;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 /**
  * Rebotin's house. It contains a matrix of Fractions, a memory that stores a
@@ -30,18 +31,17 @@ public class RebotinolHouse {
     /**
      * Builds a rebotinol house
      * @param matrix The initial matrix on which rebotin should work
-     * @param sizeH The horizontal size of the matrix (must be > 0)
-     * @param sizeV The vertical size of the matrix (must be > 0)
+     * @throws RebotinolFatalException IF the initial matrix was empty
      */
-    public RebotinolHouse(Fraction[][] matrix) {
+    public RebotinolHouse(Fraction[][] matrix) throws RebotinolFatalException {
         // Check input
     	if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-            throw new IllegalArgumentException("Passed an invalid matrix as parameter when creating the house");
+            throw new RebotinolFatalException("Passed an invalid matrix as parameter when creating the house");
         }
         // Clone the parameter matrix
     	_sizeH = matrix[0].length;
         _sizeV = matrix.length;
-        _matrix = MatrixCloner.cloneMatrix(matrix);
+        _matrix = MatrixUtil.cloneMatrix(matrix);
         _memory = null;
         _positionH = 0;
         _positionV = 0;
@@ -75,13 +75,14 @@ public class RebotinolHouse {
      * 
      * @param h
      *            The horizontal position
+     * @throws RebotinolFatalException If the new position was illegal
      */
-    public void setPosition(int h, int v) {
+    public void setPosition(int h, int v) throws RebotinolFatalException {
         if (h >= _sizeH) {
-            throw new IllegalArgumentException("Tried to set a position outside of the house");
+            throw new RebotinolFatalException("Tried to set a position outside of the house");
         }
         if (v >= _sizeV) {
-            throw new IllegalArgumentException("Tried to set a position outside of the house");
+            throw new RebotinolFatalException("Tried to set a position outside of the house");
         }
         _positionH = h;
         _positionV = v;
@@ -157,7 +158,7 @@ public class RebotinolHouse {
      * @return The matrix in the house. Note that this content is cloned before returning it.
      */
     public Fraction[][] getMatrix() {
-        return MatrixCloner.cloneMatrix(_matrix);
+        return MatrixUtil.cloneMatrix(_matrix);
     }
 
     /**

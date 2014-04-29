@@ -2,6 +2,7 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 /**
  * Instruction to move the matrix.
@@ -14,6 +15,7 @@ public abstract class MovementExecution extends RebotinolInstructionExecution {
 
     /**
      * {@inheritDoc}
+     * 
      */
     @Override
     protected void doStep(RebotinolHouse house) throws RebotinolExecutionException {
@@ -22,7 +24,11 @@ public abstract class MovementExecution extends RebotinolInstructionExecution {
         if (doesModify(house, h, v)) {
             int newH = getNewHorizontal(h, v);
             int newV = getNewVertical(h, v);
-            house.setPosition(newH, newV);
+        	try {
+				house.setPosition(newH, newV);
+			} catch (RebotinolFatalException e) {
+				throw new RebotinolExecutionException(e.getMessage()); 
+			}
             _modified = true;
         }
         finish();
@@ -90,13 +96,17 @@ public abstract class MovementExecution extends RebotinolInstructionExecution {
      * {@inheritDoc}
      */
     @Override
-    protected void doStepBack(RebotinolHouse house) {
+    protected void doStepBack(RebotinolHouse house) throws RebotinolExecutionException {
         if (_modified) {
             int h = house.getPositionH();
             int v = house.getPositionV();
             int newH = getUndoHorizontal(h, v);
             int newV = getUndoVertical(h, v);
-            house.setPosition(newH, newV);
+            try {
+				house.setPosition(newH, newV);
+			} catch (RebotinolFatalException e) {
+				throw new RebotinolExecutionException(e.getMessage());
+			}
             _modified = false;
         }
         unfinish();

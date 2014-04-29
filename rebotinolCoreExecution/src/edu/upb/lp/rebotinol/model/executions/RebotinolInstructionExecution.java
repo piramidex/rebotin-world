@@ -81,6 +81,8 @@ public abstract class RebotinolInstructionExecution {
 	 * @throws RebotinolExecutionException
 	 *             If there was an error met by Rebotin while executing this
 	 *             instruction.
+	 * @throws RebotinolFlowException
+	 *             If this instruction caused a problem in the flow
 	 */
 	protected abstract void doStep(RebotinolHouse house)
 			throws RebotinolExecutionException, RebotinolFlowException;
@@ -95,8 +97,11 @@ public abstract class RebotinolInstructionExecution {
 	 * @throws RebotinolFlowException
 	 *             If no steps in the instruction was executed before calling
 	 *             this method.
+	 * @throws RebotinolExecutionException
+	 *             If Rebotin met a problem executing this step back
 	 */
-	public boolean stepBack(RebotinolHouse house) throws RebotinolFlowException {
+	public boolean stepBack(RebotinolHouse house)
+			throws RebotinolFlowException, RebotinolExecutionException {
 		if (_steps == 0) {
 			throw new RebotinolFlowException(
 					"Tried to un-execute an instruction that was not executed");
@@ -119,9 +124,11 @@ public abstract class RebotinolInstructionExecution {
 	 * @throws RebotinolFlowException
 	 *             If no steps in the instruction was executed before calling
 	 *             this method.
+	 * @throws RebotinolExecutionException
+	 *             if Rebotin met a problem executing this step back
 	 */
 	protected abstract void doStepBack(RebotinolHouse house)
-			throws RebotinolFlowException;
+			throws RebotinolFlowException, RebotinolExecutionException;
 
 	/**
 	 * @return The number of steps that have been executed in this instruction
@@ -241,6 +248,7 @@ public abstract class RebotinolInstructionExecution {
 	 * @return true if we can execute an automatic step in this isntruction,
 	 *         i.e., if there is no breakpoint to stop the execution
 	 */
+	// TODO fix this
 	public boolean automaticStep() {
 		return _breakpoint;
 	}

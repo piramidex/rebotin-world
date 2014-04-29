@@ -2,7 +2,8 @@ package edu.upb.lp.rebotinol.model.house;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-import edu.upb.lp.rebotinol.util.MatrixCloner;
+import edu.upb.lp.rebotinol.util.MatrixUtil;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 /**
  * A mail containing a matrix of Fractions.
@@ -18,13 +19,14 @@ public class MatrixMail implements Mail {
 	 * @param content
 	 *            The content of the mail. Note that this parameter will be
 	 *            cloned.
+	 * @throws RebotinolFatalException If the content was empty.
 	 */
-	public MatrixMail(Fraction[][] content) {
+	public MatrixMail(Fraction[][] content) throws RebotinolFatalException {
 		if (content == null || content.length == 0 || content[0].length == 0) {
-			throw new IllegalArgumentException("Cannot create a mail with an empty matrix");
+			throw new RebotinolFatalException("Cannot create a mail with an empty matrix");
 		}
 		// Clone the matrix
-		_content = MatrixCloner.cloneMatrix(content);
+		_content = MatrixUtil.cloneMatrix(content);
 	}
 
 	/**
@@ -32,6 +34,6 @@ public class MatrixMail implements Mail {
 	 *         returning it.
 	 */
 	public Fraction[][] getContent() {
-		return MatrixCloner.cloneMatrix(_content);
+		return MatrixUtil.cloneMatrix(_content);
 	}
 }

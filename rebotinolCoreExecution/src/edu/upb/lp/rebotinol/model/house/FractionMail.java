@@ -2,6 +2,8 @@ package edu.upb.lp.rebotinol.model.house;
 
 import org.apache.commons.math3.fraction.Fraction;
 
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
+
 /**
  * A mail containing a Fraction number.
  * 
@@ -14,10 +16,11 @@ public class FractionMail implements Mail {
 	/**
 	 * Constructor
 	 * @param content The content of this mail.
+	 * @throws RebotinolFatalException If the content was null
 	 */
-	public FractionMail(Fraction content) {
+	public FractionMail(Fraction content) throws RebotinolFatalException {
 		if (content == null) {
-			throw new IllegalArgumentException("Cannot create a mail with an empty Fraction value");
+			throw new RebotinolFatalException("Cannot create a mail with an empty Fraction value");
 		}
 		_content = content;
 	}
