@@ -3,6 +3,8 @@ package edu.upb.lp.rebotinol.xtextToSwing;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
+
 import edu.upb.lp.rebotinol.ComplexInstruction;
 import edu.upb.lp.rebotinol.Difer;
 import edu.upb.lp.rebotinol.Diferk;
@@ -44,6 +46,7 @@ import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SignoExecution;
 import edu.upb.lp.rebotinol.model.executions.SumaExecution;
 import edu.upb.lp.rebotinol.model.executions.SumakExecution;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolSwitch;
 
 /**
@@ -55,7 +58,7 @@ import edu.upb.lp.rebotinol.util.RebotinolSwitch;
  * @author Alexis Marechal
  * 
  */
-public class ExecutionBuilderFromXtext {
+public class ProgramBuilderFromXtext {
 	private static InnerBuilder builder = new InnerBuilder();
 
 	/**
@@ -64,10 +67,11 @@ public class ExecutionBuilderFromXtext {
 	 * @param prog
 	 *            The program on which we are willing to build an execution.
 	 * @return The execution built.
+	 * @throws RebotinolFatalException If something went very bad
 	 */
-	public static SequentialInstructionExecution buildExecution(
-			RebotinolProgram prog) {
-		return (SequentialInstructionExecution) builder.doSwitch(prog);
+	public static SequentialInstructionExecution buildProgram(
+			RebotinolProgram prog) throws RebotinolFatalException {
+		return (SequentialInstructionExecution) builder.build(prog);
 	}
 
 	/**
@@ -77,19 +81,33 @@ public class ExecutionBuilderFromXtext {
 	 * @param instr
 	 *            The instruction on which we are building the execution.
 	 * @return The execution built.
+	 * @throws RebotinolFatalException If something went very bad.
 	 */
-	public static RebotinolInstructionExecution buildExecution(Instruction instr) {
-		return builder.doSwitch(instr);
+	public static RebotinolInstructionExecution buildExecution(Instruction instr) throws RebotinolFatalException {
+		return builder.build(instr);
 	}
 
 	private static class InnerBuilder extends
 			RebotinolSwitch<RebotinolInstructionExecution> {
+		
+		public RebotinolInstructionExecution build(EObject obj) throws RebotinolFatalException {
+			try {
+				return doSwitch(obj);
+			} catch (Exception e) {
+				throw new RebotinolFatalException(e.getMessage());
+			}
+		}
+		
 		@Override
 		public RebotinolInstructionExecution caseRebotinolProgram(
 				RebotinolProgram program) {
 			List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
 			for (Instruction instr : program.getInstructions()) {
-				subExecutions.add(buildExecution(instr));
+				try {
+					subExecutions.add(buildExecution(instr));
+				} catch (RebotinolFatalException e) {
+					throw new IllegalStateException(e.getMessage());
+				}
 			}
 			SequentialInstructionExecution exec = new SequentialInstructionExecution(
 					subExecutions);
@@ -164,7 +182,11 @@ public class ExecutionBuilderFromXtext {
 				ComplexInstruction instr) {
 			List<RebotinolInstructionExecution> ans = new ArrayList<RebotinolInstructionExecution>();
 			for (Instruction subInstr : instr.getSubInstructions()) {
-				ans.add(buildExecution(subInstr));
+				try {
+					ans.add(buildExecution(subInstr));
+				} catch (RebotinolFatalException e) {
+					throw new IllegalStateException(e.getMessage());
+				}
 			}
 			return ans;
 		}
