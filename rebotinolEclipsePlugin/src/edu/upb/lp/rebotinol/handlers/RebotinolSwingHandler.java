@@ -3,10 +3,13 @@ package edu.upb.lp.rebotinol.handlers;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.ui.part.FileEditorInput;
 
 import edu.upb.lp.rebotinol.dialogs.RebotinLaunchDialog;
 
@@ -22,8 +25,26 @@ public class RebotinolSwingHandler extends AbstractHandler {
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-		RebotinLaunchDialog dialog = new RebotinLaunchDialog(window.getShell());
-//		ResourceFileSelectionDialog dialog = new ResourceFileSelectionDialog("Title", "Message", new String[] { "properties", "java" });
+		IEditorInput input = HandlerUtil.getActiveEditorInput(event);
+
+		String programFile = "";
+		String configurationFile = "";
+		if (input instanceof IFileEditorInput) {
+			FileEditorInput fileInput = (FileEditorInput) input;
+			IFile file = fileInput.getFile();
+			IEditorPart part = HandlerUtil.getActiveEditor(event);
+			if (part.isDirty()) {
+				part.doSave(null);
+			}
+			//TODO check if the files are correct
+			if (file.getFileExtension().equals("rebo")) {
+				programFile = file.getLocationURI().getPath();
+			} else if (file.getFileExtension().equals("rconf")) {
+				configurationFile = file.getLocationURI().getPath();
+			}
+		}
+		
+		RebotinLaunchDialog dialog = new RebotinLaunchDialog(window.getShell(), programFile, configurationFile);
 		dialog.open();
 		
 //		MessageDialog.openInformation(

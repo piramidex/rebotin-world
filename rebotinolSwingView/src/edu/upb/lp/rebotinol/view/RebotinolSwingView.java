@@ -43,6 +43,7 @@ public class RebotinolSwingView {
 		_housePanel = HousePanelBuilder.buildPanel(house, initialMatrix);
 		_buttonsPanel = ButtonsPanelBuilder.buildPanel();
 		initialiseMainFrame();
+		_mainFrame.setVisible(true);
 	}
 
 	/**
