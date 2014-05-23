@@ -10,7 +10,8 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 public class HousePanelBuilder {
 	public static JPanel buildPanel(RebotinolHouse house, Fraction[][] initialMatrix) {
 		//TODO Jorge & Mauricio
-		return null;
+		MatrixPanelBuilder p = new MatrixPanelBuilder(house, initialMatrix);
+		return p.createContentPane();
 		
 		
 	}
