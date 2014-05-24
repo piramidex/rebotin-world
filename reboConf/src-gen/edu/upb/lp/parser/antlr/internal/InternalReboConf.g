@@ -99,7 +99,7 @@ ruleConfiguration returns [EObject current=null]
 	    }
 
 )
-)((	otherlv_2='Matriz esperada: ' 
+)((	otherlv_2='Matriz esperada:' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getConfigurationAccess().getMatrizEsperadaKeyword_2_0_0());
     }
@@ -122,7 +122,7 @@ ruleConfiguration returns [EObject current=null]
 
 )
 ))
-    |(	otherlv_4='Correo esperado: ' 
+    |(	otherlv_4='Correo esperado:' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getConfigurationAccess().getCorreoEsperadoKeyword_2_1_0());
     }
@@ -144,7 +144,7 @@ ruleConfiguration returns [EObject current=null]
 	    }
 
 )
-))))
+)))?)
 ;
 
 
@@ -165,65 +165,25 @@ ruleMatrix returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
 (
-		lv_filas_0_0=RULE_INT
-		{
-			newLeafNode(lv_filas_0_0, grammarAccess.getMatrixAccess().getFilasINTTerminalRuleCall_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMatrixRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"filas",
-        		lv_filas_0_0, 
-        		"INT");
-	    }
-
-)
-)	otherlv_1='x' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getMatrixAccess().getXKeyword_1());
-    }
-(
-(
-		lv_columnas_2_0=RULE_INT
-		{
-			newLeafNode(lv_columnas_2_0, grammarAccess.getMatrixAccess().getColumnasINTTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMatrixRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"columnas",
-        		lv_columnas_2_0, 
-        		"INT");
-	    }
-
-)
-)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_0()); 
 	    }
-		lv_lines_3_0=ruleLine		{
+		lv_lines_0_0=ruleLine		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMatrixRule());
 	        }
        		add(
        			$current, 
        			"lines",
-        		lv_lines_3_0, 
+        		lv_lines_0_0, 
         		"Line");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)
+)+
 ;
 
 

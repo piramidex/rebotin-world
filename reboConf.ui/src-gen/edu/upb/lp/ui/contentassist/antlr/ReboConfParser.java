@@ -43,7 +43,6 @@ public class ReboConfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConfigurationAccess().getGroup(), "rule__Configuration__Group__0");
 					put(grammarAccess.getConfigurationAccess().getGroup_2_0(), "rule__Configuration__Group_2_0__0");
 					put(grammarAccess.getConfigurationAccess().getGroup_2_1(), "rule__Configuration__Group_2_1__0");
-					put(grammarAccess.getMatrixAccess().getGroup(), "rule__Matrix__Group__0");
 					put(grammarAccess.getLineAccess().getGroup(), "rule__Line__Group__0");
 					put(grammarAccess.getLineAccess().getGroup_1(), "rule__Line__Group_1__0");
 					put(grammarAccess.getEmptyAccess().getGroup(), "rule__Empty__Group__0");
@@ -53,9 +52,7 @@ public class ReboConfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConfigurationAccess().getInitialAssignment_1(), "rule__Configuration__InitialAssignment_1");
 					put(grammarAccess.getConfigurationAccess().getExpectedAssignment_2_0_1(), "rule__Configuration__ExpectedAssignment_2_0_1");
 					put(grammarAccess.getConfigurationAccess().getMailAssignment_2_1_1(), "rule__Configuration__MailAssignment_2_1_1");
-					put(grammarAccess.getMatrixAccess().getFilasAssignment_0(), "rule__Matrix__FilasAssignment_0");
-					put(grammarAccess.getMatrixAccess().getColumnasAssignment_2(), "rule__Matrix__ColumnasAssignment_2");
-					put(grammarAccess.getMatrixAccess().getLinesAssignment_3(), "rule__Matrix__LinesAssignment_3");
+					put(grammarAccess.getMatrixAccess().getLinesAssignment(), "rule__Matrix__LinesAssignment");
 					put(grammarAccess.getLineAccess().getElsAssignment_0(), "rule__Line__ElsAssignment_0");
 					put(grammarAccess.getLineAccess().getElsAssignment_1_1(), "rule__Line__ElsAssignment_1_1");
 					put(grammarAccess.getPositiveNumberAccess().getDenominatorAssignment_1_2(), "rule__PositiveNumber__DenominatorAssignment_1_2");

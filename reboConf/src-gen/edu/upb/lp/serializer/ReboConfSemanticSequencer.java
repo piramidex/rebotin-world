@@ -80,7 +80,7 @@ public class ReboConfSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (initial=Matrix (expected=Matrix | mail=Number))
+	 *     (initial=Matrix (expected=Matrix | mail=Number)?)
 	 */
 	protected void sequence_Configuration(EObject context, Configuration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -123,7 +123,7 @@ public class ReboConfSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (filas=INT columnas=INT lines+=Line*)
+	 *     lines+=Line+
 	 */
 	protected void sequence_Matrix(EObject context, Matrix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

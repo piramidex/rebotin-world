@@ -216,29 +216,9 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMatrix_Filas()
-  {
-    return (EAttribute)matrixEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMatrix_Columnas()
-  {
-    return (EAttribute)matrixEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getMatrix_Lines()
   {
-    return (EReference)matrixEClass.getEStructuralFeatures().get(2);
+    return (EReference)matrixEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -397,8 +377,6 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
     createEReference(configurationEClass, CONFIGURATION__MAIL);
 
     matrixEClass = createEClass(MATRIX);
-    createEAttribute(matrixEClass, MATRIX__FILAS);
-    createEAttribute(matrixEClass, MATRIX__COLUMNAS);
     createEReference(matrixEClass, MATRIX__LINES);
 
     lineEClass = createEClass(LINE);
@@ -466,8 +444,6 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
     initEReference(getConfiguration_Mail(), this.getNumber(), null, "mail", null, 0, 1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(matrixEClass, Matrix.class, "Matrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMatrix_Filas(), ecorePackage.getEInt(), "filas", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMatrix_Columnas(), ecorePackage.getEInt(), "columnas", null, 0, 1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMatrix_Lines(), this.getLine(), null, "lines", null, 0, -1, Matrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lineEClass, Line.class, "Line", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

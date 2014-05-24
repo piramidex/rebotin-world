@@ -21,13 +21,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalReboConfParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Matriz inicial:'", "'Matriz esperada: '", "'Correo esperado: '", "'x'", "','", "'_'", "'/'", "'-'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Matriz inicial:'", "'Matriz esperada:'", "'Correo esperado:'", "','", "'_'", "'/'", "'-'"
     };
     public static final int RULE_ID=5;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__11=11;
@@ -115,7 +114,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfiguration"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:76:1: ruleConfiguration returns [EObject current=null] : (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) ) ) ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:76:1: ruleConfiguration returns [EObject current=null] : (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) ) )? ) ;
     public final EObject ruleConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -132,11 +131,11 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:79:28: ( (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) ) ) ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:80:1: (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) ) ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:79:28: ( (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) ) )? ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:80:1: (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) ) )? )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:80:1: (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) ) ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:80:3: otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:80:1: (otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) ) )? )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:80:3: otherlv_0= 'Matriz inicial:' ( (lv_initial_1_0= ruleMatrix ) ) ( (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) ) )?
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleConfiguration122); 
 
@@ -173,8 +172,8 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:2: ( (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) ) )
-            int alt1=2;
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:2: ( (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) ) | (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) ) )?
+            int alt1=3;
             int LA1_0 = input.LA(1);
 
             if ( (LA1_0==12) ) {
@@ -183,18 +182,12 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
             else if ( (LA1_0==13) ) {
                 alt1=2;
             }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 1, 0, input);
-
-                throw nvae;
-            }
             switch (alt1) {
                 case 1 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:3: (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:3: (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) )
                     {
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:3: (otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) ) )
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:5: otherlv_2= 'Matriz esperada: ' ( (lv_expected_3_0= ruleMatrix ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:3: (otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:102:5: otherlv_2= 'Matriz esperada:' ( (lv_expected_3_0= ruleMatrix ) )
                     {
                     otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleConfiguration157); 
 
@@ -238,10 +231,10 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:125:6: (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:125:6: (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) )
                     {
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:125:6: (otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) ) )
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:125:8: otherlv_4= 'Correo esperado: ' ( (lv_mail_5_0= ruleNumber ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:125:6: (otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:125:8: otherlv_4= 'Correo esperado:' ( (lv_mail_5_0= ruleNumber ) )
                     {
                     otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleConfiguration198); 
 
@@ -320,13 +313,13 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
             // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:157:2: iv_ruleMatrix= ruleMatrix EOF
             {
              newCompositeNode(grammarAccess.getMatrixRule()); 
-            pushFollow(FOLLOW_ruleMatrix_in_entryRuleMatrix257);
+            pushFollow(FOLLOW_ruleMatrix_in_entryRuleMatrix258);
             iv_ruleMatrix=ruleMatrix();
 
             state._fsp--;
 
              current =iv_ruleMatrix; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMatrix267); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMatrix268); 
 
             }
 
@@ -344,104 +337,43 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMatrix"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:164:1: ruleMatrix returns [EObject current=null] : ( ( (lv_filas_0_0= RULE_INT ) ) otherlv_1= 'x' ( (lv_columnas_2_0= RULE_INT ) ) ( (lv_lines_3_0= ruleLine ) )* ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:164:1: ruleMatrix returns [EObject current=null] : ( (lv_lines_0_0= ruleLine ) )+ ;
     public final EObject ruleMatrix() throws RecognitionException {
         EObject current = null;
 
-        Token lv_filas_0_0=null;
-        Token otherlv_1=null;
-        Token lv_columnas_2_0=null;
-        EObject lv_lines_3_0 = null;
+        EObject lv_lines_0_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:167:28: ( ( ( (lv_filas_0_0= RULE_INT ) ) otherlv_1= 'x' ( (lv_columnas_2_0= RULE_INT ) ) ( (lv_lines_3_0= ruleLine ) )* ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:168:1: ( ( (lv_filas_0_0= RULE_INT ) ) otherlv_1= 'x' ( (lv_columnas_2_0= RULE_INT ) ) ( (lv_lines_3_0= ruleLine ) )* )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:167:28: ( ( (lv_lines_0_0= ruleLine ) )+ )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:168:1: ( (lv_lines_0_0= ruleLine ) )+
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:168:1: ( ( (lv_filas_0_0= RULE_INT ) ) otherlv_1= 'x' ( (lv_columnas_2_0= RULE_INT ) ) ( (lv_lines_3_0= ruleLine ) )* )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:168:2: ( (lv_filas_0_0= RULE_INT ) ) otherlv_1= 'x' ( (lv_columnas_2_0= RULE_INT ) ) ( (lv_lines_3_0= ruleLine ) )*
-            {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:168:2: ( (lv_filas_0_0= RULE_INT ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:169:1: (lv_filas_0_0= RULE_INT )
-            {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:169:1: (lv_filas_0_0= RULE_INT )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:170:3: lv_filas_0_0= RULE_INT
-            {
-            lv_filas_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMatrix309); 
-
-            			newLeafNode(lv_filas_0_0, grammarAccess.getMatrixAccess().getFilasINTTerminalRuleCall_0_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getMatrixRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"filas",
-                    		lv_filas_0_0, 
-                    		"INT");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleMatrix326); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getMatrixAccess().getXKeyword_1());
-                
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:190:1: ( (lv_columnas_2_0= RULE_INT ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:191:1: (lv_columnas_2_0= RULE_INT )
-            {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:191:1: (lv_columnas_2_0= RULE_INT )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:192:3: lv_columnas_2_0= RULE_INT
-            {
-            lv_columnas_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMatrix343); 
-
-            			newLeafNode(lv_columnas_2_0, grammarAccess.getMatrixAccess().getColumnasINTTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getMatrixRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"columnas",
-                    		lv_columnas_2_0, 
-                    		"INT");
-            	    
-
-            }
-
-
-            }
-
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:208:2: ( (lv_lines_3_0= ruleLine ) )*
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:168:1: ( (lv_lines_0_0= ruleLine ) )+
+            int cnt2=0;
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_INT||LA2_0==16||LA2_0==18) ) {
+                if ( (LA2_0==RULE_INT||LA2_0==15||LA2_0==17) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:209:1: (lv_lines_3_0= ruleLine )
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:169:1: (lv_lines_0_0= ruleLine )
             	    {
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:209:1: (lv_lines_3_0= ruleLine )
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:210:3: lv_lines_3_0= ruleLine
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:169:1: (lv_lines_0_0= ruleLine )
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:170:3: lv_lines_0_0= ruleLine
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_3_0()); 
+            	    	        newCompositeNode(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleLine_in_ruleMatrix369);
-            	    lv_lines_3_0=ruleLine();
+            	    pushFollow(FOLLOW_ruleLine_in_ruleMatrix313);
+            	    lv_lines_0_0=ruleLine();
 
             	    state._fsp--;
 
@@ -452,7 +384,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"lines",
-            	            		lv_lines_3_0, 
+            	            		lv_lines_0_0, 
             	            		"Line");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -464,12 +396,13 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop2;
+            	    if ( cnt2 >= 1 ) break loop2;
+                        EarlyExitException eee =
+                            new EarlyExitException(2, input);
+                        throw eee;
                 }
+                cnt2++;
             } while (true);
-
-
-            }
 
 
             }
@@ -489,7 +422,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLine"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:234:1: entryRuleLine returns [EObject current=null] : iv_ruleLine= ruleLine EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:194:1: entryRuleLine returns [EObject current=null] : iv_ruleLine= ruleLine EOF ;
     public final EObject entryRuleLine() throws RecognitionException {
         EObject current = null;
 
@@ -497,17 +430,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:235:2: (iv_ruleLine= ruleLine EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:236:2: iv_ruleLine= ruleLine EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:195:2: (iv_ruleLine= ruleLine EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:196:2: iv_ruleLine= ruleLine EOF
             {
              newCompositeNode(grammarAccess.getLineRule()); 
-            pushFollow(FOLLOW_ruleLine_in_entryRuleLine406);
+            pushFollow(FOLLOW_ruleLine_in_entryRuleLine349);
             iv_ruleLine=ruleLine();
 
             state._fsp--;
 
              current =iv_ruleLine; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLine416); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLine359); 
 
             }
 
@@ -525,7 +458,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLine"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:243:1: ruleLine returns [EObject current=null] : ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:203:1: ruleLine returns [EObject current=null] : ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* ) ;
     public final EObject ruleLine() throws RecognitionException {
         EObject current = null;
 
@@ -538,22 +471,22 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:246:28: ( ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:247:1: ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:206:28: ( ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:207:1: ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:247:1: ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:247:2: ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )*
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:207:1: ( ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )* )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:207:2: ( (lv_els_0_0= ruleElement ) ) (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )*
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:247:2: ( (lv_els_0_0= ruleElement ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:248:1: (lv_els_0_0= ruleElement )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:207:2: ( (lv_els_0_0= ruleElement ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:208:1: (lv_els_0_0= ruleElement )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:248:1: (lv_els_0_0= ruleElement )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:249:3: lv_els_0_0= ruleElement
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:208:1: (lv_els_0_0= ruleElement )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:209:3: lv_els_0_0= ruleElement
             {
              
             	        newCompositeNode(grammarAccess.getLineAccess().getElsElementParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleElement_in_ruleLine462);
+            pushFollow(FOLLOW_ruleElement_in_ruleLine405);
             lv_els_0_0=ruleElement();
 
             state._fsp--;
@@ -575,35 +508,35 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:265:2: (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )*
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:225:2: (otherlv_1= ',' ( (lv_els_2_0= ruleElement ) ) )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==15) ) {
+                if ( (LA3_0==14) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:265:4: otherlv_1= ',' ( (lv_els_2_0= ruleElement ) )
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:225:4: otherlv_1= ',' ( (lv_els_2_0= ruleElement ) )
             	    {
-            	    otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleLine475); 
+            	    otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleLine418); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getLineAccess().getCommaKeyword_1_0());
             	        
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:269:1: ( (lv_els_2_0= ruleElement ) )
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:270:1: (lv_els_2_0= ruleElement )
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:229:1: ( (lv_els_2_0= ruleElement ) )
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:230:1: (lv_els_2_0= ruleElement )
             	    {
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:270:1: (lv_els_2_0= ruleElement )
-            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:271:3: lv_els_2_0= ruleElement
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:230:1: (lv_els_2_0= ruleElement )
+            	    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:231:3: lv_els_2_0= ruleElement
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLineAccess().getElsElementParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleElement_in_ruleLine496);
+            	    pushFollow(FOLLOW_ruleElement_in_ruleLine439);
             	    lv_els_2_0=ruleElement();
 
             	    state._fsp--;
@@ -655,7 +588,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElement"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:295:1: entryRuleElement returns [EObject current=null] : iv_ruleElement= ruleElement EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:255:1: entryRuleElement returns [EObject current=null] : iv_ruleElement= ruleElement EOF ;
     public final EObject entryRuleElement() throws RecognitionException {
         EObject current = null;
 
@@ -663,17 +596,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:296:2: (iv_ruleElement= ruleElement EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:297:2: iv_ruleElement= ruleElement EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:256:2: (iv_ruleElement= ruleElement EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:257:2: iv_ruleElement= ruleElement EOF
             {
              newCompositeNode(grammarAccess.getElementRule()); 
-            pushFollow(FOLLOW_ruleElement_in_entryRuleElement534);
+            pushFollow(FOLLOW_ruleElement_in_entryRuleElement477);
             iv_ruleElement=ruleElement();
 
             state._fsp--;
 
              current =iv_ruleElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElement544); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElement487); 
 
             }
 
@@ -691,7 +624,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElement"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:304:1: ruleElement returns [EObject current=null] : (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:264:1: ruleElement returns [EObject current=null] : (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty ) ;
     public final EObject ruleElement() throws RecognitionException {
         EObject current = null;
 
@@ -703,17 +636,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:307:28: ( (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:308:1: (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:267:28: ( (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:268:1: (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:308:1: (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:268:1: (this_Number_0= ruleNumber | this_Empty_1= ruleEmpty )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_INT||LA4_0==18) ) {
+            if ( (LA4_0==RULE_INT||LA4_0==17) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==16) ) {
+            else if ( (LA4_0==15) ) {
                 alt4=2;
             }
             else {
@@ -724,12 +657,12 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:309:5: this_Number_0= ruleNumber
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:269:5: this_Number_0= ruleNumber
                     {
                      
                             newCompositeNode(grammarAccess.getElementAccess().getNumberParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNumber_in_ruleElement591);
+                    pushFollow(FOLLOW_ruleNumber_in_ruleElement534);
                     this_Number_0=ruleNumber();
 
                     state._fsp--;
@@ -742,12 +675,12 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:319:5: this_Empty_1= ruleEmpty
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:279:5: this_Empty_1= ruleEmpty
                     {
                      
                             newCompositeNode(grammarAccess.getElementAccess().getEmptyParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEmpty_in_ruleElement618);
+                    pushFollow(FOLLOW_ruleEmpty_in_ruleElement561);
                     this_Empty_1=ruleEmpty();
 
                     state._fsp--;
@@ -780,7 +713,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEmpty"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:335:1: entryRuleEmpty returns [EObject current=null] : iv_ruleEmpty= ruleEmpty EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:295:1: entryRuleEmpty returns [EObject current=null] : iv_ruleEmpty= ruleEmpty EOF ;
     public final EObject entryRuleEmpty() throws RecognitionException {
         EObject current = null;
 
@@ -788,17 +721,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:336:2: (iv_ruleEmpty= ruleEmpty EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:337:2: iv_ruleEmpty= ruleEmpty EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:296:2: (iv_ruleEmpty= ruleEmpty EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:297:2: iv_ruleEmpty= ruleEmpty EOF
             {
              newCompositeNode(grammarAccess.getEmptyRule()); 
-            pushFollow(FOLLOW_ruleEmpty_in_entryRuleEmpty653);
+            pushFollow(FOLLOW_ruleEmpty_in_entryRuleEmpty596);
             iv_ruleEmpty=ruleEmpty();
 
             state._fsp--;
 
              current =iv_ruleEmpty; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEmpty663); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEmpty606); 
 
             }
 
@@ -816,7 +749,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmpty"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:344:1: ruleEmpty returns [EObject current=null] : ( () otherlv_1= '_' ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:304:1: ruleEmpty returns [EObject current=null] : ( () otherlv_1= '_' ) ;
     public final EObject ruleEmpty() throws RecognitionException {
         EObject current = null;
 
@@ -825,14 +758,14 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:347:28: ( ( () otherlv_1= '_' ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:348:1: ( () otherlv_1= '_' )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:307:28: ( ( () otherlv_1= '_' ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:308:1: ( () otherlv_1= '_' )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:348:1: ( () otherlv_1= '_' )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:348:2: () otherlv_1= '_'
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:308:1: ( () otherlv_1= '_' )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:308:2: () otherlv_1= '_'
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:348:2: ()
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:349:5: 
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:308:2: ()
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:309:5: 
             {
 
                     current = forceCreateModelElement(
@@ -842,7 +775,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleEmpty709); 
+            otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleEmpty652); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getEmptyAccess().get_Keyword_1());
                 
@@ -867,7 +800,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:366:1: entryRuleNumber returns [EObject current=null] : iv_ruleNumber= ruleNumber EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:326:1: entryRuleNumber returns [EObject current=null] : iv_ruleNumber= ruleNumber EOF ;
     public final EObject entryRuleNumber() throws RecognitionException {
         EObject current = null;
 
@@ -875,17 +808,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:367:2: (iv_ruleNumber= ruleNumber EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:368:2: iv_ruleNumber= ruleNumber EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:327:2: (iv_ruleNumber= ruleNumber EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:328:2: iv_ruleNumber= ruleNumber EOF
             {
              newCompositeNode(grammarAccess.getNumberRule()); 
-            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber745);
+            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber688);
             iv_ruleNumber=ruleNumber();
 
             state._fsp--;
 
              current =iv_ruleNumber; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber755); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber698); 
 
             }
 
@@ -903,7 +836,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:375:1: ruleNumber returns [EObject current=null] : (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:335:1: ruleNumber returns [EObject current=null] : (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber ) ;
     public final EObject ruleNumber() throws RecognitionException {
         EObject current = null;
 
@@ -915,17 +848,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:378:28: ( (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:379:1: (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:338:28: ( (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:339:1: (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:379:1: (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:339:1: (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==RULE_INT) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==18) ) {
+            else if ( (LA5_0==17) ) {
                 alt5=2;
             }
             else {
@@ -936,12 +869,12 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:380:5: this_PositiveNumber_0= rulePositiveNumber
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:340:5: this_PositiveNumber_0= rulePositiveNumber
                     {
                      
                             newCompositeNode(grammarAccess.getNumberAccess().getPositiveNumberParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_rulePositiveNumber_in_ruleNumber802);
+                    pushFollow(FOLLOW_rulePositiveNumber_in_ruleNumber745);
                     this_PositiveNumber_0=rulePositiveNumber();
 
                     state._fsp--;
@@ -954,12 +887,12 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:390:5: this_NegativeNumber_1= ruleNegativeNumber
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:350:5: this_NegativeNumber_1= ruleNegativeNumber
                     {
                      
                             newCompositeNode(grammarAccess.getNumberAccess().getNegativeNumberParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNegativeNumber_in_ruleNumber829);
+                    pushFollow(FOLLOW_ruleNegativeNumber_in_ruleNumber772);
                     this_NegativeNumber_1=ruleNegativeNumber();
 
                     state._fsp--;
@@ -992,7 +925,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePositiveNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:406:1: entryRulePositiveNumber returns [EObject current=null] : iv_rulePositiveNumber= rulePositiveNumber EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:366:1: entryRulePositiveNumber returns [EObject current=null] : iv_rulePositiveNumber= rulePositiveNumber EOF ;
     public final EObject entryRulePositiveNumber() throws RecognitionException {
         EObject current = null;
 
@@ -1000,17 +933,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:407:2: (iv_rulePositiveNumber= rulePositiveNumber EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:408:2: iv_rulePositiveNumber= rulePositiveNumber EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:367:2: (iv_rulePositiveNumber= rulePositiveNumber EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:368:2: iv_rulePositiveNumber= rulePositiveNumber EOF
             {
              newCompositeNode(grammarAccess.getPositiveNumberRule()); 
-            pushFollow(FOLLOW_rulePositiveNumber_in_entryRulePositiveNumber864);
+            pushFollow(FOLLOW_rulePositiveNumber_in_entryRulePositiveNumber807);
             iv_rulePositiveNumber=rulePositiveNumber();
 
             state._fsp--;
 
              current =iv_rulePositiveNumber; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePositiveNumber874); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePositiveNumber817); 
 
             }
 
@@ -1028,7 +961,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePositiveNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:415:1: rulePositiveNumber returns [EObject current=null] : (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:375:1: rulePositiveNumber returns [EObject current=null] : (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? ) ;
     public final EObject rulePositiveNumber() throws RecognitionException {
         EObject current = null;
 
@@ -1041,16 +974,16 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:418:28: ( (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:419:1: (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:378:28: ( (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:379:1: (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:419:1: (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:420:5: this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )?
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:379:1: (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:380:5: this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getPositiveNumberAccess().getIntegerParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleInteger_in_rulePositiveNumber921);
+            pushFollow(FOLLOW_ruleInteger_in_rulePositiveNumber864);
             this_Integer_0=ruleInteger();
 
             state._fsp--;
@@ -1059,19 +992,19 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
                     current = this_Integer_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:428:1: ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )?
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:388:1: ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
+            if ( (LA6_0==16) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:428:2: () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:388:2: () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) )
                     {
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:428:2: ()
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:429:5: 
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:388:2: ()
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:389:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -1081,20 +1014,20 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_rulePositiveNumber942); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_16_in_rulePositiveNumber885); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getPositiveNumberAccess().getSolidusKeyword_1_1());
                         
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:438:1: ( (lv_denominator_3_0= ruleInteger ) )
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:439:1: (lv_denominator_3_0= ruleInteger )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:398:1: ( (lv_denominator_3_0= ruleInteger ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:399:1: (lv_denominator_3_0= ruleInteger )
                     {
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:439:1: (lv_denominator_3_0= ruleInteger )
-                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:440:3: lv_denominator_3_0= ruleInteger
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:399:1: (lv_denominator_3_0= ruleInteger )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:400:3: lv_denominator_3_0= ruleInteger
                     {
                      
                     	        newCompositeNode(grammarAccess.getPositiveNumberAccess().getDenominatorIntegerParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleInteger_in_rulePositiveNumber963);
+                    pushFollow(FOLLOW_ruleInteger_in_rulePositiveNumber906);
                     lv_denominator_3_0=ruleInteger();
 
                     state._fsp--;
@@ -1143,7 +1076,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInteger"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:464:1: entryRuleInteger returns [EObject current=null] : iv_ruleInteger= ruleInteger EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:424:1: entryRuleInteger returns [EObject current=null] : iv_ruleInteger= ruleInteger EOF ;
     public final EObject entryRuleInteger() throws RecognitionException {
         EObject current = null;
 
@@ -1151,17 +1084,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:465:2: (iv_ruleInteger= ruleInteger EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:466:2: iv_ruleInteger= ruleInteger EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:425:2: (iv_ruleInteger= ruleInteger EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:426:2: iv_ruleInteger= ruleInteger EOF
             {
              newCompositeNode(grammarAccess.getIntegerRule()); 
-            pushFollow(FOLLOW_ruleInteger_in_entryRuleInteger1001);
+            pushFollow(FOLLOW_ruleInteger_in_entryRuleInteger944);
             iv_ruleInteger=ruleInteger();
 
             state._fsp--;
 
              current =iv_ruleInteger; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInteger1011); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInteger954); 
 
             }
 
@@ -1179,7 +1112,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteger"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:473:1: ruleInteger returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:433:1: ruleInteger returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleInteger() throws RecognitionException {
         EObject current = null;
 
@@ -1188,16 +1121,16 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:28: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:477:1: ( (lv_value_0_0= RULE_INT ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:436:28: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:437:1: ( (lv_value_0_0= RULE_INT ) )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:477:1: ( (lv_value_0_0= RULE_INT ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:478:1: (lv_value_0_0= RULE_INT )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:437:1: ( (lv_value_0_0= RULE_INT ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:438:1: (lv_value_0_0= RULE_INT )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:478:1: (lv_value_0_0= RULE_INT )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:479:3: lv_value_0_0= RULE_INT
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:438:1: (lv_value_0_0= RULE_INT )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:439:3: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInteger1052); 
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInteger995); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); 
             		
@@ -1235,7 +1168,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNegativeNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:503:1: entryRuleNegativeNumber returns [EObject current=null] : iv_ruleNegativeNumber= ruleNegativeNumber EOF ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:463:1: entryRuleNegativeNumber returns [EObject current=null] : iv_ruleNegativeNumber= ruleNegativeNumber EOF ;
     public final EObject entryRuleNegativeNumber() throws RecognitionException {
         EObject current = null;
 
@@ -1243,17 +1176,17 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:504:2: (iv_ruleNegativeNumber= ruleNegativeNumber EOF )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:505:2: iv_ruleNegativeNumber= ruleNegativeNumber EOF
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:464:2: (iv_ruleNegativeNumber= ruleNegativeNumber EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:465:2: iv_ruleNegativeNumber= ruleNegativeNumber EOF
             {
              newCompositeNode(grammarAccess.getNegativeNumberRule()); 
-            pushFollow(FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1092);
+            pushFollow(FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1035);
             iv_ruleNegativeNumber=ruleNegativeNumber();
 
             state._fsp--;
 
              current =iv_ruleNegativeNumber; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNegativeNumber1102); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNegativeNumber1045); 
 
             }
 
@@ -1271,7 +1204,7 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegativeNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:512:1: ruleNegativeNumber returns [EObject current=null] : (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:472:1: ruleNegativeNumber returns [EObject current=null] : (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber ) ;
     public final EObject ruleNegativeNumber() throws RecognitionException {
         EObject current = null;
 
@@ -1282,20 +1215,20 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:515:28: ( (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:516:1: (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:475:28: ( (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:1: (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:516:1: (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:516:3: otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:1: (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:3: otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleNegativeNumber1139); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleNegativeNumber1082); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNegativeNumberAccess().getHyphenMinusKeyword_0());
                 
              
                     newCompositeNode(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); 
                 
-            pushFollow(FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1161);
+            pushFollow(FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1104);
             this_PositiveNumber_1=rulePositiveNumber();
 
             state._fsp--;
@@ -1330,45 +1263,42 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleConfiguration_in_entryRuleConfiguration75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleConfiguration85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleConfiguration122 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleMatrix_in_ruleConfiguration143 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_12_in_ruleConfiguration157 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_11_in_ruleConfiguration122 = new BitSet(new long[]{0x0000000000028010L});
+    public static final BitSet FOLLOW_ruleMatrix_in_ruleConfiguration143 = new BitSet(new long[]{0x0000000000003002L});
+    public static final BitSet FOLLOW_12_in_ruleConfiguration157 = new BitSet(new long[]{0x0000000000028010L});
     public static final BitSet FOLLOW_ruleMatrix_in_ruleConfiguration178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleConfiguration198 = new BitSet(new long[]{0x0000000000040010L});
+    public static final BitSet FOLLOW_13_in_ruleConfiguration198 = new BitSet(new long[]{0x0000000000020010L});
     public static final BitSet FOLLOW_ruleNumber_in_ruleConfiguration219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatrix_in_entryRuleMatrix257 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMatrix267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMatrix309 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMatrix326 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMatrix343 = new BitSet(new long[]{0x0000000000050012L});
-    public static final BitSet FOLLOW_ruleLine_in_ruleMatrix369 = new BitSet(new long[]{0x0000000000050012L});
-    public static final BitSet FOLLOW_ruleLine_in_entryRuleLine406 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLine416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleLine462 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleLine475 = new BitSet(new long[]{0x0000000000050010L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleLine496 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ruleElement_in_entryRuleElement534 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElement544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_ruleElement591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEmpty_in_ruleElement618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEmpty_in_entryRuleEmpty653 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEmpty663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleEmpty709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber745 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumber755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNumber802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegativeNumber_in_ruleNumber829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositiveNumber_in_entryRulePositiveNumber864 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePositiveNumber874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInteger_in_rulePositiveNumber921 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_17_in_rulePositiveNumber942 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleInteger_in_rulePositiveNumber963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInteger_in_entryRuleInteger1001 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInteger1011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleInteger1052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1092 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNegativeNumber1102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleNegativeNumber1139 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatrix_in_entryRuleMatrix258 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMatrix268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLine_in_ruleMatrix313 = new BitSet(new long[]{0x0000000000028012L});
+    public static final BitSet FOLLOW_ruleLine_in_entryRuleLine349 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLine359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleLine405 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_14_in_ruleLine418 = new BitSet(new long[]{0x0000000000028010L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleLine439 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleElement_in_entryRuleElement477 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElement487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleElement534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEmpty_in_ruleElement561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEmpty_in_entryRuleEmpty596 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEmpty606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleEmpty652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber688 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumber698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNumber745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegativeNumber_in_ruleNumber772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_entryRulePositiveNumber807 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePositiveNumber817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInteger_in_rulePositiveNumber864 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_16_in_rulePositiveNumber885 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleInteger_in_rulePositiveNumber906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInteger_in_entryRuleInteger944 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInteger954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleInteger995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1035 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNegativeNumber1045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleNegativeNumber1082 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1104 = new BitSet(new long[]{0x0000000000000002L});
 
 }

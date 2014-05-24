@@ -13,8 +13,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Configuration/mail"/>
     </genClasses>
     <genClasses ecoreClass="ReboConf.ecore#//Matrix">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//Matrix/filas"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//Matrix/columnas"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Matrix/lines"/>
     </genClasses>
     <genClasses ecoreClass="ReboConf.ecore#//Line">

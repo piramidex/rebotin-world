@@ -35,10 +35,10 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMailNumberParserRuleCall_2_1_1_0 = (RuleCall)cMailAssignment_2_1_1.eContents().get(0);
 		
 		//Configuration:
-		//	"Matriz inicial:" initial=Matrix ("Matriz esperada: " expected=Matrix | "Correo esperado: " mail=Number);
+		//	"Matriz inicial:" initial=Matrix ("Matriz esperada:" expected=Matrix | "Correo esperado:" mail=Number)?;
 		public ParserRule getRule() { return rule; }
 
-		//"Matriz inicial:" initial=Matrix ("Matriz esperada: " expected=Matrix | "Correo esperado: " mail=Number)
+		//"Matriz inicial:" initial=Matrix ("Matriz esperada:" expected=Matrix | "Correo esperado:" mail=Number)?
 		public Group getGroup() { return cGroup; }
 
 		//"Matriz inicial:"
@@ -50,13 +50,13 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 		//Matrix
 		public RuleCall getInitialMatrixParserRuleCall_1_0() { return cInitialMatrixParserRuleCall_1_0; }
 
-		//"Matriz esperada: " expected=Matrix | "Correo esperado: " mail=Number
+		//("Matriz esperada:" expected=Matrix | "Correo esperado:" mail=Number)?
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
-		//"Matriz esperada: " expected=Matrix
+		//"Matriz esperada:" expected=Matrix
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
-		//"Matriz esperada: "
+		//"Matriz esperada:"
 		public Keyword getMatrizEsperadaKeyword_2_0_0() { return cMatrizEsperadaKeyword_2_0_0; }
 
 		//expected=Matrix
@@ -65,10 +65,10 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 		//Matrix
 		public RuleCall getExpectedMatrixParserRuleCall_2_0_1_0() { return cExpectedMatrixParserRuleCall_2_0_1_0; }
 
-		//"Correo esperado: " mail=Number
+		//"Correo esperado:" mail=Number
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
-		//"Correo esperado: "
+		//"Correo esperado:"
 		public Keyword getCorreoEsperadoKeyword_2_1_0() { return cCorreoEsperadoKeyword_2_1_0; }
 
 		//mail=Number
@@ -80,42 +80,18 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class MatrixElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Matrix");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFilasAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cFilasINTTerminalRuleCall_0_0 = (RuleCall)cFilasAssignment_0.eContents().get(0);
-		private final Keyword cXKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cColumnasAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cColumnasINTTerminalRuleCall_2_0 = (RuleCall)cColumnasAssignment_2.eContents().get(0);
-		private final Assignment cLinesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLinesLineParserRuleCall_3_0 = (RuleCall)cLinesAssignment_3.eContents().get(0);
+		private final Assignment cLinesAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cLinesLineParserRuleCall_0 = (RuleCall)cLinesAssignment.eContents().get(0);
 		
 		//Matrix:
-		//	filas=INT "x" columnas=INT lines+=Line*;
+		//	lines+=Line+;
 		public ParserRule getRule() { return rule; }
 
-		//filas=INT "x" columnas=INT lines+=Line*
-		public Group getGroup() { return cGroup; }
-
-		//filas=INT
-		public Assignment getFilasAssignment_0() { return cFilasAssignment_0; }
-
-		//INT
-		public RuleCall getFilasINTTerminalRuleCall_0_0() { return cFilasINTTerminalRuleCall_0_0; }
-
-		//"x"
-		public Keyword getXKeyword_1() { return cXKeyword_1; }
-
-		//columnas=INT
-		public Assignment getColumnasAssignment_2() { return cColumnasAssignment_2; }
-
-		//INT
-		public RuleCall getColumnasINTTerminalRuleCall_2_0() { return cColumnasINTTerminalRuleCall_2_0; }
-
-		//lines+=Line*
-		public Assignment getLinesAssignment_3() { return cLinesAssignment_3; }
+		//lines+=Line+
+		public Assignment getLinesAssignment() { return cLinesAssignment; }
 
 		//Line
-		public RuleCall getLinesLineParserRuleCall_3_0() { return cLinesLineParserRuleCall_3_0; }
+		public RuleCall getLinesLineParserRuleCall_0() { return cLinesLineParserRuleCall_0; }
 	}
 
 	public class LineElements extends AbstractParserRuleElementFinder {
@@ -336,7 +312,7 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Configuration:
-	//	"Matriz inicial:" initial=Matrix ("Matriz esperada: " expected=Matrix | "Correo esperado: " mail=Number);
+	//	"Matriz inicial:" initial=Matrix ("Matriz esperada:" expected=Matrix | "Correo esperado:" mail=Number)?;
 	public ConfigurationElements getConfigurationAccess() {
 		return (pConfiguration != null) ? pConfiguration : (pConfiguration = new ConfigurationElements());
 	}
@@ -346,7 +322,7 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Matrix:
-	//	filas=INT "x" columnas=INT lines+=Line*;
+	//	lines+=Line+;
 	public MatrixElements getMatrixAccess() {
 		return (pMatrix != null) ? pMatrix : (pMatrix = new MatrixElements());
 	}

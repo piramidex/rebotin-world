@@ -100,9 +100,16 @@ ruleMatrix
     }
 	:
 (
-{ before(grammarAccess.getMatrixAccess().getGroup()); }
-(rule__Matrix__Group__0)
-{ after(grammarAccess.getMatrixAccess().getGroup()); }
+(
+{ before(grammarAccess.getMatrixAccess().getLinesAssignment()); }
+(rule__Matrix__LinesAssignment)
+{ after(grammarAccess.getMatrixAccess().getLinesAssignment()); }
+)
+(
+{ before(grammarAccess.getMatrixAccess().getLinesAssignment()); }
+(rule__Matrix__LinesAssignment)*
+{ after(grammarAccess.getMatrixAccess().getLinesAssignment()); }
+)
 )
 
 ;
@@ -455,7 +462,7 @@ rule__Configuration__Group__2__Impl
 :
 (
 { before(grammarAccess.getConfigurationAccess().getAlternatives_2()); }
-(rule__Configuration__Alternatives_2)
+(rule__Configuration__Alternatives_2)?
 { after(grammarAccess.getConfigurationAccess().getAlternatives_2()); }
 )
 
@@ -491,7 +498,7 @@ rule__Configuration__Group_2_0__0__Impl
 (
 { before(grammarAccess.getConfigurationAccess().getMatrizEsperadaKeyword_2_0_0()); }
 
-	'Matriz esperada: ' 
+	'Matriz esperada:' 
 
 { after(grammarAccess.getConfigurationAccess().getMatrizEsperadaKeyword_2_0_0()); }
 )
@@ -554,7 +561,7 @@ rule__Configuration__Group_2_1__0__Impl
 (
 { before(grammarAccess.getConfigurationAccess().getCorreoEsperadoKeyword_2_1_0()); }
 
-	'Correo esperado: ' 
+	'Correo esperado:' 
 
 { after(grammarAccess.getConfigurationAccess().getCorreoEsperadoKeyword_2_1_0()); }
 )
@@ -591,131 +598,6 @@ rule__Configuration__Group_2_1__1__Impl
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
-
-
-
-rule__Matrix__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Matrix__Group__0__Impl
-	rule__Matrix__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Matrix__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMatrixAccess().getFilasAssignment_0()); }
-(rule__Matrix__FilasAssignment_0)
-{ after(grammarAccess.getMatrixAccess().getFilasAssignment_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Matrix__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Matrix__Group__1__Impl
-	rule__Matrix__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Matrix__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMatrixAccess().getXKeyword_1()); }
-
-	'x' 
-
-{ after(grammarAccess.getMatrixAccess().getXKeyword_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Matrix__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Matrix__Group__2__Impl
-	rule__Matrix__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Matrix__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMatrixAccess().getColumnasAssignment_2()); }
-(rule__Matrix__ColumnasAssignment_2)
-{ after(grammarAccess.getMatrixAccess().getColumnasAssignment_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Matrix__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Matrix__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Matrix__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMatrixAccess().getLinesAssignment_3()); }
-(rule__Matrix__LinesAssignment_3)*
-{ after(grammarAccess.getMatrixAccess().getLinesAssignment_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
 
 
 
@@ -1177,44 +1059,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Matrix__FilasAssignment_0
+rule__Matrix__LinesAssignment
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMatrixAccess().getFilasINTTerminalRuleCall_0_0()); }
-	RULE_INT{ after(grammarAccess.getMatrixAccess().getFilasINTTerminalRuleCall_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Matrix__ColumnasAssignment_2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMatrixAccess().getColumnasINTTerminalRuleCall_2_0()); }
-	RULE_INT{ after(grammarAccess.getMatrixAccess().getColumnasINTTerminalRuleCall_2_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Matrix__LinesAssignment_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_3_0()); }
-	ruleLine{ after(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_3_0()); }
+{ before(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_0()); }
+	ruleLine{ after(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_0()); }
 )
 
 ;

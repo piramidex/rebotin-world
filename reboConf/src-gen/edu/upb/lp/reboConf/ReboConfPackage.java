@@ -113,31 +113,13 @@ public interface ReboConfPackage extends EPackage
   int MATRIX = 1;
 
   /**
-   * The feature id for the '<em><b>Filas</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATRIX__FILAS = 0;
-
-  /**
-   * The feature id for the '<em><b>Columnas</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATRIX__COLUMNAS = 1;
-
-  /**
    * The feature id for the '<em><b>Lines</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MATRIX__LINES = 2;
+  int MATRIX__LINES = 0;
 
   /**
    * The number of structural features of the '<em>Matrix</em>' class.
@@ -146,7 +128,7 @@ public interface ReboConfPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MATRIX_FEATURE_COUNT = 3;
+  int MATRIX_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link edu.upb.lp.reboConf.impl.LineImpl <em>Line</em>}' class.
@@ -391,28 +373,6 @@ public interface ReboConfPackage extends EPackage
   EClass getMatrix();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.reboConf.Matrix#getFilas <em>Filas</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Filas</em>'.
-   * @see edu.upb.lp.reboConf.Matrix#getFilas()
-   * @see #getMatrix()
-   * @generated
-   */
-  EAttribute getMatrix_Filas();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.reboConf.Matrix#getColumnas <em>Columnas</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Columnas</em>'.
-   * @see edu.upb.lp.reboConf.Matrix#getColumnas()
-   * @see #getMatrix()
-   * @generated
-   */
-  EAttribute getMatrix_Columnas();
-
-  /**
    * Returns the meta object for the containment reference list '{@link edu.upb.lp.reboConf.Matrix#getLines <em>Lines</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -613,22 +573,6 @@ public interface ReboConfPackage extends EPackage
      * @generated
      */
     EClass MATRIX = eINSTANCE.getMatrix();
-
-    /**
-     * The meta object literal for the '<em><b>Filas</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MATRIX__FILAS = eINSTANCE.getMatrix_Filas();
-
-    /**
-     * The meta object literal for the '<em><b>Columnas</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MATRIX__COLUMNAS = eINSTANCE.getMatrix_Columnas();
 
     /**
      * The meta object literal for the '<em><b>Lines</b></em>' containment reference list feature.

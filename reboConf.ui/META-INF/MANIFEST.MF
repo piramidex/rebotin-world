@@ -19,7 +19,7 @@ Require-Bundle: reboConf;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: edu.upb.lp.ui.quickfix,
- edu.upb.lp.ui.contentassist,
- edu.upb.lp.ui.contentassist.antlr
+Export-Package: edu.upb.lp.ui.contentassist,
+ edu.upb.lp.ui.contentassist.antlr,
+ edu.upb.lp.ui.quickfix
 Bundle-Activator: edu.upb.lp.ui.internal.ReboConfActivator

@@ -6,11 +6,8 @@ import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
 import edu.upb.lp.reboConf.ReboConfPackage;
 
-import java.lang.Integer;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,8 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.upb.lp.reboConf.impl.MatrixImpl#getFilas <em>Filas</em>}</li>
- *   <li>{@link edu.upb.lp.reboConf.impl.MatrixImpl#getColumnas <em>Columnas</em>}</li>
  *   <li>{@link edu.upb.lp.reboConf.impl.MatrixImpl#getLines <em>Lines</em>}</li>
  * </ul>
  * </p>
@@ -41,46 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix
 {
-  /**
-   * The default value of the '{@link #getFilas() <em>Filas</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFilas()
-   * @generated
-   * @ordered
-   */
-  protected static final int FILAS_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getFilas() <em>Filas</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFilas()
-   * @generated
-   * @ordered
-   */
-  protected int filas = FILAS_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getColumnas() <em>Columnas</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getColumnas()
-   * @generated
-   * @ordered
-   */
-  protected static final int COLUMNAS_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getColumnas() <em>Columnas</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getColumnas()
-   * @generated
-   * @ordered
-   */
-  protected int columnas = COLUMNAS_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getLines() <em>Lines</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -110,52 +64,6 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix
   protected EClass eStaticClass()
   {
     return ReboConfPackage.Literals.MATRIX;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getFilas()
-  {
-    return filas;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFilas(int newFilas)
-  {
-    int oldFilas = filas;
-    filas = newFilas;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ReboConfPackage.MATRIX__FILAS, oldFilas, filas));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getColumnas()
-  {
-    return columnas;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setColumnas(int newColumnas)
-  {
-    int oldColumnas = columnas;
-    columnas = newColumnas;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ReboConfPackage.MATRIX__COLUMNAS, oldColumnas, columnas));
   }
 
   /**
@@ -198,10 +106,6 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix
   {
     switch (featureID)
     {
-      case ReboConfPackage.MATRIX__FILAS:
-        return getFilas();
-      case ReboConfPackage.MATRIX__COLUMNAS:
-        return getColumnas();
       case ReboConfPackage.MATRIX__LINES:
         return getLines();
     }
@@ -219,12 +123,6 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix
   {
     switch (featureID)
     {
-      case ReboConfPackage.MATRIX__FILAS:
-        setFilas((Integer)newValue);
-        return;
-      case ReboConfPackage.MATRIX__COLUMNAS:
-        setColumnas((Integer)newValue);
-        return;
       case ReboConfPackage.MATRIX__LINES:
         getLines().clear();
         getLines().addAll((Collection<? extends Line>)newValue);
@@ -243,12 +141,6 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix
   {
     switch (featureID)
     {
-      case ReboConfPackage.MATRIX__FILAS:
-        setFilas(FILAS_EDEFAULT);
-        return;
-      case ReboConfPackage.MATRIX__COLUMNAS:
-        setColumnas(COLUMNAS_EDEFAULT);
-        return;
       case ReboConfPackage.MATRIX__LINES:
         getLines().clear();
         return;
@@ -266,33 +158,10 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix
   {
     switch (featureID)
     {
-      case ReboConfPackage.MATRIX__FILAS:
-        return filas != FILAS_EDEFAULT;
-      case ReboConfPackage.MATRIX__COLUMNAS:
-        return columnas != COLUMNAS_EDEFAULT;
       case ReboConfPackage.MATRIX__LINES:
         return lines != null && !lines.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (filas: ");
-    result.append(filas);
-    result.append(", columnas: ");
-    result.append(columnas);
-    result.append(')');
-    return result.toString();
   }
 
 } //MatrixImpl
