@@ -41,7 +41,8 @@
             <command
                   commandId="rebotinolEclipsePlugin.commands.rebotinolCommand"
                   mnemonic="S"
-                  id="rebotinolEclipsePlugin.menus.rebotinolCommand">
+                  id="rebotinolEclipsePlugin.menus.rebotinolCommand"
+                  label="Ejecutar a rebotin">
             </command>
          </menu>
       </menuContribution>
@@ -51,8 +52,8 @@
                id="rebotinolEclipsePlugin.toolbars.rebotinolToolbar">
             <command
                   commandId="rebotinolEclipsePlugin.commands.rebotinolCommand"
-                  icon="icons/sample.gif"
-                  tooltip="Say hello world"
+                  icon="icons/Rebotin_small.png"
+                  tooltip="Ejecutar a rebotin"
                   id="rebotinolEclipsePlugin.toolbars.rebotinolCommand">
             </command>
          </toolbar>

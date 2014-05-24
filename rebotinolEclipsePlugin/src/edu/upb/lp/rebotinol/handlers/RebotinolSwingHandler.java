@@ -36,7 +36,6 @@ public class RebotinolSwingHandler extends AbstractHandler {
 			if (part.isDirty()) {
 				part.doSave(null);
 			}
-			//TODO check if the files are correct
 			if (file.getFileExtension().equals("rebo")) {
 				programFile = file.getLocationURI().getPath();
 			} else if (file.getFileExtension().equals("rconf")) {
