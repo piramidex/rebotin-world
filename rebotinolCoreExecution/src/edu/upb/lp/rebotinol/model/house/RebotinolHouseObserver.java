@@ -27,8 +27,7 @@ public abstract class RebotinolHouseObserver {
 	 * @param memory
 	 *            The new value of the memory
 	 */
-	public void memoryChanged(Fraction memory) {
-	}
+	public abstract void memoryChanged(Fraction memory);
 
 	/**
 	 * This method is executed by the observed house when the matrix is moved
@@ -38,8 +37,7 @@ public abstract class RebotinolHouseObserver {
 	 * @param v
 	 *            the new vertical position
 	 */
-	public void positionChanged(int h, int v) {
-	}
+	public abstract void positionChanged(int h, int v);
 
 	/**
 	 * This method is executed by the observed house when the mail value changed
@@ -47,8 +45,7 @@ public abstract class RebotinolHouseObserver {
 	 * @param mail
 	 *            The new mail.
 	 */
-	public void mailChanged(Mail mail) {
-	}
+	public abstract void mailChanged(Mail mail);
 
 	/**
 	 * This method is executed by the observed house when Rebotin has met an
@@ -56,7 +53,5 @@ public abstract class RebotinolHouseObserver {
 	 * 
 	 * @param _error
 	 */
-	public void rebotinolErrorOcurred() {
-		
-	}
+	public abstract void rebotinolErrorOcurred();
 }

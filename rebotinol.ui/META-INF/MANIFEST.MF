@@ -19,9 +19,9 @@ Require-Bundle: rebotinol;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: edu.upb.lp.ui.quickfix,
- edu.upb.lp.ui.contentassist,
+Export-Package: edu.upb.lp.ui.contentassist,
  edu.upb.lp.ui.contentassist.antlr,
- edu.upb.lp.ui.internal
+ edu.upb.lp.ui.internal,
+ edu.upb.lp.ui.quickfix
 Bundle-Activator: edu.upb.lp.ui.internal.RebotinolActivator
 Bundle-ClassPath: .
