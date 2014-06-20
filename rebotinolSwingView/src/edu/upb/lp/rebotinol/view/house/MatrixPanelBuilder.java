@@ -40,10 +40,11 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 		for (int j = 0; j < sizeV; j++) {
 			for (int i = 0; i < sizeH; i++) {
 				JPanel whitepanel = new JPanel();
-				whitepanel.setLocation((75 + (45 * i)), (75 + (45 * j)));
+				whitepanel.setLayout(null);
+				//whitepanel.setLocation((75 + (45 * i)), (75 + (45 * j)));
+				whitepanel.setLocation(5, 5);
 				whitepanel.setBackground(Color.WHITE);
 				whitepanel.setSize(40, 40);
-				contentpanel.add(whitepanel);
 				whitePanels[j][i] = whitepanel;
 				
 				String num = matrix[j][i].toString();
@@ -56,6 +57,7 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 				whitepanel.add(number);
 
 				JPanel blackpanel = new JPanel();
+				blackpanel.setLayout(null);
 				blackpanel.setLocation((70 + (45 * i)), (70 + (45 * j)));
 				if (j == house.getPositionV() && i == house.getPositionH()) {
 					blackpanel.setBackground(Color.RED);
@@ -66,6 +68,7 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 				blackpanel.setSize(50, 50);
 				contentpanel.add(blackpanel);
 				blackPanels[j][i] = blackpanel;
+				blackpanel.add(whitePanels[j][i]);
 			}
 		}
         JPanel rebotinPanel = new JPanel();
