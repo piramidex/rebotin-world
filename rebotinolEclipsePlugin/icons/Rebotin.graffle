@@ -46,7 +46,7 @@
 	<key>Creator</key>
 	<string>Alexis Marechal</string>
 	<key>DisplayScale</key>
-	<string>1 0/72 in = 1 0/72 in</string>
+	<string>1 0/72 in = 1.0000 in</string>
 	<key>GraphDocumentVersion</key>
 	<integer>8</integer>
 	<key>GraphicsList</key>
@@ -237,6 +237,18 @@
 			<string>Circle</string>
 			<key>Style</key>
 			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Color</key>
+					<dict>
+						<key>b</key>
+						<string>0</string>
+						<key>g</key>
+						<string>0</string>
+						<key>r</key>
+						<string>0</string>
+					</dict>
+				</dict>
 				<key>shadow</key>
 				<dict>
 					<key>Draws</key>
@@ -330,7 +342,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-05-09 15:38:59 -0400</string>
+	<string>2014-05-09 20:33:13 -0400</string>
 	<key>Modifier</key>
 	<string>Alexis Marechal</string>
 	<key>NotesVisible</key>
@@ -401,7 +413,7 @@
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{371, 0}, {693, 878}}</string>
+		<string>{{163, 0}, {747, 746}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -415,7 +427,7 @@
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{15, 0}, {544, 709}}</string>
+		<string>{{-19, 0}, {598, 592}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>

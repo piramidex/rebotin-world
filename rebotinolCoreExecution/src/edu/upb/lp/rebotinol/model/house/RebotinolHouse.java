@@ -84,10 +84,12 @@ public class RebotinolHouse {
         if (v >= _sizeV) {
             throw new RebotinolFatalException("Tried to set a position outside of the house");
         }
+        int oldPositionH = _positionH;
+        int oldPositionV = _positionV;
         _positionH = h;
         _positionV = v;
         for (RebotinolHouseObserver observer : _observers) {
-            observer.positionChanged(_positionH, _positionV);
+            observer.positionChanged(oldPositionH, oldPositionV, _positionH, _positionV);
         }
     }
 

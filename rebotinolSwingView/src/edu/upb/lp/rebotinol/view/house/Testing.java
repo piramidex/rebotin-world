@@ -7,7 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.examples.RebotinolSimpleExample;
+import edu.upb.lp.rebotinol.model.house.FractionMail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
@@ -31,6 +34,8 @@ public class Testing {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					house.setPosition(3, 3);
+					house.setMemory(new Fraction(2,3));
+					house.setMail(new FractionMail(new Fraction(2,3)));
 				} catch (RebotinolFatalException e1) {
 					throw new IllegalStateException(e1);
 				}
@@ -38,6 +43,7 @@ public class Testing {
 			}
 		};
 		Timer timer = new Timer(2000, listener);
+		timer.setRepeats(false);
 		timer.start();
 	}
 

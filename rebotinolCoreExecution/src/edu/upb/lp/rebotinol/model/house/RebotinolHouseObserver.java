@@ -32,12 +32,17 @@ public abstract class RebotinolHouseObserver {
 	/**
 	 * This method is executed by the observed house when the matrix is moved
 	 * 
+	 * @param previousH
+	 *            the previous horizontal position
+	 * @param previousV
+	 *            the previous vertical position
 	 * @param h
 	 *            the new horizontal position
 	 * @param v
 	 *            the new vertical position
 	 */
-	public abstract void positionChanged(int h, int v);
+	public abstract void positionChanged(int previousH, int previousV, int h,
+			int v);
 
 	/**
 	 * This method is executed by the observed house when the mail value changed

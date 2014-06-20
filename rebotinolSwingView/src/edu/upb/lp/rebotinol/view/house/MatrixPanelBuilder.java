@@ -2,6 +2,7 @@ package edu.upb.lp.rebotinol.view.house;
 
 import java.awt.Color;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,6 +19,8 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 	private int sizeV;
 	private JPanel[][] whitePanels;
 	private JPanel[][] blackPanels;
+	private JPanel mailPanel;
+	private JLabel rebotinMemory;
 	
 	public MatrixPanelBuilder(RebotinolHouse house, Fraction[][] initialMatrix) {
 		super(house);
@@ -65,22 +68,55 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 				blackPanels[j][i] = blackpanel;
 			}
 		}
+        JPanel rebotinPanel = new JPanel();
+        rebotinPanel.setLocation((75 + (45 * sizeH)), 75);
+        rebotinPanel.setBackground(Color.black);
+        rebotinPanel.setSize(50, 95);
+        contentpanel.add(rebotinPanel);
+        
+        JPanel memoryPanel = new JPanel();
+        memoryPanel.setLocation(5, 5);
+        memoryPanel.setSize(40,40);
+        memoryPanel.setBackground(Color.WHITE);
+        rebotinPanel.add(memoryPanel);
+        
+        rebotinMemory = new JLabel(house.getCurrentMatrixValue().toString());
+        rebotinMemory.setLocation(0,0);
+        rebotinMemory.setSize(40,40);
+        memoryPanel.add(rebotinMemory);
+        
+        mailPanel = new JPanel();
+        mailPanel.setLocation(5, 50);
+        mailPanel.setBackground(Color.white);
+        mailPanel.setSize(40, 40);
+        rebotinPanel.add(mailPanel);
+        
+        JButton mailButton = new JButton("Mail");
+        mailButton.setLocation(10,10);
+        mailButton.setSize(20,20);
+        mailPanel.add(mailButton);
 
 		return contentpanel;
 	}
 
 	@Override
-	public void memoryChanged(Fraction memory) {}
+	public void memoryChanged(Fraction memory) {
+		rebotinMemory.setText(memory.toString());
+	}
 
 	@Override
-	public void positionChanged(int h, int v) {
+	public void positionChanged(int previousH, int previousV, int h, int v) {
+		whitePanels[previousV][previousH].repaint();
+		whitePanels[v][h].repaint();
+		blackPanels[previousV][previousH].setBackground(Color.BLACK);
+		blackPanels[previousV][previousH].repaint();
 		blackPanels[v][h].setBackground(Color.RED);
-		
+		blackPanels[v][h].repaint();
 	}
 
 	@Override
 	public void mailChanged(Mail mail) {
-		// TODO Auto-generated method stub
+		mailPanel.setBackground(Color.green);
 		
 	}
 
