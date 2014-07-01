@@ -62,10 +62,11 @@ public abstract class ConditionalExecution extends SequentialInstructionExecutio
 
     /**
      * {@inheritDoc}
+     * @throws RebotinolFlowException If something went wrong
      */
     @Override
-    protected void decCurrent() {
-        if (getCurrentExecution() > 0) {
+    protected void decCurrent() throws RebotinolFlowException {
+        if (getCurrentExecutionIndex() > 0) {
             super.decCurrent();
         } else {
             _conditionVerified = false;

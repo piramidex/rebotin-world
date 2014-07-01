@@ -8,7 +8,7 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
- * A complex instruction has a sequence of sub-instruction. This includes the
+ * A complex instruction has a sequence of sub-instructions. This includes the
  * conditional instructions and the rep instruction. Moreover, a complete
  * rebotinol program can also be seen as a sequential instruction.
  * 
@@ -19,7 +19,7 @@ public class SequentialInstructionExecution extends
 		RebotinolInstructionExecution {
 
 	private List<RebotinolInstructionExecution> _subExecutions;
-	private int _currentExecution = 0;
+	private int _currentExecutionIndex = 0;
 
 	/**
 	 * Constructor
@@ -29,6 +29,7 @@ public class SequentialInstructionExecution extends
 	 */
 	public SequentialInstructionExecution(
 			List<RebotinolInstructionExecution> subExecutions) {
+		_subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		_subExecutions.addAll(subExecutions);
 	}
 
@@ -38,11 +39,10 @@ public class SequentialInstructionExecution extends
 	@Override
 	protected void doStep(RebotinolHouse house)
 			throws RebotinolExecutionException, RebotinolFlowException {
-		RebotinolInstructionExecution current = _subExecutions
-				.get(_currentExecution);
+		RebotinolInstructionExecution current = getCurrentExecution();
 		current.step(house);
 		if (current.isFinished()) {
-			if (_currentExecution == _subExecutions.size() - 1) {
+			if (_currentExecutionIndex == _subExecutions.size() - 1) {
 				finish();
 			} else {
 				incCurrent();
@@ -56,44 +56,40 @@ public class SequentialInstructionExecution extends
 	@Override
 	protected void doStepBack(RebotinolHouse house)
 			throws RebotinolFlowException, RebotinolExecutionException {
-		RebotinolInstructionExecution current = _subExecutions
-				.get(_currentExecution);
+		RebotinolInstructionExecution current = getCurrentExecution();
 		if (current.isStarted()) {
 			current.stepBack(house);
 		} else {
-			_subExecutions.get(_currentExecution).unsetCurrent();
 			decCurrent();
 		}
 		unfinish();
 	}
 
 	/**
-	 * Increases the "current execution" counter, to execute the next
-	 * sub-execution
+	 * Increases the "current execution" counter, to execute the next sub-execution
+	 * @throws RebotinolFlowException  If the currentExecutionIndex was at its maximum value
 	 */
-	protected void incCurrent() {
-		_currentExecution++;
-		_subExecutions.get(_currentExecution).setCurrent();
+	protected void incCurrent() throws RebotinolFlowException {
+		if (_currentExecutionIndex == _subExecutions.size() - 1) {
+			throw new RebotinolFlowException(
+					"Increasing the index in a sequential execution when the index was the maximum");
+		}
+		setCurrentExecutionIndex(_currentExecutionIndex + 1);
 	}
 
 	/**
 	 * Decreases the "current execution" counter, to execute the previous
 	 * sub-execution
+	 * 
+	 * @throws RebotinolFlowException
+	 *             If the currentExecutionIndex was 0.
 	 */
-	protected void decCurrent() {
-		_currentExecution--;
-		_subExecutions.get(_currentExecution).setCurrent();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setCurrent() {
-		super.setCurrent();
-		for (RebotinolInstructionExecution exec : _subExecutions) {
-			exec.unskip();
+	protected void decCurrent() throws RebotinolFlowException {
+		if (_currentExecutionIndex == 0) {
+			throw new RebotinolFlowException(
+					"Decreasing the index in a sequential execution when the index was 0");
 		}
+		setCurrentExecutionIndex(_currentExecutionIndex + 1);
 	}
 
 	/**
@@ -131,22 +127,17 @@ public class SequentialInstructionExecution extends
 
 	/**
 	 * @return The index of the current execution being considered in this
-	 *         sub-execution. This value is 0 is this execution has not started
-	 *         yet.
+	 *         sub-execution, starting with 0.
 	 */
-	protected int getCurrentExecution() {
-		return _currentExecution;
+	protected int getCurrentExecutionIndex() {
+		return _currentExecutionIndex;
 	}
 
 	/**
-	 * A public getter for the current execution index. This value may differ
-	 * from the protected getter {@link #getCurrentExecution()} when this is a
-	 * REP instruction.
-	 * 
-	 * @return the computed execution index
+	 * @return The current execution being considered.
 	 */
-	public int getCurrentExecutionIndex() {
-		return _currentExecution;
+	protected RebotinolInstructionExecution getCurrentExecution() {
+		return _subExecutions.get(_currentExecutionIndex);
 	}
 
 	/**
@@ -155,5 +146,18 @@ public class SequentialInstructionExecution extends
 	@Override
 	public boolean automaticStep() {
 		return false;
+	}
+
+	/**
+	 * Changes the execution index. This method changes the status of the old
+	 * and new current executions.
+	 * 
+	 * @param index
+	 *            The new value of the execution index.
+	 */
+	protected void setCurrentExecutionIndex(int index) {
+		getCurrentExecution().unsetCurrent();
+		_currentExecutionIndex = index;
+		getCurrentExecution().setCurrent();
 	}
 }

@@ -19,13 +19,13 @@ public class RepExecution extends SequentialInstructionExecution {
         super(subExecutions);
         _numberOfInstructions = numberOfInstructions;
     }
-    
+     
     /**
      * {@inheritDoc}
      */
     @Override
     public int getCurrentExecutionIndex() {
-        return getCurrentExecution()%_numberOfInstructions;
+        return getCurrentExecutionIndex()%_numberOfInstructions;
     }
     
     /**
@@ -33,6 +33,6 @@ public class RepExecution extends SequentialInstructionExecution {
      * @return The number of repetitions that have already been performed in this execution.
      */
     public int getRepetitionsPerformed() {
-        return getCurrentExecution()/_numberOfInstructions;
+        return getCurrentExecutionIndex()/_numberOfInstructions;
     }
 }
