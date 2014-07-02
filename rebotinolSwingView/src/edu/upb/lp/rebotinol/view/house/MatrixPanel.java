@@ -2,7 +2,6 @@ package edu.upb.lp.rebotinol.view.house;
 
 import java.awt.Color;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -12,30 +11,39 @@ import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouseObserver;
 
-public class MatrixPanelBuilder extends RebotinolHouseObserver {
-	private RebotinolHouse house;
+/**
+ * ...
+ * @author Jorge Loza
+ * @author Mauricio Loza
+ *
+ */
+public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
+	private static final long serialVersionUID = 3579955482940404200L;
+	//private RebotinolHouse house;
 	private Fraction[][] matrix;
 	private int sizeH;
 	private int sizeV;
 	private JPanel[][] whitePanels;
 	private JPanel[][] blackPanels;
-	private JPanel mailPanel;
-	private JLabel rebotinMemory;
-	
-	public MatrixPanelBuilder(RebotinolHouse house, Fraction[][] initialMatrix) {
-		super(house);
-		this.house = house; 
+
+	/**
+	 * 
+	 * @param house
+	 * @param initialMatrix
+	 */
+	public MatrixPanel(RebotinolHouse house, Fraction[][] initialMatrix) {
+		house.registerObserver(this);
 		sizeH = house.getSizeH();
 		sizeV = house.getSizeV();
 		whitePanels = new JPanel[sizeV][sizeH];
 		blackPanels = new JPanel[sizeV][sizeH];
 		matrix = initialMatrix;
+		createContentPane();
 	}
 	
-	public JPanel createContentPane() {
+	private void createContentPane() {
 
-		JPanel contentpanel = new JPanel();
-		contentpanel.setLayout(null);
+		setLayout(null);
 
 		for (int j = 0; j < sizeV; j++) {
 			for (int i = 0; i < sizeH; i++) {
@@ -59,52 +67,26 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 				JPanel blackpanel = new JPanel();
 				blackpanel.setLayout(null);
 				blackpanel.setLocation((70 + (45 * i)), (70 + (45 * j)));
-				if (j == house.getPositionV() && i == house.getPositionH()) {
+				if (j == 0 && i == 0) {
 					blackpanel.setBackground(Color.RED);
 				} else {
 					blackpanel.setBackground(Color.black);
 				}
 
 				blackpanel.setSize(50, 50);
-				contentpanel.add(blackpanel);
+				add(blackpanel);
 				blackPanels[j][i] = blackpanel;
 				blackpanel.add(whitePanels[j][i]);
 			}
 		}
-        JPanel rebotinPanel = new JPanel();
-        rebotinPanel.setLocation((75 + (45 * sizeH)), 75);
-        rebotinPanel.setBackground(Color.black);
-        rebotinPanel.setSize(50, 95);
-        contentpanel.add(rebotinPanel);
-        
-        JPanel memoryPanel = new JPanel();
-        memoryPanel.setLocation(5, 5);
-        memoryPanel.setSize(40,40);
-        memoryPanel.setBackground(Color.WHITE);
-        rebotinPanel.add(memoryPanel);
-        
-        rebotinMemory = new JLabel(house.getCurrentMatrixValue().toString());
-        rebotinMemory.setLocation(0,0);
-        rebotinMemory.setSize(40,40);
-        memoryPanel.add(rebotinMemory);
-        
-        mailPanel = new JPanel();
-        mailPanel.setLocation(5, 50);
-        mailPanel.setBackground(Color.white);
-        mailPanel.setSize(40, 40);
-        rebotinPanel.add(mailPanel);
-        
-        JButton mailButton = new JButton("Mail");
-        mailButton.setLocation(10,10);
-        mailButton.setSize(20,20);
-        mailPanel.add(mailButton);
-
-		return contentpanel;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void memoryChanged(Fraction memory) {
-		rebotinMemory.setText(memory.toString());
+		//do nothing
 	}
 
 	@Override
@@ -119,13 +101,11 @@ public class MatrixPanelBuilder extends RebotinolHouseObserver {
 
 	@Override
 	public void mailChanged(Mail mail) {
-		mailPanel.setBackground(Color.green);
-		
+		//do nothing
 	}
 
 	@Override
 	public void rebotinolErrorOcurred() {
-		// TODO Auto-generated method stub
-		
+		// do nothing
 	}
 }

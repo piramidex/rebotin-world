@@ -9,17 +9,7 @@ import org.apache.commons.math3.fraction.Fraction;
  * @author Alexis Marechal
  * 
  */
-public abstract class RebotinolHouseObserver {
-	/**
-	 * Builds an observer for a given rebotinol house. This observer registers
-	 * itself to the house.
-	 * 
-	 * @param house
-	 */
-	public RebotinolHouseObserver(RebotinolHouse house) {
-		house.registerObserver(this);
-	}
-
+public interface RebotinolHouseObserver {
 	/**
 	 * This method is executed by the observed house when rebotin's memory
 	 * changes

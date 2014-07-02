@@ -119,6 +119,7 @@ public class SequentialInstructionExecution extends
 	 * 
 	 * @return A clone of the sub-executions list.
 	 */
+	//TODO check if this clone is ok
 	protected List<RebotinolInstructionExecution> getSubExecutions() {
 		List<RebotinolInstructionExecution> ans = new ArrayList<RebotinolInstructionExecution>();
 		ans.addAll(_subExecutions);

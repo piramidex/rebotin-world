@@ -14,6 +14,7 @@ import edu.upb.lp.rebotinol.model.house.FractionMail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
+//TODO Alexis create two good examples
 public class Testing {
 	private static void createAndShowGUI() {
 
@@ -22,8 +23,8 @@ public class Testing {
 
 		RebotinolSimpleExample ex = new RebotinolSimpleExample();
 		final RebotinolHouse house = ex.getHouse();
-		MatrixPanelBuilder demo = new MatrixPanelBuilder(house,ex.getInitialMatrix());
-		frame.setContentPane(demo.createContentPane());
+		MatrixPanel demo = new MatrixPanel(house,ex.getInitialMatrix());
+//		frame.setContentPane(demo.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 600);

@@ -10,13 +10,14 @@ import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.view.buttons.ButtonsPanelBuilder;
 import edu.upb.lp.rebotinol.view.executions.ExecutionsPanelBuilder;
-import edu.upb.lp.rebotinol.view.house.HousePanelBuilder;
+import edu.upb.lp.rebotinol.view.house.HousePanel;
 
 /**
  * This is the main class for the rebotinol view in Swing (2014).
  * 
  * @author Alexis Marechal
  */
+//TODO fix all this
 public class RebotinolSwingView {
 	RebotinolController _controller;
 	private JFrame _mainFrame;
@@ -40,7 +41,7 @@ public class RebotinolSwingView {
 		RebotinolHouse house = _controller.get_house();
 		Fraction[][] initialMatrix = _controller.get_initialMatrix();
 		_executionsPanel = ExecutionsPanelBuilder.buildPanel(program);
-		_housePanel = HousePanelBuilder.buildPanel(house, initialMatrix);
+//		_housePanel = HousePanel.buildPanel(house, initialMatrix);
 		_buttonsPanel = ButtonsPanelBuilder.buildPanel();
 		initialiseMainFrame();
 		_mainFrame.setVisible(true);
