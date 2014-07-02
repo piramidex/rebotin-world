@@ -10,7 +10,6 @@ import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.view.buttons.ButtonsPanelBuilder;
 import edu.upb.lp.rebotinol.view.executions.ExecutionsPanelBuilder;
-import edu.upb.lp.rebotinol.view.house.HousePanel;
 
 /**
  * This is the main class for the rebotinol view in Swing (2014).

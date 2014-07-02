@@ -15,7 +15,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  * 
  */
-public class SequentialInstructionExecution extends
+public abstract class SequentialInstructionExecution extends
 		RebotinolInstructionExecution {
 
 	private List<RebotinolInstructionExecution> _subExecutions;

@@ -101,16 +101,16 @@ public class ProgramBuilderFromXtext {
 		@Override
 		public RebotinolInstructionExecution caseRebotinolProgram(
 				RebotinolProgram program) {
-			List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
+			List<RebotinolInstructionExecution> executions = new ArrayList<RebotinolInstructionExecution>();
 			for (Instruction instr : program.getInstructions()) {
 				try {
-					subExecutions.add(buildExecution(instr));
+					executions.add(buildExecution(instr));
 				} catch (RebotinolFatalException e) {
 					throw new IllegalStateException(e.getMessage());
 				}
 			}
-			SequentialInstructionExecution exec = new SequentialInstructionExecution(
-					subExecutions);
+			SequentialInstructionExecution exec = 
+					new edu.upb.lp.rebotinol.model.executions.RebotinolProgram(executions);
 			return exec;
 		}
 

@@ -3,7 +3,7 @@ package edu.upb.lp.rebotinol.examples;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
-import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
+import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
@@ -20,7 +20,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 public abstract class RebotinolExample {
 	protected RebotinolHouse _house;
 	protected RebotinolController _controller;
-	protected SequentialInstructionExecution _program;
+	protected RebotinolProgram _program;
 	protected Fraction[][] _initialMatrix;
 	protected Fraction[][] _expectedMatrix;
 	
@@ -48,7 +48,7 @@ public abstract class RebotinolExample {
 	/**
 	 * @return the _program
 	 */
-	public SequentialInstructionExecution getProgram() {
+	public RebotinolProgram getProgram() {
 		if (_program == null) {
 			buildProgram();
 		}
@@ -76,7 +76,7 @@ public abstract class RebotinolExample {
 	}
 
 	/**
-	 * Builod the house
+	 * Build the house
 	 */
 	protected void buildHouse() {
 		try {

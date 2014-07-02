@@ -25,8 +25,11 @@ public class MemoryPanel extends JPanel implements RebotinolHouseObserver {
         whitePanel.setLocation(5, 5);
         whitePanel.setSize(40,40);
         whitePanel.setBackground(Color.WHITE);
-        
-        rebotinMemory.setText(memory.toString());
+        if (memory == null) {
+        	rebotinMemory.setText("");
+        } else {
+        	rebotinMemory.setText(memory.toString());
+        }
         rebotinMemory.setLocation(0,0);
         rebotinMemory.setSize(40,40);
         whitePanel.add(rebotinMemory);
@@ -36,7 +39,11 @@ public class MemoryPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void memoryChanged(Fraction memory) {
-		rebotinMemory.setText(memory.toString());
+		if (memory == null) {
+			rebotinMemory.setText("");
+		} else {
+			rebotinMemory.setText(memory.toString());
+		}
 	}
 
 	@Override

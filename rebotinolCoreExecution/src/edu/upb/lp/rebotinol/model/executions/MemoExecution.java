@@ -25,4 +25,12 @@ public class MemoExecution extends ChangeMemoryExecution {
 			house.setMemory(val);
 		}
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void checkMemoryNotEmpty(RebotinolHouse house) throws RebotinolExecutionException {
+		//Do nothing
+	}
 }

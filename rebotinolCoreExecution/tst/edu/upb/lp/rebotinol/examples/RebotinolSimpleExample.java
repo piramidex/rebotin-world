@@ -6,11 +6,11 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.executions.DerExecution;
-import edu.upb.lp.rebotinol.model.executions.EnviarExecution;
+import edu.upb.lp.rebotinol.model.executions.EnviarMatrizExecution;
 import edu.upb.lp.rebotinol.model.executions.EscriExecution;
 import edu.upb.lp.rebotinol.model.executions.MemoExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
-import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
+import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -33,8 +33,8 @@ public class RebotinolSimpleExample extends RebotinolExample {
 		subExecutions.add(new MemoExecution());
 		subExecutions.add(new DerExecution());
 		subExecutions.add(new EscriExecution());
-		subExecutions.add(new EnviarExecution());
-		_program = new SequentialInstructionExecution(subExecutions);
+		subExecutions.add(new EnviarMatrizExecution());
+		_program = new RebotinolProgram(subExecutions);
 	}
 
 	/**
@@ -43,8 +43,7 @@ public class RebotinolSimpleExample extends RebotinolExample {
 	@Override
 	public void buildInitialMatrix() {
 		_initialMatrix = MatrixUtil.createMatrix(5, 5);
-		_initialMatrix[0][0] = new Fraction(1);
-		_initialMatrix[3][3] = new Fraction(1,5);
+		_initialMatrix[0][0] = new Fraction(2,3);
 	}
 
 	/**
@@ -53,8 +52,8 @@ public class RebotinolSimpleExample extends RebotinolExample {
 	@Override
 	public void buildExpectedMatrix() {
 		_expectedMatrix = MatrixUtil.createMatrix(5, 5);
-		_expectedMatrix[0][0] = new Fraction(1);
-		_expectedMatrix[0][1] = new Fraction(1);
+		_expectedMatrix[0][0] = new Fraction(2,3);
+		_expectedMatrix[0][1] = new Fraction(2,3);
 	}
 
 	/** 

@@ -8,7 +8,7 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 
 //TODO javadoc
 public class HousePanel extends JPanel {
-	
+	private static final long serialVersionUID = 7076675313840261743L;
 	private MatrixPanel matrixPanel;
 	private MemoryPanel memoryPanel;
 	private MailPanel mailPanel;

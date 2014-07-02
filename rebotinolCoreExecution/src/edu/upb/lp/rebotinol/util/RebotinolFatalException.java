@@ -2,7 +2,7 @@ package edu.upb.lp.rebotinol.util;
 
 /**
  * This exception is thrown when an unexpected fatal error has occurred during
- * the creation or executino of rebotinol world.
+ * the creation or execution of rebotinol world.
  * 
  * @author Alexis Marechal
  * 

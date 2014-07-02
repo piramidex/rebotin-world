@@ -20,11 +20,8 @@ public abstract class ChangeMemoryExecution extends
 	@Override
 	protected void doStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
+		checkMemoryNotEmpty(house);
 		Fraction val = house.getMemory();
-		if (val == null) {
-			throw new RebotinolExecutionException(
-					"Tried to change the memory while it was empty!");
-		}
 		_oldValue = val;
 		doMemoryStep(house);
 		finish();
@@ -36,7 +33,7 @@ public abstract class ChangeMemoryExecution extends
 	 * @param house
 	 *            The house in which we are working.
 	 * @throws RebotinolExecutionException
-	 *             If the instruction was completely executed before calling
+	 *             If the instruction was already executed before calling
 	 *             this method.
 	 */
 	protected abstract void doMemoryStep(RebotinolHouse house)
@@ -57,6 +54,19 @@ public abstract class ChangeMemoryExecution extends
 	 */
 	protected Fraction getOldValue() {
 	    return _oldValue;
+	}
+
+	/**
+	 * Checks that the memory is not empty. All subclasses except memoExecution need this.
+	 *
+	 * @param house The house in which we are working
+	 * @throws RebotinolExecutionException If something went wrong
+	 */
+	protected void checkMemoryNotEmpty(RebotinolHouse house) throws RebotinolExecutionException {
+		if (house.getMemory() == null) {
+			throw new RebotinolExecutionException(
+					"Tried to change the memory while it was empty!");
+		}
 	}
 
 }
