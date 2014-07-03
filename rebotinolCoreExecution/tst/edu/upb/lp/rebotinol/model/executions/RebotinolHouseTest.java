@@ -1,5 +1,8 @@
 package edu.upb.lp.rebotinol.model.executions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.math3.fraction.Fraction;
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,6 +25,7 @@ public class RebotinolHouseTest {
 	private RebotinolHouse house;
 	
 	//Common numbers
+	Fraction mone = new Fraction(-1);
 	Fraction zero = new Fraction(0);
 	Fraction three = new Fraction(3);
 	Fraction nine = new Fraction(9);
@@ -238,5 +242,33 @@ public class RebotinolHouseTest {
 		Fraction[][] expected = MatrixUtil.createMatrix(5, 5);
 		Assert.assertTrue(house.getMail() instanceof MatrixMail);
 		Assert.assertArrayEquals(expected, ((MatrixMail) house.getMail()).getContent());
+	}
+	
+	//TODO
+	@Test
+	public void testConditionalsPositive() throws RebotinolExecutionException, RebotinolFlowException {
+		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		MayorkExecution mayork = new MayorkExecution(subExecutions, -1);
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		MenorkExecution menork = new MenorkExecution(subExecutions, 2);
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		IgualkExecution igualk = new IgualkExecution(subExecutions, 2);
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		DiferkExecution diferk = new DiferkExecution(subExecutions, 0);
+		EscriExecution escri = new EscriExecution();
+		MayorExecution mayor = new MayorExecution(subExecutions);
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		MenorExecution menor = new MenorExecution(subExecutions);
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		IgualExecution igual = new IgualExecution(subExecutions);
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
+		DiferExecution difer = new DiferExecution(subExecutions);
 	}
 }
