@@ -178,5 +178,8 @@ public class RebotinolHouse {
      */
     public void writeInMatrix(Fraction val) {
         _matrix[_positionV][_positionH] = val;
+        for (RebotinolHouseObserver obs : _observers) {
+        	obs.matrixChanged(_positionH, _positionV, val);
+        }
     }
 }

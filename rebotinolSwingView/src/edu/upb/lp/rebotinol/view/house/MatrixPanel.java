@@ -19,8 +19,7 @@ import edu.upb.lp.rebotinol.model.house.RebotinolHouseObserver;
  */
 public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	private static final long serialVersionUID = 3579955482940404200L;
-	//private RebotinolHouse house;
-	private Fraction[][] matrix;
+	private RebotinolHouse house;
 	private int sizeH;
 	private int sizeV;
 	private JPanel[][] whitePanels;
@@ -37,7 +36,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		sizeV = house.getSizeV();
 		whitePanels = new JPanel[sizeV][sizeH];
 		blackPanels = new JPanel[sizeV][sizeH];
-		matrix = initialMatrix;
+		this.house = house;
 		createContentPane();
 	}
 	
@@ -55,7 +54,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				whitepanel.setSize(40, 40);
 				whitePanels[j][i] = whitepanel;
 				
-				String num = matrix[j][i].toString();
+				String num = house.getMatrix()[j][i].toString();
 
 				JLabel number = new JLabel(num);
 				number.setLocation(0, 0);
@@ -107,5 +106,10 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	@Override
 	public void rebotinolErrorOcurred() {
 		// do nothing
+	}
+
+	@Override
+	public void matrixChanged(int h, int v, Fraction newValue) {
+		// TODO change the matrix numbers!
 	}
 }

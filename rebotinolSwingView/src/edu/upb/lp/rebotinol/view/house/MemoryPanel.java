@@ -61,4 +61,9 @@ public class MemoryPanel extends JPanel implements RebotinolHouseObserver {
 	public void rebotinolErrorOcurred() {
 		// do nothing
 	}
+
+	@Override
+	public void matrixChanged(int h, int v, Fraction newValue) {
+		// do nothing
+	}
 }

@@ -11,9 +11,7 @@ import edu.upb.lp.rebotinol.model.executions.EscriExecution;
 import edu.upb.lp.rebotinol.model.executions.MemoExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
-import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
-import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 /**
  * A very basic example, with an 5 x 5 matrix, with initially one number in the
@@ -54,22 +52,5 @@ public class RebotinolSimpleExample extends RebotinolExample {
 		_expectedMatrix = MatrixUtil.createMatrix(5, 5);
 		_expectedMatrix[0][0] = new Fraction(2,3);
 		_expectedMatrix[0][1] = new Fraction(2,3);
-	}
-
-	/** 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public RebotinolHouse getHouse() {
-		buildInitialMatrix();
-		RebotinolHouse house;
-		try {
-			house = new RebotinolHouse(_initialMatrix);
-		} catch (RebotinolFatalException e) {
-			throw new IllegalStateException(e);
-		}
-		return house;
-	}
-	
-	
+	}	
 }

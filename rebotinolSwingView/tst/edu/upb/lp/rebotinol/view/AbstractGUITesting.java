@@ -30,14 +30,12 @@ public abstract class AbstractGUITesting {
 	 */
 	public void run() {
 		buildAndShowFrame();
+		final RebotinolProgram program = example.getProgram();
+		final RebotinolHouse house = example.getHouse();
 		final Timer timer = new Timer(2000, null);
 		ActionListener listener = new ActionListener() {
-			RebotinolProgram program = example.getProgram();
-			RebotinolHouse house = example.getHouse();
-			
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				System.out.println("Step");
 				try {
 					program.step(house);
 					if (program.isFinished()) {

@@ -41,4 +41,10 @@ class MailPanel extends JPanel implements RebotinolHouseObserver {
 		
 	}
 
+	@Override
+	public void matrixChanged(int h, int v, Fraction newValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -35,6 +35,14 @@ public interface RebotinolHouseObserver {
 			int v);
 
 	/**
+	 * This method is executed by the observed house when the matrix is modified
+	 * @param h The horizontal position in the matrix
+	 * @param v The vertical position in the matrix
+	 * @param newValue The new value in that position in the matrix
+	 */
+	public abstract void matrixChanged(int h, int v, Fraction newValue);
+	
+	/**
 	 * This method is executed by the observed house when the mail value changed
 	 * 
 	 * @param mail
