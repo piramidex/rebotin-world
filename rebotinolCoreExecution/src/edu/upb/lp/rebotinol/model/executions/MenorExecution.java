@@ -27,7 +27,7 @@ public class MenorExecution extends MatrixConditionalExecution {
      */
     @Override
     protected boolean evalCondition(Fraction memory, Fraction matrixValue) throws RebotinolExecutionException {
-        return memory.compareTo(matrixValue) != 1;
+        return memory.compareTo(matrixValue) == -1;
     }
 
 }

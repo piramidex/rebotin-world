@@ -30,6 +30,7 @@ public class RebotinolExecutionsTest {
 	Fraction one= new Fraction(1);
 	Fraction two = new Fraction(2);
 	Fraction three = new Fraction(3);
+	Fraction six = new Fraction(6);
 	Fraction nine = new Fraction(9);
 	Fraction twentyseven = new Fraction(27);
 	Fraction mtwentyseven = new Fraction(-27);
@@ -251,14 +252,14 @@ public class RebotinolExecutionsTest {
 	@Test
 	public void testConditionalsPositive() throws RebotinolExecutionException,
 			RebotinolFlowException {
-		house.writeInMatrix(1,0,new Fraction(3));
-		house.writeInMatrix(2,0,new Fraction(6));
+		house.writeInMatrix(1,0,three);
+		house.writeInMatrix(2,0,six);
 		// Memo, memo: 0
 		MemoExecution memo = new MemoExecution();
 		// Mayor -1,, memo: 0
 		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(one));
-		MayorkExecution mayork = new MayorkExecution(subExecutions, new Fraction(-1));
+		MayorkExecution mayork = new MayorkExecution(subExecutions, mone);
 		// Menor 2, memo: 1
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(one));
@@ -309,5 +310,67 @@ public class RebotinolExecutionsTest {
 			program.step(house);
 		}
 		Assert.assertEquals(new Fraction(8), house.getMemory());
+	}
+	
+	@Test
+	public void testConditionalsNegative() throws RebotinolExecutionException,
+			RebotinolFlowException {
+		house.writeInMatrix(1,0,one);
+		// Memo, memo: 0
+		MemoExecution memo = new MemoExecution();
+		// Mayor 0, memo: 0
+		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		MayorkExecution mayork = new MayorkExecution(subExecutions, zero);
+		// Menor 0, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		MenorkExecution menork = new MenorkExecution(subExecutions, zero);
+		// Igual 1, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		IgualkExecution igualk = new IgualkExecution(subExecutions, one);
+		// Difer 0, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		DiferkExecution diferk = new DiferkExecution(subExecutions, zero);
+		// Mayor, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		MayorExecution mayor = new MayorExecution(subExecutions);
+		// Menor, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		MenorExecution menor = new MenorExecution(subExecutions);
+		// Der, memo 0
+		DerExecution der = new DerExecution();
+		// Igual, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		IgualExecution igual = new IgualExecution(subExecutions);
+		//Izq, memo 0
+		IzqExecution izq = new IzqExecution();
+		// Difer, memo: 0
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(one));
+		DiferExecution difer = new DiferExecution(subExecutions);
+		//Program
+		List<RebotinolInstructionExecution> executions = new ArrayList<RebotinolInstructionExecution>();
+		executions.add(memo);
+		executions.add(mayork);
+		executions.add(menork);
+		executions.add(igualk);
+		executions.add(diferk);
+		executions.add(mayor);
+		executions.add(menor);
+		executions.add(der);
+		executions.add(igual);
+		executions.add(izq);
+		executions.add(difer);
+		RebotinolProgram program = new RebotinolProgram(executions);
+		while (!program.isFinished()) {
+			program.step(house);
+		}
+		Assert.assertEquals(new Fraction(0), house.getMemory());
 	}
 }
