@@ -16,170 +16,200 @@ import edu.upb.lp.rebotinol.util.RebotinolFatalException;
  * @author Alexis Marechal
  * 
  */
-//TODO manage errors
+// TODO manage errors
 public class RebotinolHouse {
-    private final List<RebotinolHouseObserver> _observers = new ArrayList<RebotinolHouseObserver>();
-    private final int _sizeH;
-    private final int _sizeV;
-    private final Fraction[][] _matrix;
-    private Fraction _memory;
-    private int _positionH;
-    private int _positionV;
-    private Mail _mail;
-    private boolean _error;
+	private final List<RebotinolHouseObserver> _observers = new ArrayList<RebotinolHouseObserver>();
+	private final int _sizeH;
+	private final int _sizeV;
+	private final Fraction[][] _matrix;
+	private Fraction _memory;
+	private int _positionH;
+	private int _positionV;
+	private Mail _mail;
+	private boolean _error;
 
-    /**
-     * Builds a rebotinol house
-     * @param matrix The initial matrix on which rebotin should work
-     * @throws RebotinolFatalException IF the initial matrix was empty
-     */
-    public RebotinolHouse(Fraction[][] matrix) throws RebotinolFatalException {
-        // Check input
-    	if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-            throw new RebotinolFatalException("Passed an invalid matrix as parameter when creating the house");
-        }
-        // Clone the parameter matrix
-    	_sizeH = matrix[0].length;
-        _sizeV = matrix.length;
-        _matrix = MatrixUtil.cloneMatrix(matrix);
-        _memory = null;
-        _positionH = 0;
-        _positionV = 0;
-        _mail = null;
-        _error = false;
-    }
+	/**
+	 * Builds a rebotinol house
+	 * 
+	 * @param matrix
+	 *            The initial matrix on which rebotin should work
+	 * @throws RebotinolFatalException
+	 *             IF the initial matrix was empty
+	 */
+	public RebotinolHouse(Fraction[][] matrix) throws RebotinolFatalException {
+		// Check input
+		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+			throw new RebotinolFatalException(
+					"Passed an invalid matrix as parameter when creating the house");
+		}
+		// Clone the parameter matrix
+		_sizeH = matrix[0].length;
+		_sizeV = matrix.length;
+		_matrix = MatrixUtil.cloneMatrix(matrix);
+		_memory = null;
+		_positionH = 0;
+		_positionV = 0;
+		_mail = null;
+		_error = false;
+	}
 
-    /**
-     * Adds an observer to this house
-     * @param observer The observer to be added
-     */
-    public void registerObserver(RebotinolHouseObserver observer) {
-        _observers.add(observer);
-    }
+	/**
+	 * Adds an observer to this house
+	 * 
+	 * @param observer
+	 *            The observer to be added
+	 */
+	public void registerObserver(RebotinolHouseObserver observer) {
+		_observers.add(observer);
+	}
 
-    /**
-     * Change the value in Rebotin's memory.
-     * 
-     * @param value
-     *            the new value to be memorized by Rebotin
-     */
-    public void setMemory(Fraction value) {
-        _memory = value;
-        for (RebotinolHouseObserver observer : _observers) {
-            observer.memoryChanged(_memory);
-        }
-    }
+	/**
+	 * Change the value in Rebotin's memory.
+	 * 
+	 * @param value
+	 *            the new value to be memorized by Rebotin
+	 */
+	public void setMemory(Fraction value) {
+		_memory = value;
+		for (RebotinolHouseObserver observer : _observers) {
+			observer.memoryChanged(_memory);
+		}
+	}
 
-    /**
-     * Set a horizontal position in the matrix
-     * 
-     * @param h
-     *            The horizontal position
-     * @throws RebotinolFatalException If the new position was illegal
-     */
-    public void setPosition(int h, int v) throws RebotinolFatalException {
-        if (h >= _sizeH) {
-            throw new RebotinolFatalException("Tried to set a position outside of the house");
-        }
-        if (v >= _sizeV) {
-            throw new RebotinolFatalException("Tried to set a position outside of the house");
-        }
-        int oldPositionH = _positionH;
-        int oldPositionV = _positionV;
-        _positionH = h;
-        _positionV = v;
-        for (RebotinolHouseObserver observer : _observers) {
-            observer.positionChanged(oldPositionH, oldPositionV, _positionH, _positionV);
-        }
-    }
+	/**
+	 * Sets a position in the matrix
+	 * 
+	 * @param h
+	 *            The horizontal position
+	 * @param v
+	 *            The vertical position
+	 * @throws RebotinolFatalException
+	 *             If the new position was illegal
+	 */
+	public void setPosition(int h, int v) throws RebotinolFatalException {
+		if (h >= _sizeH) {
+			throw new RebotinolFatalException(
+					"Tried to set a position outside of the house");
+		}
+		if (v >= _sizeV) {
+			throw new RebotinolFatalException(
+					"Tried to set a position outside of the house");
+		}
+		int oldPositionH = _positionH;
+		int oldPositionV = _positionV;
+		_positionH = h;
+		_positionV = v;
+		for (RebotinolHouseObserver observer : _observers) {
+			observer.positionChanged(oldPositionH, oldPositionV, _positionH,
+					_positionV);
+		}
+	}
 
-    /**
-     * @return The value memorized by Rebotin
-     */
-    public Fraction getMemory() {
-        return _memory;
-    }
+	/**
+	 * @return The value memorized by Rebotin
+	 */
+	public Fraction getMemory() {
+		return _memory;
+	}
 
-    /**
-     * @return The current horizontal position in the matrix
-     */
-    public int getPositionH() {
-        return _positionH;
-    }
+	/**
+	 * @return The current horizontal position in the matrix
+	 */
+	public int getPositionH() {
+		return _positionH;
+	}
 
-    /**
-     * @return The current vertical position in the matrix
-     */
-    public int getPositionV() {
-        return _positionV;
-    }
+	/**
+	 * @return The current vertical position in the matrix
+	 */
+	public int getPositionV() {
+		return _positionV;
+	}
 
-    /**
-     * @return The value in the mailbox. May be null to empty the mailbox.
-     */
-    public Mail getMail() {
-        return _mail;
-    }
+	/**
+	 * @return The value in the mailbox. May be null to empty the mailbox.
+	 */
+	public Mail getMail() {
+		return _mail;
+	}
 
-    /**
-     * Changes the value in the mailbox
-     * 
-     * @param mail
-     *            The new value for the mailbox. May be null if the mailbox is
-     *            empty.
-     */
-    public void setMail(Mail mail) {
-        _mail = mail;
-        for (RebotinolHouseObserver observer : _observers) {
-            observer.mailChanged(mail);
-        }
-    }
+	/**
+	 * Changes the value in the mailbox
+	 * 
+	 * @param mail
+	 *            The new value for the mailbox. May be null if the mailbox is
+	 *            empty.
+	 */
+	public void setMail(Mail mail) {
+		_mail = mail;
+		for (RebotinolHouseObserver observer : _observers) {
+			observer.mailChanged(mail);
+		}
+	}
 
-    /**
-     * @return true if the error notification is on, false otherwise.
-     */
-    public boolean isErrorNotificationOn() {
-        return _error;
-    }
+	/**
+	 * @return true if the error notification is on, false otherwise.
+	 */
+	public boolean isErrorNotificationOn() {
+		return _error;
+	}
 
-    /**
-     * @return The horizontal size of the matrix.
-     */
-    public int getSizeH() {
-        return _sizeH;
-    }
+	/**
+	 * @return The horizontal size of the matrix.
+	 */
+	public int getSizeH() {
+		return _sizeH;
+	}
 
-    /**
-     * @return The vertical size of the matrix.
-     */
-    public int getSizeV() {
-        return _sizeV;
-    }
+	/**
+	 * @return The vertical size of the matrix.
+	 */
+	public int getSizeV() {
+		return _sizeV;
+	}
 
-    /**
-     * @return The matrix in the house. Note that this content is cloned before returning it.
-     */
-    public Fraction[][] getMatrix() {
-        return MatrixUtil.cloneMatrix(_matrix);
-    }
+	/**
+	 * @return The matrix in the house. Note that this content is cloned before
+	 *         returning it.
+	 */
+	public Fraction[][] getMatrix() {
+		return MatrixUtil.cloneMatrix(_matrix);
+	}
 
-    /**
-     * @return The current value shown in the window.
-     */
-    public Fraction getCurrentMatrixValue() {
-        return _matrix[_positionV][_positionH];
-    }
+	/**
+	 * @return The current value shown in the window.
+	 */
+	public Fraction getCurrentMatrixValue() {
+		return _matrix[_positionV][_positionH];
+	}
 
-    /**
-     * Write a value in the current position of the matrix.
-     * 
-     * @param val
-     *            The value to be written in the matrix.
-     */
-    public void writeInMatrix(Fraction val) {
-        _matrix[_positionV][_positionH] = val;
-        for (RebotinolHouseObserver obs : _observers) {
-        	obs.matrixChanged(_positionH, _positionV, val);
-        }
-    }
+	/**
+	 * Write a value in the current position of the matrix.
+	 * 
+	 * @param val
+	 *            The value to be written in the matrix.
+	 */
+	public void writeInMatrix(Fraction val) {
+		_matrix[_positionV][_positionH] = val;
+		for (RebotinolHouseObserver obs : _observers) {
+			obs.matrixChanged(_positionH, _positionV, val);
+		}
+	}
+
+	/**
+	 * Writes a value in some position of the matrix.
+	 * 
+	 * @param h
+	 *            The horizontal position
+	 * @param v
+	 *            The vertical position
+	 * @param val
+	 *            The value to be written in the matrix.
+	 */
+	public void writeInMatrix(int h, int v, Fraction val) {
+		_matrix[v][h] = val;
+		for (RebotinolHouseObserver obs : _observers) {
+			obs.matrixChanged(h, v, val);
+		}
+	}
 }

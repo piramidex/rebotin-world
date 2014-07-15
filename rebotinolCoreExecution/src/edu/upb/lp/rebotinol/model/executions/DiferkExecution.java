@@ -12,7 +12,7 @@ public class DiferkExecution extends FixedConditionalExecution {
      * Constructor
      * @param value The value in this instruction
      */
-    public DiferkExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
+    public DiferkExecution(List<RebotinolInstructionExecution> subExecutions, Fraction fixedValue) {
         super(subExecutions, fixedValue);
     }
 

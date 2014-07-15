@@ -19,14 +19,15 @@ import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 @RunWith(JUnit4.class)
-public class RebotinolHouseTest {
+public class RebotinolExecutionsTest {
 
 	private Fraction[][] matrix;
 	private RebotinolHouse house;
-	
-	//Common numbers
+
+	// Common numbers
 	Fraction mone = new Fraction(-1);
 	Fraction zero = new Fraction(0);
+	Fraction two = new Fraction(2);
 	Fraction three = new Fraction(3);
 	Fraction nine = new Fraction(9);
 	Fraction twentyseven = new Fraction(27);
@@ -227,13 +228,14 @@ public class RebotinolHouseTest {
 		SignoExecution signo = new SignoExecution();
 		signo.step(house);
 	}
-	
+
 	@Test
-	public void testEnviarAndEnviarMatriz() throws RebotinolExecutionException, RebotinolFlowException {
+	public void testEnviarAndEnviarMatriz() throws RebotinolExecutionException,
+			RebotinolFlowException {
 		MemoExecution memo = new MemoExecution();
 		EnviarExecution enviar = new EnviarExecution();
 		EnviarMatrizExecution enviarMatriz = new EnviarMatrizExecution();
-		
+
 		memo.step(house);
 		enviar.step(house);
 		Assert.assertTrue(house.getMail() instanceof FractionMail);
@@ -241,34 +243,71 @@ public class RebotinolHouseTest {
 		enviarMatriz.step(house);
 		Fraction[][] expected = MatrixUtil.createMatrix(5, 5);
 		Assert.assertTrue(house.getMail() instanceof MatrixMail);
-		Assert.assertArrayEquals(expected, ((MatrixMail) house.getMail()).getContent());
+		Assert.assertArrayEquals(expected,
+				((MatrixMail) house.getMail()).getContent());
 	}
-	
-	//TODO
+
+	// TODO
 	@Test
-	public void testConditionalsPositive() throws RebotinolExecutionException, RebotinolFlowException {
+	public void testConditionalsPositive() throws RebotinolExecutionException,
+			RebotinolFlowException {
+		house.writeInMatrix(1,0,new Fraction(3));
+		house.writeInMatrix(2,0,new Fraction(6));
+		// Memo, memo: 0
+		MemoExecution memo = new MemoExecution();
+		// Mayor -1,, memo: 0
 		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
-		MayorkExecution mayork = new MayorkExecution(subExecutions, -1);
+		MayorkExecution mayork = new MayorkExecution(subExecutions, new Fraction(-1));
+		// Menor 2, memo: 1
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
-		MenorkExecution menork = new MenorkExecution(subExecutions, 2);
+		MenorkExecution menork = new MenorkExecution(subExecutions, two);
+		// Igual 2, memo: 2
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
-		IgualkExecution igualk = new IgualkExecution(subExecutions, 2);
+		IgualkExecution igualk = new IgualkExecution(subExecutions, two);
+		// Difer 2, memo: 3
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
-		DiferkExecution diferk = new DiferkExecution(subExecutions, 0);
-		EscriExecution escri = new EscriExecution();
+		DiferkExecution diferk = new DiferkExecution(subExecutions, zero);
+		// Der, memo: 4
+		DerExecution der = new DerExecution();
+		// Mayor, memo: 4
+		subExecutions = new ArrayList<RebotinolInstructionExecution>();
+		subExecutions.add(new SumakExecution(1));
 		MayorExecution mayor = new MayorExecution(subExecutions);
+		// Der, memo: 5
+		DerExecution der2 = new DerExecution();
+		// Menor, memo: 5
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
 		MenorExecution menor = new MenorExecution(subExecutions);
+		// Igual, memo: 6
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
 		IgualExecution igual = new IgualExecution(subExecutions);
+		// Difer, memo: 7
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new SumakExecution(1));
 		DiferExecution difer = new DiferExecution(subExecutions);
+		//Program
+		List<RebotinolInstructionExecution> executions = new ArrayList<RebotinolInstructionExecution>();
+		executions.add(memo);
+		executions.add(mayork);
+		executions.add(menork);
+		executions.add(igualk);
+		executions.add(diferk);
+		executions.add(der);
+		executions.add(mayor);
+		executions.add(der2);
+		executions.add(menor);
+		executions.add(igual);
+		executions.add(difer);
+		RebotinolProgram program = new RebotinolProgram(executions);
+		while (!program.isFinished()) {
+			program.step(house);
+		}
+		Assert.assertEquals(new Fraction(8), house.getMemory());
 	}
 }

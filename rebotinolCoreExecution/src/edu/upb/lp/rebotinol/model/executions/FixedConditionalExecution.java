@@ -16,7 +16,7 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
  */
 public abstract class FixedConditionalExecution extends ConditionalExecution {
 
-    private int _fixedValue;
+    private Fraction _fixedValue;
 
     /**
      * 
@@ -26,7 +26,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
      *            The fixed value on which this {@link ConditionalExecution}
      *            will evaluate its condition
      */
-    public FixedConditionalExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
+    public FixedConditionalExecution(List<RebotinolInstructionExecution> subExecutions, Fraction fixedValue) {
         super(subExecutions);
         _fixedValue = fixedValue;
     }
@@ -62,7 +62,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
     /**
      * @return the fixed value in this conditional execution
      */
-    protected int getFixedValue() {
+    protected Fraction getFixedValue() {
     	return _fixedValue;
     }
 }

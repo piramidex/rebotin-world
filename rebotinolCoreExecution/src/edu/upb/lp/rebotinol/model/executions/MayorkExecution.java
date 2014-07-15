@@ -19,7 +19,7 @@ public class MayorkExecution extends FixedConditionalExecution {
      * @param subExecutions
      *            The subExecutions of this sequential instruction execution
      */
-    public MayorkExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
+    public MayorkExecution(List<RebotinolInstructionExecution> subExecutions, Fraction fixedValue) {
         super(subExecutions, fixedValue);
     }
 
@@ -28,7 +28,7 @@ public class MayorkExecution extends FixedConditionalExecution {
      */
     @Override
     protected boolean evalCondition(Fraction memory) throws RebotinolExecutionException {
-        return memory.compareTo(new Fraction(getFixedValue())) != -1;
+        return memory.compareTo(getFixedValue()) == 1;
     }
 
 }

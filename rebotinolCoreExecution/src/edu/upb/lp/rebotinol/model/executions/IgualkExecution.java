@@ -12,7 +12,7 @@ public class IgualkExecution extends FixedConditionalExecution {
      * Constructor
      * @param value The value in this instruction
      */
-    public IgualkExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
+    public IgualkExecution(List<RebotinolInstructionExecution> subExecutions, Fraction fixedValue) {
         super(subExecutions, fixedValue);
     }
 

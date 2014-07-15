@@ -12,7 +12,7 @@ public class MenorkExecution extends FixedConditionalExecution {
      * Constructor
      * @param value The value in this instruction
      */
-    public MenorkExecution(List<RebotinolInstructionExecution> subExecutions, int fixedValue) {
+    public MenorkExecution(List<RebotinolInstructionExecution> subExecutions, Fraction fixedValue) {
         super(subExecutions, fixedValue);
     }
 
@@ -21,7 +21,7 @@ public class MenorkExecution extends FixedConditionalExecution {
      */
     @Override
     protected boolean evalCondition(Fraction memory) throws RebotinolExecutionException {
-        return memory.compareTo(new Fraction(getFixedValue())) != 1;
+        return getFixedValue().compareTo(memory) == 1;
     }
 
 }

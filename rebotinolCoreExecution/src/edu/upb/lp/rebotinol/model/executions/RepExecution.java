@@ -35,4 +35,6 @@ public class RepExecution extends SequentialInstructionExecution {
     public int getRepetitionsPerformed() {
         return getCurrentExecutionIndex()/_numberOfInstructions;
     }
+    
+    //TODO avisar cada que termina una vuelta
 }
