@@ -23,12 +23,13 @@ public abstract class RebotinolExample {
 	protected RebotinolProgram _program;
 	protected Fraction[][] _initialMatrix;
 	protected Fraction[][] _expectedMatrix;
-	
-	
+
 	/**
 	 * @return the _house
+	 * @throws RebotinolFatalException
+	 *             If something went really bad
 	 */
-	public RebotinolHouse getHouse() {
+	public RebotinolHouse getHouse() throws RebotinolFatalException {
 		if (_house == null) {
 			buildHouse();
 		}
@@ -37,8 +38,10 @@ public abstract class RebotinolExample {
 
 	/**
 	 * @return the _controller
+	 * @throws RebotinolFatalException
+	 *             If something went really bad
 	 */
-	public RebotinolController getController() {
+	public RebotinolController getController() throws RebotinolFatalException {
 		if (_controller == null) {
 			buildController();
 		}
@@ -77,28 +80,25 @@ public abstract class RebotinolExample {
 
 	/**
 	 * Build the house
+	 * 
+	 * @throws RebotinolFatalException
+	 *             If something went really bad
 	 */
-	protected void buildHouse() {
-		try {
-			_house = new RebotinolHouse(getInitialMatrix());
-		} catch (RebotinolFatalException e) {
-			throw new IllegalStateException(e);
-		}
+	protected void buildHouse() throws RebotinolFatalException {
+		_house = new RebotinolHouse(getInitialMatrix());
 	}
 
 	/**
 	 * Build the controller
+	 * 
+	 * @throws RebotinolFatalException
+	 *             If something went really bad
 	 */
-	protected void buildController() {
-		try {
-			_controller = new RebotinolController(getHouse(),
-					getInitialMatrix(), getExpectedMatrix(),
-					getProgram());
-		} catch (RebotinolFatalException e) {
-			throw new IllegalStateException(e);
-		}
+	protected void buildController() throws RebotinolFatalException {
+		_controller = new RebotinolController(getHouse(), getInitialMatrix(),
+				getExpectedMatrix(), getProgram());
 	}
-	
+
 	/**
 	 * Build the program
 	 */

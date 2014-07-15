@@ -26,6 +26,7 @@ public class RebotinolHouse {
 	private int _positionH;
 	private int _positionV;
 	private Mail _mail;
+	private boolean _matrixSent;
 	private boolean _error;
 
 	/**
@@ -144,6 +145,41 @@ public class RebotinolHouse {
 		_mail = mail;
 		for (RebotinolHouseObserver observer : _observers) {
 			observer.mailChanged(mail);
+		}
+	}
+
+	/**
+	 * @return true if the matrix has been sent
+	 */
+	public boolean isMatrixSent() {
+		return _matrixSent;
+	}
+	
+	/**
+	 * Sets the flag "matrix sent" to true
+	 * @throws RebotinolFatalException  If the matrix was already sent previously
+	 */
+	public void sendMatrix() throws RebotinolFatalException {
+		if (_matrixSent) {
+			throw new RebotinolFatalException("Tried to send the matrix when it was already sent!");
+		}
+		_matrixSent = true;
+		for (RebotinolHouseObserver observer : _observers) {
+			observer.matrixSent();
+		}
+	}
+
+	/**
+	 * Sets the flag "matrix sent" to false
+	 * @throws RebotinolFatalException If the matrix was not sent previously
+	 */
+	public void unsendMatrix() throws RebotinolFatalException {
+		if (!_matrixSent) {
+			throw new RebotinolFatalException("Tried to unsend the matrix when it was not sent!");
+		}
+		_matrixSent = false;
+		for (RebotinolHouseObserver observer : _observers) {
+			observer.matrixUnsent();
 		}
 	}
 

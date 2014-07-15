@@ -1,6 +1,5 @@
 package edu.upb.lp.rebotinol.model.executions;
 
-import edu.upb.lp.rebotinol.model.house.MatrixMail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -16,18 +15,16 @@ public class EnviarMatrizExecution extends RebotinolInstructionExecution {
 	@Override
 	protected void doStep(RebotinolHouse house)
 			throws RebotinolExecutionException, RebotinolFlowException {
-		MatrixMail mail;
 		try {
-			mail = new MatrixMail(house.getMatrix());
+			house.sendMatrix();
 		} catch (RebotinolFatalException e) {
-			throw new RebotinolExecutionException(e.getMessage());
+			throw new RebotinolExecutionException("Could not send the matrix in the house!");
 		}
-		house.setMail(mail);
 	}
 
 	@Override
-	protected void doStepBack(RebotinolHouse house) {
-		house.setMail(null);
+	protected void doStepBack(RebotinolHouse house) throws RebotinolFatalException {
+		house.unsendMatrix();
 	}
 
 }

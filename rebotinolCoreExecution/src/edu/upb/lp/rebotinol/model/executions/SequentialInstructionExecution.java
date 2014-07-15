@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
@@ -51,11 +52,11 @@ public abstract class SequentialInstructionExecution extends
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * {@inheritDoc} 
 	 */
 	@Override
 	protected void doStepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException {
+			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
 		RebotinolInstructionExecution current = getCurrentExecution();
 		if (current.isStarted()) {
 			current.stepBack(house);

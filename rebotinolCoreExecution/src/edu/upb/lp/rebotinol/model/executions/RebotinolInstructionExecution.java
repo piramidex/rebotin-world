@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
@@ -99,9 +100,10 @@ public abstract class RebotinolInstructionExecution {
 	 *             this method.
 	 * @throws RebotinolExecutionException
 	 *             If Rebotin met a problem executing this step back
+	 * @throws RebotinolFatalException If something went really wrong
 	 */
 	public boolean stepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException {
+			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
 		if (_steps == 0) {
 			throw new RebotinolFlowException(
 					"Tried to un-execute an instruction that was not executed");
@@ -125,10 +127,11 @@ public abstract class RebotinolInstructionExecution {
 	 *             If no steps in the instruction was executed before calling
 	 *             this method.
 	 * @throws RebotinolExecutionException
-	 *             if Rebotin met a problem executing this step back
+	 *             If Rebotin met a problem executing this step back
+	 * @throws RebotinolFatalException If something went really wrong
 	 */
 	protected abstract void doStepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException;
+			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException;
 
 	/**
 	 * @return The number of steps that have been executed in this instruction
@@ -252,6 +255,6 @@ public abstract class RebotinolInstructionExecution {
 	public boolean automaticStep() {
 		return _breakpoint;
 	}
-	
-	//TODO container
+
+	// TODO container
 }

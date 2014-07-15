@@ -35,7 +35,8 @@ public class RebotinolController {
 	 *            The expected matrix at the end of the execution. Can be null.
 	 * @param program
 	 *            The program to be executed.
-	 * @throws RebotinolFatalException If something very bad happened
+	 * @throws RebotinolFatalException
+	 *             If something very bad happened
 	 */
 	public RebotinolController(RebotinolHouse house,
 			Fraction[][] initialMatrix, Fraction[][] expectedMatrix,
@@ -73,13 +74,15 @@ public class RebotinolController {
 
 	/**
 	 * A constructor without expected matrix
+	 * 
 	 * @param house
 	 *            The rebotinol house on which we will be working
 	 * @param initialMatrix
 	 *            The initial matrix
 	 * @param program
 	 *            The program to be executed.
-	 * @throws RebotinolFatalException If something very bad happened
+	 * @throws RebotinolFatalException
+	 *             If something very bad happened
 	 */
 	public RebotinolController(RebotinolHouse house,
 			Fraction[][] initialMatrix, SequentialInstructionExecution program)
@@ -95,19 +98,19 @@ public class RebotinolController {
 	}
 
 	/**
-	 * @return A clone of the initial matrix. This attribute does not change while the
-	 *         program is executed
+	 * @return A clone of the initial matrix. This attribute does not change
+	 *         while the program is executed
 	 */
 	public Fraction[][] get_initialMatrix() {
-		return  MatrixUtil.cloneMatrix(_initialMatrix);
+		return MatrixUtil.cloneMatrix(_initialMatrix);
 	}
 
 	/**
-	 * @return A clone of the expected matrix after the execution of the program. This
-	 *         attribute is optional
+	 * @return A clone of the expected matrix after the execution of the
+	 *         program. This attribute is optional
 	 */
 	public Fraction[][] get_expectedMatrix() {
-		return  MatrixUtil.cloneMatrix(_expectedMatrix);
+		return MatrixUtil.cloneMatrix(_expectedMatrix);
 	}
 
 	/**
@@ -147,9 +150,11 @@ public class RebotinolController {
 	 *             If the program tried to execute some illegal instruction,
 	 *             like an instruction that was already finished. This exception
 	 *             indicates a severe bug in the execution platform.
+	 * @throws RebotinolFatalException
+	 *             If something went really wrong
 	 */
 	public void stepBack() throws RebotinolExecutionException,
-			RebotinolFlowException {
+			RebotinolFlowException, RebotinolFatalException {
 		_program.stepBack(_house);
 	}
 

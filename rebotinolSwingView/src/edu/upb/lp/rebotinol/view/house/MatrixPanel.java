@@ -120,4 +120,16 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	public void matrixChanged(int h, int v, Fraction newValue) {
 		// TODO change the matrix numbers!
 	}
+
+	@Override
+	public void matrixSent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void matrixUnsent() {
+		// TODO Auto-generated method stub
+		
+	}
 }

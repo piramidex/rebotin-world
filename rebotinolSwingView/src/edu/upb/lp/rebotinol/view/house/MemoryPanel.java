@@ -66,4 +66,16 @@ public class MemoryPanel extends JPanel implements RebotinolHouseObserver {
 	public void matrixChanged(int h, int v, Fraction newValue) {
 		// do nothing
 	}
+
+	@Override
+	public void matrixSent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void matrixUnsent() {
+		// TODO Auto-generated method stub
+		
+	}
 }

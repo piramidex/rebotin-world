@@ -10,6 +10,7 @@ import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
@@ -31,13 +32,19 @@ public abstract class AbstractGUITesting {
 	public void run() {
 		buildAndShowFrame();
 		final RebotinolProgram program = example.getProgram();
-		final RebotinolHouse house = example.getHouse();
+		RebotinolHouse house = null;
+		try {
+			house = example.getHouse();
+		} catch (RebotinolFatalException e) {
+			throw new IllegalStateException(e);
+		}
+		final RebotinolHouse finalHouse = house;
 		final Timer timer = new Timer(2000, null);
 		ActionListener listener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				try {
-					program.step(house);
+					program.step(finalHouse);
 					if (program.isFinished()) {
 						timer.stop();
 					}

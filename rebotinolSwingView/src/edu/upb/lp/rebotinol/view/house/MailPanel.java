@@ -47,4 +47,16 @@ class MailPanel extends JPanel implements RebotinolHouseObserver {
 		
 	}
 
+	@Override
+	public void matrixSent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void matrixUnsent() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

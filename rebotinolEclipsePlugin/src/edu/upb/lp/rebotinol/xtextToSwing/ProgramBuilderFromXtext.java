@@ -100,8 +100,12 @@ public class ProgramBuilderFromXtext {
 				throws RebotinolFatalException {
 			try {
 				return doSwitch(obj);
-			} catch (Exception e) {
-				throw new RebotinolFatalException(e.getMessage());
+			} catch (IllegalStateException e) {
+				if (e.getCause() != null && e.getCause() instanceof RebotinolFatalException) {
+					throw (RebotinolFatalException) e.getCause();
+				} else {
+					throw new RebotinolFatalException(e.getMessage());
+				}
 			}
 		}
 
@@ -113,7 +117,7 @@ public class ProgramBuilderFromXtext {
 				try {
 					executions.add(buildExecution(instr));
 				} catch (RebotinolFatalException e) {
-					throw new IllegalStateException(e.getMessage());
+					throw new IllegalStateException(e);
 				}
 			}
 			SequentialInstructionExecution exec = new edu.upb.lp.rebotinol.model.executions.RebotinolProgram(
@@ -192,7 +196,7 @@ public class ProgramBuilderFromXtext {
 				try {
 					ans.add(buildExecution(subInstr));
 				} catch (RebotinolFatalException e) {
-					throw new IllegalStateException(e.getMessage());
+					throw new IllegalStateException(e);
 				}
 			}
 			return ans;

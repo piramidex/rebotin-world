@@ -10,8 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import edu.upb.lp.rebotinol.model.house.FractionMail;
-import edu.upb.lp.rebotinol.model.house.MatrixMail;
+import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
@@ -50,7 +49,7 @@ public class RebotinolExecutionsTest {
 
 	@Test
 	public void testMovements() throws RebotinolExecutionException,
-			RebotinolFlowException {
+			RebotinolFlowException, RebotinolFatalException {
 		AbaExecution aba = new AbaExecution();
 		DerExecution der = new DerExecution();
 		ArrExecution arr = new ArrExecution();
@@ -240,13 +239,10 @@ public class RebotinolExecutionsTest {
 
 		memo.step(house);
 		enviar.step(house);
-		Assert.assertTrue(house.getMail() instanceof FractionMail);
-		Assert.assertEquals(zero, ((FractionMail) house.getMail()).getContent());
+		Assert.assertTrue(house.getMail() instanceof Mail);
+		Assert.assertEquals(zero, ((Mail) house.getMail()).getContent());
 		enviarMatriz.step(house);
-		Fraction[][] expected = MatrixUtil.createMatrix(5, 5);
-		Assert.assertTrue(house.getMail() instanceof MatrixMail);
-		Assert.assertArrayEquals(expected,
-				((MatrixMail) house.getMail()).getContent());
+		Assert.assertTrue(house.isMatrixSent());
 	}
 
 	@Test
