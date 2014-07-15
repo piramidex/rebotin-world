@@ -371,6 +371,30 @@ public class RebotinolExecutionsTest {
 		while (!program.isFinished()) {
 			program.step(house);
 		}
-		Assert.assertEquals(new Fraction(0), house.getMemory());
+		Assert.assertEquals(zero, house.getMemory());
+	}
+	
+	@Test
+	public void testRep() throws RebotinolExecutionException, RebotinolFlowException {
+		//Matrix: 0, 1, 2, 3, result: 6
+		house.writeInMatrix(1,0,one);
+		house.writeInMatrix(2,0,two);
+		house.writeInMatrix(3,0,three);
+		MemoExecution memo = new MemoExecution();
+		List<RebotinolInstructionExecution> repExecutions = new ArrayList<RebotinolInstructionExecution>();
+		for (int i = 0; i<3; i++) {
+			repExecutions.add(new DerExecution());
+			repExecutions.add(new SumaExecution());
+		}
+		RepExecution rep = new RepExecution(repExecutions, 3);
+		
+		List<RebotinolInstructionExecution> executions = new ArrayList<RebotinolInstructionExecution>();
+		executions.add(memo);
+		executions.add(rep);
+		RebotinolProgram program = new RebotinolProgram(executions);
+		while (!program.isFinished()) {
+			program.step(house);
+		}
+		Assert.assertEquals(six, house.getMemory());
 	}
 }
