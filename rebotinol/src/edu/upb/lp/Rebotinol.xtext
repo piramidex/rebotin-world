@@ -26,35 +26,47 @@ NonEmptyInstruction:
 ComplexInstruction:
 	Igual | Igualk | Difer| Diferk | Mayor | Mayork | Menor | Menork | Repetirn;
 
+Number:
+	PositiveNumber | NegativeNumber;
+
+PositiveNumber:
+	Integer ({Fraction.numerator = current} "/" denominator=Integer)?;
+
+Integer:
+	value = INT;
+
+NegativeNumber:
+	"-" val=PositiveNumber;
+
 Sumak:
-	"SUMA" val=INT;
+	"SUMA" val=Number;
 	
 Multk:
-	"MULT" val=INT;
+	"MULT" val=Number;
 	
 Igual:
 	"IGUAL" "{" (subInstructions+=Instruction)+ "}";
 	
 Igualk:
-	"IGUAL" val=INT "{" (subInstructions+=Instruction)+ "}";
+	"IGUAL" val=Number "{" (subInstructions+=Instruction)+ "}";
 	
 Difer:
 	"DIFER" "{" (subInstructions+=Instruction)+ "}";
 	
 Diferk:
-	"DIFER" val=INT "{" (subInstructions+=Instruction)+ "}";
+	"DIFER" val=Number "{" (subInstructions+=Instruction)+ "}";
 	
 Mayor:
 	"MAYOR" "{" (subInstructions+=Instruction)+ "}";
 	
 Mayork:
-	"MAYOR" val=INT "{" (subInstructions+=Instruction)+ "}";
+	"MAYOR" val=Number "{" (subInstructions+=Instruction)+ "}";
 	
 Menor:
 	"MENOR" "{" (subInstructions+=Instruction)+ "}";
 	
 Menork:
-	"MENOR" val=INT "{" (subInstructions+=Instruction)+ "}";
+	"MENOR" val=Number "{" (subInstructions+=Instruction)+ "}";
 	
 Repetirn:
 	"REP" val=INT "{" (subInstructions+=Instruction)+ "}";

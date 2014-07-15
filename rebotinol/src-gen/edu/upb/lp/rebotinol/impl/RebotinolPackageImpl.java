@@ -7,6 +7,7 @@ import edu.upb.lp.rebotinol.Difer;
 import edu.upb.lp.rebotinol.Diferk;
 import edu.upb.lp.rebotinol.EmptyInstruction;
 import edu.upb.lp.rebotinol.EmptyInstructionType;
+import edu.upb.lp.rebotinol.Fraction;
 import edu.upb.lp.rebotinol.Igual;
 import edu.upb.lp.rebotinol.Igualk;
 import edu.upb.lp.rebotinol.Instruction;
@@ -15,7 +16,9 @@ import edu.upb.lp.rebotinol.Mayork;
 import edu.upb.lp.rebotinol.Menor;
 import edu.upb.lp.rebotinol.Menork;
 import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
 import edu.upb.lp.rebotinol.NonEmptyInstruction;
+import edu.upb.lp.rebotinol.PositiveNumber;
 import edu.upb.lp.rebotinol.RebotinolFactory;
 import edu.upb.lp.rebotinol.RebotinolPackage;
 import edu.upb.lp.rebotinol.RebotinolProgram;
@@ -72,6 +75,34 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * @generated
    */
   private EClass complexInstructionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass positiveNumberEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass negativeNumberEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -149,6 +180,13 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * @generated
    */
   private EClass repetirnEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fractionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -305,6 +343,66 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNumber()
+  {
+    return numberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPositiveNumber()
+  {
+    return positiveNumberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInteger()
+  {
+    return integerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInteger_Value()
+  {
+    return (EAttribute)integerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNegativeNumber()
+  {
+    return negativeNumberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNegativeNumber_Val()
+  {
+    return (EReference)negativeNumberEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSumak()
   {
     return sumakEClass;
@@ -315,9 +413,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSumak_Val()
+  public EReference getSumak_Val()
   {
-    return (EAttribute)sumakEClass.getEStructuralFeatures().get(0);
+    return (EReference)sumakEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -335,9 +433,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMultk_Val()
+  public EReference getMultk_Val()
   {
-    return (EAttribute)multkEClass.getEStructuralFeatures().get(0);
+    return (EReference)multkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -365,9 +463,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIgualk_Val()
+  public EReference getIgualk_Val()
   {
-    return (EAttribute)igualkEClass.getEStructuralFeatures().get(0);
+    return (EReference)igualkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -395,9 +493,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDiferk_Val()
+  public EReference getDiferk_Val()
   {
-    return (EAttribute)diferkEClass.getEStructuralFeatures().get(0);
+    return (EReference)diferkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -425,9 +523,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMayork_Val()
+  public EReference getMayork_Val()
   {
-    return (EAttribute)mayorkEClass.getEStructuralFeatures().get(0);
+    return (EReference)mayorkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -455,9 +553,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMenork_Val()
+  public EReference getMenork_Val()
   {
-    return (EAttribute)menorkEClass.getEStructuralFeatures().get(0);
+    return (EReference)menorkEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -478,6 +576,36 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
   public EAttribute getRepetirn_Val()
   {
     return (EAttribute)repetirnEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFraction()
+  {
+    return fractionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFraction_Numerator()
+  {
+    return (EReference)fractionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFraction_Denominator()
+  {
+    return (EReference)fractionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -533,34 +661,48 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
     complexInstructionEClass = createEClass(COMPLEX_INSTRUCTION);
     createEReference(complexInstructionEClass, COMPLEX_INSTRUCTION__SUB_INSTRUCTIONS);
 
+    numberEClass = createEClass(NUMBER);
+
+    positiveNumberEClass = createEClass(POSITIVE_NUMBER);
+
+    integerEClass = createEClass(INTEGER);
+    createEAttribute(integerEClass, INTEGER__VALUE);
+
+    negativeNumberEClass = createEClass(NEGATIVE_NUMBER);
+    createEReference(negativeNumberEClass, NEGATIVE_NUMBER__VAL);
+
     sumakEClass = createEClass(SUMAK);
-    createEAttribute(sumakEClass, SUMAK__VAL);
+    createEReference(sumakEClass, SUMAK__VAL);
 
     multkEClass = createEClass(MULTK);
-    createEAttribute(multkEClass, MULTK__VAL);
+    createEReference(multkEClass, MULTK__VAL);
 
     igualEClass = createEClass(IGUAL);
 
     igualkEClass = createEClass(IGUALK);
-    createEAttribute(igualkEClass, IGUALK__VAL);
+    createEReference(igualkEClass, IGUALK__VAL);
 
     diferEClass = createEClass(DIFER);
 
     diferkEClass = createEClass(DIFERK);
-    createEAttribute(diferkEClass, DIFERK__VAL);
+    createEReference(diferkEClass, DIFERK__VAL);
 
     mayorEClass = createEClass(MAYOR);
 
     mayorkEClass = createEClass(MAYORK);
-    createEAttribute(mayorkEClass, MAYORK__VAL);
+    createEReference(mayorkEClass, MAYORK__VAL);
 
     menorEClass = createEClass(MENOR);
 
     menorkEClass = createEClass(MENORK);
-    createEAttribute(menorkEClass, MENORK__VAL);
+    createEReference(menorkEClass, MENORK__VAL);
 
     repetirnEClass = createEClass(REPETIRN);
     createEAttribute(repetirnEClass, REPETIRN__VAL);
+
+    fractionEClass = createEClass(FRACTION);
+    createEReference(fractionEClass, FRACTION__NUMERATOR);
+    createEReference(fractionEClass, FRACTION__DENOMINATOR);
 
     // Create enums
     emptyInstructionTypeEEnum = createEEnum(EMPTY_INSTRUCTION_TYPE);
@@ -598,6 +740,9 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
     emptyInstructionEClass.getESuperTypes().add(this.getInstruction());
     nonEmptyInstructionEClass.getESuperTypes().add(this.getInstruction());
     complexInstructionEClass.getESuperTypes().add(this.getNonEmptyInstruction());
+    positiveNumberEClass.getESuperTypes().add(this.getNumber());
+    integerEClass.getESuperTypes().add(this.getPositiveNumber());
+    negativeNumberEClass.getESuperTypes().add(this.getNumber());
     sumakEClass.getESuperTypes().add(this.getNonEmptyInstruction());
     multkEClass.getESuperTypes().add(this.getNonEmptyInstruction());
     igualEClass.getESuperTypes().add(this.getComplexInstruction());
@@ -609,6 +754,7 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
     menorEClass.getESuperTypes().add(this.getComplexInstruction());
     menorkEClass.getESuperTypes().add(this.getComplexInstruction());
     repetirnEClass.getESuperTypes().add(this.getComplexInstruction());
+    fractionEClass.getESuperTypes().add(this.getPositiveNumber());
 
     // Initialize classes and features; add operations and parameters
     initEClass(rebotinolProgramEClass, RebotinolProgram.class, "RebotinolProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -624,34 +770,48 @@ public class RebotinolPackageImpl extends EPackageImpl implements RebotinolPacka
     initEClass(complexInstructionEClass, ComplexInstruction.class, "ComplexInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComplexInstruction_SubInstructions(), this.getInstruction(), null, "subInstructions", null, 0, -1, ComplexInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(numberEClass, edu.upb.lp.rebotinol.Number.class, "Number", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(positiveNumberEClass, PositiveNumber.class, "PositiveNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(integerEClass, edu.upb.lp.rebotinol.Integer.class, "Integer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInteger_Value(), ecorePackage.getEInt(), "value", null, 0, 1, edu.upb.lp.rebotinol.Integer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(negativeNumberEClass, NegativeNumber.class, "NegativeNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNegativeNumber_Val(), this.getPositiveNumber(), null, "val", null, 0, 1, NegativeNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(sumakEClass, Sumak.class, "Sumak", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSumak_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Sumak.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSumak_Val(), this.getNumber(), null, "val", null, 0, 1, Sumak.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(multkEClass, Multk.class, "Multk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMultk_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Multk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultk_Val(), this.getNumber(), null, "val", null, 0, 1, Multk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(igualEClass, Igual.class, "Igual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(igualkEClass, Igualk.class, "Igualk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIgualk_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Igualk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIgualk_Val(), this.getNumber(), null, "val", null, 0, 1, Igualk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(diferEClass, Difer.class, "Difer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(diferkEClass, Diferk.class, "Diferk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDiferk_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Diferk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDiferk_Val(), this.getNumber(), null, "val", null, 0, 1, Diferk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mayorEClass, Mayor.class, "Mayor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(mayorkEClass, Mayork.class, "Mayork", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMayork_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Mayork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMayork_Val(), this.getNumber(), null, "val", null, 0, 1, Mayork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(menorEClass, Menor.class, "Menor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(menorkEClass, Menork.class, "Menork", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMenork_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Menork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMenork_Val(), this.getNumber(), null, "val", null, 0, 1, Menork.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(repetirnEClass, Repetirn.class, "Repetirn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRepetirn_Val(), ecorePackage.getEInt(), "val", null, 0, 1, Repetirn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fractionEClass, Fraction.class, "Fraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFraction_Numerator(), this.getInteger(), null, "numerator", null, 0, 1, Fraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFraction_Denominator(), this.getInteger(), null, "denominator", null, 0, 1, Fraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(emptyInstructionTypeEEnum, EmptyInstructionType.class, "EmptyInstructionType");

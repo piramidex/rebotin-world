@@ -180,6 +180,100 @@ public interface RebotinolPackage extends EPackage
   int COMPLEX_INSTRUCTION_FEATURE_COUNT = NON_EMPTY_INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link edu.upb.lp.rebotinol.impl.NumberImpl <em>Number</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.rebotinol.impl.NumberImpl
+   * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getNumber()
+   * @generated
+   */
+  int NUMBER = 5;
+
+  /**
+   * The number of structural features of the '<em>Number</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link edu.upb.lp.rebotinol.impl.PositiveNumberImpl <em>Positive Number</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.rebotinol.impl.PositiveNumberImpl
+   * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getPositiveNumber()
+   * @generated
+   */
+  int POSITIVE_NUMBER = 6;
+
+  /**
+   * The number of structural features of the '<em>Positive Number</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITIVE_NUMBER_FEATURE_COUNT = NUMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link edu.upb.lp.rebotinol.impl.IntegerImpl <em>Integer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.rebotinol.impl.IntegerImpl
+   * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getInteger()
+   * @generated
+   */
+  int INTEGER = 7;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER__VALUE = POSITIVE_NUMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Integer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_FEATURE_COUNT = POSITIVE_NUMBER_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link edu.upb.lp.rebotinol.impl.NegativeNumberImpl <em>Negative Number</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.rebotinol.impl.NegativeNumberImpl
+   * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getNegativeNumber()
+   * @generated
+   */
+  int NEGATIVE_NUMBER = 8;
+
+  /**
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATIVE_NUMBER__VAL = NUMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Negative Number</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATIVE_NUMBER_FEATURE_COUNT = NUMBER_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link edu.upb.lp.rebotinol.impl.SumakImpl <em>Sumak</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -187,10 +281,10 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getSumak()
    * @generated
    */
-  int SUMAK = 5;
+  int SUMAK = 9;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -215,10 +309,10 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getMultk()
    * @generated
    */
-  int MULTK = 6;
+  int MULTK = 10;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -243,7 +337,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getIgual()
    * @generated
    */
-  int IGUAL = 7;
+  int IGUAL = 11;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -271,7 +365,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getIgualk()
    * @generated
    */
-  int IGUALK = 8;
+  int IGUALK = 12;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -283,7 +377,7 @@ public interface RebotinolPackage extends EPackage
   int IGUALK__SUB_INSTRUCTIONS = COMPLEX_INSTRUCTION__SUB_INSTRUCTIONS;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -308,7 +402,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getDifer()
    * @generated
    */
-  int DIFER = 9;
+  int DIFER = 13;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -336,7 +430,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getDiferk()
    * @generated
    */
-  int DIFERK = 10;
+  int DIFERK = 14;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -348,7 +442,7 @@ public interface RebotinolPackage extends EPackage
   int DIFERK__SUB_INSTRUCTIONS = COMPLEX_INSTRUCTION__SUB_INSTRUCTIONS;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -373,7 +467,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getMayor()
    * @generated
    */
-  int MAYOR = 11;
+  int MAYOR = 15;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -401,7 +495,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getMayork()
    * @generated
    */
-  int MAYORK = 12;
+  int MAYORK = 16;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -413,7 +507,7 @@ public interface RebotinolPackage extends EPackage
   int MAYORK__SUB_INSTRUCTIONS = COMPLEX_INSTRUCTION__SUB_INSTRUCTIONS;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -438,7 +532,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getMenor()
    * @generated
    */
-  int MENOR = 13;
+  int MENOR = 17;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -466,7 +560,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getMenork()
    * @generated
    */
-  int MENORK = 14;
+  int MENORK = 18;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -478,7 +572,7 @@ public interface RebotinolPackage extends EPackage
   int MENORK__SUB_INSTRUCTIONS = COMPLEX_INSTRUCTION__SUB_INSTRUCTIONS;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -503,7 +597,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getRepetirn()
    * @generated
    */
-  int REPETIRN = 15;
+  int REPETIRN = 19;
 
   /**
    * The feature id for the '<em><b>Sub Instructions</b></em>' containment reference list.
@@ -533,6 +627,43 @@ public interface RebotinolPackage extends EPackage
   int REPETIRN_FEATURE_COUNT = COMPLEX_INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link edu.upb.lp.rebotinol.impl.FractionImpl <em>Fraction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.rebotinol.impl.FractionImpl
+   * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getFraction()
+   * @generated
+   */
+  int FRACTION = 20;
+
+  /**
+   * The feature id for the '<em><b>Numerator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FRACTION__NUMERATOR = POSITIVE_NUMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Denominator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FRACTION__DENOMINATOR = POSITIVE_NUMBER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Fraction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FRACTION_FEATURE_COUNT = POSITIVE_NUMBER_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link edu.upb.lp.rebotinol.EmptyInstructionType <em>Empty Instruction Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -540,7 +671,7 @@ public interface RebotinolPackage extends EPackage
    * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getEmptyInstructionType()
    * @generated
    */
-  int EMPTY_INSTRUCTION_TYPE = 16;
+  int EMPTY_INSTRUCTION_TYPE = 21;
 
 
   /**
@@ -627,6 +758,68 @@ public interface RebotinolPackage extends EPackage
   EReference getComplexInstruction_SubInstructions();
 
   /**
+   * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Number <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number</em>'.
+   * @see edu.upb.lp.rebotinol.Number
+   * @generated
+   */
+  EClass getNumber();
+
+  /**
+   * Returns the meta object for class '{@link edu.upb.lp.rebotinol.PositiveNumber <em>Positive Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Positive Number</em>'.
+   * @see edu.upb.lp.rebotinol.PositiveNumber
+   * @generated
+   */
+  EClass getPositiveNumber();
+
+  /**
+   * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Integer <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Integer</em>'.
+   * @see edu.upb.lp.rebotinol.Integer
+   * @generated
+   */
+  EClass getInteger();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Integer#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see edu.upb.lp.rebotinol.Integer#getValue()
+   * @see #getInteger()
+   * @generated
+   */
+  EAttribute getInteger_Value();
+
+  /**
+   * Returns the meta object for class '{@link edu.upb.lp.rebotinol.NegativeNumber <em>Negative Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Negative Number</em>'.
+   * @see edu.upb.lp.rebotinol.NegativeNumber
+   * @generated
+   */
+  EClass getNegativeNumber();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.NegativeNumber#getVal <em>Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Val</em>'.
+   * @see edu.upb.lp.rebotinol.NegativeNumber#getVal()
+   * @see #getNegativeNumber()
+   * @generated
+   */
+  EReference getNegativeNumber_Val();
+
+  /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Sumak <em>Sumak</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -637,15 +830,15 @@ public interface RebotinolPackage extends EPackage
   EClass getSumak();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Sumak#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Sumak#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
+   * @return the meta object for the containment reference '<em>Val</em>'.
    * @see edu.upb.lp.rebotinol.Sumak#getVal()
    * @see #getSumak()
    * @generated
    */
-  EAttribute getSumak_Val();
+  EReference getSumak_Val();
 
   /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Multk <em>Multk</em>}'.
@@ -658,15 +851,15 @@ public interface RebotinolPackage extends EPackage
   EClass getMultk();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Multk#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Multk#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
+   * @return the meta object for the containment reference '<em>Val</em>'.
    * @see edu.upb.lp.rebotinol.Multk#getVal()
    * @see #getMultk()
    * @generated
    */
-  EAttribute getMultk_Val();
+  EReference getMultk_Val();
 
   /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Igual <em>Igual</em>}'.
@@ -689,15 +882,15 @@ public interface RebotinolPackage extends EPackage
   EClass getIgualk();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Igualk#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Igualk#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
+   * @return the meta object for the containment reference '<em>Val</em>'.
    * @see edu.upb.lp.rebotinol.Igualk#getVal()
    * @see #getIgualk()
    * @generated
    */
-  EAttribute getIgualk_Val();
+  EReference getIgualk_Val();
 
   /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Difer <em>Difer</em>}'.
@@ -720,15 +913,15 @@ public interface RebotinolPackage extends EPackage
   EClass getDiferk();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Diferk#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Diferk#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
+   * @return the meta object for the containment reference '<em>Val</em>'.
    * @see edu.upb.lp.rebotinol.Diferk#getVal()
    * @see #getDiferk()
    * @generated
    */
-  EAttribute getDiferk_Val();
+  EReference getDiferk_Val();
 
   /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Mayor <em>Mayor</em>}'.
@@ -751,15 +944,15 @@ public interface RebotinolPackage extends EPackage
   EClass getMayork();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Mayork#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Mayork#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
+   * @return the meta object for the containment reference '<em>Val</em>'.
    * @see edu.upb.lp.rebotinol.Mayork#getVal()
    * @see #getMayork()
    * @generated
    */
-  EAttribute getMayork_Val();
+  EReference getMayork_Val();
 
   /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Menor <em>Menor</em>}'.
@@ -782,15 +975,15 @@ public interface RebotinolPackage extends EPackage
   EClass getMenork();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.upb.lp.rebotinol.Menork#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Menork#getVal <em>Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
+   * @return the meta object for the containment reference '<em>Val</em>'.
    * @see edu.upb.lp.rebotinol.Menork#getVal()
    * @see #getMenork()
    * @generated
    */
-  EAttribute getMenork_Val();
+  EReference getMenork_Val();
 
   /**
    * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Repetirn <em>Repetirn</em>}'.
@@ -812,6 +1005,38 @@ public interface RebotinolPackage extends EPackage
    * @generated
    */
   EAttribute getRepetirn_Val();
+
+  /**
+   * Returns the meta object for class '{@link edu.upb.lp.rebotinol.Fraction <em>Fraction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Fraction</em>'.
+   * @see edu.upb.lp.rebotinol.Fraction
+   * @generated
+   */
+  EClass getFraction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Fraction#getNumerator <em>Numerator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Numerator</em>'.
+   * @see edu.upb.lp.rebotinol.Fraction#getNumerator()
+   * @see #getFraction()
+   * @generated
+   */
+  EReference getFraction_Numerator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.rebotinol.Fraction#getDenominator <em>Denominator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Denominator</em>'.
+   * @see edu.upb.lp.rebotinol.Fraction#getDenominator()
+   * @see #getFraction()
+   * @generated
+   */
+  EReference getFraction_Denominator();
 
   /**
    * Returns the meta object for enum '{@link edu.upb.lp.rebotinol.EmptyInstructionType <em>Empty Instruction Type</em>}'.
@@ -921,6 +1146,62 @@ public interface RebotinolPackage extends EPackage
     EReference COMPLEX_INSTRUCTION__SUB_INSTRUCTIONS = eINSTANCE.getComplexInstruction_SubInstructions();
 
     /**
+     * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.NumberImpl <em>Number</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.rebotinol.impl.NumberImpl
+     * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getNumber()
+     * @generated
+     */
+    EClass NUMBER = eINSTANCE.getNumber();
+
+    /**
+     * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.PositiveNumberImpl <em>Positive Number</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.rebotinol.impl.PositiveNumberImpl
+     * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getPositiveNumber()
+     * @generated
+     */
+    EClass POSITIVE_NUMBER = eINSTANCE.getPositiveNumber();
+
+    /**
+     * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.IntegerImpl <em>Integer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.rebotinol.impl.IntegerImpl
+     * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getInteger()
+     * @generated
+     */
+    EClass INTEGER = eINSTANCE.getInteger();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTEGER__VALUE = eINSTANCE.getInteger_Value();
+
+    /**
+     * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.NegativeNumberImpl <em>Negative Number</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.rebotinol.impl.NegativeNumberImpl
+     * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getNegativeNumber()
+     * @generated
+     */
+    EClass NEGATIVE_NUMBER = eINSTANCE.getNegativeNumber();
+
+    /**
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NEGATIVE_NUMBER__VAL = eINSTANCE.getNegativeNumber_Val();
+
+    /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.SumakImpl <em>Sumak</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -931,12 +1212,12 @@ public interface RebotinolPackage extends EPackage
     EClass SUMAK = eINSTANCE.getSumak();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUMAK__VAL = eINSTANCE.getSumak_Val();
+    EReference SUMAK__VAL = eINSTANCE.getSumak_Val();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.MultkImpl <em>Multk</em>}' class.
@@ -949,12 +1230,12 @@ public interface RebotinolPackage extends EPackage
     EClass MULTK = eINSTANCE.getMultk();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MULTK__VAL = eINSTANCE.getMultk_Val();
+    EReference MULTK__VAL = eINSTANCE.getMultk_Val();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.IgualImpl <em>Igual</em>}' class.
@@ -977,12 +1258,12 @@ public interface RebotinolPackage extends EPackage
     EClass IGUALK = eINSTANCE.getIgualk();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IGUALK__VAL = eINSTANCE.getIgualk_Val();
+    EReference IGUALK__VAL = eINSTANCE.getIgualk_Val();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.DiferImpl <em>Difer</em>}' class.
@@ -1005,12 +1286,12 @@ public interface RebotinolPackage extends EPackage
     EClass DIFERK = eINSTANCE.getDiferk();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIFERK__VAL = eINSTANCE.getDiferk_Val();
+    EReference DIFERK__VAL = eINSTANCE.getDiferk_Val();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.MayorImpl <em>Mayor</em>}' class.
@@ -1033,12 +1314,12 @@ public interface RebotinolPackage extends EPackage
     EClass MAYORK = eINSTANCE.getMayork();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MAYORK__VAL = eINSTANCE.getMayork_Val();
+    EReference MAYORK__VAL = eINSTANCE.getMayork_Val();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.MenorImpl <em>Menor</em>}' class.
@@ -1061,12 +1342,12 @@ public interface RebotinolPackage extends EPackage
     EClass MENORK = eINSTANCE.getMenork();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Val</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MENORK__VAL = eINSTANCE.getMenork_Val();
+    EReference MENORK__VAL = eINSTANCE.getMenork_Val();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.RepetirnImpl <em>Repetirn</em>}' class.
@@ -1085,6 +1366,32 @@ public interface RebotinolPackage extends EPackage
      * @generated
      */
     EAttribute REPETIRN__VAL = eINSTANCE.getRepetirn_Val();
+
+    /**
+     * The meta object literal for the '{@link edu.upb.lp.rebotinol.impl.FractionImpl <em>Fraction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.rebotinol.impl.FractionImpl
+     * @see edu.upb.lp.rebotinol.impl.RebotinolPackageImpl#getFraction()
+     * @generated
+     */
+    EClass FRACTION = eINSTANCE.getFraction();
+
+    /**
+     * The meta object literal for the '<em><b>Numerator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FRACTION__NUMERATOR = eINSTANCE.getFraction_Numerator();
+
+    /**
+     * The meta object literal for the '<em><b>Denominator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FRACTION__DENOMINATOR = eINSTANCE.getFraction_Denominator();
 
     /**
      * The meta object literal for the '{@link edu.upb.lp.rebotinol.EmptyInstructionType <em>Empty Instruction Type</em>}' enum.

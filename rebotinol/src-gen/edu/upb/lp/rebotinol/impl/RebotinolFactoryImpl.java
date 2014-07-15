@@ -2,7 +2,28 @@
  */
 package edu.upb.lp.rebotinol.impl;
 
-import edu.upb.lp.rebotinol.*;
+import edu.upb.lp.rebotinol.ComplexInstruction;
+import edu.upb.lp.rebotinol.Difer;
+import edu.upb.lp.rebotinol.Diferk;
+import edu.upb.lp.rebotinol.EmptyInstruction;
+import edu.upb.lp.rebotinol.EmptyInstructionType;
+import edu.upb.lp.rebotinol.Fraction;
+import edu.upb.lp.rebotinol.Igual;
+import edu.upb.lp.rebotinol.Igualk;
+import edu.upb.lp.rebotinol.Instruction;
+import edu.upb.lp.rebotinol.Mayor;
+import edu.upb.lp.rebotinol.Mayork;
+import edu.upb.lp.rebotinol.Menor;
+import edu.upb.lp.rebotinol.Menork;
+import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
+import edu.upb.lp.rebotinol.NonEmptyInstruction;
+import edu.upb.lp.rebotinol.PositiveNumber;
+import edu.upb.lp.rebotinol.RebotinolFactory;
+import edu.upb.lp.rebotinol.RebotinolPackage;
+import edu.upb.lp.rebotinol.RebotinolProgram;
+import edu.upb.lp.rebotinol.Repetirn;
+import edu.upb.lp.rebotinol.Sumak;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -70,6 +91,10 @@ public class RebotinolFactoryImpl extends EFactoryImpl implements RebotinolFacto
       case RebotinolPackage.EMPTY_INSTRUCTION: return createEmptyInstruction();
       case RebotinolPackage.NON_EMPTY_INSTRUCTION: return createNonEmptyInstruction();
       case RebotinolPackage.COMPLEX_INSTRUCTION: return createComplexInstruction();
+      case RebotinolPackage.NUMBER: return createNumber();
+      case RebotinolPackage.POSITIVE_NUMBER: return createPositiveNumber();
+      case RebotinolPackage.INTEGER: return createInteger();
+      case RebotinolPackage.NEGATIVE_NUMBER: return createNegativeNumber();
       case RebotinolPackage.SUMAK: return createSumak();
       case RebotinolPackage.MULTK: return createMultk();
       case RebotinolPackage.IGUAL: return createIgual();
@@ -81,6 +106,7 @@ public class RebotinolFactoryImpl extends EFactoryImpl implements RebotinolFacto
       case RebotinolPackage.MENOR: return createMenor();
       case RebotinolPackage.MENORK: return createMenork();
       case RebotinolPackage.REPETIRN: return createRepetirn();
+      case RebotinolPackage.FRACTION: return createFraction();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -173,6 +199,50 @@ public class RebotinolFactoryImpl extends EFactoryImpl implements RebotinolFacto
   {
     ComplexInstructionImpl complexInstruction = new ComplexInstructionImpl();
     return complexInstruction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public edu.upb.lp.rebotinol.Number createNumber()
+  {
+    NumberImpl number = new NumberImpl();
+    return number;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PositiveNumber createPositiveNumber()
+  {
+    PositiveNumberImpl positiveNumber = new PositiveNumberImpl();
+    return positiveNumber;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public edu.upb.lp.rebotinol.Integer createInteger()
+  {
+    IntegerImpl integer = new IntegerImpl();
+    return integer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NegativeNumber createNegativeNumber()
+  {
+    NegativeNumberImpl negativeNumber = new NegativeNumberImpl();
+    return negativeNumber;
   }
 
   /**
@@ -294,6 +364,17 @@ public class RebotinolFactoryImpl extends EFactoryImpl implements RebotinolFacto
   {
     RepetirnImpl repetirn = new RepetirnImpl();
     return repetirn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Fraction createFraction()
+  {
+    FractionImpl fraction = new FractionImpl();
+    return fraction;
   }
 
   /**

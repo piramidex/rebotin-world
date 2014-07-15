@@ -8,6 +8,7 @@ import edu.upb.lp.reboConf.Matrix
 import edu.upb.lp.reboConf.ReboConfPackage
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.validation.Check
+import edu.upb.lp.reboConf.Fraction
 
 /**
  * Custom validation rules. 
@@ -25,7 +26,7 @@ class ReboConfValidator extends AbstractReboConfValidator {
 		if (lineSize != firstSize) {
 			error(
 				"Todas las filas de una matriz deben tener el mismo tamaño. Esta fila tiene " + line.els.size +
-					" elementos, mientras que la primera linea tiene " + firstSize + " elementos",
+					" elementos, mientras que la primera fila tiene " + firstSize + " elementos",
 				ReboConfPackage.Literals.LINE__ELS);
 		}
 	}
@@ -37,5 +38,14 @@ class ReboConfValidator extends AbstractReboConfValidator {
 		}
 		val mat = container as Matrix;
 		return mat.lines.get(0).els.size;
+	}
+	
+	@Check
+	def checkFractionsDenominators(Fraction fr) {
+		if (fr.denominator == 0) {
+			error (
+				"Una fracción no puede tener un denominador nulo",
+				ReboConfPackage.Literals.FRACTION__DENOMINATOR);
+		}
 	}
 }

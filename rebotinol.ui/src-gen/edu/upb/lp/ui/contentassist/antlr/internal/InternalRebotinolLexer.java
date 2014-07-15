@@ -27,7 +27,9 @@ public class InternalRebotinolLexer extends Lexer {
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__31=31;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -310,11 +312,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:23:7: ( 'IGUAL' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:23:9: 'IGUAL'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:23:7: ( '/' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:23:9: '/'
             {
-            match("IGUAL"); 
-
+            match('/'); 
 
             }
 
@@ -331,10 +332,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:24:7: ( '{' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:24:9: '{'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:24:7: ( '-' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:24:9: '-'
             {
-            match('{'); 
+            match('-'); 
 
             }
 
@@ -351,10 +352,11 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:25:7: ( '}' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:25:9: '}'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:25:7: ( 'IGUAL' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:25:9: 'IGUAL'
             {
-            match('}'); 
+            match("IGUAL"); 
+
 
             }
 
@@ -371,11 +373,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:26:7: ( 'DIFER' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:26:9: 'DIFER'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:26:7: ( '{' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:26:9: '{'
             {
-            match("DIFER"); 
-
+            match('{'); 
 
             }
 
@@ -392,11 +393,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:27:7: ( 'MAYOR' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:27:9: 'MAYOR'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:27:7: ( '}' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:27:9: '}'
             {
-            match("MAYOR"); 
-
+            match('}'); 
 
             }
 
@@ -413,10 +413,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:28:7: ( 'MENOR' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:28:9: 'MENOR'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:28:7: ( 'DIFER' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:28:9: 'DIFER'
             {
-            match("MENOR"); 
+            match("DIFER"); 
 
 
             }
@@ -434,10 +434,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:29:7: ( 'REP' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:29:9: 'REP'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:29:7: ( 'MAYOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:29:9: 'MAYOR'
             {
-            match("REP"); 
+            match("MAYOR"); 
 
 
             }
@@ -450,15 +450,57 @@ public class InternalRebotinolLexer extends Lexer {
     }
     // $ANTLR end "T__29"
 
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
+        try {
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:30:7: ( 'MENOR' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:30:9: 'MENOR'
+            {
+            match("MENOR"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__30"
+
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
+        try {
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:31:7: ( 'REP' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:31:9: 'REP'
+            {
+            match("REP"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__31"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2521:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2521:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2920:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2920:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2521:11: ( '^' )?
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2920:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -467,7 +509,7 @@ public class InternalRebotinolLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2521:11: '^'
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2920:11: '^'
                     {
                     match('^'); 
 
@@ -485,7 +527,7 @@ public class InternalRebotinolLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2521:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2920:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -534,10 +576,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2523:10: ( ( '0' .. '9' )+ )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2523:12: ( '0' .. '9' )+
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2922:10: ( ( '0' .. '9' )+ )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2922:12: ( '0' .. '9' )+
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2523:12: ( '0' .. '9' )+
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2922:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -551,7 +593,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2523:13: '0' .. '9'
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2922:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -583,10 +625,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -604,10 +646,10 @@ public class InternalRebotinolLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -623,7 +665,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -639,7 +681,7 @@ public class InternalRebotinolLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -664,10 +706,10 @@ public class InternalRebotinolLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -683,7 +725,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -699,7 +741,7 @@ public class InternalRebotinolLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2525:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2924:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -742,12 +784,12 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2527:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2527:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2926:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2926:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2527:24: ( options {greedy=false; } : . )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2926:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -772,7 +814,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2527:52: .
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2926:52: .
             	    {
             	    matchAny(); 
 
@@ -802,12 +844,12 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -820,7 +862,7 @@ public class InternalRebotinolLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -840,7 +882,7 @@ public class InternalRebotinolLexer extends Lexer {
                 }
             } while (true);
 
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:40: ( ( '\\r' )? '\\n' )?
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -849,9 +891,9 @@ public class InternalRebotinolLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:41: ( '\\r' )? '\\n'
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:41: ( '\\r' )? '\\n'
                     {
-                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:41: ( '\\r' )?
+                    // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -860,7 +902,7 @@ public class InternalRebotinolLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2529:41: '\\r'
+                            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2928:41: '\\r'
                             {
                             match('\r'); 
 
@@ -892,10 +934,10 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2531:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2531:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2930:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2930:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2531:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2930:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -949,8 +991,8 @@ public class InternalRebotinolLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2533:16: ( . )
-            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2533:18: .
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2932:16: ( . )
+            // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:2932:18: .
             {
             matchAny(); 
 
@@ -965,8 +1007,8 @@ public class InternalRebotinolLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=26;
+        // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=28;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1103,49 +1145,63 @@ public class InternalRebotinolLexer extends Lexer {
                 }
                 break;
             case 20 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:124: RULE_ID
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:124: T__30
+                {
+                mT__30(); 
+
+                }
+                break;
+            case 21 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:130: T__31
+                {
+                mT__31(); 
+
+                }
+                break;
+            case 22 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:136: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 21 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:132: RULE_INT
+            case 23 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:144: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 22 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:141: RULE_STRING
+            case 24 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:153: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 23 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:153: RULE_ML_COMMENT
+            case 25 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:165: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 24 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:169: RULE_SL_COMMENT
+            case 26 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:181: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 25 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:185: RULE_WS
+            case 27 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:197: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 26 :
-                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:193: RULE_ANY_OTHER
+            case 28 :
+                // ../rebotinol.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalRebotinol.g:1:205: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1159,133 +1215,137 @@ public class InternalRebotinolLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\6\24\2\uffff\1\24\1\21\2\uffff\3\21\2\uffff\2\24\1\uffff"+
-        "\14\24\2\uffff\1\24\5\uffff\1\71\1\24\1\73\2\24\1\76\1\77\10\24"+
-        "\1\110\1\uffff\1\24\1\uffff\2\24\2\uffff\1\114\1\24\1\116\3\24\1"+
-        "\122\1\24\1\uffff\1\124\1\125\1\126\1\uffff\1\127\1\uffff\1\130"+
-        "\1\131\1\24\1\uffff\1\133\6\uffff\1\135\3\uffff";
+        "\1\uffff\6\25\1\44\3\uffff\1\25\1\22\2\uffff\2\22\2\uffff\2\25\1"+
+        "\uffff\14\25\6\uffff\1\25\3\uffff\1\74\1\25\1\76\2\25\1\101\1\102"+
+        "\10\25\1\113\1\uffff\1\25\1\uffff\2\25\2\uffff\1\117\1\25\1\121"+
+        "\3\25\1\125\1\25\1\uffff\1\127\1\130\1\131\1\uffff\1\132\1\uffff"+
+        "\1\133\1\134\1\25\1\uffff\1\136\6\uffff\1\140\3\uffff";
     static final String DFA12_eofS =
-        "\136\uffff";
+        "\141\uffff";
     static final String DFA12_minS =
-        "\1\0\1\105\1\107\1\102\1\101\1\116\1\111\2\uffff\1\105\1\101\2\uffff"+
-        "\2\0\1\52\2\uffff\1\122\1\106\1\uffff\1\121\1\126\1\125\1\122\1"+
-        "\101\1\115\1\114\1\131\1\103\1\126\1\115\1\107\2\uffff\1\120\5\uffff"+
-        "\1\60\1\105\1\60\1\105\1\101\2\60\2\117\1\124\1\117\1\122\1\111"+
-        "\1\101\1\116\1\60\1\uffff\1\122\1\uffff\1\122\1\114\2\uffff\1\60"+
-        "\1\122\1\60\1\122\1\111\1\101\1\60\1\117\1\uffff\3\60\1\uffff\1"+
-        "\60\1\uffff\2\60\1\122\1\uffff\1\60\6\uffff\1\40\3\uffff";
+        "\1\0\1\105\1\107\1\102\1\101\1\116\1\111\1\52\3\uffff\1\105\1\101"+
+        "\2\uffff\2\0\2\uffff\1\122\1\106\1\uffff\1\121\1\126\1\125\1\122"+
+        "\1\101\1\115\1\114\1\131\1\103\1\126\1\115\1\107\6\uffff\1\120\3"+
+        "\uffff\1\60\1\105\1\60\1\105\1\101\2\60\2\117\1\124\1\117\1\122"+
+        "\1\111\1\101\1\116\1\60\1\uffff\1\122\1\uffff\1\122\1\114\2\uffff"+
+        "\1\60\1\122\1\60\1\122\1\111\1\101\1\60\1\117\1\uffff\3\60\1\uffff"+
+        "\1\60\1\uffff\2\60\1\122\1\uffff\1\60\6\uffff\1\40\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\111\1\132\1\122\1\125\1\123\1\125\2\uffff\1\105\1\172"+
-        "\2\uffff\2\uffff\1\57\2\uffff\1\122\1\106\1\uffff\1\121\1\126\1"+
-        "\125\1\122\1\101\1\116\1\114\1\131\1\103\1\126\1\115\1\107\2\uffff"+
-        "\1\120\5\uffff\1\172\1\105\1\172\1\105\1\101\2\172\2\117\1\124\1"+
+        "\1\uffff\1\111\1\132\1\122\1\125\1\123\1\125\1\57\3\uffff\1\105"+
+        "\1\172\2\uffff\2\uffff\2\uffff\1\122\1\106\1\uffff\1\121\1\126\1"+
+        "\125\1\122\1\101\1\116\1\114\1\131\1\103\1\126\1\115\1\107\6\uffff"+
+        "\1\120\3\uffff\1\172\1\105\1\172\1\105\1\101\2\172\2\117\1\124\1"+
         "\117\1\122\1\111\1\101\1\116\1\172\1\uffff\1\122\1\uffff\1\122\1"+
         "\114\2\uffff\1\172\1\122\1\172\1\122\1\111\1\101\1\172\1\117\1\uffff"+
         "\3\172\1\uffff\1\172\1\uffff\2\172\1\122\1\uffff\1\172\6\uffff\1"+
         "\172\3\uffff";
     static final String DFA12_acceptS =
-        "\7\uffff\1\16\1\17\2\uffff\1\24\1\25\3\uffff\1\31\1\32\2\uffff\1"+
-        "\24\14\uffff\1\16\1\17\1\uffff\1\25\1\26\1\27\1\30\1\31\20\uffff"+
-        "\1\1\1\uffff\1\2\2\uffff\1\3\1\4\10\uffff\1\23\3\uffff\1\5\1\uffff"+
-        "\1\11\3\uffff\1\7\1\uffff\1\20\1\12\1\15\1\22\1\21\1\6\1\uffff\1"+
-        "\10\1\14\1\13";
+        "\10\uffff\1\16\1\20\1\21\2\uffff\1\26\1\27\2\uffff\1\33\1\34\2\uffff"+
+        "\1\26\14\uffff\1\31\1\32\1\15\1\16\1\20\1\21\1\uffff\1\27\1\30\1"+
+        "\33\20\uffff\1\1\1\uffff\1\2\2\uffff\1\3\1\4\10\uffff\1\25\3\uffff"+
+        "\1\5\1\uffff\1\11\3\uffff\1\7\1\uffff\1\22\1\12\1\17\1\24\1\23\1"+
+        "\6\1\uffff\1\10\1\14\1\13";
     static final String DFA12_specialS =
-        "\1\0\14\uffff\1\2\1\1\117\uffff}>";
+        "\1\1\16\uffff\1\2\1\0\120\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\21\2\20\2\21\1\20\22\21\1\20\1\21\1\15\4\21\1\16\7\21\1"+
-            "\17\12\14\7\21\1\3\2\13\1\1\1\5\3\13\1\2\3\13\1\4\4\13\1\11"+
-            "\1\6\7\13\3\21\1\12\1\13\1\21\32\13\1\7\1\21\1\10\uff82\21",
-            "\1\22\3\uffff\1\23",
-            "\1\27\6\uffff\1\26\13\uffff\1\25",
-            "\1\31\17\uffff\1\30",
-            "\1\34\3\uffff\1\32\17\uffff\1\33",
-            "\1\36\4\uffff\1\35",
-            "\1\40\13\uffff\1\37",
+            "\11\22\2\21\2\22\1\21\22\22\1\21\1\22\1\17\4\22\1\20\5\22\1"+
+            "\10\1\22\1\7\12\16\7\22\1\3\2\15\1\1\1\5\3\15\1\2\3\15\1\4\4"+
+            "\15\1\13\1\6\7\15\3\22\1\14\1\15\1\22\32\15\1\11\1\22\1\12\uff82"+
+            "\22",
+            "\1\23\3\uffff\1\24",
+            "\1\30\6\uffff\1\27\13\uffff\1\26",
+            "\1\32\17\uffff\1\31",
+            "\1\35\3\uffff\1\33\17\uffff\1\34",
+            "\1\37\4\uffff\1\36",
+            "\1\41\13\uffff\1\40",
+            "\1\42\4\uffff\1\43",
             "",
             "",
-            "\1\43",
-            "\32\24\4\uffff\1\24\1\uffff\32\24",
+            "",
+            "\1\50",
+            "\32\25\4\uffff\1\25\1\uffff\32\25",
             "",
             "",
-            "\0\45",
-            "\0\45",
-            "\1\46\4\uffff\1\47",
+            "\0\52",
+            "\0\52",
             "",
             "",
-            "\1\51",
-            "\1\52",
-            "",
-            "\1\53",
             "\1\54",
             "\1\55",
+            "",
             "\1\56",
             "\1\57",
-            "\1\60\1\61",
+            "\1\60",
+            "\1\61",
             "\1\62",
-            "\1\63",
-            "\1\64",
+            "\1\63\1\64",
             "\1\65",
             "\1\66",
             "\1\67",
-            "",
-            "",
             "\1\70",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\1\71",
             "\1\72",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\1\74",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\73",
+            "",
+            "",
+            "",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "\1\75",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\1\77",
             "\1\100",
-            "\1\101",
-            "\1\102",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "\1\103",
             "\1\104",
             "\1\105",
             "\1\106",
             "\1\107",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "",
+            "\1\110",
             "\1\111",
-            "",
             "\1\112",
-            "\1\113",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "",
+            "\1\114",
             "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
             "\1\115",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\1\117",
+            "\1\116",
+            "",
+            "",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "\1\120",
-            "\1\121",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\1\122",
             "\1\123",
+            "\1\124",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\1\126",
             "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "\1\132",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
+            "\1\135",
             "",
-            "\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
-            "",
-            "",
+            "\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32\25",
             "",
             "",
             "",
             "",
-            "\1\134\17\uffff\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32"+
-            "\24",
+            "",
+            "",
+            "\1\137\17\uffff\12\25\7\uffff\32\25\4\uffff\1\25\1\uffff\32"+
+            "\25",
             "",
             "",
             ""
@@ -1321,13 +1381,23 @@ public class InternalRebotinolLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_16 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 42;}
+
+                        else s = 18;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1343,47 +1413,39 @@ public class InternalRebotinolLexer extends Lexer {
 
                         else if ( (LA12_0=='S') ) {s = 6;}
 
-                        else if ( (LA12_0=='{') ) {s = 7;}
+                        else if ( (LA12_0=='/') ) {s = 7;}
 
-                        else if ( (LA12_0=='}') ) {s = 8;}
+                        else if ( (LA12_0=='-') ) {s = 8;}
 
-                        else if ( (LA12_0=='R') ) {s = 9;}
+                        else if ( (LA12_0=='{') ) {s = 9;}
 
-                        else if ( (LA12_0=='^') ) {s = 10;}
+                        else if ( (LA12_0=='}') ) {s = 10;}
 
-                        else if ( ((LA12_0>='B' && LA12_0<='C')||(LA12_0>='F' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='L')||(LA12_0>='N' && LA12_0<='Q')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {s = 11;}
+                        else if ( (LA12_0=='R') ) {s = 11;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 12;}
+                        else if ( (LA12_0=='^') ) {s = 12;}
 
-                        else if ( (LA12_0=='\"') ) {s = 13;}
+                        else if ( ((LA12_0>='B' && LA12_0<='C')||(LA12_0>='F' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='L')||(LA12_0>='N' && LA12_0<='Q')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {s = 13;}
 
-                        else if ( (LA12_0=='\'') ) {s = 14;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 14;}
 
-                        else if ( (LA12_0=='/') ) {s = 15;}
+                        else if ( (LA12_0=='\"') ) {s = 15;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 16;}
+                        else if ( (LA12_0=='\'') ) {s = 16;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 17;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 17;}
 
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_14 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 37;}
-
-                        else s = 17;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<=',')||LA12_0=='.'||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 18;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_13 = input.LA(1);
+                        int LA12_15 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 37;}
+                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 42;}
 
-                        else s = 17;
+                        else s = 18;
 
                         if ( s>=0 ) return s;
                         break;

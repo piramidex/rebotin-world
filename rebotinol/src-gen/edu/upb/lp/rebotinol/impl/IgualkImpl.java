@@ -6,8 +6,10 @@ import edu.upb.lp.rebotinol.Igualk;
 import edu.upb.lp.rebotinol.RebotinolPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class IgualkImpl extends ComplexInstructionImpl implements Igualk
 {
   /**
-   * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The cached value of the '{@link #getVal() <em>Val</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVal()
    * @generated
    * @ordered
    */
-  protected static final int VAL_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVal()
-   * @generated
-   * @ordered
-   */
-  protected int val = VAL_EDEFAULT;
+  protected edu.upb.lp.rebotinol.Number val;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +64,7 @@ public class IgualkImpl extends ComplexInstructionImpl implements Igualk
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getVal()
+  public edu.upb.lp.rebotinol.Number getVal()
   {
     return val;
   }
@@ -82,12 +74,53 @@ public class IgualkImpl extends ComplexInstructionImpl implements Igualk
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(int newVal)
+  public NotificationChain basicSetVal(edu.upb.lp.rebotinol.Number newVal, NotificationChain msgs)
   {
-    int oldVal = val;
+    edu.upb.lp.rebotinol.Number oldVal = val;
     val = newVal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RebotinolPackage.IGUALK__VAL, oldVal, val));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RebotinolPackage.IGUALK__VAL, oldVal, newVal);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVal(edu.upb.lp.rebotinol.Number newVal)
+  {
+    if (newVal != val)
+    {
+      NotificationChain msgs = null;
+      if (val != null)
+        msgs = ((InternalEObject)val).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RebotinolPackage.IGUALK__VAL, null, msgs);
+      if (newVal != null)
+        msgs = ((InternalEObject)newVal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RebotinolPackage.IGUALK__VAL, null, msgs);
+      msgs = basicSetVal(newVal, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RebotinolPackage.IGUALK__VAL, newVal, newVal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case RebotinolPackage.IGUALK__VAL:
+        return basicSetVal(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,7 +150,7 @@ public class IgualkImpl extends ComplexInstructionImpl implements Igualk
     switch (featureID)
     {
       case RebotinolPackage.IGUALK__VAL:
-        setVal((Integer)newValue);
+        setVal((edu.upb.lp.rebotinol.Number)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +167,7 @@ public class IgualkImpl extends ComplexInstructionImpl implements Igualk
     switch (featureID)
     {
       case RebotinolPackage.IGUALK__VAL:
-        setVal(VAL_EDEFAULT);
+        setVal((edu.upb.lp.rebotinol.Number)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +184,9 @@ public class IgualkImpl extends ComplexInstructionImpl implements Igualk
     switch (featureID)
     {
       case RebotinolPackage.IGUALK__VAL:
-        return val != VAL_EDEFAULT;
+        return val != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (val: ");
-    result.append(val);
-    result.append(')');
-    return result.toString();
   }
 
 } //IgualkImpl

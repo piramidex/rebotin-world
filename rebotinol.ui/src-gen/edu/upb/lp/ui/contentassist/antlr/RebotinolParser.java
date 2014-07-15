@@ -40,7 +40,11 @@ public class RebotinolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
 					put(grammarAccess.getNonEmptyInstructionAccess().getAlternatives(), "rule__NonEmptyInstruction__Alternatives");
 					put(grammarAccess.getComplexInstructionAccess().getAlternatives(), "rule__ComplexInstruction__Alternatives");
+					put(grammarAccess.getNumberAccess().getAlternatives(), "rule__Number__Alternatives");
 					put(grammarAccess.getEmptyInstructionTypeAccess().getAlternatives(), "rule__EmptyInstructionType__Alternatives");
+					put(grammarAccess.getPositiveNumberAccess().getGroup(), "rule__PositiveNumber__Group__0");
+					put(grammarAccess.getPositiveNumberAccess().getGroup_1(), "rule__PositiveNumber__Group_1__0");
+					put(grammarAccess.getNegativeNumberAccess().getGroup(), "rule__NegativeNumber__Group__0");
 					put(grammarAccess.getSumakAccess().getGroup(), "rule__Sumak__Group__0");
 					put(grammarAccess.getMultkAccess().getGroup(), "rule__Multk__Group__0");
 					put(grammarAccess.getIgualAccess().getGroup(), "rule__Igual__Group__0");
@@ -54,6 +58,9 @@ public class RebotinolParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRepetirnAccess().getGroup(), "rule__Repetirn__Group__0");
 					put(grammarAccess.getRebotinolProgramAccess().getInstructionsAssignment(), "rule__RebotinolProgram__InstructionsAssignment");
 					put(grammarAccess.getEmptyInstructionAccess().getTypeAssignment(), "rule__EmptyInstruction__TypeAssignment");
+					put(grammarAccess.getPositiveNumberAccess().getDenominatorAssignment_1_2(), "rule__PositiveNumber__DenominatorAssignment_1_2");
+					put(grammarAccess.getIntegerAccess().getValueAssignment(), "rule__Integer__ValueAssignment");
+					put(grammarAccess.getNegativeNumberAccess().getValAssignment_1(), "rule__NegativeNumber__ValAssignment_1");
 					put(grammarAccess.getSumakAccess().getValAssignment_1(), "rule__Sumak__ValAssignment_1");
 					put(grammarAccess.getMultkAccess().getValAssignment_1(), "rule__Multk__ValAssignment_1");
 					put(grammarAccess.getIgualAccess().getSubInstructionsAssignment_2(), "rule__Igual__SubInstructionsAssignment_2");

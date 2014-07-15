@@ -68,6 +68,42 @@ public interface RebotinolFactory extends EFactory
   ComplexInstruction createComplexInstruction();
 
   /**
+   * Returns a new object of class '<em>Number</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number</em>'.
+   * @generated
+   */
+  Number createNumber();
+
+  /**
+   * Returns a new object of class '<em>Positive Number</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Positive Number</em>'.
+   * @generated
+   */
+  PositiveNumber createPositiveNumber();
+
+  /**
+   * Returns a new object of class '<em>Integer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer</em>'.
+   * @generated
+   */
+  Integer createInteger();
+
+  /**
+   * Returns a new object of class '<em>Negative Number</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Negative Number</em>'.
+   * @generated
+   */
+  NegativeNumber createNegativeNumber();
+
+  /**
    * Returns a new object of class '<em>Sumak</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -165,6 +201,15 @@ public interface RebotinolFactory extends EFactory
    * @generated
    */
   Repetirn createRepetirn();
+
+  /**
+   * Returns a new object of class '<em>Fraction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fraction</em>'.
+   * @generated
+   */
+  Fraction createFraction();
 
   /**
    * Returns the package supported by this factory.

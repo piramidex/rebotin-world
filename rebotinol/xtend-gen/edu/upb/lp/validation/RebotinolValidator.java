@@ -3,7 +3,11 @@
  */
 package edu.upb.lp.validation;
 
+import com.google.common.base.Objects;
+import edu.upb.lp.rebotinol.Fraction;
+import edu.upb.lp.rebotinol.RebotinolPackage.Literals;
 import edu.upb.lp.validation.AbstractRebotinolValidator;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * Custom validation rules.
@@ -12,4 +16,14 @@ import edu.upb.lp.validation.AbstractRebotinolValidator;
  */
 @SuppressWarnings("all")
 public class RebotinolValidator extends AbstractRebotinolValidator {
+  @Check
+  public void checkFractionsDenominators(final Fraction fr) {
+    edu.upb.lp.rebotinol.Integer _denominator = fr.getDenominator();
+    boolean _equals = Objects.equal(_denominator, Integer.valueOf(0));
+    if (_equals) {
+      this.error(
+        "Una fracción no puede tener un denominador nulo", 
+        Literals.FRACTION__DENOMINATOR);
+    }
+  }
 }

@@ -3,7 +3,9 @@
  */
 package edu.upb.lp.validation;
 
+import com.google.common.base.Objects;
 import edu.upb.lp.reboConf.Element;
+import edu.upb.lp.reboConf.Fraction;
 import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
 import edu.upb.lp.reboConf.ReboConfPackage.Literals;
@@ -32,7 +34,7 @@ public class ReboConfValidator extends AbstractReboConfValidator {
       int _size = _els_1.size();
       String _plus = ("Todas las filas de una matriz deben tener el mismo tamaño. Esta fila tiene " + Integer.valueOf(_size));
       String _plus_1 = (_plus + 
-        " elementos, mientras que la primera linea tiene ");
+        " elementos, mientras que la primera fila tiene ");
       String _plus_2 = (_plus_1 + Integer.valueOf(firstSize));
       String _plus_3 = (_plus_2 + " elementos");
       this.error(_plus_3, 
@@ -55,5 +57,16 @@ public class ReboConfValidator extends AbstractReboConfValidator {
     Line _get = _lines.get(0);
     EList<Element> _els = _get.getEls();
     return _els.size();
+  }
+  
+  @Check
+  public void checkFractionsDenominators(final Fraction fr) {
+    edu.upb.lp.reboConf.Integer _denominator = fr.getDenominator();
+    boolean _equals = Objects.equal(_denominator, Integer.valueOf(0));
+    if (_equals) {
+      this.error(
+        "Una fracción no puede tener un denominador nulo", 
+        Literals.FRACTION__DENOMINATOR);
+    }
   }
 }

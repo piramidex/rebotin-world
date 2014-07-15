@@ -2,7 +2,26 @@
  */
 package edu.upb.lp.rebotinol.util;
 
-import edu.upb.lp.rebotinol.*;
+import edu.upb.lp.rebotinol.ComplexInstruction;
+import edu.upb.lp.rebotinol.Difer;
+import edu.upb.lp.rebotinol.Diferk;
+import edu.upb.lp.rebotinol.EmptyInstruction;
+import edu.upb.lp.rebotinol.Fraction;
+import edu.upb.lp.rebotinol.Igual;
+import edu.upb.lp.rebotinol.Igualk;
+import edu.upb.lp.rebotinol.Instruction;
+import edu.upb.lp.rebotinol.Mayor;
+import edu.upb.lp.rebotinol.Mayork;
+import edu.upb.lp.rebotinol.Menor;
+import edu.upb.lp.rebotinol.Menork;
+import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
+import edu.upb.lp.rebotinol.NonEmptyInstruction;
+import edu.upb.lp.rebotinol.PositiveNumber;
+import edu.upb.lp.rebotinol.RebotinolPackage;
+import edu.upb.lp.rebotinol.RebotinolProgram;
+import edu.upb.lp.rebotinol.Repetirn;
+import edu.upb.lp.rebotinol.Sumak;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -100,6 +119,26 @@ public class RebotinolAdapterFactory extends AdapterFactoryImpl
         return createComplexInstructionAdapter();
       }
       @Override
+      public Adapter caseNumber(edu.upb.lp.rebotinol.Number object)
+      {
+        return createNumberAdapter();
+      }
+      @Override
+      public Adapter casePositiveNumber(PositiveNumber object)
+      {
+        return createPositiveNumberAdapter();
+      }
+      @Override
+      public Adapter caseInteger(edu.upb.lp.rebotinol.Integer object)
+      {
+        return createIntegerAdapter();
+      }
+      @Override
+      public Adapter caseNegativeNumber(NegativeNumber object)
+      {
+        return createNegativeNumberAdapter();
+      }
+      @Override
       public Adapter caseSumak(Sumak object)
       {
         return createSumakAdapter();
@@ -153,6 +192,11 @@ public class RebotinolAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRepetirn(Repetirn object)
       {
         return createRepetirnAdapter();
+      }
+      @Override
+      public Adapter caseFraction(Fraction object)
+      {
+        return createFractionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -247,6 +291,66 @@ public class RebotinolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComplexInstructionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.rebotinol.Number <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.rebotinol.Number
+   * @generated
+   */
+  public Adapter createNumberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.rebotinol.PositiveNumber <em>Positive Number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.rebotinol.PositiveNumber
+   * @generated
+   */
+  public Adapter createPositiveNumberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.rebotinol.Integer <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.rebotinol.Integer
+   * @generated
+   */
+  public Adapter createIntegerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.rebotinol.NegativeNumber <em>Negative Number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.rebotinol.NegativeNumber
+   * @generated
+   */
+  public Adapter createNegativeNumberAdapter()
   {
     return null;
   }
@@ -412,6 +516,21 @@ public class RebotinolAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRepetirnAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.rebotinol.Fraction <em>Fraction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.rebotinol.Fraction
+   * @generated
+   */
+  public Adapter createFractionAdapter()
   {
     return null;
   }

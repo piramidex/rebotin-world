@@ -68,6 +68,18 @@ public class ExecutionPanel implements RebotinolExecutionObserver {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void breakpointSet() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void breakpointRemoved() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

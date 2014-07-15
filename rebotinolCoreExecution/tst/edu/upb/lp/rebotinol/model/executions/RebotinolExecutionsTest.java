@@ -27,6 +27,7 @@ public class RebotinolExecutionsTest {
 	// Common numbers
 	Fraction mone = new Fraction(-1);
 	Fraction zero = new Fraction(0);
+	Fraction one= new Fraction(1);
 	Fraction two = new Fraction(2);
 	Fraction three = new Fraction(3);
 	Fraction nine = new Fraction(9);
@@ -145,9 +146,9 @@ public class RebotinolExecutionsTest {
 		InverExecution inver = new InverExecution();
 		MemoExecution memo = new MemoExecution();
 		MultExecution mult = new MultExecution();
-		MultkExecution multk = new MultkExecution(3);
+		MultkExecution multk = new MultkExecution(three);
 		SumaExecution suma = new SumaExecution();
-		SumakExecution sumak = new SumakExecution(3);
+		SumakExecution sumak = new SumakExecution(three);
 		SignoExecution signo = new SignoExecution();
 		EscriExecution escri = new EscriExecution();
 
@@ -197,7 +198,7 @@ public class RebotinolExecutionsTest {
 	@Test(expected = RebotinolExecutionException.class)
 	public void testSumakException() throws RebotinolExecutionException,
 			RebotinolFlowException {
-		SumakExecution suma = new SumakExecution(2);
+		SumakExecution suma = new SumakExecution(two);
 		suma.step(house);
 	}
 
@@ -211,7 +212,7 @@ public class RebotinolExecutionsTest {
 	@Test(expected = RebotinolExecutionException.class)
 	public void testMultkException() throws RebotinolExecutionException,
 			RebotinolFlowException {
-		MultkExecution mult = new MultkExecution(2);
+		MultkExecution mult = new MultkExecution(two);
 		mult.step(house);
 	}
 
@@ -247,7 +248,6 @@ public class RebotinolExecutionsTest {
 				((MatrixMail) house.getMail()).getContent());
 	}
 
-	// TODO
 	@Test
 	public void testConditionalsPositive() throws RebotinolExecutionException,
 			RebotinolFlowException {
@@ -257,39 +257,39 @@ public class RebotinolExecutionsTest {
 		MemoExecution memo = new MemoExecution();
 		// Mayor -1,, memo: 0
 		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		MayorkExecution mayork = new MayorkExecution(subExecutions, new Fraction(-1));
 		// Menor 2, memo: 1
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		MenorkExecution menork = new MenorkExecution(subExecutions, two);
 		// Igual 2, memo: 2
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		IgualkExecution igualk = new IgualkExecution(subExecutions, two);
 		// Difer 2, memo: 3
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		DiferkExecution diferk = new DiferkExecution(subExecutions, zero);
 		// Der, memo: 4
 		DerExecution der = new DerExecution();
 		// Mayor, memo: 4
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		MayorExecution mayor = new MayorExecution(subExecutions);
 		// Der, memo: 5
 		DerExecution der2 = new DerExecution();
 		// Menor, memo: 5
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		MenorExecution menor = new MenorExecution(subExecutions);
 		// Igual, memo: 6
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		IgualExecution igual = new IgualExecution(subExecutions);
 		// Difer, memo: 7
 		subExecutions = new ArrayList<RebotinolInstructionExecution>();
-		subExecutions.add(new SumakExecution(1));
+		subExecutions.add(new SumakExecution(one));
 		DiferExecution difer = new DiferExecution(subExecutions);
 		//Program
 		List<RebotinolInstructionExecution> executions = new ArrayList<RebotinolInstructionExecution>();

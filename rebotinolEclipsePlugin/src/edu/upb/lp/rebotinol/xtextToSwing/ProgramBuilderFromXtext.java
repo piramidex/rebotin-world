@@ -3,6 +3,7 @@ package edu.upb.lp.rebotinol.xtextToSwing;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.math3.fraction.Fraction;
 import org.eclipse.emf.ecore.EObject;
 
 import edu.upb.lp.rebotinol.ComplexInstruction;
@@ -17,6 +18,7 @@ import edu.upb.lp.rebotinol.Mayork;
 import edu.upb.lp.rebotinol.Menor;
 import edu.upb.lp.rebotinol.Menork;
 import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
 import edu.upb.lp.rebotinol.NonEmptyInstruction;
 import edu.upb.lp.rebotinol.RebotinolProgram;
 import edu.upb.lp.rebotinol.Repetirn;
@@ -60,6 +62,7 @@ import edu.upb.lp.rebotinol.util.RebotinolSwitch;
  */
 public class ProgramBuilderFromXtext {
 	private static InnerBuilder builder = new InnerBuilder();
+	private static NumbersBuilder numbers = new NumbersBuilder();
 
 	/**
 	 * Build a sequential execution from a whole rebotinol program.
@@ -67,7 +70,8 @@ public class ProgramBuilderFromXtext {
 	 * @param prog
 	 *            The program on which we are willing to build an execution.
 	 * @return The execution built.
-	 * @throws RebotinolFatalException If something went very bad
+	 * @throws RebotinolFatalException
+	 *             If something went very bad
 	 */
 	public static SequentialInstructionExecution buildProgram(
 			RebotinolProgram prog) throws RebotinolFatalException {
@@ -81,23 +85,26 @@ public class ProgramBuilderFromXtext {
 	 * @param instr
 	 *            The instruction on which we are building the execution.
 	 * @return The execution built.
-	 * @throws RebotinolFatalException If something went very bad.
+	 * @throws RebotinolFatalException
+	 *             If something went very bad.
 	 */
-	public static RebotinolInstructionExecution buildExecution(Instruction instr) throws RebotinolFatalException {
+	public static RebotinolInstructionExecution buildExecution(Instruction instr)
+			throws RebotinolFatalException {
 		return builder.build(instr);
 	}
 
 	private static class InnerBuilder extends
 			RebotinolSwitch<RebotinolInstructionExecution> {
-		
-		public RebotinolInstructionExecution build(EObject obj) throws RebotinolFatalException {
+
+		public RebotinolInstructionExecution build(EObject obj)
+				throws RebotinolFatalException {
 			try {
 				return doSwitch(obj);
 			} catch (Exception e) {
 				throw new RebotinolFatalException(e.getMessage());
 			}
 		}
-		
+
 		@Override
 		public RebotinolInstructionExecution caseRebotinolProgram(
 				RebotinolProgram program) {
@@ -109,8 +116,8 @@ public class ProgramBuilderFromXtext {
 					throw new IllegalStateException(e.getMessage());
 				}
 			}
-			SequentialInstructionExecution exec = 
-					new edu.upb.lp.rebotinol.model.executions.RebotinolProgram(executions);
+			SequentialInstructionExecution exec = new edu.upb.lp.rebotinol.model.executions.RebotinolProgram(
+					executions);
 			return exec;
 		}
 
@@ -170,12 +177,12 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseSumak(Sumak instr) {
-			return new SumakExecution(instr.getVal());
+			return new SumakExecution(numbers.toFraction(instr.getVal()));
 		}
 
 		@Override
 		public RebotinolInstructionExecution caseMultk(Multk instr) {
-			return new MultkExecution(instr.getVal());
+			return new MultkExecution(numbers.toFraction(instr.getVal()));
 		}
 
 		private List<RebotinolInstructionExecution> getSubExecutions(
@@ -198,7 +205,8 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseIgualk(Igualk instr) {
-			return new IgualkExecution(getSubExecutions(instr), instr.getVal());
+			return new IgualkExecution(getSubExecutions(instr),
+					numbers.toFraction(instr.getVal()));
 		}
 
 		@Override
@@ -208,7 +216,8 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseDiferk(Diferk instr) {
-			return new DiferkExecution(getSubExecutions(instr), instr.getVal());
+			return new DiferkExecution(getSubExecutions(instr),
+					numbers.toFraction(instr.getVal()));
 		}
 
 		@Override
@@ -218,7 +227,8 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseMayork(Mayork instr) {
-			return new MayorkExecution(getSubExecutions(instr), instr.getVal());
+			return new MayorkExecution(getSubExecutions(instr),
+					numbers.toFraction(instr.getVal()));
 		}
 
 		@Override
@@ -228,16 +238,47 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseMenork(Menork instr) {
-			return new MenorkExecution(getSubExecutions(instr), instr.getVal());
+			return new MenorkExecution(getSubExecutions(instr),
+					numbers.toFraction(instr.getVal()));
 		}
 
 		@Override
 		public RebotinolInstructionExecution caseRepetirn(Repetirn instr) {
 			List<RebotinolInstructionExecution> subExecutions = getSubExecutions(instr);
-			for (int i=0; i<instr.getVal(); i++) {
+			for (int i = 0; i < instr.getVal(); i++) {
 				subExecutions.addAll(getSubExecutions(instr));
 			}
-			return new RepExecution(subExecutions, instr.getSubInstructions().size());
+			return new RepExecution(subExecutions, instr.getSubInstructions()
+					.size());
+		}
+	}
+
+	private static class NumbersBuilder extends RebotinolSwitch<Fraction> {
+		public Fraction toFraction(edu.upb.lp.rebotinol.Number n) {
+			Fraction res = doSwitch(n);
+			if (res == null) {
+				throw new RuntimeException(
+						"Fatal! Trying to convert a number which is not an instance of the class Number");
+			}
+			return res;
+		}
+
+		@Override
+		public Fraction caseInteger(edu.upb.lp.rebotinol.Integer i) {
+			return new Fraction(i.getValue());
+		}
+
+		@Override
+		public Fraction caseFraction(edu.upb.lp.rebotinol.Fraction fr) {
+			return new Fraction(fr.getNumerator().getValue(), fr
+					.getDenominator().getValue());
+		}
+
+		@Override
+		public Fraction caseNegativeNumber(NegativeNumber n) {
+			Fraction res = doSwitch(n.getVal());
+			res.negate();
+			return res;
 		}
 	}
 }

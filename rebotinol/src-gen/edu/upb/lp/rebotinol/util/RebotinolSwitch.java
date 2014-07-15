@@ -2,7 +2,26 @@
  */
 package edu.upb.lp.rebotinol.util;
 
-import edu.upb.lp.rebotinol.*;
+import edu.upb.lp.rebotinol.ComplexInstruction;
+import edu.upb.lp.rebotinol.Difer;
+import edu.upb.lp.rebotinol.Diferk;
+import edu.upb.lp.rebotinol.EmptyInstruction;
+import edu.upb.lp.rebotinol.Fraction;
+import edu.upb.lp.rebotinol.Igual;
+import edu.upb.lp.rebotinol.Igualk;
+import edu.upb.lp.rebotinol.Instruction;
+import edu.upb.lp.rebotinol.Mayor;
+import edu.upb.lp.rebotinol.Mayork;
+import edu.upb.lp.rebotinol.Menor;
+import edu.upb.lp.rebotinol.Menork;
+import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
+import edu.upb.lp.rebotinol.NonEmptyInstruction;
+import edu.upb.lp.rebotinol.PositiveNumber;
+import edu.upb.lp.rebotinol.RebotinolPackage;
+import edu.upb.lp.rebotinol.RebotinolProgram;
+import edu.upb.lp.rebotinol.Repetirn;
+import edu.upb.lp.rebotinol.Sumak;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -108,6 +127,38 @@ public class RebotinolSwitch<T> extends Switch<T>
         T result = caseComplexInstruction(complexInstruction);
         if (result == null) result = caseNonEmptyInstruction(complexInstruction);
         if (result == null) result = caseInstruction(complexInstruction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RebotinolPackage.NUMBER:
+      {
+        edu.upb.lp.rebotinol.Number number = (edu.upb.lp.rebotinol.Number)theEObject;
+        T result = caseNumber(number);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RebotinolPackage.POSITIVE_NUMBER:
+      {
+        PositiveNumber positiveNumber = (PositiveNumber)theEObject;
+        T result = casePositiveNumber(positiveNumber);
+        if (result == null) result = caseNumber(positiveNumber);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RebotinolPackage.INTEGER:
+      {
+        edu.upb.lp.rebotinol.Integer integer = (edu.upb.lp.rebotinol.Integer)theEObject;
+        T result = caseInteger(integer);
+        if (result == null) result = casePositiveNumber(integer);
+        if (result == null) result = caseNumber(integer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RebotinolPackage.NEGATIVE_NUMBER:
+      {
+        NegativeNumber negativeNumber = (NegativeNumber)theEObject;
+        T result = caseNegativeNumber(negativeNumber);
+        if (result == null) result = caseNumber(negativeNumber);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -219,6 +270,15 @@ public class RebotinolSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RebotinolPackage.FRACTION:
+      {
+        Fraction fraction = (Fraction)theEObject;
+        T result = caseFraction(fraction);
+        if (result == null) result = casePositiveNumber(fraction);
+        if (result == null) result = caseNumber(fraction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -299,6 +359,70 @@ public class RebotinolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComplexInstruction(ComplexInstruction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumber(edu.upb.lp.rebotinol.Number object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Positive Number</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Positive Number</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePositiveNumber(PositiveNumber object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Integer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Integer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteger(edu.upb.lp.rebotinol.Integer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Negative Number</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Negative Number</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNegativeNumber(NegativeNumber object)
   {
     return null;
   }
@@ -475,6 +599,22 @@ public class RebotinolSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRepetirn(Repetirn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Fraction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Fraction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFraction(Fraction object)
   {
     return null;
   }

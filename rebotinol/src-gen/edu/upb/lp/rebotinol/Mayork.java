@@ -22,29 +22,29 @@ package edu.upb.lp.rebotinol;
 public interface Mayork extends ComplexInstruction
 {
   /**
-   * Returns the value of the '<em><b>Val</b></em>' attribute.
+   * Returns the value of the '<em><b>Val</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Val</em>' attribute isn't clear,
+   * If the meaning of the '<em>Val</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(int)
+   * @return the value of the '<em>Val</em>' containment reference.
+   * @see #setVal(edu.upb.lp.rebotinol.Number)
    * @see edu.upb.lp.rebotinol.RebotinolPackage#getMayork_Val()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  int getVal();
+  edu.upb.lp.rebotinol.Number getVal();
 
   /**
-   * Sets the value of the '{@link edu.upb.lp.rebotinol.Mayork#getVal <em>Val</em>}' attribute.
+   * Sets the value of the '{@link edu.upb.lp.rebotinol.Mayork#getVal <em>Val</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Val</em>' attribute.
+   * @param value the new value of the '<em>Val</em>' containment reference.
    * @see #getVal()
    * @generated
    */
-  void setVal(int value);
+  void setVal(edu.upb.lp.rebotinol.Number value);
 
 } // Mayork

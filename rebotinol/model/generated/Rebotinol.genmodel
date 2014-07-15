@@ -32,30 +32,42 @@
     <genClasses ecoreClass="Rebotinol.ecore#//ComplexInstruction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//ComplexInstruction/subInstructions"/>
     </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Number"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//PositiveNumber"/>
+    <genClasses ecoreClass="Rebotinol.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Integer/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//NegativeNumber">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//NegativeNumber/val"/>
+    </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Sumak">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Sumak/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Sumak/val"/>
     </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Multk">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Multk/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Multk/val"/>
     </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Igual"/>
     <genClasses ecoreClass="Rebotinol.ecore#//Igualk">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Igualk/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Igualk/val"/>
     </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Difer"/>
     <genClasses ecoreClass="Rebotinol.ecore#//Diferk">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Diferk/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Diferk/val"/>
     </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Mayor"/>
     <genClasses ecoreClass="Rebotinol.ecore#//Mayork">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Mayork/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Mayork/val"/>
     </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Menor"/>
     <genClasses ecoreClass="Rebotinol.ecore#//Menork">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Menork/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Menork/val"/>
     </genClasses>
     <genClasses ecoreClass="Rebotinol.ecore#//Repetirn">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rebotinol.ecore#//Repetirn/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Rebotinol.ecore#//Fraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Fraction/numerator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rebotinol.ecore#//Fraction/denominator"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

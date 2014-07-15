@@ -5,6 +5,7 @@ import com.google.inject.Provider;
 import edu.upb.lp.rebotinol.Difer;
 import edu.upb.lp.rebotinol.Diferk;
 import edu.upb.lp.rebotinol.EmptyInstruction;
+import edu.upb.lp.rebotinol.Fraction;
 import edu.upb.lp.rebotinol.Igual;
 import edu.upb.lp.rebotinol.Igualk;
 import edu.upb.lp.rebotinol.Mayor;
@@ -12,6 +13,7 @@ import edu.upb.lp.rebotinol.Mayork;
 import edu.upb.lp.rebotinol.Menor;
 import edu.upb.lp.rebotinol.Menork;
 import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
 import edu.upb.lp.rebotinol.RebotinolPackage;
 import edu.upb.lp.rebotinol.RebotinolProgram;
 import edu.upb.lp.rebotinol.Repetirn;
@@ -62,6 +64,13 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
+			case RebotinolPackage.FRACTION:
+				if(context == grammarAccess.getNumberRule() ||
+				   context == grammarAccess.getPositiveNumberRule()) {
+					sequence_PositiveNumber(context, (Fraction) semanticObject); 
+					return; 
+				}
+				else break;
 			case RebotinolPackage.IGUAL:
 				if(context == grammarAccess.getComplexInstructionRule() ||
 				   context == grammarAccess.getIgualRule() ||
@@ -77,6 +86,15 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 				   context == grammarAccess.getInstructionRule() ||
 				   context == grammarAccess.getNonEmptyInstructionRule()) {
 					sequence_Igualk(context, (Igualk) semanticObject); 
+					return; 
+				}
+				else break;
+			case RebotinolPackage.INTEGER:
+				if(context == grammarAccess.getIntegerRule() ||
+				   context == grammarAccess.getNumberRule() ||
+				   context == grammarAccess.getPositiveNumberRule() ||
+				   context == grammarAccess.getPositiveNumberAccess().getFractionNumeratorAction_1_0()) {
+					sequence_Integer(context, (edu.upb.lp.rebotinol.Integer) semanticObject); 
 					return; 
 				}
 				else break;
@@ -124,6 +142,13 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
+			case RebotinolPackage.NEGATIVE_NUMBER:
+				if(context == grammarAccess.getNegativeNumberRule() ||
+				   context == grammarAccess.getNumberRule()) {
+					sequence_NegativeNumber(context, (NegativeNumber) semanticObject); 
+					return; 
+				}
+				else break;
 			case RebotinolPackage.REBOTINOL_PROGRAM:
 				if(context == grammarAccess.getRebotinolProgramRule()) {
 					sequence_RebotinolProgram(context, (RebotinolProgram) semanticObject); 
@@ -162,7 +187,7 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (val=INT subInstructions+=Instruction+)
+	 *     (val=Number subInstructions+=Instruction+)
 	 */
 	protected void sequence_Diferk(EObject context, Diferk semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -196,10 +221,26 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (val=INT subInstructions+=Instruction+)
+	 *     (val=Number subInstructions+=Instruction+)
 	 */
 	protected void sequence_Igualk(EObject context, Igualk semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_Integer(EObject context, edu.upb.lp.rebotinol.Integer semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, RebotinolPackage.Literals.INTEGER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RebotinolPackage.Literals.INTEGER__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -214,7 +255,7 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (val=INT subInstructions+=Instruction+)
+	 *     (val=Number subInstructions+=Instruction+)
 	 */
 	protected void sequence_Mayork(EObject context, Mayork semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -232,7 +273,7 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (val=INT subInstructions+=Instruction+)
+	 *     (val=Number subInstructions+=Instruction+)
 	 */
 	protected void sequence_Menork(EObject context, Menork semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -241,7 +282,7 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     val=INT
+	 *     val=Number
 	 */
 	protected void sequence_Multk(EObject context, Multk semanticObject) {
 		if(errorAcceptor != null) {
@@ -250,7 +291,42 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getMultkAccess().getValINTTerminalRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getMultkAccess().getValNumberParserRuleCall_1_0(), semanticObject.getVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     val=PositiveNumber
+	 */
+	protected void sequence_NegativeNumber(EObject context, NegativeNumber semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, RebotinolPackage.Literals.NEGATIVE_NUMBER__VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RebotinolPackage.Literals.NEGATIVE_NUMBER__VAL));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNegativeNumberAccess().getValPositiveNumberParserRuleCall_1_0(), semanticObject.getVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (numerator=PositiveNumber_Fraction_1_0 denominator=Integer)
+	 */
+	protected void sequence_PositiveNumber(EObject context, Fraction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, RebotinolPackage.Literals.FRACTION__NUMERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RebotinolPackage.Literals.FRACTION__NUMERATOR));
+			if(transientValues.isValueTransient(semanticObject, RebotinolPackage.Literals.FRACTION__DENOMINATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RebotinolPackage.Literals.FRACTION__DENOMINATOR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPositiveNumberAccess().getFractionNumeratorAction_1_0(), semanticObject.getNumerator());
+		feeder.accept(grammarAccess.getPositiveNumberAccess().getDenominatorIntegerParserRuleCall_1_2_0(), semanticObject.getDenominator());
 		feeder.finish();
 	}
 	
@@ -275,7 +351,7 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     val=INT
+	 *     val=Number
 	 */
 	protected void sequence_Sumak(EObject context, Sumak semanticObject) {
 		if(errorAcceptor != null) {
@@ -284,7 +360,7 @@ public class RebotinolSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSumakAccess().getValINTTerminalRuleCall_1_0(), semanticObject.getVal());
+		feeder.accept(grammarAccess.getSumakAccess().getValNumberParserRuleCall_1_0(), semanticObject.getVal());
 		feeder.finish();
 	}
 }

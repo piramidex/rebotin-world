@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.model.executions;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 
@@ -10,13 +12,13 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
  * 
  */
 public class MultkExecution extends ChangeMemoryExecution {
-	private int _valueToAdd;
+	private Fraction _valueToAdd;
 	
 	/**
      * Constructor
      * @param value The value in this instruction
      */
-	public MultkExecution(int value) {
+	public MultkExecution(Fraction value) {
 		_valueToAdd = value;
 	}
 

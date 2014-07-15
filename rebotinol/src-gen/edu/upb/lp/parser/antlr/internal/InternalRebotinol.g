@@ -342,6 +342,186 @@ ruleComplexInstruction returns [EObject current=null]
 
 
 
+// Entry rule entryRuleNumber
+entryRuleNumber returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNumberRule()); }
+	 iv_ruleNumber=ruleNumber 
+	 { $current=$iv_ruleNumber.current; } 
+	 EOF 
+;
+
+// Rule Number
+ruleNumber returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getNumberAccess().getPositiveNumberParserRuleCall_0()); 
+    }
+    this_PositiveNumber_0=rulePositiveNumber
+    { 
+        $current = $this_PositiveNumber_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getNumberAccess().getNegativeNumberParserRuleCall_1()); 
+    }
+    this_NegativeNumber_1=ruleNegativeNumber
+    { 
+        $current = $this_NegativeNumber_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulePositiveNumber
+entryRulePositiveNumber returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPositiveNumberRule()); }
+	 iv_rulePositiveNumber=rulePositiveNumber 
+	 { $current=$iv_rulePositiveNumber.current; } 
+	 EOF 
+;
+
+// Rule PositiveNumber
+rulePositiveNumber returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getPositiveNumberAccess().getIntegerParserRuleCall_0()); 
+    }
+    this_Integer_0=ruleInteger
+    { 
+        $current = $this_Integer_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+((
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getPositiveNumberAccess().getFractionNumeratorAction_1_0(),
+            $current);
+    }
+)	otherlv_2='/' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getPositiveNumberAccess().getSolidusKeyword_1_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPositiveNumberAccess().getDenominatorIntegerParserRuleCall_1_2_0()); 
+	    }
+		lv_denominator_3_0=ruleInteger		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPositiveNumberRule());
+	        }
+       		set(
+       			$current, 
+       			"denominator",
+        		lv_denominator_3_0, 
+        		"Integer");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+;
+
+
+
+
+
+// Entry rule entryRuleInteger
+entryRuleInteger returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getIntegerRule()); }
+	 iv_ruleInteger=ruleInteger 
+	 { $current=$iv_ruleInteger.current; } 
+	 EOF 
+;
+
+// Rule Integer
+ruleInteger returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_INT
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getIntegerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"INT");
+	    }
+
+)
+)
+;
+
+
+
+
+
+// Entry rule entryRuleNegativeNumber
+entryRuleNegativeNumber returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNegativeNumberRule()); }
+	 iv_ruleNegativeNumber=ruleNegativeNumber 
+	 { $current=$iv_ruleNegativeNumber.current; } 
+	 EOF 
+;
+
+// Rule NegativeNumber
+ruleNegativeNumber returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='-' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getNegativeNumberAccess().getHyphenMinusKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNegativeNumberAccess().getValPositiveNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=rulePositiveNumber		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegativeNumberRule());
+	        }
+       		set(
+       			$current, 
+       			"val",
+        		lv_val_1_0, 
+        		"PositiveNumber");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleSumak
 entryRuleSumak returns [EObject current=null] 
 	:
@@ -362,19 +542,19 @@ ruleSumak returns [EObject current=null]
     }
 (
 (
-		lv_val_1_0=RULE_INT
-		{
-			newLeafNode(lv_val_1_0, grammarAccess.getSumakAccess().getValINTTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getSumakAccess().getValNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSumakRule());
+	            $current = createModelElementForParent(grammarAccess.getSumakRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"INT");
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -405,19 +585,19 @@ ruleMultk returns [EObject current=null]
     }
 (
 (
-		lv_val_1_0=RULE_INT
-		{
-			newLeafNode(lv_val_1_0, grammarAccess.getMultkAccess().getValINTTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMultkAccess().getValNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMultkRule());
+	            $current = createModelElementForParent(grammarAccess.getMultkRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"INT");
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -499,19 +679,19 @@ ruleIgualk returns [EObject current=null]
     }
 (
 (
-		lv_val_1_0=RULE_INT
-		{
-			newLeafNode(lv_val_1_0, grammarAccess.getIgualkAccess().getValINTTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getIgualkAccess().getValNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getIgualkRule());
+	            $current = createModelElementForParent(grammarAccess.getIgualkRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"INT");
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -619,19 +799,19 @@ ruleDiferk returns [EObject current=null]
     }
 (
 (
-		lv_val_1_0=RULE_INT
-		{
-			newLeafNode(lv_val_1_0, grammarAccess.getDiferkAccess().getValINTTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getDiferkAccess().getValNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDiferkRule());
+	            $current = createModelElementForParent(grammarAccess.getDiferkRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"INT");
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -739,19 +919,19 @@ ruleMayork returns [EObject current=null]
     }
 (
 (
-		lv_val_1_0=RULE_INT
-		{
-			newLeafNode(lv_val_1_0, grammarAccess.getMayorkAccess().getValINTTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMayorkAccess().getValNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMayorkRule());
+	            $current = createModelElementForParent(grammarAccess.getMayorkRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"INT");
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -859,19 +1039,19 @@ ruleMenork returns [EObject current=null]
     }
 (
 (
-		lv_val_1_0=RULE_INT
-		{
-			newLeafNode(lv_val_1_0, grammarAccess.getMenorkAccess().getValINTTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMenorkAccess().getValNumberParserRuleCall_1_0()); 
+	    }
+		lv_val_1_0=ruleNumber		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMenorkRule());
+	            $current = createModelElementForParent(grammarAccess.getMenorkRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"val",
         		lv_val_1_0, 
-        		"INT");
+        		"Number");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )

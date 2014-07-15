@@ -5,21 +5,21 @@ package edu.upb.lp.rebotinol;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Multk</b></em>'.
+ * A representation of the model object '<em><b>Negative Number</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.upb.lp.rebotinol.Multk#getVal <em>Val</em>}</li>
+ *   <li>{@link edu.upb.lp.rebotinol.NegativeNumber#getVal <em>Val</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.upb.lp.rebotinol.RebotinolPackage#getMultk()
+ * @see edu.upb.lp.rebotinol.RebotinolPackage#getNegativeNumber()
  * @model
  * @generated
  */
-public interface Multk extends NonEmptyInstruction
+public interface NegativeNumber extends edu.upb.lp.rebotinol.Number
 {
   /**
    * Returns the value of the '<em><b>Val</b></em>' containment reference.
@@ -30,21 +30,21 @@ public interface Multk extends NonEmptyInstruction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Val</em>' containment reference.
-   * @see #setVal(edu.upb.lp.rebotinol.Number)
-   * @see edu.upb.lp.rebotinol.RebotinolPackage#getMultk_Val()
+   * @see #setVal(PositiveNumber)
+   * @see edu.upb.lp.rebotinol.RebotinolPackage#getNegativeNumber_Val()
    * @model containment="true"
    * @generated
    */
-  edu.upb.lp.rebotinol.Number getVal();
+  PositiveNumber getVal();
 
   /**
-   * Sets the value of the '{@link edu.upb.lp.rebotinol.Multk#getVal <em>Val</em>}' containment reference.
+   * Sets the value of the '{@link edu.upb.lp.rebotinol.NegativeNumber#getVal <em>Val</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Val</em>' containment reference.
    * @see #getVal()
    * @generated
    */
-  void setVal(edu.upb.lp.rebotinol.Number value);
+  void setVal(PositiveNumber value);
 
-} // Multk
+} // NegativeNumber

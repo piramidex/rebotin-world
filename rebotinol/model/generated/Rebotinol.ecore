@@ -28,29 +28,50 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="subInstructions" upperBound="-1"
         eType="#//Instruction" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Number"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PositiveNumber" eSuperTypes="#//Number"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Integer" eSuperTypes="#//PositiveNumber">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NegativeNumber" eSuperTypes="#//Number">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//PositiveNumber"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sumak" eSuperTypes="#//NonEmptyInstruction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Number"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Multk" eSuperTypes="#//NonEmptyInstruction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Number"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Igual" eSuperTypes="#//ComplexInstruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Igualk" eSuperTypes="#//ComplexInstruction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Number"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Difer" eSuperTypes="#//ComplexInstruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Diferk" eSuperTypes="#//ComplexInstruction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Number"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mayor" eSuperTypes="#//ComplexInstruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Mayork" eSuperTypes="#//ComplexInstruction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Number"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Menor" eSuperTypes="#//ComplexInstruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Menork" eSuperTypes="#//ComplexInstruction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="val" eType="#//Number"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repetirn" eSuperTypes="#//ComplexInstruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="val" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fraction" eSuperTypes="#//PositiveNumber">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="numerator" eType="#//Integer"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="denominator" eType="#//Integer"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

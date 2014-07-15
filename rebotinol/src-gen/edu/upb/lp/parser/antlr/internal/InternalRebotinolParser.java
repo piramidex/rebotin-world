@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SUMA'", "'MULT'", "'IGUAL'", "'{'", "'}'", "'DIFER'", "'MAYOR'", "'MENOR'", "'REP'", "'DER'", "'IZQ'", "'ARR'", "'ABA'", "'MEMO'", "'ESCRI'", "'SIGNO'", "'INVER'", "'ENVIAR'", "'ENVIAR MATRIZ'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'/'", "'-'", "'SUMA'", "'MULT'", "'IGUAL'", "'{'", "'}'", "'DIFER'", "'MAYOR'", "'MENOR'", "'REP'", "'DER'", "'IZQ'", "'ARR'", "'ABA'", "'MEMO'", "'ESCRI'", "'SIGNO'", "'INVER'", "'ENVIAR'", "'ENVIAR MATRIZ'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -39,7 +39,9 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__31=31;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -147,7 +149,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=11 && LA1_0<=13)||(LA1_0>=16 && LA1_0<=29)) ) {
+                if ( ((LA1_0>=13 && LA1_0<=15)||(LA1_0>=18 && LA1_0<=31)) ) {
                     alt1=1;
                 }
 
@@ -266,8 +268,6 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
             // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:120:1: (this_EmptyInstruction_0= ruleEmptyInstruction | this_NonEmptyInstruction_1= ruleNonEmptyInstruction )
             int alt2=2;
             switch ( input.LA(1) ) {
-            case 20:
-            case 21:
             case 22:
             case 23:
             case 24:
@@ -276,18 +276,20 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
             case 27:
             case 28:
             case 29:
+            case 30:
+            case 31:
                 {
                 alt2=1;
                 }
                 break;
-            case 11:
+            case 13:
                 {
                 int LA2_2 = input.LA(2);
 
-                if ( (LA2_2==RULE_INT) ) {
+                if ( (LA2_2==RULE_INT||LA2_2==12) ) {
                     alt2=2;
                 }
-                else if ( (LA2_2==EOF||(LA2_2>=11 && LA2_2<=13)||(LA2_2>=15 && LA2_2<=29)) ) {
+                else if ( (LA2_2==EOF||(LA2_2>=13 && LA2_2<=15)||(LA2_2>=17 && LA2_2<=31)) ) {
                     alt2=1;
                 }
                 else {
@@ -298,14 +300,14 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 12:
+            case 14:
                 {
                 int LA2_3 = input.LA(2);
 
-                if ( (LA2_3==EOF||(LA2_3>=11 && LA2_3<=13)||(LA2_3>=15 && LA2_3<=29)) ) {
+                if ( (LA2_3==EOF||(LA2_3>=13 && LA2_3<=15)||(LA2_3>=17 && LA2_3<=31)) ) {
                     alt2=1;
                 }
-                else if ( (LA2_3==RULE_INT) ) {
+                else if ( (LA2_3==RULE_INT||LA2_3==12) ) {
                     alt2=2;
                 }
                 else {
@@ -316,11 +318,11 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 13:
-            case 16:
-            case 17:
+            case 15:
             case 18:
             case 19:
+            case 20:
+            case 21:
                 {
                 alt2=2;
                 }
@@ -544,21 +546,21 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
             // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:199:1: (this_Sumak_0= ruleSumak | this_Multk_1= ruleMultk | this_ComplexInstruction_2= ruleComplexInstruction )
             int alt3=3;
             switch ( input.LA(1) ) {
-            case 11:
+            case 13:
                 {
                 alt3=1;
                 }
                 break;
-            case 12:
+            case 14:
                 {
                 alt3=2;
                 }
                 break;
-            case 13:
-            case 16:
-            case 17:
+            case 15:
             case 18:
             case 19:
+            case 20:
+            case 21:
                 {
                 alt3=3;
                 }
@@ -897,8 +899,485 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleComplexInstruction"
 
 
+    // $ANTLR start "entryRuleNumber"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:346:1: entryRuleNumber returns [EObject current=null] : iv_ruleNumber= ruleNumber EOF ;
+    public final EObject entryRuleNumber() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNumber = null;
+
+
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:347:2: (iv_ruleNumber= ruleNumber EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:348:2: iv_ruleNumber= ruleNumber EOF
+            {
+             newCompositeNode(grammarAccess.getNumberRule()); 
+            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber829);
+            iv_ruleNumber=ruleNumber();
+
+            state._fsp--;
+
+             current =iv_ruleNumber; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber839); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNumber"
+
+
+    // $ANTLR start "ruleNumber"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:355:1: ruleNumber returns [EObject current=null] : (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber ) ;
+    public final EObject ruleNumber() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_PositiveNumber_0 = null;
+
+        EObject this_NegativeNumber_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:358:28: ( (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:359:1: (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:359:1: (this_PositiveNumber_0= rulePositiveNumber | this_NegativeNumber_1= ruleNegativeNumber )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_INT) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==12) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:360:5: this_PositiveNumber_0= rulePositiveNumber
+                    {
+                     
+                            newCompositeNode(grammarAccess.getNumberAccess().getPositiveNumberParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_rulePositiveNumber_in_ruleNumber886);
+                    this_PositiveNumber_0=rulePositiveNumber();
+
+                    state._fsp--;
+
+                     
+                            current = this_PositiveNumber_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:370:5: this_NegativeNumber_1= ruleNegativeNumber
+                    {
+                     
+                            newCompositeNode(grammarAccess.getNumberAccess().getNegativeNumberParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleNegativeNumber_in_ruleNumber913);
+                    this_NegativeNumber_1=ruleNegativeNumber();
+
+                    state._fsp--;
+
+                     
+                            current = this_NegativeNumber_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNumber"
+
+
+    // $ANTLR start "entryRulePositiveNumber"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:386:1: entryRulePositiveNumber returns [EObject current=null] : iv_rulePositiveNumber= rulePositiveNumber EOF ;
+    public final EObject entryRulePositiveNumber() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePositiveNumber = null;
+
+
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:387:2: (iv_rulePositiveNumber= rulePositiveNumber EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:388:2: iv_rulePositiveNumber= rulePositiveNumber EOF
+            {
+             newCompositeNode(grammarAccess.getPositiveNumberRule()); 
+            pushFollow(FOLLOW_rulePositiveNumber_in_entryRulePositiveNumber948);
+            iv_rulePositiveNumber=rulePositiveNumber();
+
+            state._fsp--;
+
+             current =iv_rulePositiveNumber; 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePositiveNumber958); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePositiveNumber"
+
+
+    // $ANTLR start "rulePositiveNumber"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:395:1: rulePositiveNumber returns [EObject current=null] : (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? ) ;
+    public final EObject rulePositiveNumber() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        EObject this_Integer_0 = null;
+
+        EObject lv_denominator_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:398:28: ( (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:399:1: (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:399:1: (this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )? )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:400:5: this_Integer_0= ruleInteger ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )?
+            {
+             
+                    newCompositeNode(grammarAccess.getPositiveNumberAccess().getIntegerParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleInteger_in_rulePositiveNumber1005);
+            this_Integer_0=ruleInteger();
+
+            state._fsp--;
+
+             
+                    current = this_Integer_0; 
+                    afterParserOrEnumRuleCall();
+                
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:408:1: ( () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) ) )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==11) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:408:2: () otherlv_2= '/' ( (lv_denominator_3_0= ruleInteger ) )
+                    {
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:408:2: ()
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:409:5: 
+                    {
+
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getPositiveNumberAccess().getFractionNumeratorAction_1_0(),
+                                current);
+                        
+
+                    }
+
+                    otherlv_2=(Token)match(input,11,FOLLOW_11_in_rulePositiveNumber1026); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getPositiveNumberAccess().getSolidusKeyword_1_1());
+                        
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:418:1: ( (lv_denominator_3_0= ruleInteger ) )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:419:1: (lv_denominator_3_0= ruleInteger )
+                    {
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:419:1: (lv_denominator_3_0= ruleInteger )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:420:3: lv_denominator_3_0= ruleInteger
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getPositiveNumberAccess().getDenominatorIntegerParserRuleCall_1_2_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleInteger_in_rulePositiveNumber1047);
+                    lv_denominator_3_0=ruleInteger();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getPositiveNumberRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"denominator",
+                            		lv_denominator_3_0, 
+                            		"Integer");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePositiveNumber"
+
+
+    // $ANTLR start "entryRuleInteger"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:444:1: entryRuleInteger returns [EObject current=null] : iv_ruleInteger= ruleInteger EOF ;
+    public final EObject entryRuleInteger() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleInteger = null;
+
+
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:445:2: (iv_ruleInteger= ruleInteger EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:446:2: iv_ruleInteger= ruleInteger EOF
+            {
+             newCompositeNode(grammarAccess.getIntegerRule()); 
+            pushFollow(FOLLOW_ruleInteger_in_entryRuleInteger1085);
+            iv_ruleInteger=ruleInteger();
+
+            state._fsp--;
+
+             current =iv_ruleInteger; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInteger1095); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleInteger"
+
+
+    // $ANTLR start "ruleInteger"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:453:1: ruleInteger returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    public final EObject ruleInteger() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_value_0_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:456:28: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:457:1: ( (lv_value_0_0= RULE_INT ) )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:457:1: ( (lv_value_0_0= RULE_INT ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:458:1: (lv_value_0_0= RULE_INT )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:458:1: (lv_value_0_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:459:3: lv_value_0_0= RULE_INT
+            {
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInteger1136); 
+
+            			newLeafNode(lv_value_0_0, grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getIntegerRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"value",
+                    		lv_value_0_0, 
+                    		"INT");
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleInteger"
+
+
+    // $ANTLR start "entryRuleNegativeNumber"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:483:1: entryRuleNegativeNumber returns [EObject current=null] : iv_ruleNegativeNumber= ruleNegativeNumber EOF ;
+    public final EObject entryRuleNegativeNumber() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNegativeNumber = null;
+
+
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:484:2: (iv_ruleNegativeNumber= ruleNegativeNumber EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:485:2: iv_ruleNegativeNumber= ruleNegativeNumber EOF
+            {
+             newCompositeNode(grammarAccess.getNegativeNumberRule()); 
+            pushFollow(FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1176);
+            iv_ruleNegativeNumber=ruleNegativeNumber();
+
+            state._fsp--;
+
+             current =iv_ruleNegativeNumber; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNegativeNumber1186); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNegativeNumber"
+
+
+    // $ANTLR start "ruleNegativeNumber"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:492:1: ruleNegativeNumber returns [EObject current=null] : (otherlv_0= '-' ( (lv_val_1_0= rulePositiveNumber ) ) ) ;
+    public final EObject ruleNegativeNumber() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        EObject lv_val_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:495:28: ( (otherlv_0= '-' ( (lv_val_1_0= rulePositiveNumber ) ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:496:1: (otherlv_0= '-' ( (lv_val_1_0= rulePositiveNumber ) ) )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:496:1: (otherlv_0= '-' ( (lv_val_1_0= rulePositiveNumber ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:496:3: otherlv_0= '-' ( (lv_val_1_0= rulePositiveNumber ) )
+            {
+            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleNegativeNumber1223); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getNegativeNumberAccess().getHyphenMinusKeyword_0());
+                
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:500:1: ( (lv_val_1_0= rulePositiveNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:501:1: (lv_val_1_0= rulePositiveNumber )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:501:1: (lv_val_1_0= rulePositiveNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:502:3: lv_val_1_0= rulePositiveNumber
+            {
+             
+            	        newCompositeNode(grammarAccess.getNegativeNumberAccess().getValPositiveNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1244);
+            lv_val_1_0=rulePositiveNumber();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getNegativeNumberRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"val",
+                    		lv_val_1_0, 
+                    		"PositiveNumber");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNegativeNumber"
+
+
     // $ANTLR start "entryRuleSumak"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:346:1: entryRuleSumak returns [EObject current=null] : iv_ruleSumak= ruleSumak EOF ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:526:1: entryRuleSumak returns [EObject current=null] : iv_ruleSumak= ruleSumak EOF ;
     public final EObject entryRuleSumak() throws RecognitionException {
         EObject current = null;
 
@@ -906,17 +1385,17 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:347:2: (iv_ruleSumak= ruleSumak EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:348:2: iv_ruleSumak= ruleSumak EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:527:2: (iv_ruleSumak= ruleSumak EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:528:2: iv_ruleSumak= ruleSumak EOF
             {
              newCompositeNode(grammarAccess.getSumakRule()); 
-            pushFollow(FOLLOW_ruleSumak_in_entryRuleSumak829);
+            pushFollow(FOLLOW_ruleSumak_in_entryRuleSumak1280);
             iv_ruleSumak=ruleSumak();
 
             state._fsp--;
 
              current =iv_ruleSumak; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSumak839); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSumak1290); 
 
             }
 
@@ -934,45 +1413,51 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSumak"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:355:1: ruleSumak returns [EObject current=null] : (otherlv_0= 'SUMA' ( (lv_val_1_0= RULE_INT ) ) ) ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:535:1: ruleSumak returns [EObject current=null] : (otherlv_0= 'SUMA' ( (lv_val_1_0= ruleNumber ) ) ) ;
     public final EObject ruleSumak() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_val_1_0=null;
+        EObject lv_val_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:358:28: ( (otherlv_0= 'SUMA' ( (lv_val_1_0= RULE_INT ) ) ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:359:1: (otherlv_0= 'SUMA' ( (lv_val_1_0= RULE_INT ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:538:28: ( (otherlv_0= 'SUMA' ( (lv_val_1_0= ruleNumber ) ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:539:1: (otherlv_0= 'SUMA' ( (lv_val_1_0= ruleNumber ) ) )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:359:1: (otherlv_0= 'SUMA' ( (lv_val_1_0= RULE_INT ) ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:359:3: otherlv_0= 'SUMA' ( (lv_val_1_0= RULE_INT ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:539:1: (otherlv_0= 'SUMA' ( (lv_val_1_0= ruleNumber ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:539:3: otherlv_0= 'SUMA' ( (lv_val_1_0= ruleNumber ) )
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleSumak876); 
+            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleSumak1327); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSumakAccess().getSUMAKeyword_0());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:363:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:364:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:543:1: ( (lv_val_1_0= ruleNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:544:1: (lv_val_1_0= ruleNumber )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:364:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:365:3: lv_val_1_0= RULE_INT
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:544:1: (lv_val_1_0= ruleNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:545:3: lv_val_1_0= ruleNumber
             {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSumak893); 
+             
+            	        newCompositeNode(grammarAccess.getSumakAccess().getValNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNumber_in_ruleSumak1348);
+            lv_val_1_0=ruleNumber();
 
-            			newLeafNode(lv_val_1_0, grammarAccess.getSumakAccess().getValINTTerminalRuleCall_1_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getSumakRule());
+            	            current = createModelElementForParent(grammarAccess.getSumakRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"val",
                     		lv_val_1_0, 
-                    		"INT");
+                    		"Number");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1001,7 +1486,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultk"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:389:1: entryRuleMultk returns [EObject current=null] : iv_ruleMultk= ruleMultk EOF ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:569:1: entryRuleMultk returns [EObject current=null] : iv_ruleMultk= ruleMultk EOF ;
     public final EObject entryRuleMultk() throws RecognitionException {
         EObject current = null;
 
@@ -1009,17 +1494,17 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:390:2: (iv_ruleMultk= ruleMultk EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:391:2: iv_ruleMultk= ruleMultk EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:570:2: (iv_ruleMultk= ruleMultk EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:571:2: iv_ruleMultk= ruleMultk EOF
             {
              newCompositeNode(grammarAccess.getMultkRule()); 
-            pushFollow(FOLLOW_ruleMultk_in_entryRuleMultk934);
+            pushFollow(FOLLOW_ruleMultk_in_entryRuleMultk1384);
             iv_ruleMultk=ruleMultk();
 
             state._fsp--;
 
              current =iv_ruleMultk; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultk944); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMultk1394); 
 
             }
 
@@ -1037,45 +1522,51 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultk"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:398:1: ruleMultk returns [EObject current=null] : (otherlv_0= 'MULT' ( (lv_val_1_0= RULE_INT ) ) ) ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:578:1: ruleMultk returns [EObject current=null] : (otherlv_0= 'MULT' ( (lv_val_1_0= ruleNumber ) ) ) ;
     public final EObject ruleMultk() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_val_1_0=null;
+        EObject lv_val_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:401:28: ( (otherlv_0= 'MULT' ( (lv_val_1_0= RULE_INT ) ) ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:402:1: (otherlv_0= 'MULT' ( (lv_val_1_0= RULE_INT ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:581:28: ( (otherlv_0= 'MULT' ( (lv_val_1_0= ruleNumber ) ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:582:1: (otherlv_0= 'MULT' ( (lv_val_1_0= ruleNumber ) ) )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:402:1: (otherlv_0= 'MULT' ( (lv_val_1_0= RULE_INT ) ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:402:3: otherlv_0= 'MULT' ( (lv_val_1_0= RULE_INT ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:582:1: (otherlv_0= 'MULT' ( (lv_val_1_0= ruleNumber ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:582:3: otherlv_0= 'MULT' ( (lv_val_1_0= ruleNumber ) )
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleMultk981); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleMultk1431); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMultkAccess().getMULTKeyword_0());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:406:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:407:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:586:1: ( (lv_val_1_0= ruleNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:587:1: (lv_val_1_0= ruleNumber )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:407:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:408:3: lv_val_1_0= RULE_INT
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:587:1: (lv_val_1_0= ruleNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:588:3: lv_val_1_0= ruleNumber
             {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMultk998); 
+             
+            	        newCompositeNode(grammarAccess.getMultkAccess().getValNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNumber_in_ruleMultk1452);
+            lv_val_1_0=ruleNumber();
 
-            			newLeafNode(lv_val_1_0, grammarAccess.getMultkAccess().getValINTTerminalRuleCall_1_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getMultkRule());
+            	            current = createModelElementForParent(grammarAccess.getMultkRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"val",
                     		lv_val_1_0, 
-                    		"INT");
+                    		"Number");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1104,7 +1595,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIgual"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:432:1: entryRuleIgual returns [EObject current=null] : iv_ruleIgual= ruleIgual EOF ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:612:1: entryRuleIgual returns [EObject current=null] : iv_ruleIgual= ruleIgual EOF ;
     public final EObject entryRuleIgual() throws RecognitionException {
         EObject current = null;
 
@@ -1112,17 +1603,17 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:433:2: (iv_ruleIgual= ruleIgual EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:434:2: iv_ruleIgual= ruleIgual EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:613:2: (iv_ruleIgual= ruleIgual EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:614:2: iv_ruleIgual= ruleIgual EOF
             {
              newCompositeNode(grammarAccess.getIgualRule()); 
-            pushFollow(FOLLOW_ruleIgual_in_entryRuleIgual1039);
+            pushFollow(FOLLOW_ruleIgual_in_entryRuleIgual1488);
             iv_ruleIgual=ruleIgual();
 
             state._fsp--;
 
              current =iv_ruleIgual; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIgual1049); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIgual1498); 
 
             }
 
@@ -1140,7 +1631,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIgual"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:441:1: ruleIgual returns [EObject current=null] : (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:621:1: ruleIgual returns [EObject current=null] : (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
     public final EObject ruleIgual() throws RecognitionException {
         EObject current = null;
 
@@ -1153,43 +1644,43 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:444:28: ( (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:445:1: (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:624:28: ( (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:625:1: (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:445:1: (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:445:3: otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:625:1: (otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:625:3: otherlv_0= 'IGUAL' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleIgual1086); 
+            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleIgual1535); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getIgualAccess().getIGUALKeyword_0());
                 
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleIgual1098); 
+            otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleIgual1547); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getIgualAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:453:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
-            int cnt5=0;
-            loop5:
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:633:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
+            int cnt7=0;
+            loop7:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( ((LA5_0>=11 && LA5_0<=13)||(LA5_0>=16 && LA5_0<=29)) ) {
-                    alt5=1;
+                if ( ((LA7_0>=13 && LA7_0<=15)||(LA7_0>=18 && LA7_0<=31)) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt7) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:454:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:634:1: (lv_subInstructions_2_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:454:1: (lv_subInstructions_2_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:455:3: lv_subInstructions_2_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:634:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:635:3: lv_subInstructions_2_0= ruleInstruction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getIgualAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleIgual1119);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleIgual1568);
             	    lv_subInstructions_2_0=ruleInstruction();
 
             	    state._fsp--;
@@ -1197,317 +1688,6 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
             	    	        if (current==null) {
             	    	            current = createModelElementForParent(grammarAccess.getIgualRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"subInstructions",
-            	            		lv_subInstructions_2_0, 
-            	            		"Instruction");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt5 >= 1 ) break loop5;
-                        EarlyExitException eee =
-                            new EarlyExitException(5, input);
-                        throw eee;
-                }
-                cnt5++;
-            } while (true);
-
-            otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleIgual1132); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getIgualAccess().getRightCurlyBracketKeyword_3());
-                
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleIgual"
-
-
-    // $ANTLR start "entryRuleIgualk"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:483:1: entryRuleIgualk returns [EObject current=null] : iv_ruleIgualk= ruleIgualk EOF ;
-    public final EObject entryRuleIgualk() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleIgualk = null;
-
-
-        try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:484:2: (iv_ruleIgualk= ruleIgualk EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:485:2: iv_ruleIgualk= ruleIgualk EOF
-            {
-             newCompositeNode(grammarAccess.getIgualkRule()); 
-            pushFollow(FOLLOW_ruleIgualk_in_entryRuleIgualk1168);
-            iv_ruleIgualk=ruleIgualk();
-
-            state._fsp--;
-
-             current =iv_ruleIgualk; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIgualk1178); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleIgualk"
-
-
-    // $ANTLR start "ruleIgualk"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:492:1: ruleIgualk returns [EObject current=null] : (otherlv_0= 'IGUAL' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
-    public final EObject ruleIgualk() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_val_1_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        EObject lv_subInstructions_3_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:495:28: ( (otherlv_0= 'IGUAL' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:496:1: (otherlv_0= 'IGUAL' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
-            {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:496:1: (otherlv_0= 'IGUAL' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:496:3: otherlv_0= 'IGUAL' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
-            {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleIgualk1215); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getIgualkAccess().getIGUALKeyword_0());
-                
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:500:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:501:1: (lv_val_1_0= RULE_INT )
-            {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:501:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:502:3: lv_val_1_0= RULE_INT
-            {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleIgualk1232); 
-
-            			newLeafNode(lv_val_1_0, grammarAccess.getIgualkAccess().getValINTTerminalRuleCall_1_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getIgualkRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"val",
-                    		lv_val_1_0, 
-                    		"INT");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleIgualk1249); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getIgualkAccess().getLeftCurlyBracketKeyword_2());
-                
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:522:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
-            int cnt6=0;
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( ((LA6_0>=11 && LA6_0<=13)||(LA6_0>=16 && LA6_0<=29)) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:523:1: (lv_subInstructions_3_0= ruleInstruction )
-            	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:523:1: (lv_subInstructions_3_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:524:3: lv_subInstructions_3_0= ruleInstruction
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getIgualkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleIgualk1270);
-            	    lv_subInstructions_3_0=ruleInstruction();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getIgualkRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"subInstructions",
-            	            		lv_subInstructions_3_0, 
-            	            		"Instruction");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt6 >= 1 ) break loop6;
-                        EarlyExitException eee =
-                            new EarlyExitException(6, input);
-                        throw eee;
-                }
-                cnt6++;
-            } while (true);
-
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleIgualk1283); 
-
-                	newLeafNode(otherlv_4, grammarAccess.getIgualkAccess().getRightCurlyBracketKeyword_4());
-                
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleIgualk"
-
-
-    // $ANTLR start "entryRuleDifer"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:552:1: entryRuleDifer returns [EObject current=null] : iv_ruleDifer= ruleDifer EOF ;
-    public final EObject entryRuleDifer() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleDifer = null;
-
-
-        try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:553:2: (iv_ruleDifer= ruleDifer EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:554:2: iv_ruleDifer= ruleDifer EOF
-            {
-             newCompositeNode(grammarAccess.getDiferRule()); 
-            pushFollow(FOLLOW_ruleDifer_in_entryRuleDifer1319);
-            iv_ruleDifer=ruleDifer();
-
-            state._fsp--;
-
-             current =iv_ruleDifer; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDifer1329); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleDifer"
-
-
-    // $ANTLR start "ruleDifer"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:561:1: ruleDifer returns [EObject current=null] : (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
-    public final EObject ruleDifer() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        EObject lv_subInstructions_2_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:564:28: ( (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:565:1: (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
-            {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:565:1: (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:565:3: otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
-            {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleDifer1366); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getDiferAccess().getDIFERKeyword_0());
-                
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleDifer1378); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getDiferAccess().getLeftCurlyBracketKeyword_1());
-                
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:573:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
-            int cnt7=0;
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( ((LA7_0>=11 && LA7_0<=13)||(LA7_0>=16 && LA7_0<=29)) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:574:1: (lv_subInstructions_2_0= ruleInstruction )
-            	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:574:1: (lv_subInstructions_2_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:575:3: lv_subInstructions_2_0= ruleInstruction
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getDiferAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleDifer1399);
-            	    lv_subInstructions_2_0=ruleInstruction();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getDiferRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -1532,9 +1712,9 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 cnt7++;
             } while (true);
 
-            otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleDifer1412); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleIgual1581); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getDiferAccess().getRightCurlyBracketKeyword_3());
+                	newLeafNode(otherlv_3, grammarAccess.getIgualAccess().getRightCurlyBracketKeyword_3());
                 
 
             }
@@ -1553,29 +1733,29 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleDifer"
+    // $ANTLR end "ruleIgual"
 
 
-    // $ANTLR start "entryRuleDiferk"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:603:1: entryRuleDiferk returns [EObject current=null] : iv_ruleDiferk= ruleDiferk EOF ;
-    public final EObject entryRuleDiferk() throws RecognitionException {
+    // $ANTLR start "entryRuleIgualk"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:663:1: entryRuleIgualk returns [EObject current=null] : iv_ruleIgualk= ruleIgualk EOF ;
+    public final EObject entryRuleIgualk() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleDiferk = null;
+        EObject iv_ruleIgualk = null;
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:604:2: (iv_ruleDiferk= ruleDiferk EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:605:2: iv_ruleDiferk= ruleDiferk EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:664:2: (iv_ruleIgualk= ruleIgualk EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:665:2: iv_ruleIgualk= ruleIgualk EOF
             {
-             newCompositeNode(grammarAccess.getDiferkRule()); 
-            pushFollow(FOLLOW_ruleDiferk_in_entryRuleDiferk1448);
-            iv_ruleDiferk=ruleDiferk();
+             newCompositeNode(grammarAccess.getIgualkRule()); 
+            pushFollow(FOLLOW_ruleIgualk_in_entryRuleIgualk1617);
+            iv_ruleIgualk=ruleIgualk();
 
             state._fsp--;
 
-             current =iv_ruleDiferk; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDiferk1458); 
+             current =iv_ruleIgualk; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleIgualk1627); 
 
             }
 
@@ -1589,53 +1769,59 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleDiferk"
+    // $ANTLR end "entryRuleIgualk"
 
 
-    // $ANTLR start "ruleDiferk"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:612:1: ruleDiferk returns [EObject current=null] : (otherlv_0= 'DIFER' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
-    public final EObject ruleDiferk() throws RecognitionException {
+    // $ANTLR start "ruleIgualk"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:672:1: ruleIgualk returns [EObject current=null] : (otherlv_0= 'IGUAL' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
+    public final EObject ruleIgualk() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_val_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
+        EObject lv_val_1_0 = null;
+
         EObject lv_subInstructions_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:615:28: ( (otherlv_0= 'DIFER' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:616:1: (otherlv_0= 'DIFER' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:675:28: ( (otherlv_0= 'IGUAL' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:676:1: (otherlv_0= 'IGUAL' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:616:1: (otherlv_0= 'DIFER' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:616:3: otherlv_0= 'DIFER' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:676:1: (otherlv_0= 'IGUAL' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:676:3: otherlv_0= 'IGUAL' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleDiferk1495); 
+            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleIgualk1664); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getDiferkAccess().getDIFERKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getIgualkAccess().getIGUALKeyword_0());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:620:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:621:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:680:1: ( (lv_val_1_0= ruleNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:681:1: (lv_val_1_0= ruleNumber )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:621:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:622:3: lv_val_1_0= RULE_INT
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:681:1: (lv_val_1_0= ruleNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:682:3: lv_val_1_0= ruleNumber
             {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDiferk1512); 
+             
+            	        newCompositeNode(grammarAccess.getIgualkAccess().getValNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNumber_in_ruleIgualk1685);
+            lv_val_1_0=ruleNumber();
 
-            			newLeafNode(lv_val_1_0, grammarAccess.getDiferkAccess().getValINTTerminalRuleCall_1_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getDiferkRule());
+            	            current = createModelElementForParent(grammarAccess.getIgualkRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"val",
                     		lv_val_1_0, 
-                    		"INT");
+                    		"Number");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1643,40 +1829,40 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleDiferk1529); 
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleIgualk1697); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getDiferkAccess().getLeftCurlyBracketKeyword_2());
+                	newLeafNode(otherlv_2, grammarAccess.getIgualkAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:642:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:702:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
             int cnt8=0;
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( ((LA8_0>=11 && LA8_0<=13)||(LA8_0>=16 && LA8_0<=29)) ) {
+                if ( ((LA8_0>=13 && LA8_0<=15)||(LA8_0>=18 && LA8_0<=31)) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:643:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:703:1: (lv_subInstructions_3_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:643:1: (lv_subInstructions_3_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:644:3: lv_subInstructions_3_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:703:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:704:3: lv_subInstructions_3_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getDiferkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
+            	    	        newCompositeNode(grammarAccess.getIgualkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleDiferk1550);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleIgualk1718);
             	    lv_subInstructions_3_0=ruleInstruction();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getDiferkRule());
+            	    	            current = createModelElementForParent(grammarAccess.getIgualkRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -1701,9 +1887,9 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 cnt8++;
             } while (true);
 
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleDiferk1563); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleIgualk1731); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getDiferkAccess().getRightCurlyBracketKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getIgualkAccess().getRightCurlyBracketKeyword_4());
                 
 
             }
@@ -1722,29 +1908,29 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleDiferk"
+    // $ANTLR end "ruleIgualk"
 
 
-    // $ANTLR start "entryRuleMayor"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:672:1: entryRuleMayor returns [EObject current=null] : iv_ruleMayor= ruleMayor EOF ;
-    public final EObject entryRuleMayor() throws RecognitionException {
+    // $ANTLR start "entryRuleDifer"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:732:1: entryRuleDifer returns [EObject current=null] : iv_ruleDifer= ruleDifer EOF ;
+    public final EObject entryRuleDifer() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleMayor = null;
+        EObject iv_ruleDifer = null;
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:673:2: (iv_ruleMayor= ruleMayor EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:674:2: iv_ruleMayor= ruleMayor EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:733:2: (iv_ruleDifer= ruleDifer EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:734:2: iv_ruleDifer= ruleDifer EOF
             {
-             newCompositeNode(grammarAccess.getMayorRule()); 
-            pushFollow(FOLLOW_ruleMayor_in_entryRuleMayor1599);
-            iv_ruleMayor=ruleMayor();
+             newCompositeNode(grammarAccess.getDiferRule()); 
+            pushFollow(FOLLOW_ruleDifer_in_entryRuleDifer1767);
+            iv_ruleDifer=ruleDifer();
 
             state._fsp--;
 
-             current =iv_ruleMayor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMayor1609); 
+             current =iv_ruleDifer; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDifer1777); 
 
             }
 
@@ -1758,12 +1944,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleMayor"
+    // $ANTLR end "entryRuleDifer"
 
 
-    // $ANTLR start "ruleMayor"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:681:1: ruleMayor returns [EObject current=null] : (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
-    public final EObject ruleMayor() throws RecognitionException {
+    // $ANTLR start "ruleDifer"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:741:1: ruleDifer returns [EObject current=null] : (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
+    public final EObject ruleDifer() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -1775,50 +1961,50 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:684:28: ( (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:685:1: (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:744:28: ( (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:745:1: (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:685:1: (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:685:3: otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:745:1: (otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:745:3: otherlv_0= 'DIFER' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleMayor1646); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDifer1814); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getMayorAccess().getMAYORKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getDiferAccess().getDIFERKeyword_0());
                 
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleMayor1658); 
+            otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleDifer1826); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getMayorAccess().getLeftCurlyBracketKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getDiferAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:693:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:753:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
             int cnt9=0;
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( ((LA9_0>=11 && LA9_0<=13)||(LA9_0>=16 && LA9_0<=29)) ) {
+                if ( ((LA9_0>=13 && LA9_0<=15)||(LA9_0>=18 && LA9_0<=31)) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:694:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:754:1: (lv_subInstructions_2_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:694:1: (lv_subInstructions_2_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:695:3: lv_subInstructions_2_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:754:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:755:3: lv_subInstructions_2_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMayorAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getDiferAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMayor1679);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleDifer1847);
             	    lv_subInstructions_2_0=ruleInstruction();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMayorRule());
+            	    	            current = createModelElementForParent(grammarAccess.getDiferRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -1843,9 +2029,9 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 cnt9++;
             } while (true);
 
-            otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleMayor1692); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleDifer1860); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getMayorAccess().getRightCurlyBracketKeyword_3());
+                	newLeafNode(otherlv_3, grammarAccess.getDiferAccess().getRightCurlyBracketKeyword_3());
                 
 
             }
@@ -1864,29 +2050,29 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleMayor"
+    // $ANTLR end "ruleDifer"
 
 
-    // $ANTLR start "entryRuleMayork"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:723:1: entryRuleMayork returns [EObject current=null] : iv_ruleMayork= ruleMayork EOF ;
-    public final EObject entryRuleMayork() throws RecognitionException {
+    // $ANTLR start "entryRuleDiferk"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:783:1: entryRuleDiferk returns [EObject current=null] : iv_ruleDiferk= ruleDiferk EOF ;
+    public final EObject entryRuleDiferk() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleMayork = null;
+        EObject iv_ruleDiferk = null;
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:724:2: (iv_ruleMayork= ruleMayork EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:725:2: iv_ruleMayork= ruleMayork EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:784:2: (iv_ruleDiferk= ruleDiferk EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:785:2: iv_ruleDiferk= ruleDiferk EOF
             {
-             newCompositeNode(grammarAccess.getMayorkRule()); 
-            pushFollow(FOLLOW_ruleMayork_in_entryRuleMayork1728);
-            iv_ruleMayork=ruleMayork();
+             newCompositeNode(grammarAccess.getDiferkRule()); 
+            pushFollow(FOLLOW_ruleDiferk_in_entryRuleDiferk1896);
+            iv_ruleDiferk=ruleDiferk();
 
             state._fsp--;
 
-             current =iv_ruleMayork; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMayork1738); 
+             current =iv_ruleDiferk; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDiferk1906); 
 
             }
 
@@ -1900,53 +2086,59 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleMayork"
+    // $ANTLR end "entryRuleDiferk"
 
 
-    // $ANTLR start "ruleMayork"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:732:1: ruleMayork returns [EObject current=null] : (otherlv_0= 'MAYOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
-    public final EObject ruleMayork() throws RecognitionException {
+    // $ANTLR start "ruleDiferk"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:792:1: ruleDiferk returns [EObject current=null] : (otherlv_0= 'DIFER' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
+    public final EObject ruleDiferk() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_val_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
+        EObject lv_val_1_0 = null;
+
         EObject lv_subInstructions_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:735:28: ( (otherlv_0= 'MAYOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:736:1: (otherlv_0= 'MAYOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:795:28: ( (otherlv_0= 'DIFER' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:796:1: (otherlv_0= 'DIFER' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:736:1: (otherlv_0= 'MAYOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:736:3: otherlv_0= 'MAYOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:796:1: (otherlv_0= 'DIFER' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:796:3: otherlv_0= 'DIFER' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleMayork1775); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDiferk1943); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getMayorkAccess().getMAYORKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getDiferkAccess().getDIFERKeyword_0());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:740:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:741:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:800:1: ( (lv_val_1_0= ruleNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:801:1: (lv_val_1_0= ruleNumber )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:741:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:742:3: lv_val_1_0= RULE_INT
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:801:1: (lv_val_1_0= ruleNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:802:3: lv_val_1_0= ruleNumber
             {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMayork1792); 
+             
+            	        newCompositeNode(grammarAccess.getDiferkAccess().getValNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNumber_in_ruleDiferk1964);
+            lv_val_1_0=ruleNumber();
 
-            			newLeafNode(lv_val_1_0, grammarAccess.getMayorkAccess().getValINTTerminalRuleCall_1_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getMayorkRule());
+            	            current = createModelElementForParent(grammarAccess.getDiferkRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"val",
                     		lv_val_1_0, 
-                    		"INT");
+                    		"Number");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -1954,40 +2146,40 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleMayork1809); 
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleDiferk1976); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getMayorkAccess().getLeftCurlyBracketKeyword_2());
+                	newLeafNode(otherlv_2, grammarAccess.getDiferkAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:762:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:822:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
             int cnt10=0;
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>=11 && LA10_0<=13)||(LA10_0>=16 && LA10_0<=29)) ) {
+                if ( ((LA10_0>=13 && LA10_0<=15)||(LA10_0>=18 && LA10_0<=31)) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:763:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:823:1: (lv_subInstructions_3_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:763:1: (lv_subInstructions_3_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:764:3: lv_subInstructions_3_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:823:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:824:3: lv_subInstructions_3_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMayorkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
+            	    	        newCompositeNode(grammarAccess.getDiferkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMayork1830);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleDiferk1997);
             	    lv_subInstructions_3_0=ruleInstruction();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMayorkRule());
+            	    	            current = createModelElementForParent(grammarAccess.getDiferkRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -2012,9 +2204,9 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 cnt10++;
             } while (true);
 
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleMayork1843); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleDiferk2010); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getMayorkAccess().getRightCurlyBracketKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getDiferkAccess().getRightCurlyBracketKeyword_4());
                 
 
             }
@@ -2033,29 +2225,29 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleMayork"
+    // $ANTLR end "ruleDiferk"
 
 
-    // $ANTLR start "entryRuleMenor"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:792:1: entryRuleMenor returns [EObject current=null] : iv_ruleMenor= ruleMenor EOF ;
-    public final EObject entryRuleMenor() throws RecognitionException {
+    // $ANTLR start "entryRuleMayor"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:852:1: entryRuleMayor returns [EObject current=null] : iv_ruleMayor= ruleMayor EOF ;
+    public final EObject entryRuleMayor() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleMenor = null;
+        EObject iv_ruleMayor = null;
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:793:2: (iv_ruleMenor= ruleMenor EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:794:2: iv_ruleMenor= ruleMenor EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:853:2: (iv_ruleMayor= ruleMayor EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:854:2: iv_ruleMayor= ruleMayor EOF
             {
-             newCompositeNode(grammarAccess.getMenorRule()); 
-            pushFollow(FOLLOW_ruleMenor_in_entryRuleMenor1879);
-            iv_ruleMenor=ruleMenor();
+             newCompositeNode(grammarAccess.getMayorRule()); 
+            pushFollow(FOLLOW_ruleMayor_in_entryRuleMayor2046);
+            iv_ruleMayor=ruleMayor();
 
             state._fsp--;
 
-             current =iv_ruleMenor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMenor1889); 
+             current =iv_ruleMayor; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMayor2056); 
 
             }
 
@@ -2069,12 +2261,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleMenor"
+    // $ANTLR end "entryRuleMayor"
 
 
-    // $ANTLR start "ruleMenor"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:801:1: ruleMenor returns [EObject current=null] : (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
-    public final EObject ruleMenor() throws RecognitionException {
+    // $ANTLR start "ruleMayor"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:861:1: ruleMayor returns [EObject current=null] : (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
+    public final EObject ruleMayor() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -2086,50 +2278,50 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:804:28: ( (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:805:1: (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:864:28: ( (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:865:1: (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:805:1: (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:805:3: otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:865:1: (otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:865:3: otherlv_0= 'MAYOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleMenor1926); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleMayor2093); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getMenorAccess().getMENORKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getMayorAccess().getMAYORKeyword_0());
                 
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleMenor1938); 
+            otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleMayor2105); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getMenorAccess().getLeftCurlyBracketKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getMayorAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:813:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:873:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
             int cnt11=0;
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0>=11 && LA11_0<=13)||(LA11_0>=16 && LA11_0<=29)) ) {
+                if ( ((LA11_0>=13 && LA11_0<=15)||(LA11_0>=18 && LA11_0<=31)) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:814:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:874:1: (lv_subInstructions_2_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:814:1: (lv_subInstructions_2_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:815:3: lv_subInstructions_2_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:874:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:875:3: lv_subInstructions_2_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMenorAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getMayorAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMenor1959);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMayor2126);
             	    lv_subInstructions_2_0=ruleInstruction();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMenorRule());
+            	    	            current = createModelElementForParent(grammarAccess.getMayorRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -2154,9 +2346,9 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 cnt11++;
             } while (true);
 
-            otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleMenor1972); 
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleMayor2139); 
 
-                	newLeafNode(otherlv_3, grammarAccess.getMenorAccess().getRightCurlyBracketKeyword_3());
+                	newLeafNode(otherlv_3, grammarAccess.getMayorAccess().getRightCurlyBracketKeyword_3());
                 
 
             }
@@ -2175,29 +2367,29 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleMenor"
+    // $ANTLR end "ruleMayor"
 
 
-    // $ANTLR start "entryRuleMenork"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:843:1: entryRuleMenork returns [EObject current=null] : iv_ruleMenork= ruleMenork EOF ;
-    public final EObject entryRuleMenork() throws RecognitionException {
+    // $ANTLR start "entryRuleMayork"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:903:1: entryRuleMayork returns [EObject current=null] : iv_ruleMayork= ruleMayork EOF ;
+    public final EObject entryRuleMayork() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleMenork = null;
+        EObject iv_ruleMayork = null;
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:844:2: (iv_ruleMenork= ruleMenork EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:845:2: iv_ruleMenork= ruleMenork EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:904:2: (iv_ruleMayork= ruleMayork EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:905:2: iv_ruleMayork= ruleMayork EOF
             {
-             newCompositeNode(grammarAccess.getMenorkRule()); 
-            pushFollow(FOLLOW_ruleMenork_in_entryRuleMenork2008);
-            iv_ruleMenork=ruleMenork();
+             newCompositeNode(grammarAccess.getMayorkRule()); 
+            pushFollow(FOLLOW_ruleMayork_in_entryRuleMayork2175);
+            iv_ruleMayork=ruleMayork();
 
             state._fsp--;
 
-             current =iv_ruleMenork; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMenork2018); 
+             current =iv_ruleMayork; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMayork2185); 
 
             }
 
@@ -2211,53 +2403,59 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleMenork"
+    // $ANTLR end "entryRuleMayork"
 
 
-    // $ANTLR start "ruleMenork"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:852:1: ruleMenork returns [EObject current=null] : (otherlv_0= 'MENOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
-    public final EObject ruleMenork() throws RecognitionException {
+    // $ANTLR start "ruleMayork"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:912:1: ruleMayork returns [EObject current=null] : (otherlv_0= 'MAYOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
+    public final EObject ruleMayork() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_val_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
+        EObject lv_val_1_0 = null;
+
         EObject lv_subInstructions_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:855:28: ( (otherlv_0= 'MENOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:856:1: (otherlv_0= 'MENOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:915:28: ( (otherlv_0= 'MAYOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:916:1: (otherlv_0= 'MAYOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:856:1: (otherlv_0= 'MENOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:856:3: otherlv_0= 'MENOR' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:916:1: (otherlv_0= 'MAYOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:916:3: otherlv_0= 'MAYOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleMenork2055); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleMayork2222); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getMenorkAccess().getMENORKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getMayorkAccess().getMAYORKeyword_0());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:860:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:861:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:920:1: ( (lv_val_1_0= ruleNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:921:1: (lv_val_1_0= ruleNumber )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:861:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:862:3: lv_val_1_0= RULE_INT
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:921:1: (lv_val_1_0= ruleNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:922:3: lv_val_1_0= ruleNumber
             {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleMenork2072); 
+             
+            	        newCompositeNode(grammarAccess.getMayorkAccess().getValNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNumber_in_ruleMayork2243);
+            lv_val_1_0=ruleNumber();
 
-            			newLeafNode(lv_val_1_0, grammarAccess.getMenorkAccess().getValINTTerminalRuleCall_1_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getMenorkRule());
+            	            current = createModelElementForParent(grammarAccess.getMayorkRule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"val",
                     		lv_val_1_0, 
-                    		"INT");
+                    		"Number");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -2265,40 +2463,40 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleMenork2089); 
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleMayork2255); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getMenorkAccess().getLeftCurlyBracketKeyword_2());
+                	newLeafNode(otherlv_2, grammarAccess.getMayorkAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:882:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:942:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
             int cnt12=0;
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>=11 && LA12_0<=13)||(LA12_0>=16 && LA12_0<=29)) ) {
+                if ( ((LA12_0>=13 && LA12_0<=15)||(LA12_0>=18 && LA12_0<=31)) ) {
                     alt12=1;
                 }
 
 
                 switch (alt12) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:883:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:943:1: (lv_subInstructions_3_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:883:1: (lv_subInstructions_3_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:884:3: lv_subInstructions_3_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:943:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:944:3: lv_subInstructions_3_0= ruleInstruction
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMenorkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
+            	    	        newCompositeNode(grammarAccess.getMayorkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMenork2110);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMayork2276);
             	    lv_subInstructions_3_0=ruleInstruction();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMenorkRule());
+            	    	            current = createModelElementForParent(grammarAccess.getMayorkRule());
             	    	        }
             	           		add(
             	           			current, 
@@ -2323,7 +2521,324 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                 cnt12++;
             } while (true);
 
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleMenork2123); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleMayork2289); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getMayorkAccess().getRightCurlyBracketKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMayork"
+
+
+    // $ANTLR start "entryRuleMenor"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:972:1: entryRuleMenor returns [EObject current=null] : iv_ruleMenor= ruleMenor EOF ;
+    public final EObject entryRuleMenor() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMenor = null;
+
+
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:973:2: (iv_ruleMenor= ruleMenor EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:974:2: iv_ruleMenor= ruleMenor EOF
+            {
+             newCompositeNode(grammarAccess.getMenorRule()); 
+            pushFollow(FOLLOW_ruleMenor_in_entryRuleMenor2325);
+            iv_ruleMenor=ruleMenor();
+
+            state._fsp--;
+
+             current =iv_ruleMenor; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMenor2335); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMenor"
+
+
+    // $ANTLR start "ruleMenor"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:981:1: ruleMenor returns [EObject current=null] : (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) ;
+    public final EObject ruleMenor() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_subInstructions_2_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:28: ( (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:985:1: (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:985:1: (otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:985:3: otherlv_0= 'MENOR' otherlv_1= '{' ( (lv_subInstructions_2_0= ruleInstruction ) )+ otherlv_3= '}'
+            {
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleMenor2372); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getMenorAccess().getMENORKeyword_0());
+                
+            otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleMenor2384); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getMenorAccess().getLeftCurlyBracketKeyword_1());
+                
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:993:1: ( (lv_subInstructions_2_0= ruleInstruction ) )+
+            int cnt13=0;
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( ((LA13_0>=13 && LA13_0<=15)||(LA13_0>=18 && LA13_0<=31)) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:994:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    {
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:994:1: (lv_subInstructions_2_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:995:3: lv_subInstructions_2_0= ruleInstruction
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getMenorAccess().getSubInstructionsInstructionParserRuleCall_2_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMenor2405);
+            	    lv_subInstructions_2_0=ruleInstruction();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getMenorRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"subInstructions",
+            	            		lv_subInstructions_2_0, 
+            	            		"Instruction");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt13 >= 1 ) break loop13;
+                        EarlyExitException eee =
+                            new EarlyExitException(13, input);
+                        throw eee;
+                }
+                cnt13++;
+            } while (true);
+
+            otherlv_3=(Token)match(input,17,FOLLOW_17_in_ruleMenor2418); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getMenorAccess().getRightCurlyBracketKeyword_3());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMenor"
+
+
+    // $ANTLR start "entryRuleMenork"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1023:1: entryRuleMenork returns [EObject current=null] : iv_ruleMenork= ruleMenork EOF ;
+    public final EObject entryRuleMenork() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMenork = null;
+
+
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1024:2: (iv_ruleMenork= ruleMenork EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1025:2: iv_ruleMenork= ruleMenork EOF
+            {
+             newCompositeNode(grammarAccess.getMenorkRule()); 
+            pushFollow(FOLLOW_ruleMenork_in_entryRuleMenork2454);
+            iv_ruleMenork=ruleMenork();
+
+            state._fsp--;
+
+             current =iv_ruleMenork; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMenork2464); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMenork"
+
+
+    // $ANTLR start "ruleMenork"
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1032:1: ruleMenork returns [EObject current=null] : (otherlv_0= 'MENOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
+    public final EObject ruleMenork() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_val_1_0 = null;
+
+        EObject lv_subInstructions_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1035:28: ( (otherlv_0= 'MENOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1036:1: (otherlv_0= 'MENOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1036:1: (otherlv_0= 'MENOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1036:3: otherlv_0= 'MENOR' ( (lv_val_1_0= ruleNumber ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
+            {
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleMenork2501); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getMenorkAccess().getMENORKeyword_0());
+                
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1040:1: ( (lv_val_1_0= ruleNumber ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1041:1: (lv_val_1_0= ruleNumber )
+            {
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1041:1: (lv_val_1_0= ruleNumber )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1042:3: lv_val_1_0= ruleNumber
+            {
+             
+            	        newCompositeNode(grammarAccess.getMenorkAccess().getValNumberParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleNumber_in_ruleMenork2522);
+            lv_val_1_0=ruleNumber();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getMenorkRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"val",
+                    		lv_val_1_0, 
+                    		"Number");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleMenork2534); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getMenorkAccess().getLeftCurlyBracketKeyword_2());
+                
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1062:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
+            int cnt14=0;
+            loop14:
+            do {
+                int alt14=2;
+                int LA14_0 = input.LA(1);
+
+                if ( ((LA14_0>=13 && LA14_0<=15)||(LA14_0>=18 && LA14_0<=31)) ) {
+                    alt14=1;
+                }
+
+
+                switch (alt14) {
+            	case 1 :
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    {
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1063:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1064:3: lv_subInstructions_3_0= ruleInstruction
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getMenorkAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleMenork2555);
+            	    lv_subInstructions_3_0=ruleInstruction();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getMenorkRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"subInstructions",
+            	            		lv_subInstructions_3_0, 
+            	            		"Instruction");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt14 >= 1 ) break loop14;
+                        EarlyExitException eee =
+                            new EarlyExitException(14, input);
+                        throw eee;
+                }
+                cnt14++;
+            } while (true);
+
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleMenork2568); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getMenorkAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2348,7 +2863,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRepetirn"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:912:1: entryRuleRepetirn returns [EObject current=null] : iv_ruleRepetirn= ruleRepetirn EOF ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1092:1: entryRuleRepetirn returns [EObject current=null] : iv_ruleRepetirn= ruleRepetirn EOF ;
     public final EObject entryRuleRepetirn() throws RecognitionException {
         EObject current = null;
 
@@ -2356,17 +2871,17 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:913:2: (iv_ruleRepetirn= ruleRepetirn EOF )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:914:2: iv_ruleRepetirn= ruleRepetirn EOF
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1093:2: (iv_ruleRepetirn= ruleRepetirn EOF )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1094:2: iv_ruleRepetirn= ruleRepetirn EOF
             {
              newCompositeNode(grammarAccess.getRepetirnRule()); 
-            pushFollow(FOLLOW_ruleRepetirn_in_entryRuleRepetirn2159);
+            pushFollow(FOLLOW_ruleRepetirn_in_entryRuleRepetirn2604);
             iv_ruleRepetirn=ruleRepetirn();
 
             state._fsp--;
 
              current =iv_ruleRepetirn; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRepetirn2169); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRepetirn2614); 
 
             }
 
@@ -2384,7 +2899,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRepetirn"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:921:1: ruleRepetirn returns [EObject current=null] : (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1101:1: ruleRepetirn returns [EObject current=null] : (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) ;
     public final EObject ruleRepetirn() throws RecognitionException {
         EObject current = null;
 
@@ -2398,23 +2913,23 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:924:28: ( (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:925:1: (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1104:28: ( (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1105:1: (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:925:1: (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:925:3: otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1105:1: (otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}' )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1105:3: otherlv_0= 'REP' ( (lv_val_1_0= RULE_INT ) ) otherlv_2= '{' ( (lv_subInstructions_3_0= ruleInstruction ) )+ otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleRepetirn2206); 
+            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleRepetirn2651); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRepetirnAccess().getREPKeyword_0());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:929:1: ( (lv_val_1_0= RULE_INT ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:930:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1109:1: ( (lv_val_1_0= RULE_INT ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1110:1: (lv_val_1_0= RULE_INT )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:930:1: (lv_val_1_0= RULE_INT )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:931:3: lv_val_1_0= RULE_INT
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1110:1: (lv_val_1_0= RULE_INT )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1111:3: lv_val_1_0= RULE_INT
             {
-            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleRepetirn2223); 
+            lv_val_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleRepetirn2668); 
 
             			newLeafNode(lv_val_1_0, grammarAccess.getRepetirnAccess().getValINTTerminalRuleCall_1_0()); 
             		
@@ -2434,33 +2949,33 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_14_in_ruleRepetirn2240); 
+            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleRepetirn2685); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRepetirnAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:951:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
-            int cnt13=0;
-            loop13:
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1131:1: ( (lv_subInstructions_3_0= ruleInstruction ) )+
+            int cnt15=0;
+            loop15:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( ((LA13_0>=11 && LA13_0<=13)||(LA13_0>=16 && LA13_0<=29)) ) {
-                    alt13=1;
+                if ( ((LA15_0>=13 && LA15_0<=15)||(LA15_0>=18 && LA15_0<=31)) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt15) {
             	case 1 :
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:952:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1132:1: (lv_subInstructions_3_0= ruleInstruction )
             	    {
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:952:1: (lv_subInstructions_3_0= ruleInstruction )
-            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:953:3: lv_subInstructions_3_0= ruleInstruction
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1132:1: (lv_subInstructions_3_0= ruleInstruction )
+            	    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1133:3: lv_subInstructions_3_0= ruleInstruction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRepetirnAccess().getSubInstructionsInstructionParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleInstruction_in_ruleRepetirn2261);
+            	    pushFollow(FOLLOW_ruleInstruction_in_ruleRepetirn2706);
             	    lv_subInstructions_3_0=ruleInstruction();
 
             	    state._fsp--;
@@ -2484,15 +2999,15 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt13 >= 1 ) break loop13;
+            	    if ( cnt15 >= 1 ) break loop15;
                         EarlyExitException eee =
-                            new EarlyExitException(13, input);
+                            new EarlyExitException(15, input);
                         throw eee;
                 }
-                cnt13++;
+                cnt15++;
             } while (true);
 
-            otherlv_4=(Token)match(input,15,FOLLOW_15_in_ruleRepetirn2274); 
+            otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleRepetirn2719); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRepetirnAccess().getRightCurlyBracketKeyword_4());
                 
@@ -2517,7 +3032,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmptyInstructionType"
-    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:981:1: ruleEmptyInstructionType returns [Enumerator current=null] : ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) ) ;
+    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1161:1: ruleEmptyInstructionType returns [Enumerator current=null] : ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) ) ;
     public final Enumerator ruleEmptyInstructionType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2536,87 +3051,87 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:983:28: ( ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) ) )
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1163:28: ( ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) ) )
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1164:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) )
             {
-            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) )
-            int alt14=12;
+            // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1164:1: ( (enumLiteral_0= 'DER' ) | (enumLiteral_1= 'IZQ' ) | (enumLiteral_2= 'ARR' ) | (enumLiteral_3= 'ABA' ) | (enumLiteral_4= 'MEMO' ) | (enumLiteral_5= 'ESCRI' ) | (enumLiteral_6= 'SUMA' ) | (enumLiteral_7= 'SIGNO' ) | (enumLiteral_8= 'MULT' ) | (enumLiteral_9= 'INVER' ) | (enumLiteral_10= 'ENVIAR' ) | (enumLiteral_11= 'ENVIAR MATRIZ' ) )
+            int alt16=12;
             switch ( input.LA(1) ) {
-            case 20:
-                {
-                alt14=1;
-                }
-                break;
-            case 21:
-                {
-                alt14=2;
-                }
-                break;
             case 22:
                 {
-                alt14=3;
+                alt16=1;
                 }
                 break;
             case 23:
                 {
-                alt14=4;
+                alt16=2;
                 }
                 break;
             case 24:
                 {
-                alt14=5;
+                alt16=3;
                 }
                 break;
             case 25:
                 {
-                alt14=6;
-                }
-                break;
-            case 11:
-                {
-                alt14=7;
+                alt16=4;
                 }
                 break;
             case 26:
                 {
-                alt14=8;
-                }
-                break;
-            case 12:
-                {
-                alt14=9;
+                alt16=5;
                 }
                 break;
             case 27:
                 {
-                alt14=10;
+                alt16=6;
+                }
+                break;
+            case 13:
+                {
+                alt16=7;
                 }
                 break;
             case 28:
                 {
-                alt14=11;
+                alt16=8;
+                }
+                break;
+            case 14:
+                {
+                alt16=9;
                 }
                 break;
             case 29:
                 {
-                alt14=12;
+                alt16=10;
+                }
+                break;
+            case 30:
+                {
+                alt16=11;
+                }
+                break;
+            case 31:
+                {
+                alt16=12;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt16) {
                 case 1 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:2: (enumLiteral_0= 'DER' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1164:2: (enumLiteral_0= 'DER' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:2: (enumLiteral_0= 'DER' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:984:4: enumLiteral_0= 'DER'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1164:2: (enumLiteral_0= 'DER' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1164:4: enumLiteral_0= 'DER'
                     {
-                    enumLiteral_0=(Token)match(input,20,FOLLOW_20_in_ruleEmptyInstructionType2324); 
+                    enumLiteral_0=(Token)match(input,22,FOLLOW_22_in_ruleEmptyInstructionType2769); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getDerEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getEmptyInstructionTypeAccess().getDerEnumLiteralDeclaration_0()); 
@@ -2628,12 +3143,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:990:6: (enumLiteral_1= 'IZQ' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1170:6: (enumLiteral_1= 'IZQ' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:990:6: (enumLiteral_1= 'IZQ' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:990:8: enumLiteral_1= 'IZQ'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1170:6: (enumLiteral_1= 'IZQ' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1170:8: enumLiteral_1= 'IZQ'
                     {
-                    enumLiteral_1=(Token)match(input,21,FOLLOW_21_in_ruleEmptyInstructionType2341); 
+                    enumLiteral_1=(Token)match(input,23,FOLLOW_23_in_ruleEmptyInstructionType2786); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getIzqEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getEmptyInstructionTypeAccess().getIzqEnumLiteralDeclaration_1()); 
@@ -2645,12 +3160,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:996:6: (enumLiteral_2= 'ARR' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1176:6: (enumLiteral_2= 'ARR' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:996:6: (enumLiteral_2= 'ARR' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:996:8: enumLiteral_2= 'ARR'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1176:6: (enumLiteral_2= 'ARR' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1176:8: enumLiteral_2= 'ARR'
                     {
-                    enumLiteral_2=(Token)match(input,22,FOLLOW_22_in_ruleEmptyInstructionType2358); 
+                    enumLiteral_2=(Token)match(input,24,FOLLOW_24_in_ruleEmptyInstructionType2803); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getArrEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getEmptyInstructionTypeAccess().getArrEnumLiteralDeclaration_2()); 
@@ -2662,12 +3177,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1002:6: (enumLiteral_3= 'ABA' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1182:6: (enumLiteral_3= 'ABA' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1002:6: (enumLiteral_3= 'ABA' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1002:8: enumLiteral_3= 'ABA'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1182:6: (enumLiteral_3= 'ABA' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1182:8: enumLiteral_3= 'ABA'
                     {
-                    enumLiteral_3=(Token)match(input,23,FOLLOW_23_in_ruleEmptyInstructionType2375); 
+                    enumLiteral_3=(Token)match(input,25,FOLLOW_25_in_ruleEmptyInstructionType2820); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getAbaEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getEmptyInstructionTypeAccess().getAbaEnumLiteralDeclaration_3()); 
@@ -2679,12 +3194,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1008:6: (enumLiteral_4= 'MEMO' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1188:6: (enumLiteral_4= 'MEMO' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1008:6: (enumLiteral_4= 'MEMO' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1008:8: enumLiteral_4= 'MEMO'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1188:6: (enumLiteral_4= 'MEMO' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1188:8: enumLiteral_4= 'MEMO'
                     {
-                    enumLiteral_4=(Token)match(input,24,FOLLOW_24_in_ruleEmptyInstructionType2392); 
+                    enumLiteral_4=(Token)match(input,26,FOLLOW_26_in_ruleEmptyInstructionType2837); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getMemoEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getEmptyInstructionTypeAccess().getMemoEnumLiteralDeclaration_4()); 
@@ -2696,12 +3211,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1014:6: (enumLiteral_5= 'ESCRI' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1194:6: (enumLiteral_5= 'ESCRI' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1014:6: (enumLiteral_5= 'ESCRI' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1014:8: enumLiteral_5= 'ESCRI'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1194:6: (enumLiteral_5= 'ESCRI' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1194:8: enumLiteral_5= 'ESCRI'
                     {
-                    enumLiteral_5=(Token)match(input,25,FOLLOW_25_in_ruleEmptyInstructionType2409); 
+                    enumLiteral_5=(Token)match(input,27,FOLLOW_27_in_ruleEmptyInstructionType2854); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getEscriEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getEmptyInstructionTypeAccess().getEscriEnumLiteralDeclaration_5()); 
@@ -2713,12 +3228,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1020:6: (enumLiteral_6= 'SUMA' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1200:6: (enumLiteral_6= 'SUMA' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1020:6: (enumLiteral_6= 'SUMA' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1020:8: enumLiteral_6= 'SUMA'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1200:6: (enumLiteral_6= 'SUMA' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1200:8: enumLiteral_6= 'SUMA'
                     {
-                    enumLiteral_6=(Token)match(input,11,FOLLOW_11_in_ruleEmptyInstructionType2426); 
+                    enumLiteral_6=(Token)match(input,13,FOLLOW_13_in_ruleEmptyInstructionType2871); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getSumaEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_6, grammarAccess.getEmptyInstructionTypeAccess().getSumaEnumLiteralDeclaration_6()); 
@@ -2730,12 +3245,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1026:6: (enumLiteral_7= 'SIGNO' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1206:6: (enumLiteral_7= 'SIGNO' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1026:6: (enumLiteral_7= 'SIGNO' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1026:8: enumLiteral_7= 'SIGNO'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1206:6: (enumLiteral_7= 'SIGNO' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1206:8: enumLiteral_7= 'SIGNO'
                     {
-                    enumLiteral_7=(Token)match(input,26,FOLLOW_26_in_ruleEmptyInstructionType2443); 
+                    enumLiteral_7=(Token)match(input,28,FOLLOW_28_in_ruleEmptyInstructionType2888); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getSignoEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_7, grammarAccess.getEmptyInstructionTypeAccess().getSignoEnumLiteralDeclaration_7()); 
@@ -2747,12 +3262,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1032:6: (enumLiteral_8= 'MULT' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1212:6: (enumLiteral_8= 'MULT' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1032:6: (enumLiteral_8= 'MULT' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1032:8: enumLiteral_8= 'MULT'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1212:6: (enumLiteral_8= 'MULT' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1212:8: enumLiteral_8= 'MULT'
                     {
-                    enumLiteral_8=(Token)match(input,12,FOLLOW_12_in_ruleEmptyInstructionType2460); 
+                    enumLiteral_8=(Token)match(input,14,FOLLOW_14_in_ruleEmptyInstructionType2905); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getMultEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_8, grammarAccess.getEmptyInstructionTypeAccess().getMultEnumLiteralDeclaration_8()); 
@@ -2764,12 +3279,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1038:6: (enumLiteral_9= 'INVER' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1218:6: (enumLiteral_9= 'INVER' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1038:6: (enumLiteral_9= 'INVER' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1038:8: enumLiteral_9= 'INVER'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1218:6: (enumLiteral_9= 'INVER' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1218:8: enumLiteral_9= 'INVER'
                     {
-                    enumLiteral_9=(Token)match(input,27,FOLLOW_27_in_ruleEmptyInstructionType2477); 
+                    enumLiteral_9=(Token)match(input,29,FOLLOW_29_in_ruleEmptyInstructionType2922); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getInverEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_9, grammarAccess.getEmptyInstructionTypeAccess().getInverEnumLiteralDeclaration_9()); 
@@ -2781,12 +3296,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1044:6: (enumLiteral_10= 'ENVIAR' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1224:6: (enumLiteral_10= 'ENVIAR' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1044:6: (enumLiteral_10= 'ENVIAR' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1044:8: enumLiteral_10= 'ENVIAR'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1224:6: (enumLiteral_10= 'ENVIAR' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1224:8: enumLiteral_10= 'ENVIAR'
                     {
-                    enumLiteral_10=(Token)match(input,28,FOLLOW_28_in_ruleEmptyInstructionType2494); 
+                    enumLiteral_10=(Token)match(input,30,FOLLOW_30_in_ruleEmptyInstructionType2939); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_10, grammarAccess.getEmptyInstructionTypeAccess().getEnviarEnumLiteralDeclaration_10()); 
@@ -2798,12 +3313,12 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:6: (enumLiteral_11= 'ENVIAR MATRIZ' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1230:6: (enumLiteral_11= 'ENVIAR MATRIZ' )
                     {
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:6: (enumLiteral_11= 'ENVIAR MATRIZ' )
-                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1050:8: enumLiteral_11= 'ENVIAR MATRIZ'
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1230:6: (enumLiteral_11= 'ENVIAR MATRIZ' )
+                    // ../rebotinol/src-gen/edu/upb/lp/parser/antlr/internal/InternalRebotinol.g:1230:8: enumLiteral_11= 'ENVIAR MATRIZ'
                     {
-                    enumLiteral_11=(Token)match(input,29,FOLLOW_29_in_ruleEmptyInstructionType2511); 
+                    enumLiteral_11=(Token)match(input,31,FOLLOW_31_in_ruleEmptyInstructionType2956); 
 
                             current = grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_11, grammarAccess.getEmptyInstructionTypeAccess().getEnviarMatrizEnumLiteralDeclaration_11()); 
@@ -2842,19 +3357,19 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     static final String DFA4_eofS =
         "\16\uffff";
     static final String DFA4_minS =
-        "\1\15\4\4\11\uffff";
+        "\1\17\4\4\11\uffff";
     static final String DFA4_maxS =
-        "\1\23\4\16\11\uffff";
+        "\1\25\4\20\11\uffff";
     static final String DFA4_acceptS =
-        "\5\uffff\1\11\1\2\1\1\1\3\1\4\1\6\1\5\1\7\1\10";
+        "\5\uffff\1\11\1\1\1\2\1\4\1\3\1\5\1\6\1\10\1\7";
     static final String DFA4_specialS =
         "\16\uffff}>";
     static final String[] DFA4_transitionS = {
             "\1\1\2\uffff\1\2\1\3\1\4\1\5",
-            "\1\6\11\uffff\1\7",
-            "\1\11\11\uffff\1\10",
-            "\1\12\11\uffff\1\13",
-            "\1\15\11\uffff\1\14",
+            "\1\7\7\uffff\1\7\3\uffff\1\6",
+            "\1\10\7\uffff\1\10\3\uffff\1\11",
+            "\1\13\7\uffff\1\13\3\uffff\1\12",
+            "\1\14\7\uffff\1\14\3\uffff\1\15",
             "",
             "",
             "",
@@ -2903,7 +3418,7 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleRebotinolProgram_in_entryRuleRebotinolProgram75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRebotinolProgram85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleRebotinolProgram130 = new BitSet(new long[]{0x000000003FFF3802L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleRebotinolProgram130 = new BitSet(new long[]{0x00000000FFFCE002L});
     public static final BitSet FOLLOW_ruleInstruction_in_entryRuleInstruction166 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstruction176 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEmptyInstruction_in_ruleInstruction223 = new BitSet(new long[]{0x0000000000000002L});
@@ -2927,84 +3442,100 @@ public class InternalRebotinolParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleMenor_in_ruleComplexInstruction740 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMenork_in_ruleComplexInstruction767 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRepetirn_in_ruleComplexInstruction794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSumak_in_entryRuleSumak829 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSumak839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleSumak876 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSumak893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultk_in_entryRuleMultk934 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultk944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleMultk981 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMultk998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIgual_in_entryRuleIgual1039 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIgual1049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleIgual1086 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleIgual1098 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgual1119 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleIgual1132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIgualk_in_entryRuleIgualk1168 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIgualk1178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleIgualk1215 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleIgualk1232 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleIgualk1249 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgualk1270 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleIgualk1283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDifer_in_entryRuleDifer1319 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDifer1329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleDifer1366 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleDifer1378 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleDifer1399 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleDifer1412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiferk_in_entryRuleDiferk1448 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDiferk1458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleDiferk1495 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDiferk1512 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleDiferk1529 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiferk1550 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleDiferk1563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMayor_in_entryRuleMayor1599 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMayor1609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleMayor1646 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMayor1658 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayor1679 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleMayor1692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMayork_in_entryRuleMayork1728 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMayork1738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleMayork1775 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMayork1792 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMayork1809 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayork1830 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleMayork1843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMenor_in_entryRuleMenor1879 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMenor1889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleMenor1926 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMenor1938 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenor1959 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleMenor1972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMenork_in_entryRuleMenork2008 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMenork2018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleMenork2055 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleMenork2072 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMenork2089 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenork2110 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleMenork2123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRepetirn_in_entryRuleRepetirn2159 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRepetirn2169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleRepetirn2206 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleRepetirn2223 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleRepetirn2240 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_ruleInstruction_in_ruleRepetirn2261 = new BitSet(new long[]{0x000000003FFFB800L});
-    public static final BitSet FOLLOW_15_in_ruleRepetirn2274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleEmptyInstructionType2324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleEmptyInstructionType2341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleEmptyInstructionType2358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleEmptyInstructionType2375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleEmptyInstructionType2392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleEmptyInstructionType2409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleEmptyInstructionType2426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleEmptyInstructionType2443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleEmptyInstructionType2460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleEmptyInstructionType2477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleEmptyInstructionType2494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleEmptyInstructionType2511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber829 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumber839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNumber886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegativeNumber_in_ruleNumber913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_entryRulePositiveNumber948 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePositiveNumber958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInteger_in_rulePositiveNumber1005 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_11_in_rulePositiveNumber1026 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleInteger_in_rulePositiveNumber1047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInteger_in_entryRuleInteger1085 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInteger1095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleInteger1136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1176 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNegativeNumber1186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleNegativeNumber1223 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSumak_in_entryRuleSumak1280 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSumak1290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleSumak1327 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleSumak1348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultk_in_entryRuleMultk1384 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMultk1394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleMultk1431 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleMultk1452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIgual_in_entryRuleIgual1488 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIgual1498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleIgual1535 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleIgual1547 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgual1568 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleIgual1581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIgualk_in_entryRuleIgualk1617 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleIgualk1627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleIgualk1664 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleIgualk1685 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleIgualk1697 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleIgualk1718 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleIgualk1731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDifer_in_entryRuleDifer1767 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDifer1777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleDifer1814 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleDifer1826 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleDifer1847 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleDifer1860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDiferk_in_entryRuleDiferk1896 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDiferk1906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleDiferk1943 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleDiferk1964 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleDiferk1976 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleDiferk1997 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleDiferk2010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMayor_in_entryRuleMayor2046 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMayor2056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleMayor2093 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleMayor2105 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayor2126 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleMayor2139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMayork_in_entryRuleMayork2175 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMayork2185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleMayork2222 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleMayork2243 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleMayork2255 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMayork2276 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleMayork2289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMenor_in_entryRuleMenor2325 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMenor2335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleMenor2372 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleMenor2384 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenor2405 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleMenor2418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMenork_in_entryRuleMenork2454 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMenork2464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleMenork2501 = new BitSet(new long[]{0x0000000000001010L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleMenork2522 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleMenork2534 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleMenork2555 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleMenork2568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRepetirn_in_entryRuleRepetirn2604 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRepetirn2614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleRepetirn2651 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleRepetirn2668 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleRepetirn2685 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_ruleInstruction_in_ruleRepetirn2706 = new BitSet(new long[]{0x00000000FFFEE000L});
+    public static final BitSet FOLLOW_17_in_ruleRepetirn2719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleEmptyInstructionType2769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleEmptyInstructionType2786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleEmptyInstructionType2803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleEmptyInstructionType2820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleEmptyInstructionType2837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleEmptyInstructionType2854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleEmptyInstructionType2871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleEmptyInstructionType2888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleEmptyInstructionType2905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleEmptyInstructionType2922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleEmptyInstructionType2939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleEmptyInstructionType2956 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -142,28 +142,124 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getRepetirnParserRuleCall_8() { return cRepetirnParserRuleCall_8; }
 	}
 
+	public class NumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Number");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPositiveNumberParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cNegativeNumberParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Number:
+		//	PositiveNumber | NegativeNumber;
+		public ParserRule getRule() { return rule; }
+
+		//PositiveNumber | NegativeNumber
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//PositiveNumber
+		public RuleCall getPositiveNumberParserRuleCall_0() { return cPositiveNumberParserRuleCall_0; }
+
+		//NegativeNumber
+		public RuleCall getNegativeNumberParserRuleCall_1() { return cNegativeNumberParserRuleCall_1; }
+	}
+
+	public class PositiveNumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PositiveNumber");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIntegerParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cFractionNumeratorAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cSolidusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cDenominatorAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cDenominatorIntegerParserRuleCall_1_2_0 = (RuleCall)cDenominatorAssignment_1_2.eContents().get(0);
+		
+		//PositiveNumber:
+		//	Integer ({Fraction.numerator=current} "/" denominator=Integer)?;
+		public ParserRule getRule() { return rule; }
+
+		//Integer ({Fraction.numerator=current} "/" denominator=Integer)?
+		public Group getGroup() { return cGroup; }
+
+		//Integer
+		public RuleCall getIntegerParserRuleCall_0() { return cIntegerParserRuleCall_0; }
+
+		//({Fraction.numerator=current} "/" denominator=Integer)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{Fraction.numerator=current}
+		public Action getFractionNumeratorAction_1_0() { return cFractionNumeratorAction_1_0; }
+
+		//"/"
+		public Keyword getSolidusKeyword_1_1() { return cSolidusKeyword_1_1; }
+
+		//denominator=Integer
+		public Assignment getDenominatorAssignment_1_2() { return cDenominatorAssignment_1_2; }
+
+		//Integer
+		public RuleCall getDenominatorIntegerParserRuleCall_1_2_0() { return cDenominatorIntegerParserRuleCall_1_2_0; }
+	}
+
+	public class IntegerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Integer");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//Integer:
+		//	value=INT;
+		public ParserRule getRule() { return rule; }
+
+		//value=INT
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
+	}
+
+	public class NegativeNumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NegativeNumber");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValPositiveNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		
+		//NegativeNumber:
+		//	"-" val=PositiveNumber;
+		public ParserRule getRule() { return rule; }
+
+		//"-" val=PositiveNumber
+		public Group getGroup() { return cGroup; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+
+		//val=PositiveNumber
+		public Assignment getValAssignment_1() { return cValAssignment_1; }
+
+		//PositiveNumber
+		public RuleCall getValPositiveNumberParserRuleCall_1_0() { return cValPositiveNumberParserRuleCall_1_0; }
+	}
+
 	public class SumakElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Sumak");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSUMAKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final RuleCall cValNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
 		
 		//Sumak:
-		//	"SUMA" val=INT;
+		//	"SUMA" val=Number;
 		public ParserRule getRule() { return rule; }
 
-		//"SUMA" val=INT
+		//"SUMA" val=Number
 		public Group getGroup() { return cGroup; }
 
 		//"SUMA"
 		public Keyword getSUMAKeyword_0() { return cSUMAKeyword_0; }
 
-		//val=INT
+		//val=Number
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		//Number
+		public RuleCall getValNumberParserRuleCall_1_0() { return cValNumberParserRuleCall_1_0; }
 	}
 
 	public class MultkElements extends AbstractParserRuleElementFinder {
@@ -171,23 +267,23 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMULTKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final RuleCall cValNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
 		
 		//Multk:
-		//	"MULT" val=INT;
+		//	"MULT" val=Number;
 		public ParserRule getRule() { return rule; }
 
-		//"MULT" val=INT
+		//"MULT" val=Number
 		public Group getGroup() { return cGroup; }
 
 		//"MULT"
 		public Keyword getMULTKeyword_0() { return cMULTKeyword_0; }
 
-		//val=INT
+		//val=Number
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		//Number
+		public RuleCall getValNumberParserRuleCall_1_0() { return cValNumberParserRuleCall_1_0; }
 	}
 
 	public class IgualElements extends AbstractParserRuleElementFinder {
@@ -227,27 +323,27 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIGUALKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final RuleCall cValNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cSubInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cSubInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cSubInstructionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Igualk:
-		//	"IGUAL" val=INT "{" subInstructions+=Instruction+ "}";
+		//	"IGUAL" val=Number "{" subInstructions+=Instruction+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"IGUAL" val=INT "{" subInstructions+=Instruction+ "}"
+		//"IGUAL" val=Number "{" subInstructions+=Instruction+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"IGUAL"
 		public Keyword getIGUALKeyword_0() { return cIGUALKeyword_0; }
 
-		//val=INT
+		//val=Number
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		//Number
+		public RuleCall getValNumberParserRuleCall_1_0() { return cValNumberParserRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -299,27 +395,27 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDIFERKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final RuleCall cValNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cSubInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cSubInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cSubInstructionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Diferk:
-		//	"DIFER" val=INT "{" subInstructions+=Instruction+ "}";
+		//	"DIFER" val=Number "{" subInstructions+=Instruction+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"DIFER" val=INT "{" subInstructions+=Instruction+ "}"
+		//"DIFER" val=Number "{" subInstructions+=Instruction+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"DIFER"
 		public Keyword getDIFERKeyword_0() { return cDIFERKeyword_0; }
 
-		//val=INT
+		//val=Number
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		//Number
+		public RuleCall getValNumberParserRuleCall_1_0() { return cValNumberParserRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -371,27 +467,27 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMAYORKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final RuleCall cValNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cSubInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cSubInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cSubInstructionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Mayork:
-		//	"MAYOR" val=INT "{" subInstructions+=Instruction+ "}";
+		//	"MAYOR" val=Number "{" subInstructions+=Instruction+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"MAYOR" val=INT "{" subInstructions+=Instruction+ "}"
+		//"MAYOR" val=Number "{" subInstructions+=Instruction+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"MAYOR"
 		public Keyword getMAYORKeyword_0() { return cMAYORKeyword_0; }
 
-		//val=INT
+		//val=Number
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		//Number
+		public RuleCall getValNumberParserRuleCall_1_0() { return cValNumberParserRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -443,27 +539,27 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMENORKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValINTTerminalRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final RuleCall cValNumberParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cSubInstructionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cSubInstructionsInstructionParserRuleCall_3_0 = (RuleCall)cSubInstructionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Menork:
-		//	"MENOR" val=INT "{" subInstructions+=Instruction+ "}";
+		//	"MENOR" val=Number "{" subInstructions+=Instruction+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//"MENOR" val=INT "{" subInstructions+=Instruction+ "}"
+		//"MENOR" val=Number "{" subInstructions+=Instruction+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"MENOR"
 		public Keyword getMENORKeyword_0() { return cMENORKeyword_0; }
 
-		//val=INT
+		//val=Number
 		public Assignment getValAssignment_1() { return cValAssignment_1; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_1_0() { return cValINTTerminalRuleCall_1_0; }
+		//Number
+		public RuleCall getValNumberParserRuleCall_1_0() { return cValNumberParserRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -635,6 +731,10 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 	private EmptyInstructionTypeElements unknownRuleEmptyInstructionType;
 	private NonEmptyInstructionElements pNonEmptyInstruction;
 	private ComplexInstructionElements pComplexInstruction;
+	private NumberElements pNumber;
+	private PositiveNumberElements pPositiveNumber;
+	private IntegerElements pInteger;
+	private NegativeNumberElements pNegativeNumber;
 	private SumakElements pSumak;
 	private MultkElements pMultk;
 	private IgualElements pIgual;
@@ -746,8 +846,48 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 		return getComplexInstructionAccess().getRule();
 	}
 
+	//Number:
+	//	PositiveNumber | NegativeNumber;
+	public NumberElements getNumberAccess() {
+		return (pNumber != null) ? pNumber : (pNumber = new NumberElements());
+	}
+	
+	public ParserRule getNumberRule() {
+		return getNumberAccess().getRule();
+	}
+
+	//PositiveNumber:
+	//	Integer ({Fraction.numerator=current} "/" denominator=Integer)?;
+	public PositiveNumberElements getPositiveNumberAccess() {
+		return (pPositiveNumber != null) ? pPositiveNumber : (pPositiveNumber = new PositiveNumberElements());
+	}
+	
+	public ParserRule getPositiveNumberRule() {
+		return getPositiveNumberAccess().getRule();
+	}
+
+	//Integer:
+	//	value=INT;
+	public IntegerElements getIntegerAccess() {
+		return (pInteger != null) ? pInteger : (pInteger = new IntegerElements());
+	}
+	
+	public ParserRule getIntegerRule() {
+		return getIntegerAccess().getRule();
+	}
+
+	//NegativeNumber:
+	//	"-" val=PositiveNumber;
+	public NegativeNumberElements getNegativeNumberAccess() {
+		return (pNegativeNumber != null) ? pNegativeNumber : (pNegativeNumber = new NegativeNumberElements());
+	}
+	
+	public ParserRule getNegativeNumberRule() {
+		return getNegativeNumberAccess().getRule();
+	}
+
 	//Sumak:
-	//	"SUMA" val=INT;
+	//	"SUMA" val=Number;
 	public SumakElements getSumakAccess() {
 		return (pSumak != null) ? pSumak : (pSumak = new SumakElements());
 	}
@@ -757,7 +897,7 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Multk:
-	//	"MULT" val=INT;
+	//	"MULT" val=Number;
 	public MultkElements getMultkAccess() {
 		return (pMultk != null) ? pMultk : (pMultk = new MultkElements());
 	}
@@ -777,7 +917,7 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Igualk:
-	//	"IGUAL" val=INT "{" subInstructions+=Instruction+ "}";
+	//	"IGUAL" val=Number "{" subInstructions+=Instruction+ "}";
 	public IgualkElements getIgualkAccess() {
 		return (pIgualk != null) ? pIgualk : (pIgualk = new IgualkElements());
 	}
@@ -797,7 +937,7 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Diferk:
-	//	"DIFER" val=INT "{" subInstructions+=Instruction+ "}";
+	//	"DIFER" val=Number "{" subInstructions+=Instruction+ "}";
 	public DiferkElements getDiferkAccess() {
 		return (pDiferk != null) ? pDiferk : (pDiferk = new DiferkElements());
 	}
@@ -817,7 +957,7 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Mayork:
-	//	"MAYOR" val=INT "{" subInstructions+=Instruction+ "}";
+	//	"MAYOR" val=Number "{" subInstructions+=Instruction+ "}";
 	public MayorkElements getMayorkAccess() {
 		return (pMayork != null) ? pMayork : (pMayork = new MayorkElements());
 	}
@@ -837,7 +977,7 @@ public class RebotinolGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Menork:
-	//	"MENOR" val=INT "{" subInstructions+=Instruction+ "}";
+	//	"MENOR" val=Number "{" subInstructions+=Instruction+ "}";
 	public MenorkElements getMenorkAccess() {
 		return (pMenork != null) ? pMenork : (pMenork = new MenorkElements());
 	}

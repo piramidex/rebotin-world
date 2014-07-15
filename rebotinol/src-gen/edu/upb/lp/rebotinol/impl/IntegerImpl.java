@@ -3,7 +3,6 @@
 package edu.upb.lp.rebotinol.impl;
 
 import edu.upb.lp.rebotinol.RebotinolPackage;
-import edu.upb.lp.rebotinol.Repetirn;
 
 import java.lang.Integer;
 
@@ -15,45 +14,45 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Repetirn</b></em>'.
+ * An implementation of the model object '<em><b>Integer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.upb.lp.rebotinol.impl.RepetirnImpl#getVal <em>Val</em>}</li>
+ *   <li>{@link edu.upb.lp.rebotinol.impl.IntegerImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
+public class IntegerImpl extends PositiveNumberImpl implements edu.upb.lp.rebotinol.Integer
 {
   /**
-   * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final int VAL_EDEFAULT = 0;
+  protected static final int VALUE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected int val = VAL_EDEFAULT;
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RepetirnImpl()
+  protected IntegerImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
   @Override
   protected EClass eStaticClass()
   {
-    return RebotinolPackage.Literals.REPETIRN;
+    return RebotinolPackage.Literals.INTEGER;
   }
 
   /**
@@ -74,9 +73,9 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getVal()
+  public int getValue()
   {
-    return val;
+    return value;
   }
 
   /**
@@ -84,12 +83,12 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(int newVal)
+  public void setValue(int newValue)
   {
-    int oldVal = val;
-    val = newVal;
+    int oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RebotinolPackage.REPETIRN__VAL, oldVal, val));
+      eNotify(new ENotificationImpl(this, Notification.SET, RebotinolPackage.INTEGER__VALUE, oldValue, value));
   }
 
   /**
@@ -102,8 +101,8 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
   {
     switch (featureID)
     {
-      case RebotinolPackage.REPETIRN__VAL:
-        return getVal();
+      case RebotinolPackage.INTEGER__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +117,8 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
   {
     switch (featureID)
     {
-      case RebotinolPackage.REPETIRN__VAL:
-        setVal((Integer)newValue);
+      case RebotinolPackage.INTEGER__VALUE:
+        setValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +134,8 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
   {
     switch (featureID)
     {
-      case RebotinolPackage.REPETIRN__VAL:
-        setVal(VAL_EDEFAULT);
+      case RebotinolPackage.INTEGER__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +151,8 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
   {
     switch (featureID)
     {
-      case RebotinolPackage.REPETIRN__VAL:
-        return val != VAL_EDEFAULT;
+      case RebotinolPackage.INTEGER__VALUE:
+        return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +168,10 @@ public class RepetirnImpl extends ComplexInstructionImpl implements Repetirn
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (val: ");
-    result.append(val);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //RepetirnImpl
+} //IntegerImpl

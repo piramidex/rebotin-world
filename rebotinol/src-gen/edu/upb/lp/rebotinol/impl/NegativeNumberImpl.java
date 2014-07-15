@@ -2,7 +2,8 @@
  */
 package edu.upb.lp.rebotinol.impl;
 
-import edu.upb.lp.rebotinol.Multk;
+import edu.upb.lp.rebotinol.NegativeNumber;
+import edu.upb.lp.rebotinol.PositiveNumber;
 import edu.upb.lp.rebotinol.RebotinolPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Multk</b></em>'.
+ * An implementation of the model object '<em><b>Negative Number</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.upb.lp.rebotinol.impl.MultkImpl#getVal <em>Val</em>}</li>
+ *   <li>{@link edu.upb.lp.rebotinol.impl.NegativeNumberImpl#getVal <em>Val</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MultkImpl extends NonEmptyInstructionImpl implements Multk
+public class NegativeNumberImpl extends NumberImpl implements NegativeNumber
 {
   /**
    * The cached value of the '{@link #getVal() <em>Val</em>}' containment reference.
@@ -36,14 +37,14 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
    * @generated
    * @ordered
    */
-  protected edu.upb.lp.rebotinol.Number val;
+  protected PositiveNumber val;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MultkImpl()
+  protected NegativeNumberImpl()
   {
     super();
   }
@@ -56,7 +57,7 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
   @Override
   protected EClass eStaticClass()
   {
-    return RebotinolPackage.Literals.MULTK;
+    return RebotinolPackage.Literals.NEGATIVE_NUMBER;
   }
 
   /**
@@ -64,7 +65,7 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
    * <!-- end-user-doc -->
    * @generated
    */
-  public edu.upb.lp.rebotinol.Number getVal()
+  public PositiveNumber getVal()
   {
     return val;
   }
@@ -74,13 +75,13 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVal(edu.upb.lp.rebotinol.Number newVal, NotificationChain msgs)
+  public NotificationChain basicSetVal(PositiveNumber newVal, NotificationChain msgs)
   {
-    edu.upb.lp.rebotinol.Number oldVal = val;
+    PositiveNumber oldVal = val;
     val = newVal;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RebotinolPackage.MULTK__VAL, oldVal, newVal);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RebotinolPackage.NEGATIVE_NUMBER__VAL, oldVal, newVal);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -91,20 +92,20 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(edu.upb.lp.rebotinol.Number newVal)
+  public void setVal(PositiveNumber newVal)
   {
     if (newVal != val)
     {
       NotificationChain msgs = null;
       if (val != null)
-        msgs = ((InternalEObject)val).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RebotinolPackage.MULTK__VAL, null, msgs);
+        msgs = ((InternalEObject)val).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RebotinolPackage.NEGATIVE_NUMBER__VAL, null, msgs);
       if (newVal != null)
-        msgs = ((InternalEObject)newVal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RebotinolPackage.MULTK__VAL, null, msgs);
+        msgs = ((InternalEObject)newVal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RebotinolPackage.NEGATIVE_NUMBER__VAL, null, msgs);
       msgs = basicSetVal(newVal, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RebotinolPackage.MULTK__VAL, newVal, newVal));
+      eNotify(new ENotificationImpl(this, Notification.SET, RebotinolPackage.NEGATIVE_NUMBER__VAL, newVal, newVal));
   }
 
   /**
@@ -117,7 +118,7 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
   {
     switch (featureID)
     {
-      case RebotinolPackage.MULTK__VAL:
+      case RebotinolPackage.NEGATIVE_NUMBER__VAL:
         return basicSetVal(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -133,7 +134,7 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
   {
     switch (featureID)
     {
-      case RebotinolPackage.MULTK__VAL:
+      case RebotinolPackage.NEGATIVE_NUMBER__VAL:
         return getVal();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -149,8 +150,8 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
   {
     switch (featureID)
     {
-      case RebotinolPackage.MULTK__VAL:
-        setVal((edu.upb.lp.rebotinol.Number)newValue);
+      case RebotinolPackage.NEGATIVE_NUMBER__VAL:
+        setVal((PositiveNumber)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -166,8 +167,8 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
   {
     switch (featureID)
     {
-      case RebotinolPackage.MULTK__VAL:
-        setVal((edu.upb.lp.rebotinol.Number)null);
+      case RebotinolPackage.NEGATIVE_NUMBER__VAL:
+        setVal((PositiveNumber)null);
         return;
     }
     super.eUnset(featureID);
@@ -183,10 +184,10 @@ public class MultkImpl extends NonEmptyInstructionImpl implements Multk
   {
     switch (featureID)
     {
-      case RebotinolPackage.MULTK__VAL:
+      case RebotinolPackage.NEGATIVE_NUMBER__VAL:
         return val != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //MultkImpl
+} //NegativeNumberImpl
