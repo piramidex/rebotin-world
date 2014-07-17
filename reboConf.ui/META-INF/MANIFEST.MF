@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: reboConf.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: Universidad Privada Boliviana
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: reboConf.ui; singleton:=true
 Bundle-ActivationPolicy: lazy

@@ -59,5 +59,64 @@
          </toolbar>
       </menuContribution>
    </extension>
-
+<!--Product configuration-->
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="edu.upb.lp.rebotinol.product.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Rebotin Perspective"
+            class="edu.upb.lp.rebotinol.product.Perspective"
+            id="edu.upb.lp.rebotinol.product.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="reboproduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rebotinolEclipsePlugin.application"
+            name="Rebotin World">
+         <property name="appName" value="Rebotin World"/>
+         <property name="aboutImage" value="icons/Rebotin.png"/> 
+         <property
+               name="aboutText"
+               value="Rebotin World&#x0A;Universidad Privada Boliviana&#x0A;&#x0A;Autores:&#x0A;  Alexis Marechal&#x0A;  Alfredo Villalba&#x0A;  Jorge Loza&#x0A;  Mauricio Loza"/>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="edu.upb.lp.rebotinol.product.View"
+            id="test2.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="test2.view"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               standalone="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
 </plugin>
