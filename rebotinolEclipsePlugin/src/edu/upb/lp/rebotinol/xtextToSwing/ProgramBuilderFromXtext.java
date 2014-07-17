@@ -101,7 +101,8 @@ public class ProgramBuilderFromXtext {
 			try {
 				return doSwitch(obj);
 			} catch (IllegalStateException e) {
-				if (e.getCause() != null && e.getCause() instanceof RebotinolFatalException) {
+				if (e.getCause() != null
+						&& e.getCause() instanceof RebotinolFatalException) {
 					throw (RebotinolFatalException) e.getCause();
 				} else {
 					throw new RebotinolFatalException(e.getMessage());
@@ -248,12 +249,8 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseRepetirn(Repetirn instr) {
-			List<RebotinolInstructionExecution> subExecutions = getSubExecutions(instr);
-			for (int i = 0; i < instr.getVal(); i++) {
-				subExecutions.addAll(getSubExecutions(instr));
-			}
-			return new RepExecution(subExecutions, instr.getSubInstructions()
-					.size());
+			return new RepExecution(getSubExecutions(instr), 
+					instr.getSubInstructions().size());
 		}
 	}
 

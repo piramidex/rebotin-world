@@ -14,7 +14,7 @@ public class ArrExecution extends MovementExecution {
      * {@inheritDoc}
      */
     @Override
-	protected int getNewHorizontal(int h, int v) {
+    public int getNewHorizontal(int h, int v) {
 		return h;
 	}
 
@@ -22,7 +22,7 @@ public class ArrExecution extends MovementExecution {
      * {@inheritDoc}
      */
 	@Override
-	protected int getNewVertical(int h, int v) {
+	public int getNewVertical(int h, int v) {
 		return v-1;
 	}
 
@@ -30,7 +30,7 @@ public class ArrExecution extends MovementExecution {
      * {@inheritDoc}
      */
 	@Override
-	protected int getUndoHorizontal(int h, int v) {
+	public int getUndoHorizontal(int h, int v) {
 		return h;
 	}
 
@@ -38,7 +38,7 @@ public class ArrExecution extends MovementExecution {
      * {@inheritDoc}
      */
 	@Override
-	protected int getUndoVertical(int h, int v) {
+	public int getUndoVertical(int h, int v) {
 		return v+1;
 	}
 
@@ -46,7 +46,7 @@ public class ArrExecution extends MovementExecution {
      * {@inheritDoc}
      */
 	@Override
-	protected boolean doesModify(RebotinolHouse house, int h, int v) {
+	public boolean doesModify(RebotinolHouse house, int h, int v) {
 		return v > 0;
 	}
 	

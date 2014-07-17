@@ -52,7 +52,7 @@ public abstract class ChangeMemoryExecution extends
 	/**
 	 * @return the old value stored to rollback this execution
 	 */
-	protected Fraction getOldValue() {
+	public Fraction getOldValue() {
 	    return _oldValue;
 	}
 

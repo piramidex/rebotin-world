@@ -120,8 +120,7 @@ public abstract class SequentialInstructionExecution extends
 	 * 
 	 * @return A clone of the sub-executions list.
 	 */
-	//TODO check if this clone is ok
-	protected List<RebotinolInstructionExecution> getSubExecutions() {
+	public List<RebotinolInstructionExecution> getSubExecutions() {
 		List<RebotinolInstructionExecution> ans = new ArrayList<RebotinolInstructionExecution>();
 		ans.addAll(_subExecutions);
 		return ans;
@@ -131,14 +130,14 @@ public abstract class SequentialInstructionExecution extends
 	 * @return The index of the current execution being considered in this
 	 *         sub-execution, starting with 0.
 	 */
-	protected int getCurrentExecutionIndex() {
+	public int getCurrentExecutionIndex() {
 		return _currentExecutionIndex;
 	}
 
 	/**
 	 * @return The current execution being considered.
 	 */
-	protected RebotinolInstructionExecution getCurrentExecution() {
+	public RebotinolInstructionExecution getCurrentExecution() {
 		return _subExecutions.get(_currentExecutionIndex);
 	}
 
