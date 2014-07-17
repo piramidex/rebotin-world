@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * A conditional execution whose condition is that the memory value is greater than a fixed value
@@ -31,4 +32,11 @@ public class MayorkExecution extends FixedConditionalExecution {
         return memory.compareTo(getFixedValue()) == 1;
     }
 
+    /**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
 }

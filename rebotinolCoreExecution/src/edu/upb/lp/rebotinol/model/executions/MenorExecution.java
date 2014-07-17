@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * A conditional execution whose condition is that the memory value is smaller than the current matrix value
@@ -30,4 +31,11 @@ public class MenorExecution extends MatrixConditionalExecution {
         return memory.compareTo(matrixValue) == -1;
     }
 
+    /**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
 }

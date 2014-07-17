@@ -2,6 +2,8 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
+
 public class RepExecution extends SequentialInstructionExecution {
     private int _numberOfInstructions;
     
@@ -36,5 +38,20 @@ public class RepExecution extends SequentialInstructionExecution {
         return getCurrentExecutionIndex()/_numberOfInstructions;
     }
     
+    /**
+     * Computes the total number of repetitions that should be performed by this execution.
+     * @return The total number of repetitions that should be performed by this execution.
+     */
+    public int getTotalNumberOfRepetitions() {
+    	return getSubExecutions().size()/_numberOfInstructions;
+    }
     //TODO avisar cada que termina una vuelta
+    
+    /**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
 }

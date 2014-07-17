@@ -4,6 +4,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * An instruction to memorize the current number in the matrix.
@@ -32,5 +33,13 @@ public class MemoExecution extends ChangeMemoryExecution {
 	@Override
 	protected void checkMemoryNotEmpty(RebotinolHouse house) throws RebotinolExecutionException {
 		//Do nothing
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
 	}
 }

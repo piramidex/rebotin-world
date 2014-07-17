@@ -2,6 +2,8 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
+
 /**
  * A rebotinol program, which is simply a basic instance of
  * {@link SequentialInstructionExecution}.
@@ -21,4 +23,11 @@ public class RebotinolProgram extends SequentialInstructionExecution {
 		super(executions);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
 }

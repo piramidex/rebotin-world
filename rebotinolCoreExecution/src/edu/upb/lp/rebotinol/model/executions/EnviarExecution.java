@@ -5,6 +5,7 @@ import org.apache.commons.math3.fraction.Fraction;
 import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
@@ -38,4 +39,11 @@ public class EnviarExecution extends RebotinolInstructionExecution {
 		house.setMail(null);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
 }

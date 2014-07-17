@@ -4,6 +4,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * Instruction to write the memorized number on the matrix.
@@ -38,5 +39,13 @@ public class EscriExecution extends RebotinolInstructionExecution {
 		house.writeInMatrix(_oldValue);
 		_oldValue = null;
 		unfinish();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
 	}
 }

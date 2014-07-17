@@ -62,7 +62,7 @@ public abstract class FixedConditionalExecution extends ConditionalExecution {
     /**
      * @return the fixed value in this conditional execution
      */
-    protected Fraction getFixedValue() {
+    public Fraction getFixedValue() {
     	return _fixedValue;
     }
 }

@@ -5,6 +5,8 @@ import java.util.List;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
@@ -256,5 +258,12 @@ public abstract class RebotinolInstructionExecution {
 		return _breakpoint;
 	}
 
-	// TODO container
+	// TODO a way to access container
+	
+	/**
+	 * Accept a {@link RebotinoExecutionVisitor}, according to the visitor design pattern
+	 * @param v The visitor to be accepted
+	 * @return The result of the visit
+	 */
+	public abstract Object accept(RebotinolExecutionVisitor v);
 }

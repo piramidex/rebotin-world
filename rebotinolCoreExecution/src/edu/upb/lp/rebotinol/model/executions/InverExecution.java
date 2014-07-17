@@ -4,6 +4,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * Instruction to invert the memorized number.
@@ -22,5 +23,13 @@ public class InverExecution extends ChangeMemoryExecution {
 			throw new RebotinolExecutionException("Division by 0!");
 		}
 		house.setMemory(getOldValue().reciprocal());
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
 	}
 }

@@ -1,7 +1,7 @@
 package edu.upb.lp.rebotinol.view.executions;
 
-import edu.upb.lp.rebotinol.model.executions.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
 
 public class ExecutionPanel implements RebotinolExecutionObserver {
 

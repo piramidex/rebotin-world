@@ -4,6 +4,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * Instruction to add a given number to the memorized number.
@@ -29,5 +30,20 @@ public class SumakExecution extends ChangeMemoryExecution {
 	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
 		house.setMemory(getOldValue().add(_valueToAdd));
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
+	
+	/**
+	 * @return The value to be multiplied
+	 */
+	public Fraction getValue() {
+		return _valueToAdd;
 	}
 }

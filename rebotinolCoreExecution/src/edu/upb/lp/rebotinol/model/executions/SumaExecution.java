@@ -4,6 +4,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * Instruction to add the current number on the matrix to the memorized number.
@@ -24,5 +25,13 @@ public class SumaExecution extends ChangeMemoryExecution {
 					"Tried to add while the matrix was empty in the current position!");
 		}
 		house.setMemory(getOldValue().add(val2));
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
 	}
 }

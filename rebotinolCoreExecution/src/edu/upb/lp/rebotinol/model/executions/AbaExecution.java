@@ -1,6 +1,7 @@
 package edu.upb.lp.rebotinol.model.executions;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 /**
  * Instruction to go down on the matrix.
@@ -47,5 +48,13 @@ public class AbaExecution extends MovementExecution {
 	@Override
 	protected boolean doesModify(RebotinolHouse house, int h, int v) {
 		return v < house.getSizeV() - 1;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
 	}
 }

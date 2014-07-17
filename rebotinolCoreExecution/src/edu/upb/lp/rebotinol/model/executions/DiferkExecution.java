@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 
 public class DiferkExecution extends FixedConditionalExecution {
 
@@ -24,4 +25,11 @@ public class DiferkExecution extends FixedConditionalExecution {
         return !memory.equals(getFixedValue());
     }
 
+    /**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object accept(RebotinolExecutionVisitor v) {
+		return v.visit(this);
+	}
 }
