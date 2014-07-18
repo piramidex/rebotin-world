@@ -48,6 +48,13 @@ public class RepExecution extends SequentialInstructionExecution {
     //TODO avisar cada que termina una vuelta
     
     /**
+     * @return The number of instructions to be executed at each repetition.
+     */
+    public int getNumberOfInstructionsPerRepetition() {
+    	return _numberOfInstructions;
+    }
+    
+    /**
 	 * {@inheritDoc}
 	 */
 	@Override
