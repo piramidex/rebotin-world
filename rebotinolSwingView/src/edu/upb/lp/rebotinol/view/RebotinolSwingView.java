@@ -9,7 +9,7 @@ import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.view.buttons.ButtonsPanelBuilder;
-import edu.upb.lp.rebotinol.view.executions.ExecutionsPanelBuilder;
+import edu.upb.lp.rebotinol.view.executions.ExecutionsPanel;
 
 /**
  * This is the main class for the rebotinol view in Swing (2014).
@@ -39,7 +39,7 @@ public class RebotinolSwingView {
 		SequentialInstructionExecution program = _controller.get_program();
 		RebotinolHouse house = _controller.get_house();
 		Fraction[][] initialMatrix = _controller.get_initialMatrix();
-		_executionsPanel = ExecutionsPanelBuilder.buildPanel(program);
+		_executionsPanel = new ExecutionsPanel(_controller);
 //		_housePanel = HousePanel.buildPanel(house, initialMatrix);
 		_buttonsPanel = ButtonsPanelBuilder.buildPanel();
 		initialiseMainFrame();
