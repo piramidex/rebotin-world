@@ -45,7 +45,7 @@ public class RepExecution extends SequentialInstructionExecution {
     public int getTotalNumberOfRepetitions() {
     	return getSubExecutions().size()/_numberOfInstructions;
     }
-    //TODO avisar cada que termina una vuelta
+    //TODO avisar cada que termina una vuelta hacia adelante y atras
     
     /**
      * @return The number of instructions to be executed at each repetition.

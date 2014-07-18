@@ -234,12 +234,9 @@ public abstract class RebotinolInstructionExecution {
 
 	/**
 	 * Set or remove a breakpoint in this execution
-	 * 
-	 * @param breakpoint
-	 *            true if we want to set a breakpoint, false otherwise
 	 */
-	public void setBreakpoint(boolean breakpoint) {
-		_breakpoint = breakpoint;
+	public void toggleBreakpoint() {
+		_breakpoint = !_breakpoint;
 	}
 
 	/**

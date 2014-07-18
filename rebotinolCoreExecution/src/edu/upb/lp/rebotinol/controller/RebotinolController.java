@@ -164,13 +164,9 @@ public class RebotinolController {
 	 * @param execution
 	 *            The execution on which we are trying to set or remove a
 	 *            breakpoint.
-	 * @param breakpoint
-	 *            true if we want to set a breakpoint on the execution, false if
-	 *            we want to remove it
 	 */
-	public void setBreakpoint(RebotinolInstructionExecution execution,
-			boolean breakpoint) {
-		execution.setBreakpoint(breakpoint);
+	public void toggleBreakpoint(RebotinolInstructionExecution execution) {
+		execution.toggleBreakpoint();
 	}
 
 	/**

@@ -78,4 +78,12 @@ public interface RebotinolExecutionObserver {
 	 * been removed.
 	 */
 	public void breakpointRemoved();
+	
+	/**
+	 * This method is executed by the observed execution when the number of
+	 * repetitons executed has changed.
+	 * 
+	 * @param repetitionsExecuted The number of repetitions that have been executed
+	 */
+	public void repetitionsChanged(int repetitionsExecuted);
 }

@@ -80,6 +80,12 @@ public class ExecutionPanel implements RebotinolExecutionObserver {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void repetitionsChanged(int repetitionsExecuted) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
