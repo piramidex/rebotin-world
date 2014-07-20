@@ -5,9 +5,9 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 
-public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
+public class RebotinApplicationActionBarAdvisor extends ActionBarAdvisor {
 
-    public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
+    public RebotinApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
         super(configurer);
     }
 

@@ -19,10 +19,11 @@ import edu.upb.lp.rebotinol.dialogs.RebotinLaunchDialog;
  * @see org.eclipse.core.commands.AbstractHandler
  */
 public class RebotinolSwingHandler extends AbstractHandler {
+
 	/**
-	 * the command has been executed, so extract extract the needed information
-	 * from the application context.
+	 * {@inheritDoc}
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		IEditorInput input = HandlerUtil.getActiveEditorInput(event);

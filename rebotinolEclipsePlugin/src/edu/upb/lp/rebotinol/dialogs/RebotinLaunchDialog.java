@@ -54,7 +54,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	private static String _programPath = "";
 	private static String _configurationPath = "";
 	private String _currentFile = "";
-	private Image image;
+	private Image _image;
 
 	/**
 	 * Constructor.
@@ -89,10 +89,10 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		URL iconUrl = FileLocator.find(Platform.getBundle("rebotinolEclipsePlugin"),
 				new Path("icons/Rebotin.png"), null);
 		try {
-			image = new Image(Display.getDefault(), iconUrl.openStream());
+			_image = new Image(Display.getDefault(), iconUrl.openStream());
 		} catch (IOException e) {
 			// Do nothing, forget about the image
-			image = null;
+			_image = null;
 		}
 		//TODO maybe enable help in the future
 		setHelpAvailable(false);
@@ -109,10 +109,10 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		setMessage(
 				"En esta ventana debe escoger el programa que desea que rebotin ejecute"
 						+ " (con la estensi—n .rebo) y su configuraci—n inicial de rebotin (con "
-						+ "la extensi—n .reboconf).",
+						+ "la extensi—n .rconf).",
 				IMessageProvider.INFORMATION);
-		if (image != null) {
-			setTitleImage(image);
+		if (_image != null) {
+			setTitleImage(_image);
 		}
 	}
 
@@ -308,9 +308,9 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	 */
 	@Override
 	public boolean close() {
-		if (image != null) {
-			image.dispose();
-			image = null;
+		if (_image != null) {
+			_image.dispose();
+			_image = null;
 		}
 		return super.close();
 	}	

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
+<!-- Author: Alexis Marechal-->
 <plugin>
-
    <extension
          point="org.eclipse.ui.commands">
       <category
@@ -13,6 +13,26 @@
             categoryId="rebotinolEclipsePlugin.commands.category"
             id="rebotinolEclipsePlugin.commands.rebotinolCommand">
       </command>
+      <command
+            name="Reset rebotinol perspective"
+            categoryId="rebotinolEclipsePlugin.commands.category"
+            id="rebotinolEclipsePlugin.commands.resetPerspective">
+      </command>
+      <command
+            name="Create rebotinol project"
+            categoryId="rebotinolEclipsePlugin.commands.category"
+            id="rebotinolEclipsePlugin.commands.createReboProject">
+      </command>
+      <command
+            name="Create rebo file"
+            categoryId="rebotinolEclipsePlugin.commands.category"
+            id="rebotinolEclipsePlugin.commands.createReboFile">
+      </command>
+      <command
+            name="Create rconf file"
+            categoryId="rebotinolEclipsePlugin.commands.category"
+            id="rebotinolEclipsePlugin.commands.createRconfFile">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -20,13 +40,29 @@
             commandId="rebotinolEclipsePlugin.commands.rebotinolCommand"
             class="edu.upb.lp.rebotinol.handlers.RebotinolSwingHandler">
       </handler>
+      <handler
+            commandId="rebotinolEclipsePlugin.commands.resetPerspective"
+            class="edu.upb.lp.rebotinol.handlers.ResetRebotinolPerspectiveHandler">
+      </handler>
+      <handler
+            commandId="rebotinolEclipsePlugin.commands.createReboProject"
+            class="edu.upb.lp.rebotinol.handlers.CreateReboProjectHandler">
+      </handler>
+      <handler
+            commandId="rebotinolEclipsePlugin.commands.createReboFile"
+            class="edu.upb.lp.rebotinol.handlers.CreateReboFileHandler">
+      </handler>
+      <handler
+            commandId="rebotinolEclipsePlugin.commands.createRconfFile"
+            class="edu.upb.lp.rebotinol.handlers.CreateRconfFileHandler">
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
       <key
             commandId="rebotinolEclipsePlugin.commands.rebotinolCommand"
             contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+6"
+            sequence="M1+R"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
       </key>
    </extension>
@@ -35,18 +71,46 @@
       <menuContribution
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <menu
-               label="Rebotinol Menu"
+               label="Menu de Rebotin"
                mnemonic="M"
                id="rebotinolEclipsePlugin.menus.rebotinolMenu">
             <command
+                  commandId="rebotinolEclipsePlugin.commands.createReboProject"
+                  id="rebotinolEclipsePlugin.menus.createReboProject"
+                  label="Crear un proyecto de rebotin">
+            </command>
+            <!--<command
+                  commandId="rebotinolEclipsePlugin.commands.createReboFile"
+                  id="rebotinolEclipsePlugin.menus.createReboFile"
+                  label="Crear un programa en rebotinol (.rebo)">
+            </command>
+            <command
+                  commandId="rebotinolEclipsePlugin.commands.createRconfFile"
+                  id="rebotinolEclipsePlugin.menus.createReboConf"
+                  label="Crear una configuracion de rebotin (.rconf)">
+            </command>-->
+            <separator
+                  name="rebotinolEclipsePlugin.separator1"
+                  visible="true">
+            </separator>
+            <command
                   commandId="rebotinolEclipsePlugin.commands.rebotinolCommand"
-                  mnemonic="S"
                   id="rebotinolEclipsePlugin.menus.rebotinolCommand"
-                  label="Ejecutar a rebotin">
+                  label="Ejecutar a rebotin"
+                  mnemonic="R">
+            </command>
+            <separator
+                  name="rebotinolEclipsePlugin.separator2"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="rebotinolEclipsePlugin.commands.resetPerspective"
+                  id="rebotinolEclipsePlugin.menus.resetPerspective"
+                  label="Reinicializar la interfaz">
             </command>
          </menu>
       </menuContribution>
-      <menuContribution
+      <!--<menuContribution
             locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
          <toolbar
                id="rebotinolEclipsePlugin.toolbars.rebotinolToolbar">
@@ -57,28 +121,31 @@
                   id="rebotinolEclipsePlugin.toolbars.rebotinolCommand">
             </command>
          </toolbar>
-      </menuContribution>
+      </menuContribution>-->
    </extension>
 <!--Product configuration-->
    <extension
-         id="application"
+         id="rebotinolEclipsePlugin.application"
          point="org.eclipse.core.runtime.applications">
-      <application>
+      <application
+            visible="true">
          <run
-               class="edu.upb.lp.rebotinol.product.Application">
+               class="edu.upb.lp.rebotinol.product.RebotinApplication">
          </run>
       </application>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="Rebotin Perspective"
-            class="edu.upb.lp.rebotinol.product.Perspective"
-            id="edu.upb.lp.rebotinol.product.perspective">
+            class="edu.upb.lp.rebotinol.product.RebotinPerspective"
+            fixed="true"
+            id="rebotinolEclipsePlugin.perspectives.mainPerspective"
+            name="Rebotin Main Perspective">
       </perspective>
    </extension>
    <extension
-         id="reboproduct"
+         id="rebotinolEclipsePlugin.product"
+         name="RebotinolProduct"
          point="org.eclipse.core.runtime.products">
       <product
             application="rebotinolEclipsePlugin.application"
@@ -98,25 +165,17 @@
          </property>
       </product>
    </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            name="View"
-            class="edu.upb.lp.rebotinol.product.View"
-            id="test2.view">
-      </view>
-   </extension>
+<!--Hiding elements-->
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
-            targetID="*">
-         <view
-               id="test2.view"
-               minimized="false"
-               relationship="left"
-               relative="org.eclipse.ui.editorss"
-               standalone="true">
-         </view>
+            targetID="rebotinolEclipsePlugin.perspectives.mainPerspective">
+<!--         <hiddenToolBarItem
+               id="org.eclipse.search.OpenSearchDialogPage">
+         </hiddenToolBarItem>-->
+         <hiddenMenuItem
+               id="org.eclipse.search.menu">
+         </hiddenMenuItem>
       </perspectiveExtension>
    </extension>
 </plugin>
