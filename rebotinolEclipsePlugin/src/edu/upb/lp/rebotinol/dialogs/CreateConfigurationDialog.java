@@ -6,7 +6,6 @@ import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -46,11 +45,9 @@ import org.eclipse.swt.widgets.Text;
  * 
  * @author Alexis Marechal
  */
-public class CreateProjectDialog extends TitleAreaDialog {
+public class CreateConfigurationDialog extends TitleAreaDialog {
 	private Text _projectTextField;
 	private ControlDecoration _projectDecorator;
-	private Text _programTextField;
-	private ControlDecoration _programDecorator;
 	private Text _configurationTextField;
 	private ControlDecoration _configurationDecorator;
 	private Image _image;
@@ -61,7 +58,7 @@ public class CreateProjectDialog extends TitleAreaDialog {
 	 * @param parentShell
 	 *            A parent sheel for this dialog
 	 */
-	public CreateProjectDialog(Shell parentShell) {
+	public CreateConfigurationDialog(Shell parentShell) {
 		super(parentShell);
 		// Set image
 		URL iconUrl = FileLocator.find(Platform
@@ -83,11 +80,9 @@ public class CreateProjectDialog extends TitleAreaDialog {
 	@Override
 	public void create() {
 		super.create();
-		setTitle("Creaci—n de un proyecto para rebotin");
-		setMessage(
-				"En esta ventana debes escoger un nombre para tu proyecto, un nombre para "
-						+ " el archivo que contendr‡ el programa "
-						+ " y un nombre para el archivo de configuraci—n de rebot’n",
+		setTitle("Creaci—n de un programa en rebotinol");
+		setMessage("En esta ventana debes escoger un nombre para tu configuraci—n de rebot’n "
+				+ "y el proyecto donde quieres crearla",
 				IMessageProvider.INFORMATION);
 		if (_image != null) {
 			setTitleImage(_image);
@@ -105,7 +100,6 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		container.setLayout(new GridLayout(2, false));
 
 		configureProjectfield(container);
-		configureProgramfield(container);
 		configureConfigurationfield(container);
 		return area;
 	}
@@ -135,40 +129,15 @@ public class CreateProjectDialog extends TitleAreaDialog {
 				.getFieldDecoration(FieldDecorationRegistry.DEC_ERROR);
 		Image img = fieldDecoration.getImage();
 		_projectDecorator.setImage(img);
-	}
-
-	private void configureProgramfield(Composite container) {
-		Label labelProgram = new Label(container, SWT.NONE);
-		labelProgram.setText("Programa: ");
-		_programTextField = new Text(container, SWT.BORDER);
-		_programTextField.setEditable(true);
-		_programTextField.setText("");
-
-		GridData layoutData = new GridData(SWT.FILL, SWT.WRAP, true, false);
-		_programTextField.setLayoutData(layoutData);
-
-		_programTextField.addModifyListener(new ModifyListener() {
-
-			@Override
-			public void modifyText(ModifyEvent e) {
-				checkOk();
-			}
-		});
-
-		// Error decorator
-		_programDecorator = new ControlDecoration(_programTextField, SWT.TOP
-				| SWT.LEFT);
-		FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault()
-				.getFieldDecoration(FieldDecorationRegistry.DEC_ERROR);
-		Image img = fieldDecoration.getImage();
-		_programDecorator.setImage(img);
+		_projectDecorator.hide();
 	}
 
 	private void configureConfigurationfield(Composite container) {
-		Label labelConfiguration = new Label(container, SWT.NONE);
-		labelConfiguration.setText("Configuraci—n: ");
+		Label labelProgram = new Label(container, SWT.NONE);
+		labelProgram.setText("Configuraci—n: ");
 		_configurationTextField = new Text(container, SWT.BORDER);
 		_configurationTextField.setEditable(true);
+		_configurationTextField.setText("");
 
 		GridData layoutData = new GridData(SWT.FILL, SWT.WRAP, true, false);
 		_configurationTextField.setLayoutData(layoutData);
@@ -182,8 +151,8 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		});
 
 		// Error decorator
-		_configurationDecorator = new ControlDecoration(
-				_configurationTextField, SWT.TOP | SWT.LEFT);
+		_configurationDecorator = new ControlDecoration(_configurationTextField, SWT.TOP
+				| SWT.LEFT);
 		FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault()
 				.getFieldDecoration(FieldDecorationRegistry.DEC_ERROR);
 		Image img = fieldDecoration.getImage();
@@ -192,55 +161,45 @@ public class CreateProjectDialog extends TitleAreaDialog {
 
 	private void checkOk() {
 		Button ok = getButton(IDialogConstants.OK_ID);
-		ok.setEnabled(checkProject() && checkProgram() && checkConfiguration());
+		ok.setEnabled(checkProject() && checkConfiguration());
 	}
 
 	private boolean checkProject() {
 		String projectName = _projectTextField.getText();
 		if (projectName != null && !projectName.isEmpty()) {
-			if (projectName.contains(".")) {
+			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+			IProject project = root.getProject(_projectTextField.getText());
+			if (project.exists()) {
+				try {
+					// check xtext nature
+					String[] natures = project.getDescription().getNatureIds();
+
+					if (natures.length != 1
+							|| !natures[0].equals("org.eclipse.xtext.ui.shared.xtextNature")) {
+						_projectDecorator.setDescriptionText("Este proyecto no es un proyecto v‡lido. "
+								+ "Debes utilizar un proyecto creado con el menu de rebotin");
+						_projectDecorator.show();
+						return false;
+					} else {
+						IProgressMonitor progressMonitor = new NullProgressMonitor();
+						project.open(progressMonitor);
+						_projectDecorator.hide();
+						return true;
+					}
+				} catch (CoreException e) {
+					throw new IllegalStateException(e);
+				}
+			} else {
 				_projectDecorator
-						.setDescriptionText("El nombre de un proyecto no debe contener un punto '.'");
+						.setDescriptionText("Este proyecto no existe. Crealo, o intenta hacer un "
+								+ "'refresh' de la lista de proyectos");
 				_projectDecorator.show();
 				return false;
-			} else {
-				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-				IProject project = root.getProject(_projectTextField.getText());
-				if (project.exists()) {
-					_projectDecorator
-							.setDescriptionText("Este proyecto ya existe. Intenta hacer un "
-									+"'refresh' de la lista de proyectos");
-					_projectDecorator.show();
-					return false;
-				}
-				_projectDecorator.hide();
-				return true;
 			}
 		} else {
 			_projectDecorator
 					.setDescriptionText("Debes indicar un nombre de proyecto");
 			_projectDecorator.show();
-			return false;
-		}
-	}
-
-	private boolean checkProgram() {
-		String program = _programTextField.getText();
-		if (program != null && !program.isEmpty()) {
-			if (program.contains(".")) {
-				_programDecorator
-						.setDescriptionText("El nombre de un programa no debe contener un punto '.'. "
-								+ "No incluyas la extensi—n del archivo!");
-				_programDecorator.show();
-				return false;
-			} else {
-				_programDecorator.hide();
-				return true;
-			}
-		} else {
-			_programDecorator
-					.setDescriptionText("Debes indicar un nombre de programa");
-			_programDecorator.show();
 			return false;
 		}
 	}
@@ -255,12 +214,21 @@ public class CreateProjectDialog extends TitleAreaDialog {
 				_configurationDecorator.show();
 				return false;
 			} else {
-				_configurationDecorator.hide();
-				return true;
+				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+				IProject project = root.getProject(_projectTextField.getText());
+				if (project.getFile(new Path(configuration+".rconf")).exists()) {
+					_configurationDecorator
+							.setDescriptionText("Este archivo ya existe!");
+					_configurationDecorator.show();
+					return false;
+				} else {
+					_configurationDecorator.hide();
+					return true;
+				}
 			}
 		} else {
 			_configurationDecorator
-					.setDescriptionText("Debes indicar un nombre de configuracion");
+					.setDescriptionText("Debes indicar un nombre de configuraci—n");
 			_configurationDecorator.show();
 			return false;
 		}
@@ -273,38 +241,17 @@ public class CreateProjectDialog extends TitleAreaDialog {
 
 	@Override
 	protected void okPressed() {
-		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(_projectTextField.getText());
+		// create file
+		URL url;
 		try {
-			project.create(progressMonitor);
-			project.open(progressMonitor);
-			//Add xtext nature
-			IProjectDescription description = project.getDescription();
-			description
-					.setNatureIds(new String[] { "org.eclipse.xtext.ui.shared.xtextNature" });
-			project.setDescription(description, null);
-			 
-			//create files
-			URL url;
-			try {
-				url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/p.rebo");
-				InputStream inputStream = url.openConnection().getInputStream();
-				IFile newFile = project.getFile(new Path(_programTextField.getText()+".rebo"));
-	            newFile.create(inputStream, true, null);
-			} catch (Exception e) {
-				throw new IllegalStateException("Could not create program file", e);
-			}
-			try {
-				url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
-				InputStream inputStream = url.openConnection().getInputStream();
-				IFile newFile = project.getFile(new Path(_configurationTextField.getText()+".rconf"));
-	            newFile.create(inputStream, true, null);
-			} catch (Exception e) {
-				throw new IllegalStateException("Could not create configuration file", e);
-			}
-		} catch (CoreException e) {
-			throw new IllegalStateException(e);
+			url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
+			InputStream inputStream = url.openConnection().getInputStream();
+			IFile newFile = project.getFile(new Path(_configurationTextField.getText() + ".rconf"));
+			newFile.create(inputStream, true, null);
+		} catch (Exception e) {
+			throw new IllegalStateException("Could not create program file", e);
 		}
 		close();
 	}

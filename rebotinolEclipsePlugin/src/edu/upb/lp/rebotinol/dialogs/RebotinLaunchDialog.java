@@ -107,8 +107,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		super.create();
 		setTitle("Inicializaci—n del mundo de rebotin");
 		setMessage(
-				"En esta ventana debe escoger el programa que desea que rebotin ejecute"
-						+ " (con la estensi—n .rebo) y su configuraci—n inicial de rebotin (con "
+				"En esta ventana debes escoger el programa que deseas que rebotin ejecute"
+						+ " (con la estensi—n .rebo) y una configuraci—n inicial (con "
 						+ "la extensi—n .rconf).",
 				IMessageProvider.INFORMATION);
 		if (_image != null) {

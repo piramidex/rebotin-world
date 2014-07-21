@@ -79,7 +79,7 @@
                   id="rebotinolEclipsePlugin.menus.createReboProject"
                   label="Crear un proyecto de rebotin">
             </command>
-            <!--<command
+            <command
                   commandId="rebotinolEclipsePlugin.commands.createReboFile"
                   id="rebotinolEclipsePlugin.menus.createReboFile"
                   label="Crear un programa en rebotinol (.rebo)">
@@ -88,7 +88,7 @@
                   commandId="rebotinolEclipsePlugin.commands.createRconfFile"
                   id="rebotinolEclipsePlugin.menus.createReboConf"
                   label="Crear una configuracion de rebotin (.rconf)">
-            </command>-->
+            </command>
             <separator
                   name="rebotinolEclipsePlugin.separator1"
                   visible="true">
