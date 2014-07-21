@@ -251,6 +251,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 			IFile newFile = project.getFile(new Path(_programTextField
 					.getText() + ".rebo"));
 			newFile.create(inputStream, true, null);
+			CreateProjectDialog.openFile(newFile);
 		} catch (Exception e) {
 			throw new IllegalStateException("Could not create program file", e);
 		}

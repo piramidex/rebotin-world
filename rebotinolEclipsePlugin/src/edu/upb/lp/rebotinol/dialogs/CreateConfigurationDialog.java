@@ -250,6 +250,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 			InputStream inputStream = url.openConnection().getInputStream();
 			IFile newFile = project.getFile(new Path(_configurationTextField.getText() + ".rconf"));
 			newFile.create(inputStream, true, null);
+			CreateProjectDialog.openFile(newFile);
 		} catch (Exception e) {
 			throw new IllegalStateException("Could not create program file", e);
 		}

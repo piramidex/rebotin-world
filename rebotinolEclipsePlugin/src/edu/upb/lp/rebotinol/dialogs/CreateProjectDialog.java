@@ -34,6 +34,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IEditorDescriptor;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.FileEditorInput;
 
 /**
  * @author Lars Vogel
@@ -209,7 +213,7 @@ public class CreateProjectDialog extends TitleAreaDialog {
 				if (project.exists()) {
 					_projectDecorator
 							.setDescriptionText("Este proyecto ya existe. Intenta hacer un "
-									+"'refresh' de la lista de proyectos");
+									+ "'refresh' de la lista de proyectos");
 					_projectDecorator.show();
 					return false;
 				}
@@ -279,29 +283,37 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		try {
 			project.create(progressMonitor);
 			project.open(progressMonitor);
-			//Add xtext nature
+			// Add xtext nature
 			IProjectDescription description = project.getDescription();
 			description
 					.setNatureIds(new String[] { "org.eclipse.xtext.ui.shared.xtextNature" });
 			project.setDescription(description, null);
-			 
-			//create files
+
+			// create files
 			URL url;
 			try {
-				url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/p.rebo");
+				url = new URL(
+						"platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
 				InputStream inputStream = url.openConnection().getInputStream();
-				IFile newFile = project.getFile(new Path(_programTextField.getText()+".rebo"));
-	            newFile.create(inputStream, true, null);
+				IFile newFile = project.getFile(new Path(
+						_configurationTextField.getText() + ".rconf"));
+				newFile.create(inputStream, true, null);
+				openFile(newFile);
 			} catch (Exception e) {
-				throw new IllegalStateException("Could not create program file", e);
+				throw new IllegalStateException(
+						"Could not create configuration file", e);
 			}
 			try {
-				url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
+				url = new URL(
+						"platform:/plugin/rebotinolEclipsePlugin/res/p.rebo");
 				InputStream inputStream = url.openConnection().getInputStream();
-				IFile newFile = project.getFile(new Path(_configurationTextField.getText()+".rconf"));
-	            newFile.create(inputStream, true, null);
+				IFile newFile = project.getFile(new Path(_programTextField
+						.getText() + ".rebo"));
+				newFile.create(inputStream, true, null);
+				openFile(newFile);
 			} catch (Exception e) {
-				throw new IllegalStateException("Could not create configuration file", e);
+				throw new IllegalStateException(
+						"Could not create program file", e);
 			}
 		} catch (CoreException e) {
 			throw new IllegalStateException(e);
@@ -325,5 +337,14 @@ public class CreateProjectDialog extends TitleAreaDialog {
 	protected void createButtonsForButtonBar(Composite parent) {
 		super.createButtonsForButtonBar(parent);
 		checkOk();
+	}
+	 
+	protected static void openFile(IFile file) throws PartInitException {
+		IEditorDescriptor desc = PlatformUI.getWorkbench()
+				.getEditorRegistry()
+				.getDefaultEditor(file.getName());
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+				.getActivePage()
+				.openEditor(new FileEditorInput(file), desc.getId());
 	}
 }
