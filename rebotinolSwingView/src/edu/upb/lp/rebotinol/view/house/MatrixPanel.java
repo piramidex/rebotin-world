@@ -24,6 +24,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	private int sizeV;
 	private JPanel[][] whitePanels;
 	private JPanel[][] blackPanels;
+	private JLabel[][] numbers;
 
 	/**
 	 * 
@@ -36,6 +37,8 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		sizeV = house.getSizeV();
 		whitePanels = new JPanel[sizeV][sizeH];
 		blackPanels = new JPanel[sizeV][sizeH];
+		numbers = new JLabel[sizeV][sizeH];
+		
 		this.house = house;
 		createContentPane();
 	}
@@ -56,12 +59,12 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				
 				String num = house.getMatrix()[j][i].toString();
 
-				JLabel number = new JLabel(num);
-				number.setLocation(0, 0);
-				number.setSize(40, 40);
-				number.setHorizontalAlignment(0);
-				number.setVerticalAlignment(0);
-				whitepanel.add(number);
+				numbers[j][i] = new JLabel(num);
+				numbers[j][i].setLocation(0, 0);
+				numbers[j][i].setSize(40, 40);
+				numbers[j][i].setHorizontalAlignment(0);
+				numbers[j][i].setVerticalAlignment(0);
+				whitepanel.add(numbers[j][i]);
 
 				JPanel blackpanel = new JPanel();
 				blackpanel.setLayout(null);
@@ -118,7 +121,8 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void matrixChanged(int h, int v, Fraction newValue) {
-		// TODO change the matrix numbers!
+		String nV = newValue.toString();
+		numbers[v][h].setText(nV);
 	}
 
 	@Override
