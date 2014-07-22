@@ -237,6 +237,11 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	public void toggleBreakpoint() {
 		_breakpoint = !_breakpoint;
+		for(RebotinolExecutionObserver o : _observers) {
+			if (_breakpoint) o.breakpointSet();
+			else o.breakpointRemoved();
+		}
+		
 	}
 
 	/**

@@ -100,7 +100,9 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 
 
 	protected void handleBreakpointEvent() {
-		_controller.toggleBreakpoint(_execution);
+		for(RebotinolInstructionExecution e : _executions) {
+			_controller.toggleBreakpoint(e);
+		}
 	}
 
 	
@@ -189,7 +191,7 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 
 	@Override
 	public void breakpointRemoved() {
-		if (_breakpoint) throw new IllegalStateException(
+		if (!_breakpoint) throw new IllegalStateException(
 				"trying to remove a breakpoint when it is already removed");
 		_breakpoint = false;
 		_lbIcon.setIcon(emptyIcon);		

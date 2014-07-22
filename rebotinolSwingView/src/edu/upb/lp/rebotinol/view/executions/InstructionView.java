@@ -1,5 +1,8 @@
 package edu.upb.lp.rebotinol.view.executions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
@@ -11,10 +14,11 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 	protected String _instrText;
 	protected int _indent;
 	protected boolean _runnable;
-	protected RebotinolInstructionExecution _execution;
 	protected RebotinolController _controller;
+	protected List<RebotinolInstructionExecution> _executions =
+			new ArrayList<RebotinolInstructionExecution>();
 	
-
+	
 	public InstructionView(
 			RebotinolInstructionExecution instr,
 			RebotinolController controller) {
@@ -22,7 +26,7 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 		_instrText = ExecutionsNameGetter.getName(instr);
 		_indent = 0;
 		_runnable = true;
-		_execution = instr;
+		_executions.add(instr);
 		_controller = controller;
 		instr.registerObserver(this);
 	}
@@ -35,7 +39,7 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 		_instrText = ExecutionsNameGetter.getName(instr);
 		_indent = containerInstr.getIndent() + 1;
 		_runnable = true;
-		_execution = instr;
+		_executions.add(instr);
 		_controller = controller;
 		containerInstr.addNestedInstructionView(this);
 		instr.registerObserver(this);
@@ -49,7 +53,6 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 		_instrText = instrText;
 		_indent = 0;	
 		_runnable = false;
-		_execution = null;
 		_controller = controller;
 	}
 
@@ -61,7 +64,6 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 		_instrText = instrText;
 		_indent = parentView.getIndent() + 1;
 		_runnable = false;
-		_execution = null;
 		_controller = controller;
 	}
 
@@ -71,5 +73,6 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 
 	public void attachAdditionalInstr(RebotinolInstructionExecution instr) {
 		instr.registerObserver(this);
+		_executions.add(instr);
 	}
 }
