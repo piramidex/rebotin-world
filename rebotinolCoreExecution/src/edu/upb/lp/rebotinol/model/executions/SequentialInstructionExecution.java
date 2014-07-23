@@ -142,14 +142,6 @@ public abstract class SequentialInstructionExecution extends
 	}
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean automaticStep() {
-		return false;
-	}
-
-	/**
 	 * Changes the execution index. This method changes the status of the old
 	 * and new current executions.
 	 * 

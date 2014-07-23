@@ -234,8 +234,9 @@ public abstract class RebotinolInstructionExecution {
 
 	/**
 	 * Set or remove a breakpoint in this execution
+	 * @throws RebotinolFatalException If something went really wrong
 	 */
-	public void toggleBreakpoint() {
+	public void toggleBreakpoint() throws RebotinolFatalException {
 		_breakpoint = !_breakpoint;
 		for(RebotinolExecutionObserver o : _observers) {
 			if (_breakpoint) o.breakpointSet();
@@ -247,20 +248,9 @@ public abstract class RebotinolInstructionExecution {
 	/**
 	 * @return true if this execution has a breakpoint, false otherwise
 	 */
-	protected boolean isBreakpoint() {
+	public boolean isBreakpoint() {
 		return _breakpoint;
 	}
-
-	/**
-	 * @return true if we can execute an automatic step in this isntruction,
-	 *         i.e., if there is no breakpoint to stop the execution
-	 */
-	// TODO fix this
-	public boolean automaticStep() {
-		return _breakpoint;
-	}
-
-	// TODO a way to access container
 	
 	/**
 	 * Accept a {@link RebotinoExecutionVisitor}, according to the visitor design pattern

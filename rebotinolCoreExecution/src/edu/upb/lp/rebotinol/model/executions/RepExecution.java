@@ -3,6 +3,7 @@ package edu.upb.lp.rebotinol.model.executions;
 import java.util.List;
 
 import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 public class RepExecution extends SequentialInstructionExecution {
     private int _numberOfInstructions;
@@ -61,4 +62,21 @@ public class RepExecution extends SequentialInstructionExecution {
 	public Object accept(RebotinolExecutionVisitor v) {
 		return v.visit(this);
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean isBreakpoint() {
+		return false;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void toggleBreakpoint() throws RebotinolFatalException {
+		throw new RebotinolFatalException("Cannot set a breakpoint in a rep execution");
+	}
+	
 }

@@ -164,8 +164,9 @@ public class RebotinolController {
 	 * @param execution
 	 *            The execution on which we are trying to set or remove a
 	 *            breakpoint.
+	 * @throws RebotinolFatalException If something went really wrong
 	 */
-	public void toggleBreakpoint(RebotinolInstructionExecution execution) {
+	public void toggleBreakpoint(RebotinolInstructionExecution execution) throws RebotinolFatalException {
 		execution.toggleBreakpoint();
 	}
 
