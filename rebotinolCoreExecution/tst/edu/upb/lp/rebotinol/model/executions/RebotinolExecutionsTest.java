@@ -247,7 +247,7 @@ public class RebotinolExecutionsTest {
 
 	@Test
 	public void testConditionalsPositive() throws RebotinolExecutionException,
-			RebotinolFlowException {
+			RebotinolFlowException, RebotinolFatalException {
 		house.writeInMatrix(1,0,three);
 		house.writeInMatrix(2,0,six);
 		// Memo, memo: 0
@@ -306,11 +306,15 @@ public class RebotinolExecutionsTest {
 			program.step(house);
 		}
 		Assert.assertEquals(new Fraction(8), house.getMemory());
+		while(program.isStarted()) {
+			program.stepBack(house);
+		}
+		Assert.assertNull(house.getMemory());
 	}
 	
 	@Test
 	public void testConditionalsNegative() throws RebotinolExecutionException,
-			RebotinolFlowException {
+			RebotinolFlowException, RebotinolFatalException {
 		house.writeInMatrix(1,0,one);
 		// Memo, memo: 0
 		MemoExecution memo = new MemoExecution();
@@ -368,10 +372,14 @@ public class RebotinolExecutionsTest {
 			program.step(house);
 		}
 		Assert.assertEquals(zero, house.getMemory());
+		while(program.isStarted()) {
+			program.stepBack(house);
+		}
+		Assert.assertNull(house.getMemory());
 	}
 	
 	@Test
-	public void testRep() throws RebotinolExecutionException, RebotinolFlowException {
+	public void testRep() throws RebotinolExecutionException, RebotinolFlowException, RebotinolFatalException {
 		//Matrix: 0, 1, 2, 3, result: 6
 		house.writeInMatrix(1,0,one);
 		house.writeInMatrix(2,0,two);
@@ -392,5 +400,10 @@ public class RebotinolExecutionsTest {
 			program.step(house);
 		}
 		Assert.assertEquals(six, house.getMemory());
+		
+		while(program.isStarted()) {
+			program.stepBack(house);
+		}
+		Assert.assertNull(house.getMemory());
 	}
 }

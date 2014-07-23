@@ -61,7 +61,13 @@ public abstract class SequentialInstructionExecution extends
 		if (current.isStarted()) {
 			current.stepBack(house);
 		} else {
-			decCurrent();
+			//Check if current was first
+			if (getCurrentExecutionIndex() == 0) {
+				decCurrent();
+			} else {
+				decCurrent();
+				doStepBack(house);
+			}
 		}
 		unfinish();
 	}
@@ -90,7 +96,7 @@ public abstract class SequentialInstructionExecution extends
 			throw new RebotinolFlowException(
 					"Decreasing the index in a sequential execution when the index was 0");
 		}
-		setCurrentExecutionIndex(_currentExecutionIndex + 1);
+		setCurrentExecutionIndex(_currentExecutionIndex - 1);
 	}
 
 	/**

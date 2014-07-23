@@ -2,8 +2,12 @@ package edu.upb.lp.rebotinol.model.executions;
 
 import java.util.List;
 
+import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
+import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 public class RepExecution extends SequentialInstructionExecution {
     private int _numberOfInstructions;
@@ -22,13 +26,45 @@ public class RepExecution extends SequentialInstructionExecution {
         super(subExecutions);
         _numberOfInstructions = numberOfInstructions;
     }
-     
+   
+    /**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void doStep(RebotinolHouse house)
+			throws RebotinolExecutionException, RebotinolFlowException {
+		int before = getRepetitionsPerformed();
+		super.doStep(house);
+		int after = getRepetitionsPerformed();
+		if (before != after) {
+			for (RebotinolExecutionObserver obs : _observers) {
+				obs.repetitionsChanged(after);
+			}
+		}
+	}
+
+	/**
+	 * {@inheritDoc} 
+	 */
+	@Override
+	protected void doStepBack(RebotinolHouse house)
+			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
+		int before = getRepetitionsPerformed();
+		super.doStepBack(house);
+		int after = getRepetitionsPerformed();
+		if (before != after) {
+			for (RebotinolExecutionObserver obs : _observers) {
+				obs.repetitionsChanged(after);
+			}
+		}
+	}
+	
     /**
      * {@inheritDoc}
      */
     @Override
     public int getCurrentExecutionIndex() {
-        return getCurrentExecutionIndex()%_numberOfInstructions;
+        return super.getCurrentExecutionIndex()%_numberOfInstructions;
     }
     
     /**
@@ -36,7 +72,7 @@ public class RepExecution extends SequentialInstructionExecution {
      * @return The number of repetitions that have already been performed in this execution.
      */
     public int getRepetitionsPerformed() {
-        return getCurrentExecutionIndex()/_numberOfInstructions;
+        return super.getCurrentExecutionIndex()/_numberOfInstructions;
     }
     
     /**
@@ -46,7 +82,6 @@ public class RepExecution extends SequentialInstructionExecution {
     public int getTotalNumberOfRepetitions() {
     	return getSubExecutions().size()/_numberOfInstructions;
     }
-    //TODO avisar cada que termina una vuelta hacia adelante y atras
     
     /**
      * @return The number of instructions to be executed at each repetition.
