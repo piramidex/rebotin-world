@@ -18,14 +18,16 @@ public class EnviarMatrizExecution extends RebotinolInstructionExecution {
 			throws RebotinolExecutionException, RebotinolFlowException {
 		try {
 			house.sendMatrix();
+			finish();
 		} catch (RebotinolFatalException e) {
-			throw new RebotinolExecutionException("Could not send the matrix in the house!");
+			throw new RebotinolExecutionException("Could not send the matrix in the house!",e);
 		}
 	}
 
 	@Override
 	protected void doStepBack(RebotinolHouse house) throws RebotinolFatalException {
 		house.unsendMatrix();
+		unfinish();
 	}
 
 	/**

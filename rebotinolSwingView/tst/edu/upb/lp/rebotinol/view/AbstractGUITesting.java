@@ -59,6 +59,32 @@ public abstract class AbstractGUITesting {
 		timer.addActionListener(listener);
 		timer.setRepeats(true);
 		timer.start();
+		while(timer.isRunning());
+		final Timer timer2 = new Timer(2000, null);
+		ActionListener listener2 = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				try {
+					if (!program.isStarted()) {
+						timer.stop();
+					} else {
+						try {
+							program.stepBack(finalHouse);
+						} catch (RebotinolFatalException e) {
+							throw new IllegalStateException(e);
+						}
+					}
+				} catch (RebotinolFlowException e) {
+					throw new IllegalStateException(e);
+				} catch (RebotinolExecutionException e) {
+					throw new IllegalStateException(e);
+				}
+				
+			}
+		};
+		timer2.addActionListener(listener2);
+		timer2.setRepeats(true);
+		timer2.start();
 	}
 	
 	protected abstract void doBuildAndShowFrame(JFrame frame);

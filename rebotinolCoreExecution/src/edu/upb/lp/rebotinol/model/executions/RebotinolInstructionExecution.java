@@ -16,6 +16,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  * 
  */
+/*TODO check that ALL exceptions communicate their cause*/
 public abstract class RebotinolInstructionExecution {
 	List<RebotinolExecutionObserver> _observers = new ArrayList<RebotinolExecutionObserver>();
 

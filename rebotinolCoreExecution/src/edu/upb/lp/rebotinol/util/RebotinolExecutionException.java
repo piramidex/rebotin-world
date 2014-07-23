@@ -15,7 +15,8 @@ public class RebotinolExecutionException extends Exception {
 	public RebotinolExecutionException(String string) {
 		super(string);
 	}
-
 	
-
+	public RebotinolExecutionException(String string, Exception e) {
+		super(string,e);
+	}
 }

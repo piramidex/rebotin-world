@@ -18,7 +18,10 @@ import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 public class SimpleInstructionView extends InstructionView implements RebotinolExecutionObserver {
-
+	/**
+	 * Serial 
+	 */
+	private static final long serialVersionUID = -2686975294972574340L;
 
 	protected boolean _breakpoint;
 	
@@ -78,7 +81,13 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 		if (_runnable) {
 			_lbIcon.addMouseListener(new MouseInputAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					if (e.getClickCount() == 2) handleBreakpointEvent();
+					if (e.getClickCount() == 2) {
+						try {
+							handleBreakpointEvent();
+						} catch (RebotinolFatalException e1) {
+							throw new IllegalStateException(e1);
+						}
+					}
 				}
 			});
 		}

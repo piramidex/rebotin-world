@@ -51,6 +51,7 @@ public class RebotinolHouse {
 		_positionH = 0;
 		_positionV = 0;
 		_mail = null;
+		_matrixSent = false;
 		_error = false;
 	}
 
