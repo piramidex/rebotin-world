@@ -122,7 +122,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void matrixChanged(int h, int v, Fraction newValue) {
-		String nV = newValue.toString();
+		String nV = newValue == null ? "" : newValue.toString();
 		numbers[v][h].setText(nV);
 	}
 

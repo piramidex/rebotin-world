@@ -60,8 +60,7 @@ public abstract class AutomaticGUITesting extends ManualGUITesting {
 		timer.setRepeats(true);
 		System.out.println("Starting forward");
 		timer.start();
-		while (timer.isRunning())
-			;
+		while (timer.isRunning());
 		System.out.println("Forward finished");
 		final Timer timer2 = new Timer(2000, null);
 		ActionListener listener2 = new ActionListener() {
@@ -89,6 +88,7 @@ public abstract class AutomaticGUITesting extends ManualGUITesting {
 		timer2.setRepeats(true);
 		System.out.println("Starting backward");
 		timer2.start();
+		while (timer2.isRunning());
 		System.out.println("Backward finished");
 	}
 }
