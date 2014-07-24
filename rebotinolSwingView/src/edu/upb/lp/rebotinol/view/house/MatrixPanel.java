@@ -57,7 +57,8 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				whitepanel.setSize(40, 40);
 				whitePanels[j][i] = whitepanel;
 				
-				String num = house.getMatrix()[j][i].toString();
+				Fraction fr = house.getMatrix()[j][i];
+				String num= fr == null ? "" : fr.toString(); 
 
 				numbers[j][i] = new JLabel(num);
 				numbers[j][i].setLocation(0, 0);
@@ -127,13 +128,13 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void matrixSent() {
-		// TODO Auto-generated method stub
+		// do nothing
 		
 	}
 
 	@Override
 	public void matrixUnsent() {
-		// TODO Auto-generated method stub
+		// do nothing
 		
 	}
 }

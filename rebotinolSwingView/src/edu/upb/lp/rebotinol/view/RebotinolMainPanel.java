@@ -10,6 +10,7 @@ import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.view.buttons.ButtonsPanel;
 import edu.upb.lp.rebotinol.view.executions.ExecutionsPanel;
+import edu.upb.lp.rebotinol.view.house.HousePanel;
 
 /**
  * This is the main class for the rebotinol view in Swing (2014).
@@ -17,9 +18,14 @@ import edu.upb.lp.rebotinol.view.executions.ExecutionsPanel;
  * @author Alexis Marechal
  */
 //TODO fix all this
-public class RebotinolSwingView {
-	RebotinolController _controller;
-	private JFrame _mainFrame;
+//TODO javadoc
+public class RebotinolMainPanel extends JPanel {
+	/**
+	 * Serial
+	 */
+	private static final long serialVersionUID = 1609064165373925148L;
+	
+	private RebotinolController _controller;
 	private JPanel _buttonsPanel;
 	private JPanel _housePanel;
 	private JPanel _executionsPanel;
@@ -28,31 +34,20 @@ public class RebotinolSwingView {
 	 * Constructor
 	 * @param controller The {@link RebotinolController} on which this view is based
 	 */
-	public RebotinolSwingView(RebotinolController controller) {
+	public RebotinolMainPanel(RebotinolController controller) {
 		_controller = controller;
+		buildSubPanels();
 	}
 
 	/**
 	 * This method builds the interface (and its sub-panels) and makes it visible
 	 */
-	public void buildAndShow() {
-		SequentialInstructionExecution program = _controller.get_program();
-		RebotinolHouse house = _controller.get_house();
-		Fraction[][] initialMatrix = _controller.get_initialMatrix();
+	public void buildSubPanels() {
 		_executionsPanel = new ExecutionsPanel(_controller);
-//		_housePanel = HousePanel.buildPanel(house, initialMatrix);
+		_housePanel = new HousePanel(_controller.get_house(), _controller.get_initialMatrix());
 		_buttonsPanel = new ButtonsPanel(_controller);
-		initialiseMainFrame();
-		_mainFrame.setVisible(true);
-	}
-
-	/**
-	 * Method to initialise the main frame based on the JPanels built by the
-	 * respective builders
-	 */
-	private void initialiseMainFrame() {
-		// TODO Alexis
-		//init
-		
+		add(_housePanel);
+		add(_executionsPanel);
+		add(_buttonsPanel);
 	}
 }
