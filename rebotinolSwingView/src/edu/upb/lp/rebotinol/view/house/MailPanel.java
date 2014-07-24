@@ -6,7 +6,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.model.house.RebotinolHouseObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
 
 //TODO
 class MailPanel extends JPanel implements RebotinolHouseObserver {

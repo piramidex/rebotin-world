@@ -23,6 +23,7 @@ public class RebotinolController {
 	private Fraction[][] _initialMatrix;
 	private Fraction[][] _expectedMatrix;
 	private SequentialInstructionExecution _program;
+	private RebotinolScheduler _scheduler;
 
 	/**
 	 * Constructor
@@ -70,6 +71,7 @@ public class RebotinolController {
 			_expectedMatrix = null;
 		}
 		this._program = program;
+		_scheduler = new RebotinolScheduler(this);
 	}
 
 	/**
@@ -118,6 +120,13 @@ public class RebotinolController {
 	 */
 	public SequentialInstructionExecution get_program() {
 		return _program;
+	}
+
+	/**
+	 * @return the scheduler for the automatic executions
+	 */
+	public RebotinolScheduler get_scheduler() {
+		return _scheduler;
 	}
 
 	/**
@@ -171,19 +180,10 @@ public class RebotinolController {
 	}
 
 	/**
-	 * Starts an automatic execution of the program until it ends or until a
-	 * breakpoint is encountered. If the program was already started, this
-	 * method does nothing.
+	 * Checks if the current program has met a breakpoint.
+	 * @return
 	 */
-	public void startPlay() {
-		// TODO Alexis
-	}
-
-	/**
-	 * Stops the automatic execution of the program if it was started, does
-	 * nothing otherwise.
-	 */
-	public void stopPlay() {
-		// TODO Alexis
+	public boolean checkBreakpoint() {
+		return _program.breakpointMet();
 	}
 }

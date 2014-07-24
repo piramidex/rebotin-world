@@ -59,6 +59,6 @@ public class MatrixUtil {
 	 * @return The matrix built
 	 */
 	public static Fraction[][] createMatrix(int sizeV, int sizeH) {
-		return createMatrix(sizeV, sizeH, new Fraction(0));
+		return createMatrix(sizeV, sizeH, null);
 	}
 }

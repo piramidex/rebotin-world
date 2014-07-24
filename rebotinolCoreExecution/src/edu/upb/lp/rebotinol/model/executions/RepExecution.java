@@ -3,8 +3,8 @@ package edu.upb.lp.rebotinol.model.executions;
 import java.util.List;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
-import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionVisitor;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;

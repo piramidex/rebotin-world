@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.commons.math3.fraction.Fraction;
 
+import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 

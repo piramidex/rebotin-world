@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.util;
+package edu.upb.lp.rebotinol.observers;
 
 /**
  * This observer is used to watch the execution of an instruction in a rebotinol

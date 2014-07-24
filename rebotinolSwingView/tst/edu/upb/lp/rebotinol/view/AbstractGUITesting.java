@@ -58,8 +58,10 @@ public abstract class AbstractGUITesting {
 		};
 		timer.addActionListener(listener);
 		timer.setRepeats(true);
+		System.out.println("Starting forward");
 		timer.start();
 		while(timer.isRunning());
+		System.out.println("Forward finished");
 		final Timer timer2 = new Timer(2000, null);
 		ActionListener listener2 = new ActionListener() {
 			@Override
@@ -84,7 +86,9 @@ public abstract class AbstractGUITesting {
 		};
 		timer2.addActionListener(listener2);
 		timer2.setRepeats(true);
+		System.out.println("Starting backward");
 		timer2.start();
+		System.out.println("Backward finished");
 	}
 	
 	protected abstract void doBuildAndShowFrame(JFrame frame);

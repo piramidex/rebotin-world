@@ -14,7 +14,7 @@ import javax.swing.event.MouseInputAdapter;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
-import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 public class SimpleInstructionView extends InstructionView implements RebotinolExecutionObserver {

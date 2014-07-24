@@ -7,9 +7,13 @@ import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
-import edu.upb.lp.rebotinol.util.RebotinolExecutionObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
 
 public abstract class InstructionView extends JPanel implements RebotinolExecutionObserver {
+	/**
+	 * Serial
+	 */
+	private static final long serialVersionUID = 4029892230341688164L;
 
 	protected String _instrText;
 	protected int _indent;

@@ -8,8 +8,11 @@ import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 
 public class ComposedInstructionView extends InstructionView {
-
-
+	/**
+	 * Serial 
+	 */
+	private static final long serialVersionUID = -5270550700301600302L;
+	
 	protected SimpleInstructionView _beginInstruction;
 	protected SimpleInstructionView _endInstruction;
 	

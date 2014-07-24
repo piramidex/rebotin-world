@@ -17,8 +17,11 @@ import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 
 //TODO javadoc
 public class ExecutionsPanel extends JPanel {
+	/**
+	 * Serial 
+	 */
+	private static final long serialVersionUID = -6371882724632943962L;
 
-	
 	protected RebotinolController _controller;
 	protected SequentialInstructionExecution _program;
 	protected JPanel _instrsPanel;

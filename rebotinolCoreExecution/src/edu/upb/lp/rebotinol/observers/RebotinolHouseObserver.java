@@ -1,6 +1,8 @@
-package edu.upb.lp.rebotinol.model.house;
+package edu.upb.lp.rebotinol.observers;
 
 import org.apache.commons.math3.fraction.Fraction;
+
+import edu.upb.lp.rebotinol.model.house.Mail;
 
 /**
  * This observer is used to watch a rebotinol house. The house will warn its

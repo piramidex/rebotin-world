@@ -9,7 +9,7 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.model.house.RebotinolHouseObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
 
 public class MemoryPanel extends JPanel implements RebotinolHouseObserver {
 	private static final long serialVersionUID = 5581499529049955453L;
