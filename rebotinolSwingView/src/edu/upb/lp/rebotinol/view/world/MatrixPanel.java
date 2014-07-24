@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.house;
+package edu.upb.lp.rebotinol.view.world;
 
 import java.awt.Color;
 

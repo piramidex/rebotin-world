@@ -8,9 +8,9 @@ import org.apache.commons.math3.fraction.Fraction;
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.view.buttons.ButtonsPanel;
-import edu.upb.lp.rebotinol.view.executions.ExecutionsPanel;
-import edu.upb.lp.rebotinol.view.house.HousePanel;
+import edu.upb.lp.rebotinol.view.program.buttons.ButtonsPanel;
+import edu.upb.lp.rebotinol.view.program.executions.ExecutionsPanel;
+import edu.upb.lp.rebotinol.view.world.HousePanel;
 
 /**
  * This is the main class for the rebotinol view in Swing (2014).
@@ -19,7 +19,7 @@ import edu.upb.lp.rebotinol.view.house.HousePanel;
  */
 //TODO fix all this
 //TODO javadoc
-public class RebotinolMainPanel extends JPanel {
+public class RebotinolMainFrame extends JPanel {
 	/**
 	 * Serial
 	 */
@@ -34,15 +34,15 @@ public class RebotinolMainPanel extends JPanel {
 	 * Constructor
 	 * @param controller The {@link RebotinolController} on which this view is based
 	 */
-	public RebotinolMainPanel(RebotinolController controller) {
+	public RebotinolMainFrame(RebotinolController controller) {
 		_controller = controller;
-		buildSubPanels();
+		buildPanels();
 	}
 
 	/**
 	 * This method builds the interface (and its sub-panels) and makes it visible
 	 */
-	public void buildSubPanels() {
+	public void buildPanels() {
 		_executionsPanel = new ExecutionsPanel(_controller);
 		_housePanel = new HousePanel(_controller.get_house(), _controller.get_initialMatrix());
 		_buttonsPanel = new ButtonsPanel(_controller);

@@ -1,9 +1,9 @@
-package edu.upb.lp.rebotinol.view.automaticTests.executions;
+package edu.upb.lp.rebotinol.view.automaticTests.world;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.examples.RebotinolSimpleRepExample;
 
-public class SimpleRepExecutionsPanelTesting extends AbstractExecutionsPanelTesting {
+public class SimpleRepWorldPanelTesting extends AbstractWorldPanelTesting {
 
 	@Override
 	protected RebotinolExample buildExample() {
@@ -11,7 +11,7 @@ public class SimpleRepExecutionsPanelTesting extends AbstractExecutionsPanelTest
 	}
 
 	public static void main(String[] args) {
-		SimpleRepExecutionsPanelTesting t = new SimpleRepExecutionsPanelTesting();
+		SimpleRepWorldPanelTesting t = new SimpleRepWorldPanelTesting();
 		t.run();
 	}
 }

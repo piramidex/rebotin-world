@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.executions;
+package edu.upb.lp.rebotinol.view.program.executions;
 
 import edu.upb.lp.rebotinol.model.executions.AbaExecution;
 import edu.upb.lp.rebotinol.model.executions.ArrExecution;

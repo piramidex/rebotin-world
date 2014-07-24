@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.executions;
+package edu.upb.lp.rebotinol.view.program.executions;
 
 import java.awt.Color;
 import java.util.ArrayList;

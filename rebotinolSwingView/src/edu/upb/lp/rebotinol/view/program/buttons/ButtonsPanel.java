@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.buttons;
+package edu.upb.lp.rebotinol.view.program.buttons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

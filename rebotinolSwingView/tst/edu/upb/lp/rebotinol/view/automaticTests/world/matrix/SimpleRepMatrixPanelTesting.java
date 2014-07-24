@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.automaticTests.house;
+package edu.upb.lp.rebotinol.view.automaticTests.world.matrix;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.examples.RebotinolSimpleRepExample;

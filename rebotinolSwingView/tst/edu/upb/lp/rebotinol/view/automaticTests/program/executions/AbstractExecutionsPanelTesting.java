@@ -1,21 +1,19 @@
-package edu.upb.lp.rebotinol.view.automaticTests.house;
+package edu.upb.lp.rebotinol.view.automaticTests.program.executions;
 
 import javax.swing.JFrame;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
-import edu.upb.lp.rebotinol.view.house.MatrixPanel;
+import edu.upb.lp.rebotinol.view.program.executions.ExecutionsPanel;
 
-public abstract class AbstractHousePanelTesting extends AutomaticGUITesting {
-
+public abstract class AbstractExecutionsPanelTesting extends AutomaticGUITesting {
 	@Override
 	protected void doBuildAndShowFrame(JFrame frame) {
 		RebotinolExample ex = getExample();
-		MatrixPanel panel;
+		ExecutionsPanel panel;
 		try {
-//			panel = new HousePanel(ex.getHouse(), ex.getInitialMatrix());
-			panel = new MatrixPanel(ex.getHouse(), ex.getInitialMatrix());
+			panel = new ExecutionsPanel(ex.getController());
 		} catch (RebotinolFatalException e) {
 			throw new IllegalStateException(e);
 		}

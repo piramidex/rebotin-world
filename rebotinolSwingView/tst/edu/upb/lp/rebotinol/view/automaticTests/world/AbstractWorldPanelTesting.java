@@ -1,19 +1,20 @@
-package edu.upb.lp.rebotinol.view.manualTests.buttons;
+package edu.upb.lp.rebotinol.view.automaticTests.world;
 
 import javax.swing.JFrame;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
-import edu.upb.lp.rebotinol.view.program.buttons.ButtonsPanel;
+import edu.upb.lp.rebotinol.view.world.HousePanel;
 
-public abstract class AbstractButtonsPanelTesting extends AutomaticGUITesting {
+public abstract class AbstractWorldPanelTesting extends AutomaticGUITesting {
+
 	@Override
 	protected void doBuildAndShowFrame(JFrame frame) {
 		RebotinolExample ex = getExample();
-		ButtonsPanel panel;
+		HousePanel panel;
 		try {
-			panel = new ButtonsPanel(ex.getController());
+			panel = new HousePanel(ex.getHouse(), ex.getInitialMatrix());
 		} catch (RebotinolFatalException e) {
 			throw new IllegalStateException(e);
 		}

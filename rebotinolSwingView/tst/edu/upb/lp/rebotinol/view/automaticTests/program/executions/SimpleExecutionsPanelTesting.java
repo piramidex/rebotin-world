@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.automaticTests.executions;
+package edu.upb.lp.rebotinol.view.automaticTests.program.executions;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.examples.RebotinolSimpleExample;
