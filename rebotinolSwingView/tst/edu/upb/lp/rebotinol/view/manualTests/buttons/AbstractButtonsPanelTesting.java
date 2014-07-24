@@ -1,12 +1,13 @@
-package edu.upb.lp.rebotinol.view.buttons;
+package edu.upb.lp.rebotinol.view.manualTests.buttons;
 
 import javax.swing.JFrame;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
-import edu.upb.lp.rebotinol.view.AbstractGUITesting;
+import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
+import edu.upb.lp.rebotinol.view.buttons.ButtonsPanel;
 
-public abstract class AbstractButtonsPanelTesting extends AbstractGUITesting {
+public abstract class AbstractButtonsPanelTesting extends AutomaticGUITesting {
 	@Override
 	protected void doBuildAndShowFrame(JFrame frame) {
 		RebotinolExample ex = getExample();

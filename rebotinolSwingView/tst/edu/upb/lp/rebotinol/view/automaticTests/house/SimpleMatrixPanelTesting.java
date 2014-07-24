@@ -1,9 +1,9 @@
-package edu.upb.lp.rebotinol.view.buttons;
+package edu.upb.lp.rebotinol.view.automaticTests.house;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.examples.RebotinolSimpleExample;
 
-public class SimpleButtonsPanelTesting extends AbstractButtonsPanelTesting {
+public class SimpleMatrixPanelTesting extends AbstractHousePanelTesting {
 
 	@Override
 	protected RebotinolExample buildExample() {
@@ -11,7 +11,7 @@ public class SimpleButtonsPanelTesting extends AbstractButtonsPanelTesting {
 	}
 
 	public static void main(String[] args) {
-		SimpleButtonsPanelTesting t = new SimpleButtonsPanelTesting();
+		SimpleMatrixPanelTesting t = new SimpleMatrixPanelTesting();
 		t.run();
 	}
 }

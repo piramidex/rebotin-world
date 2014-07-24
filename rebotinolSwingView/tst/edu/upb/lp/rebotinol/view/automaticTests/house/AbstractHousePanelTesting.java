@@ -1,12 +1,13 @@
-package edu.upb.lp.rebotinol.view.house;
+package edu.upb.lp.rebotinol.view.automaticTests.house;
 
 import javax.swing.JFrame;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
-import edu.upb.lp.rebotinol.view.AbstractGUITesting;
+import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
+import edu.upb.lp.rebotinol.view.house.HousePanel;
 
-public abstract class AbstractHousePanelTesting extends AbstractGUITesting {
+public abstract class AbstractHousePanelTesting extends AutomaticGUITesting {
 
 	@Override
 	protected void doBuildAndShowFrame(JFrame frame) {

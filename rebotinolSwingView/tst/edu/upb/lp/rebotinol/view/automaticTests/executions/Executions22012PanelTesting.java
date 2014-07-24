@@ -1,9 +1,9 @@
-package edu.upb.lp.rebotinol.view.house;
+package edu.upb.lp.rebotinol.view.automaticTests.executions;
 
 import edu.upb.lp.rebotinol.examples.Problem2_2012_Example;
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 
-public class Matrix22012PanelTesting extends AbstractHousePanelTesting {
+public class Executions22012PanelTesting extends AbstractExecutionsPanelTesting {
 
 	@Override
 	protected RebotinolExample buildExample() {
@@ -11,7 +11,7 @@ public class Matrix22012PanelTesting extends AbstractHousePanelTesting {
 	}
 
 	public static void main(String[] args) {
-		Matrix22012PanelTesting t = new Matrix22012PanelTesting();
+		Executions22012PanelTesting t = new Executions22012PanelTesting();
 		t.run();
 	}
 }
