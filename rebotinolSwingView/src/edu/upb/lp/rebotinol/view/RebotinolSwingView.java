@@ -8,7 +8,7 @@ import org.apache.commons.math3.fraction.Fraction;
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.view.buttons.ButtonsPanelBuilder;
+import edu.upb.lp.rebotinol.view.buttons.ButtonsPanel;
 import edu.upb.lp.rebotinol.view.executions.ExecutionsPanel;
 
 /**
@@ -41,7 +41,7 @@ public class RebotinolSwingView {
 		Fraction[][] initialMatrix = _controller.get_initialMatrix();
 		_executionsPanel = new ExecutionsPanel(_controller);
 //		_housePanel = HousePanel.buildPanel(house, initialMatrix);
-		_buttonsPanel = ButtonsPanelBuilder.buildPanel();
+		_buttonsPanel = new ButtonsPanel(_controller);
 		initialiseMainFrame();
 		_mainFrame.setVisible(true);
 	}
