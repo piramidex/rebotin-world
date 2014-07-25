@@ -1204,39 +1204,105 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegativeNumber"
-    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:472:1: ruleNegativeNumber returns [EObject current=null] : (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber ) ;
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:472:1: ruleNegativeNumber returns [EObject current=null] : (otherlv_0= '-' this_NInteger_1= ruleNInteger ( () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) ) )? ) ;
     public final EObject ruleNegativeNumber() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject this_PositiveNumber_1 = null;
+        Token otherlv_3=null;
+        EObject this_NInteger_1 = null;
+
+        EObject lv_denominator_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:475:28: ( (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber ) )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:1: (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:475:28: ( (otherlv_0= '-' this_NInteger_1= ruleNInteger ( () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) ) )? ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:1: (otherlv_0= '-' this_NInteger_1= ruleNInteger ( () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) ) )? )
             {
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:1: (otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber )
-            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:3: otherlv_0= '-' this_PositiveNumber_1= rulePositiveNumber
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:1: (otherlv_0= '-' this_NInteger_1= ruleNInteger ( () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) ) )? )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:476:3: otherlv_0= '-' this_NInteger_1= ruleNInteger ( () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) ) )?
             {
             otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleNegativeNumber1082); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getNegativeNumberAccess().getHyphenMinusKeyword_0());
                 
              
-                    newCompositeNode(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); 
+                    newCompositeNode(grammarAccess.getNegativeNumberAccess().getNIntegerParserRuleCall_1()); 
                 
-            pushFollow(FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1104);
-            this_PositiveNumber_1=rulePositiveNumber();
+            pushFollow(FOLLOW_ruleNInteger_in_ruleNegativeNumber1104);
+            this_NInteger_1=ruleNInteger();
 
             state._fsp--;
 
              
-                    current = this_PositiveNumber_1; 
+                    current = this_NInteger_1; 
                     afterParserOrEnumRuleCall();
                 
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:489:1: ( () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==16) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:489:2: () otherlv_3= '/' ( (lv_denominator_4_0= ruleNInteger ) )
+                    {
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:489:2: ()
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:490:5: 
+                    {
+
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0(),
+                                current);
+                        
+
+                    }
+
+                    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleNegativeNumber1125); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getNegativeNumberAccess().getSolidusKeyword_2_1());
+                        
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:499:1: ( (lv_denominator_4_0= ruleNInteger ) )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:500:1: (lv_denominator_4_0= ruleNInteger )
+                    {
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:500:1: (lv_denominator_4_0= ruleNInteger )
+                    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:501:3: lv_denominator_4_0= ruleNInteger
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleNInteger_in_ruleNegativeNumber1146);
+                    lv_denominator_4_0=ruleNInteger();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getNegativeNumberRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"denominator",
+                            		lv_denominator_4_0, 
+                            		"NInteger");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -1255,6 +1321,98 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleNegativeNumber"
+
+
+    // $ANTLR start "entryRuleNInteger"
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:525:1: entryRuleNInteger returns [EObject current=null] : iv_ruleNInteger= ruleNInteger EOF ;
+    public final EObject entryRuleNInteger() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNInteger = null;
+
+
+        try {
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:526:2: (iv_ruleNInteger= ruleNInteger EOF )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:527:2: iv_ruleNInteger= ruleNInteger EOF
+            {
+             newCompositeNode(grammarAccess.getNIntegerRule()); 
+            pushFollow(FOLLOW_ruleNInteger_in_entryRuleNInteger1184);
+            iv_ruleNInteger=ruleNInteger();
+
+            state._fsp--;
+
+             current =iv_ruleNInteger; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNInteger1194); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNInteger"
+
+
+    // $ANTLR start "ruleNInteger"
+    // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:534:1: ruleNInteger returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    public final EObject ruleNInteger() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_value_0_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:537:28: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:538:1: ( (lv_value_0_0= RULE_INT ) )
+            {
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:538:1: ( (lv_value_0_0= RULE_INT ) )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:539:1: (lv_value_0_0= RULE_INT )
+            {
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:539:1: (lv_value_0_0= RULE_INT )
+            // ../reboConf/src-gen/edu/upb/lp/parser/antlr/internal/InternalReboConf.g:540:3: lv_value_0_0= RULE_INT
+            {
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNInteger1235); 
+
+            			newLeafNode(lv_value_0_0, grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getNIntegerRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"value",
+                    		lv_value_0_0, 
+                    		"INT");
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNInteger"
 
     // Delegated rules
 
@@ -1299,6 +1457,11 @@ public class InternalReboConfParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber1035 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNegativeNumber1045 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_17_in_ruleNegativeNumber1082 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePositiveNumber_in_ruleNegativeNumber1104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNInteger_in_ruleNegativeNumber1104 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_16_in_ruleNegativeNumber1125 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleNInteger_in_ruleNegativeNumber1146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNInteger_in_entryRuleNInteger1184 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNInteger1194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNInteger1235 = new BitSet(new long[]{0x0000000000000002L});
 
 }

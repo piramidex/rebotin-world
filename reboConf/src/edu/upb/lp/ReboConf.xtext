@@ -31,4 +31,7 @@ Integer:
 	value = INT;
 
 NegativeNumber:
-	"-" PositiveNumber;
+	"-" NInteger ({NFraction.numerator = current} "/" denominator=NInteger)?;
+	
+NInteger:
+	value = INT;

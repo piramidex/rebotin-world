@@ -8,6 +8,8 @@ import edu.upb.lp.reboConf.Empty;
 import edu.upb.lp.reboConf.Fraction;
 import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
+import edu.upb.lp.reboConf.NFraction;
+import edu.upb.lp.reboConf.NInteger;
 import edu.upb.lp.reboConf.NegativeNumber;
 import edu.upb.lp.reboConf.PositiveNumber;
 import edu.upb.lp.reboConf.ReboConfPackage;
@@ -128,9 +130,19 @@ public class ReboConfAdapterFactory extends AdapterFactoryImpl
         return createNegativeNumberAdapter();
       }
       @Override
+      public Adapter caseNInteger(NInteger object)
+      {
+        return createNIntegerAdapter();
+      }
+      @Override
       public Adapter caseFraction(Fraction object)
       {
         return createFractionAdapter();
+      }
+      @Override
+      public Adapter caseNFraction(NFraction object)
+      {
+        return createNFractionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -290,6 +302,21 @@ public class ReboConfAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.reboConf.NInteger <em>NInteger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.reboConf.NInteger
+   * @generated
+   */
+  public Adapter createNIntegerAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.upb.lp.reboConf.Fraction <em>Fraction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -300,6 +327,21 @@ public class ReboConfAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFractionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.upb.lp.reboConf.NFraction <em>NFraction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.upb.lp.reboConf.NFraction
+   * @generated
+   */
+  public Adapter createNFractionAdapter()
   {
     return null;
   }

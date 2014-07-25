@@ -813,14 +813,91 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleNegativeNumber"
 
 
+    // $ANTLR start "entryRuleNInteger"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:319:1: entryRuleNInteger : ruleNInteger EOF ;
+    public final void entryRuleNInteger() throws RecognitionException {
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:320:1: ( ruleNInteger EOF )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:321:1: ruleNInteger EOF
+            {
+             before(grammarAccess.getNIntegerRule()); 
+            pushFollow(FOLLOW_ruleNInteger_in_entryRuleNInteger618);
+            ruleNInteger();
+
+            state._fsp--;
+
+             after(grammarAccess.getNIntegerRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNInteger625); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNInteger"
+
+
+    // $ANTLR start "ruleNInteger"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:328:1: ruleNInteger : ( ( rule__NInteger__ValueAssignment ) ) ;
+    public final void ruleNInteger() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:332:2: ( ( ( rule__NInteger__ValueAssignment ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:333:1: ( ( rule__NInteger__ValueAssignment ) )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:333:1: ( ( rule__NInteger__ValueAssignment ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:334:1: ( rule__NInteger__ValueAssignment )
+            {
+             before(grammarAccess.getNIntegerAccess().getValueAssignment()); 
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:335:1: ( rule__NInteger__ValueAssignment )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:335:2: rule__NInteger__ValueAssignment
+            {
+            pushFollow(FOLLOW_rule__NInteger__ValueAssignment_in_ruleNInteger651);
+            rule__NInteger__ValueAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNIntegerAccess().getValueAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNInteger"
+
+
     // $ANTLR start "rule__Configuration__Alternatives_2"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:319:1: rule__Configuration__Alternatives_2 : ( ( ( rule__Configuration__Group_2_0__0 ) ) | ( ( rule__Configuration__Group_2_1__0 ) ) );
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:347:1: rule__Configuration__Alternatives_2 : ( ( ( rule__Configuration__Group_2_0__0 ) ) | ( ( rule__Configuration__Group_2_1__0 ) ) );
     public final void rule__Configuration__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:323:1: ( ( ( rule__Configuration__Group_2_0__0 ) ) | ( ( rule__Configuration__Group_2_1__0 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:351:1: ( ( ( rule__Configuration__Group_2_0__0 ) ) | ( ( rule__Configuration__Group_2_1__0 ) ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -838,16 +915,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
             }
             switch (alt2) {
                 case 1 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:324:1: ( ( rule__Configuration__Group_2_0__0 ) )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:352:1: ( ( rule__Configuration__Group_2_0__0 ) )
                     {
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:324:1: ( ( rule__Configuration__Group_2_0__0 ) )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:325:1: ( rule__Configuration__Group_2_0__0 )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:352:1: ( ( rule__Configuration__Group_2_0__0 ) )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:353:1: ( rule__Configuration__Group_2_0__0 )
                     {
                      before(grammarAccess.getConfigurationAccess().getGroup_2_0()); 
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:326:1: ( rule__Configuration__Group_2_0__0 )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:326:2: rule__Configuration__Group_2_0__0
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:354:1: ( rule__Configuration__Group_2_0__0 )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:354:2: rule__Configuration__Group_2_0__0
                     {
-                    pushFollow(FOLLOW_rule__Configuration__Group_2_0__0_in_rule__Configuration__Alternatives_2627);
+                    pushFollow(FOLLOW_rule__Configuration__Group_2_0__0_in_rule__Configuration__Alternatives_2687);
                     rule__Configuration__Group_2_0__0();
 
                     state._fsp--;
@@ -863,16 +940,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:330:6: ( ( rule__Configuration__Group_2_1__0 ) )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:358:6: ( ( rule__Configuration__Group_2_1__0 ) )
                     {
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:330:6: ( ( rule__Configuration__Group_2_1__0 ) )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:331:1: ( rule__Configuration__Group_2_1__0 )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:358:6: ( ( rule__Configuration__Group_2_1__0 ) )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:359:1: ( rule__Configuration__Group_2_1__0 )
                     {
                      before(grammarAccess.getConfigurationAccess().getGroup_2_1()); 
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:332:1: ( rule__Configuration__Group_2_1__0 )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:332:2: rule__Configuration__Group_2_1__0
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:360:1: ( rule__Configuration__Group_2_1__0 )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:360:2: rule__Configuration__Group_2_1__0
                     {
-                    pushFollow(FOLLOW_rule__Configuration__Group_2_1__0_in_rule__Configuration__Alternatives_2645);
+                    pushFollow(FOLLOW_rule__Configuration__Group_2_1__0_in_rule__Configuration__Alternatives_2705);
                     rule__Configuration__Group_2_1__0();
 
                     state._fsp--;
@@ -905,13 +982,13 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Element__Alternatives"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:341:1: rule__Element__Alternatives : ( ( ruleNumber ) | ( ruleEmpty ) );
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:369:1: rule__Element__Alternatives : ( ( ruleNumber ) | ( ruleEmpty ) );
     public final void rule__Element__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:345:1: ( ( ruleNumber ) | ( ruleEmpty ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:373:1: ( ( ruleNumber ) | ( ruleEmpty ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -929,13 +1006,13 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
             }
             switch (alt3) {
                 case 1 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:346:1: ( ruleNumber )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:374:1: ( ruleNumber )
                     {
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:346:1: ( ruleNumber )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:347:1: ruleNumber
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:374:1: ( ruleNumber )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:375:1: ruleNumber
                     {
                      before(grammarAccess.getElementAccess().getNumberParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleNumber_in_rule__Element__Alternatives678);
+                    pushFollow(FOLLOW_ruleNumber_in_rule__Element__Alternatives738);
                     ruleNumber();
 
                     state._fsp--;
@@ -948,13 +1025,13 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:352:6: ( ruleEmpty )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:380:6: ( ruleEmpty )
                     {
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:352:6: ( ruleEmpty )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:353:1: ruleEmpty
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:380:6: ( ruleEmpty )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:381:1: ruleEmpty
                     {
                      before(grammarAccess.getElementAccess().getEmptyParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleEmpty_in_rule__Element__Alternatives695);
+                    pushFollow(FOLLOW_ruleEmpty_in_rule__Element__Alternatives755);
                     ruleEmpty();
 
                     state._fsp--;
@@ -984,13 +1061,13 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Number__Alternatives"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:363:1: rule__Number__Alternatives : ( ( rulePositiveNumber ) | ( ruleNegativeNumber ) );
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:391:1: rule__Number__Alternatives : ( ( rulePositiveNumber ) | ( ruleNegativeNumber ) );
     public final void rule__Number__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:367:1: ( ( rulePositiveNumber ) | ( ruleNegativeNumber ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:395:1: ( ( rulePositiveNumber ) | ( ruleNegativeNumber ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1008,13 +1085,13 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
             }
             switch (alt4) {
                 case 1 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:368:1: ( rulePositiveNumber )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:396:1: ( rulePositiveNumber )
                     {
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:368:1: ( rulePositiveNumber )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:369:1: rulePositiveNumber
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:396:1: ( rulePositiveNumber )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:397:1: rulePositiveNumber
                     {
                      before(grammarAccess.getNumberAccess().getPositiveNumberParserRuleCall_0()); 
-                    pushFollow(FOLLOW_rulePositiveNumber_in_rule__Number__Alternatives727);
+                    pushFollow(FOLLOW_rulePositiveNumber_in_rule__Number__Alternatives787);
                     rulePositiveNumber();
 
                     state._fsp--;
@@ -1027,13 +1104,13 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:374:6: ( ruleNegativeNumber )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:402:6: ( ruleNegativeNumber )
                     {
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:374:6: ( ruleNegativeNumber )
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:375:1: ruleNegativeNumber
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:402:6: ( ruleNegativeNumber )
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:403:1: ruleNegativeNumber
                     {
                      before(grammarAccess.getNumberAccess().getNegativeNumberParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleNegativeNumber_in_rule__Number__Alternatives744);
+                    pushFollow(FOLLOW_ruleNegativeNumber_in_rule__Number__Alternatives804);
                     ruleNegativeNumber();
 
                     state._fsp--;
@@ -1063,21 +1140,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:387:1: rule__Configuration__Group__0 : rule__Configuration__Group__0__Impl rule__Configuration__Group__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:415:1: rule__Configuration__Group__0 : rule__Configuration__Group__0__Impl rule__Configuration__Group__1 ;
     public final void rule__Configuration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:391:1: ( rule__Configuration__Group__0__Impl rule__Configuration__Group__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:392:2: rule__Configuration__Group__0__Impl rule__Configuration__Group__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:419:1: ( rule__Configuration__Group__0__Impl rule__Configuration__Group__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:420:2: rule__Configuration__Group__0__Impl rule__Configuration__Group__1
             {
-            pushFollow(FOLLOW_rule__Configuration__Group__0__Impl_in_rule__Configuration__Group__0774);
+            pushFollow(FOLLOW_rule__Configuration__Group__0__Impl_in_rule__Configuration__Group__0834);
             rule__Configuration__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Configuration__Group__1_in_rule__Configuration__Group__0777);
+            pushFollow(FOLLOW_rule__Configuration__Group__1_in_rule__Configuration__Group__0837);
             rule__Configuration__Group__1();
 
             state._fsp--;
@@ -1101,20 +1178,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:399:1: rule__Configuration__Group__0__Impl : ( 'Matriz inicial:' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:427:1: rule__Configuration__Group__0__Impl : ( 'Matriz inicial:' ) ;
     public final void rule__Configuration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:403:1: ( ( 'Matriz inicial:' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:404:1: ( 'Matriz inicial:' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:431:1: ( ( 'Matriz inicial:' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:432:1: ( 'Matriz inicial:' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:404:1: ( 'Matriz inicial:' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:405:1: 'Matriz inicial:'
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:432:1: ( 'Matriz inicial:' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:433:1: 'Matriz inicial:'
             {
              before(grammarAccess.getConfigurationAccess().getMatrizInicialKeyword_0()); 
-            match(input,11,FOLLOW_11_in_rule__Configuration__Group__0__Impl805); 
+            match(input,11,FOLLOW_11_in_rule__Configuration__Group__0__Impl865); 
              after(grammarAccess.getConfigurationAccess().getMatrizInicialKeyword_0()); 
 
             }
@@ -1138,21 +1215,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:418:1: rule__Configuration__Group__1 : rule__Configuration__Group__1__Impl rule__Configuration__Group__2 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:446:1: rule__Configuration__Group__1 : rule__Configuration__Group__1__Impl rule__Configuration__Group__2 ;
     public final void rule__Configuration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:422:1: ( rule__Configuration__Group__1__Impl rule__Configuration__Group__2 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:423:2: rule__Configuration__Group__1__Impl rule__Configuration__Group__2
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:450:1: ( rule__Configuration__Group__1__Impl rule__Configuration__Group__2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:451:2: rule__Configuration__Group__1__Impl rule__Configuration__Group__2
             {
-            pushFollow(FOLLOW_rule__Configuration__Group__1__Impl_in_rule__Configuration__Group__1836);
+            pushFollow(FOLLOW_rule__Configuration__Group__1__Impl_in_rule__Configuration__Group__1896);
             rule__Configuration__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Configuration__Group__2_in_rule__Configuration__Group__1839);
+            pushFollow(FOLLOW_rule__Configuration__Group__2_in_rule__Configuration__Group__1899);
             rule__Configuration__Group__2();
 
             state._fsp--;
@@ -1176,23 +1253,23 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:430:1: rule__Configuration__Group__1__Impl : ( ( rule__Configuration__InitialAssignment_1 ) ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:458:1: rule__Configuration__Group__1__Impl : ( ( rule__Configuration__InitialAssignment_1 ) ) ;
     public final void rule__Configuration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:434:1: ( ( ( rule__Configuration__InitialAssignment_1 ) ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:435:1: ( ( rule__Configuration__InitialAssignment_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:462:1: ( ( ( rule__Configuration__InitialAssignment_1 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:463:1: ( ( rule__Configuration__InitialAssignment_1 ) )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:435:1: ( ( rule__Configuration__InitialAssignment_1 ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:436:1: ( rule__Configuration__InitialAssignment_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:463:1: ( ( rule__Configuration__InitialAssignment_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:464:1: ( rule__Configuration__InitialAssignment_1 )
             {
              before(grammarAccess.getConfigurationAccess().getInitialAssignment_1()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:437:1: ( rule__Configuration__InitialAssignment_1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:437:2: rule__Configuration__InitialAssignment_1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:465:1: ( rule__Configuration__InitialAssignment_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:465:2: rule__Configuration__InitialAssignment_1
             {
-            pushFollow(FOLLOW_rule__Configuration__InitialAssignment_1_in_rule__Configuration__Group__1__Impl866);
+            pushFollow(FOLLOW_rule__Configuration__InitialAssignment_1_in_rule__Configuration__Group__1__Impl926);
             rule__Configuration__InitialAssignment_1();
 
             state._fsp--;
@@ -1223,16 +1300,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group__2"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:447:1: rule__Configuration__Group__2 : rule__Configuration__Group__2__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:475:1: rule__Configuration__Group__2 : rule__Configuration__Group__2__Impl ;
     public final void rule__Configuration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:451:1: ( rule__Configuration__Group__2__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:452:2: rule__Configuration__Group__2__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:479:1: ( rule__Configuration__Group__2__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:480:2: rule__Configuration__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Configuration__Group__2__Impl_in_rule__Configuration__Group__2896);
+            pushFollow(FOLLOW_rule__Configuration__Group__2__Impl_in_rule__Configuration__Group__2956);
             rule__Configuration__Group__2__Impl();
 
             state._fsp--;
@@ -1256,20 +1333,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group__2__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:458:1: rule__Configuration__Group__2__Impl : ( ( rule__Configuration__Alternatives_2 )? ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:486:1: rule__Configuration__Group__2__Impl : ( ( rule__Configuration__Alternatives_2 )? ) ;
     public final void rule__Configuration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:462:1: ( ( ( rule__Configuration__Alternatives_2 )? ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:463:1: ( ( rule__Configuration__Alternatives_2 )? )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:490:1: ( ( ( rule__Configuration__Alternatives_2 )? ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:491:1: ( ( rule__Configuration__Alternatives_2 )? )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:463:1: ( ( rule__Configuration__Alternatives_2 )? )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:464:1: ( rule__Configuration__Alternatives_2 )?
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:491:1: ( ( rule__Configuration__Alternatives_2 )? )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:492:1: ( rule__Configuration__Alternatives_2 )?
             {
              before(grammarAccess.getConfigurationAccess().getAlternatives_2()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:465:1: ( rule__Configuration__Alternatives_2 )?
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:493:1: ( rule__Configuration__Alternatives_2 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1278,9 +1355,9 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
             }
             switch (alt5) {
                 case 1 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:465:2: rule__Configuration__Alternatives_2
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:493:2: rule__Configuration__Alternatives_2
                     {
-                    pushFollow(FOLLOW_rule__Configuration__Alternatives_2_in_rule__Configuration__Group__2__Impl923);
+                    pushFollow(FOLLOW_rule__Configuration__Alternatives_2_in_rule__Configuration__Group__2__Impl983);
                     rule__Configuration__Alternatives_2();
 
                     state._fsp--;
@@ -1314,21 +1391,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_0__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:481:1: rule__Configuration__Group_2_0__0 : rule__Configuration__Group_2_0__0__Impl rule__Configuration__Group_2_0__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:509:1: rule__Configuration__Group_2_0__0 : rule__Configuration__Group_2_0__0__Impl rule__Configuration__Group_2_0__1 ;
     public final void rule__Configuration__Group_2_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:485:1: ( rule__Configuration__Group_2_0__0__Impl rule__Configuration__Group_2_0__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:486:2: rule__Configuration__Group_2_0__0__Impl rule__Configuration__Group_2_0__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:513:1: ( rule__Configuration__Group_2_0__0__Impl rule__Configuration__Group_2_0__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:514:2: rule__Configuration__Group_2_0__0__Impl rule__Configuration__Group_2_0__1
             {
-            pushFollow(FOLLOW_rule__Configuration__Group_2_0__0__Impl_in_rule__Configuration__Group_2_0__0960);
+            pushFollow(FOLLOW_rule__Configuration__Group_2_0__0__Impl_in_rule__Configuration__Group_2_0__01020);
             rule__Configuration__Group_2_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Configuration__Group_2_0__1_in_rule__Configuration__Group_2_0__0963);
+            pushFollow(FOLLOW_rule__Configuration__Group_2_0__1_in_rule__Configuration__Group_2_0__01023);
             rule__Configuration__Group_2_0__1();
 
             state._fsp--;
@@ -1352,20 +1429,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_0__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:493:1: rule__Configuration__Group_2_0__0__Impl : ( 'Matriz esperada:' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:521:1: rule__Configuration__Group_2_0__0__Impl : ( 'Matriz esperada:' ) ;
     public final void rule__Configuration__Group_2_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:497:1: ( ( 'Matriz esperada:' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:498:1: ( 'Matriz esperada:' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:525:1: ( ( 'Matriz esperada:' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:526:1: ( 'Matriz esperada:' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:498:1: ( 'Matriz esperada:' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:499:1: 'Matriz esperada:'
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:526:1: ( 'Matriz esperada:' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:527:1: 'Matriz esperada:'
             {
              before(grammarAccess.getConfigurationAccess().getMatrizEsperadaKeyword_2_0_0()); 
-            match(input,12,FOLLOW_12_in_rule__Configuration__Group_2_0__0__Impl991); 
+            match(input,12,FOLLOW_12_in_rule__Configuration__Group_2_0__0__Impl1051); 
              after(grammarAccess.getConfigurationAccess().getMatrizEsperadaKeyword_2_0_0()); 
 
             }
@@ -1389,16 +1466,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_0__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:512:1: rule__Configuration__Group_2_0__1 : rule__Configuration__Group_2_0__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:540:1: rule__Configuration__Group_2_0__1 : rule__Configuration__Group_2_0__1__Impl ;
     public final void rule__Configuration__Group_2_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:516:1: ( rule__Configuration__Group_2_0__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:517:2: rule__Configuration__Group_2_0__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:544:1: ( rule__Configuration__Group_2_0__1__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:545:2: rule__Configuration__Group_2_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Configuration__Group_2_0__1__Impl_in_rule__Configuration__Group_2_0__11022);
+            pushFollow(FOLLOW_rule__Configuration__Group_2_0__1__Impl_in_rule__Configuration__Group_2_0__11082);
             rule__Configuration__Group_2_0__1__Impl();
 
             state._fsp--;
@@ -1422,23 +1499,23 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_0__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:523:1: rule__Configuration__Group_2_0__1__Impl : ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:551:1: rule__Configuration__Group_2_0__1__Impl : ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) ) ;
     public final void rule__Configuration__Group_2_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:527:1: ( ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:528:1: ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:555:1: ( ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:556:1: ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:528:1: ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:529:1: ( rule__Configuration__ExpectedAssignment_2_0_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:556:1: ( ( rule__Configuration__ExpectedAssignment_2_0_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:557:1: ( rule__Configuration__ExpectedAssignment_2_0_1 )
             {
              before(grammarAccess.getConfigurationAccess().getExpectedAssignment_2_0_1()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:530:1: ( rule__Configuration__ExpectedAssignment_2_0_1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:530:2: rule__Configuration__ExpectedAssignment_2_0_1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:558:1: ( rule__Configuration__ExpectedAssignment_2_0_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:558:2: rule__Configuration__ExpectedAssignment_2_0_1
             {
-            pushFollow(FOLLOW_rule__Configuration__ExpectedAssignment_2_0_1_in_rule__Configuration__Group_2_0__1__Impl1049);
+            pushFollow(FOLLOW_rule__Configuration__ExpectedAssignment_2_0_1_in_rule__Configuration__Group_2_0__1__Impl1109);
             rule__Configuration__ExpectedAssignment_2_0_1();
 
             state._fsp--;
@@ -1469,21 +1546,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_1__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:544:1: rule__Configuration__Group_2_1__0 : rule__Configuration__Group_2_1__0__Impl rule__Configuration__Group_2_1__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:572:1: rule__Configuration__Group_2_1__0 : rule__Configuration__Group_2_1__0__Impl rule__Configuration__Group_2_1__1 ;
     public final void rule__Configuration__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:548:1: ( rule__Configuration__Group_2_1__0__Impl rule__Configuration__Group_2_1__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:549:2: rule__Configuration__Group_2_1__0__Impl rule__Configuration__Group_2_1__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:576:1: ( rule__Configuration__Group_2_1__0__Impl rule__Configuration__Group_2_1__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:577:2: rule__Configuration__Group_2_1__0__Impl rule__Configuration__Group_2_1__1
             {
-            pushFollow(FOLLOW_rule__Configuration__Group_2_1__0__Impl_in_rule__Configuration__Group_2_1__01083);
+            pushFollow(FOLLOW_rule__Configuration__Group_2_1__0__Impl_in_rule__Configuration__Group_2_1__01143);
             rule__Configuration__Group_2_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Configuration__Group_2_1__1_in_rule__Configuration__Group_2_1__01086);
+            pushFollow(FOLLOW_rule__Configuration__Group_2_1__1_in_rule__Configuration__Group_2_1__01146);
             rule__Configuration__Group_2_1__1();
 
             state._fsp--;
@@ -1507,20 +1584,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_1__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:556:1: rule__Configuration__Group_2_1__0__Impl : ( 'Correo esperado:' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:584:1: rule__Configuration__Group_2_1__0__Impl : ( 'Correo esperado:' ) ;
     public final void rule__Configuration__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:560:1: ( ( 'Correo esperado:' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:561:1: ( 'Correo esperado:' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:588:1: ( ( 'Correo esperado:' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:589:1: ( 'Correo esperado:' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:561:1: ( 'Correo esperado:' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:562:1: 'Correo esperado:'
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:589:1: ( 'Correo esperado:' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:590:1: 'Correo esperado:'
             {
              before(grammarAccess.getConfigurationAccess().getCorreoEsperadoKeyword_2_1_0()); 
-            match(input,13,FOLLOW_13_in_rule__Configuration__Group_2_1__0__Impl1114); 
+            match(input,13,FOLLOW_13_in_rule__Configuration__Group_2_1__0__Impl1174); 
              after(grammarAccess.getConfigurationAccess().getCorreoEsperadoKeyword_2_1_0()); 
 
             }
@@ -1544,16 +1621,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_1__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:575:1: rule__Configuration__Group_2_1__1 : rule__Configuration__Group_2_1__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:603:1: rule__Configuration__Group_2_1__1 : rule__Configuration__Group_2_1__1__Impl ;
     public final void rule__Configuration__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:579:1: ( rule__Configuration__Group_2_1__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:580:2: rule__Configuration__Group_2_1__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:607:1: ( rule__Configuration__Group_2_1__1__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:608:2: rule__Configuration__Group_2_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Configuration__Group_2_1__1__Impl_in_rule__Configuration__Group_2_1__11145);
+            pushFollow(FOLLOW_rule__Configuration__Group_2_1__1__Impl_in_rule__Configuration__Group_2_1__11205);
             rule__Configuration__Group_2_1__1__Impl();
 
             state._fsp--;
@@ -1577,23 +1654,23 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__Group_2_1__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:586:1: rule__Configuration__Group_2_1__1__Impl : ( ( rule__Configuration__MailAssignment_2_1_1 ) ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:614:1: rule__Configuration__Group_2_1__1__Impl : ( ( rule__Configuration__MailAssignment_2_1_1 ) ) ;
     public final void rule__Configuration__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:590:1: ( ( ( rule__Configuration__MailAssignment_2_1_1 ) ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:591:1: ( ( rule__Configuration__MailAssignment_2_1_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:618:1: ( ( ( rule__Configuration__MailAssignment_2_1_1 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:619:1: ( ( rule__Configuration__MailAssignment_2_1_1 ) )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:591:1: ( ( rule__Configuration__MailAssignment_2_1_1 ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:592:1: ( rule__Configuration__MailAssignment_2_1_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:619:1: ( ( rule__Configuration__MailAssignment_2_1_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:620:1: ( rule__Configuration__MailAssignment_2_1_1 )
             {
              before(grammarAccess.getConfigurationAccess().getMailAssignment_2_1_1()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:593:1: ( rule__Configuration__MailAssignment_2_1_1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:593:2: rule__Configuration__MailAssignment_2_1_1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:621:1: ( rule__Configuration__MailAssignment_2_1_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:621:2: rule__Configuration__MailAssignment_2_1_1
             {
-            pushFollow(FOLLOW_rule__Configuration__MailAssignment_2_1_1_in_rule__Configuration__Group_2_1__1__Impl1172);
+            pushFollow(FOLLOW_rule__Configuration__MailAssignment_2_1_1_in_rule__Configuration__Group_2_1__1__Impl1232);
             rule__Configuration__MailAssignment_2_1_1();
 
             state._fsp--;
@@ -1624,21 +1701,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:607:1: rule__Line__Group__0 : rule__Line__Group__0__Impl rule__Line__Group__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:635:1: rule__Line__Group__0 : rule__Line__Group__0__Impl rule__Line__Group__1 ;
     public final void rule__Line__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:611:1: ( rule__Line__Group__0__Impl rule__Line__Group__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:612:2: rule__Line__Group__0__Impl rule__Line__Group__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:639:1: ( rule__Line__Group__0__Impl rule__Line__Group__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:640:2: rule__Line__Group__0__Impl rule__Line__Group__1
             {
-            pushFollow(FOLLOW_rule__Line__Group__0__Impl_in_rule__Line__Group__01206);
+            pushFollow(FOLLOW_rule__Line__Group__0__Impl_in_rule__Line__Group__01266);
             rule__Line__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Line__Group__1_in_rule__Line__Group__01209);
+            pushFollow(FOLLOW_rule__Line__Group__1_in_rule__Line__Group__01269);
             rule__Line__Group__1();
 
             state._fsp--;
@@ -1662,23 +1739,23 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:619:1: rule__Line__Group__0__Impl : ( ( rule__Line__ElsAssignment_0 ) ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:647:1: rule__Line__Group__0__Impl : ( ( rule__Line__ElsAssignment_0 ) ) ;
     public final void rule__Line__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:623:1: ( ( ( rule__Line__ElsAssignment_0 ) ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:624:1: ( ( rule__Line__ElsAssignment_0 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:651:1: ( ( ( rule__Line__ElsAssignment_0 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:652:1: ( ( rule__Line__ElsAssignment_0 ) )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:624:1: ( ( rule__Line__ElsAssignment_0 ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:625:1: ( rule__Line__ElsAssignment_0 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:652:1: ( ( rule__Line__ElsAssignment_0 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:653:1: ( rule__Line__ElsAssignment_0 )
             {
              before(grammarAccess.getLineAccess().getElsAssignment_0()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:626:1: ( rule__Line__ElsAssignment_0 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:626:2: rule__Line__ElsAssignment_0
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:654:1: ( rule__Line__ElsAssignment_0 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:654:2: rule__Line__ElsAssignment_0
             {
-            pushFollow(FOLLOW_rule__Line__ElsAssignment_0_in_rule__Line__Group__0__Impl1236);
+            pushFollow(FOLLOW_rule__Line__ElsAssignment_0_in_rule__Line__Group__0__Impl1296);
             rule__Line__ElsAssignment_0();
 
             state._fsp--;
@@ -1709,16 +1786,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:636:1: rule__Line__Group__1 : rule__Line__Group__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:664:1: rule__Line__Group__1 : rule__Line__Group__1__Impl ;
     public final void rule__Line__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:640:1: ( rule__Line__Group__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:641:2: rule__Line__Group__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:668:1: ( rule__Line__Group__1__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:669:2: rule__Line__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Line__Group__1__Impl_in_rule__Line__Group__11266);
+            pushFollow(FOLLOW_rule__Line__Group__1__Impl_in_rule__Line__Group__11326);
             rule__Line__Group__1__Impl();
 
             state._fsp--;
@@ -1742,20 +1819,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:647:1: rule__Line__Group__1__Impl : ( ( rule__Line__Group_1__0 )* ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:675:1: rule__Line__Group__1__Impl : ( ( rule__Line__Group_1__0 )* ) ;
     public final void rule__Line__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:651:1: ( ( ( rule__Line__Group_1__0 )* ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:652:1: ( ( rule__Line__Group_1__0 )* )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:679:1: ( ( ( rule__Line__Group_1__0 )* ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:680:1: ( ( rule__Line__Group_1__0 )* )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:652:1: ( ( rule__Line__Group_1__0 )* )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:653:1: ( rule__Line__Group_1__0 )*
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:680:1: ( ( rule__Line__Group_1__0 )* )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:681:1: ( rule__Line__Group_1__0 )*
             {
              before(grammarAccess.getLineAccess().getGroup_1()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:654:1: ( rule__Line__Group_1__0 )*
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:682:1: ( rule__Line__Group_1__0 )*
             loop6:
             do {
                 int alt6=2;
@@ -1768,9 +1845,9 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
                 switch (alt6) {
             	case 1 :
-            	    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:654:2: rule__Line__Group_1__0
+            	    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:682:2: rule__Line__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Line__Group_1__0_in_rule__Line__Group__1__Impl1293);
+            	    pushFollow(FOLLOW_rule__Line__Group_1__0_in_rule__Line__Group__1__Impl1353);
             	    rule__Line__Group_1__0();
 
             	    state._fsp--;
@@ -1807,21 +1884,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group_1__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:668:1: rule__Line__Group_1__0 : rule__Line__Group_1__0__Impl rule__Line__Group_1__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:696:1: rule__Line__Group_1__0 : rule__Line__Group_1__0__Impl rule__Line__Group_1__1 ;
     public final void rule__Line__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:672:1: ( rule__Line__Group_1__0__Impl rule__Line__Group_1__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:673:2: rule__Line__Group_1__0__Impl rule__Line__Group_1__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:700:1: ( rule__Line__Group_1__0__Impl rule__Line__Group_1__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:701:2: rule__Line__Group_1__0__Impl rule__Line__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Line__Group_1__0__Impl_in_rule__Line__Group_1__01328);
+            pushFollow(FOLLOW_rule__Line__Group_1__0__Impl_in_rule__Line__Group_1__01388);
             rule__Line__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Line__Group_1__1_in_rule__Line__Group_1__01331);
+            pushFollow(FOLLOW_rule__Line__Group_1__1_in_rule__Line__Group_1__01391);
             rule__Line__Group_1__1();
 
             state._fsp--;
@@ -1845,20 +1922,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group_1__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:680:1: rule__Line__Group_1__0__Impl : ( ',' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:708:1: rule__Line__Group_1__0__Impl : ( ',' ) ;
     public final void rule__Line__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:684:1: ( ( ',' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:685:1: ( ',' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:712:1: ( ( ',' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:713:1: ( ',' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:685:1: ( ',' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:686:1: ','
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:713:1: ( ',' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:714:1: ','
             {
              before(grammarAccess.getLineAccess().getCommaKeyword_1_0()); 
-            match(input,14,FOLLOW_14_in_rule__Line__Group_1__0__Impl1359); 
+            match(input,14,FOLLOW_14_in_rule__Line__Group_1__0__Impl1419); 
              after(grammarAccess.getLineAccess().getCommaKeyword_1_0()); 
 
             }
@@ -1882,16 +1959,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group_1__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:699:1: rule__Line__Group_1__1 : rule__Line__Group_1__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:727:1: rule__Line__Group_1__1 : rule__Line__Group_1__1__Impl ;
     public final void rule__Line__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:703:1: ( rule__Line__Group_1__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:704:2: rule__Line__Group_1__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:731:1: ( rule__Line__Group_1__1__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:732:2: rule__Line__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Line__Group_1__1__Impl_in_rule__Line__Group_1__11390);
+            pushFollow(FOLLOW_rule__Line__Group_1__1__Impl_in_rule__Line__Group_1__11450);
             rule__Line__Group_1__1__Impl();
 
             state._fsp--;
@@ -1915,23 +1992,23 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__Group_1__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:710:1: rule__Line__Group_1__1__Impl : ( ( rule__Line__ElsAssignment_1_1 ) ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:738:1: rule__Line__Group_1__1__Impl : ( ( rule__Line__ElsAssignment_1_1 ) ) ;
     public final void rule__Line__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:714:1: ( ( ( rule__Line__ElsAssignment_1_1 ) ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:715:1: ( ( rule__Line__ElsAssignment_1_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:742:1: ( ( ( rule__Line__ElsAssignment_1_1 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:743:1: ( ( rule__Line__ElsAssignment_1_1 ) )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:715:1: ( ( rule__Line__ElsAssignment_1_1 ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:716:1: ( rule__Line__ElsAssignment_1_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:743:1: ( ( rule__Line__ElsAssignment_1_1 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:744:1: ( rule__Line__ElsAssignment_1_1 )
             {
              before(grammarAccess.getLineAccess().getElsAssignment_1_1()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:717:1: ( rule__Line__ElsAssignment_1_1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:717:2: rule__Line__ElsAssignment_1_1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:745:1: ( rule__Line__ElsAssignment_1_1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:745:2: rule__Line__ElsAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Line__ElsAssignment_1_1_in_rule__Line__Group_1__1__Impl1417);
+            pushFollow(FOLLOW_rule__Line__ElsAssignment_1_1_in_rule__Line__Group_1__1__Impl1477);
             rule__Line__ElsAssignment_1_1();
 
             state._fsp--;
@@ -1962,21 +2039,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Empty__Group__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:731:1: rule__Empty__Group__0 : rule__Empty__Group__0__Impl rule__Empty__Group__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:759:1: rule__Empty__Group__0 : rule__Empty__Group__0__Impl rule__Empty__Group__1 ;
     public final void rule__Empty__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:735:1: ( rule__Empty__Group__0__Impl rule__Empty__Group__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:736:2: rule__Empty__Group__0__Impl rule__Empty__Group__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:763:1: ( rule__Empty__Group__0__Impl rule__Empty__Group__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:764:2: rule__Empty__Group__0__Impl rule__Empty__Group__1
             {
-            pushFollow(FOLLOW_rule__Empty__Group__0__Impl_in_rule__Empty__Group__01451);
+            pushFollow(FOLLOW_rule__Empty__Group__0__Impl_in_rule__Empty__Group__01511);
             rule__Empty__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Empty__Group__1_in_rule__Empty__Group__01454);
+            pushFollow(FOLLOW_rule__Empty__Group__1_in_rule__Empty__Group__01514);
             rule__Empty__Group__1();
 
             state._fsp--;
@@ -2000,21 +2077,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Empty__Group__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:743:1: rule__Empty__Group__0__Impl : ( () ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:771:1: rule__Empty__Group__0__Impl : ( () ) ;
     public final void rule__Empty__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:747:1: ( ( () ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:748:1: ( () )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:775:1: ( ( () ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:776:1: ( () )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:748:1: ( () )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:749:1: ()
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:776:1: ( () )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:777:1: ()
             {
              before(grammarAccess.getEmptyAccess().getEmptyAction_0()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:750:1: ()
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:752:1: 
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:778:1: ()
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:780:1: 
             {
             }
 
@@ -2037,16 +2114,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Empty__Group__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:762:1: rule__Empty__Group__1 : rule__Empty__Group__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:790:1: rule__Empty__Group__1 : rule__Empty__Group__1__Impl ;
     public final void rule__Empty__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:766:1: ( rule__Empty__Group__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:767:2: rule__Empty__Group__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:794:1: ( rule__Empty__Group__1__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:795:2: rule__Empty__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Empty__Group__1__Impl_in_rule__Empty__Group__11512);
+            pushFollow(FOLLOW_rule__Empty__Group__1__Impl_in_rule__Empty__Group__11572);
             rule__Empty__Group__1__Impl();
 
             state._fsp--;
@@ -2070,20 +2147,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Empty__Group__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:773:1: rule__Empty__Group__1__Impl : ( '_' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:801:1: rule__Empty__Group__1__Impl : ( '_' ) ;
     public final void rule__Empty__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:777:1: ( ( '_' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:778:1: ( '_' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:805:1: ( ( '_' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:806:1: ( '_' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:778:1: ( '_' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:779:1: '_'
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:806:1: ( '_' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:807:1: '_'
             {
              before(grammarAccess.getEmptyAccess().get_Keyword_1()); 
-            match(input,15,FOLLOW_15_in_rule__Empty__Group__1__Impl1540); 
+            match(input,15,FOLLOW_15_in_rule__Empty__Group__1__Impl1600); 
              after(grammarAccess.getEmptyAccess().get_Keyword_1()); 
 
             }
@@ -2107,21 +2184,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:796:1: rule__PositiveNumber__Group__0 : rule__PositiveNumber__Group__0__Impl rule__PositiveNumber__Group__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:824:1: rule__PositiveNumber__Group__0 : rule__PositiveNumber__Group__0__Impl rule__PositiveNumber__Group__1 ;
     public final void rule__PositiveNumber__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:800:1: ( rule__PositiveNumber__Group__0__Impl rule__PositiveNumber__Group__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:801:2: rule__PositiveNumber__Group__0__Impl rule__PositiveNumber__Group__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:828:1: ( rule__PositiveNumber__Group__0__Impl rule__PositiveNumber__Group__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:829:2: rule__PositiveNumber__Group__0__Impl rule__PositiveNumber__Group__1
             {
-            pushFollow(FOLLOW_rule__PositiveNumber__Group__0__Impl_in_rule__PositiveNumber__Group__01575);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group__0__Impl_in_rule__PositiveNumber__Group__01635);
             rule__PositiveNumber__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PositiveNumber__Group__1_in_rule__PositiveNumber__Group__01578);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group__1_in_rule__PositiveNumber__Group__01638);
             rule__PositiveNumber__Group__1();
 
             state._fsp--;
@@ -2145,20 +2222,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:808:1: rule__PositiveNumber__Group__0__Impl : ( ruleInteger ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:836:1: rule__PositiveNumber__Group__0__Impl : ( ruleInteger ) ;
     public final void rule__PositiveNumber__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:812:1: ( ( ruleInteger ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:813:1: ( ruleInteger )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:840:1: ( ( ruleInteger ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:841:1: ( ruleInteger )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:813:1: ( ruleInteger )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:814:1: ruleInteger
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:841:1: ( ruleInteger )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:842:1: ruleInteger
             {
              before(grammarAccess.getPositiveNumberAccess().getIntegerParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleInteger_in_rule__PositiveNumber__Group__0__Impl1605);
+            pushFollow(FOLLOW_ruleInteger_in_rule__PositiveNumber__Group__0__Impl1665);
             ruleInteger();
 
             state._fsp--;
@@ -2186,16 +2263,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:825:1: rule__PositiveNumber__Group__1 : rule__PositiveNumber__Group__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:853:1: rule__PositiveNumber__Group__1 : rule__PositiveNumber__Group__1__Impl ;
     public final void rule__PositiveNumber__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:829:1: ( rule__PositiveNumber__Group__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:830:2: rule__PositiveNumber__Group__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:857:1: ( rule__PositiveNumber__Group__1__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:858:2: rule__PositiveNumber__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PositiveNumber__Group__1__Impl_in_rule__PositiveNumber__Group__11634);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group__1__Impl_in_rule__PositiveNumber__Group__11694);
             rule__PositiveNumber__Group__1__Impl();
 
             state._fsp--;
@@ -2219,20 +2296,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:836:1: rule__PositiveNumber__Group__1__Impl : ( ( rule__PositiveNumber__Group_1__0 )? ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:864:1: rule__PositiveNumber__Group__1__Impl : ( ( rule__PositiveNumber__Group_1__0 )? ) ;
     public final void rule__PositiveNumber__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:840:1: ( ( ( rule__PositiveNumber__Group_1__0 )? ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:841:1: ( ( rule__PositiveNumber__Group_1__0 )? )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:868:1: ( ( ( rule__PositiveNumber__Group_1__0 )? ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:869:1: ( ( rule__PositiveNumber__Group_1__0 )? )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:841:1: ( ( rule__PositiveNumber__Group_1__0 )? )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:842:1: ( rule__PositiveNumber__Group_1__0 )?
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:869:1: ( ( rule__PositiveNumber__Group_1__0 )? )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:870:1: ( rule__PositiveNumber__Group_1__0 )?
             {
              before(grammarAccess.getPositiveNumberAccess().getGroup_1()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:843:1: ( rule__PositiveNumber__Group_1__0 )?
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:871:1: ( rule__PositiveNumber__Group_1__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2241,9 +2318,9 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
             }
             switch (alt7) {
                 case 1 :
-                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:843:2: rule__PositiveNumber__Group_1__0
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:871:2: rule__PositiveNumber__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__PositiveNumber__Group_1__0_in_rule__PositiveNumber__Group__1__Impl1661);
+                    pushFollow(FOLLOW_rule__PositiveNumber__Group_1__0_in_rule__PositiveNumber__Group__1__Impl1721);
                     rule__PositiveNumber__Group_1__0();
 
                     state._fsp--;
@@ -2277,21 +2354,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group_1__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:857:1: rule__PositiveNumber__Group_1__0 : rule__PositiveNumber__Group_1__0__Impl rule__PositiveNumber__Group_1__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:885:1: rule__PositiveNumber__Group_1__0 : rule__PositiveNumber__Group_1__0__Impl rule__PositiveNumber__Group_1__1 ;
     public final void rule__PositiveNumber__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:861:1: ( rule__PositiveNumber__Group_1__0__Impl rule__PositiveNumber__Group_1__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:862:2: rule__PositiveNumber__Group_1__0__Impl rule__PositiveNumber__Group_1__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:889:1: ( rule__PositiveNumber__Group_1__0__Impl rule__PositiveNumber__Group_1__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:890:2: rule__PositiveNumber__Group_1__0__Impl rule__PositiveNumber__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__0__Impl_in_rule__PositiveNumber__Group_1__01696);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__0__Impl_in_rule__PositiveNumber__Group_1__01756);
             rule__PositiveNumber__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__1_in_rule__PositiveNumber__Group_1__01699);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__1_in_rule__PositiveNumber__Group_1__01759);
             rule__PositiveNumber__Group_1__1();
 
             state._fsp--;
@@ -2315,21 +2392,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group_1__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:869:1: rule__PositiveNumber__Group_1__0__Impl : ( () ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:897:1: rule__PositiveNumber__Group_1__0__Impl : ( () ) ;
     public final void rule__PositiveNumber__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:873:1: ( ( () ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:874:1: ( () )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:901:1: ( ( () ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:902:1: ( () )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:874:1: ( () )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:875:1: ()
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:902:1: ( () )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:903:1: ()
             {
              before(grammarAccess.getPositiveNumberAccess().getFractionNumeratorAction_1_0()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:876:1: ()
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:878:1: 
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:904:1: ()
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:906:1: 
             {
             }
 
@@ -2352,21 +2429,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group_1__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:888:1: rule__PositiveNumber__Group_1__1 : rule__PositiveNumber__Group_1__1__Impl rule__PositiveNumber__Group_1__2 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:916:1: rule__PositiveNumber__Group_1__1 : rule__PositiveNumber__Group_1__1__Impl rule__PositiveNumber__Group_1__2 ;
     public final void rule__PositiveNumber__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:892:1: ( rule__PositiveNumber__Group_1__1__Impl rule__PositiveNumber__Group_1__2 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:893:2: rule__PositiveNumber__Group_1__1__Impl rule__PositiveNumber__Group_1__2
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:920:1: ( rule__PositiveNumber__Group_1__1__Impl rule__PositiveNumber__Group_1__2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:921:2: rule__PositiveNumber__Group_1__1__Impl rule__PositiveNumber__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__1__Impl_in_rule__PositiveNumber__Group_1__11757);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__1__Impl_in_rule__PositiveNumber__Group_1__11817);
             rule__PositiveNumber__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__2_in_rule__PositiveNumber__Group_1__11760);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__2_in_rule__PositiveNumber__Group_1__11820);
             rule__PositiveNumber__Group_1__2();
 
             state._fsp--;
@@ -2390,20 +2467,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group_1__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:900:1: rule__PositiveNumber__Group_1__1__Impl : ( '/' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:928:1: rule__PositiveNumber__Group_1__1__Impl : ( '/' ) ;
     public final void rule__PositiveNumber__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:904:1: ( ( '/' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:905:1: ( '/' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:932:1: ( ( '/' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:933:1: ( '/' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:905:1: ( '/' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:906:1: '/'
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:933:1: ( '/' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:934:1: '/'
             {
              before(grammarAccess.getPositiveNumberAccess().getSolidusKeyword_1_1()); 
-            match(input,16,FOLLOW_16_in_rule__PositiveNumber__Group_1__1__Impl1788); 
+            match(input,16,FOLLOW_16_in_rule__PositiveNumber__Group_1__1__Impl1848); 
              after(grammarAccess.getPositiveNumberAccess().getSolidusKeyword_1_1()); 
 
             }
@@ -2427,16 +2504,16 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group_1__2"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:919:1: rule__PositiveNumber__Group_1__2 : rule__PositiveNumber__Group_1__2__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:947:1: rule__PositiveNumber__Group_1__2 : rule__PositiveNumber__Group_1__2__Impl ;
     public final void rule__PositiveNumber__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:923:1: ( rule__PositiveNumber__Group_1__2__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:924:2: rule__PositiveNumber__Group_1__2__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:951:1: ( rule__PositiveNumber__Group_1__2__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:952:2: rule__PositiveNumber__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__2__Impl_in_rule__PositiveNumber__Group_1__21819);
+            pushFollow(FOLLOW_rule__PositiveNumber__Group_1__2__Impl_in_rule__PositiveNumber__Group_1__21879);
             rule__PositiveNumber__Group_1__2__Impl();
 
             state._fsp--;
@@ -2460,23 +2537,23 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__Group_1__2__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:930:1: rule__PositiveNumber__Group_1__2__Impl : ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:958:1: rule__PositiveNumber__Group_1__2__Impl : ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) ) ;
     public final void rule__PositiveNumber__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:934:1: ( ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:935:1: ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:962:1: ( ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:963:1: ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:935:1: ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:936:1: ( rule__PositiveNumber__DenominatorAssignment_1_2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:963:1: ( ( rule__PositiveNumber__DenominatorAssignment_1_2 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:964:1: ( rule__PositiveNumber__DenominatorAssignment_1_2 )
             {
              before(grammarAccess.getPositiveNumberAccess().getDenominatorAssignment_1_2()); 
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:937:1: ( rule__PositiveNumber__DenominatorAssignment_1_2 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:937:2: rule__PositiveNumber__DenominatorAssignment_1_2
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:965:1: ( rule__PositiveNumber__DenominatorAssignment_1_2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:965:2: rule__PositiveNumber__DenominatorAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PositiveNumber__DenominatorAssignment_1_2_in_rule__PositiveNumber__Group_1__2__Impl1846);
+            pushFollow(FOLLOW_rule__PositiveNumber__DenominatorAssignment_1_2_in_rule__PositiveNumber__Group_1__2__Impl1906);
             rule__PositiveNumber__DenominatorAssignment_1_2();
 
             state._fsp--;
@@ -2507,21 +2584,21 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NegativeNumber__Group__0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:953:1: rule__NegativeNumber__Group__0 : rule__NegativeNumber__Group__0__Impl rule__NegativeNumber__Group__1 ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:981:1: rule__NegativeNumber__Group__0 : rule__NegativeNumber__Group__0__Impl rule__NegativeNumber__Group__1 ;
     public final void rule__NegativeNumber__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:957:1: ( rule__NegativeNumber__Group__0__Impl rule__NegativeNumber__Group__1 )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:958:2: rule__NegativeNumber__Group__0__Impl rule__NegativeNumber__Group__1
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:985:1: ( rule__NegativeNumber__Group__0__Impl rule__NegativeNumber__Group__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:986:2: rule__NegativeNumber__Group__0__Impl rule__NegativeNumber__Group__1
             {
-            pushFollow(FOLLOW_rule__NegativeNumber__Group__0__Impl_in_rule__NegativeNumber__Group__01882);
+            pushFollow(FOLLOW_rule__NegativeNumber__Group__0__Impl_in_rule__NegativeNumber__Group__01942);
             rule__NegativeNumber__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NegativeNumber__Group__1_in_rule__NegativeNumber__Group__01885);
+            pushFollow(FOLLOW_rule__NegativeNumber__Group__1_in_rule__NegativeNumber__Group__01945);
             rule__NegativeNumber__Group__1();
 
             state._fsp--;
@@ -2545,20 +2622,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NegativeNumber__Group__0__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:965:1: rule__NegativeNumber__Group__0__Impl : ( '-' ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:993:1: rule__NegativeNumber__Group__0__Impl : ( '-' ) ;
     public final void rule__NegativeNumber__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:969:1: ( ( '-' ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:970:1: ( '-' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:997:1: ( ( '-' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:998:1: ( '-' )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:970:1: ( '-' )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:971:1: '-'
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:998:1: ( '-' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:999:1: '-'
             {
              before(grammarAccess.getNegativeNumberAccess().getHyphenMinusKeyword_0()); 
-            match(input,17,FOLLOW_17_in_rule__NegativeNumber__Group__0__Impl1913); 
+            match(input,17,FOLLOW_17_in_rule__NegativeNumber__Group__0__Impl1973); 
              after(grammarAccess.getNegativeNumberAccess().getHyphenMinusKeyword_0()); 
 
             }
@@ -2582,17 +2659,22 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NegativeNumber__Group__1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:984:1: rule__NegativeNumber__Group__1 : rule__NegativeNumber__Group__1__Impl ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1012:1: rule__NegativeNumber__Group__1 : rule__NegativeNumber__Group__1__Impl rule__NegativeNumber__Group__2 ;
     public final void rule__NegativeNumber__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:988:1: ( rule__NegativeNumber__Group__1__Impl )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:989:2: rule__NegativeNumber__Group__1__Impl
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1016:1: ( rule__NegativeNumber__Group__1__Impl rule__NegativeNumber__Group__2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1017:2: rule__NegativeNumber__Group__1__Impl rule__NegativeNumber__Group__2
             {
-            pushFollow(FOLLOW_rule__NegativeNumber__Group__1__Impl_in_rule__NegativeNumber__Group__11944);
+            pushFollow(FOLLOW_rule__NegativeNumber__Group__1__Impl_in_rule__NegativeNumber__Group__12004);
             rule__NegativeNumber__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__NegativeNumber__Group__2_in_rule__NegativeNumber__Group__12007);
+            rule__NegativeNumber__Group__2();
 
             state._fsp--;
 
@@ -2615,25 +2697,25 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NegativeNumber__Group__1__Impl"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:995:1: rule__NegativeNumber__Group__1__Impl : ( rulePositiveNumber ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1024:1: rule__NegativeNumber__Group__1__Impl : ( ruleNInteger ) ;
     public final void rule__NegativeNumber__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:999:1: ( ( rulePositiveNumber ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1000:1: ( rulePositiveNumber )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1028:1: ( ( ruleNInteger ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1029:1: ( ruleNInteger )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1000:1: ( rulePositiveNumber )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1001:1: rulePositiveNumber
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1029:1: ( ruleNInteger )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1030:1: ruleNInteger
             {
-             before(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); 
-            pushFollow(FOLLOW_rulePositiveNumber_in_rule__NegativeNumber__Group__1__Impl1971);
-            rulePositiveNumber();
+             before(grammarAccess.getNegativeNumberAccess().getNIntegerParserRuleCall_1()); 
+            pushFollow(FOLLOW_ruleNInteger_in_rule__NegativeNumber__Group__1__Impl2034);
+            ruleNInteger();
 
             state._fsp--;
 
-             after(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); 
+             after(grammarAccess.getNegativeNumberAccess().getNIntegerParserRuleCall_1()); 
 
             }
 
@@ -2655,21 +2737,342 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__NegativeNumber__Group__1__Impl"
 
 
+    // $ANTLR start "rule__NegativeNumber__Group__2"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1041:1: rule__NegativeNumber__Group__2 : rule__NegativeNumber__Group__2__Impl ;
+    public final void rule__NegativeNumber__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1045:1: ( rule__NegativeNumber__Group__2__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1046:2: rule__NegativeNumber__Group__2__Impl
+            {
+            pushFollow(FOLLOW_rule__NegativeNumber__Group__2__Impl_in_rule__NegativeNumber__Group__22063);
+            rule__NegativeNumber__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group__2"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group__2__Impl"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1052:1: rule__NegativeNumber__Group__2__Impl : ( ( rule__NegativeNumber__Group_2__0 )? ) ;
+    public final void rule__NegativeNumber__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1056:1: ( ( ( rule__NegativeNumber__Group_2__0 )? ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1057:1: ( ( rule__NegativeNumber__Group_2__0 )? )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1057:1: ( ( rule__NegativeNumber__Group_2__0 )? )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1058:1: ( rule__NegativeNumber__Group_2__0 )?
+            {
+             before(grammarAccess.getNegativeNumberAccess().getGroup_2()); 
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1059:1: ( rule__NegativeNumber__Group_2__0 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==16) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1059:2: rule__NegativeNumber__Group_2__0
+                    {
+                    pushFollow(FOLLOW_rule__NegativeNumber__Group_2__0_in_rule__NegativeNumber__Group__2__Impl2090);
+                    rule__NegativeNumber__Group_2__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getNegativeNumberAccess().getGroup_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group__2__Impl"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group_2__0"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1075:1: rule__NegativeNumber__Group_2__0 : rule__NegativeNumber__Group_2__0__Impl rule__NegativeNumber__Group_2__1 ;
+    public final void rule__NegativeNumber__Group_2__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1079:1: ( rule__NegativeNumber__Group_2__0__Impl rule__NegativeNumber__Group_2__1 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1080:2: rule__NegativeNumber__Group_2__0__Impl rule__NegativeNumber__Group_2__1
+            {
+            pushFollow(FOLLOW_rule__NegativeNumber__Group_2__0__Impl_in_rule__NegativeNumber__Group_2__02127);
+            rule__NegativeNumber__Group_2__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__NegativeNumber__Group_2__1_in_rule__NegativeNumber__Group_2__02130);
+            rule__NegativeNumber__Group_2__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group_2__0"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group_2__0__Impl"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1087:1: rule__NegativeNumber__Group_2__0__Impl : ( () ) ;
+    public final void rule__NegativeNumber__Group_2__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1091:1: ( ( () ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1092:1: ( () )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1092:1: ( () )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1093:1: ()
+            {
+             before(grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0()); 
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1094:1: ()
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1096:1: 
+            {
+            }
+
+             after(grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group_2__1"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1106:1: rule__NegativeNumber__Group_2__1 : rule__NegativeNumber__Group_2__1__Impl rule__NegativeNumber__Group_2__2 ;
+    public final void rule__NegativeNumber__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1110:1: ( rule__NegativeNumber__Group_2__1__Impl rule__NegativeNumber__Group_2__2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1111:2: rule__NegativeNumber__Group_2__1__Impl rule__NegativeNumber__Group_2__2
+            {
+            pushFollow(FOLLOW_rule__NegativeNumber__Group_2__1__Impl_in_rule__NegativeNumber__Group_2__12188);
+            rule__NegativeNumber__Group_2__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__NegativeNumber__Group_2__2_in_rule__NegativeNumber__Group_2__12191);
+            rule__NegativeNumber__Group_2__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group_2__1"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group_2__1__Impl"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1118:1: rule__NegativeNumber__Group_2__1__Impl : ( '/' ) ;
+    public final void rule__NegativeNumber__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1122:1: ( ( '/' ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1123:1: ( '/' )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1123:1: ( '/' )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1124:1: '/'
+            {
+             before(grammarAccess.getNegativeNumberAccess().getSolidusKeyword_2_1()); 
+            match(input,16,FOLLOW_16_in_rule__NegativeNumber__Group_2__1__Impl2219); 
+             after(grammarAccess.getNegativeNumberAccess().getSolidusKeyword_2_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group_2__1__Impl"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group_2__2"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1137:1: rule__NegativeNumber__Group_2__2 : rule__NegativeNumber__Group_2__2__Impl ;
+    public final void rule__NegativeNumber__Group_2__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1141:1: ( rule__NegativeNumber__Group_2__2__Impl )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1142:2: rule__NegativeNumber__Group_2__2__Impl
+            {
+            pushFollow(FOLLOW_rule__NegativeNumber__Group_2__2__Impl_in_rule__NegativeNumber__Group_2__22250);
+            rule__NegativeNumber__Group_2__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group_2__2"
+
+
+    // $ANTLR start "rule__NegativeNumber__Group_2__2__Impl"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1148:1: rule__NegativeNumber__Group_2__2__Impl : ( ( rule__NegativeNumber__DenominatorAssignment_2_2 ) ) ;
+    public final void rule__NegativeNumber__Group_2__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1152:1: ( ( ( rule__NegativeNumber__DenominatorAssignment_2_2 ) ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1153:1: ( ( rule__NegativeNumber__DenominatorAssignment_2_2 ) )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1153:1: ( ( rule__NegativeNumber__DenominatorAssignment_2_2 ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1154:1: ( rule__NegativeNumber__DenominatorAssignment_2_2 )
+            {
+             before(grammarAccess.getNegativeNumberAccess().getDenominatorAssignment_2_2()); 
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1155:1: ( rule__NegativeNumber__DenominatorAssignment_2_2 )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1155:2: rule__NegativeNumber__DenominatorAssignment_2_2
+            {
+            pushFollow(FOLLOW_rule__NegativeNumber__DenominatorAssignment_2_2_in_rule__NegativeNumber__Group_2__2__Impl2277);
+            rule__NegativeNumber__DenominatorAssignment_2_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNegativeNumberAccess().getDenominatorAssignment_2_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__Group_2__2__Impl"
+
+
     // $ANTLR start "rule__Configuration__InitialAssignment_1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1017:1: rule__Configuration__InitialAssignment_1 : ( ruleMatrix ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1172:1: rule__Configuration__InitialAssignment_1 : ( ruleMatrix ) ;
     public final void rule__Configuration__InitialAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1021:1: ( ( ruleMatrix ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1022:1: ( ruleMatrix )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1176:1: ( ( ruleMatrix ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1177:1: ( ruleMatrix )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1022:1: ( ruleMatrix )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1023:1: ruleMatrix
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1177:1: ( ruleMatrix )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1178:1: ruleMatrix
             {
              before(grammarAccess.getConfigurationAccess().getInitialMatrixParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleMatrix_in_rule__Configuration__InitialAssignment_12009);
+            pushFollow(FOLLOW_ruleMatrix_in_rule__Configuration__InitialAssignment_12318);
             ruleMatrix();
 
             state._fsp--;
@@ -2697,20 +3100,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__ExpectedAssignment_2_0_1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1032:1: rule__Configuration__ExpectedAssignment_2_0_1 : ( ruleMatrix ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1187:1: rule__Configuration__ExpectedAssignment_2_0_1 : ( ruleMatrix ) ;
     public final void rule__Configuration__ExpectedAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1036:1: ( ( ruleMatrix ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1037:1: ( ruleMatrix )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1191:1: ( ( ruleMatrix ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1192:1: ( ruleMatrix )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1037:1: ( ruleMatrix )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1038:1: ruleMatrix
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1192:1: ( ruleMatrix )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1193:1: ruleMatrix
             {
              before(grammarAccess.getConfigurationAccess().getExpectedMatrixParserRuleCall_2_0_1_0()); 
-            pushFollow(FOLLOW_ruleMatrix_in_rule__Configuration__ExpectedAssignment_2_0_12040);
+            pushFollow(FOLLOW_ruleMatrix_in_rule__Configuration__ExpectedAssignment_2_0_12349);
             ruleMatrix();
 
             state._fsp--;
@@ -2738,20 +3141,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Configuration__MailAssignment_2_1_1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1047:1: rule__Configuration__MailAssignment_2_1_1 : ( ruleNumber ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1202:1: rule__Configuration__MailAssignment_2_1_1 : ( ruleNumber ) ;
     public final void rule__Configuration__MailAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1051:1: ( ( ruleNumber ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1052:1: ( ruleNumber )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1206:1: ( ( ruleNumber ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1207:1: ( ruleNumber )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1052:1: ( ruleNumber )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1053:1: ruleNumber
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1207:1: ( ruleNumber )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1208:1: ruleNumber
             {
              before(grammarAccess.getConfigurationAccess().getMailNumberParserRuleCall_2_1_1_0()); 
-            pushFollow(FOLLOW_ruleNumber_in_rule__Configuration__MailAssignment_2_1_12071);
+            pushFollow(FOLLOW_ruleNumber_in_rule__Configuration__MailAssignment_2_1_12380);
             ruleNumber();
 
             state._fsp--;
@@ -2779,20 +3182,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Matrix__LinesAssignment"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1062:1: rule__Matrix__LinesAssignment : ( ruleLine ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1217:1: rule__Matrix__LinesAssignment : ( ruleLine ) ;
     public final void rule__Matrix__LinesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1066:1: ( ( ruleLine ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1067:1: ( ruleLine )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1221:1: ( ( ruleLine ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1222:1: ( ruleLine )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1067:1: ( ruleLine )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1068:1: ruleLine
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1222:1: ( ruleLine )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1223:1: ruleLine
             {
              before(grammarAccess.getMatrixAccess().getLinesLineParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleLine_in_rule__Matrix__LinesAssignment2102);
+            pushFollow(FOLLOW_ruleLine_in_rule__Matrix__LinesAssignment2411);
             ruleLine();
 
             state._fsp--;
@@ -2820,20 +3223,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__ElsAssignment_0"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1077:1: rule__Line__ElsAssignment_0 : ( ruleElement ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1232:1: rule__Line__ElsAssignment_0 : ( ruleElement ) ;
     public final void rule__Line__ElsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1081:1: ( ( ruleElement ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1082:1: ( ruleElement )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1236:1: ( ( ruleElement ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1237:1: ( ruleElement )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1082:1: ( ruleElement )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1083:1: ruleElement
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1237:1: ( ruleElement )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1238:1: ruleElement
             {
              before(grammarAccess.getLineAccess().getElsElementParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleElement_in_rule__Line__ElsAssignment_02133);
+            pushFollow(FOLLOW_ruleElement_in_rule__Line__ElsAssignment_02442);
             ruleElement();
 
             state._fsp--;
@@ -2861,20 +3264,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Line__ElsAssignment_1_1"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1092:1: rule__Line__ElsAssignment_1_1 : ( ruleElement ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1247:1: rule__Line__ElsAssignment_1_1 : ( ruleElement ) ;
     public final void rule__Line__ElsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1096:1: ( ( ruleElement ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1097:1: ( ruleElement )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1251:1: ( ( ruleElement ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1252:1: ( ruleElement )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1097:1: ( ruleElement )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1098:1: ruleElement
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1252:1: ( ruleElement )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1253:1: ruleElement
             {
              before(grammarAccess.getLineAccess().getElsElementParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleElement_in_rule__Line__ElsAssignment_1_12164);
+            pushFollow(FOLLOW_ruleElement_in_rule__Line__ElsAssignment_1_12473);
             ruleElement();
 
             state._fsp--;
@@ -2902,20 +3305,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PositiveNumber__DenominatorAssignment_1_2"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1107:1: rule__PositiveNumber__DenominatorAssignment_1_2 : ( ruleInteger ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1262:1: rule__PositiveNumber__DenominatorAssignment_1_2 : ( ruleInteger ) ;
     public final void rule__PositiveNumber__DenominatorAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1111:1: ( ( ruleInteger ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1112:1: ( ruleInteger )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1266:1: ( ( ruleInteger ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1267:1: ( ruleInteger )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1112:1: ( ruleInteger )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1113:1: ruleInteger
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1267:1: ( ruleInteger )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1268:1: ruleInteger
             {
              before(grammarAccess.getPositiveNumberAccess().getDenominatorIntegerParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleInteger_in_rule__PositiveNumber__DenominatorAssignment_1_22195);
+            pushFollow(FOLLOW_ruleInteger_in_rule__PositiveNumber__DenominatorAssignment_1_22504);
             ruleInteger();
 
             state._fsp--;
@@ -2943,20 +3346,20 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Integer__ValueAssignment"
-    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1122:1: rule__Integer__ValueAssignment : ( RULE_INT ) ;
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1277:1: rule__Integer__ValueAssignment : ( RULE_INT ) ;
     public final void rule__Integer__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1126:1: ( ( RULE_INT ) )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1127:1: ( RULE_INT )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1281:1: ( ( RULE_INT ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1282:1: ( RULE_INT )
             {
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1127:1: ( RULE_INT )
-            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1128:1: RULE_INT
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1282:1: ( RULE_INT )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1283:1: RULE_INT
             {
              before(grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Integer__ValueAssignment2226); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Integer__ValueAssignment2535); 
              after(grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); 
 
             }
@@ -2977,6 +3380,84 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
         return ;
     }
     // $ANTLR end "rule__Integer__ValueAssignment"
+
+
+    // $ANTLR start "rule__NegativeNumber__DenominatorAssignment_2_2"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1292:1: rule__NegativeNumber__DenominatorAssignment_2_2 : ( ruleNInteger ) ;
+    public final void rule__NegativeNumber__DenominatorAssignment_2_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1296:1: ( ( ruleNInteger ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1297:1: ( ruleNInteger )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1297:1: ( ruleNInteger )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1298:1: ruleNInteger
+            {
+             before(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0()); 
+            pushFollow(FOLLOW_ruleNInteger_in_rule__NegativeNumber__DenominatorAssignment_2_22566);
+            ruleNInteger();
+
+            state._fsp--;
+
+             after(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NegativeNumber__DenominatorAssignment_2_2"
+
+
+    // $ANTLR start "rule__NInteger__ValueAssignment"
+    // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1307:1: rule__NInteger__ValueAssignment : ( RULE_INT ) ;
+    public final void rule__NInteger__ValueAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1311:1: ( ( RULE_INT ) )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1312:1: ( RULE_INT )
+            {
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1312:1: ( RULE_INT )
+            // ../reboConf.ui/src-gen/edu/upb/lp/ui/contentassist/antlr/internal/InternalReboConf.g:1313:1: RULE_INT
+            {
+             before(grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__NInteger__ValueAssignment2597); 
+             after(grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NInteger__ValueAssignment"
 
     // Delegated rules
 
@@ -3011,68 +3492,83 @@ public class InternalReboConfParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_ruleNegativeNumber_in_entryRuleNegativeNumber558 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNegativeNumber565 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__NegativeNumber__Group__0_in_ruleNegativeNumber591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__0_in_rule__Configuration__Alternatives_2627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__0_in_rule__Configuration__Alternatives_2645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_rule__Element__Alternatives678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEmpty_in_rule__Element__Alternatives695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositiveNumber_in_rule__Number__Alternatives727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNegativeNumber_in_rule__Number__Alternatives744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group__0__Impl_in_rule__Configuration__Group__0774 = new BitSet(new long[]{0x0000000000028010L});
-    public static final BitSet FOLLOW_rule__Configuration__Group__1_in_rule__Configuration__Group__0777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Configuration__Group__0__Impl805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group__1__Impl_in_rule__Configuration__Group__1836 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_rule__Configuration__Group__2_in_rule__Configuration__Group__1839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__InitialAssignment_1_in_rule__Configuration__Group__1__Impl866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group__2__Impl_in_rule__Configuration__Group__2896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Alternatives_2_in_rule__Configuration__Group__2__Impl923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__0__Impl_in_rule__Configuration__Group_2_0__0960 = new BitSet(new long[]{0x0000000000028010L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__1_in_rule__Configuration__Group_2_0__0963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Configuration__Group_2_0__0__Impl991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__1__Impl_in_rule__Configuration__Group_2_0__11022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__ExpectedAssignment_2_0_1_in_rule__Configuration__Group_2_0__1__Impl1049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__0__Impl_in_rule__Configuration__Group_2_1__01083 = new BitSet(new long[]{0x0000000000020010L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__1_in_rule__Configuration__Group_2_1__01086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Configuration__Group_2_1__0__Impl1114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__1__Impl_in_rule__Configuration__Group_2_1__11145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Configuration__MailAssignment_2_1_1_in_rule__Configuration__Group_2_1__1__Impl1172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Line__Group__0__Impl_in_rule__Line__Group__01206 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Line__Group__1_in_rule__Line__Group__01209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Line__ElsAssignment_0_in_rule__Line__Group__0__Impl1236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Line__Group__1__Impl_in_rule__Line__Group__11266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Line__Group_1__0_in_rule__Line__Group__1__Impl1293 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_rule__Line__Group_1__0__Impl_in_rule__Line__Group_1__01328 = new BitSet(new long[]{0x0000000000028010L});
-    public static final BitSet FOLLOW_rule__Line__Group_1__1_in_rule__Line__Group_1__01331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Line__Group_1__0__Impl1359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Line__Group_1__1__Impl_in_rule__Line__Group_1__11390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Line__ElsAssignment_1_1_in_rule__Line__Group_1__1__Impl1417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Empty__Group__0__Impl_in_rule__Empty__Group__01451 = new BitSet(new long[]{0x0000000000028010L});
-    public static final BitSet FOLLOW_rule__Empty__Group__1_in_rule__Empty__Group__01454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Empty__Group__1__Impl_in_rule__Empty__Group__11512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Empty__Group__1__Impl1540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group__0__Impl_in_rule__PositiveNumber__Group__01575 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group__1_in_rule__PositiveNumber__Group__01578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInteger_in_rule__PositiveNumber__Group__0__Impl1605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group__1__Impl_in_rule__PositiveNumber__Group__11634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__0_in_rule__PositiveNumber__Group__1__Impl1661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__0__Impl_in_rule__PositiveNumber__Group_1__01696 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__1_in_rule__PositiveNumber__Group_1__01699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__1__Impl_in_rule__PositiveNumber__Group_1__11757 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__2_in_rule__PositiveNumber__Group_1__11760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__PositiveNumber__Group_1__1__Impl1788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__2__Impl_in_rule__PositiveNumber__Group_1__21819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PositiveNumber__DenominatorAssignment_1_2_in_rule__PositiveNumber__Group_1__2__Impl1846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NegativeNumber__Group__0__Impl_in_rule__NegativeNumber__Group__01882 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__NegativeNumber__Group__1_in_rule__NegativeNumber__Group__01885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__NegativeNumber__Group__0__Impl1913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NegativeNumber__Group__1__Impl_in_rule__NegativeNumber__Group__11944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositiveNumber_in_rule__NegativeNumber__Group__1__Impl1971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatrix_in_rule__Configuration__InitialAssignment_12009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMatrix_in_rule__Configuration__ExpectedAssignment_2_0_12040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_rule__Configuration__MailAssignment_2_1_12071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLine_in_rule__Matrix__LinesAssignment2102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_rule__Line__ElsAssignment_02133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElement_in_rule__Line__ElsAssignment_1_12164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInteger_in_rule__PositiveNumber__DenominatorAssignment_1_22195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Integer__ValueAssignment2226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNInteger_in_entryRuleNInteger618 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNInteger625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NInteger__ValueAssignment_in_ruleNInteger651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__0_in_rule__Configuration__Alternatives_2687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__0_in_rule__Configuration__Alternatives_2705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_rule__Element__Alternatives738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEmpty_in_rule__Element__Alternatives755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositiveNumber_in_rule__Number__Alternatives787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNegativeNumber_in_rule__Number__Alternatives804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group__0__Impl_in_rule__Configuration__Group__0834 = new BitSet(new long[]{0x0000000000028010L});
+    public static final BitSet FOLLOW_rule__Configuration__Group__1_in_rule__Configuration__Group__0837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Configuration__Group__0__Impl865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group__1__Impl_in_rule__Configuration__Group__1896 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_rule__Configuration__Group__2_in_rule__Configuration__Group__1899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__InitialAssignment_1_in_rule__Configuration__Group__1__Impl926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group__2__Impl_in_rule__Configuration__Group__2956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Alternatives_2_in_rule__Configuration__Group__2__Impl983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__0__Impl_in_rule__Configuration__Group_2_0__01020 = new BitSet(new long[]{0x0000000000028010L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__1_in_rule__Configuration__Group_2_0__01023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Configuration__Group_2_0__0__Impl1051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_0__1__Impl_in_rule__Configuration__Group_2_0__11082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__ExpectedAssignment_2_0_1_in_rule__Configuration__Group_2_0__1__Impl1109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__0__Impl_in_rule__Configuration__Group_2_1__01143 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__1_in_rule__Configuration__Group_2_1__01146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Configuration__Group_2_1__0__Impl1174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__Group_2_1__1__Impl_in_rule__Configuration__Group_2_1__11205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Configuration__MailAssignment_2_1_1_in_rule__Configuration__Group_2_1__1__Impl1232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Line__Group__0__Impl_in_rule__Line__Group__01266 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Line__Group__1_in_rule__Line__Group__01269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Line__ElsAssignment_0_in_rule__Line__Group__0__Impl1296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Line__Group__1__Impl_in_rule__Line__Group__11326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Line__Group_1__0_in_rule__Line__Group__1__Impl1353 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rule__Line__Group_1__0__Impl_in_rule__Line__Group_1__01388 = new BitSet(new long[]{0x0000000000028010L});
+    public static final BitSet FOLLOW_rule__Line__Group_1__1_in_rule__Line__Group_1__01391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Line__Group_1__0__Impl1419 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Line__Group_1__1__Impl_in_rule__Line__Group_1__11450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Line__ElsAssignment_1_1_in_rule__Line__Group_1__1__Impl1477 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Empty__Group__0__Impl_in_rule__Empty__Group__01511 = new BitSet(new long[]{0x0000000000028010L});
+    public static final BitSet FOLLOW_rule__Empty__Group__1_in_rule__Empty__Group__01514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Empty__Group__1__Impl_in_rule__Empty__Group__11572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Empty__Group__1__Impl1600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group__0__Impl_in_rule__PositiveNumber__Group__01635 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group__1_in_rule__PositiveNumber__Group__01638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInteger_in_rule__PositiveNumber__Group__0__Impl1665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group__1__Impl_in_rule__PositiveNumber__Group__11694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__0_in_rule__PositiveNumber__Group__1__Impl1721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__0__Impl_in_rule__PositiveNumber__Group_1__01756 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__1_in_rule__PositiveNumber__Group_1__01759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__1__Impl_in_rule__PositiveNumber__Group_1__11817 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__2_in_rule__PositiveNumber__Group_1__11820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__PositiveNumber__Group_1__1__Impl1848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__Group_1__2__Impl_in_rule__PositiveNumber__Group_1__21879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PositiveNumber__DenominatorAssignment_1_2_in_rule__PositiveNumber__Group_1__2__Impl1906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group__0__Impl_in_rule__NegativeNumber__Group__01942 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group__1_in_rule__NegativeNumber__Group__01945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__NegativeNumber__Group__0__Impl1973 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group__1__Impl_in_rule__NegativeNumber__Group__12004 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group__2_in_rule__NegativeNumber__Group__12007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNInteger_in_rule__NegativeNumber__Group__1__Impl2034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group__2__Impl_in_rule__NegativeNumber__Group__22063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group_2__0_in_rule__NegativeNumber__Group__2__Impl2090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group_2__0__Impl_in_rule__NegativeNumber__Group_2__02127 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group_2__1_in_rule__NegativeNumber__Group_2__02130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group_2__1__Impl_in_rule__NegativeNumber__Group_2__12188 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group_2__2_in_rule__NegativeNumber__Group_2__12191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__NegativeNumber__Group_2__1__Impl2219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__Group_2__2__Impl_in_rule__NegativeNumber__Group_2__22250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NegativeNumber__DenominatorAssignment_2_2_in_rule__NegativeNumber__Group_2__2__Impl2277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatrix_in_rule__Configuration__InitialAssignment_12318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMatrix_in_rule__Configuration__ExpectedAssignment_2_0_12349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_rule__Configuration__MailAssignment_2_1_12380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLine_in_rule__Matrix__LinesAssignment2411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_rule__Line__ElsAssignment_02442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElement_in_rule__Line__ElsAssignment_1_12473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInteger_in_rule__PositiveNumber__DenominatorAssignment_1_22504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Integer__ValueAssignment2535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNInteger_in_rule__NegativeNumber__DenominatorAssignment_2_22566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__NInteger__ValueAssignment2597 = new BitSet(new long[]{0x0000000000000002L});
 
 }

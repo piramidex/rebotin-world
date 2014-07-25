@@ -13,6 +13,6 @@ package edu.upb.lp.reboConf;
  * @model
  * @generated
  */
-public interface PositiveNumber extends edu.upb.lp.reboConf.Number, NegativeNumber
+public interface PositiveNumber extends edu.upb.lp.reboConf.Number
 {
 } // PositiveNumber

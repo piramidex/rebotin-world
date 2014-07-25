@@ -8,6 +8,8 @@ import edu.upb.lp.reboConf.Empty;
 import edu.upb.lp.reboConf.Fraction;
 import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
+import edu.upb.lp.reboConf.NFraction;
+import edu.upb.lp.reboConf.NInteger;
 import edu.upb.lp.reboConf.NegativeNumber;
 import edu.upb.lp.reboConf.PositiveNumber;
 import edu.upb.lp.reboConf.ReboConfPackage;
@@ -128,7 +130,6 @@ public class ReboConfSwitch<T> extends Switch<T>
       {
         PositiveNumber positiveNumber = (PositiveNumber)theEObject;
         T result = casePositiveNumber(positiveNumber);
-        if (result == null) result = caseNegativeNumber(positiveNumber);
         if (result == null) result = caseNumber(positiveNumber);
         if (result == null) result = caseElement(positiveNumber);
         if (result == null) result = defaultCase(theEObject);
@@ -139,7 +140,6 @@ public class ReboConfSwitch<T> extends Switch<T>
         edu.upb.lp.reboConf.Integer integer = (edu.upb.lp.reboConf.Integer)theEObject;
         T result = caseInteger(integer);
         if (result == null) result = casePositiveNumber(integer);
-        if (result == null) result = caseNegativeNumber(integer);
         if (result == null) result = caseNumber(integer);
         if (result == null) result = caseElement(integer);
         if (result == null) result = defaultCase(theEObject);
@@ -154,14 +154,33 @@ public class ReboConfSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ReboConfPackage.NINTEGER:
+      {
+        NInteger nInteger = (NInteger)theEObject;
+        T result = caseNInteger(nInteger);
+        if (result == null) result = caseNegativeNumber(nInteger);
+        if (result == null) result = caseNumber(nInteger);
+        if (result == null) result = caseElement(nInteger);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ReboConfPackage.FRACTION:
       {
         Fraction fraction = (Fraction)theEObject;
         T result = caseFraction(fraction);
         if (result == null) result = casePositiveNumber(fraction);
-        if (result == null) result = caseNegativeNumber(fraction);
         if (result == null) result = caseNumber(fraction);
         if (result == null) result = caseElement(fraction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ReboConfPackage.NFRACTION:
+      {
+        NFraction nFraction = (NFraction)theEObject;
+        T result = caseNFraction(nFraction);
+        if (result == null) result = caseNegativeNumber(nFraction);
+        if (result == null) result = caseNumber(nFraction);
+        if (result == null) result = caseElement(nFraction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -314,6 +333,22 @@ public class ReboConfSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>NInteger</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>NInteger</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNInteger(NInteger object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Fraction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -325,6 +360,22 @@ public class ReboConfSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFraction(Fraction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>NFraction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>NFraction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNFraction(NFraction object)
   {
     return null;
   }

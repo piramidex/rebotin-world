@@ -104,6 +104,15 @@ public interface ReboConfFactory extends EFactory
   NegativeNumber createNegativeNumber();
 
   /**
+   * Returns a new object of class '<em>NInteger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>NInteger</em>'.
+   * @generated
+   */
+  NInteger createNInteger();
+
+  /**
    * Returns a new object of class '<em>Fraction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +120,15 @@ public interface ReboConfFactory extends EFactory
    * @generated
    */
   Fraction createFraction();
+
+  /**
+   * Returns a new object of class '<em>NFraction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>NFraction</em>'.
+   * @generated
+   */
+  NFraction createNFraction();
 
   /**
    * Returns the package supported by this factory.

@@ -49,6 +49,7 @@ public class ReboConfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPositiveNumberAccess().getGroup(), "rule__PositiveNumber__Group__0");
 					put(grammarAccess.getPositiveNumberAccess().getGroup_1(), "rule__PositiveNumber__Group_1__0");
 					put(grammarAccess.getNegativeNumberAccess().getGroup(), "rule__NegativeNumber__Group__0");
+					put(grammarAccess.getNegativeNumberAccess().getGroup_2(), "rule__NegativeNumber__Group_2__0");
 					put(grammarAccess.getConfigurationAccess().getInitialAssignment_1(), "rule__Configuration__InitialAssignment_1");
 					put(grammarAccess.getConfigurationAccess().getExpectedAssignment_2_0_1(), "rule__Configuration__ExpectedAssignment_2_0_1");
 					put(grammarAccess.getConfigurationAccess().getMailAssignment_2_1_1(), "rule__Configuration__MailAssignment_2_1_1");
@@ -57,6 +58,8 @@ public class ReboConfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLineAccess().getElsAssignment_1_1(), "rule__Line__ElsAssignment_1_1");
 					put(grammarAccess.getPositiveNumberAccess().getDenominatorAssignment_1_2(), "rule__PositiveNumber__DenominatorAssignment_1_2");
 					put(grammarAccess.getIntegerAccess().getValueAssignment(), "rule__Integer__ValueAssignment");
+					put(grammarAccess.getNegativeNumberAccess().getDenominatorAssignment_2_2(), "rule__NegativeNumber__DenominatorAssignment_2_2");
+					put(grammarAccess.getNIntegerAccess().getValueAssignment(), "rule__NInteger__ValueAssignment");
 				}
 			};
 		}

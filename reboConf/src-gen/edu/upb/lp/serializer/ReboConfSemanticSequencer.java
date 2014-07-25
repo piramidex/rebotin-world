@@ -7,6 +7,8 @@ import edu.upb.lp.reboConf.Empty;
 import edu.upb.lp.reboConf.Fraction;
 import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
+import edu.upb.lp.reboConf.NFraction;
+import edu.upb.lp.reboConf.NInteger;
 import edu.upb.lp.reboConf.ReboConfPackage;
 import edu.upb.lp.services.ReboConfGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -44,7 +46,6 @@ public class ReboConfSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				else break;
 			case ReboConfPackage.FRACTION:
 				if(context == grammarAccess.getElementRule() ||
-				   context == grammarAccess.getNegativeNumberRule() ||
 				   context == grammarAccess.getNumberRule() ||
 				   context == grammarAccess.getPositiveNumberRule()) {
 					sequence_PositiveNumber(context, (Fraction) semanticObject); 
@@ -54,7 +55,6 @@ public class ReboConfSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case ReboConfPackage.INTEGER:
 				if(context == grammarAccess.getElementRule() ||
 				   context == grammarAccess.getIntegerRule() ||
-				   context == grammarAccess.getNegativeNumberRule() ||
 				   context == grammarAccess.getNumberRule() ||
 				   context == grammarAccess.getPositiveNumberRule() ||
 				   context == grammarAccess.getPositiveNumberAccess().getFractionNumeratorAction_1_0()) {
@@ -71,6 +71,24 @@ public class ReboConfSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case ReboConfPackage.MATRIX:
 				if(context == grammarAccess.getMatrixRule()) {
 					sequence_Matrix(context, (Matrix) semanticObject); 
+					return; 
+				}
+				else break;
+			case ReboConfPackage.NFRACTION:
+				if(context == grammarAccess.getElementRule() ||
+				   context == grammarAccess.getNegativeNumberRule() ||
+				   context == grammarAccess.getNumberRule()) {
+					sequence_NegativeNumber(context, (NFraction) semanticObject); 
+					return; 
+				}
+				else break;
+			case ReboConfPackage.NINTEGER:
+				if(context == grammarAccess.getElementRule() ||
+				   context == grammarAccess.getNIntegerRule() ||
+				   context == grammarAccess.getNegativeNumberRule() ||
+				   context == grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0() ||
+				   context == grammarAccess.getNumberRule()) {
+					sequence_NInteger(context, (NInteger) semanticObject); 
 					return; 
 				}
 				else break;
@@ -127,6 +145,41 @@ public class ReboConfSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Matrix(EObject context, Matrix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_NInteger(EObject context, NInteger semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ReboConfPackage.Literals.NINTEGER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ReboConfPackage.Literals.NINTEGER__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (numerator=NegativeNumber_NFraction_2_0 denominator=NInteger)
+	 */
+	protected void sequence_NegativeNumber(EObject context, NFraction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ReboConfPackage.Literals.NFRACTION__NUMERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ReboConfPackage.Literals.NFRACTION__NUMERATOR));
+			if(transientValues.isValueTransient(semanticObject, ReboConfPackage.Literals.NFRACTION__DENOMINATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ReboConfPackage.Literals.NFRACTION__DENOMINATOR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0(), semanticObject.getNumerator());
+		feeder.accept(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0(), semanticObject.getDenominator());
+		feeder.finish();
 	}
 	
 	

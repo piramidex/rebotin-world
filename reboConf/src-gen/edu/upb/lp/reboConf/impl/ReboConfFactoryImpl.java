@@ -8,6 +8,8 @@ import edu.upb.lp.reboConf.Empty;
 import edu.upb.lp.reboConf.Fraction;
 import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
+import edu.upb.lp.reboConf.NFraction;
+import edu.upb.lp.reboConf.NInteger;
 import edu.upb.lp.reboConf.NegativeNumber;
 import edu.upb.lp.reboConf.PositiveNumber;
 import edu.upb.lp.reboConf.ReboConfFactory;
@@ -82,7 +84,9 @@ public class ReboConfFactoryImpl extends EFactoryImpl implements ReboConfFactory
       case ReboConfPackage.POSITIVE_NUMBER: return createPositiveNumber();
       case ReboConfPackage.INTEGER: return createInteger();
       case ReboConfPackage.NEGATIVE_NUMBER: return createNegativeNumber();
+      case ReboConfPackage.NINTEGER: return createNInteger();
       case ReboConfPackage.FRACTION: return createFraction();
+      case ReboConfPackage.NFRACTION: return createNFraction();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -192,10 +196,32 @@ public class ReboConfFactoryImpl extends EFactoryImpl implements ReboConfFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public NInteger createNInteger()
+  {
+    NIntegerImpl nInteger = new NIntegerImpl();
+    return nInteger;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Fraction createFraction()
   {
     FractionImpl fraction = new FractionImpl();
     return fraction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NFraction createNFraction()
+  {
+    NFractionImpl nFraction = new NFractionImpl();
+    return nFraction;
   }
 
   /**

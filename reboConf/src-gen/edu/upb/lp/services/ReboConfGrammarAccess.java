@@ -246,20 +246,56 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NegativeNumber");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cPositiveNumberParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cNIntegerParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Action cNFractionNumeratorAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cSolidusKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cDenominatorAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cDenominatorNIntegerParserRuleCall_2_2_0 = (RuleCall)cDenominatorAssignment_2_2.eContents().get(0);
 		
 		//NegativeNumber:
-		//	"-" PositiveNumber;
+		//	"-" NInteger ({NFraction.numerator=current} "/" denominator=NInteger)?;
 		public ParserRule getRule() { return rule; }
 
-		//"-" PositiveNumber
+		//"-" NInteger ({NFraction.numerator=current} "/" denominator=NInteger)?
 		public Group getGroup() { return cGroup; }
 
 		//"-"
 		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
 
-		//PositiveNumber
-		public RuleCall getPositiveNumberParserRuleCall_1() { return cPositiveNumberParserRuleCall_1; }
+		//NInteger
+		public RuleCall getNIntegerParserRuleCall_1() { return cNIntegerParserRuleCall_1; }
+
+		//({NFraction.numerator=current} "/" denominator=NInteger)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{NFraction.numerator=current}
+		public Action getNFractionNumeratorAction_2_0() { return cNFractionNumeratorAction_2_0; }
+
+		//"/"
+		public Keyword getSolidusKeyword_2_1() { return cSolidusKeyword_2_1; }
+
+		//denominator=NInteger
+		public Assignment getDenominatorAssignment_2_2() { return cDenominatorAssignment_2_2; }
+
+		//NInteger
+		public RuleCall getDenominatorNIntegerParserRuleCall_2_2_0() { return cDenominatorNIntegerParserRuleCall_2_2_0; }
+	}
+
+	public class NIntegerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NInteger");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//NInteger:
+		//	value=INT;
+		public ParserRule getRule() { return rule; }
+
+		//value=INT
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
 	}
 	
 	
@@ -272,6 +308,7 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 	private PositiveNumberElements pPositiveNumber;
 	private IntegerElements pInteger;
 	private NegativeNumberElements pNegativeNumber;
+	private NIntegerElements pNInteger;
 	
 	private final Grammar grammar;
 
@@ -392,13 +429,23 @@ public class ReboConfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NegativeNumber:
-	//	"-" PositiveNumber;
+	//	"-" NInteger ({NFraction.numerator=current} "/" denominator=NInteger)?;
 	public NegativeNumberElements getNegativeNumberAccess() {
 		return (pNegativeNumber != null) ? pNegativeNumber : (pNegativeNumber = new NegativeNumberElements());
 	}
 	
 	public ParserRule getNegativeNumberRule() {
 		return getNegativeNumberAccess().getRule();
+	}
+
+	//NInteger:
+	//	value=INT;
+	public NIntegerElements getNIntegerAccess() {
+		return (pNInteger != null) ? pNInteger : (pNInteger = new NIntegerElements());
+	}
+	
+	public ParserRule getNIntegerRule() {
+		return getNIntegerAccess().getRule();
 	}
 
 	//terminal ID:

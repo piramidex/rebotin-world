@@ -26,9 +26,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//Integer/value"/>
     </genClasses>
     <genClasses ecoreClass="ReboConf.ecore#//NegativeNumber"/>
+    <genClasses ecoreClass="ReboConf.ecore#//NInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ReboConf.ecore#//NInteger/value"/>
+    </genClasses>
     <genClasses ecoreClass="ReboConf.ecore#//Fraction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Fraction/numerator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//Fraction/denominator"/>
+    </genClasses>
+    <genClasses ecoreClass="ReboConf.ecore#//NFraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//NFraction/numerator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ReboConf.ecore#//NFraction/denominator"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

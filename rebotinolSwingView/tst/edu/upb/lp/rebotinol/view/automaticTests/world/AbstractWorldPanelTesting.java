@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
-import edu.upb.lp.rebotinol.view.world.HousePanel;
 import edu.upb.lp.rebotinol.view.world.WorldPanel;
 
 public abstract class AbstractWorldPanelTesting extends AutomaticGUITesting {

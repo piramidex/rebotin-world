@@ -282,6 +282,34 @@ public interface ReboConfPackage extends EPackage
   int NEGATIVE_NUMBER_FEATURE_COUNT = NUMBER_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link edu.upb.lp.reboConf.impl.NIntegerImpl <em>NInteger</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.reboConf.impl.NIntegerImpl
+   * @see edu.upb.lp.reboConf.impl.ReboConfPackageImpl#getNInteger()
+   * @generated
+   */
+  int NINTEGER = 9;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NINTEGER__VALUE = NEGATIVE_NUMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>NInteger</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NINTEGER_FEATURE_COUNT = NEGATIVE_NUMBER_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link edu.upb.lp.reboConf.impl.FractionImpl <em>Fraction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -289,7 +317,7 @@ public interface ReboConfPackage extends EPackage
    * @see edu.upb.lp.reboConf.impl.ReboConfPackageImpl#getFraction()
    * @generated
    */
-  int FRACTION = 9;
+  int FRACTION = 10;
 
   /**
    * The feature id for the '<em><b>Numerator</b></em>' containment reference.
@@ -317,6 +345,43 @@ public interface ReboConfPackage extends EPackage
    * @ordered
    */
   int FRACTION_FEATURE_COUNT = POSITIVE_NUMBER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link edu.upb.lp.reboConf.impl.NFractionImpl <em>NFraction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.upb.lp.reboConf.impl.NFractionImpl
+   * @see edu.upb.lp.reboConf.impl.ReboConfPackageImpl#getNFraction()
+   * @generated
+   */
+  int NFRACTION = 11;
+
+  /**
+   * The feature id for the '<em><b>Numerator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NFRACTION__NUMERATOR = NEGATIVE_NUMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Denominator</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NFRACTION__DENOMINATOR = NEGATIVE_NUMBER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>NFraction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NFRACTION_FEATURE_COUNT = NEGATIVE_NUMBER_FEATURE_COUNT + 2;
 
 
   /**
@@ -476,6 +541,27 @@ public interface ReboConfPackage extends EPackage
   EClass getNegativeNumber();
 
   /**
+   * Returns the meta object for class '{@link edu.upb.lp.reboConf.NInteger <em>NInteger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>NInteger</em>'.
+   * @see edu.upb.lp.reboConf.NInteger
+   * @generated
+   */
+  EClass getNInteger();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.upb.lp.reboConf.NInteger#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see edu.upb.lp.reboConf.NInteger#getValue()
+   * @see #getNInteger()
+   * @generated
+   */
+  EAttribute getNInteger_Value();
+
+  /**
    * Returns the meta object for class '{@link edu.upb.lp.reboConf.Fraction <em>Fraction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -506,6 +592,38 @@ public interface ReboConfPackage extends EPackage
    * @generated
    */
   EReference getFraction_Denominator();
+
+  /**
+   * Returns the meta object for class '{@link edu.upb.lp.reboConf.NFraction <em>NFraction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>NFraction</em>'.
+   * @see edu.upb.lp.reboConf.NFraction
+   * @generated
+   */
+  EClass getNFraction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.reboConf.NFraction#getNumerator <em>Numerator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Numerator</em>'.
+   * @see edu.upb.lp.reboConf.NFraction#getNumerator()
+   * @see #getNFraction()
+   * @generated
+   */
+  EReference getNFraction_Numerator();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.upb.lp.reboConf.NFraction#getDenominator <em>Denominator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Denominator</em>'.
+   * @see edu.upb.lp.reboConf.NFraction#getDenominator()
+   * @see #getNFraction()
+   * @generated
+   */
+  EReference getNFraction_Denominator();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -669,6 +787,24 @@ public interface ReboConfPackage extends EPackage
     EClass NEGATIVE_NUMBER = eINSTANCE.getNegativeNumber();
 
     /**
+     * The meta object literal for the '{@link edu.upb.lp.reboConf.impl.NIntegerImpl <em>NInteger</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.reboConf.impl.NIntegerImpl
+     * @see edu.upb.lp.reboConf.impl.ReboConfPackageImpl#getNInteger()
+     * @generated
+     */
+    EClass NINTEGER = eINSTANCE.getNInteger();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NINTEGER__VALUE = eINSTANCE.getNInteger_Value();
+
+    /**
      * The meta object literal for the '{@link edu.upb.lp.reboConf.impl.FractionImpl <em>Fraction</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -693,6 +829,32 @@ public interface ReboConfPackage extends EPackage
      * @generated
      */
     EReference FRACTION__DENOMINATOR = eINSTANCE.getFraction_Denominator();
+
+    /**
+     * The meta object literal for the '{@link edu.upb.lp.reboConf.impl.NFractionImpl <em>NFraction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.upb.lp.reboConf.impl.NFractionImpl
+     * @see edu.upb.lp.reboConf.impl.ReboConfPackageImpl#getNFraction()
+     * @generated
+     */
+    EClass NFRACTION = eINSTANCE.getNFraction();
+
+    /**
+     * The meta object literal for the '<em><b>Numerator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NFRACTION__NUMERATOR = eINSTANCE.getNFraction_Numerator();
+
+    /**
+     * The meta object literal for the '<em><b>Denominator</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NFRACTION__DENOMINATOR = eINSTANCE.getNFraction_Denominator();
 
   }
 

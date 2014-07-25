@@ -479,13 +479,80 @@ ruleNegativeNumber returns [EObject current=null]
     }
 
     { 
-        newCompositeNode(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getNegativeNumberAccess().getNIntegerParserRuleCall_1()); 
     }
-    this_PositiveNumber_1=rulePositiveNumber
+    this_NInteger_1=ruleNInteger
     { 
-        $current = $this_PositiveNumber_1.current; 
+        $current = $this_NInteger_1.current; 
         afterParserOrEnumRuleCall();
     }
+((
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0(),
+            $current);
+    }
+)	otherlv_3='/' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getNegativeNumberAccess().getSolidusKeyword_2_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0()); 
+	    }
+		lv_denominator_4_0=ruleNInteger		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNegativeNumberRule());
+	        }
+       		set(
+       			$current, 
+       			"denominator",
+        		lv_denominator_4_0, 
+        		"NInteger");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+;
+
+
+
+
+
+// Entry rule entryRuleNInteger
+entryRuleNInteger returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNIntegerRule()); }
+	 iv_ruleNInteger=ruleNInteger 
+	 { $current=$iv_ruleNInteger.current; } 
+	 EOF 
+;
+
+// Rule NInteger
+ruleNInteger returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_INT
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNIntegerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"INT");
+	    }
+
+)
 )
 ;
 

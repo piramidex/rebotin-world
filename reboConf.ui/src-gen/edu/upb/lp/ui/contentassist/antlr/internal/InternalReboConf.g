@@ -315,6 +315,34 @@ finally {
 
 
 
+// Entry rule entryRuleNInteger
+entryRuleNInteger 
+:
+{ before(grammarAccess.getNIntegerRule()); }
+	 ruleNInteger
+{ after(grammarAccess.getNIntegerRule()); } 
+	 EOF 
+;
+
+// Rule NInteger
+ruleNInteger
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getNIntegerAccess().getValueAssignment()); }
+(rule__NInteger__ValueAssignment)
+{ after(grammarAccess.getNIntegerAccess().getValueAssignment()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 
 rule__Configuration__Alternatives_2
     @init {
@@ -987,6 +1015,7 @@ rule__NegativeNumber__Group__1
     }
 :
 	rule__NegativeNumber__Group__1__Impl
+	rule__NegativeNumber__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -998,15 +1027,141 @@ rule__NegativeNumber__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); }
-	rulePositiveNumber
-{ after(grammarAccess.getNegativeNumberAccess().getPositiveNumberParserRuleCall_1()); }
+{ before(grammarAccess.getNegativeNumberAccess().getNIntegerParserRuleCall_1()); }
+	ruleNInteger
+{ after(grammarAccess.getNegativeNumberAccess().getNIntegerParserRuleCall_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__NegativeNumber__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegativeNumber__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegativeNumber__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegativeNumberAccess().getGroup_2()); }
+(rule__NegativeNumber__Group_2__0)?
+{ after(grammarAccess.getNegativeNumberAccess().getGroup_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+rule__NegativeNumber__Group_2__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegativeNumber__Group_2__0__Impl
+	rule__NegativeNumber__Group_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegativeNumber__Group_2__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0()); }
+(
+
+)
+{ after(grammarAccess.getNegativeNumberAccess().getNFractionNumeratorAction_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__NegativeNumber__Group_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegativeNumber__Group_2__1__Impl
+	rule__NegativeNumber__Group_2__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegativeNumber__Group_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegativeNumberAccess().getSolidusKeyword_2_1()); }
+
+	'/' 
+
+{ after(grammarAccess.getNegativeNumberAccess().getSolidusKeyword_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__NegativeNumber__Group_2__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__NegativeNumber__Group_2__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegativeNumber__Group_2__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegativeNumberAccess().getDenominatorAssignment_2_2()); }
+(rule__NegativeNumber__DenominatorAssignment_2_2)
+{ after(grammarAccess.getNegativeNumberAccess().getDenominatorAssignment_2_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -1127,6 +1282,36 @@ rule__Integer__ValueAssignment
 (
 { before(grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); }
 	RULE_INT{ after(grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NegativeNumber__DenominatorAssignment_2_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0()); }
+	ruleNInteger{ after(grammarAccess.getNegativeNumberAccess().getDenominatorNIntegerParserRuleCall_2_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NInteger__ValueAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0()); }
+	RULE_INT{ after(grammarAccess.getNIntegerAccess().getValueINTTerminalRuleCall_0()); }
 )
 
 ;

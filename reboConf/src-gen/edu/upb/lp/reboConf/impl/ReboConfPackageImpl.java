@@ -8,6 +8,8 @@ import edu.upb.lp.reboConf.Empty;
 import edu.upb.lp.reboConf.Fraction;
 import edu.upb.lp.reboConf.Line;
 import edu.upb.lp.reboConf.Matrix;
+import edu.upb.lp.reboConf.NFraction;
+import edu.upb.lp.reboConf.NInteger;
 import edu.upb.lp.reboConf.NegativeNumber;
 import edu.upb.lp.reboConf.PositiveNumber;
 import edu.upb.lp.reboConf.ReboConfFactory;
@@ -96,7 +98,21 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass nIntegerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass fractionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nFractionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -316,6 +332,26 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNInteger()
+  {
+    return nIntegerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNInteger_Value()
+  {
+    return (EAttribute)nIntegerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFraction()
   {
     return fractionEClass;
@@ -339,6 +375,36 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
   public EReference getFraction_Denominator()
   {
     return (EReference)fractionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNFraction()
+  {
+    return nFractionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNFraction_Numerator()
+  {
+    return (EReference)nFractionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNFraction_Denominator()
+  {
+    return (EReference)nFractionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -395,9 +461,16 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
 
     negativeNumberEClass = createEClass(NEGATIVE_NUMBER);
 
+    nIntegerEClass = createEClass(NINTEGER);
+    createEAttribute(nIntegerEClass, NINTEGER__VALUE);
+
     fractionEClass = createEClass(FRACTION);
     createEReference(fractionEClass, FRACTION__NUMERATOR);
     createEReference(fractionEClass, FRACTION__DENOMINATOR);
+
+    nFractionEClass = createEClass(NFRACTION);
+    createEReference(nFractionEClass, NFRACTION__NUMERATOR);
+    createEReference(nFractionEClass, NFRACTION__DENOMINATOR);
   }
 
   /**
@@ -432,10 +505,11 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
     emptyEClass.getESuperTypes().add(this.getElement());
     numberEClass.getESuperTypes().add(this.getElement());
     positiveNumberEClass.getESuperTypes().add(this.getNumber());
-    positiveNumberEClass.getESuperTypes().add(this.getNegativeNumber());
     integerEClass.getESuperTypes().add(this.getPositiveNumber());
     negativeNumberEClass.getESuperTypes().add(this.getNumber());
+    nIntegerEClass.getESuperTypes().add(this.getNegativeNumber());
     fractionEClass.getESuperTypes().add(this.getPositiveNumber());
+    nFractionEClass.getESuperTypes().add(this.getNegativeNumber());
 
     // Initialize classes and features; add operations and parameters
     initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -462,9 +536,16 @@ public class ReboConfPackageImpl extends EPackageImpl implements ReboConfPackage
 
     initEClass(negativeNumberEClass, NegativeNumber.class, "NegativeNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(nIntegerEClass, NInteger.class, "NInteger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNInteger_Value(), ecorePackage.getEInt(), "value", null, 0, 1, NInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(fractionEClass, Fraction.class, "Fraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFraction_Numerator(), this.getInteger(), null, "numerator", null, 0, 1, Fraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFraction_Denominator(), this.getInteger(), null, "denominator", null, 0, 1, Fraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nFractionEClass, NFraction.class, "NFraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNFraction_Numerator(), this.getNInteger(), null, "numerator", null, 0, 1, NFraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNFraction_Denominator(), this.getNInteger(), null, "denominator", null, 0, 1, NFraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
