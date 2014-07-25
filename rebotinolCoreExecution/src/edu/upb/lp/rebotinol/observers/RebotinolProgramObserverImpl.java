@@ -1,0 +1,67 @@
+package edu.upb.lp.rebotinol.observers;
+
+
+/**
+ * Basic implementation of the {@link RebotinolProgramObserver} that does
+ * nothing when observing events.
+ * 
+ * @author Alexis Marechal
+ * 
+ */
+public abstract class RebotinolProgramObserverImpl {
+	/**
+	 * {@inheritDoc}
+	 */
+	public void startPlay() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void stopPlay() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void activatePlay() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void deActivatePlay() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void activatePrevious() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void deActivatePrevious() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void activateNext() {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void deActivateNext() {
+		// do nothing
+	}
+}
