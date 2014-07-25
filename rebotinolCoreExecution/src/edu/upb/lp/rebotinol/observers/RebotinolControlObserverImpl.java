@@ -2,13 +2,13 @@ package edu.upb.lp.rebotinol.observers;
 
 
 /**
- * Basic implementation of the {@link RebotinolProgramObserver} that does
+ * Basic implementation of the {@link RebotinolControlObserver} that does
  * nothing when observing events.
  * 
  * @author Alexis Marechal
  * 
  */
-public abstract class RebotinolProgramObserverImpl {
+public abstract class RebotinolControlObserverImpl {
 	/**
 	 * {@inheritDoc}
 	 */

@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.controller.RebotinolScheduler;
-import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
@@ -20,7 +20,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  *
  */
 //TODO javadoc
-public class ButtonsPanel extends JPanel implements RebotinolProgramObserver {
+public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 	/**
 	 * Serial
 	 */

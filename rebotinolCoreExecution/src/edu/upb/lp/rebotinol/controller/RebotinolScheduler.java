@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.swing.Timer;
 
-import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
@@ -20,7 +20,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  *
  */
 public class RebotinolScheduler {
-	private List<RebotinolProgramObserver> _observers = new ArrayList<RebotinolProgramObserver>();
+	private List<RebotinolControlObserver> _observers = new ArrayList<RebotinolControlObserver>();
 	private final RebotinolController _controller;
 
 	private final Timer _playTimer;
@@ -38,6 +38,9 @@ public class RebotinolScheduler {
 			public void actionPerformed(ActionEvent event) {
 				try {
 					_controller.step();
+					if (_controller.isBreakpoint()) {
+						stop();
+					}
 				} catch (RebotinolFlowException e) {
 					throw new IllegalStateException(e);
 				} catch (RebotinolExecutionException e) {
@@ -67,7 +70,7 @@ public class RebotinolScheduler {
 	 * Register an observer, following the Observer design pattern. 
 	 * @param observer The observer to be registered.
 	 */
-	public void registerObserver(RebotinolProgramObserver observer) {
+	public void registerObserver(RebotinolControlObserver observer) {
 		_observers.add(observer);
 	}
 	
@@ -77,7 +80,7 @@ public class RebotinolScheduler {
 	public void play() {
 		if (!_playTimer.isRunning()) {
 			_playTimer.start();
-			for (RebotinolProgramObserver obs : _observers) {
+			for (RebotinolControlObserver obs : _observers) {
 				obs.startPlay();
 			}
 		}
@@ -89,7 +92,7 @@ public class RebotinolScheduler {
 	public void stop() {
 		if (_playTimer.isRunning()) {
 			_playTimer.stop();
-			for (RebotinolProgramObserver obs : _observers) {
+			for (RebotinolControlObserver obs : _observers) {
 				obs.stopPlay();
 			}
 		}
@@ -101,5 +104,12 @@ public class RebotinolScheduler {
 	 */
 	public void setSpeed(Speeds speed) {
 		_playTimer.setDelay(speed._ms);
+	}
+	
+	/**
+	 * @return true if the automatic execution of the program is currently running
+	 */
+	public boolean isRunning() {
+		return _playTimer.isRunning();
 	}
 }

@@ -10,7 +10,7 @@ import edu.upb.lp.rebotinol.controller.RebotinolController;
  * @author Alexis Marechal
  * 
  */
-public interface RebotinolProgramObserver {
+public interface RebotinolControlObserver {
 	/**
 	 * This method is executed by the observed controller when the automatic execution starts.
 	 */

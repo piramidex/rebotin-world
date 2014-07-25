@@ -26,6 +26,10 @@ public abstract class RebotinolInstructionExecution {
 	private boolean _skipped = false;
 	private boolean _breakpoint = false;
 
+	/**
+	 * Register a {@link RebotinolExecutionObserver} following the observer design pattern.
+	 * @param observer The observer to register.
+	 */
 	public void registerObserver(RebotinolExecutionObserver observer) {
 		_observers.add(observer);
 	}
@@ -250,6 +254,13 @@ public abstract class RebotinolInstructionExecution {
 	 * @return true if this execution has a breakpoint, false otherwise
 	 */
 	public boolean isBreakpoint() {
+		return _breakpoint;
+	}
+	
+	/**
+	 * @return true if this execution or the current subExecution has a breakpoint, false otherwise
+	 */
+	public boolean isDeepBreakpoint() {
 		return _breakpoint;
 	}
 	

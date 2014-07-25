@@ -8,8 +8,8 @@ import org.apache.commons.math3.fraction.Fraction;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
-import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserverImpl;
+import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -23,14 +23,14 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  * 
  */
-//TODO make an inner class to observe the program, and another to observe the executions
-public class RebotinolController implements RebotinolExecutionObserver {
+public class RebotinolController {
 	private RebotinolHouse _house;
 	private Fraction[][] _initialMatrix;
 	private Fraction[][] _expectedMatrix;
 	private SequentialInstructionExecution _program;
 	private RebotinolScheduler _scheduler;
-	private List<RebotinolProgramObserver> _observers = new ArrayList<RebotinolProgramObserver>();
+	private List<RebotinolControlObserver> _observers = new ArrayList<RebotinolControlObserver>();
+	private ProgramObserver _pObs = new ProgramObserver();
 
 	/**
 	 * Constructor
@@ -78,15 +78,17 @@ public class RebotinolController implements RebotinolExecutionObserver {
 			_expectedMatrix = null;
 		}
 		this._program = program;
-		_program.registerObserver(this);
+		_program.registerObserver(_pObs);
 		_scheduler = new RebotinolScheduler(this);
 	}
 
 	/**
-	 * Register an observer, following the Observer design pattern. 
-	 * @param observer The observer to be registered.
+	 * Register an observer, following the Observer design pattern.
+	 * 
+	 * @param observer
+	 *            The observer to be registered.
 	 */
-	public void registerObserver(RebotinolProgramObserver observer) {
+	public void registerObserver(RebotinolControlObserver observer) {
 		_observers.add(observer);
 	}
 
@@ -161,13 +163,13 @@ public class RebotinolController implements RebotinolExecutionObserver {
 	public void step() throws RebotinolExecutionException,
 			RebotinolFlowException {
 		if (!_program.isStarted()) {
-			for (RebotinolProgramObserver obs : _observers) {
+			for (RebotinolControlObserver obs : _observers) {
 				obs.activatePrevious();
 			}
 		}
 		_program.step(_house);
 		if (_program.isFinished()) {
-			for (RebotinolProgramObserver obs : _observers) {
+			for (RebotinolControlObserver obs : _observers) {
 				obs.deActivateNext();
 			}
 		}
@@ -191,13 +193,13 @@ public class RebotinolController implements RebotinolExecutionObserver {
 	public void stepBack() throws RebotinolExecutionException,
 			RebotinolFlowException, RebotinolFatalException {
 		if (_program.isFinished()) {
-			for (RebotinolProgramObserver obs : _observers) {
+			for (RebotinolControlObserver obs : _observers) {
 				obs.activateNext();
 			}
 		}
 		_program.stepBack(_house);
 		if (!_program.isStarted()) {
-			for (RebotinolProgramObserver obs : _observers) {
+			for (RebotinolControlObserver obs : _observers) {
 				obs.deActivatePrevious();
 			}
 		}
@@ -209,80 +211,42 @@ public class RebotinolController implements RebotinolExecutionObserver {
 	 * @param execution
 	 *            The execution on which we are trying to set or remove a
 	 *            breakpoint.
-	 * @throws RebotinolFatalException If something went really wrong
+	 * @throws RebotinolFatalException
+	 *             If something went really wrong
 	 */
-	public void toggleBreakpoint(RebotinolInstructionExecution execution) throws RebotinolFatalException {
+	public void toggleBreakpoint(RebotinolInstructionExecution execution)
+			throws RebotinolFatalException {
 		execution.toggleBreakpoint();
 	}
 
-	@Override
-	public void stepPerformed() {
-		//do nothing
-	}
+	private class ProgramObserver extends RebotinolExecutionObserverImpl {
+		@Override
+		public void finished() {
+			_scheduler.stop();
+			for (RebotinolControlObserver obs : _observers) {
+				obs.deActivatePlay();
+			}
+		}
 
-	@Override
-	public void stepsChanged(int _steps) {
-		//do nothing
-	}
-
-	@Override
-	public void stepBackPerformed() {
-		//do nothing
-	}
-
-	@Override
-	public void finished() {
-		_scheduler.stop();
-		for (RebotinolProgramObserver obs : _observers) {
-			obs.deActivatePlay();
+		@Override
+		public void unfinished() {
+			if (!_scheduler.isRunning()) {
+				for (RebotinolControlObserver obs : _observers) {
+					obs.activatePlay();
+				}
+			}
+		}
+		
+		@Override
+		public void breakpointMet() {
+			_scheduler.stop();
 		}
 	}
-
-	@Override
-	public void unfinished() {
-		//Check consistency here
-		for (RebotinolProgramObserver obs : _observers) {
-			obs.activatePlay();
-		}
-	}
-
-	@Override
-	public void setCurrent() {
-		//do nothing
-	}
-
-	@Override
-	public void unsetCurrent() {
-		//do nothing
-	}
-
-	@Override
-	public void skipped() {
-		//do nothing
-	}
-
-	@Override
-	public void unskipped() {
-		//do nothing
-	}
-
-	@Override
-	public void breakpointMet() {
-		_scheduler.stop();
-	}
-
-	@Override
-	public void breakpointSet() {
-		//do nothing
-	}
-
-	@Override
-	public void breakpointRemoved() {
-		//do nothing
-	}
-
-	@Override
-	public void repetitionsChanged(int repetitionsExecuted) {
-		//do nothing
+	
+	/**
+	 * @return true if the current execution has a breakpoint
+	 */
+	public boolean isBreakpoint() {
+		return _program.isDeepBreakpoint();
 	}
 }

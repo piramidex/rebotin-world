@@ -159,4 +159,16 @@ public abstract class SequentialInstructionExecution extends
 		_currentExecutionIndex = index;
 		getCurrentExecution().setCurrent();
 	}
+	
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean isDeepBreakpoint() {
+		if (isBreakpoint()) {
+			return true;
+		}
+		return getCurrentExecution().isDeepBreakpoint();
+	}
 }
