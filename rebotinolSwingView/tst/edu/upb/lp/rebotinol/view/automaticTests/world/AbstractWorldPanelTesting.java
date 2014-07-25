@@ -6,15 +6,16 @@ import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
 import edu.upb.lp.rebotinol.view.world.HousePanel;
+import edu.upb.lp.rebotinol.view.world.WorldPanel;
 
 public abstract class AbstractWorldPanelTesting extends AutomaticGUITesting {
 
 	@Override
 	protected void doBuildAndShowFrame(JFrame frame) {
 		RebotinolExample ex = getExample();
-		HousePanel panel;
+		WorldPanel panel;
 		try {
-			panel = new HousePanel(ex.getHouse(), ex.getInitialMatrix());
+			panel = new WorldPanel(ex.getController());
 		} catch (RebotinolFatalException e) {
 			throw new IllegalStateException(e);
 		}

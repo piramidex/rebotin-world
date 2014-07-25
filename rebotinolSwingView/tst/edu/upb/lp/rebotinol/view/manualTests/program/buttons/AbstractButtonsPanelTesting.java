@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.manualTests.buttons;
+package edu.upb.lp.rebotinol.view.manualTests.program.buttons;
 
 import javax.swing.JFrame;
 

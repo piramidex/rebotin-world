@@ -29,7 +29,7 @@ public class ExecutionsPanel extends JPanel {
 	public ExecutionsPanel(RebotinolController controller) {
 		super();
 		_controller = controller;
-		_program = controller.get_program();
+		_program = controller.getProgram();
 		
 		// create and configure instructions panel
 		_instrsPanel = new JPanel();

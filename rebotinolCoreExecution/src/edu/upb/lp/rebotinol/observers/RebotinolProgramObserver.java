@@ -10,7 +10,7 @@ import edu.upb.lp.rebotinol.controller.RebotinolController;
  * @author Alexis Marechal
  * 
  */
-public interface RebotinolSchedulingObserver {
+public interface RebotinolProgramObserver {
 	/**
 	 * This method is executed by the observed controller when the automatic execution starts.
 	 */
@@ -20,4 +20,24 @@ public interface RebotinolSchedulingObserver {
 	 * This method is executed by the observed controller when the automatic execution stops.
 	 */
 	public void stopPlay();
+	
+	/**
+	 * This method is called when the "previous" button should be activated
+	 */
+	public void activatePrevious();
+	
+	/**
+	 * This method is called when the "previous" button should be deactivated
+	 */
+	public void deActivatePrevious();
+	
+	/**
+	 * This method is called when the "next" button should be activated
+	 */
+	public void activateNext();
+	
+	/**
+	 * This method is called when the "next" button should be deactivated
+	 */
+	public void deActivateNext();
 }

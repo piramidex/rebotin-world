@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.swing.Timer;
 
-import edu.upb.lp.rebotinol.observers.RebotinolSchedulingObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
@@ -19,8 +19,9 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  *
  */
+//TODO activate and deactivate "previous" and "next" buttons
 public class RebotinolScheduler {
-	private List<RebotinolSchedulingObserver> _observers = new ArrayList<RebotinolSchedulingObserver>();
+	private List<RebotinolProgramObserver> _observers = new ArrayList<RebotinolProgramObserver>();
 	private final RebotinolController _controller;
 
 	private final Timer _playTimer;
@@ -70,7 +71,7 @@ public class RebotinolScheduler {
 	 * Register an observer, following the Observer design pattern. 
 	 * @param observer The observer to be registered.
 	 */
-	public void registerObserver(RebotinolSchedulingObserver observer) {
+	public void registerObserver(RebotinolProgramObserver observer) {
 		_observers.add(observer);
 	}
 	
@@ -80,7 +81,7 @@ public class RebotinolScheduler {
 	public void play() {
 		if (!_playTimer.isRunning()) {
 			_playTimer.start();
-			for (RebotinolSchedulingObserver obs : _observers) {
+			for (RebotinolProgramObserver obs : _observers) {
 				obs.startPlay();
 			}
 		}
@@ -92,7 +93,7 @@ public class RebotinolScheduler {
 	public void stop() {
 		if (_playTimer.isRunning()) {
 			_playTimer.stop();
-			for (RebotinolSchedulingObserver obs : _observers) {
+			for (RebotinolProgramObserver obs : _observers) {
 				obs.stopPlay();
 			}
 		}

@@ -1,16 +1,13 @@
 package edu.upb.lp.rebotinol.view;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.apache.commons.math3.fraction.Fraction;
-
 import edu.upb.lp.rebotinol.controller.RebotinolController;
-import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
-import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.view.program.buttons.ButtonsPanel;
-import edu.upb.lp.rebotinol.view.program.executions.ExecutionsPanel;
-import edu.upb.lp.rebotinol.view.world.HousePanel;
+import edu.upb.lp.rebotinol.view.program.ProgramPanel;
+import edu.upb.lp.rebotinol.view.world.WorldPanel;
 
 /**
  * This is the main class for the rebotinol view in Swing (2014).
@@ -19,23 +16,26 @@ import edu.upb.lp.rebotinol.view.world.HousePanel;
  */
 //TODO fix all this
 //TODO javadoc
-public class RebotinolMainFrame extends JPanel {
+public class RebotinolMainFrame extends JFrame {
 	/**
 	 * Serial
 	 */
 	private static final long serialVersionUID = 1609064165373925148L;
 	
 	private RebotinolController _controller;
-	private JPanel _buttonsPanel;
-	private JPanel _housePanel;
-	private JPanel _executionsPanel;
+	private JPanel _worldPanel;
+	private JPanel _programPanel;
 	
 	/**
 	 * Constructor
 	 * @param controller The {@link RebotinolController} on which this view is based
 	 */
 	public RebotinolMainFrame(RebotinolController controller) {
+		super("Ejecuci—n de rebotin");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		_controller = controller;
+		setSize(800, 500);
+		setLayout(new BoxLayout(getContentPane(), BoxLayout.LINE_AXIS));
 		buildPanels();
 	}
 
@@ -43,11 +43,12 @@ public class RebotinolMainFrame extends JPanel {
 	 * This method builds the interface (and its sub-panels) and makes it visible
 	 */
 	public void buildPanels() {
-		_executionsPanel = new ExecutionsPanel(_controller);
-		_housePanel = new HousePanel(_controller.get_house(), _controller.get_initialMatrix());
-		_buttonsPanel = new ButtonsPanel(_controller);
-		add(_housePanel);
-		add(_executionsPanel);
-		add(_buttonsPanel);
+		_worldPanel = new WorldPanel(_controller);
+		_worldPanel.setSize(500, 500);
+		_programPanel = new ProgramPanel(_controller);
+		_programPanel.setSize(300, 500);
+		add(_worldPanel);
+		add(Box.createVerticalGlue());
+		add(_programPanel);
 	}
 }

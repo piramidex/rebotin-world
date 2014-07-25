@@ -81,9 +81,9 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 	public void create() {
 		super.create();
 		setTitle("Creaci—n de un programa en rebotinol");
-		setMessage("En esta ventana debes escoger un nombre para tu configuraci—n de rebot’n "
-				+ "y el proyecto donde quieres crearla",
-				IMessageProvider.INFORMATION);
+		setMessage("En esta ventana debes escoger un nombre de proyecto que hayas creado "
+			+ "previamente, y un nombre para la configuracion de rebotin que quieres crear",
+			IMessageProvider.INFORMATION);
 		if (_image != null) {
 			setTitleImage(_image);
 		}
@@ -151,8 +151,8 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 		});
 
 		// Error decorator
-		_configurationDecorator = new ControlDecoration(_configurationTextField, SWT.TOP
-				| SWT.LEFT);
+		_configurationDecorator = new ControlDecoration(
+				_configurationTextField, SWT.TOP | SWT.LEFT);
 		FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault()
 				.getFieldDecoration(FieldDecorationRegistry.DEC_ERROR);
 		Image img = fieldDecoration.getImage();
@@ -175,9 +175,11 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 					String[] natures = project.getDescription().getNatureIds();
 
 					if (natures.length != 1
-							|| !natures[0].equals("org.eclipse.xtext.ui.shared.xtextNature")) {
-						_projectDecorator.setDescriptionText("Este proyecto no es un proyecto v‡lido. "
-								+ "Debes utilizar un proyecto creado con el menu de rebotin");
+							|| !natures[0]
+									.equals("org.eclipse.xtext.ui.shared.xtextNature")) {
+						_projectDecorator
+								.setDescriptionText("Este proyecto no es un proyecto v‡lido. "
+										+ "Debes utilizar un proyecto creado con el menu de rebotin");
 						_projectDecorator.show();
 						return false;
 					} else {
@@ -191,8 +193,10 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 				}
 			} else {
 				_projectDecorator
-						.setDescriptionText("Este proyecto no existe. Crealo, o intenta hacer un "
-								+ "'refresh' de la lista de proyectos");
+						.setDescriptionText("Este proyecto no existe, debes crearlo primero. "
+								+ "Si est‡s seguro de haber introducido un nombre de "
+								+ "proyecto existente, intenta hacer un 'refresh' de la lista "
+								+ "de proyectos (con un clic derecho en la ventana de la izquierda)");
 				_projectDecorator.show();
 				return false;
 			}
@@ -216,7 +220,8 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 			} else {
 				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 				IProject project = root.getProject(_projectTextField.getText());
-				if (project.getFile(new Path(configuration+".rconf")).exists()) {
+				if (project.getFile(new Path(configuration + ".rconf"))
+						.exists()) {
 					_configurationDecorator
 							.setDescriptionText("Este archivo ya existe!");
 					_configurationDecorator.show();
@@ -248,7 +253,8 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 		try {
 			url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
 			InputStream inputStream = url.openConnection().getInputStream();
-			IFile newFile = project.getFile(new Path(_configurationTextField.getText() + ".rconf"));
+			IFile newFile = project.getFile(new Path(_configurationTextField
+					.getText() + ".rconf"));
 			newFile.create(inputStream, true, null);
 			CreateProjectDialog.openFile(newFile);
 		} catch (Exception e) {

@@ -3,12 +3,13 @@ package edu.upb.lp.rebotinol.view.program.buttons;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.controller.RebotinolScheduler;
-import edu.upb.lp.rebotinol.observers.RebotinolSchedulingObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
@@ -19,7 +20,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  *
  */
 //TODO javadoc
-public class ButtonsPanel extends JPanel implements RebotinolSchedulingObserver {
+public class ButtonsPanel extends JPanel implements RebotinolProgramObserver {
 	/**
 	 * Serial
 	 */
@@ -27,18 +28,22 @@ public class ButtonsPanel extends JPanel implements RebotinolSchedulingObserver 
 
 	private RebotinolController _controller;
 	private RebotinolScheduler _scheduler;
-	private JButton _backButton = new JButton("Step back");
-	private JButton _playButton = new JButton("Play");
-	private JButton _stopButton = new JButton("Stop");
-	private JButton _forwardButton = new JButton("Step forward");
+	private JButton _backButton = new JButton("<-");
+	private JButton _playButton = new JButton(">");
+	private JButton _stopButton = new JButton("x");
+	private JButton _forwardButton = new JButton("->");
 
 	public ButtonsPanel(RebotinolController controller) {
 		_controller = controller;
-		_scheduler = controller.get_scheduler();
+		_controller.registerObserver(this);
+		_scheduler = controller.getScheduler();
 		_scheduler.registerObserver(this);
 
-		_backButton.setLocation(0, 0);
-		_backButton.setSize(100, 30);
+		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
+		
+//		_backButton.setLocation(45, 10);
+		_backButton.setSize(30, 30);
+		_backButton.setEnabled(false);
 		add(_backButton);
 		ActionListener backListener = new ActionListener() {
 
@@ -58,8 +63,8 @@ public class ButtonsPanel extends JPanel implements RebotinolSchedulingObserver 
 		};
 		_backButton.addActionListener(backListener);
 
-		_playButton.setLocation(100, 100);
-		_playButton.setSize(100, 30);
+//		_playButton.setLocation(105, 10);
+		_playButton.setSize(30, 30);
 		_playButton.setEnabled(true);
 		add(_playButton);
 		ActionListener playListener = new ActionListener() {
@@ -71,8 +76,8 @@ public class ButtonsPanel extends JPanel implements RebotinolSchedulingObserver 
 		};
 		_playButton.addActionListener(playListener);
 
-		_stopButton.setLocation(300, 100);
-		_stopButton.setSize(100, 30);
+//		_stopButton.setLocation(165, 10);
+		_stopButton.setSize(30, 30);
 		_stopButton.setEnabled(false);
 		add(_stopButton);
 		ActionListener stopListener = new ActionListener() {
@@ -84,8 +89,9 @@ public class ButtonsPanel extends JPanel implements RebotinolSchedulingObserver 
 		};
 		_stopButton.addActionListener(stopListener);
 
-		_forwardButton.setLocation(500, 100);
-		_forwardButton.setSize(100, 30);
+//		_forwardButton.setLocation(225, 10);
+		_forwardButton.setSize(30, 30);
+		_forwardButton.setEnabled(true);
 		add(_forwardButton);
 		ActionListener forwardListener = new ActionListener() {
 
@@ -115,5 +121,26 @@ public class ButtonsPanel extends JPanel implements RebotinolSchedulingObserver 
 	public void stopPlay() {
 		_stopButton.setEnabled(false);
 		_playButton.setEnabled(true);
+	}
+
+	@Override
+	public void activatePrevious() {
+		_backButton.setEnabled(true);
+	}
+
+	@Override
+	public void deActivatePrevious() {
+		_backButton.setEnabled(false);
+	}
+
+	@Override
+	public void activateNext() {
+		_forwardButton.setEnabled(true);
+		
+	}
+
+	@Override
+	public void deActivateNext() {
+		_forwardButton.setEnabled(false);
 	}
 }

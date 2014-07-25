@@ -81,8 +81,8 @@ public class CreateProgramDialog extends TitleAreaDialog {
 	public void create() {
 		super.create();
 		setTitle("Creaci—n de un programa en rebotinol");
-		setMessage("En esta ventana debes escoger un nombre para tu programa "
-				+ " y el proyecto donde quieres crearlo",
+		setMessage("En esta ventana debes escoger un nombre de proyecto que hayas creado "
+				+ "previamente, y un nombre para el programa que quieres crear",
 				IMessageProvider.INFORMATION);
 		if (_image != null) {
 			setTitleImage(_image);
@@ -191,8 +191,10 @@ public class CreateProgramDialog extends TitleAreaDialog {
 				}
 			} else {
 				_projectDecorator
-						.setDescriptionText("Este proyecto no existe. Crealo, o intenta hacer un "
-								+ "'refresh' de la lista de proyectos");
+						.setDescriptionText("Este proyecto no existe, debes crearlo primero. "
+								+ "Si est‡s seguro de haber introducido un nombre de "
+								+ "proyecto existente, intenta hacer un 'refresh' de la lista "
+								+ "de proyectos (con un clic derecho en la ventana de la izquierda)");
 				_projectDecorator.show();
 				return false;
 			}

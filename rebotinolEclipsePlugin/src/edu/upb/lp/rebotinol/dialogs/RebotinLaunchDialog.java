@@ -228,7 +228,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	private boolean checkProgram() {
 		if (_programPath == null || _programPath.isEmpty()) {
-			_programDecorator.setDescriptionText("Este archivo es obligatorio");
+			_programDecorator.setDescriptionText("Busca un archivo con la extensi—n .rebo "
+					+ "utilizando el bot—n de la derecha '...'");
 			_programDecorator.show();
 			return false;
 		} else {
@@ -248,7 +249,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	private boolean checkConfiguration() {
 		if (_configurationPath == null || _configurationPath.isEmpty()) {
-			_configurationDecorator.setDescriptionText("Este archivo es obligatorio");
+			_configurationDecorator.setDescriptionText("Busca un archivo con la extensi—n .rconf "
+					+ "utilizando el bot—n de la derecha '...'");
 			_configurationDecorator.show();
 			return false;
 		} else {

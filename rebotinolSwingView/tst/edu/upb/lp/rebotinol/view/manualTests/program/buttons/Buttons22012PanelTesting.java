@@ -1,4 +1,4 @@
-package edu.upb.lp.rebotinol.view.manualTests.buttons;
+package edu.upb.lp.rebotinol.view.manualTests.program.buttons;
 
 import edu.upb.lp.rebotinol.examples.Problem2_2012_Example;
 import edu.upb.lp.rebotinol.examples.RebotinolExample;

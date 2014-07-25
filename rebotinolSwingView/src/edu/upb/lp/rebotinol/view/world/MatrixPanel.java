@@ -46,7 +46,6 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	private void createContentPane() {
 
 		setLayout(null);
-		setSize(800, 600);
 		for (int j = 0; j < sizeV; j++) {
 			for (int i = 0; i < sizeH; i++) {
 				JPanel whitepanel = new JPanel();
@@ -69,7 +68,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 				JPanel blackpanel = new JPanel();
 				blackpanel.setLayout(null);
-				blackpanel.setLocation((375 + (45 * i)), (275 + (45 * j)));
+				blackpanel.setLocation((50 + (45 * i)), (50 + (45 * j)));
 				if (j == 0 && i == 0) {
 					blackpanel.setBackground(Color.RED);
 				} else {
@@ -104,7 +103,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		int deltaV = previousV - v;
 		for(int j = 0; j < sizeV; j++){
 			for(int i = 0; i < sizeH; i++){
-				blackPanels[j][i].setLocation(375 + ((i+deltaH) * 45), 275 + ((j+deltaV) * 45));
+				blackPanels[j][i].setLocation(50 + ((i+deltaH) * 45), 50 + ((j+deltaV) * 45));
 				blackPanels[j][i].repaint();
 			}
 		}

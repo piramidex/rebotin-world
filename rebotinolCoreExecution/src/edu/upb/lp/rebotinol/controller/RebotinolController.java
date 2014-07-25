@@ -1,10 +1,14 @@
 package edu.upb.lp.rebotinol.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -24,6 +28,7 @@ public class RebotinolController {
 	private Fraction[][] _expectedMatrix;
 	private SequentialInstructionExecution _program;
 	private RebotinolScheduler _scheduler;
+	private List<RebotinolProgramObserver> _observers = new ArrayList<RebotinolProgramObserver>();
 
 	/**
 	 * Constructor
@@ -75,6 +80,14 @@ public class RebotinolController {
 	}
 
 	/**
+	 * Register an observer, following the Observer design pattern. 
+	 * @param observer The observer to be registered.
+	 */
+	public void registerObserver(RebotinolProgramObserver observer) {
+		_observers.add(observer);
+	}
+
+	/**
 	 * A constructor without expected matrix
 	 * 
 	 * @param house
@@ -95,7 +108,7 @@ public class RebotinolController {
 	/**
 	 * @return the rebotinol house
 	 */
-	public RebotinolHouse get_house() {
+	public RebotinolHouse getHouse() {
 		return _house;
 	}
 
@@ -103,7 +116,7 @@ public class RebotinolController {
 	 * @return A clone of the initial matrix. This attribute does not change
 	 *         while the program is executed
 	 */
-	public Fraction[][] get_initialMatrix() {
+	public Fraction[][] getInitialMatrix() {
 		return MatrixUtil.cloneMatrix(_initialMatrix);
 	}
 
@@ -111,21 +124,21 @@ public class RebotinolController {
 	 * @return A clone of the expected matrix after the execution of the
 	 *         program. This attribute is optional
 	 */
-	public Fraction[][] get_expectedMatrix() {
+	public Fraction[][] getExpectedMatrix() {
 		return MatrixUtil.cloneMatrix(_expectedMatrix);
 	}
 
 	/**
 	 * @return The program that was defined by the rebotinol programmer
 	 */
-	public SequentialInstructionExecution get_program() {
+	public SequentialInstructionExecution getProgram() {
 		return _program;
 	}
 
 	/**
 	 * @return the scheduler for the automatic executions
 	 */
-	public RebotinolScheduler get_scheduler() {
+	public RebotinolScheduler getScheduler() {
 		return _scheduler;
 	}
 
@@ -144,7 +157,17 @@ public class RebotinolController {
 	 */
 	public void step() throws RebotinolExecutionException,
 			RebotinolFlowException {
+		if (!_program.isStarted()) {
+			for (RebotinolProgramObserver obs : _observers) {
+				obs.activatePrevious();
+			}
+		}
 		_program.step(_house);
+		if (_program.isFinished()) {
+			for (RebotinolProgramObserver obs : _observers) {
+				obs.deActivateNext();
+			}
+		}
 	}
 
 	/**
@@ -164,7 +187,17 @@ public class RebotinolController {
 	 */
 	public void stepBack() throws RebotinolExecutionException,
 			RebotinolFlowException, RebotinolFatalException {
+		if (_program.isFinished()) {
+			for (RebotinolProgramObserver obs : _observers) {
+				obs.activateNext();
+			}
+		}
 		_program.stepBack(_house);
+		if (!_program.isStarted()) {
+			for (RebotinolProgramObserver obs : _observers) {
+				obs.deActivatePrevious();
+			}
+		}
 	}
 
 	/**
