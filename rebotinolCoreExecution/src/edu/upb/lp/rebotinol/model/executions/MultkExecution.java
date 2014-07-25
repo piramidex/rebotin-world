@@ -29,6 +29,8 @@ public class MultkExecution extends ChangeMemoryExecution {
 	@Override
 	protected void doMemoryStep(RebotinolHouse house)
 			throws RebotinolExecutionException {
+//		Fraction res = getOldValue().multiply(_valueToMultiply);
+//		house.setMemory(Fraction.getReducedFraction(res.getNumerator(), res.getDenominator()));
 		house.setMemory(getOldValue().multiply(_valueToMultiply));
 	}
 	

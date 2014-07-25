@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.view;
 
+import java.awt.Dimension;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -44,9 +46,9 @@ public class RebotinolMainFrame extends JFrame {
 	 */
 	public void buildPanels() {
 		_worldPanel = new WorldPanel(_controller);
-		_worldPanel.setSize(500, 500);
+		_worldPanel.setMaximumSize(new Dimension(500, 500));
 		_programPanel = new ProgramPanel(_controller);
-		_programPanel.setSize(300, 500);
+		_programPanel.setMaximumSize(new Dimension(300, 500));
 		add(_worldPanel);
 		add(Box.createVerticalGlue());
 		add(_programPanel);

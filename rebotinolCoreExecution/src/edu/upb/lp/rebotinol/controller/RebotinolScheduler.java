@@ -19,7 +19,6 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  *
  */
-//TODO activate and deactivate "previous" and "next" buttons
 public class RebotinolScheduler {
 	private List<RebotinolProgramObserver> _observers = new ArrayList<RebotinolProgramObserver>();
 	private final RebotinolController _controller;
@@ -39,9 +38,6 @@ public class RebotinolScheduler {
 			public void actionPerformed(ActionEvent event) {
 				try {
 					_controller.step();
-					if (_controller.checkBreakpoint()) {
-						_playTimer.stop();
-					}
 				} catch (RebotinolFlowException e) {
 					throw new IllegalStateException(e);
 				} catch (RebotinolExecutionException e) {

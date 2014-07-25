@@ -22,6 +22,16 @@ public interface RebotinolProgramObserver {
 	public void stopPlay();
 	
 	/**
+	 * This method is executed by the observed controller when the play button should be activated.
+	 */
+	public void activatePlay();
+	
+	/**
+	 * This method is executed by the observed controller when the play button should be deactivated.
+	 */
+	public void deActivatePlay();
+	
+	/**
 	 * This method is called when the "previous" button should be activated
 	 */
 	public void activatePrevious();

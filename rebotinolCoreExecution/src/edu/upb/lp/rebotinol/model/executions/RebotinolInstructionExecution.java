@@ -254,14 +254,6 @@ public abstract class RebotinolInstructionExecution {
 	}
 	
 	/**
-	 * @return true if this execution or the current sub-executions has a breakpoint,
-	 * false otherwise
-	 */
-	public boolean breakpointMet() {
-		return _breakpoint;
-	}
-	
-	/**
 	 * Accept a {@link RebotinoExecutionVisitor}, according to the visitor design pattern
 	 * @param v The visitor to be accepted
 	 * @return The result of the visit

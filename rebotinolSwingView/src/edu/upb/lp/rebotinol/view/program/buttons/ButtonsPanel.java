@@ -143,4 +143,14 @@ public class ButtonsPanel extends JPanel implements RebotinolProgramObserver {
 	public void deActivateNext() {
 		_forwardButton.setEnabled(false);
 	}
+
+	@Override
+	public void activatePlay() {
+		_playButton.setEnabled(true);
+	}
+
+	@Override
+	public void deActivatePlay() {
+		_playButton.setEnabled(false);
+	}
 }

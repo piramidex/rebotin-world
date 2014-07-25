@@ -25,7 +25,8 @@ public class MultExecution extends ChangeMemoryExecution {
 			throw new RebotinolExecutionException(
 					"Tried to add while the matrix was empty in the current position!");
 		}
-		house.setMemory(getOldValue().multiply(val2));
+		Fraction res = getOldValue().multiply(val2);
+		house.setMemory(Fraction.getReducedFraction(res.getNumerator(), res.getDenominator()));
 	}
 	
 	/**

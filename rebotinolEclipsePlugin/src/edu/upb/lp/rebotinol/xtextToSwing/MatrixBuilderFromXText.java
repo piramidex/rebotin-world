@@ -26,10 +26,14 @@ public class MatrixBuilderFromXText {
 	
 	public static Fraction buildNumber(Number num) {
 		int numerator, denominator;
+		Fraction result = null;;
 		PositiveNumber pnum = (PositiveNumber) num;
 		if (pnum instanceof edu.upb.lp.reboConf.Fraction) {
-			
+			edu.upb.lp.reboConf.Fraction fr = (edu.upb.lp.reboConf.Fraction) pnum;
+			numerator = fr.getNumerator().getValue();
+			denominator = fr.getDenominator().getValue();
+			result = new Fraction(numerator,denominator);
 		}
-		return null;
+		return result;
 	}
 }

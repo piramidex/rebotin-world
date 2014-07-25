@@ -8,6 +8,7 @@ import org.apache.commons.math3.fraction.Fraction;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.observers.RebotinolProgramObserver;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
@@ -22,7 +23,8 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  * 
  */
-public class RebotinolController {
+//TODO make an inner class to observe the program, and another to observe the executions
+public class RebotinolController implements RebotinolExecutionObserver {
 	private RebotinolHouse _house;
 	private Fraction[][] _initialMatrix;
 	private Fraction[][] _expectedMatrix;
@@ -76,6 +78,7 @@ public class RebotinolController {
 			_expectedMatrix = null;
 		}
 		this._program = program;
+		_program.registerObserver(this);
 		_scheduler = new RebotinolScheduler(this);
 	}
 
@@ -212,11 +215,74 @@ public class RebotinolController {
 		execution.toggleBreakpoint();
 	}
 
-	/**
-	 * Checks if the current program has met a breakpoint.
-	 * @return
-	 */
-	public boolean checkBreakpoint() {
-		return _program.breakpointMet();
+	@Override
+	public void stepPerformed() {
+		//do nothing
+	}
+
+	@Override
+	public void stepsChanged(int _steps) {
+		//do nothing
+	}
+
+	@Override
+	public void stepBackPerformed() {
+		//do nothing
+	}
+
+	@Override
+	public void finished() {
+		_scheduler.stop();
+		for (RebotinolProgramObserver obs : _observers) {
+			obs.deActivatePlay();
+		}
+	}
+
+	@Override
+	public void unfinished() {
+		//Check consistency here
+		for (RebotinolProgramObserver obs : _observers) {
+			obs.activatePlay();
+		}
+	}
+
+	@Override
+	public void setCurrent() {
+		//do nothing
+	}
+
+	@Override
+	public void unsetCurrent() {
+		//do nothing
+	}
+
+	@Override
+	public void skipped() {
+		//do nothing
+	}
+
+	@Override
+	public void unskipped() {
+		//do nothing
+	}
+
+	@Override
+	public void breakpointMet() {
+		_scheduler.stop();
+	}
+
+	@Override
+	public void breakpointSet() {
+		//do nothing
+	}
+
+	@Override
+	public void breakpointRemoved() {
+		//do nothing
+	}
+
+	@Override
+	public void repetitionsChanged(int repetitionsExecuted) {
+		//do nothing
 	}
 }
