@@ -31,8 +31,10 @@ public class RebotinolSimpleRepExample extends RebotinolExample {
 		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new MemoExecution());
 		List<RebotinolInstructionExecution> repExecutions = new ArrayList<RebotinolInstructionExecution>();
-		repExecutions.add(new DerExecution());
-		repExecutions.add(new EscriExecution());
+		for (int i=0; i<3; i++) {
+			repExecutions.add(new DerExecution());
+			repExecutions.add(new EscriExecution());
+		}
 		subExecutions.add(new RepExecution(repExecutions, 3));
 		subExecutions.add(new EnviarMatrizExecution());
 		_program = new RebotinolProgram(subExecutions);
