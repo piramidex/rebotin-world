@@ -28,7 +28,7 @@ public class Problem2_2012_Example extends RebotinolExample {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void buildProgram() {
+	protected void buildProgram() {
 		List<RebotinolInstructionExecution> subExecutions = new ArrayList<RebotinolInstructionExecution>();
 		subExecutions.add(new MemoExecution());
 		subExecutions.add(new DerExecution());
@@ -51,7 +51,7 @@ public class Problem2_2012_Example extends RebotinolExample {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void buildInitialMatrix() {
+	protected void buildInitialMatrix() {
 		_initialMatrix = MatrixUtil.createMatrix(1, 2);
 		_initialMatrix[0][0] = new Fraction(2);
 		_initialMatrix[0][1] = new Fraction(3);
@@ -61,9 +61,17 @@ public class Problem2_2012_Example extends RebotinolExample {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void buildExpectedMatrix() {
+	protected void buildExpectedMatrix() {
 		_initialMatrix = MatrixUtil.createMatrix(1, 2);
 		_initialMatrix[0][0] = new Fraction(3);
 		_initialMatrix[0][1] = new Fraction(2);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void buildExpectedResult() {
+		// do nothing
 	}	
 }

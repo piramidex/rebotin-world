@@ -4,11 +4,16 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
+import org.apache.commons.math3.fraction.Fraction;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -30,7 +35,15 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import edu.upb.lp.reboConf.Configuration;
+import edu.upb.lp.rebotinol.RebotinolProgram;
+import edu.upb.lp.rebotinol.controller.RebotinolController;
+import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
+import edu.upb.lp.rebotinol.view.RebotinolMainFrame;
 import edu.upb.lp.rebotinol.xtextToSwing.FileChecker;
+import edu.upb.lp.rebotinol.xtextToSwing.MatrixBuilderFromXText;
+import edu.upb.lp.rebotinol.xtextToSwing.ProgramBuilderFromXtext;
 
 /**
  * @author Lars Vogel
@@ -47,14 +60,16 @@ import edu.upb.lp.rebotinol.xtextToSwing.FileChecker;
  * @author Alexis Marechal
  */
 public class RebotinLaunchDialog extends TitleAreaDialog {
-	private Text _programTextField;
-	private ControlDecoration _programDecorator;
-	private Text _configurationTextField;
-	private ControlDecoration _configurationDecorator;
+	private static Text _programTextField;
+	private static ControlDecoration _programDecorator;
+	private static Text _configurationTextField;
+	private static ControlDecoration _configurationDecorator;
 	private static String _programPath = "";
 	private static String _configurationPath = "";
-	private String _currentFile = "";
-	private Image _image;
+	private static String _currentFile = "";
+	private static Image _image;
+	private static RebotinolProgram _program;
+	private static Configuration _configuration;
 
 	/**
 	 * Constructor.
@@ -69,7 +84,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	public RebotinLaunchDialog(Shell parentShell, String programPath,
 			String configurationPath) {
 		super(parentShell);
-		//Set program path
+		// Set program path
 		if (programPath != null && !programPath.isEmpty()) {
 			_currentFile = programPath;
 			if (!_programPath.equals(programPath)) {
@@ -77,7 +92,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 				_configurationPath = "";
 			}
 		}
-		//Set configuration path
+		// Set configuration path
 		if (configurationPath != null && !configurationPath.isEmpty()) {
 			_currentFile = configurationPath;
 			if (!_configurationPath.equals(configurationPath)) {
@@ -85,32 +100,31 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 				_programPath = "";
 			}
 		}
-		//Set image
-		URL iconUrl = FileLocator.find(Platform.getBundle("rebotinolEclipsePlugin"),
-				new Path("icons/Rebotin.png"), null);
+		// Set image
+		URL iconUrl = FileLocator.find(Platform
+				.getBundle("rebotinolEclipsePlugin"), new Path(
+				"icons/Rebotin.png"), null);
 		try {
 			_image = new Image(Display.getDefault(), iconUrl.openStream());
 		} catch (IOException e) {
 			// Do nothing, forget about the image
 			_image = null;
 		}
-		//TODO maybe enable help in the future
+		// TODO maybe enable help in the future
 		setHelpAvailable(false);
 	}
-	
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void create() { 
+	public void create() {
 		super.create();
 		setTitle("Inicializaci—n del mundo de rebotin");
 		setMessage(
 				"En esta ventana debes escoger el programa que deseas que rebotin ejecute"
 						+ " (con la estensi—n .rebo) y una configuraci—n inicial (con "
-						+ "la extensi—n .rconf).",
-				IMessageProvider.INFORMATION);
+						+ "la extensi—n .rconf).", IMessageProvider.INFORMATION);
 		if (_image != null) {
 			setTitleImage(_image);
 		}
@@ -228,19 +242,24 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	private boolean checkProgram() {
 		if (_programPath == null || _programPath.isEmpty()) {
-			_programDecorator.setDescriptionText("Busca un archivo con la extensi—n .rebo "
-					+ "utilizando el bot—n de la derecha '...'");
+			_programDecorator
+					.setDescriptionText("Busca un archivo con la extensi—n .rebo "
+							+ "utilizando el bot—n de la derecha '...'");
 			_programDecorator.show();
 			return false;
 		} else {
 			Path path = new Path(_programPath);
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			String error = FileChecker.check(file, FileChecker.Types.REBOTINOL);
+			URI uri = URI.createFileURI(file.getFullPath().toString());
+			ResourceSet rs = new ResourceSetImpl();
+			Resource r = rs.getResource(uri, true);
+			String error = FileChecker.check(r, file.getName(), file.getFileExtension(), FileChecker.Types.REBOTINOL);
 			if (!error.isEmpty()) {
 				_programDecorator.setDescriptionText(error);
 				_programDecorator.show();
 				return false;
 			} else {
+				_program = (RebotinolProgram) r.getContents().get(0);
 				_programDecorator.hide();
 				return true;
 			}
@@ -249,19 +268,24 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	private boolean checkConfiguration() {
 		if (_configurationPath == null || _configurationPath.isEmpty()) {
-			_configurationDecorator.setDescriptionText("Busca un archivo con la extensi—n .rconf "
-					+ "utilizando el bot—n de la derecha '...'");
+			_configurationDecorator
+					.setDescriptionText("Busca un archivo con la extensi—n .rconf "
+							+ "utilizando el bot—n de la derecha '...'");
 			_configurationDecorator.show();
 			return false;
 		} else {
 			Path path = new Path(_configurationPath);
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			String error = FileChecker.check(file, FileChecker.Types.CONFIGURATION);
+			URI uri = URI.createFileURI(file.getFullPath().toString());
+			ResourceSet rs = new ResourceSetImpl();
+			Resource r = rs.getResource(uri, true);
+			String error = FileChecker.check(r, file.getName(), file.getFileExtension(), FileChecker.Types.CONFIGURATION);
 			if (!error.isEmpty()) {
 				_configurationDecorator.setDescriptionText(error);
 				_configurationDecorator.show();
 				return false;
 			} else {
+				_configuration = (Configuration) r.getContents().get(0);
 				_configurationDecorator.hide();
 				return true;
 			}
@@ -281,8 +305,24 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	@Override
 	protected void okPressed() {
-		// TODO launch the SWING interface here
-		super.okPressed();
+		edu.upb.lp.rebotinol.model.executions.RebotinolProgram program;
+		try {
+			program = ProgramBuilderFromXtext.buildProgram(_program);
+			Fraction[][] initialMatrix = MatrixBuilderFromXText
+					.buildInitialMatrix(_configuration);
+			Fraction[][] expectedMatrix = MatrixBuilderFromXText
+					.buildExpectedMatrix(_configuration);
+			Fraction expectedResult = MatrixBuilderFromXText
+					.buildExpectedResult(_configuration);
+			RebotinolHouse house = new RebotinolHouse(initialMatrix);
+			RebotinolController controller = new RebotinolController(house,
+					initialMatrix, expectedMatrix, expectedResult, program);
+			RebotinolMainFrame frame = new RebotinolMainFrame(controller);
+			frame.setVisible(true);
+			super.okPressed();
+		} catch (RebotinolFatalException e) {
+			throw new IllegalStateException(e);
+		}
 	}
 
 	private String extractFileName(String path) {
@@ -315,5 +355,5 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			_image = null;
 		}
 		return super.close();
-	}	
+	}
 }

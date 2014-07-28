@@ -260,7 +260,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 		} catch (Exception e) {
 			throw new IllegalStateException("Could not create program file", e);
 		}
-		close();
+		super.okPressed();
 	}
 
 	/**

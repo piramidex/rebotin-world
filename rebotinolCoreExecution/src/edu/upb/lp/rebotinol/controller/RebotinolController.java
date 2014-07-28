@@ -6,10 +6,11 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
+import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserverImpl;
 import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserverImpl;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -27,6 +28,7 @@ public class RebotinolController {
 	private RebotinolHouse _house;
 	private Fraction[][] _initialMatrix;
 	private Fraction[][] _expectedMatrix;
+	private Fraction _expectedResult;
 	private SequentialInstructionExecution _program;
 	private RebotinolScheduler _scheduler;
 	private List<RebotinolControlObserver> _observers = new ArrayList<RebotinolControlObserver>();
@@ -48,7 +50,7 @@ public class RebotinolController {
 	 */
 	public RebotinolController(RebotinolHouse house,
 			Fraction[][] initialMatrix, Fraction[][] expectedMatrix,
-			SequentialInstructionExecution program)
+			Fraction expectedResult, RebotinolProgram program)
 			throws RebotinolFatalException {
 		// Check inputs
 		if (house == null) {
@@ -77,6 +79,7 @@ public class RebotinolController {
 		} else {
 			_expectedMatrix = null;
 		}
+		this._expectedResult = expectedResult;
 		this._program = program;
 		_program.registerObserver(_pObs);
 		_scheduler = new RebotinolScheduler(this);
@@ -90,24 +93,6 @@ public class RebotinolController {
 	 */
 	public void registerObserver(RebotinolControlObserver observer) {
 		_observers.add(observer);
-	}
-
-	/**
-	 * A constructor without expected matrix
-	 * 
-	 * @param house
-	 *            The rebotinol house on which we will be working
-	 * @param initialMatrix
-	 *            The initial matrix
-	 * @param program
-	 *            The program to be executed.
-	 * @throws RebotinolFatalException
-	 *             If something very bad happened
-	 */
-	public RebotinolController(RebotinolHouse house,
-			Fraction[][] initialMatrix, SequentialInstructionExecution program)
-			throws RebotinolFatalException {
-		this(house, initialMatrix, null, program);
 	}
 
 	/**
@@ -127,10 +112,18 @@ public class RebotinolController {
 
 	/**
 	 * @return A clone of the expected matrix after the execution of the
-	 *         program. This attribute is optional
+	 *         program. May be null.
 	 */
 	public Fraction[][] getExpectedMatrix() {
 		return MatrixUtil.cloneMatrix(_expectedMatrix);
+	}
+
+	/**
+	 * @return The expected result after the execution of the program. May be
+	 *         null.
+	 */
+	public Fraction getExpectedResult() {
+		return _expectedResult;
 	}
 
 	/**
@@ -236,13 +229,13 @@ public class RebotinolController {
 				}
 			}
 		}
-		
+
 		@Override
 		public void breakpointMet() {
 			_scheduler.stop();
 		}
 	}
-	
+
 	/**
 	 * @return true if the current execution has a breakpoint
 	 */

@@ -23,9 +23,10 @@ public abstract class RebotinolExample {
 	protected RebotinolProgram _program;
 	protected Fraction[][] _initialMatrix;
 	protected Fraction[][] _expectedMatrix;
+	protected Fraction _expectedResult;
 
 	/**
-	 * @return the _house
+	 * @return the house
 	 * @throws RebotinolFatalException
 	 *             If something went really bad
 	 */
@@ -37,7 +38,7 @@ public abstract class RebotinolExample {
 	}
 
 	/**
-	 * @return the _controller
+	 * @return the controller
 	 * @throws RebotinolFatalException
 	 *             If something went really bad
 	 */
@@ -49,7 +50,7 @@ public abstract class RebotinolExample {
 	}
 
 	/**
-	 * @return the _program
+	 * @return the program
 	 */
 	public RebotinolProgram getProgram() {
 		if (_program == null) {
@@ -59,7 +60,7 @@ public abstract class RebotinolExample {
 	}
 
 	/**
-	 * @return the _initialMatrix
+	 * @return the initial matrix
 	 */
 	public Fraction[][] getInitialMatrix() {
 		if (_initialMatrix == null) {
@@ -69,7 +70,7 @@ public abstract class RebotinolExample {
 	}
 
 	/**
-	 * @return the _expectedMatrix
+	 * @return the expected matrix
 	 */
 	public Fraction[][] getExpectedMatrix() {
 		if (_expectedMatrix == null) {
@@ -78,6 +79,16 @@ public abstract class RebotinolExample {
 		return _expectedMatrix;
 	}
 
+	/**
+	 * @return the expected result
+	 */
+	public Fraction getExpectedResult() {
+		if (_expectedResult == null) {
+			buildExpectedResult();
+		}
+		return _expectedResult;
+	}
+	
 	/**
 	 * Build the house
 	 * 
@@ -96,7 +107,7 @@ public abstract class RebotinolExample {
 	 */
 	protected void buildController() throws RebotinolFatalException {
 		_controller = new RebotinolController(getHouse(), getInitialMatrix(),
-				getExpectedMatrix(), getProgram());
+				getExpectedMatrix(), getExpectedResult(), getProgram());
 	}
 
 	/**
@@ -113,4 +124,9 @@ public abstract class RebotinolExample {
 	 * Build the expected matrix
 	 */
 	protected abstract void buildExpectedMatrix();
+	
+	/**
+	 * Build the expected result
+	 */
+	protected abstract void buildExpectedResult();
 }

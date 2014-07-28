@@ -73,9 +73,9 @@ public class ProgramBuilderFromXtext {
 	 * @throws RebotinolFatalException
 	 *             If something went very bad
 	 */
-	public static SequentialInstructionExecution buildProgram(
+	public static edu.upb.lp.rebotinol.model.executions.RebotinolProgram buildProgram(
 			RebotinolProgram prog) throws RebotinolFatalException {
-		return (SequentialInstructionExecution) builder.build(prog);
+		return (edu.upb.lp.rebotinol.model.executions.RebotinolProgram) builder.build(prog);
 	}
 
 	/**

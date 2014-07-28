@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: rebotinolSwingView
+Bundle-SymbolicName: rebotinolSwingView;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: edu.upb.lp.rebotinol.view,
+ edu.upb.lp.rebotinol.view.automaticTests,
+ edu.upb.lp.rebotinol.view.automaticTests.program.executions,
+ edu.upb.lp.rebotinol.view.automaticTests.world,
+ edu.upb.lp.rebotinol.view.automaticTests.world.matrix,
+ edu.upb.lp.rebotinol.view.manualTests,
+ edu.upb.lp.rebotinol.view.manualTests.program.buttons,
+ edu.upb.lp.rebotinol.view.program,
+ edu.upb.lp.rebotinol.view.program.buttons,
+ edu.upb.lp.rebotinol.view.program.executions,
+ edu.upb.lp.rebotinol.view.world
+Bundle-Vendor: Universidad Privada Boliviana
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: rebotinolCoreExecution;bundle-version="1.0.0"

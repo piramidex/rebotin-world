@@ -318,7 +318,7 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		} catch (CoreException e) {
 			throw new IllegalStateException(e);
 		}
-		close();
+		super.okPressed();
 	}
 
 	/**
