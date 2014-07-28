@@ -24,7 +24,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	private int sizeV;
 	private JPanel[][] whitePanels;
 	private JPanel[][] blackPanels;
-	private JLabel[][] numbers;
+	
 
 	/**
 	 * 
@@ -37,7 +37,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		sizeV = house.getSizeV();
 		whitePanels = new JPanel[sizeV][sizeH];
 		blackPanels = new JPanel[sizeV][sizeH];
-		numbers = new JLabel[sizeV][sizeH];
+		//numbers = new JLabel[sizeV][sizeH];
 		
 		this.house = house;
 		createContentPane();
@@ -48,15 +48,10 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		setLayout(null);
 		for (int j = 0; j < sizeV; j++) {
 			for (int i = 0; i < sizeH; i++) {
-				JPanel whitepanel = new JPanel();
-				whitepanel.setLayout(null);
 				//whitepanel.setLocation((75 + (45 * i)), (75 + (45 * j)));
-				whitepanel.setLocation(5, 5);
-				whitepanel.setBackground(Color.WHITE);
-				whitepanel.setSize(40, 40);
-				whitePanels[j][i] = whitepanel;
+				whitePanels[j][i] = numberDisplay(j, i,house.getMatrix()[j][i]);
 				
-				Fraction fr = house.getMatrix()[j][i];
+				/*Fraction fr = house.getMatrix()[j][i];
 				String num= fr == null ? "" : fr.toString(); 
 
 				numbers[j][i] = new JLabel(num);
@@ -64,7 +59,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				numbers[j][i].setSize(40, 40);
 				numbers[j][i].setHorizontalAlignment(0);
 				numbers[j][i].setVerticalAlignment(0);
-				whitepanel.add(numbers[j][i]);
+				whitepanel.add(numbers[j][i]);*/
 
 				JPanel blackpanel = new JPanel();
 				blackpanel.setLayout(null);
@@ -108,7 +103,40 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 			}
 		}
 	}
-
+	
+	private JPanel numberDisplay(int j, int i, Fraction frac){
+		JPanel numberpanel = new JPanel();
+		numberpanel.setLayout(null);
+		numberpanel.setLocation(5, 5);
+		numberpanel.setBackground(Color.WHITE);
+		numberpanel.setSize(40, 40);
+		if(frac == null){
+			JLabel numlabel = new JLabel("");
+			numlabel.setLocation(0, 0);
+			numlabel.setSize(40, 40);
+			numlabel.setHorizontalAlignment(0);
+			numlabel.setVerticalAlignment(0);
+			numberpanel.add(numlabel);
+		}else if(frac.getDenominator() == 1){
+			String num = frac.toString();
+			JLabel numlabel = new JLabel(num);
+			numlabel.setLocation(0, 0);
+			numlabel.setSize(40, 40);
+			numlabel.setHorizontalAlignment(0);
+			numlabel.setVerticalAlignment(0);
+			numberpanel.add(numlabel);
+		}else{
+			String num = frac.toString();
+			JLabel numlabel = new JLabel(num);
+			numlabel.setLocation(0, 0);
+			numlabel.setSize(40, 40);
+			numlabel.setHorizontalAlignment(0);
+			numlabel.setVerticalAlignment(0);
+			numberpanel.add(numlabel);
+		}
+		return numberpanel;
+	}
+	
 	@Override
 	public void mailChanged(Mail mail) {
 		//do nothing
@@ -121,8 +149,10 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void matrixChanged(int h, int v, Fraction newValue) {
-		String nV = newValue == null ? "" : newValue.toString();
-		numbers[v][h].setText(nV);
+		/*String nV = newValue == null ? "" : newValue.toString();
+		numbers[v][h].setText(nV);*/
+		whitePanels[h][v] = numberDisplay(h,v,newValue);
+		whitePanels[h][v].repaint();
 	}
 
 	@Override
