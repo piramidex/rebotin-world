@@ -49,8 +49,6 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		for (int j = 0; j < sizeV; j++) {
 			for (int i = 0; i < sizeH; i++) {
 				//whitepanel.setLocation((75 + (45 * i)), (75 + (45 * j)));
-				whitePanels[j][i] = numberDisplay(j, i,house.getMatrix()[j][i]);
-				
 				/*Fraction fr = house.getMatrix()[j][i];
 				String num= fr == null ? "" : fr.toString(); 
 
@@ -60,7 +58,13 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				numbers[j][i].setHorizontalAlignment(0);
 				numbers[j][i].setVerticalAlignment(0);
 				whitepanel.add(numbers[j][i]);*/
-
+				JPanel whitepanel = new JPanel();
+				whitepanel.setLayout(null);
+				whitepanel.setLocation(5, 5);
+				whitepanel.setBackground(Color.WHITE);
+				whitepanel.setSize(40, 40);
+				whitePanels[j][i] = whitepanel;
+				whitePanels[j][i].add(numberDisplay(j, i,house.getMatrix()[j][i]));
 				JPanel blackpanel = new JPanel();
 				blackpanel.setLayout(null);
 				blackpanel.setLocation((50 + (45 * i)), (50 + (45 * j)));
@@ -88,8 +92,8 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void positionChanged(int previousH, int previousV, int h, int v) {
-		whitePanels[previousV][previousH].repaint();
-		whitePanels[v][h].repaint();
+		//whitePanels[previousV][previousH].repaint();
+		//whitePanels[v][h].repaint();
 		blackPanels[previousV][previousH].setBackground(Color.BLACK);
 		blackPanels[previousV][previousH].repaint();
 		blackPanels[v][h].setBackground(Color.RED);
@@ -104,19 +108,19 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		}
 	}
 	
-	private JPanel numberDisplay(int j, int i, Fraction frac){
-		JPanel numberpanel = new JPanel();
-		numberpanel.setLayout(null);
-		numberpanel.setLocation(5, 5);
-		numberpanel.setBackground(Color.WHITE);
-		numberpanel.setSize(40, 40);
+	private JPanel numberDisplay(int v, int h, Fraction frac){
+		JPanel numbers = new JPanel();
+		numbers.setLayout(null);
+		numbers.setSize(40,40);
+		numbers.setLocation(0, 0);
+		numbers.setBackground(Color.WHITE);
 		if(frac == null){
 			JLabel numlabel = new JLabel("");
 			numlabel.setLocation(0, 0);
 			numlabel.setSize(40, 40);
 			numlabel.setHorizontalAlignment(0);
 			numlabel.setVerticalAlignment(0);
-			numberpanel.add(numlabel);
+			whitePanels[v][h].add(numlabel);
 		}else if(frac.getDenominator() == 1){
 			String num = frac.toString();
 			JLabel numlabel = new JLabel(num);
@@ -124,17 +128,31 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 			numlabel.setSize(40, 40);
 			numlabel.setHorizontalAlignment(0);
 			numlabel.setVerticalAlignment(0);
-			numberpanel.add(numlabel);
+			numbers.add(numlabel);
 		}else{
-			String num = frac.toString();
-			JLabel numlabel = new JLabel(num);
-			numlabel.setLocation(0, 0);
-			numlabel.setSize(40, 40);
-			numlabel.setHorizontalAlignment(0);
-			numlabel.setVerticalAlignment(0);
-			numberpanel.add(numlabel);
+			int den =frac.getDenominator();
+			JLabel denominatorlabel = new JLabel(den+"");
+			denominatorlabel.setLocation(0, 20);
+			denominatorlabel.setSize(40, 20);
+			denominatorlabel.setHorizontalAlignment(0);
+			denominatorlabel.setVerticalAlignment(0);
+			numbers.add(denominatorlabel);
+			
+			int num = frac.getNumerator();	
+			JLabel numeratorlabel = new JLabel(num+"");
+			numeratorlabel.setLocation(0, 0);;
+			numeratorlabel.setSize(40, 20);
+			numeratorlabel.setHorizontalAlignment(0);
+			numeratorlabel.setVerticalAlignment(0);
+			numbers.add(numeratorlabel);
+			
+			JPanel division = new JPanel();
+			division.setSize(30, 2);
+			division.setLocation(5, 19);
+			division.setBackground(Color.BLACK);
+			numbers.add(division);
 		}
-		return numberpanel;
+		return numbers;
 	}
 	
 	@Override
@@ -149,10 +167,12 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void matrixChanged(int h, int v, Fraction newValue) {
+		whitePanels[v][h].removeAll();
 		/*String nV = newValue == null ? "" : newValue.toString();
 		numbers[v][h].setText(nV);*/
-		whitePanels[h][v] = numberDisplay(h,v,newValue);
-		whitePanels[h][v].repaint();
+		whitePanels[v][h].add(numberDisplay(v,h,newValue));
+		whitePanels[v][h].updateUI();
+		blackPanels[v][h].updateUI();
 	}
 
 	@Override

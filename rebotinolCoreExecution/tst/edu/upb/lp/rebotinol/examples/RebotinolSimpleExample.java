@@ -42,6 +42,9 @@ public class RebotinolSimpleExample extends RebotinolExample {
 	protected void buildInitialMatrix() {
 		_initialMatrix = MatrixUtil.createMatrix(5, 5);
 		_initialMatrix[0][0] = new Fraction(2,3);
+		_initialMatrix[2][4] = new Fraction(6,3);
+		_initialMatrix[1][3] = new Fraction(4,5);
+		_initialMatrix[4][4] = new Fraction(2,9);
 	}
 
 	/**
