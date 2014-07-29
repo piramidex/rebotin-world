@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import org.apache.commons.math3.fraction.Fraction;
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
@@ -60,6 +61,8 @@ import edu.upb.lp.rebotinol.xtextToSwing.ProgramBuilderFromXtext;
  * @author Alexis Marechal
  */
 public class RebotinLaunchDialog extends TitleAreaDialog {
+	static Logger log = Logger.getLogger("RebotinDebug");
+	
 	private static Text _programTextField;
 	private static ControlDecoration _programDecorator;
 	private static Text _configurationTextField;
@@ -84,6 +87,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	public RebotinLaunchDialog(Shell parentShell, String programPath,
 			String configurationPath) {
 		super(parentShell);
+		log.info("Creating launch rebotin dialog");
 		// Set program path
 		if (programPath != null && !programPath.isEmpty()) {
 			_currentFile = programPath;
@@ -107,6 +111,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		try {
 			_image = new Image(Display.getDefault(), iconUrl.openStream());
 		} catch (IOException e) {
+			log.error("Failed to load rebotin image");
 			// Do nothing, forget about the image
 			_image = null;
 		}
@@ -305,6 +310,9 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	@Override
 	protected void okPressed() {
+		log.debug("User pressed ok in the launch rebotin dialog. "
+				+ ". His program path is: "	+ _programTextField.getText()
+				+ ". His configuration path is: " + _configurationTextField.getText());
 		edu.upb.lp.rebotinol.model.executions.RebotinolProgram program;
 		try {
 			program = ProgramBuilderFromXtext.buildProgram(_program);
@@ -321,6 +329,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			frame.setVisible(true);
 			super.okPressed();
 		} catch (RebotinolFatalException e) {
+			log.fatal("Exception while executing rebotin",e);
 			throw new IllegalStateException(e);
 		}
 	}
@@ -350,6 +359,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	 */
 	@Override
 	public boolean close() {
+		log.debug("closing launch rebotin dialog");
 		if (_image != null) {
 			_image.dispose();
 			_image = null;

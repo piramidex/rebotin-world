@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -46,6 +47,8 @@ import org.eclipse.swt.widgets.Text;
  * @author Alexis Marechal
  */
 public class CreateProgramDialog extends TitleAreaDialog {
+	static Logger log = Logger.getLogger("RebotinDebug");
+	
 	private Text _projectTextField;
 	private ControlDecoration _projectDecorator;
 	private Text _programTextField;
@@ -60,6 +63,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 	 */
 	public CreateProgramDialog(Shell parentShell) {
 		super(parentShell);
+		log.info("Creating create program dialog");
 		// Set image
 		URL iconUrl = FileLocator.find(Platform
 				.getBundle("rebotinolEclipsePlugin"), new Path(
@@ -67,6 +71,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 		try {
 			_image = new Image(Display.getDefault(), iconUrl.openStream());
 		} catch (IOException e) {
+			log.error("Failed to load rebotin image");
 			// Do nothing, forget about the image
 			_image = null;
 		}
@@ -243,6 +248,8 @@ public class CreateProgramDialog extends TitleAreaDialog {
 
 	@Override
 	protected void okPressed() {
+		log.debug("User pressed ok in the create program dialog. His filename is: "
+				+ _programTextField.getText());
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(_projectTextField.getText());
 		// create file
@@ -265,6 +272,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 	 */
 	@Override
 	public boolean close() {
+		log.debug("closing create program dialog");
 		if (_image != null) {
 			_image.dispose();
 			_image = null;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.math3.fraction.Fraction;
+import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.EObject;
 
 import edu.upb.lp.rebotinol.ComplexInstruction;
@@ -61,6 +62,8 @@ import edu.upb.lp.rebotinol.util.RebotinolSwitch;
  * 
  */
 public class ProgramBuilderFromXtext {
+	static Logger log = Logger.getLogger("RebotinDebug");
+	
 	private static InnerBuilder builder = new InnerBuilder();
 	private static NumbersBuilder numbers = new NumbersBuilder();
 
@@ -75,6 +78,7 @@ public class ProgramBuilderFromXtext {
 	 */
 	public static edu.upb.lp.rebotinol.model.executions.RebotinolProgram buildProgram(
 			RebotinolProgram prog) throws RebotinolFatalException {
+		log.debug("Building program");
 		return (edu.upb.lp.rebotinol.model.executions.RebotinolProgram) builder.build(prog);
 	}
 
