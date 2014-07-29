@@ -32,6 +32,7 @@ public class EnviarExecution extends RebotinolInstructionExecution {
 					"Tried to send an empty mail!");
 		}
 		house.setMail(mail);
+		finish();
 	}
 
 	@Override

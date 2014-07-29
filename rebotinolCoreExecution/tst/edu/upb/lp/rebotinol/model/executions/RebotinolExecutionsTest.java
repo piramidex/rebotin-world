@@ -142,7 +142,8 @@ public class RebotinolExecutionsTest {
 
 	@Test
 	public void testMemoryAndEscri() throws RebotinolExecutionException,
-			RebotinolFlowException {
+			RebotinolFlowException, RebotinolFatalException {
+		_house.writeInMatrix(0,0,zero);
 		InverExecution inver = new InverExecution();
 		MemoExecution memo = new MemoExecution();
 		MultExecution mult = new MultExecution();
@@ -185,7 +186,39 @@ public class RebotinolExecutionsTest {
 		Assert.assertTrue(sumak.isFinished());
 		Assert.assertTrue(signo.isFinished());
 		Assert.assertTrue(escri.isFinished());
-
+		//Rollback
+		inver.stepBack(_house);
+		Assert.assertEquals(mtwentyseven, _house.getMemory());
+		signo.stepBack(_house);
+		Assert.assertEquals(twentyseven, _house.getMemory());
+		mult.stepBack(_house);
+		Assert.assertEquals(nine, _house.getMemory());
+		multk.stepBack(_house);
+		Assert.assertEquals(three, _house.getCurrentMatrixValue());
+		escri.stepBack(_house);
+		Assert.assertEquals(three, _house.getMemory());
+		suma.stepBack(_house);
+		Assert.assertEquals(three, _house.getMemory());
+		sumak.stepBack(_house);
+		Assert.assertEquals(zero, _house.getMemory());
+		memo.stepBack(_house);
+		//Not finished, not started
+		Assert.assertFalse(inver.isStarted());
+		Assert.assertFalse(memo.isStarted());
+		Assert.assertFalse(mult.isStarted());
+		Assert.assertFalse(multk.isStarted());
+		Assert.assertFalse(suma.isStarted());
+		Assert.assertFalse(sumak.isStarted());
+		Assert.assertFalse(signo.isStarted());
+		Assert.assertFalse(escri.isStarted());
+		Assert.assertFalse(inver.isFinished());
+		Assert.assertFalse(memo.isFinished());
+		Assert.assertFalse(mult.isFinished());
+		Assert.assertFalse(multk.isFinished());
+		Assert.assertFalse(suma.isFinished());
+		Assert.assertFalse(sumak.isFinished());
+		Assert.assertFalse(signo.isFinished());
+		Assert.assertFalse(escri.isFinished());
 	}
 
 	@Test(expected = RebotinolExecutionException.class)
@@ -233,6 +266,7 @@ public class RebotinolExecutionsTest {
 	@Test
 	public void testEnviarAndEnviarMatriz() throws RebotinolExecutionException,
 			RebotinolFlowException {
+		_house.writeInMatrix(0,0,zero);
 		MemoExecution memo = new MemoExecution();
 		EnviarExecution enviar = new EnviarExecution();
 		EnviarMatrizExecution enviarMatriz = new EnviarMatrizExecution();
@@ -248,6 +282,7 @@ public class RebotinolExecutionsTest {
 	@Test
 	public void testConditionalsPositive() throws RebotinolExecutionException,
 			RebotinolFlowException, RebotinolFatalException {
+		_house.writeInMatrix(0,0,zero);
 		_house.writeInMatrix(1,0,three);
 		_house.writeInMatrix(2,0,six);
 		// Memo, memo: 0
@@ -305,16 +340,29 @@ public class RebotinolExecutionsTest {
 		while (!program.isFinished()) {
 			program.step(_house);
 		}
+		Assert.assertTrue(program.isStarted());
+		Assert.assertTrue(program.isFinished());
+		for (RebotinolInstructionExecution e : executions) {
+			Assert.assertTrue(e.isStarted());
+			Assert.assertTrue(e.isFinished());
+		}
 		Assert.assertEquals(new Fraction(8), _house.getMemory());
 		while(program.isStarted()) {
 			program.stepBack(_house);
 		}
 		Assert.assertNull(_house.getMemory());
+		Assert.assertFalse(program.isStarted());
+		Assert.assertFalse(program.isFinished());
+		for (RebotinolInstructionExecution e : executions) {
+			Assert.assertFalse(e.isStarted());
+			Assert.assertFalse(e.isFinished());
+		}
 	}
 	
 	@Test
 	public void testConditionalsNegative() throws RebotinolExecutionException,
 			RebotinolFlowException, RebotinolFatalException {
+		_house.writeInMatrix(0,0,zero);
 		_house.writeInMatrix(1,0,one);
 		// Memo, memo: 0
 		MemoExecution memo = new MemoExecution();
@@ -372,15 +420,28 @@ public class RebotinolExecutionsTest {
 			program.step(_house);
 		}
 		Assert.assertEquals(zero, _house.getMemory());
+		Assert.assertTrue(program.isStarted());
+		Assert.assertTrue(program.isFinished());
+		for (RebotinolInstructionExecution e : executions) {
+			Assert.assertTrue(e.isStarted());
+			Assert.assertTrue(e.isFinished());
+		}
 		while(program.isStarted()) {
 			program.stepBack(_house);
 		}
 		Assert.assertNull(_house.getMemory());
+		Assert.assertFalse(program.isStarted());
+		Assert.assertFalse(program.isFinished());
+		for (RebotinolInstructionExecution e : executions) {
+			Assert.assertFalse(e.isStarted());
+			Assert.assertFalse(e.isFinished());
+		}
 	}
 	
 	@Test
 	public void testRep() throws RebotinolExecutionException, RebotinolFlowException, RebotinolFatalException {
 		//Matrix: 0, 1, 2, 3, result: 6
+		_house.writeInMatrix(0,0,zero);
 		_house.writeInMatrix(1,0,one);
 		_house.writeInMatrix(2,0,two);
 		_house.writeInMatrix(3,0,three);
@@ -400,11 +461,22 @@ public class RebotinolExecutionsTest {
 			program.step(_house);
 		}
 		Assert.assertEquals(six, _house.getMemory());
-		
+		Assert.assertTrue(program.isStarted());
+		Assert.assertTrue(program.isFinished());
+		for (RebotinolInstructionExecution e : executions) {
+			Assert.assertTrue(e.isStarted());
+			Assert.assertTrue(e.isFinished());
+		}
 		while(program.isStarted()) {
 			program.stepBack(_house);
 		}
 		Assert.assertNull(_house.getMemory());
+		Assert.assertFalse(program.isStarted());
+		Assert.assertFalse(program.isFinished());
+		for (RebotinolInstructionExecution e : executions) {
+			Assert.assertFalse(e.isStarted());
+			Assert.assertFalse(e.isFinished());
+		}
 	}
 	
 	@Test
