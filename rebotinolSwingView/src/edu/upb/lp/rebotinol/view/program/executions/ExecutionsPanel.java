@@ -160,6 +160,7 @@ public class ExecutionsPanel extends JPanel {
 				else {
 					subView = new SimpleInstructionView(instr, view, _controller); 
 				}
+				subViews.add(subView);
 
 				//view.addNestedInstructionView(subView);
 			}

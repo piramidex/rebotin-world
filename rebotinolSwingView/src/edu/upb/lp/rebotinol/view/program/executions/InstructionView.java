@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
+import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
 
 public abstract class InstructionView extends JPanel implements RebotinolExecutionObserver {
@@ -28,6 +29,7 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 			RebotinolController controller) {
 		super();
 		_instrText = ExecutionsNameGetter.getName(instr);
+		if (instr instanceof SequentialInstructionExecution) _instrText += " {";
 		_indent = 0;
 		_runnable = true;
 		_executions.add(instr);
@@ -41,6 +43,7 @@ public abstract class InstructionView extends JPanel implements RebotinolExecuti
 			RebotinolController controller) {
 		super();
 		_instrText = ExecutionsNameGetter.getName(instr);
+		if (instr instanceof SequentialInstructionExecution) _instrText += " {";
 		_indent = containerInstr.getIndent() + 1;
 		_runnable = true;
 		_executions.add(instr);

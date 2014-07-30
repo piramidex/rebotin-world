@@ -35,7 +35,7 @@ public class RebotinolSimpleRepExample extends RebotinolExample {
 			repExecutions.add(new DerExecution());
 			repExecutions.add(new EscriExecution());
 		}
-		subExecutions.add(new RepExecution(repExecutions, 3));
+		subExecutions.add(new RepExecution(repExecutions, 2));
 		subExecutions.add(new EnviarMatrizExecution());
 		_program = new RebotinolProgram(subExecutions);
 	}
