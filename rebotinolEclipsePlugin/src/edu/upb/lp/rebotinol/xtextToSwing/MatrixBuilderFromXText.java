@@ -1,7 +1,6 @@
 package edu.upb.lp.rebotinol.xtextToSwing;
 
 import org.apache.commons.math3.fraction.Fraction;
-import org.apache.log4j.Logger;
 
 import edu.upb.lp.reboConf.Configuration;
 import edu.upb.lp.reboConf.util.ReboConfSwitch;
@@ -13,9 +12,7 @@ import edu.upb.lp.reboConf.util.ReboConfSwitch;
  * @author Alexis Marechal
  * 
  */
-public class MatrixBuilderFromXText {
-	static Logger log = Logger.getLogger("RebotinDebug");
-	
+public class MatrixBuilderFromXText {	
 	private static NumberBuilder _nBuilder = new NumberBuilder();
 
 	/**
@@ -27,7 +24,6 @@ public class MatrixBuilderFromXText {
 	 * @return The initial matrix in conf as an array of {@link Fraction}s
 	 */
 	public static Fraction[][] buildInitialMatrix(Configuration conf) {
-		log.debug("Building initial matrix");
 		return buildMatrix(conf.getInitial());
 	}
 
@@ -41,13 +37,11 @@ public class MatrixBuilderFromXText {
 	 *         null if the expected matrix was null.
 	 */
 	public static Fraction[][] buildExpectedMatrix(Configuration conf) {
-		log.debug("Building expected matrix");
 		return buildMatrix(conf.getExpected());
 	}
 
 	private static Fraction[][] buildMatrix(edu.upb.lp.reboConf.Matrix m) {
 		if (m == null) {
-			log.debug("Built null matrix");
 			return null;
 		}
 		int lines = m.getLines().size();
@@ -62,7 +56,6 @@ public class MatrixBuilderFromXText {
 			}
 			linecounter++;
 		}
-		log.debug("Built non-null matrix");
 		return result;
 	}
 
@@ -76,7 +69,6 @@ public class MatrixBuilderFromXText {
 	 *         expected result was null
 	 */
 	public static Fraction buildExpectedResult(Configuration conf) {
-		log.debug("Building initial result");
 		if (conf.getMail() == null) {
 			return null;
 		} else {
@@ -93,7 +85,6 @@ public class MatrixBuilderFromXText {
 		public Fraction caseFraction(edu.upb.lp.reboConf.Fraction fr) {
 			int numerator = fr.getNumerator().getValue();
 			int denominator = fr.getDenominator().getValue();
-			log.debug("Built non-null number");
 			return new Fraction(numerator, denominator);
 		}
 
@@ -101,25 +92,21 @@ public class MatrixBuilderFromXText {
 		public Fraction caseNFraction(edu.upb.lp.reboConf.NFraction fr) {
 			int numerator = fr.getNumerator().getValue();
 			int denominator = fr.getDenominator().getValue();
-			log.debug("Built non-null number");
 			return new Fraction(-numerator, denominator);
 		}
 
 		@Override
 		public Fraction caseInteger(edu.upb.lp.reboConf.Integer i) {
-			log.debug("Built non-null number");
 			return new Fraction(i.getValue());
 		}
 
 		@Override
 		public Fraction caseNInteger(edu.upb.lp.reboConf.NInteger i) {
-			log.debug("Built non-null number");
 			return new Fraction(-i.getValue());
 		}
 		
 		@Override
 		public Fraction caseEmpty(edu.upb.lp.reboConf.Empty e) {
-			log.debug("Built null number");
 			return null;
 		}
 	}

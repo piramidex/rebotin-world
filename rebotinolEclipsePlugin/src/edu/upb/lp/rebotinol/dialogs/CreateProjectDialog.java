@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -52,8 +51,6 @@ import org.eclipse.ui.part.FileEditorInput;
  * @author Alexis Marechal
  */
 public class CreateProjectDialog extends TitleAreaDialog {
-	static Logger log = Logger.getLogger("RebotinDebug");
-
 	private Text _projectTextField;
 	private ControlDecoration _projectDecorator;
 	private Text _programTextField;
@@ -70,7 +67,6 @@ public class CreateProjectDialog extends TitleAreaDialog {
 	 */
 	public CreateProjectDialog(Shell parentShell) {
 		super(parentShell);
-		log.info("Creating create project dialog");
 		// Set image
 		URL iconUrl = FileLocator.find(Platform
 				.getBundle("rebotinolEclipsePlugin"), new Path(
@@ -78,7 +74,6 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		try {
 			_image = new Image(Display.getDefault(), iconUrl.openStream());
 		} catch (IOException e) {
-			log.error("Failed to load rebotin image");
 			// Do nothing, forget about the image
 			_image = null;
 		}
@@ -282,20 +277,13 @@ public class CreateProjectDialog extends TitleAreaDialog {
 
 	@Override
 	protected void okPressed() {
-		log.debug("User pressed ok in the create configuration dialog. His project name is: "
-				+ _projectTextField.getText()
-				+ ". His program name is: "	+ _programTextField.getText()
-				+ ". His configuration name is: " + _configurationTextField.getText());
 		IProgressMonitor progressMonitor = new NullProgressMonitor();
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(_projectTextField.getText());
 		try {
-			log.debug("Creating project " + _projectTextField.getText());
 			project.create(progressMonitor);
-			log.debug("Opening project " + _projectTextField.getText());
 			project.open(progressMonitor);
 			// Add xtext nature
-			log.debug("Adding XText nature to project " + _projectTextField.getText());
 			IProjectDescription description = project.getDescription();
 			description
 					.setNatureIds(new String[] { "org.eclipse.xtext.ui.shared.xtextNature" });
@@ -304,7 +292,6 @@ public class CreateProjectDialog extends TitleAreaDialog {
 			// create files
 			URL url;
 			try {
-				log.debug("Creating configuration file " + _configurationTextField.getText());
 				url = new URL(
 						"platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
 				InputStream inputStream = url.openConnection().getInputStream();
@@ -313,13 +300,10 @@ public class CreateProjectDialog extends TitleAreaDialog {
 				newFile.create(inputStream, true, null);
 				openFile(newFile);
 			} catch (Exception e) {
-				log.fatal("Exception while creating file " + _configurationTextField.getText() + 
-						"int project " + _projectTextField.getText(), e);
 				throw new IllegalStateException(
 						"Could not create configuration file", e);
 			}
 			try {
-				log.debug("Creating program file " + _programTextField.getText());
 				url = new URL(
 						"platform:/plugin/rebotinolEclipsePlugin/res/p.rebo");
 				InputStream inputStream = url.openConnection().getInputStream();
@@ -328,8 +312,6 @@ public class CreateProjectDialog extends TitleAreaDialog {
 				newFile.create(inputStream, true, null);
 				openFile(newFile);
 			} catch (Exception e) {
-				log.fatal("Exception while creating file " + _programTextField.getText() + 
-						"int project " + _projectTextField.getText(), e);
 				throw new IllegalStateException(
 						"Could not create program file", e);
 			}
@@ -344,7 +326,6 @@ public class CreateProjectDialog extends TitleAreaDialog {
 	 */
 	@Override
 	public boolean close() {
-		log.debug("closing create project dialog");
 		if (_image != null) {
 			_image.dispose();
 			_image = null;

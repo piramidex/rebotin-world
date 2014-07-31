@@ -3,13 +3,15 @@ Bundle-ManifestVersion: 2
 Bundle-Name: rebotinolCoreExecution
 Bundle-SymbolicName: rebotinolCoreExecution;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: lib/commons-math3-3.2.jar,
- lib/log4j-1.2.17.jar
+Bundle-ClassPath: .,
+ lib/commons-math3-3.2.jar
 Export-Package: edu.upb.lp.rebotinol.controller,
  edu.upb.lp.rebotinol.examples,
  edu.upb.lp.rebotinol.model.executions,
  edu.upb.lp.rebotinol.model.house,
  edu.upb.lp.rebotinol.observers,
- edu.upb.lp.rebotinol.util
+ edu.upb.lp.rebotinol.util,
+ org.apache.commons.math3.fraction
 Bundle-Vendor: Universidad Privada Boliviana
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.junit;bundle-version="4.11.0"

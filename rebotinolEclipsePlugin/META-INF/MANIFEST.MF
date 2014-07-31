@@ -5,20 +5,22 @@ Bundle-SymbolicName: rebotinolEclipsePlugin;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Universidad Privada Boliviana
 Require-Bundle: org.eclipse.ui,
- rebotinol;bundle-version="1.0.0",
- reboConf;bundle-version="1.0.0",
+ rebotinol,
+ reboConf,
  org.eclipse.ui.workbench,
  org.eclipse.ui.ide,
- org.eclipse.core.runtime;bundle-version="3.9.0",
- org.eclipse.core.resources;bundle-version="3.8.101",
- rebotinol.ui;bundle-version="1.0.0",
- reboConf.ui;bundle-version="1.0.0",
- org.eclipse.ui.navigator;bundle-version="3.5.300",
- org.eclipse.ui.navigator.resources;bundle-version="3.4.500",
- rebotinolCoreExecution;bundle-version="1.0.0",
- rebotinolSwingView;bundle-version="1.0.0"
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ rebotinol.ui,
+ reboConf.ui,
+ org.eclipse.ui.navigator,
+ org.eclipse.ui.navigator.resources,
+ rebotinolCoreExecution,
+ rebotinolSwingView
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.xtext.ui.resource
-Bundle-ClassPath: .,
- lib/commons-math3-3.2.jar,
- lib/log4j-1.2.17.jar
+Bundle-ClassPath: .
+Export-Package: edu.upb.lp.rebotinol.dialogs,
+ edu.upb.lp.rebotinol.handlers,
+ edu.upb.lp.rebotinol.product,
+ edu.upb.lp.rebotinol.xtextToSwing
