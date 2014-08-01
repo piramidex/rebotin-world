@@ -60,7 +60,7 @@ import edu.upb.lp.rebotinol.xtextToSwing.ProgramBuilderFromXtext;
  * @author Alexis Marechal
  */
 public class RebotinLaunchDialog extends TitleAreaDialog {
-	
+
 	private static Text _programTextField;
 	private static ControlDecoration _programDecorator;
 	private static Text _configurationTextField;
@@ -179,7 +179,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 				} else {
 					dlg.setFileName(_programPath);
 				}
-				dlg.setText("Open");
+				dlg.setText("Abrir");
 				dlg.setFilterExtensions(new String[] { "rebo" });
 				String path = dlg.open();
 				if (path == null)
@@ -224,7 +224,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 				} else {
 					dlg.setFileName(_configurationPath);
 				}
-				dlg.setText("Open");
+				dlg.setText("Abrir");
 				dlg.setFilterExtensions(new String[] { "rconf" });
 				String path = dlg.open();
 				if (path == null)
@@ -254,7 +254,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			URI uri = URI.createFileURI(file.getFullPath().toString());
 			ResourceSet rs = new ResourceSetImpl();
 			Resource r = rs.getResource(uri, true);
-			String error = FileChecker.check(r, file.getName(), file.getFileExtension(), FileChecker.Types.REBOTINOL);
+			String error = FileChecker.check(r, file.getName(),
+					file.getFileExtension(), FileChecker.Types.REBOTINOL);
 			if (!error.isEmpty()) {
 				_programDecorator.setDescriptionText(error);
 				_programDecorator.show();
@@ -280,7 +281,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			URI uri = URI.createFileURI(file.getFullPath().toString());
 			ResourceSet rs = new ResourceSetImpl();
 			Resource r = rs.getResource(uri, true);
-			String error = FileChecker.check(r, file.getName(), file.getFileExtension(), FileChecker.Types.CONFIGURATION);
+			String error = FileChecker.check(r, file.getName(),
+					file.getFileExtension(), FileChecker.Types.CONFIGURATION);
 			if (!error.isEmpty()) {
 				_configurationDecorator.setDescriptionText(error);
 				_configurationDecorator.show();

@@ -179,4 +179,36 @@
          </hiddenMenuItem>
       </perspectiveExtension>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rebotinolEclipsePlugin.application"
+            name="RebotinWorld">
+         <property
+               name="aboutText"
+               value="Rebotin World&#x0A;Universidad Privada Boliviana&#x0A;&#x0A;Autores:&#x0A;  Alexis Marechal&#x0A;  Alfredo Villalba&#x0A;  Jorge Loza&#x0A;  Mauricio Loza">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/Rebotin.png">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="appName"
+               value="RebotinWorld">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/16x16.png,icons/32x32.png,icons/48x48.png,icons/64x64.png">
+         </property>
+      </product>
+   </extension>
 </plugin>
