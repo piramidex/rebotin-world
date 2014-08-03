@@ -1,6 +1,7 @@
 package edu.upb.lp.rebotinol.view.world;
 
 import java.awt.Color;
+import java.text.DecimalFormat;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -48,16 +49,6 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		setLayout(null);
 		for (int j = 0; j < sizeV; j++) {
 			for (int i = 0; i < sizeH; i++) {
-				//whitepanel.setLocation((75 + (45 * i)), (75 + (45 * j)));
-				/*Fraction fr = house.getMatrix()[j][i];
-				String num= fr == null ? "" : fr.toString(); 
-
-				numbers[j][i] = new JLabel(num);
-				numbers[j][i].setLocation(0, 0);
-				numbers[j][i].setSize(40, 40);
-				numbers[j][i].setHorizontalAlignment(0);
-				numbers[j][i].setVerticalAlignment(0);
-				whitepanel.add(numbers[j][i]);*/
 				JPanel whitepanel = new JPanel();
 				whitepanel.setLayout(null);
 				whitepanel.setLocation(5, 5);
@@ -68,12 +59,14 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				JPanel blackpanel = new JPanel();
 				blackpanel.setLayout(null);
 				blackpanel.setLocation((50 + (45 * i)), (50 + (45 * j)));
-				if (j == 0 && i == 0) {
+				/*if (j == 0 && i == 0) {
 					blackpanel.setBackground(Color.RED);
 				} else {
 					blackpanel.setBackground(Color.black);
-				}
-
+				}*/
+				
+				blackpanel.setBackground(Color.black);
+				
 				blackpanel.setSize(50, 50);
 				add(blackpanel);
 				blackPanels[j][i] = blackpanel;
@@ -92,11 +85,9 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void positionChanged(int previousH, int previousV, int h, int v) {
-		//whitePanels[previousV][previousH].repaint();
-		//whitePanels[v][h].repaint();
 		blackPanels[previousV][previousH].setBackground(Color.BLACK);
 		blackPanels[previousV][previousH].repaint();
-		blackPanels[v][h].setBackground(Color.RED);
+		//blackPanels[v][h].setBackground(Color.RED);
 		blackPanels[v][h].repaint();
 		int deltaH = previousH - h;
 		int deltaV = previousV - v;
@@ -122,16 +113,17 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 			numlabel.setVerticalAlignment(0);
 			whitePanels[v][h].add(numlabel);
 		}else if(frac.getDenominator() == 1){
-			String num = frac.toString();
-			JLabel numlabel = new JLabel(num);
+			JLabel numlabel = new JLabel(numberFormating(frac.getNumerator())+"");
 			numlabel.setLocation(0, 0);
 			numlabel.setSize(40, 40);
 			numlabel.setHorizontalAlignment(0);
 			numlabel.setVerticalAlignment(0);
 			numbers.add(numlabel);
+			numbers.setToolTipText(frac.toString());
+			
 		}else{
 			int den =frac.getDenominator();
-			JLabel denominatorlabel = new JLabel(den+"");
+			JLabel denominatorlabel = new JLabel(numberFormating(den)+"");
 			denominatorlabel.setLocation(0, 20);
 			denominatorlabel.setSize(40, 20);
 			denominatorlabel.setHorizontalAlignment(0);
@@ -139,7 +131,7 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 			numbers.add(denominatorlabel);
 			
 			int num = frac.getNumerator();	
-			JLabel numeratorlabel = new JLabel(num+"");
+			JLabel numeratorlabel = new JLabel(numberFormating(num)+"");
 			numeratorlabel.setLocation(0, 0);;
 			numeratorlabel.setSize(40, 20);
 			numeratorlabel.setHorizontalAlignment(0);
@@ -151,8 +143,29 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 			division.setLocation(5, 19);
 			division.setBackground(Color.BLACK);
 			numbers.add(division);
+			numbers.setToolTipText(frac.toString());
 		}
 		return numbers;
+	}
+	
+	private String numberFormating(int num){
+		double pref = Math.log10(num);
+		String numString = "";
+		DecimalFormat df = new DecimalFormat("0"); 
+		if(pref < 3){
+			numString = num+"";
+		}else if((pref > 3)&&(pref < 6)){
+			double formatNum = (double)num/1000;
+			numString = df.format(formatNum)+" k";
+		}else if((pref > 6)&&(pref < 9)){
+			double formatNum = (double)num/1000000;
+			numString = df.format(formatNum)+" M";
+		}else if(pref > 9){
+			double formatNum = (double)num/1000000000;
+			numString = df.format(formatNum)+" G";
+		}
+
+		return numString;
 	}
 	
 	@Override
@@ -168,8 +181,6 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 	@Override
 	public void matrixChanged(int h, int v, Fraction newValue) {
 		whitePanels[v][h].removeAll();
-		/*String nV = newValue == null ? "" : newValue.toString();
-		numbers[v][h].setText(nV);*/
 		whitePanels[v][h].add(numberDisplay(v,h,newValue));
 		whitePanels[v][h].updateUI();
 		blackPanels[v][h].updateUI();
