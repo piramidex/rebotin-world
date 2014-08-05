@@ -242,4 +242,25 @@ public class RebotinolController {
 	public boolean isBreakpoint() {
 		return _program.isDeepBreakpoint();
 	}
+
+	/**
+	 * Starts play
+	 */
+	public void play() {
+		_scheduler.play();
+	}
+	
+	/**
+	 * Stops play
+	 */
+	public void stop() {
+		_scheduler.stop();
+	}
+	
+	/**
+	 * Stops play
+	 */
+	public void playBack() {
+		_scheduler.playBack();
+	}
 }

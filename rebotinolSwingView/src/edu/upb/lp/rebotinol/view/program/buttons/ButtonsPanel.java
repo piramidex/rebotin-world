@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
-import edu.upb.lp.rebotinol.controller.RebotinolScheduler;
 import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -27,7 +26,6 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 	private static final long serialVersionUID = -3779632858557326186L;
 
 	private RebotinolController _controller;
-	private RebotinolScheduler _scheduler;
 	private JButton _backButton = new JButton("<-");
 	private JButton _playButton = new JButton(">");
 	private JButton _stopButton = new JButton("x");
@@ -36,8 +34,7 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 	public ButtonsPanel(RebotinolController controller) {
 		_controller = controller;
 		_controller.registerObserver(this);
-		_scheduler = controller.getScheduler();
-		_scheduler.registerObserver(this);
+		controller.getScheduler().registerObserver(this);
 
 		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		
@@ -71,7 +68,7 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				_scheduler.play();
+				_controller.play();
 			}
 		};
 		_playButton.addActionListener(playListener);
@@ -84,7 +81,7 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				_scheduler.stop();
+				_controller.stop();
 			}
 		};
 		_stopButton.addActionListener(stopListener);
@@ -152,5 +149,11 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 	@Override
 	public void deActivatePlay() {
 		_playButton.setEnabled(false);
+	}
+
+	@Override
+	public void startPlayBack() {
+		// TODO Auto-generated method stub
+		
 	}
 }

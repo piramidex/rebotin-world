@@ -9,6 +9,7 @@ import javax.swing.Timer;
 
 import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
@@ -24,6 +25,7 @@ public class RebotinolScheduler {
 	private final RebotinolController _controller;
 
 	private final Timer _playTimer;
+	private boolean _forward = true;
 	
 	/**
 	 * Constructor.
@@ -37,13 +39,19 @@ public class RebotinolScheduler {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				try {
-					_controller.step();
+					if (_forward) {
+						_controller.step();
+					} else {
+						_controller.stepBack();
+					}
 					if (_controller.isBreakpoint()) {
 						stop();
 					}
 				} catch (RebotinolFlowException e) {
 					throw new IllegalStateException(e);
 				} catch (RebotinolExecutionException e) {
+					throw new IllegalStateException(e);
+				} catch (RebotinolFatalException e) {
 					throw new IllegalStateException(e);
 				}
 			}
@@ -78,6 +86,7 @@ public class RebotinolScheduler {
 	 * Start the automatic execution of the program.
 	 */
 	public void play() {
+		_forward = true;
 		if (!_playTimer.isRunning()) {
 			_playTimer.start();
 			for (RebotinolControlObserver obs : _observers) {
@@ -94,6 +103,19 @@ public class RebotinolScheduler {
 			_playTimer.stop();
 			for (RebotinolControlObserver obs : _observers) {
 				obs.stopPlay();
+			}
+		}
+	}
+	
+	/**
+	 * Start the automatic execution of the program.
+	 */
+	public void playBack() {
+		_forward = false;
+		if (!_playTimer.isRunning()) {
+			_playTimer.start();
+			for (RebotinolControlObserver obs : _observers) {
+				obs.startPlayBack();
 			}
 		}
 	}

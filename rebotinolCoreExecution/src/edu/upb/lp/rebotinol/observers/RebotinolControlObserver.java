@@ -22,6 +22,11 @@ public interface RebotinolControlObserver {
 	public void stopPlay();
 	
 	/**
+	 * This method is executed by the observed controller when the automatic execution starts backwards.
+	 */
+	public void startPlayBack();
+	
+	/**
 	 * This method is executed by the observed controller when the play button should be activated.
 	 */
 	public void activatePlay();
