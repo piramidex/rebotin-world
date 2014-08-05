@@ -36,6 +36,17 @@ public interface RebotinolExecutionObserver {
 	 * finished
 	 */
 	public void unfinished();
+	
+	/**
+	 * This method is executed by the observed execution when it is started
+	 */
+	public void started();
+
+	/**
+	 * This method is executed by the observed execution when it is no longer
+	 * started
+	 */
+	public void unstarted();
 
 	/**
 	 * This method is executed by the observed execution when it has been set as

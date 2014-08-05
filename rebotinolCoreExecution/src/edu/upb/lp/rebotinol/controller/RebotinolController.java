@@ -229,6 +229,23 @@ public class RebotinolController {
 				}
 			}
 		}
+		
+		@Override
+		public void unstarted() {
+			_scheduler.stop();
+			for (RebotinolControlObserver obs : _observers) {
+				obs.deActivatePlayBack();
+			}
+		}
+
+		@Override
+		public void started() {
+			if (!_scheduler.isRunning()) {
+				for (RebotinolControlObserver obs : _observers) {
+					obs.activatePlayBack();
+				}
+			}
+		}
 
 		@Override
 		public void breakpointMet() {

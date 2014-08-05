@@ -22,6 +22,7 @@ public abstract class RebotinolInstructionExecution {
 
 	private int _steps = 0;
 	private boolean _finished = false;
+	private boolean _started = false;
 	private boolean _current = false;
 	private boolean _skipped = false;
 	private boolean _breakpoint = false;
@@ -52,6 +53,9 @@ public abstract class RebotinolInstructionExecution {
 			throw new RebotinolFlowException(
 					"Tried to execute an instruction that was already executed");
 		} else {
+			if (!_started) {
+				start();
+			}
 			incSteps();
 			doStep(house);
 			for (RebotinolExecutionObserver obs : _observers) {
@@ -109,7 +113,7 @@ public abstract class RebotinolInstructionExecution {
 	 *             If Rebotin met a problem executing this step back
 	 * @throws RebotinolFatalException If something went really wrong
 	 */
-	public boolean stepBack(RebotinolHouse house)
+	public void stepBack(RebotinolHouse house)
 			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
 		if (_steps == 0) {
 			throw new RebotinolFlowException(
@@ -120,7 +124,9 @@ public abstract class RebotinolInstructionExecution {
 			for (RebotinolExecutionObserver obs : _observers) {
 				obs.stepBackPerformed();
 			}
-			return _steps == 0;
+			if (_steps == 0) {
+				unstart();
+			}
 		}
 	}
 
@@ -159,7 +165,7 @@ public abstract class RebotinolInstructionExecution {
 	 * @return true if at least a step in this instruction has been executed.
 	 */
 	public boolean isStarted() {
-		return _steps > 0;
+		return _started;
 	}
 
 	/**
@@ -180,6 +186,27 @@ public abstract class RebotinolInstructionExecution {
 		_finished = false;
 		for (RebotinolExecutionObserver obs : _observers) {
 			obs.unfinished();
+		}
+	}
+	
+	/**
+	 * Set this execution as started
+	 */
+	protected void start() {
+		_started = true;
+		unsetCurrent();
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.started();
+		}
+	}
+
+	/**
+	 * Set this execution as un-started
+	 */
+	protected void unstart() {
+		_started = false;
+		for (RebotinolExecutionObserver obs : _observers) {
+			obs.unstarted();
 		}
 	}
 

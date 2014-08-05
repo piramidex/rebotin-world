@@ -98,4 +98,18 @@ public abstract class RebotinolExecutionObserverImpl implements RebotinolExecuti
 	public void repetitionsChanged(int repetitionsExecuted) {
 		//do nothing
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public void started() {
+		//do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void unstarted() {
+		//do nothing
+	}
 }

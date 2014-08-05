@@ -55,4 +55,14 @@ public interface RebotinolControlObserver {
 	 * This method is called when the "next" button should be deactivated
 	 */
 	public void deActivateNext();
+	
+	/**
+	 * This method is executed by the observed controller when the play button should be activated.
+	 */
+	public void activatePlayBack();
+	
+	/**
+	 * This method is executed by the observed controller when the play button should be deactivated.
+	 */
+	public void deActivatePlayBack();
 }

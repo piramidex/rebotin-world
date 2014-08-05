@@ -156,4 +156,16 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void activatePlayBack() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deActivatePlayBack() {
+		// TODO Auto-generated method stub
+		
+	}
 }

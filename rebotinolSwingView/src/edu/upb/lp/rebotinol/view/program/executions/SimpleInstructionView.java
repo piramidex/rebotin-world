@@ -214,5 +214,17 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 		_lbIcon.setHorizontalTextPosition(JLabel.CENTER);
 		_lbIcon.setFont(new Font(_lbIcon.getFont().getFontName(),Font.PLAIN, 10));
 	}
+
+	@Override
+	public void started() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unstarted() {
+		// TODO Auto-generated method stub
+		
+	}
     
 }

@@ -139,6 +139,18 @@ public class ComposedInstructionView extends InstructionView {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void started() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unstarted() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
