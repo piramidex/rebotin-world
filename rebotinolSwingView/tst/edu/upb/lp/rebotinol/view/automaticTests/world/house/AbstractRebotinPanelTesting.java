@@ -1,14 +1,12 @@
-package edu.upb.lp.rebotinol.view.automaticTests.world;
+package edu.upb.lp.rebotinol.view.automaticTests.world.house;
 
 import java.awt.Color;
 
 import javax.swing.JFrame;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
-import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.view.automaticTests.AutomaticGUITesting;
 import edu.upb.lp.rebotinol.view.world.RebotinPanel;
-import edu.upb.lp.rebotinol.view.world.WorldPanel;
 
 public abstract class AbstractRebotinPanelTesting extends AutomaticGUITesting {
 

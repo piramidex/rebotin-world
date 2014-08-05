@@ -1,8 +1,7 @@
-package edu.upb.lp.rebotinol.view.automaticTests.world;
+package edu.upb.lp.rebotinol.view.automaticTests.world.house;
 
 import edu.upb.lp.rebotinol.examples.RebotinolExample;
 import edu.upb.lp.rebotinol.examples.RebotinolSimpleExample;
-import edu.upb.lp.rebotinol.view.automaticTests.program.executions.SimpleRepExecutionsPanelTesting;
 
 public class SimpleRebotinPanelTesting extends AbstractRebotinPanelTesting {
 
