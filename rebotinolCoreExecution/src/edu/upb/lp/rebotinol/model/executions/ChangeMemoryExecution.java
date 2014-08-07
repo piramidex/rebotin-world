@@ -46,7 +46,6 @@ public abstract class ChangeMemoryExecution extends
 	protected void doStepBack(RebotinolHouse house) {
 		house.setMemory(_oldValue);
 		_oldValue = null;
-		unfinish();
 	}
 	
 	/**

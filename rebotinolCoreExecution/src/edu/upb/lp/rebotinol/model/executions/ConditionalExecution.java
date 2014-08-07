@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
 /**
@@ -38,6 +39,7 @@ public abstract class ConditionalExecution extends SequentialInstructionExecutio
             if (evalCondition(house)) {
                 _conditionVerified = true;
                 getSubExecutions().get(0).setCurrent();
+                unsetCurrent();
             } else {
                 for (RebotinolInstructionExecution exec : getSubExecutions()) {
                     exec.skip();
@@ -61,18 +63,18 @@ public abstract class ConditionalExecution extends SequentialInstructionExecutio
     protected abstract boolean evalCondition(RebotinolHouse house) throws RebotinolExecutionException;
 
     /**
-     * {@inheritDoc}
-     * @throws RebotinolFlowException If something went wrong
-     */
-    @Override
-    protected void decCurrent() throws RebotinolFlowException {
-        if (getCurrentExecutionIndex() > 0) {
-            super.decCurrent();
-        } else {
-            _conditionVerified = false;
-        }
-    }
-    
+	 * {@inheritDoc} 
+	 */
+	@Override
+	protected void doStepBack(RebotinolHouse house) throws RebotinolFlowException, RebotinolFatalException {
+		if (getCurrentExecutionIndex() == 0 && !getCurrentExecution().isStarted()) {
+			_conditionVerified = false;
+			setCurrent();
+		} else {
+			super.doStepBack(house);
+		}
+	}
+	
     /**
      * {@inheritDoc}
      */

@@ -106,6 +106,5 @@ public abstract class MovementExecution extends RebotinolInstructionExecution {
 			house.setPosition(newH, newV);
             _modified = false;
         }
-        unfinish();
     }
 }

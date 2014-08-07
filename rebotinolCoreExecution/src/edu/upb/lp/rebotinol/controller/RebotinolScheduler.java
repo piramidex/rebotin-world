@@ -78,12 +78,13 @@ public class RebotinolScheduler {
 		_forward = true;
 		if (!_playTimer.isRunning()) {
 			try {
-				_controller.step();
+				if(!_controller.automaticStep()) {
+					_playTimer.start();
+					_buttonsController.forwardStarted();
+				}
 			} catch (RebotinolFlowException e) {
 				throw new IllegalStateException(e);
 			}
-			_playTimer.start();
-			_buttonsController.forwardStarted();
 		}
 	}
 	
@@ -107,8 +108,16 @@ public class RebotinolScheduler {
 	public void playBack() {
 		_forward = false;
 		if (!_playTimer.isRunning()) {
-			_playTimer.start();
-			_buttonsController.backwardStarted();
+			try {
+				if(!_controller.automaticStepBack()) {
+					_playTimer.start();
+					_buttonsController.backwardStarted();
+				}
+			} catch (RebotinolFlowException e) {
+				throw new IllegalStateException(e);
+			} catch (RebotinolFatalException e) {
+				throw new IllegalStateException(e);
+			}
 		}
 	}
 	

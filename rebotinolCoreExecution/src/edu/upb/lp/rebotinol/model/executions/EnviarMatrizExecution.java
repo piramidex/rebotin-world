@@ -27,7 +27,6 @@ public class EnviarMatrizExecution extends RebotinolInstructionExecution {
 	@Override
 	protected void doStepBack(RebotinolHouse house) throws RebotinolFatalException {
 		house.unsendMatrix();
-		unfinish();
 	}
 
 	/**

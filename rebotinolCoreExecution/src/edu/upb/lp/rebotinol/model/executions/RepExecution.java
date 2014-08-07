@@ -71,7 +71,11 @@ public class RepExecution extends SequentialInstructionExecution {
      * @return The number of repetitions that have already been performed in this execution.
      */
     public int getRepetitionsPerformed() {
-        return super.getCurrentExecutionIndex()/_numberOfInstructions;
+    	int execsPerformed = super.getCurrentExecutionIndex();
+    	if (getCurrentExecution().isFinished()) {
+    		execsPerformed++;
+    	}
+        return execsPerformed/_numberOfInstructions;
     }
     
     /**

@@ -38,7 +38,6 @@ public class EscriExecution extends RebotinolInstructionExecution {
 	protected void doStepBack(RebotinolHouse house) {
 		house.writeInMatrix(_oldValue);
 		_oldValue = null;
-		unfinish();
 	}
 	
 	/**

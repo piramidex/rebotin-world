@@ -117,6 +117,9 @@ public abstract class RebotinolInstructionExecution {
 			throw new RebotinolFlowException(
 					"Tried to un-execute an instruction that was not executed");
 		} else {
+			if (_finished) {
+				unfinish();
+			}
 			decSteps();
 			doStepBack(house);
 			for (RebotinolExecutionObserver obs : _observers) {
@@ -190,7 +193,6 @@ public abstract class RebotinolInstructionExecution {
 	 */
 	protected void start() {
 		_started = true;
-		unsetCurrent();
 		for (RebotinolExecutionObserver obs : _observers) {
 			obs.started();
 		}

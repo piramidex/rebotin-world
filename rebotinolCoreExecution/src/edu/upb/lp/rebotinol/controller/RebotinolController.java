@@ -159,12 +159,12 @@ public class RebotinolController {
 	 * @throws RebotinolFlowException If an error occured with the flow.
 	 */
 	protected boolean automaticStep() throws RebotinolFlowException {
-		RebotinolInstructionExecution next = _program.getNextExecutionToStep();
-		if (next.isBreakpoint()) {
+		step();
+		if (_program.isFinished()) {
 			return true;
 		} else {
-			step();
-			return _program.isFinished();
+			RebotinolInstructionExecution next = _program.getNextExecutionToStep();
+			return next.isBreakpoint();
 		}
 	}
 	

@@ -59,23 +59,21 @@ public abstract class SequentialInstructionExecution extends
 		RebotinolInstructionExecution current = getCurrentExecution();
 		if (current.isStarted()) {
 			current.stepBack(house);
-		} else {
-			//Check if current was first
-			if (getCurrentExecutionIndex() == 0) {
-				decCurrent();
-			} else {
-				decCurrent();
-				doStepBack(house);
+			if (!current.isCurrent()) {
+				current.setCurrent();
 			}
+		} else {
+			decCurrent();
+			current = getCurrentExecution();
+			current.stepBack(house);
 		}
-		unfinish();
 	}
 
 	/**
 	 * Increases the "current execution" counter, to execute the next sub-execution
 	 * @throws RebotinolFlowException  If the currentExecutionIndex was at its maximum value
 	 */
-	protected void incCurrent() throws RebotinolFlowException {
+	private void incCurrent() throws RebotinolFlowException {
 		if (_currentExecutionIndex == _subExecutions.size() - 1) {
 			throw new RebotinolFlowException(
 					"Increasing the index in a sequential execution when the index was the maximum");
@@ -90,7 +88,7 @@ public abstract class SequentialInstructionExecution extends
 	 * @throws RebotinolFlowException
 	 *             If the currentExecutionIndex was 0.
 	 */
-	protected void decCurrent() throws RebotinolFlowException {
+	private void decCurrent() throws RebotinolFlowException {
 		if (_currentExecutionIndex == 0) {
 			throw new RebotinolFlowException(
 					"Decreasing the index in a sequential execution when the index was 0");
@@ -171,5 +169,23 @@ public abstract class SequentialInstructionExecution extends
 		} else {
 			return e;
 		}
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void unsetCurrent() {
+//		super.unsetCurrent();
+		getCurrentExecution().unsetCurrent();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void setCurrent() {
+//		super.setCurrent();
+		getCurrentExecution().setCurrent();
 	}
 }
