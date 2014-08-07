@@ -159,18 +159,6 @@ public abstract class SequentialInstructionExecution extends
 		getCurrentExecution().setCurrent();
 	}
 	
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean isDeepBreakpoint() {
-		if (isBreakpoint()) {
-			return true;
-		}
-		return getCurrentExecution().isDeepBreakpoint();
-	}
-	
 	/**
 	 * Computes the next execution that will receive a step order. It enters into the executions tree
 	 * looking for a leaf

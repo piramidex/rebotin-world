@@ -38,12 +38,13 @@ public class RebotinolScheduler {
 			public void actionPerformed(ActionEvent event) {
 				try {
 					if (_forward) {
-						_controller.step();
+						if(_controller.automaticStep()) {
+							stop();
+						}
 					} else {
-						_controller.stepBack();
-					}
-					if (_controller.isBreakpoint()) {
-						stop();
+						if(_controller.automaticStepBack()) {
+							stop();
+						}
 					}
 				} catch (RebotinolFlowException e) {
 					throw new IllegalStateException(e);

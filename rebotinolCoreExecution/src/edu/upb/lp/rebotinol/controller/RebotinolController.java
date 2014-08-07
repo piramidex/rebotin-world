@@ -155,7 +155,7 @@ public class RebotinolController {
 
 	/**
 	 * Performs a step. Only to be used by a {@link RebotinolScheduler}!
-	 * @return true if a breakpoint was met. In this case, the step is not performed.
+	 * @return true if the automatic execution should stop.
 	 * @throws RebotinolFlowException If an error occured with the flow.
 	 */
 	protected boolean automaticStep() throws RebotinolFlowException {
@@ -164,7 +164,7 @@ public class RebotinolController {
 			return true;
 		} else {
 			step();
-			return false;
+			return _program.isFinished();
 		}
 	}
 	
@@ -176,8 +176,12 @@ public class RebotinolController {
 	 */
 	protected boolean automaticStepBack() throws RebotinolFlowException, RebotinolFatalException {
 		stepBack();
-		RebotinolInstructionExecution next = _program.getNextExecutionToStep();
-		return next.isBreakpoint();
+		if (!_program.isStarted()) {
+			return true;
+		} else {
+			RebotinolInstructionExecution next = _program.getNextExecutionToStep();
+			return next.isBreakpoint();
+		}
 	}
 	
 	/**
@@ -221,13 +225,6 @@ public class RebotinolController {
 //			_scheduler.stop();
 //		}
 //	}
-
-	/**
-	 * @return true if the current execution has a breakpoint
-	 */
-	public boolean isBreakpoint() {
-		return _program.isDeepBreakpoint();
-	}
 
 	/**
 	 * Starts play
