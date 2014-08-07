@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.observers;
 
+import edu.upb.lp.rebotinol.util.RebotinolFatalException;
+
 /**
  * This observer is used to watch the execution of an instruction in a rebotinol
  * program. The execution will warn its observers when some specific events
@@ -81,14 +83,16 @@ public interface RebotinolExecutionObserver {
 	/**
 	 * This method is executed by the observed execution when a breakpoint has
 	 * been set.
+	 * @throws RebotinolFatalException 
 	 */
-	public void breakpointSet();
+	public void breakpointSet() throws RebotinolFatalException;
 
 	/**
 	 * This method is executed by the observed execution when a breakpoint has
 	 * been removed.
+	 * @throws RebotinolFatalException 
 	 */
-	public void breakpointRemoved();
+	public void breakpointRemoved() throws RebotinolFatalException;
 	
 	/**
 	 * This method is executed by the observed execution when the number of

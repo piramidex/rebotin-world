@@ -192,16 +192,16 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 	}
 
 	@Override
-	public void breakpointSet() {
-		if (_breakpoint) throw new IllegalStateException(
+	public void breakpointSet() throws RebotinolFatalException {
+		if (_breakpoint) throw new RebotinolFatalException(
 				"trying to set a breakpoint when it is already set");
 		_breakpoint = true;
 		_lbIcon.setIcon(stopIcon);		
 	}
 
 	@Override
-	public void breakpointRemoved() {
-		if (!_breakpoint) throw new IllegalStateException(
+	public void breakpointRemoved() throws RebotinolFatalException {
+		if (!_breakpoint) throw new RebotinolFatalException(
 				"trying to remove a breakpoint when it is already removed");
 		_breakpoint = false;
 		_lbIcon.setIcon(emptyIcon);		
