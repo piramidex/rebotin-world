@@ -12,6 +12,8 @@ import java.awt.geom.Path2D;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import org.apache.commons.math3.fraction.Fraction;
+
 public class RebotinPanel extends JPanel{
 
 	
@@ -62,6 +64,7 @@ public class RebotinPanel extends JPanel{
 	protected Line2D.Double _lineFinger1;
 	protected Line2D.Double _lineFinger2;
 
+	protected NumberPanel _numPanel;
 	
 	public RebotinPanel(int size, Color color, Color borderColor) {
 		super();
@@ -71,6 +74,14 @@ public class RebotinPanel extends JPanel{
 		_borderColor = borderColor;
 
 		createShapes();
+		
+		setLayout(null);
+		_numPanel = new NumberPanel(new Fraction(3,4), (int) (1.5*_radBody), (int) (1.5*_radBody));
+		_numPanel.setLocation(_xBody - (int) (0.75 * _radBody), _yBody - (int) (0.75 * _radBody));
+		_numPanel.setSize((int) (1.5*_radBody), (int) (1.5*_radBody));
+		_numPanel.setOpaque(false);
+		add(_numPanel);
+		
 	}
 	
 	

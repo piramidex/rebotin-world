@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import javax.swing.BoxLayout;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-
+	
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 
 //TODO javadoc
@@ -38,13 +38,13 @@ public class WorldPanel extends JPanel {
 		
 		_housePanel = new HousePanel(200, Color.YELLOW, Color.BLACK);
 		_housePanel.setSize(205, 205);
-		_housePanel.setLocation(50, 50);
+		_housePanel.setLocation(80, 30);
 		_housePanel.setOpaque(false);
 		layers.add(_housePanel, 1, 0);
 		
 		_rebotinPanel = new RebotinPanel(80, Color.WHITE, Color.BLACK);
 		_rebotinPanel.setSize(500, 500);
-		_rebotinPanel.setLocation(100, 120);
+		_rebotinPanel.setLocation(140, 120);
 		_rebotinPanel.setOpaque(false);
 		layers.add(_rebotinPanel, 2, 0);
 		
