@@ -72,4 +72,16 @@ public abstract class ConditionalExecution extends SequentialInstructionExecutio
             _conditionVerified = false;
         }
     }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+	public RebotinolInstructionExecution getNextExecutionToStep() {
+    	if (_conditionVerified) {
+    		return super.getNextExecutionToStep();
+    	} else {
+    		return this;
+    	}
+	}
 }

@@ -94,19 +94,16 @@ public abstract class MovementExecution extends RebotinolInstructionExecution {
 
     /**
      * {@inheritDoc}
+     * @throws RebotinolFatalException 
      */
     @Override
-    protected void doStepBack(RebotinolHouse house) throws RebotinolExecutionException {
+    protected void doStepBack(RebotinolHouse house) throws RebotinolFatalException {
         if (_modified) {
             int h = house.getPositionH();
             int v = house.getPositionV();
             int newH = getUndoHorizontal(h, v);
             int newV = getUndoVertical(h, v);
-            try {
-				house.setPosition(newH, newV);
-			} catch (RebotinolFatalException e) {
-				throw new RebotinolExecutionException(e.getMessage());
-			}
+			house.setPosition(newH, newV);
             _modified = false;
         }
         unfinish();

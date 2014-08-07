@@ -78,10 +78,7 @@ public abstract class AutomaticGUITesting extends ManualGUITesting {
 					}
 				} catch (RebotinolFlowException e) {
 					throw new IllegalStateException(e);
-				} catch (RebotinolExecutionException e) {
-					throw new IllegalStateException(e);
 				}
-
 			}
 		};
 		timer2.addActionListener(listener2);

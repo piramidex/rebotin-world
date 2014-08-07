@@ -47,8 +47,7 @@ public class RepExecution extends SequentialInstructionExecution {
 	 * {@inheritDoc} 
 	 */
 	@Override
-	protected void doStepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
+	protected void doStepBack(RebotinolHouse house) throws RebotinolFlowException, RebotinolFatalException {
 		int before = getRepetitionsPerformed();
 		super.doStepBack(house);
 		int after = getRepetitionsPerformed();

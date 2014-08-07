@@ -2,7 +2,7 @@ package edu.upb.lp.rebotinol.observers;
 
 
 /**
- * Basic implementation of the {@link RebotinolControlObserver} that does
+ * Basic implementation of the {@link RebotinolButtonsObserver} that does
  * nothing when observing events.
  * 
  * @author Alexis Marechal

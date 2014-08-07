@@ -22,33 +22,6 @@ public interface RebotinolHouseObserver {
 	public void memoryChanged(Fraction memory);
 
 	/**
-	 * This method is executed by the observed house when the matrix is moved
-	 * 
-	 * @param previousH
-	 *      the previous horizontal position
-	 * @param previousV
-	 *      the previous vertical position
-	 * @param h
-	 *      the new horizontal position
-	 * @param v
-	 *      the new vertical position
-	 */
-	public void positionChanged(int previousH, int previousV, int h,
-			int v);
-
-	/**
-	 * This method is executed by the observed house when the matrix is modified
-	 * 
-	 * @param h
-	 *      The horizontal position in the matrix
-	 * @param v
-	 *      The vertical position in the matrix
-	 * @param newValue
-	 *      The new value in that position in the matrix
-	 */
-	public void matrixChanged(int h, int v, Fraction newValue);
-
-	/**
 	 * This method is executed by the observed house when the mail value changed
 	 * 
 	 * @param mail
@@ -69,8 +42,12 @@ public interface RebotinolHouseObserver {
 	/**
 	 * This method is executed by the observed house when Rebotin has met an
 	 * error (division by 0, tried to read an empty cell, ...)
-	 * 
-	 * @param _error
 	 */
 	public void rebotinolErrorOcurred();
+	
+	/**
+	 * This method is executed by the observed house when the error previously set
+	 * was solved.
+	 */
+	public void rebotinolErrorSolved();
 }

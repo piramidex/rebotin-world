@@ -109,12 +109,10 @@ public abstract class RebotinolInstructionExecution {
 	 * @throws RebotinolFlowException
 	 *             If no steps in the instruction was executed before calling
 	 *             this method.
-	 * @throws RebotinolExecutionException
-	 *             If Rebotin met a problem executing this step back
 	 * @throws RebotinolFatalException If something went really wrong
 	 */
 	public void stepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
+			throws RebotinolFlowException, RebotinolFatalException {
 		if (_steps == 0) {
 			throw new RebotinolFlowException(
 					"Tried to un-execute an instruction that was not executed");
@@ -139,12 +137,10 @@ public abstract class RebotinolInstructionExecution {
 	 * @throws RebotinolFlowException
 	 *             If no steps in the instruction was executed before calling
 	 *             this method.
-	 * @throws RebotinolExecutionException
-	 *             If Rebotin met a problem executing this step back
 	 * @throws RebotinolFatalException If something went really wrong
 	 */
 	protected abstract void doStepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException;
+			throws RebotinolFlowException, RebotinolFatalException;
 
 	/**
 	 * @return The number of steps that have been executed in this instruction

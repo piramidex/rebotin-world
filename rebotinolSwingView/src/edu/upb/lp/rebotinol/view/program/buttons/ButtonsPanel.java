@@ -8,8 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import edu.upb.lp.rebotinol.controller.RebotinolController;
-import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
-import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
+import edu.upb.lp.rebotinol.observers.RebotinolButtonsObserver;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
@@ -19,7 +18,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  *
  */
 //TODO javadoc
-public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
+public class ButtonsPanel extends JPanel implements RebotinolButtonsObserver {
 	/**
 	 * Serial
 	 */
@@ -28,13 +27,13 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 	private RebotinolController _controller;
 	private JButton _backButton = new JButton("<-");
 	private JButton _playButton = new JButton(">");
-	private JButton _stopButton = new JButton("x");
+	private JButton _pauseButton = new JButton("x");
 	private JButton _forwardButton = new JButton("->");
 
 	public ButtonsPanel(RebotinolController controller) {
 		_controller = controller;
-		_controller.registerObserver(this);
-		controller.getScheduler().registerObserver(this);
+		_controller.getButtonsController().registerObserver(this);
+		controller.getButtonsController().registerObserver(this);
 
 		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		
@@ -48,8 +47,6 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					_controller.stepBack();
-				} catch (RebotinolExecutionException e1) {
-					throw new IllegalStateException(e1);
 				} catch (RebotinolFlowException e1) {
 					throw new IllegalStateException(e1);
 				} catch (RebotinolFatalException e1) {
@@ -74,9 +71,9 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 		_playButton.addActionListener(playListener);
 
 //		_stopButton.setLocation(165, 10);
-		_stopButton.setSize(30, 30);
-		_stopButton.setEnabled(false);
-		add(_stopButton);
+		_pauseButton.setSize(30, 30);
+		_pauseButton.setEnabled(false);
+		add(_pauseButton);
 		ActionListener stopListener = new ActionListener() {
 
 			@Override
@@ -84,7 +81,7 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 				_controller.stop();
 			}
 		};
-		_stopButton.addActionListener(stopListener);
+		_pauseButton.addActionListener(stopListener);
 
 //		_forwardButton.setLocation(225, 10);
 		_forwardButton.setSize(30, 30);
@@ -96,8 +93,6 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					_controller.step();
-				} catch (RebotinolExecutionException e1) {
-					throw new IllegalStateException(e1);
 				} catch (RebotinolFlowException e1) {
 					throw new IllegalStateException(e1);
 				}
@@ -108,64 +103,30 @@ public class ButtonsPanel extends JPanel implements RebotinolControlObserver {
 	}
 
 	@Override
-	public void startPlay() {
-		_playButton.setEnabled(false);
-		_stopButton.setEnabled(true);
-
-	}
-
-	@Override
-	public void stopPlay() {
-		_stopButton.setEnabled(false);
-		_playButton.setEnabled(true);
-	}
-
-	@Override
-	public void activatePrevious() {
-		_backButton.setEnabled(true);
-	}
-
-	@Override
-	public void deActivatePrevious() {
-		_backButton.setEnabled(false);
-	}
-
-	@Override
-	public void activateNext() {
-		_forwardButton.setEnabled(true);
+	public void activateNext(boolean active) {
+		_forwardButton.setEnabled(active);
 		
 	}
 
 	@Override
-	public void deActivateNext() {
-		_forwardButton.setEnabled(false);
+	public void activatePlay(boolean active) {
+		_playButton.setEnabled(active);
 	}
 
 	@Override
-	public void activatePlay() {
-		_playButton.setEnabled(true);
-	}
-
-	@Override
-	public void deActivatePlay() {
-		_playButton.setEnabled(false);
-	}
-
-	@Override
-	public void startPlayBack() {
+	public void activatePlayBack(boolean active) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void activatePlayBack() {
-		// TODO Auto-generated method stub
+	public void activatePrevious(boolean activate) {
+		_backButton.setEnabled(activate);
 		
 	}
 
 	@Override
-	public void deActivatePlayBack() {
-		// TODO Auto-generated method stub
-		
+	public void activatePause(boolean activate) {
+		_pauseButton.setEnabled(activate);
 	}
 }

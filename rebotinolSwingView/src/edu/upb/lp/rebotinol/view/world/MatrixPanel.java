@@ -8,9 +8,8 @@ import javax.swing.JPanel;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolMatrixObserver;
 
 /**
  * ...
@@ -18,7 +17,7 @@ import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
  * @author Mauricio Loza
  *
  */
-public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
+public class MatrixPanel extends JPanel implements RebotinolMatrixObserver {
 	private static final long serialVersionUID = 3579955482940404200L;
 	private RebotinolHouse house;
 	private int sizeH;
@@ -73,14 +72,6 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 				blackpanel.add(whitePanels[j][i]);
 			}
 		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void memoryChanged(Fraction memory) {
-		//do nothing
 	}
 
 	@Override
@@ -167,16 +158,6 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 
 		return numString;
 	}
-	
-	@Override
-	public void mailChanged(Mail mail) {
-		//do nothing
-	}
-
-	@Override
-	public void rebotinolErrorOcurred() {
-		// do nothing
-	}
 
 	@Override
 	public void matrixChanged(int h, int v, Fraction newValue) {
@@ -184,17 +165,5 @@ public class MatrixPanel extends JPanel implements RebotinolHouseObserver {
 		whitePanels[v][h].add(numberDisplay(v,h,newValue));
 		whitePanels[v][h].updateUI();
 		blackPanels[v][h].updateUI();
-	}
-
-	@Override
-	public void matrixSent() {
-		// do nothing
-		
-	}
-
-	@Override
-	public void matrixUnsent() {
-		// do nothing
-		
 	}
 }

@@ -11,12 +11,11 @@ import edu.upb.lp.rebotinol.model.house.Mail;
  * @author Alexis Marechal
  * 
  */
-public abstract class RebotinolHouseObserverImpl implements
-		RebotinolHouseObserver {
+public abstract class RebotinolMatrixObserverImpl implements
+		RebotinolMatrixObserver {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void memoryChanged(Fraction memory) {
 		// do nothing
 	}
@@ -24,7 +23,20 @@ public abstract class RebotinolHouseObserverImpl implements
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
+	public void positionChanged(int previousH, int previousV, int h, int v) {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void matrixChanged(int h, int v, Fraction newValue) {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	public void mailChanged(Mail mail) {
 		// do nothing
 	}
@@ -32,7 +44,6 @@ public abstract class RebotinolHouseObserverImpl implements
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void matrixSent() {
 		// do nothing
 	}
@@ -40,7 +51,6 @@ public abstract class RebotinolHouseObserverImpl implements
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void matrixUnsent() {
 		// do nothing
 	}
@@ -48,17 +58,7 @@ public abstract class RebotinolHouseObserverImpl implements
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public void rebotinolErrorOcurred() {
-		// do nothing
-	}
-	
-	/**
-	 * This method is executed by the observed house when the error previously set
-	 * was solved.
-	 */
-	@Override
-	public void rebotinolErrorSolved() {
 		// do nothing
 	}
 }

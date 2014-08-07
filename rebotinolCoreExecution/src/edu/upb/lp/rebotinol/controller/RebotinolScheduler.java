@@ -2,13 +2,9 @@ package edu.upb.lp.rebotinol.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.Timer;
 
-import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
-import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 import edu.upb.lp.rebotinol.util.RebotinolFlowException;
 
@@ -21,8 +17,8 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  *
  */
 public class RebotinolScheduler {
-	private List<RebotinolControlObserver> _observers = new ArrayList<RebotinolControlObserver>();
 	private final RebotinolController _controller;
+	private RebotinolButtonsController _buttonsController;
 
 	private final Timer _playTimer;
 	private boolean _forward = true;
@@ -32,8 +28,10 @@ public class RebotinolScheduler {
 	 * @param controller The controller that contains the program to be executed by
 	 * this scheduler.
 	 */
-	public RebotinolScheduler(RebotinolController controller) {
+	public RebotinolScheduler(RebotinolController controller,
+			RebotinolButtonsController buttonsController) {
 		_controller = controller;
+		_buttonsController = buttonsController;
 		_playTimer = new Timer(2000, null);
 		ActionListener listener = new ActionListener() {
 			@Override
@@ -48,8 +46,6 @@ public class RebotinolScheduler {
 						stop();
 					}
 				} catch (RebotinolFlowException e) {
-					throw new IllegalStateException(e);
-				} catch (RebotinolExecutionException e) {
 					throw new IllegalStateException(e);
 				} catch (RebotinolFatalException e) {
 					throw new IllegalStateException(e);
@@ -73,14 +69,6 @@ public class RebotinolScheduler {
 			_ms = ms;
 		}
 	}
-
-	/**
-	 * Register an observer, following the Observer design pattern. 
-	 * @param observer The observer to be registered.
-	 */
-	public void registerObserver(RebotinolControlObserver observer) {
-		_observers.add(observer);
-	}
 	
 	/**
 	 * Start the automatic execution of the program.
@@ -88,10 +76,13 @@ public class RebotinolScheduler {
 	public void play() {
 		_forward = true;
 		if (!_playTimer.isRunning()) {
-			_playTimer.start();
-			for (RebotinolControlObserver obs : _observers) {
-				obs.startPlay();
+			try {
+				_controller.step();
+			} catch (RebotinolFlowException e) {
+				throw new IllegalStateException(e);
 			}
+			_playTimer.start();
+			_buttonsController.forwardStarted();
 		}
 	}
 	
@@ -101,8 +92,10 @@ public class RebotinolScheduler {
 	public void stop() {
 		if (_playTimer.isRunning()) {
 			_playTimer.stop();
-			for (RebotinolControlObserver obs : _observers) {
-				obs.stopPlay();
+			if (_forward) {
+				_buttonsController.forwardFinished();
+			} else {
+				_buttonsController.backwardFinished();
 			}
 		}
 	}
@@ -114,9 +107,7 @@ public class RebotinolScheduler {
 		_forward = false;
 		if (!_playTimer.isRunning()) {
 			_playTimer.start();
-			for (RebotinolControlObserver obs : _observers) {
-				obs.startPlayBack();
-			}
+			_buttonsController.backwardStarted();
 		}
 	}
 	

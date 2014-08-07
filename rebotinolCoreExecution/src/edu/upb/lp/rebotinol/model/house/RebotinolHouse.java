@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolMatrixObserver;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
@@ -19,7 +20,8 @@ import edu.upb.lp.rebotinol.util.RebotinolFatalException;
  */
 // TODO manage errors
 public class RebotinolHouse {
-	private final List<RebotinolHouseObserver> _observers = new ArrayList<RebotinolHouseObserver>();
+	private final List<RebotinolHouseObserver> _houseObservers = new ArrayList<RebotinolHouseObserver>();
+	private final List<RebotinolMatrixObserver> _matrixObservers = new ArrayList<RebotinolMatrixObserver>();
 	private final int _sizeH;
 	private final int _sizeV;
 	private final Fraction[][] _matrix;
@@ -63,7 +65,17 @@ public class RebotinolHouse {
 	 *            The observer to be added
 	 */
 	public void registerObserver(RebotinolHouseObserver observer) {
-		_observers.add(observer);
+		_houseObservers.add(observer);
+	}
+	
+	/**
+	 * Adds a matrix observer to this house
+	 * 
+	 * @param observer
+	 *            The observer to be added
+	 */
+	public void registerObserver(RebotinolMatrixObserver observer) {
+		_matrixObservers.add(observer);
 	}
 
 	/**
@@ -74,7 +86,7 @@ public class RebotinolHouse {
 	 */
 	public void setMemory(Fraction value) {
 		_memory = value;
-		for (RebotinolHouseObserver observer : _observers) {
+		for (RebotinolHouseObserver observer : _houseObservers) {
 			observer.memoryChanged(_memory);
 		}
 	}
@@ -102,7 +114,7 @@ public class RebotinolHouse {
 		int oldPositionV = _positionV;
 		_positionH = h;
 		_positionV = v;
-		for (RebotinolHouseObserver observer : _observers) {
+		for (RebotinolMatrixObserver observer : _matrixObservers) {
 			observer.positionChanged(oldPositionH, oldPositionV, _positionH,
 					_positionV);
 		}
@@ -145,7 +157,7 @@ public class RebotinolHouse {
 	 */
 	public void setMail(Mail mail) {
 		_mail = mail;
-		for (RebotinolHouseObserver observer : _observers) {
+		for (RebotinolHouseObserver observer : _houseObservers) {
 			observer.mailChanged(mail);
 		}
 	}
@@ -166,7 +178,7 @@ public class RebotinolHouse {
 			throw new RebotinolFatalException("Tried to send the matrix when it was already sent!");
 		}
 		_matrixSent = true;
-		for (RebotinolHouseObserver observer : _observers) {
+		for (RebotinolHouseObserver observer : _houseObservers) {
 			observer.matrixSent();
 		}
 	}
@@ -180,7 +192,7 @@ public class RebotinolHouse {
 			throw new RebotinolFatalException("Tried to unsend the matrix when it was not sent!");
 		}
 		_matrixSent = false;
-		for (RebotinolHouseObserver observer : _observers) {
+		for (RebotinolHouseObserver observer : _houseObservers) {
 			observer.matrixUnsent();
 		}
 	}
@@ -229,7 +241,7 @@ public class RebotinolHouse {
 	 */
 	public void writeInMatrix(Fraction val) {
 		_matrix[_positionV][_positionH] = val;
-		for (RebotinolHouseObserver obs : _observers) {
+		for (RebotinolMatrixObserver obs : _matrixObservers) {
 			obs.matrixChanged(_positionH, _positionV, val);
 		}
 	}
@@ -246,8 +258,21 @@ public class RebotinolHouse {
 	 */
 	public void writeInMatrix(int h, int v, Fraction val) {
 		_matrix[v][h] = val;
-		for (RebotinolHouseObserver obs : _observers) {
+		for (RebotinolMatrixObserver obs : _matrixObservers) {
 			obs.matrixChanged(h, v, val);
+		}
+	}
+	
+	public void setError(boolean error) {
+		_error = error;
+		if (error) {
+			for (RebotinolHouseObserver obs: _houseObservers) {
+				obs.rebotinolErrorOcurred();
+			}
+		} else {
+			for (RebotinolHouseObserver obs: _houseObservers) {
+				obs.rebotinolErrorSolved();
+			}
 		}
 	}
 }

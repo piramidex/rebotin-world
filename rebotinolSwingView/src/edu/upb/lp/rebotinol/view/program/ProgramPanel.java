@@ -8,8 +8,12 @@ import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.view.program.buttons.ButtonsPanel;
 import edu.upb.lp.rebotinol.view.program.executions.ExecutionsPanel;
 
+/**
+ * 
+ * @author Alexis Marechal
+ *
+ */
 //TODO javadoc
-//TODO all
 public class ProgramPanel extends JPanel {
 	/**
 	 * Serial

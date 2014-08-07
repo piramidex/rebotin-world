@@ -1,16 +1,11 @@
 package edu.upb.lp.rebotinol.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
-import edu.upb.lp.rebotinol.observers.RebotinolControlObserver;
-import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserverImpl;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -31,8 +26,7 @@ public class RebotinolController {
 	private Fraction _expectedResult;
 	private SequentialInstructionExecution _program;
 	private RebotinolScheduler _scheduler;
-	private List<RebotinolControlObserver> _observers = new ArrayList<RebotinolControlObserver>();
-	private ProgramObserver _pObs = new ProgramObserver();
+	private RebotinolButtonsController _buttonsController = new RebotinolButtonsController();
 
 	/**
 	 * Constructor
@@ -81,18 +75,7 @@ public class RebotinolController {
 		}
 		this._expectedResult = expectedResult;
 		this._program = program;
-		_program.registerObserver(_pObs);
-		_scheduler = new RebotinolScheduler(this);
-	}
-
-	/**
-	 * Register an observer, following the Observer design pattern.
-	 * 
-	 * @param observer
-	 *            The observer to be registered.
-	 */
-	public void registerObserver(RebotinolControlObserver observer) {
-		_observers.add(observer);
+		_scheduler = new RebotinolScheduler(this,_buttonsController);
 	}
 
 	/**
@@ -139,43 +122,67 @@ public class RebotinolController {
 	public RebotinolScheduler getScheduler() {
 		return _scheduler;
 	}
+	
+	/**
+	 * @return the buttons controller
+	 */
+	public RebotinolButtonsController getButtonsController() {
+		return _buttonsController;
+	}
 
 	/**
 	 * Execute a single step in this program
 	 * 
-	 * @throws RebotinolExecutionException
-	 *             If the program was incorrect (i.e., it asked to memorize a
-	 *             number from an empty cell). This exception is to be expected
-	 *             often, as it indicates an error made by the rebotinol
-	 *             programmer.
 	 * @throws RebotinolFlowException
 	 *             If the program tried to execute some illegal instruction,
 	 *             like an instruction that was already finished. This exception
 	 *             indicates a severe bug in the execution platform.
 	 */
-	public void step() throws RebotinolExecutionException,
-			RebotinolFlowException {
+	public void step() throws RebotinolFlowException {
 		if (!_program.isStarted()) {
-			for (RebotinolControlObserver obs : _observers) {
-				obs.activatePrevious();
-			}
+			_buttonsController.programStarted();
 		}
-		_program.step(_house);
+		try {
+			_program.step(_house);
+		} catch (RebotinolExecutionException e) {
+			_buttonsController.errorMet();
+			_house.setError(true);
+		}
 		if (_program.isFinished()) {
-			for (RebotinolControlObserver obs : _observers) {
-				obs.deActivateNext();
-			}
+			_buttonsController.programFinished();
 		}
 	}
 
 	/**
+	 * Performs a step. Only to be used by a {@link RebotinolScheduler}!
+	 * @return true if a breakpoint was met. In this case, the step is not performed.
+	 * @throws RebotinolFlowException If an error occured with the flow.
+	 */
+	protected boolean automaticStep() throws RebotinolFlowException {
+		RebotinolInstructionExecution next = _program.getNextExecutionToStep();
+		if (next.isBreakpoint()) {
+			return true;
+		} else {
+			step();
+			return false;
+		}
+	}
+	
+	/**
+	 * Performs a step back. Only to be used by a {@link RebotinolScheduler}!
+	 * @return true if a breakpoint was met after computing the stepback.
+	 * @throws RebotinolFlowException If an error occured with the flow.
+	 * @throws RebotinolFatalException If something went really wrong.
+	 */
+	protected boolean automaticStepBack() throws RebotinolFlowException, RebotinolFatalException {
+		stepBack();
+		RebotinolInstructionExecution next = _program.getNextExecutionToStep();
+		return next.isBreakpoint();
+	}
+	
+	/**
 	 * Go a single step back. This method undoes the last {@link #step()}
-	 * 
-	 * @throws RebotinolExecutionException
-	 *             If the program was incorrect (i.e., it asked to memorize a
-	 *             number from an empty cell). This exception is to be expected
-	 *             often, as it indicates an error made by the rebotinol
-	 *             programmer.
+	 *
 	 * @throws RebotinolFlowException
 	 *             If the program tried to execute some illegal instruction,
 	 *             like an instruction that was already finished. This exception
@@ -183,18 +190,14 @@ public class RebotinolController {
 	 * @throws RebotinolFatalException
 	 *             If something went really wrong
 	 */
-	public void stepBack() throws RebotinolExecutionException,
-			RebotinolFlowException, RebotinolFatalException {
+	public void stepBack() throws RebotinolFlowException, RebotinolFatalException {
 		if (_program.isFinished()) {
-			for (RebotinolControlObserver obs : _observers) {
-				obs.activateNext();
-			}
+			_buttonsController.programUnFinished();
+			_buttonsController.errorSolved();
 		}
 		_program.stepBack(_house);
 		if (!_program.isStarted()) {
-			for (RebotinolControlObserver obs : _observers) {
-				obs.deActivatePrevious();
-			}
+			_buttonsController.programUnStarted();
 		}
 	}
 
@@ -212,46 +215,12 @@ public class RebotinolController {
 		execution.toggleBreakpoint();
 	}
 
-	private class ProgramObserver extends RebotinolExecutionObserverImpl {
-		@Override
-		public void finished() {
-			_scheduler.stop();
-			for (RebotinolControlObserver obs : _observers) {
-				obs.deActivatePlay();
-			}
-		}
-
-		@Override
-		public void unfinished() {
-			if (!_scheduler.isRunning()) {
-				for (RebotinolControlObserver obs : _observers) {
-					obs.activatePlay();
-				}
-			}
-		}
-		
-		@Override
-		public void unstarted() {
-			_scheduler.stop();
-			for (RebotinolControlObserver obs : _observers) {
-				obs.deActivatePlayBack();
-			}
-		}
-
-		@Override
-		public void started() {
-			if (!_scheduler.isRunning()) {
-				for (RebotinolControlObserver obs : _observers) {
-					obs.activatePlayBack();
-				}
-			}
-		}
-
-		@Override
-		public void breakpointMet() {
-			_scheduler.stop();
-		}
-	}
+//	private class ProgramObserver extends RebotinolExecutionObserverImpl {
+//		@Override
+//		public void breakpointMet() {
+//			_scheduler.stop();
+//		}
+//	}
 
 	/**
 	 * @return true if the current execution has a breakpoint
@@ -272,6 +241,7 @@ public class RebotinolController {
 	 */
 	public void stop() {
 		_scheduler.stop();
+		
 	}
 	
 	/**

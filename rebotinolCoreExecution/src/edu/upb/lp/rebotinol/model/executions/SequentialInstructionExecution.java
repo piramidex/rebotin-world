@@ -55,8 +55,7 @@ public abstract class SequentialInstructionExecution extends
 	 * {@inheritDoc} 
 	 */
 	@Override
-	protected void doStepBack(RebotinolHouse house)
-			throws RebotinolFlowException, RebotinolExecutionException, RebotinolFatalException {
+	protected void doStepBack(RebotinolHouse house) throws RebotinolFlowException, RebotinolFatalException {
 		RebotinolInstructionExecution current = getCurrentExecution();
 		if (current.isStarted()) {
 			current.stepBack(house);
@@ -170,5 +169,19 @@ public abstract class SequentialInstructionExecution extends
 			return true;
 		}
 		return getCurrentExecution().isDeepBreakpoint();
+	}
+	
+	/**
+	 * Computes the next execution that will receive a step order. It enters into the executions tree
+	 * looking for a leaf
+	 * @return The next execution that will receive a step order.
+	 */
+	public RebotinolInstructionExecution getNextExecutionToStep() {
+		RebotinolInstructionExecution e = getCurrentExecution();
+		if (e instanceof SequentialInstructionExecution) {
+			return ((SequentialInstructionExecution) e).getNextExecutionToStep();
+		} else {
+			return e;
+		}
 	}
 }

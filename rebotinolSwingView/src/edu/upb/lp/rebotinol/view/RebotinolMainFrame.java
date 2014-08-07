@@ -16,8 +16,6 @@ import edu.upb.lp.rebotinol.view.world.WorldPanel;
  * 
  * @author Alexis Marechal
  */
-//TODO fix all this
-//TODO javadoc
 public class RebotinolMainFrame extends JFrame {
 	/**
 	 * Serial
