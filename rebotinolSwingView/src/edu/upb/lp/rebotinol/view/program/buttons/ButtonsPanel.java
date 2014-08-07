@@ -18,6 +18,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  *
  */
 //TODO javadoc
+//TODO check what to do with exceptions, who is supposed to catch them?
 public class ButtonsPanel extends JPanel implements RebotinolButtonsObserver {
 	/**
 	 * Serial

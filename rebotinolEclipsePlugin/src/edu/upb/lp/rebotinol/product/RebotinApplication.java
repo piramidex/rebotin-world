@@ -14,7 +14,7 @@ public class RebotinApplication implements IApplication {
 	/* (non-Javadoc)
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
 	 */
-	public Object start(IApplicationContext context) throws Exception {
+	public Object start(IApplicationContext context) {
 		Display display = PlatformUI.createDisplay();
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new RebotinApplicationWorkbenchAdvisor());

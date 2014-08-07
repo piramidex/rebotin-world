@@ -16,6 +16,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alexis Marechal
  *
  */
+//TODO check what to do with exceptions
 public class RebotinolScheduler {
 	private final RebotinolController _controller;
 	private RebotinolButtonsController _buttonsController;

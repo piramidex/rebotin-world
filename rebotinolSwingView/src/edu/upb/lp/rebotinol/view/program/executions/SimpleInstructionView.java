@@ -17,6 +17,8 @@ import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.observers.RebotinolExecutionObserver;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
+//TODO javadoc
+//TODO check what to do with exceptions, who is supposed to catch them?
 public class SimpleInstructionView extends InstructionView implements RebotinolExecutionObserver {
 	/**
 	 * Serial 

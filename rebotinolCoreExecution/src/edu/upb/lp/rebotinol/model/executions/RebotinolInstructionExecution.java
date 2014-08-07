@@ -269,8 +269,11 @@ public abstract class RebotinolInstructionExecution {
 	public void toggleBreakpoint() throws RebotinolFatalException {
 		_breakpoint = !_breakpoint;
 		for(RebotinolExecutionObserver o : _observers) {
-			if (_breakpoint) o.breakpointSet();
-			else o.breakpointRemoved();
+			if (_breakpoint) {
+				o.breakpointSet();
+			} else {
+				o.breakpointRemoved();
+			}
 		}
 		
 	}

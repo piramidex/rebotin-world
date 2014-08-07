@@ -259,7 +259,7 @@ public class ProgramBuilderFromXtext {
 		public Fraction toFraction(edu.upb.lp.rebotinol.Number n) {
 			Fraction res = doSwitch(n);
 			if (res == null) {
-				throw new RuntimeException(
+				throw new IllegalStateException(
 						"Fatal! Trying to convert a number which is not an instance of the class Number");
 			}
 			return res;
