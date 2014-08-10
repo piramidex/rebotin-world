@@ -66,18 +66,14 @@ public abstract class AutomaticGUITesting extends ManualGUITesting {
 		ActionListener listener2 = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				try {
-					if (!program.isStarted()) {
-						timer.stop();
-					} else {
-						try {
-							program.stepBack(finalHouse);
-						} catch (RebotinolFatalException e) {
-							throw new IllegalStateException(e);
-						}
+				if (!program.isStarted()) {
+					timer.stop();
+				} else {
+					try {
+						program.stepBack(finalHouse);
+					} catch (RebotinolFatalException e) {
+						throw new IllegalStateException(e);
 					}
-				} catch (RebotinolFlowException e) {
-					throw new IllegalStateException(e);
 				}
 			}
 		};

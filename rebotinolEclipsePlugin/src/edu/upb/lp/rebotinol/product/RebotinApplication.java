@@ -6,6 +6,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
+import edu.upb.lp.rebotinol.util.RebotinolExceptionHandler;
+
 /**
  * This class controls all aspects of the application's execution
  */
@@ -15,7 +17,9 @@ public class RebotinApplication implements IApplication {
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
 	 */
 	public Object start(IApplicationContext context) {
-		Display display = PlatformUI.createDisplay();
+		final Display display = PlatformUI.createDisplay();
+		Thread.setDefaultUncaughtExceptionHandler(
+		        new RebotinolExceptionHandler(display.getActiveShell()));
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new RebotinApplicationWorkbenchAdvisor());
 			if (returnCode == PlatformUI.RETURN_RESTART)
@@ -25,7 +29,6 @@ public class RebotinApplication implements IApplication {
 		} finally {
 			display.dispose();
 		}
-		
 	}
 
 	/* (non-Javadoc)

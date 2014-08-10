@@ -9,7 +9,7 @@ package edu.upb.lp.rebotinol.util;
  * @author Alexis Marechal
  * 
  */
-public class RebotinolFlowException extends Exception {
+public class RebotinolFlowException extends RebotinolFatalException {
 
 	public RebotinolFlowException(String string) {
 		super(string);

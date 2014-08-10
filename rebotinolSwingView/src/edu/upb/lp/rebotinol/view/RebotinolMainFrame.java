@@ -32,7 +32,7 @@ public class RebotinolMainFrame extends JFrame {
 	 */
 	public RebotinolMainFrame(RebotinolController controller) {
 		super("Ejecuci—n de rebotin");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		_controller = controller;
 		setSize(800, 500);
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.LINE_AXIS));

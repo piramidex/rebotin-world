@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.fieldassist.ControlDecoration;
 import org.eclipse.jface.fieldassist.FieldDecoration;
@@ -39,8 +40,8 @@ import edu.upb.lp.reboConf.Configuration;
 import edu.upb.lp.rebotinol.RebotinolProgram;
 import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.util.RebotinFrameManager;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
-import edu.upb.lp.rebotinol.view.RebotinolMainFrame;
 import edu.upb.lp.rebotinol.xtextToSwing.FileChecker;
 import edu.upb.lp.rebotinol.xtextToSwing.MatrixBuilderFromXText;
 import edu.upb.lp.rebotinol.xtextToSwing.ProgramBuilderFromXtext;
@@ -320,11 +321,17 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			RebotinolHouse house = new RebotinolHouse(initialMatrix);
 			RebotinolController controller = new RebotinolController(house,
 					initialMatrix, expectedMatrix, expectedResult, program);
-			RebotinolMainFrame frame = new RebotinolMainFrame(controller);
-			frame.setVisible(true);
+			RebotinFrameManager.launchFrame(controller);
 			super.okPressed();
 		} catch (RebotinolFatalException e) {
-			throw new IllegalStateException(e);
+			String message = e.getMessage();
+			String error = "Oh no! Encontraste un error en el mundo de rebotin!";
+			error += "\nPor favor, env’anos un e-mail con el siguiente mensaje a ciprog@lp.upb.edu:\n";
+			error += "\n\n Error message: " + message;
+			MessageDialog.openError(
+			getShell(),
+			"ERROR",
+			error);
 		}
 	}
 
