@@ -18,8 +18,7 @@ public class RebotinApplication implements IApplication {
 	 */
 	public Object start(IApplicationContext context) {
 		final Display display = PlatformUI.createDisplay();
-		Thread.setDefaultUncaughtExceptionHandler(
-		        new RebotinolExceptionHandler(display.getActiveShell()));
+		RebotinolExceptionHandler.configure(display.getActiveShell());
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new RebotinApplicationWorkbenchAdvisor());
 			if (returnCode == PlatformUI.RETURN_RESTART)

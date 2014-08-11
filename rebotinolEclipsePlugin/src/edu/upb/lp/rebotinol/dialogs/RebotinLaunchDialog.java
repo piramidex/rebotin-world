@@ -8,15 +8,17 @@ import org.apache.commons.math3.fraction.Fraction;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.fieldassist.ControlDecoration;
 import org.eclipse.jface.fieldassist.FieldDecoration;
@@ -328,11 +330,12 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			String error = "Oh no! Encontraste un error en el mundo de rebotin!";
 			error += "\nPor favor, env’anos un e-mail con el siguiente mensaje a ciprog@lp.upb.edu:\n";
 			error += "\n\n Error message: " + message;
-			MessageDialog.openError(
-			getShell(),
-			"ERROR",
-			error);
+			IStatus status = new Status(IStatus.ERROR, "rebotinolEclipsePlugin.application", 1,
+					error, e.getCause());
+			ErrorDialog.openError(getShell(),
+					"Error!", null, status);
 		}
+
 	}
 
 	private String extractFileName(String path) {
