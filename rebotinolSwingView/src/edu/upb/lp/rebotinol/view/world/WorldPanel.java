@@ -42,7 +42,7 @@ public class WorldPanel extends JPanel {
 		_housePanel.setOpaque(false);
 		layers.add(_housePanel, 1, 0);
 		
-		_rebotinPanel = new RebotinPanel(80, Color.WHITE, Color.BLACK);
+		_rebotinPanel = new RebotinPanel(80, Color.WHITE, Color.BLACK, controller);
 		_rebotinPanel.setSize(500, 500);
 		_rebotinPanel.setLocation(140, 120);
 		_rebotinPanel.setOpaque(false);

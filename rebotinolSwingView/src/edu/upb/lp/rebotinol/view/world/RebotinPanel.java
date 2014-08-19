@@ -14,7 +14,11 @@ import javax.swing.JPanel;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-public class RebotinPanel extends JPanel{
+import edu.upb.lp.rebotinol.controller.RebotinolController;
+import edu.upb.lp.rebotinol.model.house.Mail;
+import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
+
+public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 
 	
 	protected int _delta;
@@ -66,7 +70,7 @@ public class RebotinPanel extends JPanel{
 
 	protected NumberPanel _numPanel;
 	
-	public RebotinPanel(int size, Color color, Color borderColor) {
+	public RebotinPanel(int size, Color color, Color borderColor, RebotinolController controller) {
 		super();
 		
 		_size = size;
@@ -76,11 +80,13 @@ public class RebotinPanel extends JPanel{
 		createShapes();
 		
 		setLayout(null);
-		_numPanel = new NumberPanel(new Fraction(3,4), (int) (1.5*_radBody), (int) (1.5*_radBody));
+		_numPanel = new NumberPanel(null, (int) (1.5*_radBody), (int) (1.5*_radBody));
 		_numPanel.setLocation(_xBody - (int) (0.75 * _radBody), _yBody - (int) (0.75 * _radBody));
 		_numPanel.setSize((int) (1.5*_radBody), (int) (1.5*_radBody));
 		_numPanel.setOpaque(false);
 		add(_numPanel);
+		
+		controller.getHouse().registerObserver(this);
 		
 	}
 	
@@ -157,6 +163,53 @@ public class RebotinPanel extends JPanel{
 		
 
 		
+		
+	}
+
+	
+	//-----------------------------------------------
+	// RebotinHouseObserver methods
+	//-----------------------------------------------
+
+
+	@Override
+	public void memoryChanged(Fraction memory) {
+		_numPanel.set_number(memory);
+		
+	}
+
+
+	@Override
+	public void mailChanged(Mail mail) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void matrixSent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void matrixUnsent() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void rebotinolErrorOcurred() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void rebotinolErrorSolved() {
+		// TODO Auto-generated method stub
 		
 	}
 	
