@@ -1,6 +1,7 @@
 package edu.upb.lp.rebotinol.view.world;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JLabel;
@@ -14,7 +15,7 @@ public class NumberPanel extends JPanel {
 	protected Fraction _number;
 	protected boolean _numberIsInt;
 	
-	protected int _sizeText;
+	protected int _fontSize;
 	protected int _ySize;
 	protected int _xSize;
 	
@@ -55,7 +56,7 @@ public class NumberPanel extends JPanel {
 		_x1Line = 0;
 		_y1Line = _ySize / 2;
 		_widthLine = _xSize;
-		_heightLine = (int) (_ySize * 0.1);
+		_heightLine = (int) (_ySize * 0.05);
 		
 		_x1Numerator = 0;
 		_y1Numerator = 0;
@@ -66,10 +67,16 @@ public class NumberPanel extends JPanel {
 		_x1Integer = 0;
 		_y1Integer = _ySize / 4;
 
-		// set number
+		// set numbera and font size
 		_lbNumerator = new JLabel("");
 		_lbDenominator = new JLabel("");
 		_lbInteger = new JLabel("");
+		
+		_fontSize = (int) ((_ySize / 2) * 0.75);
+		_lbNumerator.setFont(new Font(_lbNumerator.getFont().getFontName(),Font.PLAIN, _fontSize));
+		_lbDenominator.setFont(new Font(_lbNumerator.getFont().getFontName(),Font.PLAIN, _fontSize));
+		_lbInteger.setFont(new Font(_lbNumerator.getFont().getFontName(),Font.PLAIN, _fontSize));
+		
 		set_number(f);
 		
 		// place graphical components
