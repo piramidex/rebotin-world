@@ -51,6 +51,7 @@ public class NumberPanel extends JPanel {
 		// set size
 		_xSize = width;
 		_ySize = height;
+		setSize(_xSize, _ySize);
 
 		// compute number coordinates and fraction line
 		_x1Line = 0;
@@ -98,6 +99,9 @@ public class NumberPanel extends JPanel {
 		add(_lbNumerator);
 		add(_lbDenominator);
 		add(_lbInteger);
+		
+		// ohter
+		setOpaque(false);
 	}
 	
 	

@@ -14,7 +14,7 @@ public abstract class AbstractHousePanelTesting extends AutomaticGUITesting {
 		RebotinolExample ex = getExample();
 		MatrixPanel panel;
 		try {
-			panel = new MatrixPanel(ex.getHouse(), ex.getInitialMatrix());
+			panel = new MatrixPanel(ex.getHouse(), ex.getInitialMatrix(), 200, 200);
 		} catch (RebotinolFatalException e) {
 			throw new IllegalStateException(e);
 		}
