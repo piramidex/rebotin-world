@@ -19,55 +19,48 @@ import edu.upb.lp.rebotinol.util.RebotinolFatalException;
 
 //TODO javadoc
 //TODO check what to do with exceptions, who is supposed to catch them?
-public class SimpleInstructionView extends InstructionView implements RebotinolExecutionObserver {
+public class SimpleInstructionView extends InstructionView implements
+		RebotinolExecutionObserver {
 	/**
-	 * Serial 
+	 * Serial
 	 */
 	private static final long serialVersionUID = -2686975294972574340L;
 
-	protected boolean _breakpoint;
-	
+	protected boolean _breakpoint = false;
+
 	protected JLabel _lbIcon;
 	protected JLabel _lbInstruction;
-	protected Component _boxIndent; 
-	
-	private static ImageIcon emptyIcon = new ImageIcon("res/empty.png");
-	private static ImageIcon runIcon = new ImageIcon("res/arrow_small.png");
-	private static ImageIcon stopIcon = new ImageIcon("res/stop_small.png");
-	private static ImageIcon counterIcon = new ImageIcon("res/counter.png");
+	protected Component _boxIndent;
 
-	
-	public SimpleInstructionView(
-			RebotinolInstructionExecution instr,
-			ComposedInstructionView parentView,
-			RebotinolController controller) {
-		
+	private static ImageIcon emptyIcon = new ImageIcon("res/tmp/empty.png");
+	private static ImageIcon runIcon = new ImageIcon("res/tmp/arrow_small.png");
+	private static ImageIcon stopIcon = new ImageIcon("res/tmp/stop_small.png");
+	private static ImageIcon counterIcon = new ImageIcon("res/tmp/counter.png");
+
+	public SimpleInstructionView(RebotinolInstructionExecution instr,
+			ComposedInstructionView parentView, RebotinolController controller) {
+
 		super(instr, parentView, controller);
 		populateView();
-	
+
 	}
 
-	public SimpleInstructionView(
-			RebotinolInstructionExecution instr,
+	public SimpleInstructionView(RebotinolInstructionExecution instr,
 			RebotinolController controller) {
-		super(instr,controller);
+		super(instr, controller);
 		populateView();
 	}
 
+	public SimpleInstructionView(String instrText,
+			ComposedInstructionView parentView, RebotinolController controller) {
 
-	public SimpleInstructionView(
-			String instrText,
-			ComposedInstructionView parentView,
-			RebotinolController controller) {
-		
 		super(instrText, parentView, controller);
 		populateView();
 
 	}
 
-
-
-	public SimpleInstructionView(String instrText, RebotinolController controller) {
+	public SimpleInstructionView(String instrText,
+			RebotinolController controller) {
 		super(instrText, controller);
 		populateView();
 	}
@@ -75,11 +68,12 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 	private void populateView() {
 		setBackground(Color.WHITE);
 		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
-		
+
 		// icon
-		//add(Box.createHorizontalStrut(50));
+		// add(Box.createHorizontalStrut(50));
 		_lbIcon = new JLabel(emptyIcon);
-		_lbIcon.setPreferredSize(new Dimension(30,20));;
+		_lbIcon.setPreferredSize(new Dimension(30, 20));
+		;
 		if (_runnable) {
 			_lbIcon.addMouseListener(new MouseInputAdapter() {
 				public void mouseClicked(MouseEvent e) {
@@ -94,73 +88,61 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 			});
 		}
 		add(_lbIcon);
-		
-		
+
 		// indent
-		_boxIndent = Box.createHorizontalStrut(30*_indent);
+		_boxIndent = Box.createHorizontalStrut(30 * _indent);
 		add(_boxIndent);
-		
+
 		// instruction
 		add(_lbInstruction = new JLabel(_instrText));
 		add(Box.createHorizontalGlue());
-		
+
 		// to avoid vertical resizing - no way to avoid fixing horizontal limit?
-		setMaximumSize(new Dimension(2000,50));
+		setMaximumSize(new Dimension(2000, 50));
 	}
 
-
-
-
 	protected void handleBreakpointEvent() throws RebotinolFatalException {
-		for(RebotinolInstructionExecution e : _executions) {
+		for (RebotinolInstructionExecution e : _executions) {
 			_controller.toggleBreakpoint(e);
 		}
 	}
 
-	
-
-	
 	public void setCounter(int n) {
 
-		
 	}
 
-
-	
-
-	//------------------------------------------------
+	// ------------------------------------------------
 	// RebotinolExecutionObserver interface methods
-	//------------------------------------------------
-	
+	// ------------------------------------------------
 
 	@Override
 	public void stepPerformed() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void stepsChanged(int _steps) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void stepBackPerformed() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void finished() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void unfinished() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -178,35 +160,35 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 	@Override
 	public void skipped() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void unskipped() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void breakpointMet() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void breakpointSet() throws RebotinolFatalException {
-		if (_breakpoint) throw new RebotinolFatalException(
-				"trying to set a breakpoint when it is already set");
-		_breakpoint = true;
-		_lbIcon.setIcon(stopIcon);		
+		if (!_breakpoint) {
+			_breakpoint = true;
+			_lbIcon.setIcon(stopIcon);
+		}
 	}
 
 	@Override
 	public void breakpointRemoved() throws RebotinolFatalException {
-		if (!_breakpoint) throw new RebotinolFatalException(
-				"trying to remove a breakpoint when it is already removed");
-		_breakpoint = false;
-		_lbIcon.setIcon(emptyIcon);		
+		if (_breakpoint) {
+			_breakpoint = false;
+			_lbIcon.setIcon(emptyIcon);
+		}
 	}
 
 	@Override
@@ -214,19 +196,20 @@ public class SimpleInstructionView extends InstructionView implements RebotinolE
 		_lbIcon.setIcon(counterIcon);
 		_lbIcon.setText(repetitionsExecuted + "");
 		_lbIcon.setHorizontalTextPosition(JLabel.CENTER);
-		_lbIcon.setFont(new Font(_lbIcon.getFont().getFontName(),Font.PLAIN, 10));
+		_lbIcon.setFont(new Font(_lbIcon.getFont().getFontName(), Font.PLAIN,
+				10));
 	}
 
 	@Override
 	public void started() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void unstarted() {
 		// TODO Auto-generated method stub
-		
+
 	}
-    
+
 }

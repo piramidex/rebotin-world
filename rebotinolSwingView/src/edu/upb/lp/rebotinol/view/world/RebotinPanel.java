@@ -2,14 +2,11 @@ package edu.upb.lp.rebotinol.view.world;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
-import java.awt.geom.Path2D;
 
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import org.apache.commons.math3.fraction.Fraction;
@@ -19,8 +16,11 @@ import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
 
 public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
+	/**
+	 * Serial
+	 */
+	private static final long serialVersionUID = -5686956676990143441L;
 
-	
 	protected int _delta;
 	protected int _size;
 	protected double _direction;
@@ -209,6 +209,13 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 
 	@Override
 	public void rebotinolErrorSolved() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void errorMessageChanged(String message) {
 		// TODO Auto-generated method stub
 		
 	}

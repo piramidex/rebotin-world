@@ -31,6 +31,7 @@ public class RebotinolHouse {
 	private Mail _mail;
 	private boolean _matrixSent;
 	private boolean _error;
+	private String _errorMessage;
 
 	/**
 	 * Builds a rebotinol house
@@ -274,5 +275,18 @@ public class RebotinolHouse {
 				obs.rebotinolErrorSolved();
 			}
 		}
+	}
+
+	public void setErrorMessage(String message) {
+		_errorMessage = message;
+		if (_error) {
+			for (RebotinolHouseObserver obs: _houseObservers) {
+				obs.errorMessageChanged(message);
+			}
+		}
+	}
+	
+	public String getErrorMessage() {
+		return _errorMessage;
 	}
 }

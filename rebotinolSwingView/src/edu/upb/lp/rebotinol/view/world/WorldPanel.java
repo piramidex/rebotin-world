@@ -1,8 +1,6 @@
 package edu.upb.lp.rebotinol.view.world;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLayeredPane;

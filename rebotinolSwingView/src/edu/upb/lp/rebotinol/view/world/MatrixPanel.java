@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.text.DecimalFormat;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import org.apache.commons.math3.fraction.Fraction;

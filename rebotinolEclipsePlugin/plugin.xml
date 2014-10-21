@@ -209,6 +209,14 @@
                name="windowImages"
                value="icons/16x16.png,icons/32x32.png,icons/48x48.png,icons/64x64.png">
          </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
       </product>
    </extension>
 </plugin>

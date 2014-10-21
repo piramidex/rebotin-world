@@ -50,4 +50,11 @@ public interface RebotinolHouseObserver {
 	 * was solved.
 	 */
 	public void rebotinolErrorSolved();
+
+	/**
+	 * Indicates that the error message has changed and should be updated. This
+	 * method should only be called when an error has actually occurred.
+	 * @param message The new error message
+	 */
+	public void errorMessageChanged(String message);
 }

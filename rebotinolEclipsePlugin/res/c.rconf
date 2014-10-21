@@ -1,9 +1,11 @@
-//En este archivo se encuentra la matriz en la que debe trabajar Rebotin. He aqui un ejemplo:
+//En este archivo se encuentra la matriz en la que debe trabajar Rebotin. 
+//Este es un ejemplo:
 Matriz inicial:
 1,1
 1,1
 
-//Opcionalmente, puedes definir la matriz o el correo que se espera al terminar el programa:
+//Opcionalmente, puedes definir la matriz o el correo que se espera al terminar
+//el programa:
 Correo esperado:
 4
 

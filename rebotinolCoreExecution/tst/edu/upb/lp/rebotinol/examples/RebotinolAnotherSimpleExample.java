@@ -7,7 +7,6 @@ import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.executions.DerExecution;
 import edu.upb.lp.rebotinol.model.executions.EnviarMatrizExecution;
-import edu.upb.lp.rebotinol.model.executions.EscriExecution;
 import edu.upb.lp.rebotinol.model.executions.MemoExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;

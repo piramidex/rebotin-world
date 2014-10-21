@@ -61,7 +61,7 @@ import edu.upb.lp.rebotinol.util.RebotinolSwitch;
  * 
  */
 public class ProgramBuilderFromXtext {
-	
+
 	private static InnerBuilder builder = new InnerBuilder();
 	private static NumbersBuilder numbers = new NumbersBuilder();
 
@@ -76,7 +76,8 @@ public class ProgramBuilderFromXtext {
 	 */
 	public static edu.upb.lp.rebotinol.model.executions.RebotinolProgram buildProgram(
 			RebotinolProgram prog) throws RebotinolFatalException {
-		return (edu.upb.lp.rebotinol.model.executions.RebotinolProgram) builder.build(prog);
+		return (edu.upb.lp.rebotinol.model.executions.RebotinolProgram) builder
+				.build(prog);
 	}
 
 	/**
@@ -250,7 +251,11 @@ public class ProgramBuilderFromXtext {
 
 		@Override
 		public RebotinolInstructionExecution caseRepetirn(Repetirn instr) {
-			return new RepExecution(getSubExecutions(instr), 
+			List<RebotinolInstructionExecution> subRep = new ArrayList<RebotinolInstructionExecution>();
+			for (int i = 0; i < instr.getVal(); i++) {
+				subRep.addAll(getSubExecutions(instr));
+			}
+			return new RepExecution(subRep, 
 					instr.getSubInstructions().size());
 		}
 	}

@@ -10,8 +10,13 @@ import javax.swing.JPanel;
 import org.apache.commons.math3.fraction.Fraction;
 
 
+//TODO javadoc
 public class NumberPanel extends JPanel {
-	
+	/**
+	 * Serial 
+	 */
+	private static final long serialVersionUID = -5679333636754934432L;
+
 	protected Fraction _number;
 	protected boolean _numberIsInt;
 	

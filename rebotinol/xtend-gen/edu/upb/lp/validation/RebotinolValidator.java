@@ -5,7 +5,7 @@ package edu.upb.lp.validation;
 
 import com.google.common.base.Objects;
 import edu.upb.lp.rebotinol.Fraction;
-import edu.upb.lp.rebotinol.RebotinolPackage;
+import edu.upb.lp.rebotinol.RebotinolPackage.Literals;
 import edu.upb.lp.validation.AbstractRebotinolValidator;
 import org.eclipse.xtext.validation.Check;
 
@@ -23,7 +23,7 @@ public class RebotinolValidator extends AbstractRebotinolValidator {
     if (_equals) {
       this.error(
         "Una fracción no puede tener un denominador nulo", 
-        RebotinolPackage.Literals.FRACTION__DENOMINATOR);
+        Literals.FRACTION__DENOMINATOR);
     }
   }
 }

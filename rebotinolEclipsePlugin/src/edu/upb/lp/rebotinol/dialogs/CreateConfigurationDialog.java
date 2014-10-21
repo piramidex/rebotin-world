@@ -253,7 +253,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 		// create file
 		URL url;
 		try {
-			url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/c.rconf");
+			url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/ce.rconf");
 			InputStream inputStream = url.openConnection().getInputStream();
 			IFile newFile = project.getFile(new Path(_configurationTextField
 					.getText() + ".rconf"));

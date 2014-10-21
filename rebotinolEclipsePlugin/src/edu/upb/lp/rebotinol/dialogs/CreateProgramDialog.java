@@ -249,7 +249,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 		// create file
 		URL url;
 		try {
-			url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/p.rebo");
+			url = new URL("platform:/plugin/rebotinolEclipsePlugin/res/pe.rebo");
 			InputStream inputStream = url.openConnection().getInputStream();
 			IFile newFile = project.getFile(new Path(_programTextField
 					.getText() + ".rebo"));

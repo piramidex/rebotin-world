@@ -75,7 +75,7 @@ public class RebotinolController {
 		}
 		this._expectedResult = expectedResult;
 		this._program = program;
-		_scheduler = new RebotinolScheduler(this,_buttonsController);
+		_scheduler = new RebotinolScheduler(this, _buttonsController);
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class RebotinolController {
 	public RebotinolScheduler getScheduler() {
 		return _scheduler;
 	}
-	
+
 	/**
 	 * @return the buttons controller
 	 */
@@ -147,6 +147,11 @@ public class RebotinolController {
 		} catch (RebotinolExecutionException e) {
 			_buttonsController.errorMet();
 			_house.setError(true);
+			_house.setErrorMessage(e.getMessage());
+		} catch (ArithmeticException e) {
+			_buttonsController.errorMet();
+			_house.setError(true);
+			_house.setErrorMessage("Error numérico! Rebotín no puede manejar numeros demasiado grandes o pequeños");
 		}
 		if (_program.isFinished()) {
 			_buttonsController.programFinished();
@@ -155,38 +160,46 @@ public class RebotinolController {
 
 	/**
 	 * Performs a step. Only to be used by a {@link RebotinolScheduler}!
+	 * 
 	 * @return true if the automatic execution should stop.
-	 * @throws RebotinolFlowException If an error occured with the flow.
+	 * @throws RebotinolFlowException
+	 *             If an error occured with the flow.
 	 */
 	protected boolean automaticStep() throws RebotinolFlowException {
 		step();
 		if (_program.isFinished()) {
 			return true;
 		} else {
-			RebotinolInstructionExecution next = _program.getNextExecutionToStep();
+			RebotinolInstructionExecution next = _program
+					.getNextExecutionToStep();
 			return next.isBreakpoint();
 		}
 	}
-	
+
 	/**
 	 * Performs a step back. Only to be used by a {@link RebotinolScheduler}!
+	 * 
 	 * @return true if a breakpoint was met after computing the stepback.
-	 * @throws RebotinolFlowException If an error occured with the flow.
-	 * @throws RebotinolFatalException If something went really wrong.
+	 * @throws RebotinolFlowException
+	 *             If an error occured with the flow.
+	 * @throws RebotinolFatalException
+	 *             If something went really wrong.
 	 */
-	protected boolean automaticStepBack() throws RebotinolFlowException, RebotinolFatalException {
+	protected boolean automaticStepBack() throws RebotinolFlowException,
+			RebotinolFatalException {
 		stepBack();
 		if (!_program.isStarted()) {
 			return true;
 		} else {
-			RebotinolInstructionExecution next = _program.getNextExecutionToStep();
+			RebotinolInstructionExecution next = _program
+					.getNextExecutionToStep();
 			return next.isBreakpoint();
 		}
 	}
-	
+
 	/**
 	 * Go a single step back. This method undoes the last {@link #step()}
-	 *
+	 * 
 	 * @throws RebotinolFlowException
 	 *             If the program tried to execute some illegal instruction,
 	 *             like an instruction that was already finished. This exception
@@ -194,11 +207,12 @@ public class RebotinolController {
 	 * @throws RebotinolFatalException
 	 *             If something went really wrong
 	 */
-	public void stepBack() throws RebotinolFlowException, RebotinolFatalException {
+	public void stepBack() throws RebotinolFlowException,
+			RebotinolFatalException {
 		if (_program.isFinished()) {
 			_buttonsController.programUnFinished();
-			_buttonsController.errorSolved();
 		}
+		_buttonsController.errorSolved();
 		_program.stepBack(_house);
 		if (!_program.isStarted()) {
 			_buttonsController.programUnStarted();
@@ -219,12 +233,12 @@ public class RebotinolController {
 		execution.toggleBreakpoint();
 	}
 
-//	private class ProgramObserver extends RebotinolExecutionObserverImpl {
-//		@Override
-//		public void breakpointMet() {
-//			_scheduler.stop();
-//		}
-//	}
+	// private class ProgramObserver extends RebotinolExecutionObserverImpl {
+	// @Override
+	// public void breakpointMet() {
+	// _scheduler.stop();
+	// }
+	// }
 
 	/**
 	 * Starts play
@@ -232,15 +246,15 @@ public class RebotinolController {
 	public void play() {
 		_scheduler.play();
 	}
-	
+
 	/**
 	 * Stops play
 	 */
 	public void stop() {
 		_scheduler.stop();
-		
+
 	}
-	
+
 	/**
 	 * Stops play
 	 */

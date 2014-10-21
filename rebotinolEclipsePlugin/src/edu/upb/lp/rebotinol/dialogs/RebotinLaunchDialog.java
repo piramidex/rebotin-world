@@ -178,12 +178,14 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog dlg = new FileDialog(buttonFile.getShell(), SWT.OPEN);
 				if (_programPath == null || _programPath.isEmpty()) {
-					dlg.setFileName(_currentFile);
+//					dlg.setFileName(_currentFile);
+					dlg.setFilterPath((new File(_currentFile)).getParent());
 				} else {
-					dlg.setFileName(_programPath);
+//					dlg.setFileName(_programPath);
+					dlg.setFilterPath((new File(_programPath)).getParent());
 				}
 				dlg.setText("Abrir");
-				dlg.setFilterExtensions(new String[] { "rebo" });
+				dlg.setFilterExtensions(new String[] { "*.rebo" });
 				String path = dlg.open();
 				if (path == null)
 					return;
@@ -223,12 +225,14 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog dlg = new FileDialog(buttonFile.getShell(), SWT.OPEN);
 				if (_configurationPath == null || _configurationPath.isEmpty()) {
-					dlg.setFileName(_currentFile);
+//					dlg.setFileName(_currentFile);
+					dlg.setFilterPath((new File(_currentFile)).getParent());
 				} else {
-					dlg.setFileName(_configurationPath);
+//					dlg.setFileName(_configurationPath);
+					dlg.setFilterPath((new File(_configurationPath)).getParent());
 				}
 				dlg.setText("Abrir");
-				dlg.setFilterExtensions(new String[] { "rconf" });
+				dlg.setFilterExtensions(new String[] { "*.rconf" });
 				String path = dlg.open();
 				if (path == null)
 					return;

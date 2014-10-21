@@ -9,6 +9,7 @@ import javax.swing.SwingUtilities;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
 /**
@@ -20,16 +21,7 @@ import org.eclipse.swt.widgets.Shell;
  */
 public class RebotinolExceptionHandler implements
 		Thread.UncaughtExceptionHandler {
-	private Shell _shell;
-	/**
-	 * Constructor
-	 * 
-	 * @param shell
-	 *            A shell that will be used to show the errors.
-	 */
-	public RebotinolExceptionHandler(Shell shell) {
-		_shell = shell;
-	}
+	private static Shell _shell;
 
 	/**
 	 * Constructor without specifying the shell.
@@ -80,18 +72,24 @@ public class RebotinolExceptionHandler implements
 	// }
 
 	private void showMessage(Thread t, Throwable e) {
+		final Throwable e1 = e;
 		String message = e.getMessage();
 		// String stackTrace = generateStackTrace(e);
-		String error = "Oh no! Encontraste un error en el mundo de rebotin!";
-		error += "\nPor favor, env’anos un e-mail con el siguiente mensaje a ciprog@lp.upb.edu:\n";
-		error += "\n\n Error message: " + message;
+		final String error = "Oh no! Encontraste un error en el mundo de rebotin!"
+				+ "\nPor favor, env’anos un e-mail con el siguiente mensaje a ciprog@lp.upb.edu:\n"
+				+ "\n\n Error message: " + message;
 		// show an error dialog
 		// JOptionPane.showMessageDialog(null,
 		// error, "Exception Occurred in " + t,
 		// JOptionPane.ERROR_MESSAGE);
-		IStatus status = new Status(IStatus.ERROR,
-				"rebotinolEclipsePlugin.application", 1, error, e.getCause());
-		ErrorDialog.openError(_shell, "Error!", null, status);
+		Display.getDefault().asyncExec(new Runnable() {
+            @Override
+            public void run() {
+            	IStatus status = new Status(IStatus.ERROR,
+        				"rebotinolEclipsePlugin.application", 1, error, e1.getCause());
+        		ErrorDialog.openError(_shell, "Error!", null, status);
+            }
+        });
 	}
 
 	// /**
@@ -107,7 +105,8 @@ public class RebotinolExceptionHandler implements
 	}
 
 	public static void configure(Shell shell) {
-		Thread.setDefaultUncaughtExceptionHandler(new RebotinolExceptionHandler(shell));
+		_shell = shell;
+		Thread.setDefaultUncaughtExceptionHandler(new RebotinolExceptionHandler());
 		System.setProperty("sun.awt.exception.handler",
 				RebotinolExceptionHandler.class.getName());
 	}
