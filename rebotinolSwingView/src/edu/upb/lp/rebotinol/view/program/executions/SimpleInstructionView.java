@@ -41,39 +41,42 @@ public class SimpleInstructionView extends InstructionView implements
 			ComposedInstructionView parentView, RebotinolController controller) {
 
 		super(instr, parentView, controller);
-		populateView();
+		populateView(instr.isCurrent());
 
 	}
 
 	public SimpleInstructionView(RebotinolInstructionExecution instr,
 			RebotinolController controller) {
 		super(instr, controller);
-		populateView();
+		populateView(instr.isCurrent());
 	}
 
 	public SimpleInstructionView(String instrText,
 			ComposedInstructionView parentView, RebotinolController controller) {
 
 		super(instrText, parentView, controller);
-		populateView();
+		populateView(false);
 
 	}
 
 	public SimpleInstructionView(String instrText,
 			RebotinolController controller) {
 		super(instrText, controller);
-		populateView();
+		populateView(false);
 	}
 
-	private void populateView() {
-		setBackground(Color.WHITE);
+	private void populateView(boolean isCurrent) {
 		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
-
 		// icon
 		// add(Box.createHorizontalStrut(50));
 		_lbIcon = new JLabel(emptyIcon);
 		_lbIcon.setPreferredSize(new Dimension(30, 20));
-		;
+		if (isCurrent) {
+			setCurrent();
+		} else {
+			unsetCurrent();
+		}
+		
 		if (_runnable) {
 			_lbIcon.addMouseListener(new MouseInputAdapter() {
 				public void mouseClicked(MouseEvent e) {

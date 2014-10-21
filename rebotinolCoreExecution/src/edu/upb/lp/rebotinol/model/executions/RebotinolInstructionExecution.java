@@ -211,7 +211,7 @@ public abstract class RebotinolInstructionExecution {
 	/**
 	 * Set this execution as the current being evaluated
 	 */
-	protected void setCurrent() {
+	public void setCurrent() {
 		_current = true;
 		for (RebotinolExecutionObserver obs : _observers) {
 			obs.setCurrent();

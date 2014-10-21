@@ -116,9 +116,15 @@ public class ProgramBuilderFromXtext {
 		public RebotinolInstructionExecution caseRebotinolProgram(
 				RebotinolProgram program) {
 			List<RebotinolInstructionExecution> executions = new ArrayList<RebotinolInstructionExecution>();
+			boolean first = true;
 			for (Instruction instr : program.getInstructions()) {
 				try {
-					executions.add(buildExecution(instr));
+					RebotinolInstructionExecution e = buildExecution(instr);					
+					if (first) {
+						first = false;
+						e.setCurrent();
+					}
+					executions.add(e);
 				} catch (RebotinolFatalException e) {
 					throw new IllegalStateException(e);
 				}
