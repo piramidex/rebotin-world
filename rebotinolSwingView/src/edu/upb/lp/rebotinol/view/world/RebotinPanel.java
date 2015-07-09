@@ -35,9 +35,9 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 	protected int _xEye;
 	protected int _yEye;
 	
-	protected int _radRetine;
-	protected int _xRetine;
-	protected int _yRetine;
+	protected int _radIris;
+	protected int _xIris;
+	protected int _yIris;
 	
 	protected int _x1Arm;
 	protected int _y1Arm;
@@ -119,6 +119,14 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 
 		// retina
 
+		_radIris = (int) (_radEye * 0.6);
+		
+		_xIris = _xEye;
+		_yIris = _yEye - (int) (_radIris);
+		
+		_circleRetine = new Ellipse2D.Double(
+				(_xIris - _radIris), (_yIris - _radIris),
+				(2 * _radIris), (2 * _radIris));
 		
 		
 		// arm
@@ -184,7 +192,11 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 		g2.setColor(_color);
 		g2.fill(_circleEye);
 		g2.setColor(_borderColor);
-		g2.draw(_circleEye);		
+		g2.draw(_circleEye);
+		g2.fill(_circleRetine);
+
+
+
 		
 		// draw arm
 		g2.setColor(_borderColor);
