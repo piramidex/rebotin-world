@@ -38,7 +38,11 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 	protected int _radIris;
 	protected int _xIris;
 	protected int _yIris;
-	
+
+	protected int _radPupil;
+	protected int _xPupil;
+	protected int _yPupil;
+
 	protected int _x1Arm;
 	protected int _y1Arm;
 	protected int _x2Arm;
@@ -62,7 +66,8 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 	
 	protected Ellipse2D.Double _circleBody;
 	protected Ellipse2D.Double _circleEye;
-	protected Ellipse2D.Double _circleRetine;
+	protected Ellipse2D.Double _circleIris;
+	protected Ellipse2D.Double _circlePupil;
 	protected Line2D.Double _lineArm;
 	protected Line2D.Double _lineHand;
 	protected Line2D.Double _lineFinger1;
@@ -117,17 +122,28 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 				(_xEye - _radEye), (_yEye - _radEye),
 				(2 * _radEye), (2 * _radEye));
 
-		// retina
+		// iris
 
 		_radIris = (int) (_radEye * 0.6);
 		
 		_xIris = _xEye;
 		_yIris = _yEye - (int) (_radIris);
 		
-		_circleRetine = new Ellipse2D.Double(
+		_circleIris = new Ellipse2D.Double(
 				(_xIris - _radIris), (_yIris - _radIris),
 				(2 * _radIris), (2 * _radIris));
+
+		// pupil
+
+		_radPupil = (int) (_radIris * 0.5);
 		
+		_xPupil = _xIris;
+		_yPupil = _yIris;
+		
+		_circlePupil = new Ellipse2D.Double(
+				(_xPupil - _radPupil), (_yPupil - _radPupil),
+				(2 * _radPupil), (2 * _radPupil));
+
 		
 		// arm
 		
@@ -193,8 +209,10 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 		g2.fill(_circleEye);
 		g2.setColor(_borderColor);
 		g2.draw(_circleEye);
-		g2.fill(_circleRetine);
-
+		g2.fill(_circleIris);
+		
+		g2.setColor(Color.WHITE);
+		g2.fill(_circlePupil);
 
 
 		
