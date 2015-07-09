@@ -127,11 +127,40 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 		_y1Arm = _yBody - (int) (_radBody * (+0.64));
 		
 		_x2Arm = _x1Arm;
-		_y2Arm = _y1Arm - (int) (1.5 * _delta);
+		_y2Arm = _y1Arm - (int) (1.0 * _delta);
 		
 		_lineArm = new Line2D.Double(_x1Arm, _y1Arm, _x2Arm, _y2Arm);
 		
 		//hand
+		
+		_x1Hand = _x1Arm - (int) (0.5 * _delta);
+		_y1Hand = _y2Arm;
+		
+		_x2Hand = _x1Arm + (int) (0.5 * _delta);
+		_y2Hand = _y1Hand;
+		
+		_lineHand = new Line2D.Double(_x1Hand, _y1Hand, _x2Hand, _y2Hand);
+		
+		// finger 1
+		
+		_x1Finger1 = _x1Hand;
+		_y1Finger1 = _y1Hand - (int) (0.5 * _delta);
+		
+		_x2Finger1 = _x1Finger1;
+		_y2Finger1 = _y1Hand;
+
+		_lineFinger1 = new Line2D.Double(_x1Finger1, _y1Finger1, _x2Finger1, _y2Finger1);
+
+		// finger 2
+		
+		_x1Finger2 = _x2Hand;
+		_y1Finger2 = _y1Finger1;
+		
+		_x2Finger2 = _x1Finger2;
+		_y2Finger2 = _y2Finger1;
+
+		_lineFinger2 = new Line2D.Double(_x1Finger2, _y1Finger2, _x2Finger2, _y2Finger2);
+
 		
 	}
 	
@@ -161,7 +190,10 @@ public class RebotinPanel extends JPanel implements RebotinolHouseObserver {
 		g2.setColor(_borderColor);
 		g2.draw(_lineArm);
 		
-
+		// draw hand
+		g2.draw(_lineHand);
+		g2.draw(_lineFinger1);
+		g2.draw(_lineFinger2);
 		
 		
 	}
