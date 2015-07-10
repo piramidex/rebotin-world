@@ -21,6 +21,7 @@ public class WorldPanel extends JPanel implements RebotinolMatrixObserver {
 	protected MatrixPanel _matrixPanel;
 	protected HousePanel _housePanel;
 	protected RebotinPanel _rebotinPanel;
+	protected MailboxPanel _mailboxPanel;
 	
 	protected int _xMatrix;
 	protected int _yMatrix;
@@ -65,11 +66,19 @@ public class WorldPanel extends JPanel implements RebotinolMatrixObserver {
 		_housePanel.setOpaque(false);
 		layers.add(_housePanel, 1, 0);
 		
+		// rebotin
 		_rebotinPanel = new RebotinPanel(80, Color.WHITE, Color.BLACK, controller);
 		_rebotinPanel.setSize(500, 500);
 		_rebotinPanel.setLocation(160, 220);
 		_rebotinPanel.setOpaque(false);
 		layers.add(_rebotinPanel, 2, 0);
+		
+		// mailbox
+		_mailboxPanel = new MailboxPanel(45, 35, Color.WHITE, Color.BLACK, controller);
+		_mailboxPanel.setSize(45, 35);
+		_mailboxPanel.setLocation(100, 220);
+		_mailboxPanel.setOpaque(false);
+		layers.add(_mailboxPanel, 3, 0);
 		
 	
 		//setLayout(null);
