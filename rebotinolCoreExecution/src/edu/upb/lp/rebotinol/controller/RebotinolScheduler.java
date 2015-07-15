@@ -41,10 +41,16 @@ public class RebotinolScheduler {
 					if (_forward) {
 						if(_controller.automaticStep()) {
 							stop();
+							synchronized (RebotinolSchedulerMonitor.get_instance()) {
+								RebotinolSchedulerMonitor.get_instance().notifyAll();
+							}
 						}
 					} else {
 						if(_controller.automaticStepBack()) {
 							stop();
+							synchronized (RebotinolSchedulerMonitor.get_instance()) {
+								RebotinolSchedulerMonitor.get_instance().notifyAll();
+							}
 						}
 					}
 				} catch (RebotinolFlowException e) {
