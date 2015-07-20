@@ -15,79 +15,19 @@ import edu.upb.lp.rebotinol.controller.RebotinolController;
 import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.observers.RebotinolHouseObserver;
 
-public class ErrorAlarmPanel extends JPanel implements RebotinolHouseObserver {
+public class ErrorAlarmPanel extends AbstractAlarmPanel implements RebotinolHouseObserver {
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8160776677800306900L;
+	private static final long serialVersionUID = -5076701756476051240L;
 
-	protected int _size;
-	protected Color _colorOff;
-	protected Color _colorOn;
-	protected Color _borderColor;
-	
-	protected int _radAlarm;
-	protected int _xAlarm;
-	protected int _yAlarm;
-	
-	protected Ellipse2D.Double _circleAlarm;
-		
-	protected boolean _on;
-	
+
 	public ErrorAlarmPanel(int size, Color colorOff, Color colorOn, Color borderColor, RebotinolController controller) {
-		super();
-		
-		_size = size;
-		_colorOff = colorOff;
-		_colorOn = colorOn;
-		_borderColor = borderColor;
-
-		createShapes();
-	
-		_on = false;
-		
+		super(size, colorOff, colorOn, borderColor);
 		controller.getHouse().registerObserver(this);
 		
 	}
-	
-	
-	public void createShapes() {
-		
-		_radAlarm = _size / 2;
-
-		_xAlarm = _radAlarm;
-		_yAlarm = _xAlarm;
-		
-		_circleAlarm = new Ellipse2D.Double(
-				(_xAlarm - _radAlarm), (_yAlarm - _radAlarm),
-				(2 * _radAlarm), (2 * _radAlarm));
-		
-	}
-	
-	
-	
-	
-	
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		
-		Graphics2D g2 = (Graphics2D)g;
-		
-		g2.setStroke(new BasicStroke(3));
-		
-		if (_on) {
-			g2.setColor(_colorOn);
-		}
-		else {
-			g2.setColor(_colorOff);
-		}
-		g2.fill(_circleAlarm);
-
-		g2.setColor(_borderColor);
-		g2.draw(_circleAlarm);
-
-	}
-
 	
 	//-----------------------------------------------
 	// RebotinHouseObserver methods
