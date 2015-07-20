@@ -15,23 +15,23 @@ public class RebotinolSchedulerMonitor {
 		return _instance;
 	}
 
-	public void waitPlayFinished(RebotinolProgram program) throws InterruptedException {
+	public void waitPlayFinished(RebotinolController controller) throws InterruptedException {
 		synchronized (this) {
-			while (!(program.isFinished())) {
+			while ((!(controller.getProgram().isFinished())) && (!(controller.hasRebotinolErrorOccurred()))) {
 				wait();
 			}
 		}
 	}
 
-	public void waitPlayBackFinished(RebotinolProgram program) throws InterruptedException {
+	public void waitPlayBackFinished(RebotinolController controller) throws InterruptedException {
 		synchronized (this) {
-			while (program.isStarted()) {
+			while (controller.getProgram().isStarted()) {
 				wait();
 			}
 		}
 	}
 
-	public void notifyPlayOrPlayBackFinished() {
+	public void notifyPlayOrPlayBackStopped() {
 		synchronized (this) {
 			notifyAll();
 		}

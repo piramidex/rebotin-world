@@ -37,9 +37,11 @@ public abstract class AutomaticGUITesting extends ManualGUITesting {
 		}
 		
 		try {
-			RebotinolSchedulerMonitor.get_instance().waitPlayFinished(getExample().getProgram());
-		} catch (InterruptedException e2) {
-			e2.printStackTrace();
+			RebotinolSchedulerMonitor.get_instance().waitPlayFinished(getExample().getController());
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (RebotinolFatalException e) {
+			e.printStackTrace();
 		}
 		
 		System.out.println("Forward finished");
@@ -63,8 +65,10 @@ public abstract class AutomaticGUITesting extends ManualGUITesting {
 		}
 
 		try {
-			RebotinolSchedulerMonitor.get_instance().waitPlayBackFinished(getExample().getProgram());
+			RebotinolSchedulerMonitor.get_instance().waitPlayBackFinished(getExample().getController());
 		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (RebotinolFatalException e) {
 			e.printStackTrace();
 		}
 		

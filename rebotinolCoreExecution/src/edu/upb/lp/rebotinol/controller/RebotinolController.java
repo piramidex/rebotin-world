@@ -17,6 +17,7 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * initial matrix and optionnally an expected matrix)
  * 
  * @author Alexis Marechal
+ * @author Alfredo Villalba
  * 
  */
 public class RebotinolController {
@@ -25,8 +26,10 @@ public class RebotinolController {
 	private Fraction[][] _expectedMatrix;
 	private Fraction _expectedResult;
 	private SequentialInstructionExecution _program;
+	private boolean _hasRebotinolErrorOccurred;
 	private RebotinolScheduler _scheduler;
 	private RebotinolButtonsController _buttonsController = new RebotinolButtonsController();
+	
 
 	/**
 	 * Constructor
@@ -75,6 +78,7 @@ public class RebotinolController {
 		}
 		this._expectedResult = expectedResult;
 		this._program = program;
+		this._hasRebotinolErrorOccurred = false;
 		_scheduler = new RebotinolScheduler(this, _buttonsController);
 	}
 
@@ -129,6 +133,18 @@ public class RebotinolController {
 	public RebotinolButtonsController getButtonsController() {
 		return _buttonsController;
 	}
+	
+
+	/**
+	 * Returns true when a rebotinol error (division by zero, operation on empty, cell, etc.)
+	 * has occurred while performing the current rebotinol instruction. Returns false otherwise.
+	 * 
+	 * @return true if rebotil error has occurred, false otherwise
+	 */
+	public boolean hasRebotinolErrorOccurred() {
+		return _hasRebotinolErrorOccurred;
+	}
+	
 
 	/**
 	 * Execute a single step in this program
@@ -141,6 +157,9 @@ public class RebotinolController {
 	public void step() throws RebotinolFlowException {
 		if (!_program.isStarted()) {
 			_buttonsController.programStarted();
+			_house.setError(false);
+			_house.setErrorMessage("");
+			_hasRebotinolErrorOccurred = false;
 		}
 		try {
 			_program.step(_house);
@@ -148,10 +167,11 @@ public class RebotinolController {
 			_buttonsController.errorMet();
 			_house.setError(true);
 			_house.setErrorMessage(e.getMessage());
+			_hasRebotinolErrorOccurred = true;
 		} catch (ArithmeticException e) {
 			_buttonsController.errorMet();
 			_house.setError(true);
-			_house.setErrorMessage("Error numŽrico! Rebot’n no puede manejar numeros demasiado grandes o peque–os");
+			_house.setErrorMessage("Error numï¿½rico! Rebotï¿½n no puede manejar numeros demasiado grandes o pequeï¿½os");
 		}
 		if (_program.isFinished()) {
 			_buttonsController.programFinished();
@@ -169,7 +189,11 @@ public class RebotinolController {
 		step();
 		if (_program.isFinished()) {
 			return true;
-		} else {
+		} 
+		else if (_hasRebotinolErrorOccurred) {
+			return true;
+		}
+		else {
 			RebotinolInstructionExecution next = _program
 					.getNextExecutionToStep();
 			return next.isBreakpoint();
@@ -212,7 +236,12 @@ public class RebotinolController {
 		if (_program.isFinished()) {
 			_buttonsController.programUnFinished();
 		}
-		_buttonsController.errorSolved();
+		if (_hasRebotinolErrorOccurred) {
+			_buttonsController.errorSolved();
+			_house.setError(false);
+			_house.setErrorMessage("");
+			_hasRebotinolErrorOccurred = false;
+		}
 		_program.stepBack(_house);
 		if (!_program.isStarted()) {
 			_buttonsController.programUnStarted();
@@ -261,4 +290,5 @@ public class RebotinolController {
 	public void playBack() {
 		_scheduler.playBack();
 	}
+
 }
