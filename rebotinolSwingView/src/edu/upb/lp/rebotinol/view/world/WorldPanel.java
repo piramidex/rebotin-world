@@ -22,6 +22,8 @@ public class WorldPanel extends JPanel implements RebotinolMatrixObserver {
 	protected HousePanel _housePanel;
 	protected RebotinPanel _rebotinPanel;
 	protected MailboxPanel _mailboxPanel;
+	protected ErrorAlarmPanel _errorAlarmPanel;
+	protected MailboxSentAlarmPanel _mailboxSentAlarmPanel;
 	
 	protected int _xMatrix;
 	protected int _yMatrix;
@@ -79,6 +81,20 @@ public class WorldPanel extends JPanel implements RebotinolMatrixObserver {
 		_mailboxPanel.setLocation(100, 220);
 		_mailboxPanel.setOpaque(false);
 		layers.add(_mailboxPanel, 3, 0);
+		
+		
+		// error and mailbox alarms panels
+		_mailboxSentAlarmPanel = new MailboxSentAlarmPanel(18, Color.WHITE, Color.GREEN, Color.BLACK, controller);
+		_mailboxSentAlarmPanel.setSize(18, 18);
+		_mailboxSentAlarmPanel.setLocation(105, 270);
+		_mailboxSentAlarmPanel.setOpaque(false);
+		layers.add(_mailboxSentAlarmPanel, 4, 0);
+		
+		_errorAlarmPanel = new ErrorAlarmPanel(18, Color.WHITE, Color.RED, Color.BLACK, controller);
+		_errorAlarmPanel.setSize(18, 18);
+		_errorAlarmPanel.setLocation(105, 295);
+		_errorAlarmPanel.setOpaque(false);
+		layers.add(_errorAlarmPanel, 5, 0);
 		
 	
 		//setLayout(null);
