@@ -1,6 +1,7 @@
 package edu.upb.lp.rebotinol.view.world;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLayeredPane;
@@ -45,8 +46,9 @@ public class WorldPanel extends JPanel implements RebotinolMatrixObserver {
 		
 		controller.getHouse().registerObserver(this);
 		
-		setLayout(new BoxLayout(this,  BoxLayout.PAGE_AXIS));
-		//setOpaque(true);
+		//setLayout(new BoxLayout(this,  BoxLayout.PAGE_AXIS));
+		setLayout(null);
+		setOpaque(true);
 		
 		JLayeredPane layers = new JLayeredPane();
 		//layers.setLayout(new BoxLayout(layers,  BoxLayout.PAGE_AXIS));
@@ -98,6 +100,8 @@ public class WorldPanel extends JPanel implements RebotinolMatrixObserver {
 		
 	
 		//setLayout(null);
+		layers.setLocation(0, 0);
+		layers.setSize(500, 500);
 		add(layers);
 	}
 
