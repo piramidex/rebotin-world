@@ -87,6 +87,14 @@ public class MatrixPanel extends JPanel implements RebotinolMatrixObserver {
 		createNumbers(initialMatrix);
 		
 	}
+
+	
+	public MatrixPanel(RebotinolHouse house, Fraction[][] initialMatrix, int sizeCell) {
+		this(house, initialMatrix, initialMatrix[0].length * sizeCell, initialMatrix.length * sizeCell);
+		
+	}
+
+	
 	
 	private void createNumbers(Fraction[][] initalMatrix) {
 
