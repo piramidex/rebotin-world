@@ -104,6 +104,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 				_programPath = "";
 			}
 		}
+//		_programPath = ""; // TODO testing
+//		_configurationPath = "";
 		// Set image
 		URL iconUrl = FileLocator.find(Platform
 				.getBundle("rebotinolEclipsePlugin"), new Path(
@@ -258,7 +260,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		} else {
 			Path path = new Path(_programPath);
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			URI uri = URI.createFileURI(file.getFullPath().toString());
+//			URI uri = URI.createFileURI(file.getFullPath().toString());
+			URI uri = URI.createFileURI(path.toString());
 			ResourceSet rs = new ResourceSetImpl();
 			Resource r = rs.getResource(uri, true);
 			String error = FileChecker.check(r, file.getName(),
@@ -285,7 +288,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		} else {
 			Path path = new Path(_configurationPath);
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			URI uri = URI.createFileURI(file.getFullPath().toString());
+//			URI uri = URI.createFileURI(file.getFullPath().toString());
+			URI uri = URI.createFileURI(path.toString());
 			ResourceSet rs = new ResourceSetImpl();
 			Resource r = rs.getResource(uri, true);
 			String error = FileChecker.check(r, file.getName(),
@@ -357,7 +361,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			if (i < path.length()) {
 				c = builder.charAt(i);
 			}
-		} while (c != File.separatorChar && i < path.length());
+		} while (c != '/' && c!= '\\' && i < path.length());
 		ans.reverse();
 		return ans.toString();
 	}

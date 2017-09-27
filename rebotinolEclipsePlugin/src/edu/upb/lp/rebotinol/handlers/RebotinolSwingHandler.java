@@ -26,8 +26,7 @@ public class RebotinolSwingHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchWindow window = HandlerUtil
-				.getActiveWorkbenchWindowChecked(event);
+		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 		IEditorInput input = HandlerUtil.getActiveEditorInput(event);
 
 		String programFile = "";
@@ -41,19 +40,24 @@ public class RebotinolSwingHandler extends AbstractHandler {
 			}
 			if (file.getFileExtension().equals("rebo")) {
 				programFile = file.getLocationURI().getPath();
+				if (programFile.charAt(2) == ':') {
+					programFile = programFile.substring(1);
+				}
 			} else if (file.getFileExtension().equals("rconf")) {
 				configurationFile = file.getLocationURI().getPath();
+				if (configurationFile.charAt(2) == ':') {
+					configurationFile = configurationFile.substring(1);
+				}
 			}
 		}
 
-		RebotinLaunchDialog dialog = new RebotinLaunchDialog(window.getShell(),
-				programFile, configurationFile);
+		RebotinLaunchDialog dialog = new RebotinLaunchDialog(window.getShell(), programFile, configurationFile);
 		dialog.open();
 
-//		 MessageDialog.openInformation(
-//		 window.getShell(),
-//		 "RebotinolEclipsePlugin",
-//		 "Hello, Eclipse world");
+		// MessageDialog.openInformation(
+		// window.getShell(),
+		// "RebotinolEclipsePlugin",
+		// "Hello, Eclipse world");
 		return null;
 	}
 }
