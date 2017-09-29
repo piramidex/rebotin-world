@@ -81,7 +81,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 	@Override
 	public void create() {
 		super.create();
-		setTitle("Creaci—n de un programa en rebotinol");
+		setTitle("Creación de un programa en rebotinol");
 		setMessage("En esta ventana debes escoger un nombre de proyecto que hayas creado "
 				+ "previamente, y un nombre para el programa que quieres crear",
 				IMessageProvider.INFORMATION);
@@ -177,7 +177,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 
 					if (natures.length != 1
 							|| !natures[0].equals("org.eclipse.xtext.ui.shared.xtextNature")) {
-						_projectDecorator.setDescriptionText("Este proyecto no es un proyecto v‡lido. "
+						_projectDecorator.setDescriptionText("Este proyecto no es un proyecto válido. "
 								+ "Debes utilizar un proyecto creado con el menu de rebotin");
 						_projectDecorator.show();
 						return false;
@@ -193,7 +193,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 			} else {
 				_projectDecorator
 						.setDescriptionText("Este proyecto no existe, debes crearlo primero. "
-								+ "Si est‡s seguro de haber introducido un nombre de "
+								+ "Si estás seguro de haber introducido un nombre de "
 								+ "proyecto existente, intenta hacer un 'refresh' de la lista "
 								+ "de proyectos (con un clic derecho en la ventana de la izquierda)");
 				_projectDecorator.show();
@@ -213,7 +213,7 @@ public class CreateProgramDialog extends TitleAreaDialog {
 			if (program.contains(".")) {
 				_programDecorator
 						.setDescriptionText("El nombre de un programa no debe contener un punto '.'. "
-								+ "No incluyas la extensi—n del archivo!");
+								+ "No incluyas la extensión del archivo!");
 				_programDecorator.show();
 				return false;
 			} else {

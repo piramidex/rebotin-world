@@ -81,7 +81,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 	@Override
 	public void create() {
 		super.create();
-		setTitle("Creaci—n de un programa en rebotinol");
+		setTitle("Creación de un programa en rebotiñol");
 		setMessage(
 				"En esta ventana debes escoger un nombre de proyecto que hayas creado "
 						+ "previamente, y un nombre para la configuracion de rebotin que quieres crear",
@@ -136,7 +136,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 
 	private void configureConfigurationfield(Composite container) {
 		Label labelProgram = new Label(container, SWT.NONE);
-		labelProgram.setText("Configuraci—n: ");
+		labelProgram.setText("Configuración: ");
 		_configurationTextField = new Text(container, SWT.BORDER);
 		_configurationTextField.setEditable(true);
 		_configurationTextField.setText("");
@@ -180,8 +180,8 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 							|| !natures[0]
 									.equals("org.eclipse.xtext.ui.shared.xtextNature")) {
 						_projectDecorator
-								.setDescriptionText("Este proyecto no es un proyecto v‡lido. "
-										+ "Debes utilizar un proyecto creado con el menu de rebotin");
+								.setDescriptionText("Este proyecto no es un proyecto válido. "
+										+ "Debes utilizar un proyecto creado con el menú de rebotin");
 						_projectDecorator.show();
 						return false;
 					} else {
@@ -196,7 +196,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 			} else {
 				_projectDecorator
 						.setDescriptionText("Este proyecto no existe, debes crearlo primero. "
-								+ "Si est‡s seguro de haber introducido un nombre de "
+								+ "Si estás seguro de haber introducido un nombre de "
 								+ "proyecto existente, intenta hacer un 'refresh' de la lista "
 								+ "de proyectos (con un clic derecho en la ventana de la izquierda)");
 				_projectDecorator.show();
@@ -215,8 +215,8 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 		if (configuration != null && !configuration.isEmpty()) {
 			if (configuration.contains(".")) {
 				_configurationDecorator
-						.setDescriptionText("El nombre de una configuraci—n no debe contener un punto '.'. "
-								+ "No incluyas la extensi—n del archivo!");
+						.setDescriptionText("El nombre de una configuración no debe contener un punto '.'. "
+								+ "No incluyas la extensión del archivo!");
 				_configurationDecorator.show();
 				return false;
 			} else {
@@ -235,7 +235,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 			}
 		} else {
 			_configurationDecorator
-					.setDescriptionText("Debes indicar un nombre de configuraci—n");
+					.setDescriptionText("Debes indicar un nombre de configuración");
 			_configurationDecorator.show();
 			return false;
 		}
@@ -260,7 +260,7 @@ public class CreateConfigurationDialog extends TitleAreaDialog {
 			newFile.create(inputStream, true, null);
 			CreateProjectDialog.openFile(newFile);
 		} catch (Exception e) {
-			throw new IllegalStateException("Could not create program file", e);
+			throw new IllegalStateException("Could not create configuration file", e);
 		}
 		super.okPressed();
 	}

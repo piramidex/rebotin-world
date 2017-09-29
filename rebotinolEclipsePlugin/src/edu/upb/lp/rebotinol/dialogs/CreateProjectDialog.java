@@ -90,8 +90,8 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		setTitle("Creaci—n de un proyecto para rebotin");
 		setMessage(
 				"En esta ventana debes escoger un nombre para tu proyecto, un nombre para "
-						+ " el archivo que contendr‡ el programa "
-						+ " y un nombre para el archivo de configuraci—n de rebot’n",
+						+ " el archivo que contendrá el programa "
+						+ " y un nombre para el archivo de configuración de rebotín",
 				IMessageProvider.INFORMATION);
 		if (_image != null) {
 			setTitleImage(_image);
@@ -234,7 +234,7 @@ public class CreateProjectDialog extends TitleAreaDialog {
 			if (program.contains(".")) {
 				_programDecorator
 						.setDescriptionText("El nombre de un programa no debe contener un punto '.'. "
-								+ "No incluyas la extensi—n del archivo!");
+								+ "No incluyas la extensión del archivo!");
 				_programDecorator.show();
 				return false;
 			} else {
@@ -254,8 +254,8 @@ public class CreateProjectDialog extends TitleAreaDialog {
 		if (configuration != null && !configuration.isEmpty()) {
 			if (configuration.contains(".")) {
 				_configurationDecorator
-						.setDescriptionText("El nombre de una configuraci—n no debe contener un punto '.'. "
-								+ "No incluyas la extensi—n del archivo!");
+						.setDescriptionText("El nombre de una configuración no debe contener un punto '.'. "
+								+ "No incluyas la extensión del archivo!");
 				_configurationDecorator.show();
 				return false;
 			} else {
@@ -264,7 +264,7 @@ public class CreateProjectDialog extends TitleAreaDialog {
 			}
 		} else {
 			_configurationDecorator
-					.setDescriptionText("Debes indicar un nombre de configuracion");
+					.setDescriptionText("Debes indicar un nombre de configuración");
 			_configurationDecorator.show();
 			return false;
 		}

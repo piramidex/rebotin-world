@@ -79,7 +79,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	 * Constructor.
 	 * 
 	 * @param parentShell
-	 *            A parent sheel for this dialog
+	 *            A parent shell for this dialog
 	 * @param programPath
 	 *            The path of the rebotinol program
 	 * @param configurationPath
@@ -95,7 +95,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 				_programPath = programPath;
 				_configurationPath = "";
 			}
-		}
+		} else
 		// Set configuration path
 		if (configurationPath != null && !configurationPath.isEmpty()) {
 			_currentFile = configurationPath;
@@ -126,11 +126,11 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	@Override
 	public void create() {
 		super.create();
-		setTitle("Inicializaci—n del mundo de rebotin");
+		setTitle("Inicialización del mundo de rebotin");
 		setMessage(
 				"En esta ventana debes escoger el programa que deseas que rebotin ejecute"
-						+ " (con la estensi—n .rebo) y una configuraci—n inicial (con "
-						+ "la extensi—n .rconf).", IMessageProvider.INFORMATION);
+						+ " (con la estensión .rebo) y una configuración inicial (con "
+						+ "la extensión .rconf).", IMessageProvider.INFORMATION);
 		if (_image != null) {
 			setTitleImage(_image);
 		}
@@ -200,7 +200,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 
 	private void configureConfigurationfield(Composite container) {
 		Label labelConfiguration = new Label(container, SWT.NONE);
-		labelConfiguration.setText("Configuraci—n (*.rconf): ");
+		labelConfiguration.setText("Configuración (*.rconf): ");
 		_configurationTextField = new Text(container, SWT.BORDER);
 		_configurationTextField.setEditable(false);
 		_configurationTextField.setText(extractFileName(_configurationPath));
@@ -253,8 +253,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	private boolean checkProgram() {
 		if (_programPath == null || _programPath.isEmpty()) {
 			_programDecorator
-					.setDescriptionText("Busca un archivo con la extensi—n .rebo "
-							+ "utilizando el bot—n de la derecha '...'");
+					.setDescriptionText("Busca un archivo con la extensión .rebo "
+							+ "utilizando el botón de la derecha '...'");
 			_programDecorator.show();
 			return false;
 		} else {
@@ -281,8 +281,8 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 	private boolean checkConfiguration() {
 		if (_configurationPath == null || _configurationPath.isEmpty()) {
 			_configurationDecorator
-					.setDescriptionText("Busca un archivo con la extensi—n .rconf "
-							+ "utilizando el bot—n de la derecha '...'");
+					.setDescriptionText("Busca un archivo con la extensión .rconf "
+							+ "utilizando el botón de la derecha '...'");
 			_configurationDecorator.show();
 			return false;
 		} else {
@@ -336,7 +336,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 		} catch (RebotinolFatalException e) {
 			String message = e.getMessage();
 			String error = "Oh no! Encontraste un error en el mundo de rebotin!";
-			error += "\nPor favor, env’anos un e-mail con el siguiente mensaje a ciprog@lp.upb.edu:\n";
+			error += "\nPor favor, envíanos un e-mail con el siguiente mensaje a ciprog@lp.upb.edu:\n";
 			error += "\n\n Error message: " + message;
 			IStatus status = new Status(IStatus.ERROR, "rebotinolEclipsePlugin.application", 1,
 					error, e.getCause());
@@ -361,7 +361,7 @@ public class RebotinLaunchDialog extends TitleAreaDialog {
 			if (i < path.length()) {
 				c = builder.charAt(i);
 			}
-		} while (c != '/' && c!= '\\' && i < path.length());
+		} while (c != File.separatorChar && i < path.length());
 		ans.reverse();
 		return ans.toString();
 	}

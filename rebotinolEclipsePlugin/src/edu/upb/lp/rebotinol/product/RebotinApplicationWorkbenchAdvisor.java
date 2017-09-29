@@ -23,8 +23,7 @@ public class RebotinApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
 	private static final String PERSPECTIVE_ID = "rebotinolEclipsePlugin.perspectives.mainPerspective"; //$NON-NLS-1$
 
-	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(
-			IWorkbenchWindowConfigurer configurer) {
+	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
 		return new RebotinApplicationWorkbenchWindowAdvisor(configurer);
 	}
 
@@ -41,27 +40,24 @@ public class RebotinApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	public void initialize(IWorkbenchConfigurer configurer) {
 		// see
 		// http://stackoverflow.com/questions/8277902/add-package-explorer-in-rcp-application-result-in-loosing-some-icon
+		super.initialize(configurer);
 		configurer.setSaveAndRestore(true);
-		PlatformUI.getPreferenceStore().setValue(
-				IWorkbenchPreferenceConstants.SHOW_TRADITIONAL_STYLE_TABS,
-				false);
+		PlatformUI.getPreferenceStore().setValue(IWorkbenchPreferenceConstants.SHOW_TRADITIONAL_STYLE_TABS, false);
 
 		IDE.registerAdapters();
 
 		String ICONS_PATH = "icons/full/";
 		Bundle ideBundle = Platform.getBundle(IDEWorkbenchPlugin.IDE_WORKBENCH);
 
-		declareWorkbenchImage(configurer, ideBundle,
-				IDE.SharedImages.IMG_OBJ_PROJECT, ICONS_PATH
-						+ "obj16/prj_obj.gif", true);
+		declareWorkbenchImage(configurer, ideBundle, IDE.SharedImages.IMG_OBJ_PROJECT, 
+				ICONS_PATH + "obj16/prj_obj.png", true);
 
-		declareWorkbenchImage(configurer, ideBundle,
-				IDE.SharedImages.IMG_OBJ_PROJECT_CLOSED, ICONS_PATH
-						+ "obj16/cprj_obj.gif", true);
+		declareWorkbenchImage(configurer, ideBundle, IDE.SharedImages.IMG_OBJ_PROJECT_CLOSED,
+				ICONS_PATH + "obj16/cprj_obj.png", true);
 	}
 
-	private void declareWorkbenchImage(IWorkbenchConfigurer configurer_p,
-			Bundle ideBundle, String symbolicName, String path, boolean shared) {
+	private void declareWorkbenchImage(IWorkbenchConfigurer configurer_p, Bundle ideBundle, String symbolicName,
+			String path, boolean shared) {
 		URL url = ideBundle.getEntry(path);
 		ImageDescriptor desc = ImageDescriptor.createFromURL(url);
 		configurer_p.declareImage(symbolicName, desc, shared);

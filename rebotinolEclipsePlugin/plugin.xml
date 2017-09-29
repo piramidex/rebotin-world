@@ -186,6 +186,118 @@
             application="rebotinolEclipsePlugin.application"
             name="RebotinWorld">
          <property
+               name="windowImages"
+               value="icons/16x16.png,icons/32x32.png,icons/48x48.png,icons/64x64.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Rebotin World&#x0A;Universidad Privada Boliviana&#x0A;&#x0A;Autores:&#x0A;  Alexis Marechal&#x0A;  Alfredo Villalba&#x0A;  Carlos Anibarro&#x0A;  José Luis Vera">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/Rebotin.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="appName"
+               value="RebotinWorld">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rebotinolEclipsePlugin.application"
+            name="RebotinWorld">
+         <property
+               name="windowImages"
+               value="icons/16x16.png,icons/32x32.png,icons/48x48.png,icons/64x64.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Rebotin World&#x0D;&#x0A;Universidad Privada Boliviana&#x0D;&#x0A;&#x0D;&#x0A;Autores:&#x0D;&#x0A;  Alexis Marechal&#x0D;&#x0A;  Alfredo Villalba&#x0D;&#x0A;  Carlos Anibarro&#x0D;&#x0A;  José Luis Vera">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/Rebotin.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rebotinolEclipsePlugin.application"
+            name="RebotinWorld">
+         <property
+               name="windowImages"
+               value="icons/16x16.png,icons/32x32.png,icons/48x48.png,icons/64x64.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Rebotin World&#x0D;&#x0A;Universidad Privada Boliviana&#x0D;&#x0A;&#x0D;&#x0A;Autores:&#x0D;&#x0A;  Alexis Marechal&#x0D;&#x0A;  Alfredo Villalba&#x0D;&#x0A;  Carlos Anibarro&#x0D;&#x0A;  José Luis Vera">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/Rebotin.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <!--<extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rebotinolEclipsePlugin.application"
+            name="RebotinWorld">
+         <property
                name="aboutText"
                value="Rebotin World&#x0A;Universidad Privada Boliviana&#x0A;&#x0A;Autores:&#x0A;  Alexis Marechal&#x0A;  Alfredo Villalba&#x0A;  Jorge Loza&#x0A;  Mauricio Loza">
          </property>
@@ -218,5 +330,5 @@
                value="plugin_customization.ini">
          </property>
       </product>
-   </extension>
+   </extension>-->
 </plugin>

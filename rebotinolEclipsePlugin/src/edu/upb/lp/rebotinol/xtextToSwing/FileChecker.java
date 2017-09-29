@@ -30,15 +30,15 @@ public class FileChecker {
 					return "";
 				} else {
 					return "El archivo " + fileName
-							+ " tiene errores, rev’salo!\n";
+							+ " tiene errores, revísalo!\n";
 				}
 			} else {
-				return "El archivo no es v‡lido, tiene que tener la extensi—n ."
+				return "El archivo no es válido, tiene que tener la extensión ."
 						+ (type == Types.REBOTINOL ? "rebo" : "rconf");
 			}
 		} else {
 			return "El archivo " + fileName
-					+ " tiene errores, rev’salo!\n";
+					+ " está vacío!\n";
 		}
 	}
 }

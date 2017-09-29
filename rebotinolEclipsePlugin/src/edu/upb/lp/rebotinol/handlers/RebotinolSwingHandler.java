@@ -1,5 +1,7 @@
 package edu.upb.lp.rebotinol.handlers;
 
+import java.io.File;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -43,11 +45,13 @@ public class RebotinolSwingHandler extends AbstractHandler {
 				if (programFile.charAt(2) == ':') {
 					programFile = programFile.substring(1);
 				}
+				programFile = programFile.replace("/", File.separator);
 			} else if (file.getFileExtension().equals("rconf")) {
 				configurationFile = file.getLocationURI().getPath();
 				if (configurationFile.charAt(2) == ':') {
 					configurationFile = configurationFile.substring(1);
 				}
+				configurationFile = configurationFile.replace("/", File.separator);
 			}
 		}
 
