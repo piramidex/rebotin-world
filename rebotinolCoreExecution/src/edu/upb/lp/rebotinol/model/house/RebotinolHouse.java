@@ -32,7 +32,7 @@ public class RebotinolHouse {
 	private boolean _matrixSent;
 	private boolean _error;
 	private String _errorMessage;
-
+	
 	/**
 	 * Builds a rebotinol house
 	 * 

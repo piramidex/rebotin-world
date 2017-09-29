@@ -87,7 +87,7 @@ public class CreateProjectDialog extends TitleAreaDialog {
 	@Override
 	public void create() {
 		super.create();
-		setTitle("Creaci—n de un proyecto para rebotin");
+		setTitle("Creación de un proyecto para rebotin");
 		setMessage(
 				"En esta ventana debes escoger un nombre para tu proyecto, un nombre para "
 						+ " el archivo que contendrá el programa "

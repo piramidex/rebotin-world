@@ -54,11 +54,18 @@ public abstract class RebotinolHouseObserverImpl implements
 	}
 	
 	/**
-	 * This method is executed by the observed house when the error previously set
-	 * was solved.
+	 * {@inheritDoc}
 	 */
 	@Override
 	public void rebotinolErrorSolved() {
+		// do nothing
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void errorMessageChanged(String message) {
 		// do nothing
 	}
 }

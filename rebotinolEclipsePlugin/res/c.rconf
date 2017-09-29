@@ -1,5 +1,5 @@
 //En este archivo se encuentra la matriz en la que debe trabajar Rebotin. 
-//Este es un ejemplo:
+//Este es un ejemplo, en el que el objetivo es sumar cuatro elementos que se encuentran en una matriz de 2 x 2:
 Matriz inicial:
 1,1
 1,1

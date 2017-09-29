@@ -1,11 +1,18 @@
 package edu.upb.lp.rebotinol.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.commons.math3.fraction.Fraction;
 
 import edu.upb.lp.rebotinol.model.executions.RebotinolInstructionExecution;
 import edu.upb.lp.rebotinol.model.executions.RebotinolProgram;
 import edu.upb.lp.rebotinol.model.executions.SequentialInstructionExecution;
+import edu.upb.lp.rebotinol.model.house.Mail;
 import edu.upb.lp.rebotinol.model.house.RebotinolHouse;
+import edu.upb.lp.rebotinol.observers.RebotinolControllerObserver;
+import edu.upb.lp.rebotinol.observers.RebotinolHouseObserverImpl;
 import edu.upb.lp.rebotinol.util.MatrixUtil;
 import edu.upb.lp.rebotinol.util.RebotinolExecutionException;
 import edu.upb.lp.rebotinol.util.RebotinolFatalException;
@@ -20,7 +27,8 @@ import edu.upb.lp.rebotinol.util.RebotinolFlowException;
  * @author Alfredo Villalba
  * 
  */
-public class RebotinolController {
+public class RebotinolController extends RebotinolHouseObserverImpl {
+	private final List<RebotinolControllerObserver> _controllerObservers = new ArrayList<RebotinolControllerObserver>();
 	private RebotinolHouse _house;
 	private Fraction[][] _initialMatrix;
 	private Fraction[][] _expectedMatrix;
@@ -29,7 +37,11 @@ public class RebotinolController {
 	private boolean _hasRebotinolErrorOccurred;
 	private RebotinolScheduler _scheduler;
 	private RebotinolButtonsController _buttonsController = new RebotinolButtonsController();
-	
+	private ProblemStatus _problemStatus = ProblemStatus.UNKNOWN;
+
+	public enum ProblemStatus {
+		UNKNOWN, SOLVED, UNSOLVED;
+	}
 
 	/**
 	 * Constructor
@@ -45,30 +57,25 @@ public class RebotinolController {
 	 * @throws RebotinolFatalException
 	 *             If something very bad happened
 	 */
-	public RebotinolController(RebotinolHouse house,
-			Fraction[][] initialMatrix, Fraction[][] expectedMatrix,
-			Fraction expectedResult, RebotinolProgram program)
-			throws RebotinolFatalException {
+	public RebotinolController(RebotinolHouse house, Fraction[][] initialMatrix, Fraction[][] expectedMatrix,
+			Fraction expectedResult, RebotinolProgram program) throws RebotinolFatalException {
 		// Check inputs
 		if (house == null) {
-			throw new RebotinolFatalException(
-					"Tried to create a controller with a null house!");
+			throw new RebotinolFatalException("Tried to create a controller with a null house!");
 		}
 		if (initialMatrix == null) {
-			throw new RebotinolFatalException(
-					"Tried to create a controller with a null initial matrix!");
+			throw new RebotinolFatalException("Tried to create a controller with a null initial matrix!");
 		}
 		if (program == null) {
-			throw new RebotinolFatalException(
-					"Tried to create a controller with a null program!");
+			throw new RebotinolFatalException("Tried to create a controller with a null program!");
 		}
 		int sizeV = initialMatrix.length;
 		int sizeH = initialMatrix[0].length;
 		this._house = house;
+		house.registerObserver(this);
 		this._initialMatrix = MatrixUtil.cloneMatrix(initialMatrix);
 		if (expectedMatrix != null) {
-			if (expectedMatrix.length != sizeV
-					|| expectedMatrix[0].length != sizeH) {
+			if (expectedMatrix.length != sizeV || expectedMatrix[0].length != sizeH) {
 				throw new RebotinolFatalException(
 						"The initial matrix and the expected matrix must have the same size when building a rebotinol world");
 			}
@@ -90,24 +97,23 @@ public class RebotinolController {
 	}
 
 	/**
-	 * @return A clone of the initial matrix. This attribute does not change
-	 *         while the program is executed
+	 * @return A clone of the initial matrix. This attribute does not change while
+	 *         the program is executed
 	 */
 	public Fraction[][] getInitialMatrix() {
 		return MatrixUtil.cloneMatrix(_initialMatrix);
 	}
 
 	/**
-	 * @return A clone of the expected matrix after the execution of the
-	 *         program. May be null.
+	 * @return A clone of the expected matrix after the execution of the program.
+	 *         May be null.
 	 */
 	public Fraction[][] getExpectedMatrix() {
 		return MatrixUtil.cloneMatrix(_expectedMatrix);
 	}
 
 	/**
-	 * @return The expected result after the execution of the program. May be
-	 *         null.
+	 * @return The expected result after the execution of the program. May be null.
 	 */
 	public Fraction getExpectedResult() {
 		return _expectedResult;
@@ -133,26 +139,42 @@ public class RebotinolController {
 	public RebotinolButtonsController getButtonsController() {
 		return _buttonsController;
 	}
-	
 
 	/**
-	 * Returns true when a rebotinol error (division by zero, operation on empty, cell, etc.)
-	 * has occurred while performing the current rebotinol instruction. Returns false otherwise.
+	 * Returns true when a rebotinol error (division by zero, operation on empty,
+	 * cell, etc.) has occurred while performing the current rebotinol instruction.
+	 * Returns false otherwise.
 	 * 
 	 * @return true if rebotil error has occurred, false otherwise
 	 */
 	public boolean hasRebotinolErrorOccurred() {
 		return _hasRebotinolErrorOccurred;
 	}
-	
 
+	/**
+	 * @return The {@link ProblemStatus}
+	 */
+	public ProblemStatus getProblemStatus() {
+		return _problemStatus;
+	}
+	
+	/**
+	 * Adds an observer to this house
+	 * 
+	 * @param observer
+	 *            The observer to be added
+	 */
+	public void registerObserver(RebotinolControllerObserver observer) {
+		_controllerObservers.add(observer);
+	}
+	
 	/**
 	 * Execute a single step in this program
 	 * 
 	 * @throws RebotinolFlowException
-	 *             If the program tried to execute some illegal instruction,
-	 *             like an instruction that was already finished. This exception
-	 *             indicates a severe bug in the execution platform.
+	 *             If the program tried to execute some illegal instruction, like an
+	 *             instruction that was already finished. This exception indicates a
+	 *             severe bug in the execution platform.
 	 */
 	public void step() throws RebotinolFlowException {
 		if (!_program.isStarted()) {
@@ -171,7 +193,8 @@ public class RebotinolController {
 		} catch (ArithmeticException e) {
 			_buttonsController.errorMet();
 			_house.setError(true);
-			_house.setErrorMessage("Error num�rico! Rebot�n no puede manejar numeros demasiado grandes o peque�os");
+			_house.setErrorMessage(
+					"Error num�rico! Rebot�n no puede manejar numeros demasiado grandes o peque�os");
 		}
 		if (_program.isFinished()) {
 			_buttonsController.programFinished();
@@ -189,13 +212,10 @@ public class RebotinolController {
 		step();
 		if (_program.isFinished()) {
 			return true;
-		} 
-		else if (_hasRebotinolErrorOccurred) {
+		} else if (_hasRebotinolErrorOccurred) {
 			return true;
-		}
-		else {
-			RebotinolInstructionExecution next = _program
-					.getNextExecutionToStep();
+		} else {
+			RebotinolInstructionExecution next = _program.getNextExecutionToStep();
 			return next.isBreakpoint();
 		}
 	}
@@ -209,14 +229,12 @@ public class RebotinolController {
 	 * @throws RebotinolFatalException
 	 *             If something went really wrong.
 	 */
-	protected boolean automaticStepBack() throws RebotinolFlowException,
-			RebotinolFatalException {
+	protected boolean automaticStepBack() throws RebotinolFlowException, RebotinolFatalException {
 		stepBack();
 		if (!_program.isStarted()) {
 			return true;
 		} else {
-			RebotinolInstructionExecution next = _program
-					.getNextExecutionToStep();
+			RebotinolInstructionExecution next = _program.getNextExecutionToStep();
 			return next.isBreakpoint();
 		}
 	}
@@ -225,14 +243,13 @@ public class RebotinolController {
 	 * Go a single step back. This method undoes the last {@link #step()}
 	 * 
 	 * @throws RebotinolFlowException
-	 *             If the program tried to execute some illegal instruction,
-	 *             like an instruction that was already finished. This exception
-	 *             indicates a severe bug in the execution platform.
+	 *             If the program tried to execute some illegal instruction, like an
+	 *             instruction that was already finished. This exception indicates a
+	 *             severe bug in the execution platform.
 	 * @throws RebotinolFatalException
 	 *             If something went really wrong
 	 */
-	public void stepBack() throws RebotinolFlowException,
-			RebotinolFatalException {
+	public void stepBack() throws RebotinolFlowException, RebotinolFatalException {
 		if (_program.isFinished()) {
 			_buttonsController.programUnFinished();
 		}
@@ -257,8 +274,7 @@ public class RebotinolController {
 	 * @throws RebotinolFatalException
 	 *             If something went really wrong
 	 */
-	public void toggleBreakpoint(RebotinolInstructionExecution execution)
-			throws RebotinolFatalException {
+	public void toggleBreakpoint(RebotinolInstructionExecution execution) throws RebotinolFatalException {
 		execution.toggleBreakpoint();
 	}
 
@@ -291,4 +307,37 @@ public class RebotinolController {
 		_scheduler.playBack();
 	}
 
+	@Override
+	public void mailChanged(Mail mail) {
+		if (mail.getContent() != null) {
+			if (mail.getContent().equals(_expectedResult)) {
+				setProblemStatus(ProblemStatus.SOLVED);
+			} else {
+				setProblemStatus(ProblemStatus.UNSOLVED);
+			}
+		} else {
+			setProblemStatus(ProblemStatus.UNKNOWN);
+		}
+	}
+
+	@Override
+	public void matrixSent() {
+		if (Arrays.deepEquals(_house.getMatrix(),_expectedMatrix)) {
+			setProblemStatus(ProblemStatus.SOLVED);
+		} else {
+			setProblemStatus(ProblemStatus.UNSOLVED);
+		}
+	}
+
+	@Override
+	public void matrixUnsent() {
+		setProblemStatus(ProblemStatus.UNKNOWN);
+	}
+
+	private void setProblemStatus(ProblemStatus problemStatus) {
+		_problemStatus = problemStatus;
+		for (RebotinolControllerObserver obs : _controllerObservers) {
+			obs.problemStatusChanged(problemStatus);
+		}
+	}
 }

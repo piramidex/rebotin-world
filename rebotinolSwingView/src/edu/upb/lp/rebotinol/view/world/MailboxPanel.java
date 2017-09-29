@@ -136,13 +136,12 @@ public class MailboxPanel extends JPanel implements RebotinolHouseObserver {
 		if (mail != null) {
 			_numPanel.set_number(mail.getContent());
 			_open = true;
-			repaint();
 		}
 		else {
 			_numPanel.set_number(null);
 			_open = false;
-			repaint();
 		}
+		repaint();
 	}
 
 	@Override
